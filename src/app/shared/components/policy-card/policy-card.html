@@ -1,0 +1,50 @@
+<div
+    class="flex flex-col py-2 cursor-pointer group hover:bg-teal-900/40 transition-all border-b border-teal-500/10 last:border-b-0">
+    <div class="flex items-center gap-3 px-4 py-2">
+
+        <!-- Rank number -->
+        <div class="flex-shrink-0 w-8 text-center">
+            <span class="text-sm font-black text-teal-800 group-hover:text-teal-400 transition-colors">#{{
+                candidate().number }}</span>
+        </div>
+
+        <!-- Avatar (Emerald Dark Optimized) -->
+        <div class="relative flex-shrink-0">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-black text-lg ring-2 ring-offset-2 ring-teal-950/50 transition-all group-hover:scale-110 shadow-lg"
+                [style.ring-color]="candidate().color"
+                [style.background]="'linear-gradient(135deg, ' + candidate().color + '30, ' + candidate().color + '10)'">
+                @if(candidate().imageUrl) {
+                <img [src]="candidate().imageUrl" alt="" class="w-full h-full rounded-full object-cover">
+                } @else {
+                {{ candidate().name.charAt(0) }}
+                }
+            </div>
+        </div>
+
+        <!-- Name + party -->
+        <div class="flex-1 min-w-0">
+            <div
+                class="text-base font-black text-white/90 leading-tight truncate group-hover:text-white transition-colors">
+                {{ candidate().name }}</div>
+            <div class="text-[10px] font-bold text-teal-700 mt-1 uppercase tracking-widest">{{ candidate().party }}
+            </div>
+        </div>
+
+        <!-- Percentage -->
+        <div class="flex-shrink-0 text-right">
+            <div class="text-lg font-black tabular-nums tracking-tighter drop-shadow-sm"
+                [style.color]="candidate().color">{{
+                candidate().percentage }}%</div>
+            <div
+                class="text-[10px] font-black text-teal-400/60 uppercase tabular-nums tracking-widest leading-none mt-0.5">
+                {{ (candidate().votes / 1000000).toFixed(2) }}M</div>
+        </div>
+    </div>
+
+    <!-- Progress bar (Organic Grass style) -->
+    <div class="px-4 pb-2">
+        <nz-progress [nzPercent]="candidate().percentage" [nzStrokeColor]="candidate().color" nzSize="small"
+            [nzShowInfo]="false" [nzStatus]="'active'">
+        </nz-progress>
+    </div>
+</div>

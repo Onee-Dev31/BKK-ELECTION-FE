@@ -1,0 +1,54 @@
+import { Component, inject, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { SearchService, SearchResult } from '../../../core/services/search';
+import { MapStateService } from '../../../core/services/map-state';
+
+@Component({
+  selector: 'app-navbar',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './navbar.html',
+  styleUrl: './navbar.css',
+})
+export class Navbar {
+  currentTime = signal(new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }));
+  currentDate = signal(new Date().toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }));
+
+  searchService = inject(SearchService);
+  mapState = inject(MapStateService);
+
+  isSearchFocused = signal(false);
+
+  // Getter/setter for ngModel binding to the signal
+  get searchQuery(): string {
+    return this.searchService.searchQuery();
+  }
+  set searchQuery(val: string) {
+    this.searchService.searchQuery.set(val);
+  }
+
+  get searchResults() {
+    return this.searchService.searchResults();
+  }
+
+  handleSearchFocus() {
+    this.isSearchFocused.set(true);
+  }
+
+  handleSearchBlur() {
+    // Delay hiding dropdown so click events can register
+    setTimeout(() => {
+      this.isSearchFocused.set(false);
+    }, 200);
+  }
+
+  selectResult(result: SearchResult) {
+    if (result.type === 'district') {
+      this.mapState.selectedDistrictId.set(result.id);
+    }
+    // Clear search after selection
+    this.searchQuery = '';
+    this.isSearchFocused.set(false);
+  }
+}

@@ -1,0 +1,25 @@
+<!-- Donut + legend — no outer label (parent handles it) -->
+<div class="flex items-center gap-4 h-full w-full">
+    <!-- Donut -->
+    <div class="relative flex-shrink-0" style="width:76px;height:76px;">
+        <div class="w-full h-full rounded-full shadow-sm" [style.background]="conicGradient()"></div>
+        <!-- Hollow (Botanical Light) -->
+        <div class="absolute rounded-full flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm shadow-inner"
+            style="inset:18%;">
+            <span class="text-xs font-black text-emerald-600 leading-none">99%</span>
+            <span class="text-[8px] font-black text-slate-400 uppercase tracking-widest mt-0.5">นับแล้ว</span>
+        </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="flex flex-col gap-1.5 flex-1 min-w-0 overflow-hidden">
+        @for (c of candidates(); track c.id) {
+        <div class="flex items-center gap-2 text-[11px] group">
+            <span class="w-2 h-2 rounded-full flex-shrink-0 shadow-sm" [style.background-color]="c.color"></span>
+            <span class="text-slate-500 truncate flex-1 font-bold group-hover:text-slate-800 transition-colors">{{
+                c.name.split(' ')[0] }}</span>
+            <span class="font-black tabular-nums text-slate-900 flex-shrink-0">{{ c.percentage }}%</span>
+        </div>
+        }
+    </div>
+</div>

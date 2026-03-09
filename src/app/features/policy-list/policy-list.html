@@ -1,0 +1,8 @@
+<!-- Compact candidate list — fits inside the right glass panel -->
+<div class="flex flex-col h-full overflow-hidden">
+    <div class="flex-1 overflow-y-auto">
+        @for (candidate of candidates(); track candidate.id) {
+        <app-policy-card [candidate]="candidate"></app-policy-card>
+        }
+    </div>
+</div>

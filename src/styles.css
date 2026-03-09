@@ -1,1 +1,154 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+    --color-bkk-bg: #04120f;
+    /* Deep Emerald Black */
+    --color-bkk-green: #10b981;
+    /* Emerald */
+    --color-bkk-yellow: #fbbf24;
+    --color-bkk-accent: #2dd4bf;
+    /* Neon Mint */
+    --color-bkk-muted: #94a3b8;
+    --color-bkk-glass: rgba(6, 78, 59, 0.4);
+    --color-bkk-border: rgba(45, 212, 191, 0.15);
+}
+
+@layer base {
+
+    /* Global Dark Emerald Glass Base */
+    html,
+    body {
+        height: 100%;
+        overflow: hidden;
+        font-family: 'Kanit', sans-serif !important;
+        background-color: var(--color-bkk-bg) !important;
+        color: #e2e8f0 !important;
+        /* Off-white for dark mode */
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .app-shell {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+}
+
+/* ── Emerald Glass Panel Components ─────────────────── */
+@layer components {
+    .panel-glass {
+        background: var(--color-bkk-glass);
+        backdrop-filter: blur(12px) saturate(140%);
+        -webkit-backdrop-filter: blur(12px) saturate(140%);
+        border: 1px solid var(--color-bkk-border);
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow:
+            0 25px 80px -20px rgba(0, 0, 0, 0.6),
+            inset 0 0 30px rgba(45, 212, 191, 0.05),
+            0 0 0 1px rgba(45, 212, 191, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+    }
+
+    /* Mockup outer neon-line effect */
+    .panel-glass::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 32px;
+        padding: 1.5px;
+        background: linear-gradient(135deg, rgba(45, 212, 191, 0.6), transparent 30%, transparent 70%, rgba(45, 212, 191, 0.6));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        filter: drop-shadow(0 0 8px rgba(45, 212, 191, 0.4));
+        opacity: 0.8;
+    }
+
+    .panel-inner {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+}
+
+/* Sidebar and Navbar layout properties are managed in their respective CSS and dashboard-layout.css */
+
+/* ── Scrollbar (Softened for Light Mode) ─────────── */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 99px;
+}
+
+/* ── Animations ──────────────────────────── */
+.animate-pulse-slow {
+    animation: blink 3s ease-in-out infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ── Shimmer (Subtle for Light Mode) ─────── */
+.progress-bar {
+    position: relative;
+    overflow: hidden;
+    height: 4px;
+    border-radius: 99px;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+    animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* ── Tooltip Customization ──────────────── */
+.district-tooltip .ant-tooltip-inner {
+    background: rgba(4, 30, 26, 0.85);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 8px 12px;
+    min-width: 180px;
+}
+
+.district-tooltip .ant-tooltip-arrow-content {
+    background: rgba(4, 30, 26, 0.95);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+}

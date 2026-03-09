@@ -1,0 +1,31 @@
+<nav class="w-full flex flex-col items-center justify-between py-6">
+
+    <div class="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg border border-teal-400/30 mb-8"
+        style="background: linear-gradient(135deg, #065f46, #10b981);">
+        <span class="text-white font-black text-xs">BKK</span>
+    </div>
+
+    <div class="flex flex-col items-center gap-4 flex-1">
+        @for (item of navItems; track item.id) {
+        <button (click)="navigate(item.path)" [id]="'nav-' + item.id" nz-tooltip [nzTooltipTitle]="item.label"
+            nzTooltipPlacement="right"
+            class="relative w-12 h-12 rounded-[16px] flex items-center justify-center transition-all duration-400 group"
+            [class]="isActive(item.path)
+          ? 'bg-teal-500/20 border border-teal-400/30 text-teal-400 shadow-inner'
+          : 'text-teal-700 hover:bg-teal-500/10 hover:text-teal-400 border border-transparent'">
+            <span class="text-xl leading-none transition-transform group-hover:scale-110">{{ item.icon }}</span>
+            @if (isActive(item.path)) {
+            <div class="absolute -left-1.5 w-1.5 h-6 bg-teal-400 rounded-full shadow-[0_0_8px_rgba(45,212,191,0.6)]">
+            </div>
+            }
+        </button>
+        }
+    </div>
+
+    <div class="flex flex-col gap-3">
+        <button
+            class="w-10 h-10 rounded-full bg-teal-900/30 flex items-center justify-center border border-teal-500/20">
+            <div class="w-2 h-2 rounded-full bg-teal-400"></div>
+        </button>
+    </div>
+</nav>
