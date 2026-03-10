@@ -5,6 +5,10 @@ export const ELECTION_CONSTANTS = {
         SUMMARY: environment.api.summary,
         DISTRICTS: environment.api.districts
     },
+    ASSETS: {
+        CANDIDATE_IMAGE: 'https://storage.googleapis.com/ers-static/candidates/governor/No{no}.jpg',
+        PARTY_LOGO: 'https://storage.googleapis.com/ers-static/parties/{id}.png'
+    },
     CANDIDATE_COLORS: {
         8: '#22c55e', // ชัชชาติ
         4: '#3b82f6', // สุชัชวีร์

@@ -9,5 +9,6 @@ import { Candidate } from '../../../core/services/election.service';
 })
 export class PolicyCard {
   candidate = input.required<Candidate>();
+  rank = input<number>(0);
 }
 

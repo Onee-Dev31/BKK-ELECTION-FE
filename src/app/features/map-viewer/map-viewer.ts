@@ -56,6 +56,8 @@ export class MapViewer {
       candidateName: candidateInfo.name,
       partyName: candidateInfo.party,
       color: candidateInfo.color,
+      imageUrl: candidateInfo.imageUrl,
+      partyLogoUrl: candidateInfo.partyLogoUrl,
       votes: topResult.votes,
       percentage: percentage
     };

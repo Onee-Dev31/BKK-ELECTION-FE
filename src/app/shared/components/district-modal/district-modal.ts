@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { MapStateService } from '../../../core/services/map-state';
 import { ElectionService } from '../../../core/services/election.service';
@@ -30,20 +30,23 @@ import { ELECTION_CONSTANTS } from '../../../core/constants/election.constants';
           </div>
 
           <div class="modal-body">
-             @for (c of candidates(); track c.id) {
+             @for (item of districtCandidates(); track item.info.id) {
                <div class="candidate-row group hover:bg-emerald-50/30 transition-all">
                   <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-5">
-                      <div class="w-14 h-14 rounded-full bg-white ring-2 ring-emerald-50 shadow-sm overflow-hidden shrink-0 flex items-center justify-center text-slate-800 text-xl font-black group-hover:scale-110 transition-transform" [style.ringColor]="c.color">
-                         {{ c.name.charAt(0) }}
+                      <div class="w-14 h-14 rounded-full bg-white ring-2 ring-emerald-50 shadow-sm overflow-hidden shrink-0 flex items-center justify-center text-slate-800 text-xl font-black group-hover:scale-110 transition-transform" [style.ringColor]="item.info.color">
+                         <img [src]="item.info.imageUrl" class="w-full h-full object-cover">
                       </div>
                       <div>
-                        <div class="text-lg font-black text-slate-800 group-hover:text-emerald-900 transition-colors">{{ c.name }}</div>
-                        <div class="text-[11px] font-black text-slate-400 uppercase tracking-widest mt-1">{{ c.party }}</div>
+                        <div class="text-lg font-black text-slate-800 group-hover:text-emerald-900 transition-colors">{{ item.info.name }}</div>
+                        <div class="flex items-center gap-1.5 mt-1">
+                          <img [src]="item.info.partyLogoUrl" class="w-3 h-3 object-contain opacity-60">
+                          <div class="text-[11px] font-black text-slate-400 uppercase tracking-widest">{{ item.info.party }}</div>
+                        </div>
                       </div>
                     </div>
                     <div class="flex flex-col items-end">
-                       <span class="rounded-full px-4 py-1.5 border text-[11px] font-black uppercase tracking-widest shadow-sm" [style.borderColor]="c.color + '40'" [style.backgroundColor]="c.color + '08'" [style.color]="c.color">เบอร์ {{ c.number }}</span>
+                       <span class="rounded-full px-4 py-1.5 border text-[11px] font-black uppercase tracking-widest shadow-sm" [style.borderColor]="item.info.color + '40'" [style.backgroundColor]="item.info.color + '08'" [style.color]="item.info.color">เบอร์ {{ item.info.number }}</span>
                     </div>
                   </div>
                   
@@ -51,13 +54,13 @@ import { ELECTION_CONSTANTS } from '../../../core/constants/election.constants';
                      <div class="flex-1">
                         <div class="progress-bar-bg bg-emerald-50/50 shadow-inner">
                            <div class="progress-bar-fill transition-all duration-1000 ease-out shadow-sm" 
-                                [style.width]="getDistrictPercentage(c.id, selectedDistrict()?.id) + '%'" 
-                                [style.backgroundColor]="c.color">
-                             <span class="px-4 text-[10px] font-black text-white/95 uppercase tracking-widest truncate">{{ getDistrictVotes(c.id, selectedDistrict()?.id) | number }} คะแนน</span>
+                                [style.width]="item.percentage + '%'" 
+                                [style.backgroundColor]="item.info.color">
+                             <span class="px-4 text-[10px] font-black text-white/95 uppercase tracking-widest truncate">{{ item.votes | number }} คะแนน</span>
                            </div>
                         </div>
                      </div>
-                     <div class="text-lg font-black text-slate-900 tabular-nums shrink-0 tracking-tighter">{{ getDistrictPercentage(c.id, selectedDistrict()?.id) }}%</div>
+                     <div class="text-lg font-black text-slate-900 tabular-nums shrink-0 tracking-tighter">{{ item.percentage }}%</div>
                   </div>
                </div>
              }
@@ -187,23 +190,30 @@ export class DistrictModal {
   selectedDistrict = this.mapState.selectedDistrict;
   candidates = this.electionService.candidates;
 
+  districtCandidates = computed(() => {
+    const districtId = this.selectedDistrict()?.id;
+    if (!districtId) return [];
+
+    const result = this.electionService.getDistrictResults(districtId);
+    if (!result || !result.candidateResults) return [];
+
+    const totalVotes = result.candidateResults.reduce((sum, curr) => sum + curr.votes, 0);
+
+    return result.candidateResults
+      .map(cr => {
+        const candidateInfo = this.electionService.candidates().find(c => c.id === cr.candidateId);
+        return {
+          info: candidateInfo!,
+          votes: cr.votes,
+          percentage: totalVotes > 0 ? ((cr.votes / totalVotes) * 100).toFixed(2) : '0.00'
+        };
+      })
+      .filter(item => item.info !== undefined && item.votes > 0)
+      .sort((a, b) => b.votes - a.votes);
+  });
+
   closeModal() {
     this.mapState.selectedDistrictId.set(null);
-  }
-
-  getDistrictVotes(candidateId: number, districtId: number | undefined): number {
-    if (!districtId) return 0;
-    const result = this.electionService.getDistrictResults(districtId);
-    return result?.candidateResults.find(cr => cr.candidateId === candidateId)?.votes || 0;
-  }
-
-  getDistrictPercentage(candidateId: number, districtId: number | undefined): string {
-    if (!districtId) return '0.00';
-    const result = this.electionService.getDistrictResults(districtId);
-    if (!result) return '0.00';
-    const total = result.candidateResults.reduce((acc, curr) => acc + curr.votes, 0);
-    const votes = result.candidateResults.find(cr => cr.candidateId === candidateId)?.votes || 0;
-    return ((votes / total) * 100).toFixed(2);
   }
 
   getDistrictName(id: number | undefined): string {

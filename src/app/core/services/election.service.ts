@@ -11,6 +11,7 @@ export interface Candidate {
   votes: number;
   percentage: number;
   imageUrl: string;
+  partyLogoUrl: string;
   color: string;
 }
 
@@ -114,6 +115,7 @@ export class ElectionService {
           votes: c.score,
           percentage: Number(c.scorePercent.toFixed(2)),
           imageUrl: c._raw.avatarURL,
+          partyLogoUrl: ELECTION_CONSTANTS.ASSETS.PARTY_LOGO.replace('{id}', c._raw.party.id.toString()),
           color: this.getCandidateColor(c.idno)
         };
       });
