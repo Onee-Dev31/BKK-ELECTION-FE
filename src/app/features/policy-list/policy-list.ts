@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { PolicyService } from '../../core/services/policy';
+import { ElectionService } from '../../core/services/election.service';
 import { PolicyCard } from '../../shared/components/policy-card/policy-card';
 
 @Component({
@@ -9,7 +9,7 @@ import { PolicyCard } from '../../shared/components/policy-card/policy-card';
   styleUrl: './policy-list.css',
 })
 export class PolicyList {
-  private policyService = inject(PolicyService);
-  candidates = this.policyService.candidates;
+  private electionService = inject(ElectionService);
+  candidates = this.electionService.candidates;
 }
 

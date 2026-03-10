@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-    --color-bkk-bg: #04120f;
-    /* Deep Emerald Black */
-    --color-bkk-green: #10b981;
-    /* Emerald */
-    --color-bkk-yellow: #fbbf24;
-    --color-bkk-accent: #2dd4bf;
-    /* Neon Mint */
+    --color-bkk-bg: #02150d;
+    /* Deep Forest Black */
+    --color-bkk-green: #00d65b;
+    /* Bright BKK Green */
+    --color-bkk-yellow: #fcd34d;
+    --color-bkk-accent: #33ff85;
+    /* Neon Radiant Green */
     --color-bkk-muted: #94a3b8;
-    --color-bkk-glass: rgba(6, 78, 59, 0.4);
-    --color-bkk-border: rgba(45, 212, 191, 0.15);
+    --color-bkk-glass: rgba(0, 214, 91, 0.2);
+    --color-bkk-border: rgba(51, 255, 133, 0.25);
 }
 
 @layer base {
@@ -46,8 +46,8 @@
         overflow: hidden;
         box-shadow:
             0 25px 80px -20px rgba(0, 0, 0, 0.6),
-            inset 0 0 30px rgba(45, 212, 191, 0.05),
-            0 0 0 1px rgba(45, 212, 191, 0.1);
+            inset 0 0 30px rgba(51, 255, 133, 0.05),
+            0 0 0 1px rgba(51, 255, 133, 0.1);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
     }
@@ -59,13 +59,13 @@
         inset: 0;
         border-radius: 32px;
         padding: 1.5px;
-        background: linear-gradient(135deg, rgba(45, 212, 191, 0.6), transparent 30%, transparent 70%, rgba(45, 212, 191, 0.6));
+        background: linear-gradient(135deg, rgba(51, 255, 133, 0.6), transparent 30%, transparent 70%, rgba(51, 255, 133, 0.6));
         -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
-        filter: drop-shadow(0 0 8px rgba(45, 212, 191, 0.4));
+        filter: drop-shadow(0 0 8px rgba(51, 255, 133, 0.4));
         opacity: 0.8;
     }
 
@@ -141,7 +141,7 @@
     background: rgba(4, 30, 26, 0.85);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(45, 212, 191, 0.2);
+    border: 1px solid rgba(51, 255, 133, 0.2);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border-radius: 12px;
     padding: 8px 12px;
@@ -150,5 +150,5 @@
 
 .district-tooltip .ant-tooltip-arrow-content {
     background: rgba(4, 30, 26, 0.95);
-    border: 1px solid rgba(45, 212, 191, 0.2);
+    border: 1px solid rgba(51, 255, 133, 0.2);
 }

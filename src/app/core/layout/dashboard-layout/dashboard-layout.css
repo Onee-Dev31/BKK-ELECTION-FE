@@ -18,7 +18,7 @@
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: saturate(0.8) brightness(0.4) contrast(1.1) hue-rotate(150deg);
+    filter: saturate(1.2) brightness(0.5) contrast(1.1) hue-rotate(130deg);
     /* Dark, emerald tinted city */
 }
 
@@ -26,8 +26,8 @@
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 50% 50%,
-            rgba(6, 78, 59, 0.1) 0%,
-            rgba(4, 18, 15, 0.95) 100%);
+            rgba(0, 214, 91, 0.15) 0%,
+            rgba(2, 21, 13, 0.95) 100%);
 }
 
 /* Mockup Bokeh Lights */
@@ -36,9 +36,9 @@
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(circle at 15% 25%, rgba(45, 212, 191, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 85% 75%, rgba(45, 212, 191, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.05) 0%, transparent 30%);
+        radial-gradient(circle at 15% 25%, rgba(51, 255, 133, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 85% 75%, rgba(51, 255, 133, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 70% 30%, rgba(0, 214, 91, 0.05) 0%, transparent 30%);
     filter: blur(40px);
     opacity: 0.5;
     pointer-events: none;
@@ -55,17 +55,22 @@
 
     /* 
      * Columns: center-map (fills) | stats-sidebar (fixed)
-     * Rows:    header/hero | map/main | bottom-insights
+     * Rows:    navbar | hero | map/main | bottom-insights
      */
     grid-template-columns: 1fr 340px;
-    grid-template-rows: auto 1fr 180px;
+    grid-template-rows: 50px auto 1fr;
     grid-template-areas:
+        "map     search"
         "map     hero"
-        "map     candidates"
-        "barchart candidates";
+        "map     candidates";
 
     padding: 24px;
+    gap: 20px;
     overflow: hidden;
+}
+
+.area-search {
+    grid-area: search;
 }
 
 /* Grid area assignments */
@@ -89,8 +94,4 @@
 
 .area-donut {
     display: none;
-}
-
-.area-barchart {
-    grid-area: barchart;
 }

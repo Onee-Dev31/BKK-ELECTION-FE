@@ -1,7 +1,7 @@
 import { Component, inject, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PolicyService } from '../../core/services/policy';
+import { ElectionService, CandidatePolicy } from '../../core/services/election.service';
 
 @Component({
   selector: 'app-compare-candidates',
@@ -131,8 +131,8 @@ import { PolicyService } from '../../core/services/policy';
 
 })
 export class CompareCandidates {
-  policyService = inject(PolicyService);
-  candidates = this.policyService.candidates;
+  electionService = inject(ElectionService);
+  candidates = this.electionService.candidates;
 
   selectedIdA = signal<number>(1);
   selectedIdB = signal<number>(2);
@@ -140,8 +140,8 @@ export class CompareCandidates {
   candidateA = computed(() => this.candidates().find(c => c.id === this.selectedIdA()));
   candidateB = computed(() => this.candidates().find(c => c.id === this.selectedIdB()));
 
-  getPolicies(candidateId: number | undefined) {
+  getPolicies(candidateId: number | undefined): CandidatePolicy[] {
     if (!candidateId) return [];
-    return this.policyService.getCandidatePolicies(candidateId);
+    return this.electionService.getCandidatePolicies(candidateId);
   }
 }

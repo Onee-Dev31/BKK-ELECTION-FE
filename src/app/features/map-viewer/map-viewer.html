@@ -1,18 +1,24 @@
 <div class="map-container">
     <div class="map-bg-grid"></div>
+
+    <div class="election-logo-container">
+        <div class="logo-accent"></div>
+        <div class="flex flex-col">
+            <span class="logo-title">BKK ELECTION</span>
+            <span class="logo-year">2026</span>
+        </div>
+    </div>
+
     <div class="map-grid-wrapper">
         @for (district of districts(); track district.id; let i = $index) {
         <div class="district-cell group"
-            [style.left.%]="(district.col - 1 + (district.row % 2 === 0 ? 0.5 : 0)) * 11.764705"
-            [style.top.%]="(district.row - 1) * 9.677419" [style.animation-delay]="i * 20 + 'ms'"
-            [class.is-selected]="mapState.selectedDistrictId() === district.id" (click)="selectDistrict(district.id)"
-            nz-tooltip [nzTooltipTitle]="tooltipTemplate" nzTooltipPlacement="top"
-            [nzTooltipOverlayClassName]="'district-tooltip'">
+            [style.left.%]="0.6 + (district.col - 1 + (district.row % 2 === 0 ? 0.5 : 0)) * 9.5"
+            [style.top.%]="9 + (district.row - 1) * 9" [style.animation-delay]="i * 20 + 'ms'"
+            [class.is-selected]="mapState.selectedDistrictId() === district.id" (click)="selectDistrict(district.id)">
 
-            <!-- Dynamic Tooltip Template -->
-            <ng-template #tooltipTemplate>
+            <div class="custom-tooltip-box" [class.is-bottom]="district.row <= 2">
                 @if (getDistrictTooltipData(district.id); as tooltipData) {
-                <div class="flex flex-col min-w-[180px] p-1 gap-2">
+                <div class="flex flex-col gap-2">
                     <div class="font-black text-sm text-white mb-1 border-b border-white/10 pb-2">
                         เขต {{ getShortName(district.id) }}
                         <span class="text-teal-400 font-bold ml-1 text-xs">#{{ district.number }}</span>
@@ -42,7 +48,7 @@
                     </div>
                 </div>
                 }
-            </ng-template>
+            </div>
 
             <div class="district-inner">
                 <div class="hexagon-content" [style.--candidate-color]="getBackground(district.leadingCandidateId)">

@@ -1,5 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
-import { PolicyService } from '../../../core/services/policy';
+import { ElectionService } from '../../../core/services/election.service';
 
 @Component({
   selector: 'app-stats-chart',
@@ -8,8 +8,8 @@ import { PolicyService } from '../../../core/services/policy';
   styleUrl: './stats-chart.css',
 })
 export class StatsChart {
-  private policyService = inject(PolicyService);
-  candidates = this.policyService.candidates;
+  private electionService = inject(ElectionService);
+  candidates = this.electionService.candidates;
 
   // Convert votes to conic-gradient segments using computed signal
   conicGradient = computed(() => {

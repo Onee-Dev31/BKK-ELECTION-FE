@@ -7,16 +7,97 @@
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
     height: 100%;
-    background: rgba(4, 30, 26, 0.4);
+    background: var(--color-bkk-glass);
     backdrop-filter: blur(32px) saturate(180%);
     -webkit-backdrop-filter: blur(32px) saturate(180%);
-    border: 1px solid rgba(45, 212, 191, 0.15);
+    border: 1px solid var(--color-bkk-border);
     border-radius: 24px;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
-    padding: 0 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    padding: 0 20px;
     position: relative;
     z-index: 50;
+    transition: all 0.3s ease;
+}
+
+nav:focus-within {
+    border-color: var(--color-bkk-green);
+    box-shadow: 0 0 15px rgba(0, 214, 91, 0.3);
+    background: rgba(0, 214, 91, 0.15);
+}
+
+.search-results-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    z-index: 100;
+    animation: slideDown 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.result-item:hover {
+    background: rgba(0, 214, 91, 0.1);
+}
+
+.result-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-bkk-green);
+}
+
+.result-icon.district {
+    color: #e2e8f0;
+    background: rgba(0, 214, 91, 0.2);
+}
+
+.result-info {
+    flex: 1;
+}
+
+.result-title {
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.result-subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 1px;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

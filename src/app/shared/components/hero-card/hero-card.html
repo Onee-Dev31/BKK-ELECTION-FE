@@ -5,30 +5,39 @@
     2026</div>
 
 <div class="grid grid-cols-2 gap-2 mt-4">
-    <div class="panel-inner p-4 text-center bg-teal-950/20 border-teal-500/10 shadow-lg relative overflow-hidden group">
-        <div class="absolute inset-0 bg-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="relative z-10 transition-all duration-500">
-            <div class="text-2xl font-black text-teal-400 drop-shadow-[0_0_8px_rgba(45,212,191,0.3)]">{{
-                policyService.totalDistricts() }}</div>
-            <div class="text-[10px] font-black text-teal-700 uppercase tracking-widest mt-1">เขตทั้งหมด</div>
-        </div>
+    <div class="panel-inner p-3 bg-teal-950/20 border-teal-500/10 shadow-lg group relative overflow-hidden">
+        <div class="text-xs font-bold text-teal-700/60 uppercase tracking-tighter mb-1">ผู้มีสิทธิเลือกตั้ง</div>
+        <div class="text-xl font-black text-white tabular-nums">{{ electionService.eligibleVoters() | number }}</div>
+        <div class="text-[9px] font-bold text-teal-500/50 mt-1 uppercase">ELIGIBLE VOTERS</div>
     </div>
-    <div class="panel-inner p-4 text-center bg-teal-950/20 border-teal-500/10 shadow-lg relative overflow-hidden group">
-        <div class="absolute inset-0 bg-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="relative z-10">
-            <div class="text-2xl font-black text-teal-400 tabular-nums drop-shadow-[0_0_8px_rgba(45,212,191,0.3)]">{{
-                policyService.countedDistricts() }}</div>
-            <div class="text-[10px] font-black text-teal-700 uppercase tracking-widest mt-1">เขตที่นับแล้ว</div>
-        </div>
+    <div class="panel-inner p-3 bg-teal-950/20 border-teal-500/10 shadow-lg group">
+        <div class="text-xs font-bold text-teal-700/60 uppercase tracking-tighter mb-1">ออกมาใช้สิทธิ์</div>
+        <div class="text-xl font-black text-teal-400 tabular-nums">{{ electionService.turnoutPercent() }}%</div>
+        <div class="text-[9px] font-bold text-teal-500/50 mt-1 uppercase">TURNOUT RATE</div>
     </div>
 </div>
 
-<div class="flex items-center gap-3 mt-auto pt-4">
-    <div class="relative w-12 h-12 flex-shrink-0">
+<div class="grid grid-cols-3 gap-2 mt-2">
+    <div class="panel-inner p-2 bg-teal-950/10 border-teal-500/5 text-center">
+        <div class="text-[14px] font-black text-white">{{ electionService.goodVotes() | number }}</div>
+        <div class="text-[8px] font-bold text-teal-700 uppercase leading-none mt-1">บัตรดี</div>
+    </div>
+    <div class="panel-inner p-2 bg-red-950/10 border-red-500/5 text-center">
+        <div class="text-[14px] font-black text-red-400">{{ electionService.badVotes() | number }}</div>
+        <div class="text-[8px] font-bold text-red-900 uppercase leading-none mt-1">บัตรเสีย</div>
+    </div>
+    <div class="panel-inner p-2 bg-slate-900/20 border-slate-500/5 text-center">
+        <div class="text-[14px] font-black text-slate-400">{{ electionService.noVotes() | number }}</div>
+        <div class="text-[8px] font-bold text-slate-600 uppercase leading-none mt-1">ไม่ลงคะแนน</div>
+    </div>
+</div>
+
+<div class="flex items-center gap-3 mt-auto pt-6">
+    <div class="relative w-14 h-14 flex-shrink-0">
         <svg class="w-full h-full -rotate-90 drop-shadow-sm" viewBox="0 0 36 36">
             <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(45, 212, 191, 0.05)" stroke-width="4.5" />
             <circle cx="18" cy="18" r="15" fill="none" stroke="url(#emerald-gradient)" stroke-width="4.5"
-                stroke-dasharray="87 13" stroke-linecap="round" />
+                [attr.stroke-dasharray]="(electionService.progressPercent() * 0.94) + ' 100'" stroke-linecap="round" />
             <defs>
                 <linearGradient id="emerald-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stop-color="#0d9488" />
@@ -36,21 +45,21 @@
                 </linearGradient>
             </defs>
         </svg>
-        <div class="absolute inset-0 flex items-center justify-center">
-            <span class="text-[11px] font-black text-teal-400 tabular-nums shadow-sm">100%</span>
+        <div class="absolute inset-0 flex flex-col items-center justify-center leading-none">
+            <span class="text-[12px] font-black text-teal-400 tabular-nums">{{ electionService.progressPercent()
+                }}%</span>
         </div>
     </div>
-    <div>
-        <div class="text-[14px] font-black text-white/90 leading-none tracking-tight">นับคะแนนล่าสุด</div>
-        <div
-            class="text-[10px] font-bold text-teal-400/80 mt-1.5 uppercase tracking-widest flex items-center gap-2 animate-pulse-slow">
-            <span class="relative flex h-2 w-2">
+    <div class="flex-1">
+        <div class="text-[12px] font-black text-white/90 leading-tight">ความคืบหน้าการนับคะแนน</div>
+        <div class="text-[10px] font-bold text-teal-400/80 mt-1 uppercase tracking-widest flex items-center gap-2">
+            <span class="relative flex h-1.5 w-1.5">
                 <span
                     class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-40"></span>
                 <span
-                    class="relative inline-flex rounded-full h-2 w-2 bg-teal-400 shadow-[0_0_8px_rgba(45,212,191,0.6)]"></span>
+                    class="relative inline-flex rounded-full h-1.5 w-1.5 bg-teal-400 shadow-[0_0_8px_rgba(45,212,191,0.6)]"></span>
             </span>
-            อัพเดท {{ policyService.lastUpdated() }}
+            {{ electionService.lastUpdated() }}
         </div>
     </div>
 </div>

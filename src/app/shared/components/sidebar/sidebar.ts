@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Theme } from '../../../core/services/theme/theme';
-import { NzTooltipModule } from 'ng-zorro-antd/tooltip';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [NzTooltipModule],
+  imports: [],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })

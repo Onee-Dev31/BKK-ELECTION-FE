@@ -41,10 +41,13 @@
         </div>
     </div>
 
-    <!-- Progress bar (Organic Grass style) -->
+    <!-- Progress bar (Organic Grass style - Custom implementation) -->
     <div class="px-4 pb-2">
-        <nz-progress [nzPercent]="candidate().percentage" [nzStrokeColor]="candidate().color" nzSize="small"
-            [nzShowInfo]="false" [nzStatus]="'active'">
-        </nz-progress>
+        <div class="w-full h-1 bg-teal-950/50 rounded-full overflow-hidden">
+            <div class="h-full transition-all duration-1000 ease-out shadow-[0_0_8px_currentColor]"
+                [style.width.%]="candidate().percentage" [style.background-color]="candidate().color"
+                [style.color]="candidate().color">
+            </div>
+        </div>
     </div>
 </div>

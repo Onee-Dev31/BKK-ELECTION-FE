@@ -1,10 +1,9 @@
 import { Component, input } from '@angular/core';
-import { Candidate } from '../../../core/services/policy';
-import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { Candidate } from '../../../core/services/election.service';
 
 @Component({
   selector: 'app-policy-card',
-  imports: [NzProgressModule],
+  imports: [],
   templateUrl: './policy-card.html',
   styleUrl: './policy-card.css',
 })

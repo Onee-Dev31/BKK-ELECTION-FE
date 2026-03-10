@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { MapStateService } from '../../../core/services/map-state';
-import { PolicyService } from '../../../core/services/policy';
+import { ElectionService } from '../../../core/services/election.service';
+import { ELECTION_CONSTANTS } from '../../../core/constants/election.constants';
 
 @Component({
   selector: 'app-district-modal',
@@ -12,7 +13,6 @@ import { PolicyService } from '../../../core/services/policy';
       <div class="modal-backdrop" (click)="closeModal()">
         <div class="modal-content" (click)="$event.stopPropagation()">
           
-          <!-- Header -->
           <div class="modal-header">
             <div class="flex items-center gap-5">
               <div class="district-badge flex flex-col justify-center items-center font-black text-emerald-900 bg-emerald-50 ring-4 ring-emerald-500/10 rounded-2xl h-16 w-16 text-center leading-none shadow-sm transition-transform hover:scale-105">
@@ -20,8 +20,8 @@ import { PolicyService } from '../../../core/services/policy';
                 <span class="text-3xl -mt-1">{{ selectedDistrict()?.number }}</span>
               </div>
               <div>
-                <h2 class="text-3xl font-black text-slate-900 m-0 leading-tight">เขต {{ getMockDistrictName(selectedDistrict()?.number) }}</h2>
-                <div class="text-[12px] font-black text-emerald-600/60 mt-1.5 uppercase tracking-widest">นับแล้ว 99% · 20:53 น.</div>
+                <h2 class="text-3xl font-black text-slate-900 m-0 leading-tight">เขต {{ getDistrictName(selectedDistrict()?.number) }}</h2>
+                <div class="text-[12px] font-black text-emerald-600/60 mt-1.5 uppercase tracking-widest">{{ electionService.lastUpdated() }}</div>
               </div>
             </div>
             <button class="close-btn" (click)="closeModal()" aria-label="Close">
@@ -29,13 +29,11 @@ import { PolicyService } from '../../../core/services/policy';
             </button>
           </div>
 
-          <!-- Candidates List -->
           <div class="modal-body">
              @for (c of candidates(); track c.id) {
                <div class="candidate-row group hover:bg-emerald-50/30 transition-all">
                   <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-5">
-                      <!-- Avatar (Botanical Grass Optimized) -->
                       <div class="w-14 h-14 rounded-full bg-white ring-2 ring-emerald-50 shadow-sm overflow-hidden shrink-0 flex items-center justify-center text-slate-800 text-xl font-black group-hover:scale-110 transition-transform" [style.ringColor]="c.color">
                          {{ c.name.charAt(0) }}
                       </div>
@@ -73,7 +71,7 @@ import { PolicyService } from '../../../core/services/policy';
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: rgba(240, 253, 244, 0.45); /* Fresh Mint tint */
+      background: rgba(240, 253, 244, 0.45);
       backdrop-filter: blur(25px) saturate(200%);
       -webkit-backdrop-filter: blur(25px) saturate(200%);
       display: flex;
@@ -86,7 +84,7 @@ import { PolicyService } from '../../../core/services/policy';
       background: rgba(255, 255, 255, 0.65);
       backdrop-filter: blur(32px) saturate(180%);
       -webkit-backdrop-filter: blur(32px) saturate(180%);
-      border: 1.5px solid rgba(255, 255, 255, 1); /* Crystalline border */
+      border: 1.5px solid rgba(255, 255, 255, 1);
       border-radius: 40px;
       width: 100%;
       max-width: 540px;
@@ -184,10 +182,10 @@ import { PolicyService } from '../../../core/services/policy';
 })
 export class DistrictModal {
   mapState = inject(MapStateService);
-  policyService = inject(PolicyService);
+  electionService = inject(ElectionService);
 
   selectedDistrict = this.mapState.selectedDistrict;
-  candidates = this.policyService.candidates;
+  candidates = this.electionService.candidates;
 
   closeModal() {
     this.mapState.selectedDistrictId.set(null);
@@ -195,31 +193,21 @@ export class DistrictModal {
 
   getDistrictVotes(candidateId: number, districtId: number | undefined): number {
     if (!districtId) return 0;
-    const result = this.policyService.getDistrictResults(districtId);
+    const result = this.electionService.getDistrictResults(districtId);
     return result?.candidateResults.find(cr => cr.candidateId === candidateId)?.votes || 0;
   }
 
   getDistrictPercentage(candidateId: number, districtId: number | undefined): string {
     if (!districtId) return '0.00';
-    const result = this.policyService.getDistrictResults(districtId);
+    const result = this.electionService.getDistrictResults(districtId);
     if (!result) return '0.00';
     const total = result.candidateResults.reduce((acc, curr) => acc + curr.votes, 0);
     const votes = result.candidateResults.find(cr => cr.candidateId === candidateId)?.votes || 0;
     return ((votes / total) * 100).toFixed(2);
   }
 
-  getMockDistrictName(id: number | undefined): string {
-    const names = [
-      'พระนคร', 'ดุสิต', 'หนองจอก', 'บางรัก', 'บางเขน', 'บางกะปิ', 'ปทุมวัน',
-      'ป้อมปราบศัตรูพ่าย', 'พระโขนง', 'มีนบุรี', 'ลาดกระบัง', 'ยานนาวา', 'สัมพันธวงศ์',
-      'พญาไท', 'ธนบุรี', 'บางกอกใหญ่', 'ห้วยขวาง', 'คลองสาน', 'ตลิ่งชัน', 'บางกอกน้อย',
-      'บางขุนเทียน', 'ภาษีเจริญ', 'หนองแขม', 'ราษฎร์บูรณะ', 'บางพลัด', 'ดินแดง',
-      'บึงกุ่ม', 'สาทร', 'บางซื่อ', 'จตุจักร', 'บางคอแหลม', 'ประเวศ', 'คลองเตย',
-      'สวนหลวง', 'จอมทอง', 'ดอนเมือง', 'ราชเทวี', 'ลาดพร้าว', 'วัฒนา', 'บางแค',
-      'หลักสี่', 'สายไหม', 'คันนายาว', 'สะพานสูง', 'วังทองหลาง', 'คลองสามวา', 'บางนา',
-      'ทวีวัฒนา', 'ทุ่งครุ', 'บางบอน'
-    ];
+  getDistrictName(id: number | undefined): string {
     if (!id || id < 1 || id > 50) return 'ไม่ทราบ';
-    return names[id - 1];
+    return ELECTION_CONSTANTS.DISTRICT_NAMES[id - 1];
   }
 }

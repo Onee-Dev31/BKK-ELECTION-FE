@@ -1,31 +1,20 @@
 <app-district-modal></app-district-modal>
 
-<!-- CONTENT STAGE with bg image -->
 <div class="stage w-full h-full relative">
 
-    <!-- Background image + overlays -->
     <div class="stage-bg">
         <div class="stage-bg-img" style="background-image:url('/assets/bangkok-bg.png');"></div>
         <div class="stage-bg-overlay"></div>
     </div>
 
-    <!-- CSS Grid of glass panels -->
     <div class="content-grid w-full h-full relative z-10">
-
-        <!-- MAIN MAP AREA -->
-        <article class="panel-glass area-map flex flex-col p-4 min-h-0">
-            <header
-                class="text-[11px] font-black text-teal-400 uppercase tracking-[0.2em] mb-4 flex-shrink-0 flex items-center gap-2 drop-shadow-[0_0_8px_rgba(45,212,191,0.3)]">
-                <span
-                    class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0 shadow-[0_0_8px_rgba(45,212,191,0.6)]"></span>
-                ศูนย์สั่งการเลือกตั้งกรุงเทพมหานคร 2026 · 50 เขต
-            </header>
+        <article class="area-map flex flex-col min-h-0">
             <main class="flex-1 min-h-0 w-full" style="container-type:size;">
                 <app-map-viewer class="block w-full h-full"></app-map-viewer>
             </main>
         </article>
 
-        <!-- RIGHT STATS COLUMN -->
+        <app-navbar class="area-search block w-full"></app-navbar>
         <app-hero-card class="panel-glass area-hero flex flex-col p-5 gap-3 h-full"></app-hero-card>
 
         <section class="panel-glass area-candidates flex flex-col overflow-hidden min-h-0">
@@ -54,10 +43,7 @@
             </footer>
         </section>
 
-        <!-- BOTTOM INSIGHTS AREA -->
-        <section class="panel-glass area-barchart flex flex-col p-5 h-full min-h-0">
-            <app-district-barchart class="block w-full h-full" [districtBars]="districtBars()"></app-district-barchart>
-        </section>
 
-    </div><!-- end content-grid -->
-</div><!-- end stage -->
+
+    </div>
+</div>

@@ -1,31 +1,53 @@
-<nav class="w-full flex flex-col items-center justify-between py-6">
-
-    <div class="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg border border-teal-400/30 mb-8"
-        style="background: linear-gradient(135deg, #065f46, #10b981);">
-        <span class="text-white font-black text-xs">BKK</span>
+<nav
+    class="flex flex-col items-center py-6 bg-black/10 backdrop-blur-3xl border border-white/5 rounded-[32px] shadow-2xl">
+    <div class="mb-6 group cursor-pointer relative">
+        <div
+            class="absolute inset-0 bg-bkk-green/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+        </div>
+        <div
+            class="relative w-11 h-11 rounded-2xl bg-bkk-bg border border-bkk-border flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:border-bkk-green/50">
+            <span class="text-bkk-green font-black text-[10px] tracking-tighter">BKK</span>
+        </div>
     </div>
 
-    <div class="flex flex-col items-center gap-4 flex-1">
+    <div class="flex flex-col items-center gap-4 mb-6">
         @for (item of navItems; track item.id) {
-        <button (click)="navigate(item.path)" [id]="'nav-' + item.id" nz-tooltip [nzTooltipTitle]="item.label"
-            nzTooltipPlacement="right"
-            class="relative w-12 h-12 rounded-[16px] flex items-center justify-center transition-all duration-400 group"
-            [class]="isActive(item.path)
-          ? 'bg-teal-500/20 border border-teal-400/30 text-teal-400 shadow-inner'
-          : 'text-teal-700 hover:bg-teal-500/10 hover:text-teal-400 border border-transparent'">
-            <span class="text-xl leading-none transition-transform group-hover:scale-110">{{ item.icon }}</span>
-            @if (isActive(item.path)) {
-            <div class="absolute -left-1.5 w-1.5 h-6 bg-teal-400 rounded-full shadow-[0_0_8px_rgba(45,212,191,0.6)]">
-            </div>
-            }
-        </button>
+        <div class="nav-item-wrapper group">
+            <button (click)="navigate(item.path)" [id]="'nav-' + item.id"
+                class="relative w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-500"
+                [class]="isActive(item.path) ? 'active-item' : 'inactive-item'">
+
+                <div class="relative z-10 transition-transform duration-500 group-hover:scale-110">
+                    @if (item.id === 'map') {
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    </svg>
+                    } @else if (item.id === 'compare') {
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    }
+                </div>
+
+                @if (isActive(item.path)) {
+                <div class="absolute inset-0 bg-bkk-green/15 rounded-2xl blur-lg"></div>
+                }
+            </button>
+            <div class="sidebar-tooltip">{{ item.label }}</div>
+        </div>
         }
     </div>
 
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-4">
         <button
-            class="w-10 h-10 rounded-full bg-teal-900/30 flex items-center justify-center border border-teal-500/20">
-            <div class="w-2 h-2 rounded-full bg-teal-400"></div>
+            class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors group">
+            <div
+                class="w-2 h-2 rounded-full bg-bkk-green group-hover:scale-150 transition-transform shadow-[0_0_10px_#00d65b]">
+            </div>
         </button>
     </div>
 </nav>
