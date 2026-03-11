@@ -45,49 +45,93 @@
     z-index: 1;
 }
 
-/* ── CSS Grid layout — the heart of the layout ── */
 .content-grid {
     position: relative;
     flex: 1;
     z-index: 10;
     display: grid;
-    gap: 16px;
+    gap: 24px;
+    padding: 24px;
+    overflow-y: auto; 
+    overflow-x: hidden;
 
-    /* 
-     * Columns: center-map (fills) | stats-sidebar (fixed)
-     * Rows:    navbar | hero | map/main | bottom-insights
-     */
-    grid-template-columns: 1fr 340px;
-    grid-template-rows: 50px auto 1fr;
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
-        "map     search"
         "map     hero"
         "map     candidates";
+}
 
-    padding: 24px;
-    gap: 20px;
-    overflow: hidden;
+@media (max-width: 1200px) {
+    .content-grid {
+        grid-template-columns: 1fr 340px;
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+/* Mobile Stacking Layout */
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "map"
+            "hero"
+            "candidates";
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .area-search {
+        position: sticky;
+        top: 0;
+        width: calc(100% - 32px);
+        margin: 16px auto 0;
+        transform: none;
+        left: 0;
+        right: 0;
+    }
 }
 
 .area-search {
-    grid-area: search;
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 48px;
+    z-index: 100;
 }
 
-/* Grid area assignments */
 .area-hero {
     grid-area: hero;
-}
-
-.area-map {
-    grid-area: map;
-    min-height: 0;
+    min-height: 420px;
     display: flex;
     flex-direction: column;
 }
 
+.area-map {
+    grid-area: map;
+    min-height: 500px; 
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 600px) {
+    .area-map {
+        min-height: 400px;
+    }
+    
+    .area-search {
+        width: calc(100% - 24px);
+        margin: 12px auto 0;
+    }
+}
+
 .area-candidates {
     grid-area: candidates;
-    min-height: 0;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
 }

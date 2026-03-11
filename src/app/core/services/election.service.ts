@@ -98,7 +98,7 @@ export class ElectionService {
         electionYear: 2022,
         progressPercent: data.summaryPercent || 0,
         districtResults: current?.districtResults || []
-      }));
+      }) as ElectionData);
     } catch (err) {
       console.error('API Error:', err);
       this.error.set('ไม่สามารถเชื่อมต่อ API ได้');
@@ -122,7 +122,24 @@ export class ElectionService {
       }));
 
       this.electionState.update(current => {
-        if (!current) return null;
+        if (!current) {
+          return {
+            candidates: [],
+            totalVotes: 0,
+            goodVotes: 0,
+            badVotes: 0,
+            noVotes: 0,
+            eligibleVoters: 0,
+            actualVoters: 0,
+            turnoutPercent: 0,
+            countedDistricts: 0,
+            totalDistricts: 50,
+            lastUpdated: '',
+            electionYear: 2022,
+            progressPercent: 0,
+            districtResults
+          } as ElectionData;
+        }
         return {
           ...current,
           districtResults

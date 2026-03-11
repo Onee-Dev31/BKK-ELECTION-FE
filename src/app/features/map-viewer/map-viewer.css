@@ -198,7 +198,7 @@
 /* Branding Logo Styling */
 .election-logo-container {
     position: absolute;
-    top: 40px;
+    top: 0;
     left: 40px;
     display: flex;
     align-items: center;
@@ -232,6 +232,59 @@
     line-height: 1;
     letter-spacing: 0.05em;
     text-shadow: 0 0 20px rgba(0, 214, 91, 0.3);
+}
+
+@media (max-width: 900px) {
+    .map-container {
+        padding: 20px;
+        align-items: flex-start;
+        padding-top: 80px;
+    }
+
+    .map-grid-wrapper {
+        width: 95cqw;
+        aspect-ratio: 1;
+        margin-top: 20px;
+    }
+
+    .election-logo-container {
+        left: 20px;
+        top: 10px;
+        transform: scale(0.85);
+        transform-origin: left top;
+    }
+
+    .district-number {
+        font-size: min(1.1rem, 4.5cqw);
+    }
+
+    .district-title {
+        font-size: min(0.55rem, 2.2cqw);
+    }
+}
+
+@media (max-width: 600px) {
+    .election-logo-container {
+        left: 16px;
+        top: 8px;
+        gap: 10px;
+    }
+
+    .logo-accent {
+        height: 36px;
+    }
+
+    .logo-title {
+        font-size: 1rem;
+    }
+
+    .logo-year {
+        font-size: 1.4rem;
+    }
+
+    .map-grid-wrapper {
+        width: 100cqw;
+    }
 }
 
 @keyframes fadeInSlide {
