@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Candidate } from '../../../core/services/election.service';
+import { Candidate } from '../../../core/models/election.models';
 
 @Component({
   selector: 'app-policy-card',

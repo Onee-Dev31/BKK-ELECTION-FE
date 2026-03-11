@@ -1,0 +1,59 @@
+@if (selectedDistrict()) {
+  <div class="modal-backdrop" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      
+      <div class="modal-header">
+        <div class="flex items-center gap-5">
+          <div class="district-badge flex flex-col justify-center items-center font-black text-emerald-900 bg-emerald-50 ring-4 ring-emerald-500/10 rounded-2xl h-16 w-16 text-center leading-none shadow-sm transition-transform hover:scale-105">
+            <span class="text-[9px] uppercase font-black text-emerald-600/60 tracking-widest">เขต</span>
+            <span class="text-3xl -mt-1">{{ selectedDistrict()?.number }}</span>
+          </div>
+          <div>
+            <h2 class="text-3xl font-black text-slate-900 m-0 leading-tight">เขต {{ getDistrictName(selectedDistrict()?.number) }}</h2>
+            <div class="text-[12px] font-black text-emerald-600/60 mt-1.5 uppercase tracking-widest">{{ electionService.lastUpdated() }}</div>
+          </div>
+        </div>
+        <button class="close-btn" (click)="closeModal()" aria-label="Close">
+           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+         @for (item of districtCandidates(); track item.info.id) {
+           <div class="candidate-row group hover:bg-emerald-50/30 transition-all">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-5">
+                  <div class="w-14 h-14 rounded-full bg-white ring-2 ring-emerald-50 shadow-sm overflow-hidden shrink-0 flex items-center justify-center text-slate-800 text-xl font-black group-hover:scale-110 transition-transform" [style.ringColor]="item.info.color">
+                     <img [src]="item.info.imageUrl" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <div class="text-lg font-black text-slate-800 group-hover:text-emerald-900 transition-colors">{{ item.info.name }}</div>
+                    <div class="flex items-center gap-1.5 mt-1">
+                      <img [src]="item.info.partyLogoUrl" class="w-3 h-3 object-contain opacity-60">
+                      <div class="text-[11px] font-black text-slate-400 uppercase tracking-widest">{{ item.info.party }}</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end">
+                   <span class="rounded-full px-4 py-1.5 border text-[11px] font-black uppercase tracking-widest shadow-sm" [style.borderColor]="item.info.color + '40'" [style.backgroundColor]="item.info.color + '08'" [style.color]="item.info.color">เบอร์ {{ item.info.number }}</span>
+                </div>
+              </div>
+              
+              <div class="flex items-center justify-between mt-4 gap-6">
+                 <div class="flex-1">
+                    <div class="progress-bar-bg bg-emerald-50/50 shadow-inner">
+                       <div class="progress-bar-fill transition-all duration-1000 ease-out shadow-sm" 
+                            [style.width]="item.percentage + '%'" 
+                            [style.backgroundColor]="item.info.color">
+                         <span class="px-4 text-[10px] font-black text-white/95 uppercase tracking-widest truncate">{{ item.votes | number }} คะแนน</span>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="text-lg font-black text-slate-900 tabular-nums shrink-0 tracking-tighter">{{ item.percentage }}%</div>
+              </div>
+           </div>
+         }
+      </div>
+    </div>
+  </div>
+}

@@ -2,48 +2,8 @@ import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { ELECTION_CONSTANTS } from '../constants/election.constants';
-
-export interface Candidate {
-  id: number;
-  name: string;
-  party: string;
-  number: number;
-  votes: number;
-  percentage: number;
-  imageUrl: string;
-  partyLogoUrl: string;
-  color: string;
-}
-
-export interface CandidatePolicy {
-  category: string;
-  description: string;
-}
-
-export interface DistrictResult {
-  districtId: number;
-  candidateResults: {
-    candidateId: number;
-    votes: number;
-  }[];
-}
-
-export interface ElectionData {
-  candidates: Candidate[];
-  districtResults: DistrictResult[];
-  totalVotes: number;
-  goodVotes: number;
-  badVotes: number;
-  noVotes: number;
-  eligibleVoters: number;
-  actualVoters: number;
-  turnoutPercent: number;
-  countedDistricts: number;
-  totalDistricts: number;
-  lastUpdated: string;
-  electionYear: number;
-  progressPercent: number;
-}
+import { Candidate, CandidatePolicy, DistrictResult, ElectionData } from '../models/election.models';
+import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -189,24 +149,7 @@ export class ElectionService {
   }
 
   getCandidatePolicies(candidateId: number): CandidatePolicy[] {
-    const policies: Record<number, CandidatePolicy[]> = {
-      8: [
-        { category: 'การเดินทาง', description: 'รถเมล์ไฟฟ้าครอบคลุมทุกเส้นทาง เชื่อมต่อล้อ-ราง-เรือ' },
-        { category: 'โปร่งใส', description: 'เปิดเผยข้อมูล Open Data และ Open Contract ทุกขั้นตอน' },
-        { category: 'สิ่งแวดล้อม', description: 'เพิ่มสวนสาธารณะขนาดเล็ก (Pocket Park) ทั่วกรุงเทพฯ' }
-      ],
-      4: [
-        { category: 'การศึกษา', description: 'โรงเรียนสังกัด กทม. คุณภาพเท่าเทียม กองทุนเพื่อการศึกษา' },
-        { category: 'น้ำท่วม', description: 'แก้มลิงใต้ดินอัตโนมัติ แก้ไขปัญหาน้ำท่วมซ้ำซาก' }
-      ],
-      1: [
-        { category: 'สวัสดิการ', description: 'บำนาญผู้สูงอายุ 3,000 บาท และสวัสดิการเด็กแรกเกิด' },
-        { category: 'ความปลอดภัย', description: 'เปลี่ยนเมืองพังๆ ให้เป็นเมืองที่ทุกคนเดินได้ปลอดภัย' }
-      ]
-    };
-    return policies[candidateId] || [
-      { category: 'ทั่วไป', description: 'พัฒนาระบบสาธารณูปโภคและโครงสร้างพื้นฐานเพื่อคุณภาพชีวิตที่ดีขึ้น' },
-      { category: 'บริการสาธารณะ', description: 'ยกระดับการให้บริการประชาชนด้วยระบบดิจิทัล' }
-    ];
+    return CANDIDATE_POLICIES[candidateId] || DEFAULT_POLICIES;
   }
 }
+
