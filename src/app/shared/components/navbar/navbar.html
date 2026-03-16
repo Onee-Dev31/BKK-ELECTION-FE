@@ -6,7 +6,16 @@
     </svg>
     <input type="text" placeholder="ค้นหา เขต, รายชื่อ..." [(ngModel)]="searchQuery" (focus)="handleSearchFocus()"
         (blur)="handleSearchBlur()"
-        class="bg-transparent border-none outline-none text-white w-full text-[15px] font-medium placeholder-white/50">
+        class="bg-transparent border-none outline-none text-white flex-1 text-[15px] font-medium placeholder-white/50">
+
+    <!-- Clear Button -->
+    @if (searchQuery) {
+    <button (click)="clearSearch()" class="clear-button" aria-label="Clear search">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+    }
 
     <!-- Search Results Dropdown -->
     @if (isSearchFocused() && searchQuery && searchResults.length > 0) {

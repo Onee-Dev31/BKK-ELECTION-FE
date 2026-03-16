@@ -18,6 +18,7 @@ export class MapViewer {
 
   selectDistrict(id: number) {
     this.mapState.selectedDistrictId.set(id);
+    this.mapState.selectedCandidateId.set(null);
   }
 
   getShortName(id: number): string {

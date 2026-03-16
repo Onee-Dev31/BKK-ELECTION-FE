@@ -191,6 +191,31 @@
     filter: brightness(1.3) contrast(1.1);
 }
 
+.district-cell.is-highlighted {
+    z-index: 10;
+    transform: scale(1.05);
+}
+
+.district-cell.is-highlighted .hexagon-content {
+    filter: brightness(1.1) contrast(1.1);
+    box-shadow: 
+        inset 0 0 15px rgba(255, 255, 255, 0.2),
+        0 0 25px var(--candidate-color, #ffffff);
+    border: 2.5px solid var(--candidate-color, rgba(255, 255, 255, 0.8));
+}
+
+.district-cell.is-faded {
+    opacity: 0.25;
+    filter: grayscale(0.8);
+    pointer-events: none;
+    transform: scale(0.9);
+}
+
+.district-cell.is-faded .hexagon-content {
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
 .district-cell:active {
     transform: scale(0.95) !important;
 }

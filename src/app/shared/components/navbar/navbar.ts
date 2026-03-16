@@ -46,9 +46,19 @@ export class Navbar {
   selectResult(result: SearchResult) {
     if (result.type === 'district') {
       this.mapState.selectedDistrictId.set(result.id);
+      this.mapState.selectedCandidateId.set(null);
+    } else if (result.type === 'candidate') {
+      this.mapState.selectedCandidateId.set(result.id);
+      this.mapState.selectedDistrictId.set(null);
     }
     // Clear search after selection
     this.searchQuery = '';
+    this.isSearchFocused.set(false);
+  }
+
+  clearSearch() {
+    this.searchQuery = '';
+    this.mapState.selectedCandidateId.set(null);
     this.isSearchFocused.set(false);
   }
 }
