@@ -113,8 +113,8 @@ export class ElectionService {
       const data: any = await lastValueFrom(this.http.get(this.districtApiUrl));
       if (!data || !data.districts) return;
 
-      const districtResults: DistrictResult[] = data.districts.map((d: any, index: number) => ({
-        districtId: index + 1,
+      const districtResults: DistrictResult[] = data.districts.map((d: any) => ({
+        districtId: Number(d.id),
         candidateResults: d.candidates.map((c: any) => ({
           candidateId: c.idno,
           votes: c.score

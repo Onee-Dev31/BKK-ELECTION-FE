@@ -53,8 +53,13 @@ nav:focus-within {
     transition: all 0.2s ease;
 }
 
-.result-item:hover {
+.result-item:hover,
+.result-item.is-active {
     background: rgba(0, 214, 91, 0.1);
+}
+
+.result-item.is-active {
+    outline: 1px solid rgba(0, 214, 91, 0.3);
 }
 
 .result-icon {
@@ -88,6 +93,12 @@ nav:focus-within {
     font-size: 11px;
     font-weight: 600;
     margin-top: 1px;
+}
+
+::ng-deep .highlight {
+    color: var(--color-bkk-green);
+    font-weight: 900;
+    text-shadow: 0 0 8px rgba(0, 214, 91, 0.4);
 }
 
 @keyframes slideDown {

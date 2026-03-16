@@ -5,7 +5,7 @@
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
     </svg>
     <input type="text" placeholder="ค้นหา เขต, รายชื่อ..." [(ngModel)]="searchQuery" (focus)="handleSearchFocus()"
-        (blur)="handleSearchBlur()"
+        (blur)="handleSearchBlur()" (keydown)="handleKeyDown($event)"
         class="bg-transparent border-none outline-none text-white flex-1 text-[15px] font-medium placeholder-white/50">
 
     <!-- Clear Button -->
@@ -20,8 +20,8 @@
     <!-- Search Results Dropdown -->
     @if (isSearchFocused() && searchQuery && searchResults.length > 0) {
     <div class="search-results-dropdown">
-        @for (result of searchResults; track result.id + result.type) {
-        <div class="result-item" (click)="selectResult(result)">
+        @for (result of searchResults; track result.id + result.type; let idx = $index) {
+        <div class="result-item" [class.is-active]="activeIndex() === idx" (click)="selectResult(result)">
             <div class="result-icon" [class.district]="result.type === 'district'">
                 @if (result.type === 'district') {
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -37,8 +37,8 @@
                 }
             </div>
             <div class="result-info">
-                <div class="result-title">{{ result.title }}</div>
-                <div class="result-subtitle">{{ result.subtitle }}</div>
+                <div class="result-title" [innerHTML]="getHighlightedText(result.title, searchQuery)"></div>
+                <div class="result-subtitle" [innerHTML]="getHighlightedText(result.subtitle, searchQuery)"></div>
             </div>
         </div>
         }

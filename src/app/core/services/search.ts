@@ -21,15 +21,33 @@ export class SearchService {
   searchQuery = signal('');
 
   searchResults = computed<SearchResult[]>(() => {
-    const q = this.searchQuery().trim().toLowerCase();
+    const rawSearch = this.searchQuery().trim();
+    if (!rawSearch) return [];
+
+    const lowerRaw = rawSearch.toLowerCase();
+    
+    // Normalize: remove prefix only if there's something after it
+    // This prevents searching for just "เขต" and getting nothing
+    let q = lowerRaw;
+    if (lowerRaw.startsWith('เขต') && lowerRaw.length > 3) {
+      q = lowerRaw.substring(3).trim();
+    } else if (lowerRaw.startsWith('แขวง') && lowerRaw.length > 4) {
+      q = lowerRaw.substring(4).trim();
+    }
+
     if (!q) return [];
 
     const results: SearchResult[] = [];
 
     this.electionService.candidates().forEach(c => {
       let score = 0;
-      if (c.name.toLowerCase().includes(q)) score += 10;
-      if (c.party.toLowerCase().includes(q)) score += 5;
+      const lowerName = c.name.toLowerCase();
+      const lowerParty = c.party.toLowerCase();
+
+      if (lowerName === q) score += 30;
+      else if (lowerName.includes(q)) score += 10;
+      
+      if (lowerParty.includes(q)) score += 5;
       if (c.number.toString() === q) score += 20;
 
       if (score > 0) {
@@ -46,14 +64,19 @@ export class SearchService {
     this.mapState.districts().forEach(d => {
       const mockName = this.getDistrictName(d.number);
       let score = 0;
-      if (mockName.toLowerCase().includes(q)) score += 10;
+      const lowerMockName = mockName.toLowerCase();
+
+      // Priority match for exact district name
+      if (lowerMockName === q) score += 30;
+      else if (lowerMockName.includes(q)) score += 10;
+      
       if (d.number.toString() === q) score += 20;
 
       if (score > 0) {
         results.push({
           type: 'district',
           id: d.id,
-          title: `เขต ${mockName}`,
+          title: `เขต${mockName}`,
           subtitle: `เขตเลือกตั้งที่ ${d.number}`,
           matchScore: score
         });
