@@ -9,29 +9,48 @@
         class="bg-transparent border-none outline-none text-white w-full text-[15px] font-medium placeholder-white/50">
 
     <!-- Search Results Dropdown -->
-    @if (isSearchFocused() && searchQuery && searchResults.length > 0) {
+    @if (isSearchFocused() && searchQuery && (districtResults.length > 0 || candidateResults.length > 0)) {
     <div class="search-results-dropdown">
-        @for (result of searchResults; track result.id + result.type) {
+        
+        @if (districtResults.length > 0) {
+        <div class="px-3 py-2 text-xs font-bold text-white/50 bg-black/20 uppercase tracking-widest border-b border-white/5">
+            เขต
+        </div>
+        @for (result of districtResults; track result.id) {
         <div class="result-item" (click)="selectResult(result)">
-            <div class="result-icon" [class.district]="result.type === 'district'">
-                @if (result.type === 'district') {
+            <div class="result-icon district">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
                         d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                         clip-rule="evenodd" />
                 </svg>
-                } @else {
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clip-rule="evenodd" />
-                </svg>
-                }
             </div>
             <div class="result-info">
                 <div class="result-title">{{ result.title }}</div>
                 <div class="result-subtitle">{{ result.subtitle }}</div>
             </div>
         </div>
+        }
+        }
+
+        @if (candidateResults.length > 0) {
+        <div class="px-3 py-2 text-xs font-bold text-white/50 bg-black/20 uppercase tracking-widest border-b border-white/5" [class.border-t]="districtResults.length > 0">
+            ผู้สมัคร
+        </div>
+        @for (result of candidateResults; track result.id) {
+        <div class="result-item" (click)="selectResult(result)">
+            <div class="result-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="result-info">
+                <div class="result-title">{{ result.title }}</div>
+                <div class="result-subtitle">{{ result.subtitle }}</div>
+            </div>
+        </div>
+        }
         }
     </div>
     }

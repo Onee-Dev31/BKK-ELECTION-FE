@@ -11,7 +11,7 @@ export class CloudGate implements OnInit {
   private destroyRef = inject(DestroyRef);
 
   ngOnInit(): void {
-    const timer = setTimeout(() => this.isLoading.set(false), 2200);
+    const timer = setTimeout(() => this.isLoading.set(false), 100);
     this.destroyRef.onDestroy(() => clearTimeout(timer));
   }
 }

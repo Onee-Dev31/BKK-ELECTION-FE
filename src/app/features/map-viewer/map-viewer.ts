@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MapStateService } from '../../core/services/map-state';
 import { ElectionService } from '../../core/services/election.service';
@@ -16,8 +16,37 @@ export class MapViewer {
   electionService = inject(ElectionService);
   districts = this.mapState.districts;
 
-  selectDistrict(id: number) {
+  computedDistricts = computed(() => {
+    const list = this.districts();
+    const counts = new Map<string, number>();
+    list.forEach(d => {
+      const k = `${d.row}-${d.col}`;
+      counts.set(k, (counts.get(k) || 0) + 1);
+    });
+
+    const seen = new Map<string, number>();
+    return list.map(d => {
+      const k = `${d.row}-${d.col}`;
+      const c = counts.get(k)!;
+      let splitClass = '';
+      if (c === 2) {
+        const s = seen.get(k) || 0;
+        seen.set(k, s + 1);
+        splitClass = s === 0 ? 'is-split-top' : 'is-split-bottom';
+      }
+      return { ...d, splitClass };
+    });
+  });
+  selectDistrict(id: number, event?: Event) {
+    if (event) {
+      event.stopPropagation();
+    }
     this.mapState.selectedDistrictId.set(id);
+  }
+
+  resetSelection() {
+    this.mapState.selectedDistrictId.set(null);
+    this.mapState.selectedCandidateId.set(null);
   }
 
   getShortName(id: number): string {

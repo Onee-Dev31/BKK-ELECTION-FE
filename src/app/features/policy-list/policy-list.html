@@ -2,7 +2,7 @@
 <div class="flex flex-col h-full overflow-hidden">
     <div class="flex-1 overflow-y-auto">
         @for (candidate of candidates(); track candidate.id; let i = $index) {
-        <app-policy-card [candidate]="candidate" [rank]="i + 1"></app-policy-card>
+        <app-policy-card [candidate]="candidate" [rank]="i + 1" (click)="selectCandidate(candidate.id)"></app-policy-card>
         }
     </div>
 </div>

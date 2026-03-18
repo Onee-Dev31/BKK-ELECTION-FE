@@ -42,6 +42,7 @@ export class DistrictModal {
 
   closeModal() {
     this.mapState.selectedDistrictId.set(null);
+    this.mapState.selectedCandidateId.set(null);
   }
 
   getDistrictName(id: number | undefined): string {

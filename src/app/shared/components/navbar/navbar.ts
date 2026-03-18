@@ -32,6 +32,14 @@ export class Navbar {
     return this.searchService.searchResults();
   }
 
+  get districtResults() {
+    return this.searchResults.filter(r => r.type === 'district');
+  }
+
+  get candidateResults() {
+    return this.searchResults.filter(r => r.type === 'candidate');
+  }
+
   handleSearchFocus() {
     this.isSearchFocused.set(true);
   }
@@ -46,6 +54,11 @@ export class Navbar {
   selectResult(result: SearchResult) {
     if (result.type === 'district') {
       this.mapState.selectedDistrictId.set(result.id);
+      this.mapState.selectedCandidateId.set(null); // Clear candidate selection
+    } else if (result.type === 'candidate') {
+      this.mapState.selectedCandidateId.set(result.id);
+      // We might want to find which district this candidate is leading in, or just show their info
+      // For now, setting the candidate ID should trigger the relevant UI updates
     }
     // Clear search after selection
     this.searchQuery = '';

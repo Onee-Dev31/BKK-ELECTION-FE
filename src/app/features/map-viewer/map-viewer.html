@@ -1,7 +1,7 @@
-<div class="map-container">
+<div class="map-container" (click)="resetSelection()">
     <div class="map-bg-grid"></div>
 
-    <div class="election-logo-container">
+    <div class="election-logo-container cursor-pointer" (click)="resetSelection(); $event.stopPropagation()">
         <div class="logo-accent"></div>
         <div class="flex flex-col">
             <span class="logo-title">BKK ELECTION</span>
@@ -10,11 +10,13 @@
     </div>
 
     <div class="map-grid-wrapper">
-        @for (district of districts(); track district.id; let i = $index) {
-        <div class="district-cell group"
+        @for (district of computedDistricts(); track district.id; let i = $index) {
+        <div class="district-cell group" [ngClass]="district.splitClass"
             [style.left.%]="0.6 + (district.col - 1 + (district.row % 2 === 0 ? 0.5 : 0)) * 9.5"
             [style.top.%]="9 + (district.row - 1) * 9" [style.animation-delay]="i * 20 + 'ms'"
-            [class.is-selected]="mapState.selectedDistrictId() === district.id" (click)="selectDistrict(district.id)">
+            [class.is-selected]="mapState.selectedDistrictId() === district.id"
+            [class.is-muted]="mapState.selectedCandidateId() !== null && district.leadingCandidateId !== mapState.selectedCandidateId()"
+            (click)="selectDistrict(district.id, $event)">
 
             <div class="custom-tooltip-box" [class.is-bottom]="district.row <= 2">
                 @if (getDistrictTooltipData(district.id); as tooltipData) {

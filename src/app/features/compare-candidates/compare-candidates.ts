@@ -21,6 +21,24 @@ export class CompareCandidates {
   candidateA = computed(() => this.candidates().find(c => c.id === this.selectedIdA()));
   candidateB = computed(() => this.candidates().find(c => c.id === this.selectedIdB()));
 
+  sortedCandidates = computed(() => {
+    return [...this.candidates()].sort((a, b) => a.number - b.number);
+  });
+
+  onSelectA(id: number) {
+    if (id === this.selectedIdB()) {
+      this.selectedIdB.set(this.selectedIdA());
+    }
+    this.selectedIdA.set(id);
+  }
+
+  onSelectB(id: number) {
+    if (id === this.selectedIdA()) {
+      this.selectedIdA.set(this.selectedIdB());
+    }
+    this.selectedIdB.set(id);
+  }
+
   getPolicies(candidateId: number | undefined): CandidatePolicy[] {
     if (!candidateId) return [];
     return this.electionService.getCandidatePolicies(candidateId);
