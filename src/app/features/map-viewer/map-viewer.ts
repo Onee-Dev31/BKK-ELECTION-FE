@@ -55,7 +55,12 @@ export class MapViewer {
 
   getBackground(candidateId?: number): string {
     const c = this.electionService.candidates().find(can => can.id === candidateId);
-    return c ? c.color : '#1e293b';
+    return c ? c.color : 'var(--empty-district-bg)';
+  }
+
+  getTextColor(candidateId?: number): string {
+    const c = this.electionService.candidates().find(can => can.id === candidateId);
+    return c ? '#ffffff' : 'var(--empty-district-text)';
   }
 
   getDistrictTooltipData(districtId: number) {

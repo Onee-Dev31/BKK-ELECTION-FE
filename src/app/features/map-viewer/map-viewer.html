@@ -56,7 +56,9 @@
             </div>
 
             <div class="district-inner">
-                <div class="hexagon-content" [style.--candidate-color]="getBackground(district.leadingCandidateId)">
+                <div class="hexagon-content" 
+                     [style.--candidate-color]="getBackground(district.leadingCandidateId)"
+                     [style.--district-text-color]="getTextColor(district.leadingCandidateId)">
                     <span class="district-number">{{ district.number }}</span>
                     <span class="district-title">{{ getShortName(district.id) }}</span>
                 </div>

@@ -177,14 +177,14 @@
     font-size: min(1.3rem, 3.5cqw);
     font-weight: 900;
     line-height: 1;
-    color: #ffffff;
+    color: var(--district-text-color, #ffffff);
     letter-spacing: -0.02em;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
 }
 
 .district-title {
     font-size: min(0.6rem, 1.8cqw);
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--district-text-color, rgba(255, 255, 255, 0.9));
     font-weight: 900;
     margin-top: 3px;
     letter-spacing: 0.05em;

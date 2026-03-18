@@ -1,30 +1,87 @@
 @import "tailwindcss";
 
 @theme {
-    --color-bkk-bg: #02150d;
-    /* Deep Forest Black */
-    --color-bkk-green: #00d65b;
-    /* Bright BKK Green */
-    --color-bkk-yellow: #fcd34d;
-    --color-bkk-accent: #33ff85;
-    /* Neon Radiant Green */
-    --color-bkk-muted: #94a3b8;
-    --color-bkk-glass: rgba(0, 214, 91, 0.2);
-    --color-bkk-border: rgba(51, 255, 133, 0.25);
+    /* Dark Theme Palette */
+    --color-bkk-bg: #3C3C3C;
+    --color-bkk-muted: #555555;
+    --color-bkk-border: #38A575;
+    --color-bkk-green: #4CC48F;
+    --color-bkk-accent: #71D2A7;
+    --color-bkk-glass: rgba(85, 85, 85, 0.4);
 }
 
 @layer base {
 
-    /* Global Dark Emerald Glass Base */
+    /* Global Base Variables */
+    :root {
+        --empty-district-bg: #1e293b;
+        --empty-district-text: #ffffff;
+    }
+
+    /* Global Base */
     html,
     body {
         height: 100%;
         overflow: hidden;
         font-family: 'Kanit', sans-serif !important;
         background-color: var(--color-bkk-bg) !important;
-        color: #e2e8f0 !important;
-        /* Off-white for dark mode */
+        color: var(--text-color, #e2e8f0) !important;
         -webkit-font-smoothing: antialiased;
+        transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    /* Light Theme Overrides */
+    html.light {
+        --color-bkk-bg: #A1A1A1;
+        --color-bkk-glass: rgba(136, 136, 136, 0.3);
+        --color-bkk-border: #888888;
+        --color-bkk-green: #2C7E5A;
+        --color-bkk-accent: #38A475;
+        --text-color: #1F573F;
+        --empty-district-bg: #888888;
+        --empty-district-text: #1F573F;
+    }
+
+    html.light .text-white,
+    html.light .text-white\/90,
+    html.light .text-white\/80,
+    html.light .text-white\/60 {
+        color: #1F573F !important;
+    }
+
+    html.light .text-slate-400 {
+        color: #64748b !important;
+    }
+
+    html.light .bg-black\/10,
+    html.light .bg-black\/20,
+    html.light .bg-black\/40 {
+        background-color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    html.light .bg-gray-900 {
+        background-color: #ffffff !important;
+    }
+
+    html.light .bg-white\/5,
+    html.light .bg-white\/2 {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+    }
+
+    html.light .border-white\/5,
+    html.light .border-white\/10 {
+        border-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    html.light .stage-bg-img {
+        filter: saturate(0.8) brightness(1.2) contrast(1.1) hue-rotate(130deg);
+        opacity: 0.1 !important;
+    }
+
+    html.light .stage-bg-overlay {
+        background: radial-gradient(circle at 50% 50%,
+                rgba(0, 214, 91, 0.1) 0%,
+                rgba(241, 245, 249, 0.95) 100%);
     }
 
     .app-shell {
