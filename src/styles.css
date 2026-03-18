@@ -73,15 +73,11 @@
         border-color: rgba(0, 0, 0, 0.1) !important;
     }
 
-    html.light .stage-bg-img {
-        filter: saturate(0.8) brightness(1.2) contrast(1.1) hue-rotate(130deg);
-        opacity: 0.1 !important;
-    }
-
-    html.light .stage-bg-overlay {
-        background: radial-gradient(circle at 50% 50%,
-                rgba(0, 214, 91, 0.1) 0%,
-                rgba(241, 245, 249, 0.95) 100%);
+    html.light .text-teal-400,
+    html.light .text-teal-500,
+    html.light .text-teal-400\/60,
+    html.light .text-emerald-400 {
+        color: #2C7E5A !important;
     }
 
     .app-shell {

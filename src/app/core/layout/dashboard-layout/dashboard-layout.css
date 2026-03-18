@@ -30,6 +30,20 @@
             rgba(2, 21, 13, 0.95) 100%);
 }
 
+/* Light Theme overrides for stage background */
+:host-context(.light) .stage-bg-img {
+    filter: saturate(0.8) brightness(1.2) contrast(1.1) hue-rotate(130deg);
+    opacity: 0.1 !important;
+}
+
+:host-context(.light) .stage-bg-overlay {
+    background: radial-gradient(circle at 50% 50%,
+            rgba(44, 126, 90, 0.404) 0%,
+            /* #2C7E5A */
+            rgba(0, 0, 0, 0) 100%);
+    /* #A1A1A1 */
+}
+
 /* Mockup Bokeh Lights */
 .stage-bg::after {
     content: '';
@@ -45,6 +59,10 @@
     z-index: 1;
 }
 
+:host-context(.light) .stage-bg::after {
+    opacity: 0.2;
+}
+
 .content-grid {
     position: relative;
     flex: 1;
@@ -52,7 +70,7 @@
     display: grid;
     gap: 24px;
     padding: 24px;
-    overflow-y: auto; 
+    overflow-y: auto;
     overflow-x: hidden;
 
     grid-template-columns: 1fr 400px;
@@ -113,7 +131,7 @@
 
 .area-map {
     grid-area: map;
-    min-height: 500px; 
+    min-height: 500px;
     display: flex;
     flex-direction: column;
 }
@@ -122,7 +140,7 @@
     .area-map {
         min-height: 400px;
     }
-    
+
     .area-search {
         width: calc(100% - 24px);
         margin: 12px auto 0;
