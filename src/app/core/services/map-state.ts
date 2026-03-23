@@ -25,7 +25,4 @@ export class MapStateService {
     if (id === null) return null;
     return this.districts().find(d => d.id === id) || null;
   });
-
-  constructor() { }
 }
-

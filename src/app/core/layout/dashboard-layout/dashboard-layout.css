@@ -18,31 +18,19 @@
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: saturate(1.2) brightness(0.5) contrast(1.1) hue-rotate(130deg);
-    /* Dark, emerald tinted city */
+    filter: saturate(1.2) brightness(0.5) contrast(1.1) hue-rotate(30deg);
+    /* Dark, warm tinted city */
 }
 
 .stage-bg-overlay {
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 50% 50%,
-            rgba(0, 214, 91, 0.15) 0%,
-            rgba(2, 21, 13, 0.95) 100%);
+            rgba(247, 122, 54, 0.1) 0%,
+            #E1F5FE 100%);
 }
 
-/* Light Theme overrides for stage background */
-:host-context(.light) .stage-bg-img {
-    filter: saturate(0.8) brightness(1.2) contrast(1.1) hue-rotate(130deg);
-    opacity: 0.1 !important;
-}
 
-:host-context(.light) .stage-bg-overlay {
-    background: radial-gradient(circle at 50% 50%,
-            rgba(44, 126, 90, 0.404) 0%,
-            /* #2C7E5A */
-            rgba(0, 0, 0, 0) 100%);
-    /* #A1A1A1 */
-}
 
 /* Mockup Bokeh Lights */
 .stage-bg::after {
@@ -50,18 +38,16 @@
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(circle at 15% 25%, rgba(51, 255, 133, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 85% 75%, rgba(51, 255, 133, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 70% 30%, rgba(0, 214, 91, 0.05) 0%, transparent 30%);
+        radial-gradient(circle at 15% 25%, rgba(0, 131, 143, 0.08) 0%, transparent 20%),
+        radial-gradient(circle at 85% 75%, rgba(247, 122, 54, 0.08) 0%, transparent 20%),
+        radial-gradient(circle at 70% 30%, rgba(0, 131, 143, 0.05) 0%, transparent 30%);
     filter: blur(40px);
     opacity: 0.5;
     pointer-events: none;
     z-index: 1;
 }
 
-:host-context(.light) .stage-bg::after {
-    opacity: 0.2;
-}
+
 
 .content-grid {
     position: relative;
@@ -99,6 +85,7 @@
             "candidates";
         padding: 16px;
         gap: 16px;
+        padding-bottom: 100px; /* Space for mobile nav */
     }
 
     .area-search {

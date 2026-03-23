@@ -1,11 +1,17 @@
-<div class="h-screen w-screen bg-[#041e1a] overflow-hidden relative text-white">
+<div class="h-screen w-screen overflow-hidden relative" [style.backgroundColor]="'var(--color-bkk-bg)'">
   <app-cloud-gate class="z-[100]"></app-cloud-gate>
 
   <div class="absolute inset-0 z-0">
       <router-outlet></router-outlet>
   </div>
 
+  <!-- Desktop Sidebar -->
   <div class="absolute left-6 top-0 z-50 h-full w-fit hidden sm:flex flex-col justify-center">
       <app-sidebar class="block w-fit h-fit"></app-sidebar>
+  </div>
+  
+  <!-- Mobile Bottom Nav -->
+  <div class="absolute bottom-4 left-4 right-4 z-50 flex sm:hidden justify-center transition-transform pointer-events-none">
+      <app-sidebar class="block w-full max-w-[400px] pointer-events-auto shadow-2xl rounded-[24px] overflow-hidden"></app-sidebar>
   </div>
 </div>

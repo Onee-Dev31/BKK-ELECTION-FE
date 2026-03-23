@@ -1,13 +1,13 @@
 import { Component, inject, computed } from '@angular/core';
-import { CommonModule, DecimalPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { MapStateService } from '../../../core/services/map-state';
 import { ElectionService } from '../../../core/services/election.service';
-import { ELECTION_CONSTANTS } from '../../../core/constants/election.constants';
+import { DISTRICT_MAP_NAMES } from '../../../core/constants/map-names.constants';
 
 @Component({
   selector: 'app-district-modal',
   standalone: true,
-  imports: [CommonModule, DecimalPipe],
+  imports: [CommonModule],
   templateUrl: './district-modal.html',
   styleUrl: './district-modal.css'
 })
@@ -47,6 +47,6 @@ export class DistrictModal {
 
   getDistrictName(id: number | undefined): string {
     if (!id || id < 1 || id > 50) return 'ไม่ทราบ';
-    return ELECTION_CONSTANTS.DISTRICT_NAMES[id - 1];
+    return DISTRICT_MAP_NAMES[id] || 'ไม่ทราบ';
   }
 }

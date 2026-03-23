@@ -1,4 +1,4 @@
-<div class="w-full h-full overflow-y-auto p-10 layout-content-area relative text-white">
+<div class="w-full h-full overflow-y-auto p-4 sm:p-10 pb-32 sm:pb-10 layout-content-area relative text-white">
   <div class="max-w-6xl mx-auto">
     <div class="mb-12">
       <h1 class="font-black text-white tracking-tight">เปรียบเทียบนโยบาย</h1>
@@ -11,15 +11,15 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       
       <div class="flex flex-col gap-10">
-        <div class="glass-panel p-6 rounded-[32px] border border-white/10 relative overflow-hidden shadow-sm">
+        <div class="glass-panel p-4 sm:p-6 rounded-[24px] sm:rounded-[32px] border border-white/10 relative overflow-hidden shadow-sm">
            <div class="absolute inset-0 opacity-10 pointer-events-none" [style.backgroundColor]="candidateA()?.color"></div>
            <div class="relative z-10">
              <label class="block text-[10px] text-emerald-400 font-black mb-4 uppercase tracking-widest leading-none">แคนดิเดตคนที่ 1</label>
              <div class="relative">
-                <select class="w-full bg-black/40 border border-emerald-500/20 rounded-2xl px-6 py-4 text-white font-black outline-none focus:ring-4 focus:ring-emerald-500/20 transition-all appearance-none shadow-inner"
+                <select class="w-full bg-black/40 border border-emerald-500/20 rounded-xl sm:rounded-2xl pl-4 pr-10 py-3 sm:px-6 sm:pr-12 sm:py-4 text-white font-black text-sm sm:text-base outline-none focus:ring-4 focus:ring-emerald-500/20 transition-all appearance-none shadow-inner truncate"
                         [ngModel]="selectedIdA()" (ngModelChange)="onSelectA($event)">
                     @for (c of sortedCandidates(); track c.id) {
-                        <option class="bg-gray-900 text-white" [ngValue]="c.id">{{ c.name }} (เบอร์ {{ c.number }}) - พรรค{{ c.party }}</option>
+                        <option class="bg-gray-900 text-white" [ngValue]="c.id">เบอร์ {{ c.number }} - {{ c.name }}</option>
                     }
                 </select>
                 <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-emerald-500">
@@ -32,18 +32,18 @@
         </div>
 
         @if(candidateA()) {
-        <div class="glass-panel p-8 rounded-[40px] flex items-center gap-8 border border-white/5 shadow-md relative overflow-hidden group">
+        <div class="glass-panel p-4 sm:p-8 rounded-[24px] sm:rounded-[40px] flex items-center gap-4 sm:gap-8 border border-white/5 shadow-md relative overflow-hidden group">
           <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
-          <div class="w-24 h-24 rounded-full flex items-center justify-center font-black text-4xl text-white border-4 ring-4 ring-emerald-500/20 shadow-sm transition-transform group-hover:scale-105 overflow-hidden" [style.borderColor]="candidateA()?.color" [style.backgroundColor]="candidateA()?.color + '15'">
+          <div class="w-16 h-16 sm:w-24 sm:h-24 rounded-full flex items-center justify-center font-black text-2xl sm:text-4xl text-white border-2 sm:border-4 ring-2 sm:ring-4 ring-emerald-500/20 shadow-sm transition-transform group-hover:scale-105 overflow-hidden flex-shrink-0" [style.borderColor]="candidateA()?.color" [style.backgroundColor]="candidateA()?.color + '15'">
             @if(candidateA()?.imageUrl) {
                <img [src]="candidateA()?.imageUrl" alt="" class="w-full h-full object-cover">
             } @else {
                {{ candidateA()?.number }}
             }
           </div>
-          <div>
-            <h2 class="text-3xl font-black text-white leading-none tracking-tight">{{ candidateA()?.name }}</h2>
-            <div class="flex items-center gap-2 mt-4">
+          <div class="flex-1 min-w-0">
+            <h2 class="text-xl sm:text-3xl font-black text-white leading-tight tracking-tight overflow-hidden text-ellipsis line-clamp-2 pb-1">{{ candidateA()?.name }}</h2>
+            <div class="flex flex-wrap items-center gap-2 mt-4">
               <span class="rounded-full px-4 py-1.5 border text-[11px] font-black inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateA()?.color + '30'" [style.backgroundColor]="candidateA()?.color + '08'" [style.color]="candidateA()?.color">พรรค{{ candidateA()?.party }}</span>
               <span class="rounded-full px-4 py-1.5 border text-[11px] font-black inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateA()?.color + '30'" [style.backgroundColor]="candidateA()?.color + '08'" [style.color]="candidateA()?.color">เบอร์ {{ candidateA()?.number }}</span>
             </div>
@@ -53,7 +53,7 @@
 
         <div class="flex flex-col gap-6">
           @for (policy of getPolicies(candidateA()?.id); track policy.category) {
-            <div class="glass-panel p-8 rounded-[32px] hover:bg-white/5 transition-all border-l-8 shadow-sm group" [style.borderLeftColor]="candidateA()?.color || '#333'">
+            <div class="glass-panel p-5 sm:p-8 rounded-[24px] sm:rounded-[32px] hover:bg-white/5 transition-all border-l-4 sm:border-l-8 shadow-sm group" [style.borderLeftColor]="candidateA()?.color || '#333'">
               <div class="text-[11px] font-black uppercase tracking-widest mb-4 flex items-center gap-2" [style.color]="candidateA()?.color || '#ccc'">
                 <span class="w-1.5 h-1.5 rounded-full" [style.backgroundColor]="candidateA()?.color || '#ccc'"></span>
                 {{ policy.category }}
@@ -65,15 +65,15 @@
       </div>
 
       <div class="flex flex-col gap-10">
-        <div class="glass-panel p-6 rounded-[32px] border border-emerald-500/20 relative overflow-hidden shadow-sm">
+        <div class="glass-panel p-4 sm:p-6 rounded-[24px] sm:rounded-[32px] border border-emerald-500/20 relative overflow-hidden shadow-sm">
            <div class="absolute inset-0 opacity-10 pointer-events-none" [style.backgroundColor]="candidateB()?.color"></div>
            <div class="relative z-10">
              <label class="block text-[10px] text-emerald-400 font-black mb-4 uppercase tracking-widest leading-none">แคนดิเดตคนที่ 2</label>
              <div class="relative">
-                <select class="w-full bg-black/40 border border-emerald-500/20 rounded-2xl px-6 py-4 text-white font-black outline-none focus:ring-4 focus:ring-emerald-500/20 transition-all appearance-none shadow-inner"
+                <select class="w-full bg-black/40 border border-emerald-500/20 rounded-xl sm:rounded-2xl pl-4 pr-10 py-3 sm:px-6 sm:pr-12 sm:py-4 text-white font-black text-sm sm:text-base outline-none focus:ring-4 focus:ring-emerald-500/20 transition-all appearance-none shadow-inner truncate"
                         [ngModel]="selectedIdB()" (ngModelChange)="onSelectB($event)">
                     @for (c of sortedCandidates(); track c.id) {
-                        <option class="bg-gray-900 text-white" [ngValue]="c.id">{{ c.name }} (เบอร์ {{ c.number }}) - พรรค{{ c.party }}</option>
+                        <option class="bg-gray-900 text-white" [ngValue]="c.id">เบอร์ {{ c.number }} - {{ c.name }}</option>
                     }
                 </select>
                 <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-emerald-500">
@@ -86,18 +86,18 @@
         </div>
 
         @if(candidateB()) {
-        <div class="glass-panel p-8 rounded-[40px] flex items-center gap-8 border border-white/5 shadow-md relative overflow-hidden group">
+        <div class="glass-panel p-4 sm:p-8 rounded-[24px] sm:rounded-[40px] flex items-center gap-4 sm:gap-8 border border-white/5 shadow-md relative overflow-hidden group">
           <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
-          <div class="w-24 h-24 rounded-full flex items-center justify-center font-black text-4xl text-white border-4 ring-4 ring-emerald-500/20 shadow-sm transition-transform group-hover:scale-105 overflow-hidden" [style.borderColor]="candidateB()?.color" [style.backgroundColor]="candidateB()?.color + '15'">
+          <div class="w-16 h-16 sm:w-24 sm:h-24 rounded-full flex items-center justify-center font-black text-2xl sm:text-4xl text-white border-2 sm:border-4 ring-2 sm:ring-4 ring-emerald-500/20 shadow-sm transition-transform group-hover:scale-105 overflow-hidden flex-shrink-0" [style.borderColor]="candidateB()?.color" [style.backgroundColor]="candidateB()?.color + '15'">
             @if(candidateB()?.imageUrl) {
                <img [src]="candidateB()?.imageUrl" alt="" class="w-full h-full object-cover">
             } @else {
                {{ candidateB()?.number }}
             }
           </div>
-          <div>
-            <h2 class="text-3xl font-black text-white leading-none tracking-tight">{{ candidateB()?.name }}</h2>
-            <div class="flex items-center gap-2 mt-4">
+          <div class="flex-1 min-w-0">
+            <h2 class="text-xl sm:text-3xl font-black text-white leading-tight tracking-tight overflow-hidden text-ellipsis line-clamp-2 pb-1">{{ candidateB()?.name }}</h2>
+            <div class="flex flex-wrap items-center gap-2 mt-4">
               <span class="rounded-full px-4 py-1.5 border text-[11px] font-black inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateB()?.color + '30'" [style.backgroundColor]="candidateB()?.color + '08'" [style.color]="candidateB()?.color">พรรค{{ candidateB()?.party }}</span>
               <span class="rounded-full px-4 py-1.5 border text-[11px] font-black inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateB()?.color + '30'" [style.backgroundColor]="candidateB()?.color + '08'" [style.color]="candidateB()?.color">เบอร์ {{ candidateB()?.number }}</span>
             </div>
@@ -107,7 +107,7 @@
 
         <div class="flex flex-col gap-6">
           @for (policy of getPolicies(candidateB()?.id); track policy.category) {
-            <div class="glass-panel p-8 rounded-[32px] hover:bg-white/5 transition-all border-l-8 shadow-sm group" [style.borderLeftColor]="candidateB()?.color || '#333'">
+            <div class="glass-panel p-5 sm:p-8 rounded-[24px] sm:rounded-[32px] hover:bg-white/5 transition-all border-l-4 sm:border-l-8 shadow-sm group" [style.borderLeftColor]="candidateB()?.color || '#333'">
               <div class="text-[11px] font-black uppercase tracking-widest mb-4 flex items-center gap-2" [style.color]="candidateB()?.color || '#ccc'">
                 <span class="w-1.5 h-1.5 rounded-full" [style.backgroundColor]="candidateB()?.color || '#ccc'"></span>
                 {{ policy.category }}

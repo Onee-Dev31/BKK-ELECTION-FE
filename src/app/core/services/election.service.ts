@@ -55,7 +55,6 @@ export class ElectionService {
   }
 
   async fetchOverallSummary() {
-    if (!this.http) return;
     this.isLoading.set(true);
     try {
       const data: any = await lastValueFrom(this.http.get(this.apiUrl));
@@ -108,7 +107,6 @@ export class ElectionService {
   }
 
   async fetchDistrictResults() {
-    if (!this.http) return;
     try {
       const data: any = await lastValueFrom(this.http.get(this.districtApiUrl));
       if (!data || !data.districts) return;

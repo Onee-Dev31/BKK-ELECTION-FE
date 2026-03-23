@@ -1,7 +1,7 @@
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { MapStateService } from './map-state';
 import { ElectionService } from './election.service';
-import { ELECTION_CONSTANTS } from '../constants/election.constants';
+import { DISTRICT_MAP_NAMES } from '../constants/map-names.constants';
 
 export interface SearchResult {
   type: 'district' | 'candidate';
@@ -65,7 +65,7 @@ export class SearchService {
 
   private getDistrictName(id: number | undefined): string {
     if (!id || id < 1 || id > 50) return 'ไม่ทราบ';
-    return ELECTION_CONSTANTS.DISTRICT_NAMES[id - 1];
+    return DISTRICT_MAP_NAMES[id] || 'ไม่ทราบ';
   }
 }
 

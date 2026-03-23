@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-    /* Dark Theme Palette */
-    --color-bkk-bg: #3C3C3C;
-    --color-bkk-muted: #555555;
-    --color-bkk-border: #38A575;
-    --color-bkk-green: #4CC48F;
-    --color-bkk-accent: #71D2A7;
-    --color-bkk-glass: rgba(85, 85, 85, 0.4);
+    /*Theme Palette */
+    --color-bkk-bg: #E1F5FE;
+    --color-bkk-muted: #E0E0E0;
+    --color-bkk-border: #E0E0E0;
+    --color-bkk-green: #F77A36;
+    --color-bkk-accent: #00838F;
+    --color-bkk-glass: rgba(255, 255, 255, 0.65);
+    --text-color: #37474F;
 }
 
 @layer base {
 
     /* Global Base Variables */
     :root {
-        --empty-district-bg: #1e293b;
-        --empty-district-text: #ffffff;
+        --empty-district-bg: #E0E0E0;
+        --empty-district-text: #00838F;
     }
 
     /* Global Base */
@@ -25,60 +26,108 @@
         overflow: hidden;
         font-family: 'Kanit', sans-serif !important;
         background-color: var(--color-bkk-bg) !important;
-        color: var(--text-color, #e2e8f0) !important;
+        color: var(--text-color) !important;
         -webkit-font-smoothing: antialiased;
         transition: background-color 0.5s ease, color 0.5s ease;
     }
 
-    /* Light Theme Overrides */
-    html.light {
-        --color-bkk-bg: #A1A1A1;
-        --color-bkk-glass: rgba(136, 136, 136, 0.3);
-        --color-bkk-border: #888888;
-        --color-bkk-green: #2C7E5A;
-        --color-bkk-accent: #38A475;
-        --text-color: #1F573F;
-        --empty-district-bg: #888888;
-        --empty-district-text: #1F573F;
+
+
+    /* ── Global Teal/Emerald → Corporate Remap ── */
+    /* Map text to #F77A36 (Orange) if they were previously primary accents */
+    .text-teal-400, .text-teal-500, .text-emerald-400, .text-emerald-500 {
+        color: #F77A36 !important;
     }
 
-    html.light .text-white,
-    html.light .text-white\/90,
-    html.light .text-white\/80,
-    html.light .text-white\/60 {
-        color: #1F573F !important;
+    .text-teal-400\/60, .text-teal-400\/80, .text-teal-400\/40, .text-emerald-600\/60 {
+        color: rgba(247, 122, 54, 0.7) !important;
     }
 
-    html.light .text-slate-400 {
-        color: #64748b !important;
+    /* Map darker/secondary texts to #00838F (Teal) */
+    .text-teal-700, .text-teal-800, .text-teal-700\/60, .text-emerald-600, .text-emerald-900 {
+        color: #00838F !important;
     }
 
-    html.light .bg-black\/10,
-    html.light .bg-black\/20,
-    html.light .bg-black\/40 {
-        background-color: rgba(255, 255, 255, 0.6) !important;
+    /* Backgrounds */
+    .bg-teal-400, .bg-emerald-500 {
+        background-color: #F77A36 !important;
     }
 
-    html.light .bg-gray-900 {
-        background-color: #ffffff !important;
+    .bg-teal-950, .bg-emerald-50 {
+        background-color: #E1F5FE !important;
     }
 
-    html.light .bg-white\/5,
-    html.light .bg-white\/2 {
-        background-color: rgba(0, 0, 0, 0.05) !important;
+    .bg-teal-400\/5, .bg-emerald-500\/10 {
+        background-color: rgba(247, 122, 54, 0.1) !important;
     }
 
-    html.light .border-white\/5,
-    html.light .border-white\/10 {
-        border-color: rgba(0, 0, 0, 0.1) !important;
+    .bg-teal-950\/10, .bg-teal-950\/20, .bg-teal-950\/50, .bg-emerald-50\/30, .bg-emerald-50\/50 {
+        background-color: rgba(0, 131, 143, 0.1) !important;
     }
 
-    html.light .text-teal-400,
-    html.light .text-teal-500,
-    html.light .text-teal-400\/60,
-    html.light .text-emerald-400 {
-        color: #2C7E5A !important;
+    /* Borders */
+    .border-teal-400\/10, .border-teal-500\/5, .border-teal-500\/10 {
+        border-color: rgba(0, 131, 143, 0.1) !important;
     }
+
+    /* Rings / Shadows */
+    .ring-teal-400\/20, .ring-emerald-500\/10, .ring-emerald-500\/20 {
+        --tw-ring-color: rgba(247, 122, 54, 0.2) !important;
+    }
+
+    .ring-teal-950, .ring-offset-teal-950 {
+        --tw-ring-offset-color: #E1F5FE !important;
+    }
+
+    .ring-teal-950\/50 {
+        --tw-ring-color: rgba(0, 131, 143, 0.3) !important;
+    }
+
+    .ring-emerald-50 {
+        --tw-ring-color: #E1F5FE !important;
+    }
+
+    .from-teal-400\/5 {
+        --tw-gradient-from: rgba(247, 122, 54, 0.05) !important;
+    }
+
+    .drop-shadow-\[0_0_15px_rgba\(45\,212\,191\,0\.3\)\] {
+        filter: drop-shadow(0 0 15px rgba(247, 122, 54, 0.3)) !important;
+    }
+
+    .shadow-\[0_0_10px_\#00d65b\] {
+        box-shadow: 0 0 10px #F77A36 !important;
+    }
+
+    .shadow-\[0_0_8px_rgba\(45\,212\,191\,0\.6\)\] {
+        box-shadow: 0 0 8px rgba(247, 122, 54, 0.6) !important;
+    }
+
+    /* ── Global Light Theme Adaptations (Legacy Dark Utilities) ── */
+    /* Text */
+    .text-white, .text-white\/90, .text-white\/80, .text-white\/60, .text-white\/50, .text-white\/95 {
+        color: var(--text-color) !important;
+    }
+    
+    .placeholder-white\/50::placeholder {
+        color: rgba(55, 71, 79, 0.5) !important;
+    }
+
+    /* Borders */
+    .border-white\/5, .border-white\/10, .border-white\/20, .border-white\/50 {
+        border-color: var(--color-bkk-border) !important;
+    }
+
+    /* Backgrounds */
+    .bg-black\/10, .bg-black\/20, .bg-black\/40 {
+        background-color: var(--color-bkk-glass) !important;
+    }
+    
+    .bg-gray-900 {
+        background-color: #E1F5FE !important;
+    }
+
+
 
     .app-shell {
         display: flex;
@@ -92,15 +141,14 @@
 @layer components {
     .panel-glass {
         background: var(--color-bkk-glass);
-        backdrop-filter: blur(12px) saturate(140%);
-        -webkit-backdrop-filter: blur(12px) saturate(140%);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
         border: 1px solid var(--color-bkk-border);
         border-radius: 32px;
         overflow: hidden;
         box-shadow:
-            0 25px 80px -20px rgba(0, 0, 0, 0.6),
-            inset 0 0 30px rgba(51, 255, 133, 0.05),
-            0 0 0 1px rgba(51, 255, 133, 0.1);
+            0 10px 40px -10px rgba(0, 131, 143, 0.1),
+            0 0 0 1px rgba(224, 224, 224, 0.5);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
     }
@@ -112,19 +160,18 @@
         inset: 0;
         border-radius: 32px;
         padding: 1.5px;
-        background: linear-gradient(135deg, rgba(51, 255, 133, 0.6), transparent 30%, transparent 70%, rgba(51, 255, 133, 0.6));
+        background: linear-gradient(135deg, rgba(224, 224, 224, 0.8), transparent 30%, transparent 70%, rgba(224, 224, 224, 0.8));
         -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         pointer-events: none;
-        filter: drop-shadow(0 0 8px rgba(51, 255, 133, 0.4));
         opacity: 0.8;
     }
 
     .panel-inner {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(0, 131, 143, 0.03);
+        border: 1px solid rgba(0, 131, 143, 0.08);
         border-radius: 12px;
     }
 }
@@ -141,9 +188,9 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(51, 255, 133, 0.2);
+    background: rgba(0, 131, 143, 0.2);
     border-radius: 99px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -151,7 +198,7 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(51, 255, 133, 0.3);
+    background: rgba(0, 131, 143, 0.3);
 }
 
 /* ── Animations ──────────────────────────── */
@@ -200,17 +247,18 @@
 
 /* ── Tooltip Customization ──────────────── */
 .district-tooltip .ant-tooltip-inner {
-    background: rgba(4, 30, 26, 0.85);
+    background: #E1F5FE;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(51, 255, 133, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 10px 30px rgba(0, 131, 143, 0.15);
     border-radius: 12px;
     padding: 8px 12px;
     min-width: 180px;
+    color: #37474F;
 }
 
 .district-tooltip .ant-tooltip-arrow-content {
-    background: rgba(4, 30, 26, 0.95);
-    border: 1px solid rgba(51, 255, 133, 0.2);
+    background: #E1F5FE;
+    border: 1px solid #E0E0E0;
 }

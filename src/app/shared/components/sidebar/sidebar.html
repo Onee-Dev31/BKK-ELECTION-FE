@@ -1,6 +1,8 @@
 <nav
-    class="flex flex-col items-center py-6 bg-black/10 backdrop-blur-3xl border border-white/5 rounded-[32px] shadow-2xl">
-    <div class="mb-6 group cursor-pointer relative" (click)="themeService.toggle()">
+    class="flex flex-row sm:flex-col items-center justify-around sm:justify-start px-6 py-4 sm:px-0 sm:py-6 bg-black/10 backdrop-blur-3xl border border-white/5 rounded-[24px] sm:rounded-[32px] shadow-2xl w-full sm:w-fit pointer-events-auto">
+    
+    <!-- Logo (Desktop Only) -->
+    <div class="hidden sm:block mb-6 group relative">
         <div
             class="absolute inset-0 bg-bkk-green/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
         </div>
@@ -10,7 +12,8 @@
         </div>
     </div>
 
-    <div class="flex flex-col items-center gap-4 mb-6">
+    <!-- Navigation Icons -->
+    <div class="flex flex-row sm:flex-col items-center justify-around w-full sm:w-auto gap-2 sm:gap-4 mb-0 sm:mb-6">
         @for (item of navItems; track item.id) {
         <div class="nav-item-wrapper group">
             <button (click)="navigate(item.path)" [id]="'nav-' + item.id"
@@ -42,11 +45,13 @@
         }
     </div>
 
-    <div class="flex flex-col gap-4">
+    <!-- Status Indicator (Desktop Only) -->
+    <div class="hidden sm:flex flex-col gap-4">
         <button
             class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors group">
             <div
-                class="w-2 h-2 rounded-full bg-bkk-green group-hover:scale-150 transition-transform shadow-[0_0_10px_#00d65b]">
+                class="w-2 h-2 rounded-full bg-bkk-green group-hover:scale-150 transition-transform"
+                style="box-shadow: 0 0 10px var(--color-bkk-green)">
             </div>
         </button>
     </div>

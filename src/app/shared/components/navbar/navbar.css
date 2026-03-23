@@ -23,21 +23,23 @@ nav {
 
 nav:focus-within {
     border-color: var(--color-bkk-green);
-    box-shadow: 0 0 15px rgba(0, 214, 91, 0.3);
-    background: rgba(0, 214, 91, 0.15);
+    box-shadow: 0 0 20px rgba(226, 107, 43, 0.4);
+    background: rgba(226, 107, 43, 0.2);
 }
+
+
 
 .search-results-dropdown {
     position: absolute;
     top: calc(100% + 12px);
     left: 0;
     right: 0;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(225, 245, 254, 0.95);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #E0E0E0;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 131, 143, 0.15);
     padding: 8px;
     z-index: 100;
     animation: slideDown 0.2s cubic-bezier(0, 0, 0.2, 1);
@@ -54,7 +56,7 @@ nav:focus-within {
 }
 
 .result-item:hover {
-    background: rgba(0, 214, 91, 0.1);
+    background: rgba(226, 107, 43, 0.1);
 }
 
 .result-icon {
@@ -70,7 +72,7 @@ nav:focus-within {
 
 .result-icon.district {
     color: #e2e8f0;
-    background: rgba(0, 214, 91, 0.2);
+    background: rgba(226, 107, 43, 0.2);
 }
 
 .result-info {
@@ -78,13 +80,13 @@ nav:focus-within {
 }
 
 .result-title {
-    color: white;
+    color: var(--text-color);
     font-weight: 700;
     font-size: 14px;
 }
 
 .result-subtitle {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(55, 71, 79, 0.8);
     font-size: 11px;
     font-weight: 600;
     margin-top: 1px;
