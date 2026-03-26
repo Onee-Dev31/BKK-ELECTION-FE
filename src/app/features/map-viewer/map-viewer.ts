@@ -68,6 +68,8 @@ export class MapViewer {
     if (!result || !result.candidateResults.length) return null;
 
     const topResult = [...result.candidateResults].sort((a, b) => b.votes - a.votes)[0];
+    if (topResult.votes === 0) return null;
+
     const candidateInfo = this.electionService.candidates().find(c => c.id === topResult.candidateId);
 
     if (!candidateInfo) return null;

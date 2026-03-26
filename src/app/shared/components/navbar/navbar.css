@@ -12,9 +12,9 @@ nav {
     background: var(--color-bkk-glass);
     backdrop-filter: blur(32px) saturate(180%);
     -webkit-backdrop-filter: blur(32px) saturate(180%);
-    border: 1px solid var(--color-bkk-border);
+    border: 3px solid var(--color-bkk-border);
     border-radius: 24px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     padding: 0 20px;
     position: relative;
     z-index: 50;

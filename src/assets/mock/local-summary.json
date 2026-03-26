@@ -1,0 +1,1059 @@
+{
+  "summaryPercent": 99,
+  "updateAtTime": 1653400409624,
+  "updateAt": "20:53",
+  "candidates": [
+    {
+      "_raw": {
+        "id": 8,
+        "no": 8,
+        "rank": 1,
+        "title": "นาย",
+        "firstName": "ชัชชาติ",
+        "lastName": "สิทธิพันธุ์",
+        "fullName": "นายชัชชาติ สิทธิพันธุ์",
+        "totalVotes": 1386215,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No8.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "สิทธิพันธุ์"
+      },
+      "rank": 1,
+      "idno": 8,
+      "id": "8",
+      "score": 1386215,
+      "scorePercent": 51.84649235831665
+    },
+    {
+      "_raw": {
+        "id": 4,
+        "no": 4,
+        "rank": 2,
+        "title": "นาย",
+        "firstName": "สุชัชวีร์",
+        "lastName": "สุวรรณสวัสดิ์",
+        "fullName": "นายสุชัชวีร์ สุวรรณสวัสดิ์",
+        "totalVotes": 254647,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No4.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 4,
+          "code": "DEMOCRAT",
+          "name": "พรรคประชาธิปัตย์",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/4.png",
+          "active": true
+        },
+        "LastName": "สุวรรณสวัสดิ์"
+      },
+      "rank": 2,
+      "idno": 4,
+      "id": "4",
+      "score": 254647,
+      "scorePercent": 9.524174633493548
+    },
+    {
+      "_raw": {
+        "id": 1,
+        "no": 1,
+        "rank": 3,
+        "title": "นาย",
+        "firstName": "วิโรจน์",
+        "lastName": "ลักขณาอดิศร",
+        "fullName": "นายวิโรจน์ ลักขณาอดิศร",
+        "totalVotes": 253851,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No1.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 2,
+          "code": "MFP",
+          "name": "พรรคก้าวไกล",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/2.png",
+          "active": true
+        },
+        "LastName": "ลักขณาอดิศร"
+      },
+      "rank": 3,
+      "idno": 1,
+      "id": "1",
+      "score": 253851,
+      "scorePercent": 9.494403055551295
+    },
+    {
+      "_raw": {
+        "id": 3,
+        "no": 3,
+        "rank": 4,
+        "title": "นาย",
+        "firstName": "สกลธี",
+        "lastName": "ภัททิยกุล",
+        "fullName": "นายสกลธี ภัททิยกุล",
+        "totalVotes": 230455,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No3.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "ภัททิยกุล"
+      },
+      "rank": 4,
+      "idno": 3,
+      "id": "3",
+      "score": 230455,
+      "scorePercent": 8.619358033519955
+    },
+    {
+      "_raw": {
+        "id": 6,
+        "no": 6,
+        "rank": 5,
+        "title": "พล.ต.อ.",
+        "firstName": "อัศวิน",
+        "lastName": "ขวัญเมือง",
+        "fullName": "พล.ต.อ.อัศวิน ขวัญเมือง",
+        "totalVotes": 214692,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No6.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 13,
+          "code": "RUKBKK",
+          "name": "อิสระ(กลุ่มรักษ์กรุงเทพ)",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/13.png",
+          "active": true
+        },
+        "LastName": "ขวัญเมือ��"
+      },
+      "rank": 5,
+      "idno": 6,
+      "id": "6",
+      "score": 214692,
+      "scorePercent": 8.029798507007728
+    },
+    {
+      "_raw": {
+        "id": 7,
+        "no": 7,
+        "rank": 6,
+        "title": "นางสาว",
+        "firstName": "รสนา",
+        "lastName": "โตสิตระกูล",
+        "fullName": "นางสาวรสนา โตสิตระกูล",
+        "totalVotes": 78993,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No7.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "โตสิตระกูล"
+      },
+      "rank": 6,
+      "idno": 7,
+      "id": "7",
+      "score": 78993,
+      "scorePercent": 2.954455095970327
+    },
+    {
+      "_raw": {
+        "id": 11,
+        "no": 11,
+        "rank": 7,
+        "title": "น.ต.",
+        "firstName": "ศิธา",
+        "lastName": "ทิวารี",
+        "fullName": "น.ต.ศิธา ทิวารี",
+        "totalVotes": 73720,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No11.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 11,
+          "code": "TST",
+          "name": "พรรคไทยสร้างไทย",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/11.png",
+          "active": true
+        },
+        "LastName": "ทิวารี"
+      },
+      "rank": 7,
+      "idno": 11,
+      "id": "11",
+      "score": 73720,
+      "scorePercent": 2.757237092842815
+    },
+    {
+      "_raw": {
+        "id": 5,
+        "no": 5,
+        "rank": 8,
+        "title": "นาย",
+        "firstName": "วีรชัย",
+        "lastName": "เหล่าเรืองวัฒนะ",
+        "fullName": "นายวีรชัย เหล่าเรืองวัฒนะ",
+        "totalVotes": 20742,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No5.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "เหล่าเรืองวัฒนะ"
+      },
+      "rank": 8,
+      "idno": 5,
+      "id": "5",
+      "score": 20742,
+      "scorePercent": 0.7757814945706142
+    },
+    {
+      "_raw": {
+        "id": 2,
+        "no": 2,
+        "rank": 9,
+        "title": "พ.ท.หญิง",
+        "firstName": "ฐิฏา",
+        "lastName": "รังสิตพล มานิตกุล",
+        "fullName": "พ.ท.หญิงฐิฏา รังสิตพล มานิตกุล",
+        "totalVotes": 19841,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No2.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "รังสิตพล มานิตกุล"
+      },
+      "rank": 9,
+      "idno": 2,
+      "id": "2",
+      "score": 19841,
+      "scorePercent": 0.7420827612465315
+    },
+    {
+      "_raw": {
+        "id": 9,
+        "no": 9,
+        "rank": 10,
+        "title": "นางสาว",
+        "firstName": "วัชรี",
+        "lastName": "วรรณศรี",
+        "fullName": "นางสาววัชรี วรรณศรี",
+        "totalVotes": 8274,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No9.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "วรรณศรี"
+      },
+      "rank": 10,
+      "idno": 9,
+      "id": "9",
+      "score": 8274,
+      "scorePercent": 0.30945984408819116
+    },
+    {
+      "_raw": {
+        "id": 12,
+        "no": 12,
+        "rank": 12,
+        "title": "นาย",
+        "firstName": "ประยูร",
+        "lastName": "ครองยศ",
+        "fullName": "นายประยูร ครองยศ",
+        "totalVotes": 2219,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No12.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "ครองยศ"
+      },
+      "rank": 12,
+      "idno": 12,
+      "id": "12",
+      "score": 2219,
+      "scorePercent": 0.0829938837360039
+    },
+    {
+      "_raw": {
+        "id": 10,
+        "no": 10,
+        "rank": 13,
+        "title": "นาย",
+        "firstName": "ศุภชัย",
+        "lastName": "ตันติคมน์",
+        "fullName": "นายศุภชัย ตันติคมน์",
+        "totalVotes": 2189,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No10.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "ตันติคมน์"
+      },
+      "rank": 13,
+      "idno": 10,
+      "id": "10",
+      "score": 2189,
+      "scorePercent": 0.08187183934119537
+    },
+    {
+      "_raw": {
+        "id": 14,
+        "no": 14,
+        "rank": 16,
+        "title": "นาย",
+        "firstName": "ธเนตร",
+        "lastName": "วงษา",
+        "fullName": "นายธเนตร วงษา",
+        "totalVotes": 1092,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No14.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "วงษา"
+      },
+      "rank": 16,
+      "idno": 14,
+      "id": "14",
+      "score": 1092,
+      "scorePercent": 0.04084241597103031
+    },
+    {
+      "_raw": {
+        "id": 13,
+        "no": 13,
+        "rank": 18,
+        "title": "นาย",
+        "firstName": "พิศาล",
+        "lastName": "กิตติเยาวมาลย์",
+        "fullName": "นายพิศาล กิตติเยาวมาลย์",
+        "totalVotes": 868,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No13.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "กิตติเยาวมาลย์"
+      },
+      "rank": 18,
+      "idno": 13,
+      "id": "13",
+      "score": 868,
+      "scorePercent": 0.03246448448979332
+    },
+    {
+      "_raw": {
+        "id": 15,
+        "no": 15,
+        "rank": 22,
+        "title": "พล.อ.ต.",
+        "firstName": "ทูตปรีชา",
+        "lastName": "เลิศสันทัดวาที",
+        "fullName": "พล.อ.ต.ทูตปรีชา เลิศสันทัดวาที",
+        "totalVotes": 574,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No15.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "เลิศสันทัดวาที"
+      },
+      "rank": 22,
+      "idno": 15,
+      "id": "15",
+      "score": 574,
+      "scorePercent": 0.021468449420669777
+    }
+  ],
+  "serverUpdateAtTime": 1653400409620,
+  "serverUpdateAt": "20:53",
+  "summary": 2673691,
+  "_rawCandidates": {
+    "data": [
+      {
+        "id": 8,
+        "no": 8,
+        "rank": 1,
+        "title": "นาย",
+        "firstName": "ชัชชาติ",
+        "lastName": "สิทธิพันธุ์",
+        "fullName": "นายชัชชาติ สิทธิพันธุ์",
+        "totalVotes": 1386215,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No8.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "สิทธิพันธุ์"
+      },
+      {
+        "id": 4,
+        "no": 4,
+        "rank": 2,
+        "title": "นาย",
+        "firstName": "สุชัชวีร์",
+        "lastName": "สุวรรณสวัสดิ์",
+        "fullName": "นายสุชัชวีร์ สุวรรณสวัสดิ์",
+        "totalVotes": 254647,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No4.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 4,
+          "code": "DEMOCRAT",
+          "name": "พรรคประชาธิปัตย์",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/4.png",
+          "active": true
+        },
+        "LastName": "สุวรรณสวัสดิ์"
+      },
+      {
+        "id": 1,
+        "no": 1,
+        "rank": 3,
+        "title": "นาย",
+        "firstName": "วิโรจน์",
+        "lastName": "ลักขณาอดิศร",
+        "fullName": "นายวิโรจน์ ลักขณาอดิศร",
+        "totalVotes": 253851,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No1.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 2,
+          "code": "MFP",
+          "name": "พรรคก้าวไกล",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/2.png",
+          "active": true
+        },
+        "LastName": "ลักขณาอดิศร"
+      },
+      {
+        "id": 3,
+        "no": 3,
+        "rank": 4,
+        "title": "นาย",
+        "firstName": "สกลธี",
+        "lastName": "ภัททิยกุล",
+        "fullName": "นายสกลธี ภัททิยกุล",
+        "totalVotes": 230455,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No3.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "ภัททิยกุล"
+      },
+      {
+        "id": 6,
+        "no": 6,
+        "rank": 5,
+        "title": "พล.ต.อ.",
+        "firstName": "อัศวิน",
+        "lastName": "ขวัญเมือง",
+        "fullName": "พล.ต.อ.อัศวิน ขวัญเมือง",
+        "totalVotes": 214692,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No6.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 13,
+          "code": "RUKBKK",
+          "name": "อิสระ(กลุ่มรักษ์กรุงเทพ)",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/13.png",
+          "active": true
+        },
+        "LastName": "ขวัญเมือง"
+      },
+      {
+        "id": 7,
+        "no": 7,
+        "rank": 6,
+        "title": "นางสาว",
+        "firstName": "รสนา",
+        "lastName": "โตสิตระกูล",
+        "fullName": "นางสาวรสนา โตสิตระกูล",
+        "totalVotes": 78993,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No7.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "โตสิตระกูล"
+      },
+      {
+        "id": 11,
+        "no": 11,
+        "rank": 7,
+        "title": "น.ต.",
+        "firstName": "ศิธา",
+        "lastName": "ทิวารี",
+        "fullName": "น.ต.ศิธา ทิวารี",
+        "totalVotes": 73720,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No11.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 11,
+          "code": "TST",
+          "name": "พรรคไทยสร้างไทย",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/11.png",
+          "active": true
+        },
+        "LastName": "ทิวารี"
+      },
+      {
+        "id": 5,
+        "no": 5,
+        "rank": 8,
+        "title": "นาย",
+        "firstName": "วีรชัย",
+        "lastName": "เหล่าเรืองวัฒนะ",
+        "fullName": "นายวีรชัย เหล่าเรืองวัฒนะ",
+        "totalVotes": 20742,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No5.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "เหล่าเรืองวัฒนะ"
+      },
+      {
+        "id": 2,
+        "no": 2,
+        "rank": 9,
+        "title": "พ.ท.หญิง",
+        "firstName": "ฐิฏา",
+        "lastName": "รังสิตพล มานิตกุล",
+        "fullName": "พ.ท.หญิงฐิฏา รังสิตพล มานิตกุล",
+        "totalVotes": 19841,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No2.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "รังสิตพล มานิตกุล"
+      },
+      {
+        "id": 9,
+        "no": 9,
+        "rank": 10,
+        "title": "นางสาว",
+        "firstName": "วัชรี",
+        "lastName": "วรรณศรี",
+        "fullName": "นางสาววัชรี วรรณศรี",
+        "totalVotes": 8274,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No9.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "วรรณศรี"
+      },
+      {
+        "id": 24,
+        "no": 24,
+        "rank": 11,
+        "title": "นาย",
+        "firstName": "โฆสิต",
+        "lastName": "สุวินิจจิต",
+        "fullName": "นายโฆสิต สุวินิจจิต",
+        "totalVotes": 3247,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No24.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "สุวินิจจิต"
+      },
+      {
+        "id": 12,
+        "no": 12,
+        "rank": 12,
+        "title": "นาย",
+        "firstName": "ประยูร",
+        "lastName": "ครองยศ",
+        "fullName": "นายประยูร ครองยศ",
+        "totalVotes": 2219,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No12.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "ครองยศ"
+      },
+      {
+        "id": 10,
+        "no": 10,
+        "rank": 13,
+        "title": "นาย",
+        "firstName": "ศุภชัย",
+        "lastName": "ตันติคมน์",
+        "fullName": "นายศุภชัย ตันติคมน์",
+        "totalVotes": 2189,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No10.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "ตันติคมน์"
+      },
+      {
+        "id": 16,
+        "no": 16,
+        "rank": 14,
+        "title": "นางสาว",
+        "firstName": "ศศิกานต์",
+        "lastName": "วัฒนะจันทร์",
+        "fullName": "นางสาวศ���ิกานต์ วัฒนะจันทร์",
+        "totalVotes": 2129,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No16.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 14,
+          "code": "SICHAI",
+          "name": "อิสระ(กลุ่มใส่ใจ)",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/14.png",
+          "active": true
+        },
+        "LastName": "วัฒนะจันทร์"
+      },
+      {
+        "id": 22,
+        "no": 22,
+        "rank": 15,
+        "title": "นาย",
+        "firstName": "วรัญชัย",
+        "lastName": "โชคชนะ",
+        "fullName": "นายวรัญชัย โชคชนะ",
+        "totalVotes": 1128,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No22.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "โชคชนะ"
+      },
+      {
+        "id": 14,
+        "no": 14,
+        "rank": 16,
+        "title": "นาย",
+        "firstName": "ธเนตร",
+        "lastName": "วงษา",
+        "fullName": "นายธเนตร วงษา",
+        "totalVotes": 1092,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No14.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "��งษา"
+      },
+      {
+        "id": 18,
+        "no": 18,
+        "rank": 17,
+        "title": "นางสาว",
+        "firstName": "สุมนา",
+        "lastName": "พันธุ์ไพโรจน์",
+        "fullName": "นางสาวสุมนา พันธุ์ไพโรจน์",
+        "totalVotes": 908,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No18.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "พันธุ์ไพโรจน์"
+      },
+      {
+        "id": 13,
+        "no": 13,
+        "rank": 18,
+        "title": "นาย",
+        "firstName": "พิศาล",
+        "lastName": "กิตติเยาวมาลย์",
+        "fullName": "นายพิศาล กิตติเยาวมาลย์",
+        "totalVotes": 868,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No13.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "กิตติเยาวมาลย์"
+      },
+      {
+        "id": 31,
+        "no": 31,
+        "rank": 19,
+        "title": "นาย",
+        "firstName": "วิทยา",
+        "lastName": "จังกอบพัฒนา",
+        "fullName": "นายวิทยา จังกอบพัฒน��",
+        "totalVotes": 812,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No31.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "จังกอบพัฒนา"
+      },
+      {
+        "id": 17,
+        "no": 17,
+        "rank": 20,
+        "title": "นาย",
+        "firstName": "อุเทน",
+        "lastName": "ชาติภิญโญ",
+        "fullName": "นายอุเทน ชาติภิญโญ",
+        "totalVotes": 756,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No17.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "ชาติภิญโญ"
+      },
+      {
+        "id": 19,
+        "no": 19,
+        "rank": 21,
+        "title": "นาย",
+        "firstName": "ไกรเดช",
+        "lastName": "บุนนาค",
+        "fullName": "นายไกรเดช บุนนาค",
+        "totalVotes": 636,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No19.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "บุนนาค"
+      },
+      {
+        "id": 15,
+        "no": 15,
+        "rank": 22,
+        "title": "พล.อ.ต.",
+        "firstName": "ทูตปรีชา",
+        "lastName": "เลิศสันทัดวาที",
+        "fullName": "พล.อ.ต.ทูตปรีชา เลิศสันทัดวาที",
+        "totalVotes": 574,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No15.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "เลิศสันทัดวาที"
+      },
+      {
+        "id": 20,
+        "no": 20,
+        "rank": 23,
+        "title": "นาง",
+        "firstName": "อมรพรรณ",
+        "lastName": "อุ่นสุวรรณ",
+        "fullName": "นางอมรพรรณ อุ่นสุวรรณ",
+        "totalVotes": 558,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No20.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "อุ่นสุวรรณ"
+      },
+      {
+        "id": 29,
+        "no": 29,
+        "rank": 24,
+        "title": "นาย",
+        "firstName": "กฤตชัย",
+        "lastName": "พยอมแย้ม",
+        "fullName": "นายกฤตชัย พยอมแย้ม",
+        "totalVotes": 494,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No29.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 3,
+          "code": "TCP",
+          "name": "พรรคประชากรไทย",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/3.png",
+          "active": true
+        },
+        "LastName": "พยอมแย้ม"
+      },
+      {
+        "id": 25,
+        "no": 25,
+        "rank": 25,
+        "title": "นาย",
+        "firstName": "ประพัฒน์",
+        "lastName": "บรรจงศิริเจริญ",
+        "fullName": "นายประพัฒน์ บรรจงศิริเจริญ",
+        "totalVotes": 460,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No25.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "บรรจงศิริเจริญ"
+      },
+      {
+        "id": 23,
+        "no": 23,
+        "rank": 26,
+        "title": "นาย",
+        "firstName": "เฉลิมพล",
+        "lastName": "อุตรัตน์",
+        "fullName": "นายเฉลิมพล อุตรัตน์",
+        "totalVotes": 431,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No23.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "อุตรัตน์"
+      },
+      {
+        "id": 30,
+        "no": 30,
+        "rank": 27,
+        "title": "นา���",
+        "firstName": "พงศา",
+        "lastName": "ชูแนม",
+        "fullName": "นายพงศา ชูแนม",
+        "totalVotes": 424,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No30.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 15,
+          "code": "GREEN",
+          "name": "พรรคกรีน",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/15.png",
+          "active": true
+        },
+        "LastName": "ชูแนม"
+      },
+      {
+        "id": 27,
+        "no": 27,
+        "rank": 28,
+        "title": "นาย",
+        "firstName": "ภูมิพัฒน์",
+        "lastName": "อัศวภูภินทร์",
+        "fullName": "นายภูมิพัฒน์ อัศวภูภินทร์",
+        "totalVotes": 391,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No27.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "อัศวภูภินทร์"
+      },
+      {
+        "id": 26,
+        "no": 26,
+        "rank": 29,
+        "title": "พล.ต.ท.",
+        "firstName": "มณฑล",
+        "lastName": "เงินวัฒนะ",
+        "fullName": "พล.ต.ท.มณฑล เงินวัฒนะ",
+        "totalVotes": 359,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No26.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "เงินวัฒนะ"
+      },
+      {
+        "id": 21,
+        "no": 21,
+        "rank": 30,
+        "title": "นาย",
+        "firstName": "นิพันธ์พนธ์",
+        "lastName": "สุวรรณชนะ",
+        "fullName": "นายนิพันธ์พนธ์ สุวรรณชนะ",
+        "totalVotes": 342,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No21.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "สุวรรณชนะ"
+      },
+      {
+        "id": 28,
+        "no": 28,
+        "rank": 31,
+        "title": "นาย",
+        "firstName": "สราวุธ",
+        "lastName": "เบญจกุล",
+        "fullName": "นายสราวุธ เบญจกุล",
+        "totalVotes": 0,
+        "avatarURL": "https://storage.googleapis.com/ers-static/candidates/governor/No28.jpg",
+        "updatedAt": "2022-05-23T10:29:41.831Z",
+        "party": {
+          "id": 12,
+          "code": "FREEDOM",
+          "name": "อิสระ",
+          "logoURL": "https://storage.googleapis.com/ers-static/parties/12.png",
+          "active": true
+        },
+        "LastName": "เบญจกุล"
+      }
+    ],
+    "success": true
+  },
+  "_rawSummary": {
+    "data": {
+      "id": 1,
+      "name": "การเลือกตั้งผู้ว่าราชการจังหวัดกรุงเทพมหานคร 2565",
+      "year": "2565",
+      "local": false,
+      "totalVotes": 2673691,
+      "goodVotes": 2561447,
+      "badVotes": 40017,
+      "noVotes": 72227,
+      "eligible": 4402941,
+      "voter": 2673696,
+      "percentVoter": 60.73,
+      "progress": 99,
+      "updatedAt": "2022-05-23T10:29:41.831Z"
+    },
+    "success": true
+  },
+  "prodReady": true
+}

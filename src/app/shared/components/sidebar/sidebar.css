@@ -8,13 +8,14 @@ nav {
     background: var(--color-bkk-glass);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid var(--color-bkk-border);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--color-bkk-border);
+    box-shadow: 5px 8px 27px rgba(0, 0, 0, 0.2);
 }
 
 
 
 .nav-item-wrapper {
+    margin: 10px;
     position: relative;
     display: flex;
     align-items: center;
@@ -43,9 +44,9 @@ nav {
 }
 
 
-
 .sidebar-tooltip {
     position: absolute;
+
     left: 100%;
     margin-left: 20px;
     background: var(--color-bkk-bg);

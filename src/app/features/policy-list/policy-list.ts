@@ -15,8 +15,16 @@ export class PolicyList {
 
   candidates = computed(() => {
     const selectedId = this.mapState.selectedCandidateId();
-    const all = this.electionService.candidates();
+    let all = [...this.electionService.candidates()];
     
+    // Sort logic
+    const totalVotes = all.reduce((sum, c) => sum + c.votes, 0);
+    if (totalVotes === 0) {
+        all.sort((a, b) => a.number - b.number);
+    } else {
+        all.sort((a, b) => b.votes - a.votes);
+    }
+
     if (selectedId !== null) {
       return all.filter(c => c.id === selectedId);
     }

@@ -2,9 +2,22 @@
   background: rgba(224, 224, 224, 0.65);
   backdrop-filter: blur(32px) saturate(220%);
   -webkit-backdrop-filter: blur(32px) saturate(220%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 3.7px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 .layout-content-area {
   background: radial-gradient(circle at top right, rgba(247, 122, 54, 0.1) 0%, #E1F5FE 100%);
+}
+
+.shrink-text-container {
+  container-type: inline-size;
+}
+
+.shrink-text {
+  font-size: clamp(10px, calc(160cqw / max(var(--char-count, 20), 10)), 30px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

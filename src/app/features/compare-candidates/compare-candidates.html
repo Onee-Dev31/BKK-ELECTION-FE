@@ -41,8 +41,8 @@
                {{ candidateA()?.number }}
             }
           </div>
-          <div class="flex-1 min-w-0">
-            <h2 class="text-xl sm:text-3xl font-black text-white leading-tight tracking-tight overflow-hidden text-ellipsis line-clamp-2 pb-1">{{ candidateA()?.name }}</h2>
+          <div class="flex-1 min-w-0 shrink-text-container">
+            <h2 class="font-black text-white leading-tight tracking-tight shrink-text pb-1" [style.--char-count]="candidateA()?.name?.length">{{ candidateA()?.name }}</h2>
             <div class="flex flex-wrap items-center gap-2 mt-4">
               <span class="rounded-full px-4 py-1.5 border text-[11px] font-black inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateA()?.color + '30'" [style.backgroundColor]="candidateA()?.color + '08'" [style.color]="candidateA()?.color">พรรค{{ candidateA()?.party }}</span>
               <span class="rounded-full px-4 py-1.5 border text-[11px] font-black inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateA()?.color + '30'" [style.backgroundColor]="candidateA()?.color + '08'" [style.color]="candidateA()?.color">เบอร์ {{ candidateA()?.number }}</span>
@@ -95,8 +95,8 @@
                {{ candidateB()?.number }}
             }
           </div>
-          <div class="flex-1 min-w-0">
-            <h2 class="text-xl sm:text-3xl font-black text-white leading-tight tracking-tight overflow-hidden text-ellipsis line-clamp-2 pb-1">{{ candidateB()?.name }}</h2>
+          <div class="flex-1 min-w-0 shrink-text-container">
+            <h2 class="font-black text-white leading-tight tracking-tight shrink-text pb-1" [style.--char-count]="candidateB()?.name?.length">{{ candidateB()?.name }}</h2>
             <div class="flex flex-wrap items-center gap-2 mt-4">
               <span class="rounded-full px-4 py-1.5 border text-[11px] font-black inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateB()?.color + '30'" [style.backgroundColor]="candidateB()?.color + '08'" [style.color]="candidateB()?.color">พรรค{{ candidateB()?.party }}</span>
               <span class="rounded-full px-4 py-1.5 border text-[11px] font-black inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateB()?.color + '30'" [style.backgroundColor]="candidateB()?.color + '08'" [style.color]="candidateB()?.color">เบอร์ {{ candidateB()?.number }}</span>

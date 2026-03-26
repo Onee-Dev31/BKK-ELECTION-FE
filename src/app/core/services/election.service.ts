@@ -60,42 +60,48 @@ export class ElectionService {
       const data: any = await lastValueFrom(this.http.get(this.apiUrl));
       if (!data || !data.candidates) return;
 
-      const candidates: Candidate[] = data.candidates.map((c: any) => {
-        let name = c._raw.fullName;
-        ELECTION_CONSTANTS.NAME_PREFIXES.forEach(prefix => {
-          name = name.replace(prefix, '');
-        });
-
-        return {
-          id: c.idno,
-          name: name.trim(),
-          party: c._raw.party.name,
-          number: c.idno,
-          votes: c.score,
-          percentage: Number(c.scorePercent.toFixed(2)),
-          imageUrl: c._raw.avatarURL,
-          partyLogoUrl: ELECTION_CONSTANTS.ASSETS.PARTY_LOGO.replace('{id}', c._raw.party.id.toString()),
-          color: this.getCandidateColor(c.idno)
-        };
-      });
-
       const rawSummary = data._rawSummary?.data;
+      const goodVotes = rawSummary?.goodVotes || 1;
+
+      const candidates: Candidate[] = data.candidates
+        .filter((c: any) => c.idno <= 15)
+        .map((c: any) => {
+          let name = c._raw.fullName;
+          ELECTION_CONSTANTS.NAME_PREFIXES.forEach(prefix => {
+            name = name.replace(prefix, '');
+          });
+
+          // MOCK: Reset votes to zero
+          let mockVotes = 0;
+
+          return {
+            id: c.idno,
+            name: name.trim(),
+            party: c._raw.party.name,
+            number: c.idno,
+            votes: mockVotes, // mock
+            percentage: Number(((mockVotes / goodVotes) * 100).toFixed(2)), // mock percent
+            imageUrl: c._raw.avatarURL,
+            partyLogoUrl: ELECTION_CONSTANTS.ASSETS.PARTY_LOGO.replace('{id}', c._raw.party.id.toString()),
+            color: this.getCandidateColor(c.idno)
+          };
+        });
 
       this.electionState.update(current => ({
         ...current,
         candidates,
-        totalVotes: data.summary,
-        goodVotes: rawSummary?.goodVotes || 0,
-        badVotes: rawSummary?.badVotes || 0,
-        noVotes: rawSummary?.noVotes || 0,
+        totalVotes: 0,
+        goodVotes: 0,
+        badVotes: 0,
+        noVotes: 0,
         eligibleVoters: rawSummary?.eligible || 0,
-        actualVoters: rawSummary?.voter || 0,
-        turnoutPercent: rawSummary?.percentVoter || 0,
-        countedDistricts: Math.floor(data.summaryPercent / 2),
+        actualVoters: 0,
+        turnoutPercent: 0,
+        countedDistricts: 0,
         totalDistricts: 50,
-        lastUpdated: `อัปเดตล่าสุด ${data.updateAt} น. (${data.summaryPercent}%)`,
-        electionYear: 2022,
-        progressPercent: data.summaryPercent || 0,
+        lastUpdated: `รอเปิดหีบนับคะแนน`,
+        electionYear: 2026,
+        progressPercent: 0,
         districtResults: current?.districtResults || []
       }) as ElectionData);
     } catch (err) {
@@ -108,16 +114,21 @@ export class ElectionService {
 
   async fetchDistrictResults() {
     try {
-      const data: any = await lastValueFrom(this.http.get(this.districtApiUrl));
-      if (!data || !data.districts) return;
+      // MOCK: Generate pseudo-random realistic district results for 50 districts
+      const districtResults: DistrictResult[] = Array.from({ length: 50 }).map((_, i) => {
+        const districtId = i + 1;
+        const candidateResults = Array.from({ length: 15 }).map((_, j) => {
+          const candidateId = j + 1;
+          let mockVotes = 0;
 
-      const districtResults: DistrictResult[] = data.districts.map((d: any, index: number) => ({
-        districtId: index + 1,
-        candidateResults: d.candidates.map((c: any) => ({
-          candidateId: c.idno,
-          votes: c.score
-        }))
-      }));
+          return {
+            candidateId,
+            votes: mockVotes
+          };
+        });
+
+        return { districtId, candidateResults };
+      });
 
       this.electionState.update(current => {
         if (!current) {
@@ -160,6 +171,7 @@ export class ElectionService {
     const result = this.getDistrictResults(districtId);
     if (!result) return undefined;
     const sorted = [...result.candidateResults].sort((a, b) => b.votes - a.votes);
+    if (!sorted.length || sorted[0].votes === 0) return undefined;
     return sorted[0]?.candidateId;
   }
 

@@ -1,0 +1,5105 @@
+{
+  "districts": [
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "1",
+      "district": "เขตพระนคร",
+      "population": 29829,
+      "counted": 20546,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 10503,
+          "scorePercent": 51.11943930692105
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 2332,
+          "scorePercent": 11.35014114669522
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 2110,
+          "scorePercent": 10.269638859145333
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 1798,
+          "scorePercent": 8.751095103669813
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 1528,
+          "scorePercent": 7.436970699892924
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 863,
+          "scorePercent": 4.200330964664655
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 302,
+          "scorePercent": 1.4698724812615593
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 122,
+          "scorePercent": 0.5937895454102988
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 50,
+          "scorePercent": 0.2433563710697946
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 38,
+          "scorePercent": 0.1849508420130439
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 15,
+          "scorePercent": 0.07300691132093838
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 9,
+          "scorePercent": 0.04380414679256303
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 9,
+          "scorePercent": 0.04380414679256303
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 7,
+          "scorePercent": 0.034069891949771246
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 4,
+          "scorePercent": 0.019468509685583568
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "2",
+      "district": "เขตดุสิต",
+      "population": 63550,
+      "counted": 32766,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 17575,
+          "scorePercent": 53.63791735335409
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3416,
+          "scorePercent": 10.42544100592077
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 2965,
+          "scorePercent": 9.049014222059453
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2356,
+          "scorePercent": 7.190380272233413
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 2173,
+          "scorePercent": 6.631874504059086
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 861,
+          "scorePercent": 2.627723860098883
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 670,
+          "scorePercent": 2.0448025392174816
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 258,
+          "scorePercent": 0.7874015748031495
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 234,
+          "scorePercent": 0.7141549166819263
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 176,
+          "scorePercent": 0.5371421595556369
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 36,
+          "scorePercent": 0.10986998718183483
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 32,
+          "scorePercent": 0.09766221082829762
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 16,
+          "scorePercent": 0.04883110541414881
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 14,
+          "scorePercent": 0.04272721723738021
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 9,
+          "scorePercent": 0.027467496795458707
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "3",
+      "district": "เขตหนองจอก",
+      "population": 136547,
+      "counted": 80139,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 34061,
+          "scorePercent": 42.50240207639227
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 10293,
+          "scorePercent": 12.843933665256616
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 10099,
+          "scorePercent": 12.601854278191643
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 9259,
+          "scorePercent": 11.553675488838145
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3282,
+          "scorePercent": 4.095384269831168
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 2961,
+          "scorePercent": 3.6948302324710816
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1592,
+          "scorePercent": 1.9865483722032968
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 1131,
+          "scorePercent": 1.4112978699509602
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 431,
+          "scorePercent": 0.5378155454897117
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 332,
+          "scorePercent": 0.4142801881730493
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 162,
+          "scorePercent": 0.20214876651817468
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 127,
+          "scorePercent": 0.15847465029511226
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 71,
+          "scorePercent": 0.08859606433821236
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 27,
+          "scorePercent": 0.033691461086362444
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 3,
+          "scorePercent": 0.003743495676262494
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "4",
+      "district": "เขตบางรัก",
+      "population": 30041,
+      "counted": 18799,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 9314,
+          "scorePercent": 49.54518857386031
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 2724,
+          "scorePercent": 14.49013245385393
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 1960,
+          "scorePercent": 10.426086493962444
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 1398,
+          "scorePercent": 7.4365657747752545
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 1326,
+          "scorePercent": 7.053566679078674
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 901,
+          "scorePercent": 4.792808128091919
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 275,
+          "scorePercent": 1.462843768285547
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 122,
+          "scorePercent": 0.6489706899303154
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 19,
+          "scorePercent": 0.10106920580881962
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 15,
+          "scorePercent": 0.07979147827012074
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 14,
+          "scorePercent": 0.07447204638544604
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 6,
+          "scorePercent": 0.0319165913080483
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 5,
+          "scorePercent": 0.02659715942337358
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 3,
+          "scorePercent": 0.01595829565402415
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 1,
+          "scorePercent": 0.005319431884674717
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "5",
+      "district": "เขตบางเขน",
+      "population": 152133,
+      "counted": 97598,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 56162,
+          "scorePercent": 57.54421197155679
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 8835,
+          "scorePercent": 9.052439599172114
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 8394,
+          "scorePercent": 8.600586077583557
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 7137,
+          "scorePercent": 7.31264984938216
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 6544,
+          "scorePercent": 6.70505543146376
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 2285,
+          "scorePercent": 2.341236500747966
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 2246,
+          "scorePercent": 2.3012766655054406
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 1051,
+          "scorePercent": 1.076866329228058
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 206,
+          "scorePercent": 0.2110698989733396
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 174,
+          "scorePercent": 0.17828234185126743
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 85,
+          "scorePercent": 0.0870919486055042
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 76,
+          "scorePercent": 0.0778704481649214
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 38,
+          "scorePercent": 0.0389352240824607
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 32,
+          "scorePercent": 0.032787557122072174
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 31,
+          "scorePercent": 0.03176294596200742
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "6",
+      "district": "เขตบางกะป���",
+      "population": 115128,
+      "counted": 69232,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 35569,
+          "scorePercent": 51.37653108389184
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 6701,
+          "scorePercent": 9.679050150219553
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 6582,
+          "scorePercent": 9.507164317078807
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 6430,
+          "scorePercent": 9.28761266466374
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 5956,
+          "scorePercent": 8.60295816963254
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1806,
+          "scorePercent": 2.608620291194823
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1612,
+          "scorePercent": 2.3284030506124336
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 885,
+          "scorePercent": 1.2783106078114166
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 644,
+          "scorePercent": 0.9302056852322625
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 146,
+          "scorePercent": 0.21088513981973653
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 70,
+          "scorePercent": 0.10110931361220245
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 57,
+          "scorePercent": 0.08233186965565056
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 23,
+          "scorePercent": 0.033221631615437945
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 21,
+          "scorePercent": 0.030332794083660734
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 17,
+          "scorePercent": 0.024555119020106313
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "7",
+      "district": "เขตปทุมวัน",
+      "population": 30966,
+      "counted": 17893,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 8873,
+          "scorePercent": 49.58922483652825
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 1982,
+          "scorePercent": 11.076957469401442
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 1841,
+          "scorePercent": 10.288939808863802
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 1793,
+          "scorePercent": 10.020678477616945
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 1483,
+          "scorePercent": 8.288157379980998
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 662,
+          "scorePercent": 3.6997708601128934
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 341,
+          "scorePercent": 1.905773207399542
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 80,
+          "scorePercent": 0.4471022187447605
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 73,
+          "scorePercent": 0.407980774604594
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 29,
+          "scorePercent": 0.1620745542949757
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 5,
+          "scorePercent": 0.027943888671547533
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 5,
+          "scorePercent": 0.027943888671547533
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 5,
+          "scorePercent": 0.027943888671547533
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 5,
+          "scorePercent": 0.027943888671547533
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 4,
+          "scorePercent": 0.022355110937238028
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "8",
+      "district": "เขตป้อมปราบศัตรูพ่าย",
+      "population": 32005,
+      "counted": 18685,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 9066,
+          "scorePercent": 48.52020337168852
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 2274,
+          "scorePercent": 12.17018999197217
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 2010,
+          "scorePercent": 10.757291945410758
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 1623,
+          "scorePercent": 8.686111854428686
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 1479,
+          "scorePercent": 7.915440192667915
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 930,
+          "scorePercent": 4.977254482204977
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 272,
+          "scorePercent": 1.4557131388814557
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 208,
+          "scorePercent": 1.1131924003211133
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 45,
+          "scorePercent": 0.24083489430024083
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 38,
+          "scorePercent": 0.20337168852020338
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 13,
+          "scorePercent": 0.06957452502006958
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 9,
+          "scorePercent": 0.04816697886004817
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 3,
+          "scorePercent": 0.016055659620016056
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 2,
+          "scorePercent": 0.010703773080010703
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 0,
+          "scorePercent": 0
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "9",
+      "district": "เขตพระโขนง",
+      "population": 71850,
+      "counted": 43327,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 22960,
+          "scorePercent": 52.99236042190781
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4765,
+          "scorePercent": 10.997761211253952
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 4038,
+          "scorePercent": 9.319823666535878
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3755,
+          "scorePercent": 8.666651279802434
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 3282,
+          "scorePercent": 7.574953262399889
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1376,
+          "scorePercent": 3.175848777898308
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 642,
+          "scorePercent": 1.4817550257345304
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 525,
+          "scorePercent": 1.2117155584277701
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 162,
+          "scorePercent": 0.3739008008862834
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 56,
+          "scorePercent": 0.1292496595656288
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 22,
+          "scorePercent": 0.05077665197221132
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 20,
+          "scorePercent": 0.0461605927020103
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 18,
+          "scorePercent": 0.041544533431809264
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 11,
+          "scorePercent": 0.02538832598610566
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 7,
+          "scorePercent": 0.0161562074457036
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "10",
+      "district": "เขตมีนบุรี",
+      "population": 109500,
+      "counted": 71173,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 32731,
+          "scorePercent": 45.98794486673317
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 11497,
+          "scorePercent": 16.15359757211302
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 5637,
+          "scorePercent": 7.920138254675228
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 5313,
+          "scorePercent": 7.4649094459977805
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 5225,
+          "scorePercent": 7.341267053517486
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 3216,
+          "scorePercent": 4.518567434279854
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 2255,
+          "scorePercent": 3.168336307307546
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 969,
+          "scorePercent": 1.3614713444705155
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 341,
+          "scorePercent": 0.47911427086114117
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 185,
+          "scorePercent": 0.25993002964607365
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 71,
+          "scorePercent": 0.09975693029660124
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 45,
+          "scorePercent": 0.06322622342742332
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 31,
+          "scorePercent": 0.04355584280555829
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 28,
+          "scorePercent": 0.039340761243730066
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 12,
+          "scorePercent": 0.016860326247312884
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "11",
+      "district": "เขตลาดกระบัง",
+      "population": 138720,
+      "counted": 81927,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 41922,
+          "scorePercent": 51.1699439745139
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 8529,
+          "scorePercent": 10.410487385111136
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 7576,
+          "scorePercent": 9.247256704139051
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 6250,
+          "scorePercent": 7.62874266114956
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3326,
+          "scorePercent": 4.0597116945573495
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 3028,
+          "scorePercent": 3.695973244473739
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 3010,
+          "scorePercent": 3.674002465609628
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 2006,
+          "scorePercent": 2.4485212445225626
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 1196,
+          "scorePercent": 1.4598361956375798
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 283,
+          "scorePercent": 0.34542946769685207
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 122,
+          "scorePercent": 0.1489130567456394
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 115,
+          "scorePercent": 0.14036886496515188
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 38,
+          "scorePercent": 0.04638275537978932
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 34,
+          "scorePercent": 0.04150036007665361
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 17,
+          "scorePercent": 0.020750180038326804
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "12",
+      "district": "เขตยานนาวา",
+      "population": 60503,
+      "counted": 34895,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 17014,
+          "scorePercent": 48.75770167645794
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4146,
+          "scorePercent": 11.881358360796677
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3923,
+          "scorePercent": 11.242298323542055
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 3096,
+          "scorePercent": 8.872331279552945
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2551,
+          "scorePercent": 7.31050293738358
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1677,
+          "scorePercent": 4.805846109757845
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 630,
+          "scorePercent": 1.8054162487462388
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 202,
+          "scorePercent": 0.5788794956297464
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 87,
+          "scorePercent": 0.24931938673162343
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 56,
+          "scorePercent": 0.160481444332999
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 36,
+          "scorePercent": 0.10316664278549935
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 15,
+          "scorePercent": 0.04298610116062473
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 11,
+          "scorePercent": 0.0315231408511248
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 5,
+          "scorePercent": 0.01432870038687491
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 1,
+          "scorePercent": 0.0028657400773749817
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "13",
+      "district": "เขตสัมพันธวงศ์",
+      "population": 17099,
+      "counted": 10456,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 4630,
+          "scorePercent": 44.28079571537873
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 1655,
+          "scorePercent": 15.82823259372609
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 1277,
+          "scorePercent": 12.213083397092579
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 847,
+          "scorePercent": 8.10061208875287
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 658,
+          "scorePercent": 6.293037490436114
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 613,
+          "scorePercent": 5.862662586074981
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 148,
+          "scorePercent": 1.4154552410099464
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 111,
+          "scorePercent": 1.0615914307574599
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 27,
+          "scorePercent": 0.2582249426166794
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 6,
+          "scorePercent": 0.05738332058148432
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 4,
+          "scorePercent": 0.03825554705432287
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 2,
+          "scorePercent": 0.019127773527161437
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 1,
+          "scorePercent": 0.009563886763580718
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 1,
+          "scorePercent": 0.009563886763580718
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 0,
+          "scorePercent": 0
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "14",
+      "district": "เขตพญาไท",
+      "population": 51977,
+      "counted": 32970,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 17114,
+          "scorePercent": 51.907794965119805
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4747,
+          "scorePercent": 14.397937518956628
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 3008,
+          "scorePercent": 9.123445556566576
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 2465,
+          "scorePercent": 7.4764937822262665
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2263,
+          "scorePercent": 6.86381558993024
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1181,
+          "scorePercent": 3.5820442826812253
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 451,
+          "scorePercent": 1.3679102214134062
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 132,
+          "scorePercent": 0.40036396724294815
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 105,
+          "scorePercent": 0.3184713375796179
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 61,
+          "scorePercent": 0.18501668183196845
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 20,
+          "scorePercent": 0.060661207158022444
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 18,
+          "scorePercent": 0.0545950864422202
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 16,
+          "scorePercent": 0.04852896572641796
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 10,
+          "scorePercent": 0.030330603579011222
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 9,
+          "scorePercent": 0.0272975432211101
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "15",
+      "district": "เขตธนบุรี",
+      "population": 83468,
+      "counted": 48161,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 25033,
+          "scorePercent": 51.97774132596914
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 5373,
+          "scorePercent": 11.156329810427525
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 3875,
+          "scorePercent": 8.0459292788771
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3736,
+          "scorePercent": 7.757314009260605
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3727,
+          "scorePercent": 7.738626689645149
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1918,
+          "scorePercent": 3.982475446938394
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1104,
+          "scorePercent": 2.2923112061626627
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 370,
+          "scorePercent": 0.768256473079878
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 254,
+          "scorePercent": 0.5273976869251054
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 93,
+          "scorePercent": 0.1931023026930504
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 36,
+          "scorePercent": 0.07474927846182595
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 29,
+          "scorePercent": 0.06021469653869313
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 13,
+          "scorePercent": 0.026992795000103816
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 13,
+          "scorePercent": 0.026992795000103816
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 11,
+          "scorePercent": 0.022840057307780156
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "16",
+      "district": "เขตบางกอกใหญ่",
+      "population": 52474,
+      "counted": 31910,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 16113,
+          "scorePercent": 50.49514258853024
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4094,
+          "scorePercent": 12.829833907865872
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 2848,
+          "scorePercent": 8.925101848950172
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2704,
+          "scorePercent": 8.473832654340333
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 2703,
+          "scorePercent": 8.470698840488874
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1031,
+          "scorePercent": 3.2309620808523976
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 511,
+          "scorePercent": 1.6013788780946412
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 132,
+          "scorePercent": 0.4136634283923535
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 131,
+          "scorePercent": 0.4105296145408963
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 58,
+          "scorePercent": 0.18176120338451895
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 31,
+          "scorePercent": 0.09714822939517392
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 28,
+          "scorePercent": 0.08774678784080225
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 11,
+          "scorePercent": 0.03447195236602946
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 8,
+          "scorePercent": 0.025070510811657787
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 6,
+          "scorePercent": 0.01880288310874334
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "17",
+      "district": "เขตห้วยขวาง",
+      "population": 67392,
+      "counted": 41686,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 22223,
+          "scorePercent": 53.31046394472965
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4711,
+          "scorePercent": 11.30115626349374
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 4067,
+          "scorePercent": 9.756273089286571
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4012,
+          "scorePercent": 9.624334308880679
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2974,
+          "scorePercent": 7.134289689584033
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 980,
+          "scorePercent": 2.3509091781413423
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 572,
+          "scorePercent": 1.3721633162212734
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 179,
+          "scorePercent": 0.42940075804826555
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 147,
+          "scorePercent": 0.3526363767212014
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 93,
+          "scorePercent": 0.22309648323178047
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 31,
+          "scorePercent": 0.0743654944105935
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 30,
+          "scorePercent": 0.07196660749412273
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 19,
+          "scorePercent": 0.04557885141294439
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 6,
+          "scorePercent": 0.014393321498824545
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 5,
+          "scorePercent": 0.011994434582353787
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "18",
+      "district": "เขตคลองสาน",
+      "population": 53307,
+      "counted": 32510,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 16284,
+          "scorePercent": 50.08920332205476
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3623,
+          "scorePercent": 11.144263303598894
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3318,
+          "scorePercent": 10.206090433712705
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 2981,
+          "scorePercent": 9.169486311904029
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2713,
+          "scorePercent": 8.345124577053214
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1329,
+          "scorePercent": 4.087972931405721
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 516,
+          "scorePercent": 1.5872039372500768
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 132,
+          "scorePercent": 0.40602891418025217
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 120,
+          "scorePercent": 0.3691171947093202
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 44,
+          "scorePercent": 0.13534297139341742
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 18,
+          "scorePercent": 0.055367579206398024
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 17,
+          "scorePercent": 0.05229160258382037
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 13,
+          "scorePercent": 0.03998769609350969
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 9,
+          "scorePercent": 0.027683789603199012
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 5,
+          "scorePercent": 0.015379883112888343
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "19",
+      "district": "เขตตลิ่งชัน",
+      "population": 84954,
+      "counted": 53252,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 28516,
+          "scorePercent": 53.54916247277097
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 4651,
+          "scorePercent": 8.733944265004132
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4578,
+          "scorePercent": 8.59686021182303
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 4443,
+          "scorePercent": 8.343348606625103
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4401,
+          "scorePercent": 8.264478329452416
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1592,
+          "scorePercent": 2.98955907759333
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 905,
+          "scorePercent": 1.6994666866972132
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 503,
+          "scorePercent": 0.9445654623300535
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 393,
+          "scorePercent": 0.7380004506872981
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 118,
+          "scorePercent": 0.22158792158041013
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 39,
+          "scorePercent": 0.07323668594606776
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 35,
+          "scorePercent": 0.0657252309772403
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 21,
+          "scorePercent": 0.039435138586344176
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 20,
+          "scorePercent": 0.03755727484413731
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 9,
+          "scorePercent": 0.01690077367986179
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "20",
+      "district": "เขตบางกอกน้อย",
+      "population": 83321,
+      "counted": 48043,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 24146,
+          "scorePercent": 50.259142851195804
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 5936,
+          "scorePercent": 12.355598110026435
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 4264,
+          "scorePercent": 8.87538246987074
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4240,
+          "scorePercent": 8.825427221447454
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 3953,
+          "scorePercent": 8.228045709052308
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1538,
+          "scorePercent": 3.201298836459005
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 895,
+          "scorePercent": 1.862914472451762
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 483,
+          "scorePercent": 1.0053493745186604
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 251,
+          "scorePercent": 0.5224486397602148
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 74,
+          "scorePercent": 0.15402868263846972
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 43,
+          "scorePercent": 0.08950315342505671
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 31,
+          "scorePercent": 0.064525529213413
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 18,
+          "scorePercent": 0.0374664363174656
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 11,
+          "scorePercent": 0.02289615552734009
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 9,
+          "scorePercent": 0.0187332181587328
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "21",
+      "district": "เขตบางขุนเทียน",
+      "population": 143434,
+      "counted": 86590,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 42725,
+          "scorePercent": 49.341725372444856
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 14268,
+          "scorePercent": 16.477653308696155
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 10467,
+          "scorePercent": 12.088000923894214
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 5689,
+          "scorePercent": 6.570042730107403
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4016,
+          "scorePercent": 4.63794895484467
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 2068,
+          "scorePercent": 2.3882665434807713
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1517,
+          "scorePercent": 1.7519344035107982
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 1017,
+          "scorePercent": 1.1745005196904956
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 353,
+          "scorePercent": 0.4076683219771336
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 225,
+          "scorePercent": 0.2598452477191362
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 65,
+          "scorePercent": 0.07506640489663934
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 59,
+          "scorePercent": 0.0681371982907957
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 36,
+          "scorePercent": 0.04157523963506179
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 35,
+          "scorePercent": 0.04042037186742118
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 14,
+          "scorePercent": 0.016168148746968473
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "22",
+      "district": "เขตภาษีเจริญ",
+      "population": 100628,
+      "counted": 62420,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 34197,
+          "scorePercent": 54.78532521627684
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 5914,
+          "scorePercent": 9.474527395065683
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 5455,
+          "scorePercent": 8.739186158282601
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 5372,
+          "scorePercent": 8.606215956424224
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4475,
+          "scorePercent": 7.1691765459788535
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1776,
+          "scorePercent": 2.845241909644345
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1493,
+          "scorePercent": 2.3918615828260172
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 175,
+          "scorePercent": 0.28035885933995514
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 161,
+          "scorePercent": 0.2579301505927587
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 147,
+          "scorePercent": 0.23550144184556232
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 55,
+          "scorePercent": 0.0881127843639859
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 43,
+          "scorePercent": 0.06888817686638898
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 21,
+          "scorePercent": 0.03364306312079462
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 14,
+          "scorePercent": 0.02242870874719641
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 6,
+          "scorePercent": 0.009612303748798462
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "23",
+      "district": "เขตหนองแขม",
+      "population": 123840,
+      "counted": 75149,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 40298,
+          "scorePercent": 53.624133388335174
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 7972,
+          "scorePercent": 10.60825826025629
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 7248,
+          "scorePercent": 9.644838920012242
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 5827,
+          "scorePercent": 7.753928861328826
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4057,
+          "scorePercent": 5.398608098577492
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1948,
+          "scorePercent": 2.592183528722937
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1818,
+          "scorePercent": 2.4191938681818783
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 737,
+          "scorePercent": 0.9807183062981544
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 505,
+          "scorePercent": 0.6719982967171886
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 206,
+          "scorePercent": 0.27412207747275413
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 80,
+          "scorePercent": 0.10645517571757442
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 58,
+          "scorePercent": 0.07718000239524145
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 41,
+          "scorePercent": 0.054558277555256884
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 27,
+          "scorePercent": 0.03592862180468137
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 25,
+          "scorePercent": 0.033267242411742004
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "24",
+      "district": "เขตราษฎร์บูรณะ",
+      "population": 62386,
+      "counted": 36284,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 18346,
+          "scorePercent": 50.56223128651748
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3374,
+          "scorePercent": 9.298864513284093
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 3300,
+          "scorePercent": 9.094917870135596
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 2961,
+          "scorePercent": 8.160621761658032
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2605,
+          "scorePercent": 7.179473045970676
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1689,
+          "scorePercent": 4.654944328078492
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1231,
+          "scorePercent": 3.3926799691324
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 473,
+          "scorePercent": 1.3036048947194356
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 128,
+          "scorePercent": 0.35277257193253225
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 66,
+          "scorePercent": 0.18189835740271193
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 37,
+          "scorePercent": 0.1019733215742476
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 31,
+          "scorePercent": 0.08543710726491015
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 20,
+          "scorePercent": 0.055120714364458166
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 19,
+          "scorePercent": 0.05236467864623526
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 6,
+          "scorePercent": 0.01653621430933745
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "25",
+      "district": "เขตบางพลัด",
+      "population": 74359,
+      "counted": 47020,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 23793,
+          "scorePercent": 50.60187154402382
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 5649,
+          "scorePercent": 12.014036580178647
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4537,
+          "scorePercent": 9.649085495533816
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4155,
+          "scorePercent": 8.836665248830284
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 3358,
+          "scorePercent": 7.141641854529987
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1354,
+          "scorePercent": 2.879625691195236
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 881,
+          "scorePercent": 1.8736707783921736
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 244,
+          "scorePercent": 0.5189281156954487
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 126,
+          "scorePercent": 0.2679710761378137
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 115,
+          "scorePercent": 0.24457677584006804
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 37,
+          "scorePercent": 0.07868991918332624
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 21,
+          "scorePercent": 0.04466184602296895
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 12,
+          "scorePercent": 0.02552105487026797
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 8,
+          "scorePercent": 0.017014036580178648
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 6,
+          "scorePercent": 0.012760527435133985
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "26",
+      "district": "เขตดินแดง",
+      "population": 93387,
+      "counted": 56159,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 28912,
+          "scorePercent": 51.48239819085097
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 5696,
+          "scorePercent": 10.142630744849445
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 5543,
+          "scorePercent": 9.870189996260617
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 5430,
+          "scorePercent": 9.668975587172136
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4822,
+          "scorePercent": 8.586335226766858
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1449,
+          "scorePercent": 2.5801741484000784
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 900,
+          "scorePercent": 1.6025926387578124
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 546,
+          "scorePercent": 0.9722395341797396
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 137,
+          "scorePercent": 0.24395021278868925
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 88,
+          "scorePercent": 0.15669794690076388
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 43,
+          "scorePercent": 0.07656831496287327
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 39,
+          "scorePercent": 0.06944568101283854
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 33,
+          "scorePercent": 0.058761730087786464
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 19,
+          "scorePercent": 0.033832511262664934
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 11,
+          "scorePercent": 0.019587243362595486
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "27",
+      "district": "เขตบึงกุ่ม",
+      "population": 113478,
+      "counted": 70570,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 37461,
+          "scorePercent": 53.08346322800057
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 6633,
+          "scorePercent": 9.399178121014595
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 6406,
+          "scorePercent": 9.077511690520051
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 6087,
+          "scorePercent": 8.625478248547541
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 5435,
+          "scorePercent": 7.701572906334136
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 2733,
+          "scorePercent": 3.8727504605356384
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 2343,
+          "scorePercent": 3.320107694487743
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 176,
+          "scorePercent": 0.24939776108828116
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 155,
+          "scorePercent": 0.21964007368570215
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 152,
+          "scorePercent": 0.2153889754853337
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 62,
+          "scorePercent": 0.08785602947428085
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 44,
+          "scorePercent": 0.06234944027207029
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 27,
+          "scorePercent": 0.03825988380331585
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 24,
+          "scorePercent": 0.03400878560294743
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 17,
+          "scorePercent": 0.02408955646875443
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "28",
+      "district": "เขตสาทร",
+      "population": 59821,
+      "counted": 35083,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 17165,
+          "scorePercent": 48.926830658723595
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4567,
+          "scorePercent": 13.017700880768462
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3376,
+          "scorePercent": 9.622894279280564
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 3136,
+          "scorePercent": 8.938802268905167
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2522,
+          "scorePercent": 7.188666875694781
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1592,
+          "scorePercent": 4.537810335490124
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 563,
+          "scorePercent": 1.6047658410056151
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 337,
+          "scorePercent": 0.9605791979021179
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 180,
+          "scorePercent": 0.5130690077815466
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 49,
+          "scorePercent": 0.13966878545164324
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 19,
+          "scorePercent": 0.05415728415471881
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 18,
+          "scorePercent": 0.051306900778154654
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 16,
+          "scorePercent": 0.04560613402502637
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 7,
+          "scorePercent": 0.019952683635949035
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 5,
+          "scorePercent": 0.01425191688282074
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "29",
+      "district": "เขตบางซื่อ",
+      "population": 100687,
+      "counted": 60698,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 31386,
+          "scorePercent": 51.708458268806226
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 7069,
+          "scorePercent": 11.646182740782233
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 6287,
+          "scorePercent": 10.357837161026723
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 5588,
+          "scorePercent": 9.206234142805364
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4348,
+          "scorePercent": 7.16333322349995
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1469,
+          "scorePercent": 2.420178589080365
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 965,
+          "scorePercent": 1.5898382154271968
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 325,
+          "scorePercent": 0.5354377409469835
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 207,
+          "scorePercent": 0.341032653464694
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 121,
+          "scorePercent": 0.19934758970641536
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 60,
+          "scorePercent": 0.09885004448252001
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 37,
+          "scorePercent": 0.060957527430887344
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 28,
+          "scorePercent": 0.04613002075850934
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 13,
+          "scorePercent": 0.021417509637879337
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 8,
+          "scorePercent": 0.013180005931002667
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "30",
+      "district": "เขตจตุจักร",
+      "population": 127138,
+      "counted": 78056,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 42527,
+          "scorePercent": 54.48267910218305
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 10085,
+          "scorePercent": 12.920211130470433
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 6972,
+          "scorePercent": 8.932048785487343
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 6538,
+          "scorePercent": 8.376037716511222
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 4569,
+          "scorePercent": 5.853489802193297
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 2040,
+          "scorePercent": 2.61350825048683
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1107,
+          "scorePercent": 1.4182125653377062
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 676,
+          "scorePercent": 0.8660448908475966
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 385,
+          "scorePercent": 0.4932356257046223
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 132,
+          "scorePercent": 0.16910935738444194
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 69,
+          "scorePercent": 0.08839807317823101
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 37,
+          "scorePercent": 0.047401865327457215
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 27,
+          "scorePercent": 0.034590550374090395
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 17,
+          "scorePercent": 0.021779235420723582
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 11,
+          "scorePercent": 0.014092446448703494
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "31",
+      "district": "เขตบางคอแหลม",
+      "population": 64851,
+      "counted": 38251,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 19011,
+          "scorePercent": 49.700661420616456
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4415,
+          "scorePercent": 11.54218190374108
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3680,
+          "scorePercent": 9.620663512065045
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 3341,
+          "scorePercent": 8.734412172230792
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2844,
+          "scorePercent": 7.435099735954616
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1863,
+          "scorePercent": 4.870460902982929
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 699,
+          "scorePercent": 1.8274032051449636
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 230,
+          "scorePercent": 0.6012914695040653
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 217,
+          "scorePercent": 0.5673054299234007
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 55,
+          "scorePercent": 0.14378709053358082
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 24,
+          "scorePercent": 0.06274345768738072
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 23,
+          "scorePercent": 0.060129146950406526
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 16,
+          "scorePercent": 0.04182897179158715
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 11,
+          "scorePercent": 0.028757418106716167
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 9,
+          "scorePercent": 0.023528796632767773
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "32",
+      "district": "เขตประเวศ",
+      "population": 140134,
+      "counted": 82488,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 42727,
+          "scorePercent": 51.797837261177385
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 11118,
+          "scorePercent": 13.478324119871981
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 8047,
+          "scorePercent": 9.755358355154689
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 7060,
+          "scorePercent": 8.55882067694695
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 4748,
+          "scorePercent": 5.75598874987877
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 2259,
+          "scorePercent": 2.7385801571137622
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1676,
+          "scorePercent": 2.031810687615168
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 552,
+          "scorePercent": 0.6691882455629911
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 189,
+          "scorePercent": 0.22912423625254583
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 179,
+          "scorePercent": 0.21700126078944815
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 80,
+          "scorePercent": 0.09698380370478131
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 56,
+          "scorePercent": 0.0678886625933469
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 33,
+          "scorePercent": 0.04000581902822229
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 24,
+          "scorePercent": 0.02909514111143439
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 12,
+          "scorePercent": 0.014547570555717195
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "33",
+      "district": "เขตคลองเตย",
+      "population": 73153,
+      "counted": 42060,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 20006,
+          "scorePercent": 47.56538278649548
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3906,
+          "scorePercent": 9.286733238231099
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 3771,
+          "scorePercent": 8.965763195435093
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3480,
+          "scorePercent": 8.273894436519258
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 3356,
+          "scorePercent": 7.979077508321446
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 2440,
+          "scorePercent": 5.801236329053733
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 1400,
+          "scorePercent": 3.3285782215882076
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1355,
+          "scorePercent": 3.2215882073228723
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 106,
+          "scorePercent": 0.25202092249167857
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 62,
+          "scorePercent": 0.14740846409890634
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 41,
+          "scorePercent": 0.09747979077508322
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 37,
+          "scorePercent": 0.08796956728483118
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 12,
+          "scorePercent": 0.028530670470756064
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 12,
+          "scorePercent": 0.028530670470756064
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 5,
+          "scorePercent": 0.011887779362815026
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "34",
+      "district": "เขตสวนหลวง",
+      "population": 97144,
+      "counted": 58699,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 29321,
+          "scorePercent": 49.95144721375151
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 6255,
+          "scorePercent": 10.65605887664185
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 6166,
+          "scorePercent": 10.504437895023765
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 5968,
+          "scorePercent": 10.167123801086902
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 4333,
+          "scorePercent": 7.3817271163052185
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 2136,
+          "scorePercent": 3.6389035588340515
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 989,
+          "scorePercent": 1.684866863149287
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 597,
+          "scorePercent": 1.0170531014156972
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 282,
+          "scorePercent": 0.4804170428797765
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 96,
+          "scorePercent": 0.16354622736332816
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 40,
+          "scorePercent": 0.06814426140138674
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 31,
+          "scorePercent": 0.05281180258607472
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 17,
+          "scorePercent": 0.028961311095589366
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 15,
+          "scorePercent": 0.025554098025520028
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 14,
+          "scorePercent": 0.02385049149048536
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "35",
+      "district": "เขตจอมทอง",
+      "population": 117583,
+      "counted": 68203,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 38432,
+          "scorePercent": 56.34942744454057
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 6451,
+          "scorePercent": 9.458528217233846
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 5092,
+          "scorePercent": 7.4659472457223295
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4946,
+          "scorePercent": 7.251880415817485
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 4469,
+          "scorePercent": 6.552497690717416
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 2122,
+          "scorePercent": 3.111300089438881
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1867,
+          "scorePercent": 2.7374162426872717
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 700,
+          "scorePercent": 1.0263478146122604
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 445,
+          "scorePercent": 0.6524639678606513
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 246,
+          "scorePercent": 0.3606879462780229
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 53,
+          "scorePercent": 0.07770919167778544
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 43,
+          "scorePercent": 0.06304708004046743
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 16,
+          "scorePercent": 0.02345937861970881
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 15,
+          "scorePercent": 0.02199316745597701
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 9,
+          "scorePercent": 0.013195900473586205
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "36",
+      "district": "เขตดอนเมือง",
+      "population": 132987,
+      "counted": 81164,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 42033,
+          "scorePercent": 51.78773840618993
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 6992,
+          "scorePercent": 8.614656744369425
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 6591,
+          "scorePercent": 8.120595337834507
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 6215,
+          "scorePercent": 7.657335764624711
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 6203,
+          "scorePercent": 7.642550884628653
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 4659,
+          "scorePercent": 5.740229658469272
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1614,
+          "scorePercent": 1.9885663594697158
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 1199,
+          "scorePercent": 1.4772559262727316
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 426,
+          "scorePercent": 0.5248632398600365
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 381,
+          "scorePercent": 0.4694199398748214
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 116,
+          "scorePercent": 0.14292050662855452
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 95,
+          "scorePercent": 0.11704696663545414
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 62,
+          "scorePercent": 0.07638854664629639
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 40,
+          "scorePercent": 0.04928293332019122
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 32,
+          "scorePercent": 0.03942634665615297
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "37",
+      "district": "เขตราชเทวี",
+      "population": 48780,
+      "counted": 26926,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 14492,
+          "scorePercent": 53.82158508504791
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 2936,
+          "scorePercent": 10.90395899873728
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 2706,
+          "scorePercent": 10.049766025402956
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 2002,
+          "scorePercent": 7.435192750501374
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 1783,
+          "scorePercent": 6.621852484587388
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 798,
+          "scorePercent": 2.9636782292208275
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 639,
+          "scorePercent": 2.373170912872317
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 184,
+          "scorePercent": 0.683354378667459
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 109,
+          "scorePercent": 0.40481319171061425
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 52,
+          "scorePercent": 0.1931218896234123
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 19,
+          "scorePercent": 0.07056376736240065
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 13,
+          "scorePercent": 0.04828047240585308
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 9,
+          "scorePercent": 0.033424942434821366
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 6,
+          "scorePercent": 0.022283294956547572
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 3,
+          "scorePercent": 0.011141647478273786
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "38",
+      "district": "เขตลาดพร้าว",
+      "population": 94462,
+      "counted": 60136,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 32422,
+          "scorePercent": 53.914460556072896
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 6478,
+          "scorePercent": 10.772249567646668
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 5730,
+          "scorePercent": 9.528402288146868
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 5508,
+          "scorePercent": 9.159239058134894
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 4135,
+          "scorePercent": 6.876080883331117
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1756,
+          "scorePercent": 2.9200478914460555
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1312,
+          "scorePercent": 2.18172143142211
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 240,
+          "scorePercent": 0.3990953837967274
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 106,
+          "scorePercent": 0.1762671278435546
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 86,
+          "scorePercent": 0.14300917919382733
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 32,
+          "scorePercent": 0.053212717839563654
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 18,
+          "scorePercent": 0.029932153784754556
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 17,
+          "scorePercent": 0.028269256352268193
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 16,
+          "scorePercent": 0.026606358919781827
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 9,
+          "scorePercent": 0.014966076892377278
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "39",
+      "district": "เขตวัฒนา",
+      "population": 55830,
+      "counted": 30659,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 15102,
+          "scorePercent": 49.25796666557944
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4816,
+          "scorePercent": 15.708274894810659
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 2937,
+          "scorePercent": 9.57956880524479
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 2658,
+          "scorePercent": 8.669558694021331
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2218,
+          "scorePercent": 7.234417299977168
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1103,
+          "scorePercent": 3.5976385400698003
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 377,
+          "scorePercent": 1.2296552398969307
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 241,
+          "scorePercent": 0.7860660817378258
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 76,
+          "scorePercent": 0.24788805897126456
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 30,
+          "scorePercent": 0.09785054959392023
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 17,
+          "scorePercent": 0.05544864476988812
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 17,
+          "scorePercent": 0.05544864476988812
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 11,
+          "scorePercent": 0.03587853485110408
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 8,
+          "scorePercent": 0.02609347989171206
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 7,
+          "scorePercent": 0.02283179490524805
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "40",
+      "district": "เขตบางแค",
+      "population": 157372,
+      "counted": 97878,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 51361,
+          "scorePercent": 52.47450908273565
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 9881,
+          "scorePercent": 10.095220580722941
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 8728,
+          "scorePercent": 8.917223482294284
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 8219,
+          "scorePercent": 8.397188336500541
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 7574,
+          "scorePercent": 7.7382047038149535
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 3151,
+          "scorePercent": 3.219313839677967
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1780,
+          "scorePercent": 1.8185904902020884
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 1075,
+          "scorePercent": 1.0983060544759802
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 623,
+          "scorePercent": 0.6365066715707309
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 278,
+          "scorePercent": 0.2840270540877419
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 82,
+          "scorePercent": 0.0837777641553771
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 60,
+          "scorePercent": 0.061300803040519825
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 38,
+          "scorePercent": 0.03882384192566256
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 29,
+          "scorePercent": 0.029628721469584583
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 20,
+          "scorePercent": 0.02043360101350661
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "41",
+      "district": "เขตหลักสี่",
+      "population": 82916,
+      "counted": 51464,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 26203,
+          "scorePercent": 50.91520286025183
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 7407,
+          "scorePercent": 14.392585108036684
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 5318,
+          "scorePercent": 10.333436965645888
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3536,
+          "scorePercent": 6.870822322400125
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 2979,
+          "scorePercent": 5.788512358153272
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1110,
+          "scorePercent": 2.1568475050520752
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1072,
+          "scorePercent": 2.0830094823565988
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 927,
+          "scorePercent": 1.801259132597544
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 225,
+          "scorePercent": 0.43719881859163684
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 129,
+          "scorePercent": 0.2506606559925385
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 49,
+          "scorePercent": 0.09521218715995648
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 38,
+          "scorePercent": 0.07383802269547646
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 20,
+          "scorePercent": 0.0388621172081455
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 13,
+          "scorePercent": 0.025260376185294576
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 10,
+          "scorePercent": 0.01943105860407275
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "42",
+      "district": "เขตสายไหม",
+      "population": 163082,
+      "counted": 100661,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 55215,
+          "scorePercent": 54.85242546765877
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 10128,
+          "scorePercent": 10.061493527781366
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 8700,
+          "scorePercent": 8.642870625167642
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 8248,
+          "scorePercent": 8.193838726021001
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 5251,
+          "scorePercent": 5.216518810661527
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 4852,
+          "scorePercent": 4.8201388819900455
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1796,
+          "scorePercent": 1.7842063957242627
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 1552,
+          "scorePercent": 1.541808644857492
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 180,
+          "scorePercent": 0.17881801293450295
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 126,
+          "scorePercent": 0.12517260905415206
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 106,
+          "scorePercent": 0.10530394095031839
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 97,
+          "scorePercent": 0.09636304030359324
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 83,
+          "scorePercent": 0.08245497263090969
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 26,
+          "scorePercent": 0.025829268534983758
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 21,
+          "scorePercent": 0.020862101509025344
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "43",
+      "district": "เขตคันนายาว",
+      "population": 70521,
+      "counted": 44968,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 24461,
+          "scorePercent": 54.396459704678875
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 3855,
+          "scorePercent": 8.572762853584772
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3709,
+          "scorePercent": 8.248087528909446
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3542,
+          "scorePercent": 7.876712328767123
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 3509,
+          "scorePercent": 7.8033268101761255
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1208,
+          "scorePercent": 2.6863547411492616
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 1206,
+          "scorePercent": 2.6819071339619285
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1059,
+          "scorePercent": 2.355008005692937
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 152,
+          "scorePercent": 0.33801814623732435
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 116,
+          "scorePercent": 0.25796121686532647
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 40,
+          "scorePercent": 0.0889521437466643
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 30,
+          "scorePercent": 0.06671410780999822
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 17,
+          "scorePercent": 0.037804661092332326
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 15,
+          "scorePercent": 0.03335705390499911
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 13,
+          "scorePercent": 0.028909446717665894
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "44",
+      "district": "เขตสะพานสูง",
+      "population": 76216,
+      "counted": 48997,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 24467,
+          "scorePercent": 49.935710349613245
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4899,
+          "scorePercent": 9.998571341102517
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4844,
+          "scorePercent": 9.886319570585954
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 4756,
+          "scorePercent": 9.706716737759455
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 4469,
+          "scorePercent": 9.12096658979121
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1482,
+          "scorePercent": 3.0246749801008224
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1329,
+          "scorePercent": 2.7124109639365677
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 399,
+          "scorePercent": 0.814335571565606
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 133,
+          "scorePercent": 0.2714451905218687
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 81,
+          "scorePercent": 0.16531624385166438
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 80,
+          "scorePercent": 0.1632753025695451
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 25,
+          "scorePercent": 0.05102353205298283
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 23,
+          "scorePercent": 0.04694164948874421
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 13,
+          "scorePercent": 0.02653223666755107
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 8,
+          "scorePercent": 0.016327530256954506
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "45",
+      "district": "เขตวังทองหลาง",
+      "population": 85119,
+      "counted": 52930,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 28268,
+          "scorePercent": 53.40638579255621
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 5293,
+          "scorePercent": 10
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4959,
+          "scorePercent": 9.36897789533346
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 4591,
+          "scorePercent": 8.67372000755715
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 3894,
+          "scorePercent": 7.356886453806914
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1348,
+          "scorePercent": 2.5467598715284336
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 1083,
+          "scorePercent": 2.046098620819951
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 1011,
+          "scorePercent": 1.9100699036463256
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 266,
+          "scorePercent": 0.5025505384470055
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 141,
+          "scorePercent": 0.2663895711316833
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 41,
+          "scorePercent": 0.07746079727942566
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 39,
+          "scorePercent": 0.0736822218023805
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 15,
+          "scorePercent": 0.028339316077838655
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 12,
+          "scorePercent": 0.022671452862270923
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 6,
+          "scorePercent": 0.011335726431135461
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "46",
+      "district": "เขตคลองสามวา",
+      "population": 160227,
+      "counted": 99041,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 51133,
+          "scorePercent": 51.628113609515246
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 11280,
+          "scorePercent": 11.389222645167154
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 9591,
+          "scorePercent": 9.683868296967923
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 7825,
+          "scorePercent": 7.900768368655406
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 5708,
+          "scorePercent": 5.763269756969336
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 2948,
+          "scorePercent": 2.9765450671943943
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 2571,
+          "scorePercent": 2.595894629496875
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 1760,
+          "scorePercent": 1.7770418311608323
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 391,
+          "scorePercent": 0.39478599771811673
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 297,
+          "scorePercent": 0.29987580900839045
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 105,
+          "scorePercent": 0.10601670015448147
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 95,
+          "scorePercent": 0.09591987156834038
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 58,
+          "scorePercent": 0.058561605799618346
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 37,
+          "scorePercent": 0.037358265768722046
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 30,
+          "scorePercent": 0.030290485758423278
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "47",
+      "district": "เขตบางนา",
+      "population": 70973,
+      "counted": 40646,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 21538,
+          "scorePercent": 52.98922403188505
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 4073,
+          "scorePercent": 10.02066624022044
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 3918,
+          "scorePercent": 9.639324902819466
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 3539,
+          "scorePercent": 8.706883826206761
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3393,
+          "scorePercent": 8.347684889041972
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1241,
+          "scorePercent": 3.0531909659007037
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 791,
+          "scorePercent": 1.9460709540914236
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 185,
+          "scorePercent": 0.4551493381882596
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 153,
+          "scorePercent": 0.37642080401515526
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 81,
+          "scorePercent": 0.19928160212567045
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 23,
+          "scorePercent": 0.05658613393691877
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 21,
+          "scorePercent": 0.051665600551099734
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 15,
+          "scorePercent": 0.03690400039364267
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 11,
+          "scorePercent": 0.027062933622004626
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 4,
+          "scorePercent": 0.009841066771638046
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "48",
+      "district": "เขตทวีวัฒนา",
+      "population": 64832,
+      "counted": 43859,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 22192,
+          "scorePercent": 50.5985088579311
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4908,
+          "scorePercent": 11.190405618003146
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4031,
+          "scorePercent": 9.190816024077156
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 3871,
+          "scorePercent": 8.826010624957249
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 3599,
+          "scorePercent": 8.205841446453407
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1647,
+          "scorePercent": 3.7552155771905427
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 800,
+          "scorePercent": 1.824026995599535
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 478,
+          "scorePercent": 1.0898561298707221
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 201,
+          "scorePercent": 0.45828678264438316
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 96,
+          "scorePercent": 0.21888323947194419
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 29,
+          "scorePercent": 0.06612097859048315
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 27,
+          "scorePercent": 0.061560911101484296
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 15,
+          "scorePercent": 0.034200506167491276
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 12,
+          "scorePercent": 0.027360404933993023
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 11,
+          "scorePercent": 0.025080371189493602
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "49",
+      "district": "เขตทุ่งครุ",
+      "population": 98485,
+      "counted": 60636,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 34398,
+          "scorePercent": 56.72867603403918
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 5376,
+          "scorePercent": 8.866020186028102
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4899,
+          "scorePercent": 8.079358796754404
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 4369,
+          "scorePercent": 7.205290586450294
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 4347,
+          "scorePercent": 7.1690085097961616
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1854,
+          "scorePercent": 3.0575895507619237
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 908,
+          "scorePercent": 1.4974602546342106
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 367,
+          "scorePercent": 0.6052510060030345
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 291,
+          "scorePercent": 0.47991292301603006
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 127,
+          "scorePercent": 0.20944653341249422
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 57,
+          "scorePercent": 0.09400356224025332
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 37,
+          "scorePercent": 0.061019856191041624
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 20,
+          "scorePercent": 0.03298370604921169
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 19,
+          "scorePercent": 0.0313345207467511
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 7,
+          "scorePercent": 0.011544297117224092
+        }
+      ]
+    },
+    {
+      "reportState": "FINISHED",
+      "updateAtTime": 1653400409620,
+      "progress": 95,
+      "updateAt": "20:53",
+      "id": "50",
+      "district": "เขตบางบอน",
+      "population": 79579,
+      "counted": 50033,
+      "candidates": [
+        {
+          "id": "8",
+          "idno": 8,
+          "score": 26814,
+          "scorePercent": 53.592628864949134
+        },
+        {
+          "id": "1",
+          "idno": 1,
+          "score": 5172,
+          "scorePercent": 10.337177462874504
+        },
+        {
+          "id": "4",
+          "idno": 4,
+          "score": 4819,
+          "scorePercent": 9.63164311554374
+        },
+        {
+          "id": "3",
+          "idno": 3,
+          "score": 3736,
+          "scorePercent": 7.467071732656446
+        },
+        {
+          "id": "6",
+          "idno": 6,
+          "score": 3072,
+          "scorePercent": 6.13994763456119
+        },
+        {
+          "id": "7",
+          "idno": 7,
+          "score": 1614,
+          "scorePercent": 3.2258709251893753
+        },
+        {
+          "id": "11",
+          "idno": 11,
+          "score": 938,
+          "scorePercent": 1.8747626566466131
+        },
+        {
+          "id": "5",
+          "idno": 5,
+          "score": 866,
+          "scorePercent": 1.730857633961585
+        },
+        {
+          "id": "2",
+          "idno": 2,
+          "score": 341,
+          "scorePercent": 0.681550176883257
+        },
+        {
+          "id": "9",
+          "idno": 9,
+          "score": 124,
+          "scorePercent": 0.247836427957548
+        },
+        {
+          "id": "10",
+          "idno": 10,
+          "score": 52,
+          "scorePercent": 0.10393140527252014
+        },
+        {
+          "id": "12",
+          "idno": 12,
+          "score": 41,
+          "scorePercent": 0.08194591569564087
+        },
+        {
+          "id": "14",
+          "idno": 14,
+          "score": 26,
+          "scorePercent": 0.05196570263626007
+        },
+        {
+          "id": "13",
+          "idno": 13,
+          "score": 16,
+          "scorePercent": 0.03197889393000619
+        },
+        {
+          "id": "15",
+          "idno": 15,
+          "score": 16,
+          "scorePercent": 0.03197889393000619
+        }
+      ]
+    }
+  ],
+  "prodReady": true
+}
