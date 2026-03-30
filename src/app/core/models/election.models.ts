@@ -23,6 +23,14 @@ export interface DistrictResult {
   }[];
 }
 
+export interface District {
+  id: number;
+  number: number;
+  row: number;
+  col: number;
+  leadingCandidateId?: number;
+}
+
 export interface ElectionData {
   candidates: Candidate[];
   districtResults: DistrictResult[];

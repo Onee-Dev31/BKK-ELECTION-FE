@@ -1,10 +1,4 @@
-export interface District {
-  id: number;
-  number: number;
-  row: number;
-  col: number;
-  leadingCandidateId?: number;
-}
+import { District } from '../models/election.models';
 
 // วิธีแก้ไขตำแหน่งบนแผนที่ (Honeycomb Grid):
 // 1. row = แถวแนวนอน (เริ่มต้น 1 คือด้านบนสุด ยิ่งเลขมากยิ่งลงล่าง)

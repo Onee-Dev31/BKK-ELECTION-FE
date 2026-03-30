@@ -6,15 +6,11 @@ import { MapStateService } from '../../../core/services/map-state';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  currentTime = signal(new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }));
-  currentDate = signal(new Date().toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }));
-
   searchService = inject(SearchService);
   mapState = inject(MapStateService);
 

@@ -1,6 +1,7 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { ElectionService } from './election.service';
-import { District, DISTRICT_LAYOUTS } from '../constants/map-layout.constants';
+import { District } from '../models/election.models';
+import { DISTRICT_LAYOUTS } from '../constants/map-layout.constants';
 
 @Injectable({
   providedIn: 'root'

@@ -7,7 +7,6 @@ import { Navbar } from '../../../shared/components/navbar/navbar';
 
 @Component({
   selector: 'app-dashboard-layout',
-  standalone: true,
   imports: [
     MapViewer, PolicyList,
     HeroCard, DistrictModal,

@@ -6,7 +6,6 @@ import { DISTRICT_MAP_NAMES } from '../../../core/constants/map-names.constants'
 
 @Component({
   selector: 'app-district-modal',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './district-modal.html',
   styleUrl: './district-modal.css'

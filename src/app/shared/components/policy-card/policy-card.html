@@ -41,7 +41,7 @@
                 candidate().percentage }}%</div>
             <div
                 class="text-[10px] font-black text-teal-400/60 uppercase tabular-nums tracking-widest leading-none mt-0.5">
-                {{ (candidate().votes / 1000000).toFixed(2) }}M</div>
+                {{ candidate().votes | number }} คะแนน</div>
         </div>
     </div>
 

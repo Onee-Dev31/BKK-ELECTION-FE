@@ -29,19 +29,6 @@
     overflow: hidden;
 }
 
-.css-sun {
-    position: absolute;
-    top: 15%;
-    right: 15%;
-    width: 120px;
-    height: 120px;
-    background: #fff0cc;
-    border-radius: 50%;
-    box-shadow:
-        0 0 60px 40px rgba(255, 232, 179, 0.7),
-        0 0 120px 80px rgba(255, 244, 224, 0.5);
-}
-
 .css-cloud {
     position: absolute;
     width: 800px;

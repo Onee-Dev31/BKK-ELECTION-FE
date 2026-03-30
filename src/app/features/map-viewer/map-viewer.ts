@@ -6,7 +6,6 @@ import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
 
 @Component({
   selector: 'app-map-viewer',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './map-viewer.html',
   styleUrl: './map-viewer.css',

@@ -1,27 +1,3 @@
-@keyframes value-pop {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.02);
-        color: #10b981;
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
 .tabular-nums {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Smooth transition for progress bar */
-:host ::ng-deep .ant-progress-bg {
-    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
-}
-
-.candidate-value {
-    display: inline-block;
 }

@@ -68,4 +68,3 @@ export class SearchService {
     return DISTRICT_MAP_NAMES[id] || 'ไม่ทราบ';
   }
 }
-

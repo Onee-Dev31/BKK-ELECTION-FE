@@ -6,7 +6,6 @@ import { CandidatePolicy } from '../../core/models/election.models';
 
 @Component({
   selector: 'app-compare-candidates',
-  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './compare-candidates.html',
   styleUrl: './compare-candidates.css'

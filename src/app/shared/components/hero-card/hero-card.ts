@@ -5,10 +5,8 @@ import { MapStateService } from '../../../core/services/map-state';
 
 @Component({
   selector: 'app-hero-card',
-  standalone: true,
   imports: [CommonModule],
-  templateUrl: './hero-card.html',
-  styleUrl: './hero-card.css'
+  templateUrl: './hero-card.html'
 })
 export class HeroCard {
   electionService = inject(ElectionService);

@@ -1,9 +1,10 @@
 import { Component, input } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 import { Candidate } from '../../../core/models/election.models';
 
 @Component({
   selector: 'app-policy-card',
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './policy-card.html',
   styleUrl: './policy-card.css',
 })

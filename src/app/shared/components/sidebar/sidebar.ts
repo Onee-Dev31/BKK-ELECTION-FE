@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  standalone: true,
   imports: [],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
@@ -12,8 +11,8 @@ export class Sidebar {
   router = inject(Router);
 
   navItems = [
-    { path: '/', id: 'map', icon: '🗺️', label: 'หน้าแรก' },
-    { path: '/compare', id: 'compare', icon: '⚖️', label: 'เปรียบเทียบนโยบาย' }
+    { path: '/', id: 'map', label: 'หน้าแรก' },
+    { path: '/compare', id: 'compare', label: 'เปรียบเทียบนโยบาย' }
   ];
 
   isActive(path: string) {
