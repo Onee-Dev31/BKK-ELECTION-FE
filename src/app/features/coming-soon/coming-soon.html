@@ -1,0 +1,125 @@
+<div class="coming-soon-page">
+
+  <!-- Cloud background -->
+  <div class="bg-clouds" aria-hidden="true">
+    <div class="bg-cloud bc1"></div>
+    <div class="bg-cloud bc2"></div>
+    <div class="bg-cloud bc3"></div>
+    <div class="bg-cloud bc4"></div>
+    <div class="bg-cloud bc5"></div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="cs-nav">
+    <img src="one_logo.png" alt="ONE Logo" class="cs-logo" />
+  </div>
+
+  <!-- Main content -->
+  <div class="cs-body">
+
+    <!-- UIverse TV -->
+    <div class="main_wrapper">
+      <div class="main">
+        <div class="antenna">
+          <div class="antenna_shadow"></div>
+          <div class="a1"></div>
+          <div class="a1d"></div>
+          <div class="a2"></div>
+          <div class="a2d"></div>
+          <!-- Lightning arc between antenna tips -->
+          <!-- <div class="lightning-wrap">
+            <svg class="lightning-svg" viewBox="0 0 60 90" xmlns="http://www.w3.org/2000/svg">
+              <polyline class="bolt bolt1" points="10,0 0,42 14,42 4,90"/>
+              <polyline class="bolt bolt2" points="14,0 4,38 16,38 6,90"/>
+            </svg>
+            <div class="spark sp1"></div>
+            <div class="spark sp2"></div>
+          </div> -->
+        </div>
+        <div class="tv">
+          <div class="cruve">
+            <svg xml:space="preserve" viewBox="0 0 189.929 189.929" xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg" version="1.1" class="curve_svg">
+              <path d="M70.343,70.343c-30.554,30.553-44.806,72.7-39.102,115.635l-29.738,3.951C-5.442,137.659,11.917,86.34,49.129,49.13
+                C86.34,11.918,137.664-5.445,189.928,1.502l-3.95,29.738C143.041,25.54,100.895,39.789,70.343,70.343z">
+              </path>
+            </svg>
+          </div>
+          <div class="display_div">
+            <div class="screen_out">
+              <div class="screen_out1">
+                <div class="screenM">
+                  <span class="notfound_text">SOON</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lines">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <div class="buttons_div">
+            <div class="b1">
+              <div></div>
+            </div>
+            <div class="b2"></div>
+            <div class="speakers">
+              <div class="g1">
+                <div class="g11"></div>
+                <div class="g12"></div>
+                <div class="g13"></div>
+              </div>
+              <div class="g"></div>
+              <div class="g"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="base1"></div>
+          <div class="base2"></div>
+          <div class="base3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Countdown content -->
+    <div class="cs-content">
+      @if (!isExpired()) {
+      <h1 class="cs-title">เร็วๆ นี้!</h1>
+      <p class="cs-subtitle">เลือกตั้งผู้ว่าราชการกรุงเทพมหานคร</p>
+      <p class="cs-date">28 มิถุนายน 2569 เวลา 08:00 น.</p>
+
+      <div class="countdown">
+        <div class="countdown-unit">
+          <span class="countdown-number">{{ pad(timeLeft().days) }}</span>
+          <span class="countdown-label">วัน</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-number">{{ pad(timeLeft().hours) }}</span>
+          <span class="countdown-label">ชั่วโมง</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-number">{{ pad(timeLeft().minutes) }}</span>
+          <span class="countdown-label">นาที</span>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit">
+          <span class="countdown-number">{{ pad(timeLeft().seconds) }}</span>
+          <span class="countdown-label">วินาที</span>
+        </div>
+      </div>
+      } @else {
+      <h1 class="cs-title">เริ่มแล้ว!</h1>
+      <p class="cs-subtitle">การเลือกตั้งเริ่มต้นแล้ว</p>
+      }
+
+      <!-- <a routerLink="/" class="cs-btn">
+        <span>←</span> กลับหน้าหลัก
+      </a> -->
+    </div>
+
+  </div>
+</div>
