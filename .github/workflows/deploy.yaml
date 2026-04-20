@@ -69,8 +69,11 @@ jobs:
         run: |
           $keepFolders = @("carousel", "employee", "files", "icon", "image", "img", "logo", "logo-backup070768")
           
-          # ลบไฟล์ทั้งหมดใน root
-          Get-ChildItem -Path "${{ env.DEPLOY_PATH }}" -File | Remove-Item -Force
+          # ลบไฟล์ทั้งหมดใน root ยกเว้น web.config
+          $keepFiles = @("web.config")
+          Get-ChildItem -Path "${{ env.DEPLOY_PATH }}" -File |
+            Where-Object { $keepFiles -notcontains $_.Name } |
+            Remove-Item -Force
           
           # ลบ folder ที่ไม่อยู่ใน whitelist
           Get-ChildItem -Path "${{ env.DEPLOY_PATH }}" -Directory | 
