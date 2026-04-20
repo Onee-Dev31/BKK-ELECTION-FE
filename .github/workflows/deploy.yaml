@@ -3,7 +3,7 @@ name: Build and Deploy Front to IIS
 on:
   push:
     branches:
-      - feature/coming-soon
+      - future/coming-soon
 
 permissions: {}
 
