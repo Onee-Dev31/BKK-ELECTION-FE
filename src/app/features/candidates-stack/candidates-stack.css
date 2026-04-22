@@ -9,6 +9,14 @@
   gap: 2rem;
 }
 
+@media (max-width: 639px) {
+  .stack-page {
+    justify-content: flex-start;
+    padding-top: 24px;
+    padding-bottom: 84px;
+  }
+}
+
 .stack-header { text-align: center; }
 
 .stack-title {
@@ -45,7 +53,7 @@
 }
 
 @media (max-width: 600px) {
-  .stack-page { padding: 1.25rem 0.75rem; gap: 1.25rem; }
+  .stack-page { padding: 1.25rem 0.75rem 84px; gap: 1.25rem; }
   .stack-title { font-size: 1.4rem; }
   .stack-sub { font-size: 0.6rem; }
   .cards-row {
@@ -186,6 +194,8 @@
     padding 0.3s ease;
   padding-top: 0;
   padding-bottom: 0;
+  /* เผื่อ bottom nav ตอน scrollIntoView */
+  scroll-margin-bottom: 80px;
 }
 
 .detail-panel.detail-visible {

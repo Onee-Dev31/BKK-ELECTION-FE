@@ -13,7 +13,8 @@
         <div class="card"
              [class.is-hovered]="hoveredIdx() === i"
              [class.is-dimmed]="hoveredIdx() !== null && hoveredIdx() !== i"
-             (mouseenter)="hoveredIdx.set(i)">
+             (mouseenter)="hoveredIdx.set(i)"
+             (click)="selectCard(i, detail)">
 
           <div class="card-img-wrap">
             <img [src]="imgUrl(c.number)" [alt]="c.name" class="card-img"
@@ -35,7 +36,7 @@
         </div>
 
         <!-- detail panel ใต้การ์ด -->
-        <div class="detail-panel" [class.detail-visible]="hoveredIdx() === i">
+        <div #detail class="detail-panel" [class.detail-visible]="hoveredIdx() === i">
           <div class="detail-row">
             <span class="detail-label">คะแนน</span>
             <span class="detail-value" [style.color]="c.color">{{ formatVotes(c.votes) }}</span>

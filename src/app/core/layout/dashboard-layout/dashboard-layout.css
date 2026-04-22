@@ -152,6 +152,7 @@
             "hero"
             "candidates";
         padding: 12px;
+        padding-bottom: 84px; /* เผื่อ bottom nav (~64px) + gap */
         gap: 12px;
     }
 
@@ -174,8 +175,10 @@
         min-height: 0;
     }
 
+    /* ให้ grid auto-size จาก content ของ hero card จริงๆ ไม่ใส่ min-height เกิน */
     .area-hero {
-        min-height: 320px;
+        height: auto;
+        /* min-height: 0; */
     }
 }
 
@@ -190,6 +193,7 @@
             "hero"
             "candidates";
         padding: 12px;
+        padding-bottom: 84px;
         gap: 12px;
     }
 
@@ -223,6 +227,7 @@
             "hero"
             "candidates";
         padding: 20px;
+        padding-bottom: 24px; /* tablet มี sidebar ด้านข้าง ไม่มี bottom nav */
         gap: 20px;
     }
 

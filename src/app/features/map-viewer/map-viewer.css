@@ -339,6 +339,37 @@
     }
 }
 
+/* === Touch devices: disable hover tooltip + scale effects ===
+   ป้องกัน double-tap ที่เกิดจาก :hover ถูก trigger ก่อน click บน touchscreen */
+@media (hover: none) {
+    .custom-tooltip-box {
+        display: none !important;
+    }
+
+    .district-cell:hover {
+        transform: none;
+        z-index: 1;
+    }
+
+    .district-cell:hover .district-inner {
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    .district-cell:hover .hexagon-content {
+        filter: none;
+        border-color: rgba(255, 255, 255, 0.15);
+        transform: none;
+        box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.03),
+                    0 0 15px var(--candidate-color, transparent);
+    }
+
+    /* tap feedback แทน hover */
+    .district-cell:active {
+        transform: scale(0.92) !important;
+        transition: transform 0.1s ease !important;
+    }
+}
+
 @keyframes fadeInSlide {
     from {
         opacity: 0;
