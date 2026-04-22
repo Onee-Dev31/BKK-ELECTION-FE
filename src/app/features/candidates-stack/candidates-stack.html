@@ -8,7 +8,7 @@
   <div class="cards-row" (mouseleave)="hoveredIdx.set(null)">
     @for (c of top10(); track c.id; let i = $index) {
 
-      <div class="card-col" [class.col-active]="hoveredIdx() === i">
+      <div #cardCol class="card-col" [class.col-active]="hoveredIdx() === i">
 
         <!-- wrapper คุม popup ให้อยู่แค่ในพื้นที่การ์ด ไม่ล้นลงมาทับ detail -->
         <div class="card-wrapper">
@@ -21,8 +21,8 @@
           <div class="card"
                [class.is-hovered]="hoveredIdx() === i"
                [class.is-dimmed]="hoveredIdx() !== null && hoveredIdx() !== i"
-               (mouseenter)="hoveredIdx.set(i)"
-               (click)="selectCard(i, detail)">
+               (pointerenter)="onPointerEnter(i, $event)"
+               (click)="selectCard(i, cardCol)">
 
             <div class="card-img-wrap">
               <img [src]="imgUrl(c.number)" [alt]="c.name" class="card-img"
@@ -46,7 +46,7 @@
         </div><!-- /card-wrapper -->
 
         <!-- detail panel ใต้การ์ด -->
-        <div #detail class="detail-panel" [class.detail-visible]="hoveredIdx() === i">
+        <div class="detail-panel" [class.detail-visible]="hoveredIdx() === i">
           <div class="detail-row">
             <span class="detail-label">คะแนน</span>
             <span class="detail-value" [style.color]="c.color">{{ formatVotes(c.votes) }}</span>

@@ -27,14 +27,21 @@ export class CandidatesStack implements OnInit {
 
   hoveredIdx = signal<number | null>(null);
 
-  selectCard(idx: number, detailEl: HTMLElement) {
+  onPointerEnter(idx: number, event: PointerEvent) {
+    // เฉพาะ mouse เท่านั้น — touch ไม่ใช้ hover เพื่อป้องกัน double-tap
+    if (event.pointerType === 'mouse') {
+      this.hoveredIdx.set(idx);
+    }
+  }
+
+  selectCard(idx: number, colEl: HTMLElement) {
     const isSame = this.hoveredIdx() === idx;
     this.hoveredIdx.set(isSame ? null : idx);
 
     if (!isSame) {
-      // รอให้ detail panel expand ก่อน (~350ms) แล้วค่อย scroll ไปหา
       setTimeout(() => {
-        detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // scroll ให้เห็น card-col ทั้งหมด ไม่ใช้ detail panel เพื่อไม่ให้ header หาย
+        colEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 360);
     }
   }
