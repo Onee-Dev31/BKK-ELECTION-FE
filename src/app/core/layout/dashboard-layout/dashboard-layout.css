@@ -52,9 +52,10 @@
     display: grid;
     gap: 24px;
     padding: 24px;
-    overflow-y: auto; 
+    overflow-y: auto;
     overflow-x: hidden;
 
+    /* === Desktop default: 2-column === */
     grid-template-columns: 1fr 400px;
     grid-template-rows: auto 1fr;
     grid-template-areas:
@@ -62,7 +63,8 @@
         "map     candidates";
 }
 
-@media (max-width: 1200px) {
+/* Large desktop (1200–1400px): compact sidebar */
+@media (max-width: 1400px) {
     .content-grid {
         grid-template-columns: 1fr 340px;
         gap: 20px;
@@ -70,8 +72,33 @@
     }
 }
 
-/* Mobile Stacking Layout */
-@media (max-width: 900px) {
+/* === Tablet landscape (768–1199px, landscape, height ≥ 550px) ===
+   แนวนอน → แสดงแบบ desktop 2-column แต่ขนาดเล็กลง */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) and (min-height: 550px) {
+    .content-grid {
+        grid-template-columns: 1fr 300px;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .area-search {
+        width: min(460px, calc(50vw - 60px));
+    }
+
+    .area-map {
+        min-height: 400px;
+    }
+}
+
+/* ============================================================
+   STACKED LAYOUT — ใช้กับ 3 กรณี:
+   1. Phone ทุกแนว (≤ 767px)
+   2. Tablet แนวตั้ง (768–1199px + portrait)
+   3. Phone แนวนอน (landscape + height < 550px)
+   ============================================================ */
+
+/* Phone portrait */
+@media (max-width: 767px) {
     .content-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
@@ -79,20 +106,94 @@
             "map"
             "hero"
             "candidates";
-        padding: 16px;
-        gap: 16px;
+        padding: 12px;
+        gap: 12px;
     }
 
     .area-search {
         position: sticky;
         top: 0;
-        width: calc(100% - 32px);
-        margin: 16px auto 0;
+        width: calc(100% - 24px);
+        margin: 12px auto 0;
         transform: none;
         left: 0;
         right: 0;
     }
+
+    .area-map {
+        min-height: 380px;
+    }
+
+    .area-hero {
+        min-height: 320px;
+    }
 }
+
+/* Phone landscape (จอสั้น < 550px) */
+@media (orientation: landscape) and (max-height: 549px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "map"
+            "hero"
+            "candidates";
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .area-search {
+        position: sticky;
+        top: 0;
+        width: calc(100% - 24px);
+        margin: 12px auto 0;
+        transform: none;
+        left: 0;
+        right: 0;
+    }
+
+    .area-map {
+        min-height: 280px;
+    }
+}
+
+/* Tablet portrait (iPad / tablet แนวตั้ง — ขนาด 768–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "map"
+            "hero"
+            "candidates";
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .area-search {
+        position: sticky;
+        top: 0;
+        width: calc(100% - 40px);
+        margin: 20px auto 0;
+        transform: none;
+        left: 0;
+        right: 0;
+    }
+
+    .area-map {
+        min-height: 500px;
+    }
+
+    .area-hero {
+        min-height: 400px;
+    }
+
+    .area-candidates {
+        min-height: 440px;
+    }
+}
+
+/* ============================================================ */
 
 .area-search {
     position: absolute;
@@ -113,20 +214,9 @@
 
 .area-map {
     grid-area: map;
-    min-height: 500px; 
+    min-height: 500px;
     display: flex;
     flex-direction: column;
-}
-
-@media (max-width: 600px) {
-    .area-map {
-        min-height: 400px;
-    }
-    
-    .area-search {
-        width: calc(100% - 24px);
-        margin: 12px auto 0;
-    }
 }
 
 .area-candidates {

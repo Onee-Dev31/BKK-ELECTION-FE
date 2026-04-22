@@ -653,7 +653,7 @@
 @media (max-width: 768px) {
   .cs-body {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 1rem;
   }
 
@@ -661,14 +661,24 @@
     width: 22em;
     height: 22em;
     transform: scale(0.85);
+    transform-origin: center top;
   }
 
-  .cs-title { font-size: 2.25rem; }
+  .cs-title { font-size: 2rem; }
+  .cs-subtitle { font-size: 0.85rem; }
 
-  .countdown-unit {
-    min-width: 52px;
-    padding: 0.6rem 0.75rem;
-  }
-
+  .countdown { gap: 0.35rem; }
+  .countdown-unit { min-width: 52px; padding: 0.6rem 0.75rem; }
   .countdown-number { font-size: 1.5rem; }
+  .countdown-sep { font-size: 1.4rem; margin-top: 0.5rem; }
+
+  .bc1, .bc2, .bc3, .bc4 { width: 400px; height: 300px; }
+}
+
+@media (max-width: 420px) {
+  .main_wrapper { transform: scale(0.7); }
+  .cs-title { font-size: 1.75rem; }
+  .countdown-unit { min-width: 44px; padding: 0.5rem 0.6rem; }
+  .countdown-number { font-size: 1.25rem; }
+  .countdown-label { font-size: 0.55rem; }
 }

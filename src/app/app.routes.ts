@@ -3,16 +3,18 @@ import { DashboardLayout } from './core/layout/dashboard-layout/dashboard-layout
 import { CompareCandidates } from './features/compare-candidates/compare-candidates';
 import { MainLayout } from './core/layout/main-layout/main-layout';
 import { ComingSoon } from './features/coming-soon/coming-soon';
+import { CandidatesStack } from './features/candidates-stack/candidates-stack';
 import { electionGuard } from './core/guards/election.guard';
 
 export const routes: Routes = [
     {
         path: '',
         component: MainLayout,
-        canActivate: [electionGuard],
+        // canActivate: [electionGuard],
         children: [
             { path: '', component: DashboardLayout },
-            { path: 'compare', component: CompareCandidates }
+            { path: 'compare', component: CompareCandidates },
+            { path: 'top10', component: CandidatesStack }
         ]
     },
     { path: 'coming-soon', component: ComingSoon },

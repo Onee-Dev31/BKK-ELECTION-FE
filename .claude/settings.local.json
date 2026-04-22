@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:uiverse.io)"
+      "WebFetch(domain:uiverse.io)",
+      "Bash(npx claude-code-templates@latest --skill development/senior-frontend)"
     ]
   }
 }

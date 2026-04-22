@@ -1,6 +1,6 @@
-<div class="w-full h-full overflow-y-auto p-10 layout-content-area relative text-slate-800">
+<div class="w-full h-full overflow-y-auto p-4 sm:p-6 lg:p-10 layout-content-area relative text-slate-800">
   <div class="max-w-6xl mx-auto">
-    <div class="mb-12">
+    <div class="mb-6 lg:mb-12">
       <h1 class="text-4xl font-black text-slate-900 tracking-tight">เปรียบเทียบนโยบาย</h1>
       <div class="flex items-center gap-2 mt-3">
          <div class="h-1 w-12 bg-emerald-500 rounded-full"></div>
@@ -32,14 +32,30 @@
         </div>
 
         @if(candidateA()) {
-        <div class="glass-panel p-8 rounded-[40px] flex items-center gap-8 border border-white shadow-md relative overflow-hidden group">
-          <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div class="w-24 h-24 rounded-full flex items-center justify-center font-black text-4xl text-slate-800 border-4 ring-4 ring-emerald-50 shadow-sm transition-transform group-hover:scale-105" [style.borderColor]="candidateA()?.color" [style.backgroundColor]="candidateA()?.color + '15'">
-            {{ candidateA()?.number }}
-          </div>
-          <div>
-            <h2 class="text-3xl font-black text-slate-900 leading-none tracking-tight">{{ candidateA()?.name }}</h2>
-            <span class="rounded-full px-4 py-1.5 border text-[11px] font-black mt-4 inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateA()?.color + '30'" [style.backgroundColor]="candidateA()?.color + '08'" [style.color]="candidateA()?.color">พรรค{{ candidateA()?.party }}</span>
+        <div class="tilt-scene" (mousemove)="onMove($event, 'A')" (mouseleave)="onLeave('A')">
+          <div class="tilt-card glass-panel border border-white shadow-md" [ngStyle]="tiltStyle(tiltA())">
+            <div class="tilt-glare" [ngStyle]="glareStyle(tiltA())"></div>
+            <!-- floating photo -->
+            <div class="tilt-photo-wrap">
+              <img [src]="getImageUrl(candidateA()!.number)" [alt]="candidateA()!.name" class="tilt-photo" />
+            </div>
+            <!-- original info -->
+            <div class="tilt-body">
+              <div class="w-24 h-24 rounded-full flex items-center justify-center font-black text-4xl text-slate-800 border-4 ring-4 ring-emerald-50 shadow-sm flex-shrink-0"
+                [style.borderColor]="candidateA()?.color"
+                [style.backgroundColor]="candidateA()!.color + '15'">
+                {{ candidateA()?.number }}
+              </div>
+              <div>
+                <h2 class="text-3xl font-black text-slate-900 leading-none tracking-tight">{{ candidateA()?.name }}</h2>
+                <span class="rounded-full px-4 py-1.5 border text-[11px] font-black mt-4 inline-block uppercase tracking-widest shadow-sm"
+                  [style.borderColor]="candidateA()!.color + '30'"
+                  [style.backgroundColor]="candidateA()!.color + '08'"
+                  [style.color]="candidateA()?.color">
+                  พรรค{{ candidateA()?.party }}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
         }
@@ -79,14 +95,30 @@
         </div>
 
         @if(candidateB()) {
-        <div class="glass-panel p-8 rounded-[40px] flex items-center gap-8 border border-white shadow-md relative overflow-hidden group">
-          <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div class="w-24 h-24 rounded-full flex items-center justify-center font-black text-4xl text-slate-800 border-4 ring-4 ring-emerald-50 shadow-sm transition-transform group-hover:scale-105" [style.borderColor]="candidateB()?.color" [style.backgroundColor]="candidateB()?.color + '15'">
-            {{ candidateB()?.number }}
-          </div>
-          <div>
-            <h2 class="text-3xl font-black text-slate-900 leading-none tracking-tight">{{ candidateB()?.name }}</h2>
-            <span class="rounded-full px-4 py-1.5 border text-[11px] font-black mt-4 inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateB()?.color + '30'" [style.backgroundColor]="candidateB()?.color + '08'" [style.color]="candidateB()?.color">พรรค{{ candidateB()?.party }}</span>
+        <div class="tilt-scene" (mousemove)="onMove($event, 'B')" (mouseleave)="onLeave('B')">
+          <div class="tilt-card glass-panel border border-white shadow-md" [ngStyle]="tiltStyle(tiltB())">
+            <div class="tilt-glare" [ngStyle]="glareStyle(tiltB())"></div>
+            <!-- floating photo -->
+            <div class="tilt-photo-wrap">
+              <img [src]="getImageUrl(candidateB()!.number)" [alt]="candidateB()!.name" class="tilt-photo" />
+            </div>
+            <!-- original info -->
+            <div class="tilt-body">
+              <div class="w-24 h-24 rounded-full flex items-center justify-center font-black text-4xl text-slate-800 border-4 ring-4 ring-emerald-50 shadow-sm flex-shrink-0"
+                [style.borderColor]="candidateB()?.color"
+                [style.backgroundColor]="candidateB()!.color + '15'">
+                {{ candidateB()?.number }}
+              </div>
+              <div>
+                <h2 class="text-3xl font-black text-slate-900 leading-none tracking-tight">{{ candidateB()?.name }}</h2>
+                <span class="rounded-full px-4 py-1.5 border text-[11px] font-black mt-4 inline-block uppercase tracking-widest shadow-sm"
+                  [style.borderColor]="candidateB()!.color + '30'"
+                  [style.backgroundColor]="candidateB()!.color + '08'"
+                  [style.color]="candidateB()?.color">
+                  พรรค{{ candidateB()?.party }}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
         }

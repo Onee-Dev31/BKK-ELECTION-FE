@@ -259,56 +259,73 @@
     text-shadow: 0 0 20px rgba(0, 214, 91, 0.3);
 }
 
-@media (max-width: 900px) {
+/* === Phone portrait (≤ 767px) === */
+@media (max-width: 767px) {
     .map-container {
-        padding: 20px;
+        padding: 8px;
         align-items: flex-start;
-        padding-top: 80px;
-    }
-
-    .map-grid-wrapper {
-        width: 95cqw;
-        aspect-ratio: 1;
-        margin-top: 20px;
-    }
-
-    .election-logo-container {
-        left: 20px;
-        top: 10px;
-        transform: scale(0.85);
-        transform-origin: left top;
-    }
-
-    .district-number {
-        font-size: min(1.1rem, 4.5cqw);
-    }
-
-    .district-title {
-        font-size: min(0.55rem, 2.2cqw);
-    }
-}
-
-@media (max-width: 600px) {
-    .election-logo-container {
-        left: 16px;
-        top: 8px;
-        gap: 10px;
-    }
-
-    .logo-accent {
-        height: 36px;
-    }
-
-    .logo-title {
-        font-size: 1rem;
-    }
-
-    .logo-year {
-        font-size: 1.4rem;
+        padding-top: 8px;
     }
 
     .map-grid-wrapper {
         width: 100cqw;
+        aspect-ratio: 1;
+        margin-top: 4px;
+    }
+
+    .election-logo-container {
+        display: none;
+    }
+
+    .district-number {
+        font-size: min(0.75rem, 3.5cqw);
+    }
+
+    .district-title {
+        font-size: min(0.4rem, 1.6cqw);
+    }
+}
+
+/* === Tablet portrait (768–1199px, แนวตั้ง) — map อยู่ด้านบน มีพื้นที่มากกว่า phone === */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+    .map-container {
+        padding: 16px;
+        align-items: flex-start;
+        padding-top: 16px;
+    }
+
+    .map-grid-wrapper {
+        width: 88cqw;
+        aspect-ratio: 1.05;
+        margin-top: 8px;
+    }
+
+    /* ซ่อน logo เพราะ search bar sticky อยู่บนสุด */
+    .election-logo-container {
+        display: none;
+    }
+
+    .district-number {
+        font-size: min(0.9rem, 3.6cqw);
+    }
+
+    .district-title {
+        font-size: min(0.5rem, 1.9cqw);
+    }
+}
+
+/* === Phone landscape (จอสั้น) — แสดง map แบบ stacked เหมือนกัน === */
+@media (orientation: landscape) and (max-height: 549px) {
+    .election-logo-container {
+        display: none;
+    }
+
+    .district-number {
+        font-size: min(0.75rem, 3.5cqw);
+    }
+
+    .district-title {
+        font-size: min(0.4rem, 1.6cqw);
     }
 }
 

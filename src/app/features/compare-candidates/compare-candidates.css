@@ -6,3 +6,81 @@
 .layout-content-area {
   background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.05) 0%, rgba(240, 253, 244, 0.1) 100%);
 }
+
+/* ===== 3D Tilt Card ===== */
+.tilt-scene {
+  width: 100%;
+  perspective: 900px;
+  cursor: pointer;
+}
+
+.tilt-card {
+  position: relative;
+  width: 100%;
+  border-radius: 40px;
+  padding: 2rem;
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  overflow: visible !important;
+}
+
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 40px;
+}
+
+/* photo floats up in 3D */
+.tilt-photo-wrap {
+  position: absolute;
+  top: -30px;
+  right: 24px;
+  width: 110px;
+  transform: translateZ(0px);
+  transition: transform 0.4s cubic-bezier(.23,1,.32,1), opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+  filter: drop-shadow(0 16px 32px rgba(0,0,0,0.3));
+}
+
+.tilt-scene:hover .tilt-photo-wrap {
+  transform: translateZ(70px) translateY(-16px);
+  opacity: 1;
+}
+
+.tilt-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 20px 48px rgba(0,0,0,0.35);
+}
+
+.tilt-body {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .tilt-card { padding: 1.5rem; border-radius: 28px; }
+  .tilt-photo-wrap { width: 85px; right: 16px; top: -20px; }
+}
+
+@media (max-width: 768px) {
+  .tilt-scene:hover .tilt-photo-wrap {
+    transform: translateZ(0) translateY(-10px);
+  }
+  .tilt-body { gap: 1.25rem; }
+  .tilt-card { padding: 1.25rem; border-radius: 24px; }
+  .tilt-photo-wrap { width: 70px; }
+}

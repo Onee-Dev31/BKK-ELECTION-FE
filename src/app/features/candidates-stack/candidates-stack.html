@@ -1,0 +1,56 @@
+<div class="stack-page">
+
+  <div class="stack-header">
+    <h1 class="stack-title">Top 10 ผู้สมัคร</h1>
+    <p class="stack-sub">เรียงตามคะแนนสูงสุด</p>
+  </div>
+
+  <div class="cards-row" (mouseleave)="hoveredIdx.set(null)"> 
+    @for (c of top10(); track c.id; let i = $index) {
+
+      <div class="card-col">
+        <!-- card -->
+        <div class="card"
+             [class.is-hovered]="hoveredIdx() === i"
+             [class.is-dimmed]="hoveredIdx() !== null && hoveredIdx() !== i"
+             (mouseenter)="hoveredIdx.set(i)">
+
+          <div class="card-img-wrap">
+            <img [src]="imgUrl(c.number)" [alt]="c.name" class="card-img"
+                 onerror="this.style.display='none'" />
+            <div class="card-img-overlay"
+                 [style.background]="'linear-gradient(to top,' + c.color + 'cc 0%,transparent 50%)'">
+            </div>
+          </div>
+
+          <div class="card-rank" [style.backgroundColor]="c.color">{{ i + 1 }}</div>
+
+          <div class="card-info">
+            <div class="card-number" [style.color]="c.color">เบอร์ {{ c.number }}</div>
+            <div class="card-name">{{ c.name }}</div>
+            <span class="card-party" [style.color]="c.color" [style.borderColor]="c.color + '55'">
+              {{ c.party }}
+            </span>
+          </div>
+        </div>
+
+        <!-- detail panel ใต้การ์ด -->
+        <div class="detail-panel" [class.detail-visible]="hoveredIdx() === i">
+          <div class="detail-row">
+            <span class="detail-label">คะแนน</span>
+            <span class="detail-value" [style.color]="c.color">{{ formatVotes(c.votes) }}</span>
+          </div>
+          <div class="detail-bar-bg">
+            <div class="detail-bar-fill"
+                 [style.width]="hoveredIdx() === i ? c.percentage + '%' : '0%'"
+                 [style.backgroundColor]="c.color">
+            </div>
+          </div>
+          <div class="detail-pct" [style.color]="c.color">{{ c.percentage }}%</div>
+        </div>
+      </div>
+
+    }
+  </div>
+
+</div>

@@ -84,9 +84,6 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
-          "options": {
-            "proxyConfig": "proxy.conf.json"
-          },
           "configurations": {
             "prod": {
               "buildTarget": "governor-bkk:build:production"
