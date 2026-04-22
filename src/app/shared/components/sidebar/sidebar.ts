@@ -15,7 +15,8 @@ export class Sidebar {
 
   navItems = [
     { path: '/', id: 'map', icon: '🗺️', label: 'หน้าแรก' },
-    { path: '/compare', id: 'compare', icon: '⚖️', label: 'เปรียบเทียบนโยบาย' }
+    { path: '/compare', id: 'compare', icon: '⚖️', label: 'เปรียบเทียบนโยบาย' },
+    { path: '/top10', id: 'top10', icon: '🏆', label: 'Top 10 ผู้สมัคร' }
   ];
 
   isActive(path: string) {

@@ -19,7 +19,6 @@
     background-size: cover;
     background-position: center;
     filter: saturate(1.2) brightness(0.5) contrast(1.1) hue-rotate(130deg);
-    /* Dark, emerald tinted city */
 }
 
 .stage-bg-overlay {
@@ -45,6 +44,11 @@
     z-index: 1;
 }
 
+/* ============================================================
+   BASE ELEMENT STYLES — ต้องอยู่ก่อน media queries
+   เพื่อให้ responsive overrides override ได้ถูกต้อง
+   ============================================================ */
+
 .content-grid {
     position: relative;
     flex: 1;
@@ -55,13 +59,53 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    /* === Desktop default: 2-column === */
+    /* Desktop default: 2-column */
     grid-template-columns: 1fr 400px;
     grid-template-rows: auto 1fr;
     grid-template-areas:
         "map     hero"
         "map     candidates";
 }
+
+/* Search bar: absolute floating over map on desktop */
+.area-search {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 48px;
+    z-index: 100;
+}
+
+.area-map {
+    grid-area: map;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.area-hero {
+    grid-area: hero;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+}
+
+.area-candidates {
+    grid-area: candidates;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.area-donut {
+    display: none;
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES — ทุก media query มาหลัง base styles
+   ============================================================ */
 
 /* Large desktop (1200–1400px): compact sidebar */
 @media (max-width: 1400px) {
@@ -72,8 +116,8 @@
     }
 }
 
-/* === Tablet landscape (768–1199px, landscape, height ≥ 550px) ===
-   แนวนอน → แสดงแบบ desktop 2-column แต่ขนาดเล็กลง */
+/* Tablet landscape (768–1199px, landscape, height ≥ 550px):
+   แนวนอน → desktop 2-column แต่ขนาดเล็กลง */
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) and (min-height: 550px) {
     .content-grid {
         grid-template-columns: 1fr 300px;
@@ -91,18 +135,19 @@
 }
 
 /* ============================================================
-   STACKED LAYOUT — ใช้กับ 3 กรณี:
-   1. Phone ทุกแนว (≤ 767px)
-   2. Tablet แนวตั้ง (768–1199px + portrait)
-   3. Phone แนวนอน (landscape + height < 550px)
+   STACKED LAYOUT:
+   1. Phone portrait (≤ 767px)
+   2. Phone landscape (landscape + height < 550px)
+   3. Tablet portrait (768–1199px + portrait)
    ============================================================ */
 
 /* Phone portrait */
 @media (max-width: 767px) {
     .content-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto auto auto;
         grid-template-areas:
+            "search"
             "map"
             "hero"
             "candidates";
@@ -110,18 +155,23 @@
         gap: 12px;
     }
 
+    /* ใส่ grid-area + sticky ให้ search bar ติดบนสุดของ stacked layout */
     .area-search {
+        grid-area: search;
         position: sticky;
         top: 0;
-        width: calc(100% - 24px);
-        margin: 12px auto 0;
-        transform: none;
         left: 0;
         right: 0;
+        transform: none;
+        width: 100%;
+        height: 48px;
+        margin: 0;
+        z-index: 100;
     }
 
     .area-map {
-        min-height: 380px;
+        height: 360px;
+        min-height: 0;
     }
 
     .area-hero {
@@ -133,8 +183,9 @@
 @media (orientation: landscape) and (max-height: 549px) {
     .content-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto auto auto;
         grid-template-areas:
+            "search"
             "map"
             "hero"
             "candidates";
@@ -143,26 +194,31 @@
     }
 
     .area-search {
+        grid-area: search;
         position: sticky;
         top: 0;
-        width: calc(100% - 24px);
-        margin: 12px auto 0;
-        transform: none;
         left: 0;
         right: 0;
+        transform: none;
+        width: 100%;
+        height: 48px;
+        margin: 0;
+        z-index: 100;
     }
 
     .area-map {
-        min-height: 280px;
+        height: 260px;
+        min-height: 0;
     }
 }
 
-/* Tablet portrait (iPad / tablet แนวตั้ง — ขนาด 768–1199px) */
+/* Tablet portrait (iPad แนวตั้ง — 768–1199px) */
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
     .content-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto auto auto;
         grid-template-areas:
+            "search"
             "map"
             "hero"
             "candidates";
@@ -171,17 +227,21 @@
     }
 
     .area-search {
+        grid-area: search;
         position: sticky;
         top: 0;
-        width: calc(100% - 40px);
-        margin: 20px auto 0;
-        transform: none;
         left: 0;
         right: 0;
+        transform: none;
+        width: 100%;
+        height: 48px;
+        margin: 0;
+        z-index: 100;
     }
 
     .area-map {
-        min-height: 500px;
+        height: 520px;
+        min-height: 0;
     }
 
     .area-hero {
@@ -191,41 +251,4 @@
     .area-candidates {
         min-height: 440px;
     }
-}
-
-/* ============================================================ */
-
-.area-search {
-    position: absolute;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 48px;
-    z-index: 100;
-}
-
-.area-hero {
-    grid-area: hero;
-    min-height: 420px;
-    display: flex;
-    flex-direction: column;
-}
-
-.area-map {
-    grid-area: map;
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-}
-
-.area-candidates {
-    grid-area: candidates;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-}
-
-.area-donut {
-    display: none;
 }

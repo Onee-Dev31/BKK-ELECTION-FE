@@ -101,6 +101,25 @@ nav:focus-within {
     text-shadow: 0 0 8px rgba(0, 214, 91, 0.4);
 }
 
+/* Mobile: search bar ชิดขอบ เต็มความกว้าง */
+@media (max-width: 767px) {
+    nav {
+        border-radius: 16px;
+        padding: 0 16px;
+        box-shadow:
+            0 2px 16px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(0, 214, 91, 0.08);
+    }
+}
+
+/* Tablet portrait */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+    nav {
+        border-radius: 20px;
+        padding: 0 20px;
+    }
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;

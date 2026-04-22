@@ -263,14 +263,14 @@
 @media (max-width: 767px) {
     .map-container {
         padding: 8px;
-        align-items: flex-start;
-        padding-top: 8px;
+        align-items: center;
+        justify-content: center;
     }
 
+    /* ใช้ min(cqw, cqh) เพื่อไม่ให้ล้นทั้งแนวนอนและแนวตั้ง */
     .map-grid-wrapper {
-        width: 100cqw;
+        width: min(98cqw, 92cqh);
         aspect-ratio: 1;
-        margin-top: 4px;
     }
 
     .election-logo-container {
@@ -290,14 +290,13 @@
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
     .map-container {
         padding: 16px;
-        align-items: flex-start;
-        padding-top: 16px;
+        align-items: center;
+        justify-content: center;
     }
 
     .map-grid-wrapper {
-        width: 88cqw;
-        aspect-ratio: 1.05;
-        margin-top: 8px;
+        width: min(92cqw, 88cqh * 1.1);
+        aspect-ratio: 1.1;
     }
 
     /* ซ่อน logo เพราะ search bar sticky อยู่บนสุด */
@@ -314,8 +313,19 @@
     }
 }
 
-/* === Phone landscape (จอสั้น) — แสดง map แบบ stacked เหมือนกัน === */
+/* === Phone landscape (จอสั้น) — map compact === */
 @media (orientation: landscape) and (max-height: 549px) {
+    .map-container {
+        padding: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .map-grid-wrapper {
+        width: min(95cqw, 88cqh * 1.1);
+        aspect-ratio: 1.1;
+    }
+
     .election-logo-container {
         display: none;
     }
