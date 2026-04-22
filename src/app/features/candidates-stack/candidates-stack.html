@@ -5,35 +5,45 @@
     <p class="stack-sub">เรียงตามคะแนนสูงสุด</p>
   </div>
 
-  <div class="cards-row" (mouseleave)="hoveredIdx.set(null)"> 
+  <div class="cards-row" (mouseleave)="hoveredIdx.set(null)">
     @for (c of top10(); track c.id; let i = $index) {
 
-      <div class="card-col">
-        <!-- card -->
-        <div class="card"
-             [class.is-hovered]="hoveredIdx() === i"
-             [class.is-dimmed]="hoveredIdx() !== null && hoveredIdx() !== i"
-             (mouseenter)="hoveredIdx.set(i)"
-             (click)="selectCard(i, detail)">
+      <div class="card-col" [class.col-active]="hoveredIdx() === i">
 
-          <div class="card-img-wrap">
-            <img [src]="imgUrl(c.number)" [alt]="c.name" class="card-img"
-                 onerror="this.style.display='none'" />
-            <div class="card-img-overlay"
-                 [style.background]="'linear-gradient(to top,' + c.color + 'cc 0%,transparent 50%)'">
+        <!-- wrapper คุม popup ให้อยู่แค่ในพื้นที่การ์ด ไม่ล้นลงมาทับ detail -->
+        <div class="card-wrapper">
+
+          <!-- 3D PNG popup -->
+          <img class="card-photo-popup"
+               [src]="imgUrl3D(c.number)" [alt]="c.name" />
+
+          <!-- card -->
+          <div class="card"
+               [class.is-hovered]="hoveredIdx() === i"
+               [class.is-dimmed]="hoveredIdx() !== null && hoveredIdx() !== i"
+               (mouseenter)="hoveredIdx.set(i)"
+               (click)="selectCard(i, detail)">
+
+            <div class="card-img-wrap">
+              <img [src]="imgUrl(c.number)" [alt]="c.name" class="card-img"
+                   onerror="this.style.display='none'" />
+              <div class="card-img-overlay"
+                   [style.background]="'linear-gradient(to top,' + c.color + 'cc 0%,transparent 50%)'">
+              </div>
             </div>
-          </div>
 
-          <div class="card-rank" [style.backgroundColor]="c.color">{{ i + 1 }}</div>
+            <div class="card-rank" [style.backgroundColor]="c.color">{{ i + 1 }}</div>
 
-          <div class="card-info">
-            <div class="card-number" [style.color]="c.color">เบอร์ {{ c.number }}</div>
-            <div class="card-name">{{ c.name }}</div>
-            <span class="card-party" [style.color]="c.color" [style.borderColor]="c.color + '55'">
-              {{ c.party }}
-            </span>
-          </div>
-        </div>
+            <div class="card-info">
+              <div class="card-number" [style.color]="c.color">เบอร์ {{ c.number }}</div>
+              <div class="card-name">{{ c.name }}</div>
+              <span class="card-party" [style.color]="c.color" [style.borderColor]="c.color + '55'">
+                {{ c.party }}
+              </span>
+            </div>
+          </div><!-- /card -->
+
+        </div><!-- /card-wrapper -->
 
         <!-- detail panel ใต้การ์ด -->
         <div #detail class="detail-panel" [class.detail-visible]="hoveredIdx() === i">
@@ -49,7 +59,7 @@
           </div>
           <div class="detail-pct" [style.color]="c.color">{{ c.percentage }}%</div>
         </div>
-      </div>
+      </div><!-- /card-col -->
 
     }
   </div>

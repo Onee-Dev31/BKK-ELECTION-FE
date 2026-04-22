@@ -61,14 +61,50 @@
     gap: 10px;
     width: calc(100vw - 48px);
   }
-  .card.is-hovered { transform: translateY(-16px) scale(1.06); }
+  .card.is-hovered { transform: translateY(-8px) scale(1.02); filter: brightness(0.45) saturate(0.5); }
   .detail-panel.detail-visible { max-height: 70px; }
+  .card-photo-popup { width: 140%; }
+  .card-col.col-active .card-photo-popup { transform: translateX(-50%) translateY(-25%) scale(1.05); }
 }
 
 .card-col {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+/* wrapper จำกัด popup ให้อยู่แค่ในขอบเขตการ์ด */
+.card-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* ===== 3D PNG Popup ===== */
+.card-photo-popup {
+  position: absolute;
+  /* โผล่เหนือการ์ด: bottom ของรูปตรงกับ bottom ของการ์ด, top ล้นขึ้นไป */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px) scale(0.9);
+  width: 200%;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom;
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0));
+  transition:
+    opacity 0.35s ease,
+    transform 0.55s cubic-bezier(0.23, 1, 0.32, 1),
+    filter 0.55s ease;
+  will-change: transform, opacity;
+}
+
+.card-col.col-active .card-photo-popup {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-55%) scale(1.45);
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.8));
 }
 
 /* ===== Card ===== */
@@ -91,9 +127,11 @@
 }
 
 .card.is-hovered {
-  transform: translateY(-28px) scale(1.1) translateZ(0);
+  transform: translateY(-12px) scale(1.04) translateZ(0);
   box-shadow: 0 28px 60px rgba(0,0,0,0.7);
   z-index: 10;
+  /* หรี่ภาพในการ์ดเพื่อให้ PNG popup เด่นขึ้น */
+  filter: brightness(0.45) saturate(0.5);
 }
 
 .card.is-dimmed {
@@ -179,6 +217,8 @@
 
 /* ===== Detail panel (ใต้การ์ด) ===== */
 .detail-panel {
+  position: relative;
+  z-index: 30;
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
