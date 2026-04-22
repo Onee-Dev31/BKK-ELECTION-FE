@@ -13,7 +13,7 @@
   .stack-page {
     justify-content: flex-start;
     padding-top: 24px;
-    padding-bottom: 84px;
+    padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
   }
 }
 

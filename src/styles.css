@@ -76,6 +76,13 @@
     }
 }
 
+/* ── iOS Safe Area ─────────────────────────────────── */
+/* ต้องใช้ร่วมกับ viewport-fit=cover ใน meta tag */
+.safe-bottom {
+    /* padding เพิ่มให้ nav ไม่ทับ home indicator */
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
 /* Sidebar and Navbar layout properties are managed in their respective CSS and dashboard-layout.css */
 
 /* ── Scrollbar (Softened for Light Mode) ─────────── */

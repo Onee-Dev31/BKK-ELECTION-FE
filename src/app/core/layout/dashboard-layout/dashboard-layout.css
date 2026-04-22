@@ -152,7 +152,7 @@
             "hero"
             "candidates";
         padding: 12px;
-        padding-bottom: 84px; /* เผื่อ bottom nav (~64px) + gap */
+        padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
         gap: 12px;
     }
 
@@ -193,7 +193,7 @@
             "hero"
             "candidates";
         padding: 12px;
-        padding-bottom: 84px;
+        padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
         gap: 12px;
     }
 
