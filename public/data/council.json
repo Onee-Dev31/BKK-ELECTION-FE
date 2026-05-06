@@ -1,0 +1,3468 @@
+[
+  {
+    "number": 1,
+    "firstName": "ธีรกร",
+    "lastName": "ไหวดี",
+    "fullName": "นายธีรกร ไหวดี",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/1/1.jpg",
+    "areaNumber": 1
+  },
+  {
+    "number": 2,
+    "firstName": "ชัยพรรษ",
+    "lastName": "ศิริเบญจวรรณ",
+    "fullName": "นายชัยพรรษ ศิริเบญจวรรณ",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/1/2.jpg",
+    "areaNumber": 1
+  },
+  {
+    "number": 3,
+    "firstName": "บดินทร์",
+    "lastName": "วัชโรบล",
+    "fullName": "นายบดินทร์ วัชโรบล",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/1/3.jpg",
+    "areaNumber": 1
+  },
+  {
+    "number": 4,
+    "firstName": "สรเทพ",
+    "lastName": "โรจน์พจนารัช",
+    "fullName": "นายสรเทพ โรจน์พจนารัช",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/1/4.jpg",
+    "areaNumber": 1
+  },
+  {
+    "number": 5,
+    "firstName": "พิชิตชัย",
+    "lastName": "แซ่จึง",
+    "fullName": "นายพิชิตชัย แซ่จึง",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/1/5.jpg",
+    "areaNumber": 1
+  },
+  {
+    "number": 6,
+    "firstName": "ศศิธร",
+    "lastName": "ประสิทธิ์พรอุดม",
+    "fullName": "นางสาวศศิธร ประสิทธิ์พรอุดม",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/1/6.jpg",
+    "areaNumber": 1
+  },
+  {
+    "number": 7,
+    "firstName": "สุติพงส์",
+    "lastName": "ธนโกเศศ",
+    "fullName": "นายสุติพงส์ ธนโกเศศ",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/1/7.jpg",
+    "areaNumber": 1
+  },
+  {
+    "number": 1,
+    "firstName": "ธนพัฒน์",
+    "lastName": "ธนกิจอารักษ์",
+    "fullName": "นายธนพัฒน์ ธนกิจอารักษ์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/1.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 2,
+    "firstName": "ธันย์ชนน",
+    "lastName": "ศรีอัษฎาวุธกุล",
+    "fullName": "นายธันย์ชนน ศรีอัษฎาวุธกุล",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/2.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 3,
+    "firstName": "วินัย",
+    "lastName": "โภคทรัพย์",
+    "fullName": "นายวินัย โภคทรัพย์",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/3.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 4,
+    "firstName": "ศรราม",
+    "lastName": "ภูมิไชย",
+    "fullName": "นายศรราม ภูมิไชย",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/4.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 5,
+    "firstName": "เจนณรงค์ ทาคูมิ",
+    "lastName": "ซาก้า",
+    "fullName": "นายเจนณรงค์ ทาคูมิ ซาก้า",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/5.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 6,
+    "firstName": "ผ่องศรี",
+    "lastName": "เฉลียวค้า",
+    "fullName": "นางผ่องศรี เฉลียวค้า",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/6.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 7,
+    "firstName": "อัครพล",
+    "lastName": "สยามธรรมะรังษี",
+
+"fullName": "นายอัครพล สยามธรรมะรังษี",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/7.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 8,
+    "firstName": "ศิริพงษ์",
+    "lastName": "ลิมปิชัย",
+    "fullName": "นายศิริพงษ์ ลิมปิชัย",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/8.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 9,
+    "firstName": "ดนัยเทพ",
+    "lastName": "ศรีธัญรัตน์",
+    "fullName": "นายดนัยเทพ ศรีธัญรัตน์",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/9.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 10,
+    "firstName": "อดิเทพ",
+    "lastName": "จาวลาห์",
+    "fullName": "นายอดิเทพ จาวลาห์",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/2/10.jpg",
+    "areaNumber": 2
+  },
+  {
+    "number": 1,
+    "firstName": "ไพฑูรย์",
+    "lastName": "อิสระเสรีพงษ์",
+    "fullName": "นายไพฑูรย์ อิสระเสรีพงษ์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/3/1.jpg",
+    "areaNumber": 3
+  },
+  {
+    "number": 2,
+    "firstName": "มังกร",
+    "lastName": "ศิริศรีโพธิ์",
+    "fullName": "นายมังกร ศิริศรีโพธิ์",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/3/2.jpg",
+    "areaNumber": 3
+  },
+  {
+    "number": 3,
+    "firstName": "ณัฐิดา",
+    "lastName": "เตาเฟ็ส",
+    "fullName": "นางสาวณัฐิดา เตาเฟ็ส",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/3/3.jpg",
+    "areaNumber": 3
+  },
+  {
+    "number": 4,
+    "firstName": "ณรงค์",
+    "lastName": "รัสมี",
+    "fullName": "นายณรงค์ รัสมี",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/3/4.jpg",
+    "areaNumber": 3
+  },
+  {
+    "number": 5,
+    "firstName": "ไปรยา",
+    "lastName": "หลำลาย",
+    "fullName": "นางสาวไปรยา หลำลาย",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/3/5.jpg",
+    "areaNumber": 3
+  },
+  {
+    "number": 6,
+    "firstName": "ไชโย",
+    "lastName": "จันทร์ทำมา",
+    "fullName": "นายไชโย จันทร์ทำมา",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/3/6.jpg",
+    "areaNumber": 3
+  },
+  {
+    "number": 7,
+    "firstName": "ปกรณ์เกียรติ",
+    "lastName": "เจริญยิ่งวัฒนา",
+    "fullName": "นายปกรณ์เกียรติ เจริญยิ่งวัฒนา",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/3/7.jpg",
+    "areaNumber": 3
+  },
+  {
+    "number": 1,
+    "firstName": "สุวิทย์",
+    "lastName": "เลิศธนากุลวัฒน์",
+    "fullName": "นายสุวิทย์ เลิศธนากุลวัฒน์",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/4/1.jpg",
+    "areaNumber": 4
+  },
+  {
+    "number": 2,
+    "firstName": "ณัฐริกา",
+    "lastName": "เกื้อเดช",
+    "fullName": "นางสาวณัฐริกา เกื้อเดช",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/4/2.jpg",
+    "areaNumber": 4
+  },
+  {
+    "number": 3,
+    "firstName": "เอกรัฐ",
+    "lastName": "อิทธิไกวัล",
+    "fullName": "นายเอกรัฐ อิทธิไกวัล",
+    "partyId": 2,
+
+"imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/4/3.jpg",
+    "areaNumber": 4
+  },
+  {
+    "number": 4,
+    "firstName": "พิพัฒน์",
+    "lastName": "ลาภปรารถนา",
+    "fullName": "นายพิพัฒน์ ลาภปรารถนา",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/4/4.jpg",
+    "areaNumber": 4
+  },
+  {
+    "number": 5,
+    "firstName": "นิรมล",
+    "lastName": "โตจิรกุล",
+    "fullName": "นางนิรมล โตจิรกุล",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/4/5.jpg",
+    "areaNumber": 4
+  },
+  {
+    "number": 6,
+    "firstName": "สมศักดิ์",
+    "lastName": "รัตนกังวานวงศ์",
+    "fullName": "นายสมศักดิ์ รัตนกังวานวงศ์",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/4/6.jpg",
+    "areaNumber": 4
+  },
+  {
+    "number": 7,
+    "firstName": "ธนากร",
+    "lastName": "ลิ้มวาทะรส",
+    "fullName": "นายธนากร ลิ้มวาทะรส",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/4/7.jpg",
+    "areaNumber": 4
+  },
+  {
+    "number": 8,
+    "firstName": "วิพุธ",
+    "lastName": "ศรีวะอุไร",
+    "fullName": "นายวิพุธ ศรีวะอุไร",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/4/8.jpg",
+    "areaNumber": 4
+  },
+  {
+    "number": 9,
+    "firstName": "อัญญวีณ์",
+    "lastName": "กาญจนธนาเลิศ",
+    "fullName": "นางสาวอัญญวีณ์ กาญจนธนาเลิศ",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/4/9.jpg",
+    "areaNumber": 4
+  },
+  {
+    "number": 1,
+    "firstName": "ธีรวุฒิ",
+    "lastName": "เทพจุฬาลักษณ์",
+    "fullName": "นายธีรวุฒิ เทพจุฬาลักษณ์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/5/1.jpg",
+    "areaNumber": 5
+  },
+  {
+    "number": 2,
+    "firstName": "น้ำฝน",
+    "lastName": "ไพรทอง",
+    "fullName": "นางสาวน้ำฝน ไพรทอง",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/5/2.jpg",
+    "areaNumber": 5
+  },
+  {
+    "number": 3,
+    "firstName": "สายัณต์",
+    "lastName": "จันทร์เหมือนเผือก",
+    "fullName": "นายสายัณต์ จันทร์เหมือนเผือก",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/5/3.jpg",
+    "areaNumber": 5
+  },
+  {
+    "number": 4,
+    "firstName": "วิกรม",
+    "lastName": "ธรรมวัฒนะ",
+    "fullName": "นายวิกรม ธรรมวัฒนะ",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/5/4.jpg",
+    "areaNumber": 5
+  },
+  {
+    "number": 5,
+    "firstName": "สมปอง",
+    "lastName": "บุญเจือ",
+    "fullName": "นายสมปอง บุญเจือ",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/5/5.jpg",
+    "areaNumber": 5
+  },
+  {
+    "number": 6,
+    "firstName": "สุชาดา",
+    "lastName": "เวสารัชตระกูล",
+    "fullName": "นางสาวสุชาดา เวสารัชตระกูล",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/5/6.jpg",
+    "areaNumber": 5
+  },
+  {
+    "number": 7,
+    "firstName": "ชัยฤทธิ์",
+    "lastName": "กองก่ำ",
+    "fullName": "นายชัยฤทธิ์ กองก่ำ",
+    "partyId": 8,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/5/7.jpg",
+
+"areaNumber": 5
+  },
+  {
+    "number": 8,
+    "firstName": "นริสสร",
+    "lastName": "แสงแก้ว",
+    "fullName": "นายนริสสร แสงแก้ว",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/5/8.jpg",
+    "areaNumber": 5
+  },
+  {
+    "number": 9,
+    "firstName": "ชัยยะ",
+    "lastName": "ศรีภา",
+    "fullName": "นายชัยยะ ศรีภา",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/5/9.jpg",
+    "areaNumber": 5
+  },
+  {
+    "number": 1,
+    "firstName": "ทวีศักดิ์",
+    "lastName": "อุ่มบางตลาด",
+    "fullName": "นายทวีศักดิ์ อุ่มบางตลาด",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/6/1.jpg",
+    "areaNumber": 6
+  },
+  {
+    "number": 2,
+    "firstName": "อัครพัชร์",
+    "lastName": "โชติเดชาชัยนันต์",
+    "fullName": "นายอัครพัชร์ โชติเดชาชัยนันต์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/6/2.jpg",
+    "areaNumber": 6
+  },
+  {
+    "number": 3,
+    "firstName": "ประเสริฐ",
+    "lastName": "ทองนุ่น",
+    "fullName": "นายประเสริฐ ทองนุ่น",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/6/3.jpg",
+    "areaNumber": 6
+  },
+  {
+    "number": 4,
+    "firstName": "นภัสสร",
+    "lastName": "พละระวีพงศ์",
+    "fullName": "นางสาวนภัสสร พละระวีพงศ์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/6/4.jpg",
+    "areaNumber": 6
+  },
+  {
+    "number": 5,
+    "firstName": "กระถินนฤมล",
+    "lastName": "มิ่งขวัญ",
+    "fullName": "นางสาวกระถินนฤมล มิ่งขวัญ",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/6/5.jpg",
+    "areaNumber": 6
+  },
+  {
+    "number": 6,
+    "firstName": "นฤมล",
+    "lastName": "รัตนาภิบาล",
+    "fullName": "นางนฤมล รัตนาภิบาล",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/6/6.jpg",
+    "areaNumber": 6
+  },
+  {
+    "number": 7,
+    "firstName": "จิณต์ธนภัค",
+    "lastName": "ฐิติพันธนานาถ",
+    "fullName": "นางสาวจิณต์ธนภัค ฐิติพันธนานาถ",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/6/7.jpg",
+    "areaNumber": 6
+  },
+  {
+    "number": 1,
+    "firstName": "ณัฏฐ์",
+    "lastName": "อิศรางกูร ณ อยุธยา",
+    "fullName": "นายณัฏฐ์ อิศรางกูร ณ อยุธยา",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/7/1.jpg",
+    "areaNumber": 7
+  },
+  {
+    "number": 2,
+    "firstName": "สมชาย",
+    "lastName": "กรสิริพักตร์",
+    "fullName": "นายสมชาย กรสิริพักตร์",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/7/2.jpg",
+    "areaNumber": 7
+  },
+  {
+    "number": 3,
+    "firstName": "ใจพิชญ์",
+    "lastName": "สุขุมาลจันทร์",
+    "fullName": "นายใจพิชญ์ สุขุมาลจันทร์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/7/3.jpg",
+    "areaNumber": 7
+  },
+  {
+    "number": 4,
+    "firstName": "เมลิสา",
+    "lastName": "มหาพล",
+    "fullName": "นางสาวเมลิสา มหาพล",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/7/4.jpg",
+    "areaNumber": 7
+  },
+  {
+
+"number": 5,
+    "firstName": "อภิชาติ",
+    "lastName": "ซำศิริพงษ์",
+    "fullName": "นายอภิชาติ ซำศิริพงษ์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/7/5.jpg",
+    "areaNumber": 7
+  },
+  {
+    "number": 6,
+    "firstName": "เมธาวี",
+    "lastName": "ธารดำรงค์",
+    "fullName": "นางสาวเมธาวี ธารดำรงค์",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/7/6.jpg",
+    "areaNumber": 7
+  },
+  {
+    "number": 7,
+    "firstName": "กอบกฤต",
+    "lastName": "สุขสถิตย์",
+    "fullName": "นายกอบกฤต สุขสถิตย์",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/7/7.jpg",
+    "areaNumber": 7
+  },
+  {
+    "number": 8,
+    "firstName": "หฤทัย",
+    "lastName": "ทวีพรกิจกุล",
+    "fullName": "นางสาวหฤทัย ทวีพรกิจกุล",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/7/8.jpg",
+    "areaNumber": 7
+  },
+  {
+    "number": 1,
+    "firstName": "กมล",
+    "lastName": "พงศ์ภูมิวานิช",
+    "fullName": "นายกมล พงศ์ภูมิวานิช",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/8/1.jpg",
+    "areaNumber": 8
+  },
+  {
+    "number": 2,
+    "firstName": "พรภวิษย์",
+    "lastName": "ศุภวรางกูร",
+    "fullName": "นายพรภวิษย์ ศุภวรางกูร",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/8/2.jpg",
+    "areaNumber": 8
+  },
+  {
+    "number": 3,
+    "firstName": "วศิน",
+    "lastName": "ศรีสกุลพาณิชย์",
+    "fullName": "นายวศิน ศรีสกุลพาณิชย์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/8/3.jpg",
+    "areaNumber": 8
+  },
+  {
+    "number": 4,
+    "firstName": "โดมม์",
+    "lastName": "บำรุงศรี",
+    "fullName": "นายโดมม์ บำรุงศรี",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/8/4.jpg",
+    "areaNumber": 8
+  },
+  {
+    "number": 5,
+    "firstName": "นิภาพรรณ",
+    "lastName": "จึงเลิศศิริ",
+    "fullName": "นางสาวนิภาพรรณ จึงเลิศศิริ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/8/5.jpg",
+    "areaNumber": 8
+  },
+  {
+    "number": 6,
+    "firstName": "วันสว่าง",
+    "lastName": "เต็มชำนาญ",
+    "fullName": "นางสาววันสว่าง เต็มชำนาญ",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/8/6.jpg",
+    "areaNumber": 8
+  },
+  {
+    "number": 7,
+    "firstName": "บุศราวรรณ",
+    "lastName": "ปิ่นแก้ว",
+    "fullName": "นางบุศราวรรณ ปิ่นแก้ว",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/8/7.jpg",
+    "areaNumber": 8
+  },
+  {
+    "number": 8,
+    "firstName": "เมธา",
+    "lastName": "ขำโสภา",
+    "fullName": "นายเมธา ขำโสภา",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/8/8.jpg",
+    "areaNumber": 8
+  },
+  {
+    "number": 9,
+    "firstName": "อรรถสิทธิ์",
+    "lastName": "เหลืองไพบูลย์",
+    "fullName": "นายอรรถสิทธิ์ เหลืองไพบูลย์",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/8/9.jpg",
+    "areaNumber": 8
+  },
+  {
+    "number": 1,
+    "firstName": "พิมพ์ญาดา",
+
+"lastName": "เอี่ยมประไพ",
+    "fullName": "นางสาวพิมพ์ญาดา เอี่ยมประไพ",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/9/1.jpg",
+    "areaNumber": 9
+  },
+  {
+    "number": 2,
+    "firstName": "พชญา",
+    "lastName": "ปรีฎาพาก",
+    "fullName": "นางสาวพชญา ปรีฎาพาก",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/9/2.jpg",
+    "areaNumber": 9
+  },
+  {
+    "number": 3,
+    "firstName": "ตรีสิทธิ์",
+    "lastName": "ศิริวรรณ",
+    "fullName": "นายตรีสิทธิ์ ศิริวรรณ",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/9/3.jpg",
+    "areaNumber": 9
+  },
+  {
+    "number": 4,
+    "firstName": "พิชัย",
+    "lastName": "สิริรัตนพลกุล",
+    "fullName": "นายพิชัย สิริรัตนพลกุล",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/9/4.jpg",
+    "areaNumber": 9
+  },
+  {
+    "number": 5,
+    "firstName": "ฐานวุฒิ",
+    "lastName": "ทองคำดี",
+    "fullName": "นายฐานวุฒิ ทองคำดี",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/9/5.jpg",
+    "areaNumber": 9
+  },
+  {
+    "number": 6,
+    "firstName": "สราวุธ",
+    "lastName": "อนันต์ชล",
+    "fullName": "นายสราวุธ อนันต์ชล",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/9/6.jpg",
+    "areaNumber": 9
+  },
+  {
+    "number": 7,
+    "firstName": "พรมาลา",
+    "lastName": "แก้วชนะ",
+    "fullName": "นางสาวพรมาลา แก้วชนะ",
+    "partyId": 8,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/9/7.jpg",
+    "areaNumber": 9
+  },
+  {
+    "number": 8,
+    "firstName": "อานนต์",
+    "lastName": "ชินเวโรจน์",
+    "fullName": "นายอานนต์ ชินเวโรจน์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/9/8.jpg",
+    "areaNumber": 9
+  },
+  {
+    "number": 1,
+    "firstName": "พงษ์เพชร",
+    "lastName": "เพชรสุวรรณดี",
+    "fullName": "นายพงษ์เพชร เพชรสุวรรณดี",
+    "partyId": 6,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/10/1.jpg",
+    "areaNumber": 10
+  },
+  {
+    "number": 2,
+    "firstName": "สมพร",
+    "lastName": "ดำพริก",
+    "fullName": "นายสมพร ดำพริก",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/10/2.jpg",
+    "areaNumber": 10
+  },
+  {
+    "number": 3,
+    "firstName": "สมเกียรติ",
+    "lastName": "ขุนบุญจันทร์",
+    "fullName": "นายสมเกียรติ ขุนบุญจันทร์",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/10/3.jpg",
+    "areaNumber": 10
+  },
+  {
+    "number": 4,
+    "firstName": "สุชาติ",
+    "lastName": "เซ็นนิ",
+    "fullName": "นายสุชาติ เซ็นนิ",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/10/4.jpg",
+    "areaNumber": 10
+  },
+  {
+    "number": 5,
+    "firstName": "ดวงพร",
+    "lastName": "สุขุมพันธุ์พงศ์",
+    "fullName": "นางสาวดวงพร สุขุมพันธุ์พงศ์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/10/5.jpg",
+    "areaNumber": 10
+  },
+  {
+    "number": 6,
+    "firstName": "ศรินทิพย์",
+    "lastName": "มีนมณี",
+    "fullName": "นางศรินทิพย์ มีนมณี",
+    "partyId": 4,
+
+"imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/10/6.jpg",
+    "areaNumber": 10
+  },
+  {
+    "number": 7,
+    "firstName": "วิรัตน์",
+    "lastName": "มีนชัยนันท์",
+    "fullName": "นายวิรัตน์ มีนชัยนันท์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/10/7.jpg",
+    "areaNumber": 10
+  },
+  {
+    "number": 1,
+    "firstName": "วีรวุธ",
+    "lastName": "รักเที่ยง",
+    "fullName": "นายวีรวุธ รักเที่ยง",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/11/1.jpg",
+    "areaNumber": 11
+  },
+  {
+    "number": 2,
+    "firstName": "สุรจิตต์",
+    "lastName": "พงษ์สิงห์วิทยา",
+    "fullName": "นายสุรจิตต์ พงษ์สิงห์วิทยา",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/11/2.jpg",
+    "areaNumber": 11
+  },
+  {
+    "number": 3,
+    "firstName": "เอกฤทธิ",
+    "lastName": "เจียกขจร",
+    "fullName": "นายเอกฤทธิ เจียกขจร",
+    "partyId": 6,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/11/3.jpg",
+    "areaNumber": 11
+  },
+  {
+    "number": 4,
+    "firstName": "พีระพงษ์",
+    "lastName": "รัสมี",
+    "fullName": "นายพีระพงษ์ รัสมี",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/11/4.jpg",
+    "areaNumber": 11
+  },
+  {
+    "number": 5,
+    "firstName": "มนัส",
+    "lastName": "บัวทอง",
+    "fullName": "นายมนัส บัวทอง",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/11/5.jpg",
+    "areaNumber": 11
+  },
+  {
+    "number": 6,
+    "firstName": "มารีญา",
+    "lastName": "ฤกษ์ดี",
+    "fullName": "นางสาวมารีญา ฤกษ์ดี",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/11/6.jpg",
+    "areaNumber": 11
+  },
+  {
+    "number": 7,
+    "firstName": "รณชัย",
+    "lastName": "สังฆมิตกล",
+    "fullName": "นายรณชัย สังฆมิตกล",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/11/7.jpg",
+    "areaNumber": 11
+  },
+  {
+    "number": 8,
+    "firstName": "ลูกัสเอราดัส",
+    "lastName": "โครนีเวล",
+    "fullName": "นายลูกัสเอราดัส โครนีเวล",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/11/8.jpg",
+    "areaNumber": 11
+  },
+  {
+    "number": 1,
+    "firstName": "ธีระพงษ์",
+    "lastName": "มงคลวัฒนลีลา",
+    "fullName": "นายธีระพงษ์ มงคลวัฒนลีลา",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/12/1.jpg",
+    "areaNumber": 12
+  },
+  {
+    "number": 2,
+    "firstName": "สมเกียรติ",
+    "lastName": "ปัญญะธารา",
+    "fullName": "นายสมเกียรติ ปัญญะธารา",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/12/2.jpg",
+    "areaNumber": 12
+  },
+  {
+    "number": 3,
+    "firstName": "พุทธิพัชร์",
+    "lastName": "ธันยาธรรมนนท์",
+    "fullName": "นายพุทธิพัชร์ ธันยาธรรมนนท์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/12/3.jpg",
+    "areaNumber": 12
+  },
+  {
+    "number": 4,
+    "firstName": "พงศพัศ",
+    "lastName": "กตคุณวิสิทธิ์",
+    "fullName": "นายพงศพัศ กตคุณวิสิทธิ์",
+    "partyId": 13,
+
+"imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/12/4.jpg",
+    "areaNumber": 12
+  },
+  {
+    "number": 5,
+    "firstName": "ศุข",
+    "lastName": "ศักดิ์ณรงค์เดช",
+    "fullName": "นายศุข ศักดิ์ณรงค์เดช",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/12/5.jpg",
+    "areaNumber": 12
+  },
+  {
+    "number": 6,
+    "firstName": "ดิเรก",
+    "lastName": "ขันทพร",
+    "fullName": "นายดิเรก ขันทพร",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/12/6.jpg",
+    "areaNumber": 12
+  },
+  {
+    "number": 7,
+    "firstName": "อมรเทพ",
+    "lastName": "เศตะพราหมณ์",
+    "fullName": "นายอมรเทพ เศตะพราหมณ์",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/12/7.jpg",
+    "areaNumber": 12
+  },
+  {
+    "number": 8,
+    "firstName": "อาทอณ",
+    "lastName": "ไล้ง้อ",
+    "fullName": "นายอาทอณ ไล้ง้อ",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/12/8.jpg",
+    "areaNumber": 12
+  },
+  {
+    "number": 9,
+    "firstName": "วริศ",
+    "lastName": "สอนบุตรนาค",
+    "fullName": "นายวริศ สอนบุตรนาค",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/12/9.jpg",
+    "areaNumber": 12
+  },
+  {
+    "number": 1,
+    "firstName": "พีระโรจน์",
+    "lastName": "ชัยรัตน์",
+    "fullName": "นายพีระโรจน์ ชัยรัตน์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/13/1.jpg",
+    "areaNumber": 13
+  },
+  {
+    "number": 2,
+    "firstName": "พินิจ",
+    "lastName": "กาญจนชูศักดิ์",
+    "fullName": "นายพินิจ กาญจนชูศักดิ์",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/13/2.jpg",
+    "areaNumber": 13
+  },
+  {
+    "number": 3,
+    "firstName": "จักรกฤช",
+    "lastName": "ธนดิตถ์",
+    "fullName": "นายจักรกฤช ธนดิตถ์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/13/3.jpg",
+    "areaNumber": 13
+  },
+  {
+    "number": 4,
+    "firstName": "ณพลเดช",
+    "lastName": "มณีลังกา",
+    "fullName": "นายณพลเดช มณีลังกา",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/13/4.jpg",
+    "areaNumber": 13
+  },
+  {
+    "number": 5,
+    "firstName": "ศรัณยู",
+    "lastName": "คงสวัสดิ์เกียรติ",
+    "fullName": "นายศรัณยู คงสวัสดิ์เกียรติ",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/13/5.jpg",
+    "areaNumber": 13
+  },
+  {
+    "number": 6,
+    "firstName": "จาตุรันต์",
+    "lastName": "บุญเบ็ญจรัตน์",
+    "fullName": "นายจาตุรันต์ บุญเบ็ญจรัตน์",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/13/6.jpg",
+    "areaNumber": 13
+  },
+  {
+    "number": 1,
+    "firstName": "เมธวิน",
+    "lastName": "อังคทะวานิช",
+    "fullName": "นายเมธวิน อังคทะวานิช",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/14/1.jpg",
+    "areaNumber": 14
+  },
+  {
+    "number": 2,
+    "firstName": "ปฐม",
+    "lastName": "เลิศทวีวิทย์",
+    "fullName": "ร้อยตำรวจโทปฐม เลิศทวีวิทย์",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/14/2.jpg",
+    "areaNumber": 14
+
+},
+  {
+    "number": 3,
+    "firstName": "นที",
+    "lastName": "ศิริธรรมวัฒน์",
+    "fullName": "นายนที ศิริธรรมวัฒน์",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/14/3.jpg",
+    "areaNumber": 14
+  },
+  {
+    "number": 4,
+    "firstName": "กิตติคุณ",
+    "lastName": "ชื่นแย้ม",
+    "fullName": "นายกิตติคุณ ชื่นแย้ม",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/14/4.jpg",
+    "areaNumber": 14
+  },
+  {
+    "number": 5,
+    "firstName": "มาโนช",
+    "lastName": "คลายแก้ว",
+    "fullName": "นายมาโนช คลายแก้ว",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/14/5.jpg",
+    "areaNumber": 14
+  },
+  {
+    "number": 6,
+    "firstName": "ณัฐวิชช์",
+    "lastName": "ดำรงค์ศรีวงศ์",
+    "fullName": "นายณัฐวิชช์ ดำรงค์ศรีวงศ์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/14/6.jpg",
+    "areaNumber": 14
+  },
+  {
+    "number": 7,
+    "firstName": "พีรพล",
+    "lastName": "กนกวลัย",
+    "fullName": "นายพีรพล กนกวลัย",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/14/7-1.png",
+    "areaNumber": 14
+  },
+  {
+    "number": 8,
+    "firstName": "กวี",
+    "lastName": "ณ ลำปาง",
+    "fullName": "นายกวี ณ ลำปาง",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/14/8.jpg",
+    "areaNumber": 14
+  },
+  {
+    "number": 9,
+    "firstName": "ริณดา",
+    "lastName": "คงตาละนันท์",
+    "fullName": "นางสาวริณดา คงตาละนันท์",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/14/9.jpg",
+    "areaNumber": 14
+  },
+  {
+    "number": 1,
+    "firstName": "จิรเสกข์",
+    "lastName": "วัฒนมงคล",
+    "fullName": "นายจิรเสกข์ วัฒนมงคล",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/15/1.jpg",
+    "areaNumber": 15
+  },
+  {
+    "number": 2,
+    "firstName": "สุภัสสรา",
+    "lastName": "ธงไชย",
+    "fullName": "นางสาวสุภัสสรา ธงไชย",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/15/2.jpg",
+    "areaNumber": 15
+  },
+  {
+    "number": 3,
+    "firstName": "ธนกร",
+    "lastName": "ธรรมวรัญจน์",
+    "fullName": "นายธนกร ธรรมวรัญจน์",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/15/3.jpg",
+    "areaNumber": 15
+  },
+  {
+    "number": 4,
+    "firstName": "พีรพัทธ์",
+    "lastName": "ศรีสิงห์",
+    "fullName": "นายพีรพัทธ์ ศรีสิงห์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/15/4.jpg",
+    "areaNumber": 15
+  },
+  {
+    "number": 5,
+    "firstName": "วิชัย",
+    "lastName": "หุตังคบดี",
+    "fullName": "นายวิชัย หุตังคบดี",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/15/5.jpg",
+    "areaNumber": 15
+  },
+  {
+    "number": 6,
+    "firstName": "วรวิทย์",
+    "lastName": "จุฬาพรหมเดช",
+    "fullName": "นายวรวิทย์ จุฬาพรหมเดช",
+    "partyId": 8,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/15/6.jpg",
+    "areaNumber": 15
+  },
+  {
+    "number": 7,
+    "firstName": "สุประวีณ์",
+    "lastName": "น้อยสุขยิ่ง",
+
+"fullName": "นายสุประวีณ์ น้อยสุขยิ่ง",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/15/7.jpg",
+    "areaNumber": 15
+  },
+  {
+    "number": 8,
+    "firstName": "วีระศักดิ์",
+    "lastName": "เตชะโสภณมณี",
+    "fullName": "นายวีระศักดิ์ เตชะโสภณมณี",
+    "partyId": 6,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/15/8.jpg",
+    "areaNumber": 15
+  },
+  {
+    "number": 9,
+    "firstName": "วงศธรร์",
+    "lastName": "พิศาลกาญจนกิจ",
+    "fullName": "นายวงศธรร์ พิศาลกาญจนกิจ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/15/9.jpg",
+    "areaNumber": 15
+  },
+  {
+    "number": 1,
+    "firstName": "ต้นศักดิ์",
+    "lastName": "ใหลสุวรรณ",
+    "fullName": "นายต้นศักดิ์ ใหลสุวรรณ",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/16/1.jpg",
+    "areaNumber": 16
+  },
+  {
+    "number": 2,
+    "firstName": "รัชพล",
+    "lastName": "ธรรมาคม",
+    "fullName": "นายรัชพล ธรรมาคม",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/16/2.jpg",
+    "areaNumber": 16
+  },
+  {
+    "number": 3,
+    "firstName": "ภัณฑ์ธิรา",
+    "lastName": "ณิชยสุรีย์กุล",
+    "fullName": "นางสาวภัณฑ์ธิรา ณิชยสุรีย์กุล",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/16/3.jpg",
+    "areaNumber": 16
+  },
+  {
+    "number": 4,
+    "firstName": "วิรัช",
+    "lastName": "คงคาเขตร",
+    "fullName": "นายวิรัช คงคาเขตร",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/16/4.jpg",
+    "areaNumber": 16
+  },
+  {
+    "number": 5,
+    "firstName": "อรไพลิน",
+    "lastName": "อัครเลิศวรปรีชา",
+    "fullName": "นางสาวอรไพลิน อัครเลิศวรปรีชา",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/16/5.jpg",
+    "areaNumber": 16
+  },
+  {
+    "number": 6,
+    "firstName": "นิธิสนี",
+    "lastName": "กลิ่นพันธหิรัญ",
+    "fullName": "นางสาวนิธิสนี กลิ่นพันธหิรัญ",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/16/6.jpg",
+    "areaNumber": 16
+  },
+  {
+    "number": 7,
+    "firstName": "วิศิษฎ์",
+    "lastName": "สุวรรณ์",
+    "fullName": "พันตำรวจโทวิศิษฎ์ สุวรรณ์",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/16/7.jpg",
+    "areaNumber": 16
+  },
+  {
+    "number": 1,
+    "firstName": "ปวิช",
+    "lastName": "พรหมทอง",
+    "fullName": "นายปวิช พรหมทอง",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/17/1.jpg",
+    "areaNumber": 17
+  },
+  {
+    "number": 2,
+    "firstName": "เต็มสินี",
+    "lastName": "โสภาสมสวัสดิ์",
+    "fullName": "นางสาวเต็มสินี โสภาสมสวัสดิ์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/17/2.jpg",
+    "areaNumber": 17
+  },
+  {
+    "number": 3,
+    "firstName": "ถวิล",
+    "lastName": "รัตตะมณี",
+    "fullName": "นายถวิล รัตตะมณี",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/17/3.jpg",
+    "areaNumber": 17
+  },
+  {
+    "number": 4,
+    "firstName": "อิทธิพล",
+
+"lastName": "เลาหสุวัฒนกุล",
+    "fullName": "นายอิทธิพล เลาหสุวัฒนกุล",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/17/4.jpg",
+    "areaNumber": 17
+  },
+  {
+    "number": 5,
+    "firstName": "วริษทนนต์",
+    "lastName": "คูณธนานุวัฒน์",
+    "fullName": "นายวริษทนนต์ คูณธนานุวัฒน์",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/17/5.jpg",
+    "areaNumber": 17
+  },
+  {
+    "number": 6,
+    "firstName": "ประพฤทธ์",
+    "lastName": "หาญกิจจะกุล",
+    "fullName": "นายประพฤทธ์ หาญกิจจะกุล",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/17/6.jpg",
+    "areaNumber": 17
+  },
+  {
+    "number": 7,
+    "firstName": "ธีรพัฒน์",
+    "lastName": "บุญภิรักษ์",
+    "fullName": "นายธีรพัฒน์ บุญภิรักษ์",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/17/7.jpg",
+    "areaNumber": 17
+  },
+  {
+    "number": 8,
+    "firstName": "ภรภัทร",
+    "lastName": "อุบลวรรณี",
+    "fullName": "นางสาวภรภัทร อุบลวรรณี",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/17/8.jpg",
+    "areaNumber": 17
+  },
+  {
+    "number": 1,
+    "firstName": "สมชาย",
+    "lastName": "เต็มไพบูลย์กุล",
+    "fullName": "นายสมชาย เต็มไพบูลย์กุล",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/18/1.jpg",
+    "areaNumber": 18
+  },
+  {
+    "number": 2,
+    "firstName": "อาชวิน",
+    "lastName": "สีตบุตร",
+    "fullName": "นายอาชวิน สีตบุตร",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/18/2.jpg",
+    "areaNumber": 18
+  },
+  {
+    "number": 3,
+    "firstName": "ธวัช",
+    "lastName": "ศรีวัฒนะ",
+    "fullName": "นายธวัช ศรีวัฒนะ",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/18/3.jpg",
+    "areaNumber": 18
+  },
+  {
+    "number": 4,
+    "firstName": "โกสินทร์",
+    "lastName": "สุทธิรัตน์",
+    "fullName": "นายโกสินทร์ สุทธิรัตน์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/18/4.jpg",
+    "areaNumber": 18
+  },
+  {
+    "number": 5,
+    "firstName": "สายรุ้ง",
+    "lastName": "ปิ่นโมรา",
+    "fullName": "นางสาวสายรุ้ง ปิ่นโมรา",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/18/5.jpg",
+    "areaNumber": 18
+  },
+  {
+    "number": 6,
+    "firstName": "ทรงวุฒิ",
+    "lastName": "จันทร์อำนวยโชค",
+    "fullName": "นายทรงวุฒิ จันทร์อำนวยโชค",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/18/6.jpg",
+    "areaNumber": 18
+  },
+  {
+    "number": 7,
+    "firstName": "ภัทรพร",
+    "lastName": "ชุติชวาลนันท์",
+    "fullName": "นางสาวภัทรพร ชุติชวาลนันท์",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/18/7.jpg",
+    "areaNumber": 18
+  },
+  {
+    "number": 1,
+    "firstName": "ลักขณา",
+    "lastName": "ภักดีนฤนาถ",
+    "fullName": "นางลักขณา ภักดีนฤนาถ",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/19/1.jpg",
+    "areaNumber": 19
+  },
+  {
+    "number": 2,
+    "firstName": "สิทธิโชค",
+
+"lastName": "คล้อยแสงอาทิตย์",
+    "fullName": "นายสิทธิโชค คล้อยแสงอาทิตย์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/19/2.jpg",
+    "areaNumber": 19
+  },
+  {
+    "number": 3,
+    "firstName": "บุญรุ่ง",
+    "lastName": "เต๋งจงดี",
+    "fullName": "นายบุญรุ่ง เต๋งจงดี",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/19/3.jpg",
+    "areaNumber": 19
+  },
+  {
+    "number": 4,
+    "firstName": "ชัชชนะ",
+    "lastName": "เอมปราณีต",
+    "fullName": "นายชัชชนะ เอมปราณีต",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/19/4.jpg",
+    "areaNumber": 19
+  },
+  {
+    "number": 5,
+    "firstName": "ฉัฐภรณ์",
+    "lastName": "ปานทอง",
+    "fullName": "นางสาวฉัฐภรณ์ ปานทอง",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/19/5.jpg",
+    "areaNumber": 19
+  },
+  {
+    "number": 6,
+    "firstName": "เอนก",
+    "lastName": "ตุ้มน้อย",
+    "fullName": "นายเอนก ตุ้มน้อย",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/19/6.jpg",
+    "areaNumber": 19
+  },
+  {
+    "number": 1,
+    "firstName": "ทันธรรม",
+    "lastName": "วงษ์ชื่น",
+    "fullName": "นายทันธรรม วงษ์ชื่น",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/20/1.jpg",
+    "areaNumber": 20
+  },
+  {
+    "number": 2,
+    "firstName": "วีรยุทธ",
+    "lastName": "ว่องศิริพร",
+    "fullName": "นายวีรยุทธ ว่องศิริพร",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/20/2.jpg",
+    "areaNumber": 20
+  },
+  {
+    "number": 3,
+    "firstName": "ผาด",
+    "lastName": "นิสัยชล",
+    "fullName": "นายผาด นิสัยชล",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/20/3.jpg",
+    "areaNumber": 20
+  },
+  {
+    "number": 4,
+    "firstName": "นภาพล",
+    "lastName": "จีระกุล",
+    "fullName": "นายนภาพล จีระกุล",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/20/4.jpg",
+    "areaNumber": 20
+  },
+  {
+    "number": 5,
+    "firstName": "จักรพงษ์",
+    "lastName": "วุฑฒยากร",
+    "fullName": "นายจักรพงษ์ วุฑฒยากร",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/20/5.jpg",
+    "areaNumber": 20
+  },
+  {
+    "number": 6,
+    "firstName": "ชัชนภ",
+    "lastName": "นักสอน",
+    "fullName": "นายชัชนภ นักสอน",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/20/6.jpg",
+    "areaNumber": 20
+  },
+  {
+    "number": 7,
+    "firstName": "สุริยะ",
+    "lastName": "เรืองพุ่ม",
+    "fullName": "นายสุริยะ เรืองพุ่ม",
+    "partyId": 10,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/20/7.jpg",
+    "areaNumber": 20
+  },
+  {
+    "number": 1,
+    "firstName": "วิเชียร",
+    "lastName": "กันทาทรัพย์",
+    "fullName": "นายวิเชียร กันทาทรัพย์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/21/1.jpg",
+    "areaNumber": 21
+  },
+  {
+    "number": 2,
+    "firstName": "อธิคม",
+    "lastName": "อัศวตั้งเสถียร",
+    "fullName": "นายอธิคม อัศวตั้งเสถียร",
+    "partyId": 11,
+
+"imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/21/2.jpg",
+    "areaNumber": 21
+  },
+  {
+    "number": 3,
+    "firstName": "ณัฐพงศ์",
+    "lastName": "ลีลาสถาพรกูร",
+    "fullName": "นายณัฐพงศ์ ลีลาสถาพรกูร",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/21/3.jpg",
+    "areaNumber": 21
+  },
+  {
+    "number": 4,
+    "firstName": "สารัช",
+    "lastName": "ม่วงศิริ",
+    "fullName": "นายสารัช ม่วงศิริ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/21/4.jpg",
+    "areaNumber": 21
+  },
+  {
+    "number": 5,
+    "firstName": "พิพัฒน์ชัย",
+    "lastName": "ไพบูลย์",
+    "fullName": "นายพิพัฒน์ชัย ไพบูลย์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/21/5.jpg",
+    "areaNumber": 21
+  },
+  {
+    "number": 6,
+    "firstName": "แสงชัย",
+    "lastName": "จันทร์ทอง",
+    "fullName": "นายแสงชัย จันทร์ทอง",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/21/6.jpg",
+    "areaNumber": 21
+  },
+  {
+    "number": 7,
+    "firstName": "นพดล",
+    "lastName": "โค้วบุญญะราศรี",
+    "fullName": "นายนพดล โค้วบุญญะราศรี",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/21/7.jpg",
+    "areaNumber": 21
+  },
+  {
+    "number": 1,
+    "firstName": "ชิน",
+    "lastName": "มะยุโรวาศ",
+    "fullName": "นายชิน มะยุโรวาศ",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/22/1.jpg",
+    "areaNumber": 22
+  },
+  {
+    "number": 2,
+    "firstName": "กัณณพิชน์",
+    "lastName": "นาราช",
+    "fullName": "นายกัณณพิชน์ นาราช",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/22/2.jpg",
+    "areaNumber": 22
+  },
+  {
+    "number": 3,
+    "firstName": "พีร์",
+    "lastName": "โรจนดารา",
+    "fullName": "นายพีร์ โรจนดารา",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/22/3.jpg",
+    "areaNumber": 22
+  },
+  {
+    "number": 4,
+    "firstName": "สุธา",
+    "lastName": "นิติภานนท์",
+    "fullName": "นายสุธา นิติภานนท์",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/22/4.jpg",
+    "areaNumber": 22
+  },
+  {
+    "number": 5,
+    "firstName": "ชูชาติ",
+    "lastName": "ยิ้มงาม",
+    "fullName": "นายชูชาติ ยิ้มงาม",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/22/5.jpg",
+    "areaNumber": 22
+  },
+  {
+    "number": 6,
+    "firstName": "กฤษฏ์",
+    "lastName": "คงวุฒิปัญญา",
+    "fullName": "นายกฤษฏ์ คงวุฒิปัญญา",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/22/6.jpg",
+    "areaNumber": 22
+  },
+  {
+    "number": 1,
+    "firstName": "ประสิทธิ์",
+    "lastName": "ห่อทอง",
+    "fullName": "นายประสิทธิ์ ห่อทอง",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/23/1.jpg",
+    "areaNumber": 23
+  },
+  {
+    "number": 2,
+    "firstName": "ตฤณ",
+    "lastName": "มาลัยทอง",
+    "fullName": "นายตฤณ มาลัยทอง",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/23/2.jpg",
+    "areaNumber": 23
+  },
+  {
+    "number": 3,
+    "firstName": "นัจภัค",
+    "lastName": "กรเกษม",
+
+"fullName": "นางสาวนัจภัค กรเกษม",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/23/3.jpg",
+    "areaNumber": 23
+  },
+  {
+    "number": 4,
+    "firstName": "นวรัตน์",
+    "lastName": "อยู่บำรุง",
+    "fullName": "นายนวรัตน์ อยู่บำรุง",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/23/4.jpg",
+    "areaNumber": 23
+  },
+  {
+    "number": 5,
+    "firstName": "ทรงชล",
+    "lastName": "สุดประเสริฐ",
+    "fullName": "นายทรงชล สุดประเสริฐ",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/23/5.jpg",
+    "areaNumber": 23
+  },
+  {
+    "number": 6,
+    "firstName": "ฮารูน",
+    "lastName": "มูหมัดอาลี",
+    "fullName": "นายฮารูน มูหมัดอาลี",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/23/6.jpg",
+    "areaNumber": 23
+  },
+  {
+    "number": 1,
+    "firstName": "สรวิชญ์",
+    "lastName": "ศรีวงศ์เนียม",
+    "fullName": "นายสรวิชญ์ ศรีวงศ์เนียม",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/24/1.jpg",
+    "areaNumber": 24
+  },
+  {
+    "number": 2,
+    "firstName": "ศุภเวศย์",
+    "lastName": "รณะนันทน์",
+    "fullName": "นายศุภเวศย์ รณะนันทน์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/24/2.jpg",
+    "areaNumber": 24
+  },
+  {
+    "number": 3,
+    "firstName": "ไสว",
+    "lastName": "โชติกะสุภา",
+    "fullName": "นายไสว โชติกะสุภา",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/24/3.jpg",
+    "areaNumber": 24
+  },
+  {
+    "number": 4,
+    "firstName": "สุนทร",
+    "lastName": "ทุ้ยมาก",
+    "fullName": "นายสุนทร ทุ้ยมาก",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/24/4.jpg",
+    "areaNumber": 24
+  },
+  {
+    "number": 5,
+    "firstName": "ธรณ์เทพ",
+    "lastName": "ชัยธนกวิน",
+    "fullName": "นายธรณ์เทพ ชัยธนกวิน",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/24/5.jpg",
+    "areaNumber": 24
+  },
+  {
+    "number": 6,
+    "firstName": "ณัฐพล",
+    "lastName": "พ่อค้า",
+    "fullName": "นายณัฐพล พ่อค้า",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/24/6.jpg",
+    "areaNumber": 24
+  },
+  {
+    "number": 7,
+    "firstName": "ชาติชาย",
+    "lastName": "ปัตตะพงศ์",
+    "fullName": "นายชาติชาย ปัตตะพงศ์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/24/7.jpg",
+    "areaNumber": 24
+  },
+  {
+    "number": 8,
+    "firstName": "กีรติกร",
+    "lastName": "หล่อเลอเลิศ",
+    "fullName": "นางสาวกีรติกร หล่อเลอเลิศ",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/24/8.jpg",
+    "areaNumber": 24
+  },
+  {
+    "number": 1,
+    "firstName": "ศีลธรรม",
+    "lastName": "พัชรประกาย",
+    "fullName": "นายศีลธรรม พัชรประกาย",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/25/1.jpg",
+    "areaNumber": 25
+  },
+  {
+    "number": 2,
+    "firstName": "พงษ์ศกร",
+    "lastName": "ฟุ้งเฟื่อง",
+    "fullName": "นายพงษ์ศกร ฟุ้งเฟื่อง",
+    "partyId": 13,
+
+"imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/25/2.jpg",
+    "areaNumber": 25
+  },
+  {
+    "number": 3,
+    "firstName": "ตั้ว สิริณรินทร์",
+    "lastName": "วินิจฉายะจินดา",
+    "fullName": "นายตั้ว สิริณรินทร์ วินิจฉายะจินดา",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/25/3.jpg",
+    "areaNumber": 25
+  },
+  {
+    "number": 4,
+    "firstName": "ปลวัชร",
+    "lastName": "แสงกิตติกร",
+    "fullName": "นายปลวัชร แสงกิตติกร",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/25/4.jpg",
+    "areaNumber": 25
+  },
+  {
+    "number": 5,
+    "firstName": "ทิพจุฑา",
+    "lastName": "บุนนาค",
+    "fullName": "นางสาวทิพจุฑา บุนนาค",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/25/5.jpg",
+    "areaNumber": 25
+  },
+  {
+    "number": 6,
+    "firstName": "ภิญโญ",
+    "lastName": "ป้อมสถิตย์",
+    "fullName": "นายภิญโญ ป้อมสถิตย์",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/25/6.jpg",
+    "areaNumber": 25
+  },
+  {
+    "number": 1,
+    "firstName": "ปัณณ์ธนัญญ์",
+    "lastName": "ธรรมสุขวรกุล",
+    "fullName": "นางสาวปัณณ์ธนัญญ์ ธรรมสุขวรกุล",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/26/1.jpg",
+    "areaNumber": 26
+  },
+  {
+    "number": 2,
+    "firstName": "ประเสริฐ",
+    "lastName": "ชัยจงเจริญสุข",
+    "fullName": "นายประเสริฐ ชัยจงเจริญสุข",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/26/2.jpg",
+    "areaNumber": 26
+  },
+  {
+    "number": 3,
+    "firstName": "ดุษณี",
+    "lastName": "เทียรเดช",
+    "fullName": "นางสาวดุษณี เทียรเดช",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/26/3.jpg",
+    "areaNumber": 26
+  },
+  {
+    "number": 4,
+    "firstName": "สิทธิวัฒน์",
+    "lastName": "ชีรวินิจ",
+    "fullName": "นายสิทธิวัฒน์ ชีรวินิจ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/26/4.jpg",
+    "areaNumber": 26
+  },
+  {
+    "number": 5,
+    "firstName": "กัณตภณ",
+    "lastName": "ดวงอัมพร",
+    "fullName": "นายกัณตภณ ดวงอัมพร",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/26/5.jpg",
+    "areaNumber": 26
+  },
+  {
+    "number": 6,
+    "firstName": "อนงค์",
+    "lastName": "เพชรทัต",
+    "fullName": "นางอนงค์ เพชรทัต",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/26/6.jpg",
+    "areaNumber": 26
+  },
+  {
+    "number": 1,
+    "firstName": "ปภาวิน",
+    "lastName": "ติณณ์พิพัฒน์โสภณ",
+    "fullName": "นายปภาวิน ติณณ์พิพัฒน์โสภณ",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/27/1.jpg",
+    "areaNumber": 27
+  },
+  {
+    "number": 2,
+    "firstName": "กฤษฎ์",
+    "lastName": "เครือเจริญพร",
+    "fullName": "นายกฤษฎ์ เครือเจริญพร",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/27/2.jpg",
+    "areaNumber": 27
+  },
+  {
+    "number": 3,
+    "firstName": "เนติภูมิ",
+    "lastName": "มิ่งรุจิราลัย",
+
+"fullName": "นายเนติภูมิ มิ่งรุจิราลัย",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/27/3.jpg",
+    "areaNumber": 27
+  },
+  {
+    "number": 4,
+    "firstName": "ปพนชัย",
+    "lastName": "สุวรรณทศ",
+    "fullName": "นายปพนชัย สุวรรณทศ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/27/4.jpg",
+    "areaNumber": 27
+  },
+  {
+    "number": 5,
+    "firstName": "รัฐพันธ์",
+    "lastName": "นาคดี",
+    "fullName": "นายรัฐพันธ์ นาคดี",
+    "partyId": 8,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/27/5.jpg",
+    "areaNumber": 27
+  },
+  {
+    "number": 6,
+    "firstName": "เกตินิคม",
+    "lastName": "กฤษณะเศรณี",
+    "fullName": "นายเกตินิคม กฤษณะเศรณี",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/27/6.jpg",
+    "areaNumber": 27
+  },
+  {
+    "number": 7,
+    "firstName": "วรธนิต",
+    "lastName": "สุวรรณรักษ์",
+    "fullName": "นายวรธนิต สุวรรณรักษ์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/27/7.jpg",
+    "areaNumber": 27
+  },
+  {
+    "number": 8,
+    "firstName": "อาคร",
+    "lastName": "ประมงค์",
+    "fullName": "นายอาคร ประมงค์",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/27/8.jpg",
+    "areaNumber": 27
+  },
+  {
+    "number": 1,
+    "firstName": "อานุภาพ",
+    "lastName": "ธารทอง",
+    "fullName": "นายอานุภาพ ธารทอง",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/28/1.jpg",
+    "areaNumber": 28
+  },
+  {
+    "number": 2,
+    "firstName": "วรวุฒิ",
+    "lastName": "โตวิรัตน์",
+    "fullName": "นายวรวุฒิ โตวิรัตน์",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/28/2.jpg",
+    "areaNumber": 28
+  },
+  {
+    "number": 3,
+    "firstName": "อภิชาต",
+    "lastName": "สนิทวงศ์ ณ อยุธยา",
+    "fullName": "นายอภิชาต สนิทวงศ์ ณ อยุธยา",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/28/3.jpg",
+    "areaNumber": 28
+  },
+  {
+    "number": 4,
+    "firstName": "ชัญญา",
+    "lastName": "บุญเกิด",
+    "fullName": "นางชัญญา บุญเกิด",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/28/4.jpg",
+    "areaNumber": 28
+  },
+  {
+    "number": 5,
+    "firstName": "มนตรี",
+    "lastName": "เปรมบุญ",
+    "fullName": "นายมนตรี เปรมบุญ",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/28/5.jpg",
+    "areaNumber": 28
+  },
+  {
+    "number": 6,
+    "firstName": "สุดา",
+    "lastName": "สุวิชาโสภณ",
+    "fullName": "นางสุดา สุวิชาโสภณ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/28/6.jpg",
+    "areaNumber": 28
+  },
+  {
+    "number": 7,
+    "firstName": "ณัฐนันท์",
+    "lastName": "เอกศิริวรากิตติ์",
+    "fullName": "นายณัฐนันท์ เอกศิริวรากิตติ์",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/28/7.jpg",
+    "areaNumber": 28
+  },
+  {
+    "number": 1,
+    "firstName": "เอกเมธ",
+    "lastName": "กมลวรานนท์",
+    "fullName": "นายเอกเมธ กมลวรานนท์",
+    "partyId": 5,
+
+"imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/29/1.jpg",
+    "areaNumber": 29
+  },
+  {
+    "number": 2,
+    "firstName": "พรพิมล",
+    "lastName": "คงอุดม",
+    "fullName": "นางสาวพรพิมล คงอุดม",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/29/2.jpg",
+    "areaNumber": 29
+  },
+  {
+    "number": 3,
+    "firstName": "ภัทราภรณ์",
+    "lastName": "เก่งรุ่งเรืองชัย",
+    "fullName": "นางสาวภัทราภรณ์ เก่งรุ่งเรืองชัย",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/29/3.jpg",
+    "areaNumber": 29
+  },
+  {
+    "number": 4,
+    "firstName": "ศิริพร",
+    "lastName": "เชี่ยวชาญอักษร",
+    "fullName": "นางสาวศิริพร เชี่ยวชาญอักษร",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/29/4.jpg",
+    "areaNumber": 29
+  },
+  {
+    "number": 5,
+    "firstName": "ธนพร",
+    "lastName": "กนกกุล",
+    "fullName": "นางสาวธนพร กนกกุล",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/29/5.jpg",
+    "areaNumber": 29
+  },
+  {
+    "number": 6,
+    "firstName": "เรวัตร",
+    "lastName": "คงชาติ",
+    "fullName": "นายเรวัตร คงชาติ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/29/6.jpg",
+    "areaNumber": 29
+  },
+  {
+    "number": 1,
+    "firstName": "อนันตชาติ",
+    "lastName": "บัวสุวรรณ์",
+    "fullName": "นายอนันตชาติ บัวสุวรรณ์",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/30/1.jpg",
+    "areaNumber": 30
+  },
+  {
+    "number": 2,
+    "firstName": "ลพชัย",
+    "lastName": "ธาราทิศ",
+    "fullName": "นายลพชัย ธาราทิศ",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/30/2.jpg",
+    "areaNumber": 30
+  },
+  {
+    "number": 3,
+    "firstName": "ประยูร",
+    "lastName": "สงแก้ว",
+    "fullName": "นายประยูร สงแก้ว",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/30/3.jpg",
+    "areaNumber": 30
+  },
+  {
+    "number": 4,
+    "firstName": "อภิวัฒน์",
+    "lastName": "ด่านศรีชาญชัย",
+    "fullName": "นายอภิวัฒน์ ด่านศรีชาญชัย",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/30/4.jpg",
+    "areaNumber": 30
+  },
+  {
+    "number": 5,
+    "firstName": "ปราโมทย์",
+    "lastName": "เพ็ชรฤทธิ์",
+    "fullName": "นายปราโมทย์ เพ็ชรฤทธิ์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/30/5.jpg",
+    "areaNumber": 30
+  },
+  {
+    "number": 6,
+    "firstName": "วิศาล",
+    "lastName": "กองเงิน",
+    "fullName": "นายวิศาล กองเงิน",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/30/6.jpg",
+    "areaNumber": 30
+  },
+  {
+    "number": 7,
+    "firstName": "สรคม",
+    "lastName": "วัฒนกรพงษ์",
+    "fullName": "นายสรคม วัฒนกรพงษ์",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/30/7.jpg",
+    "areaNumber": 30
+  },
+  {
+    "number": 1,
+    "firstName": "กนกศักดิ์",
+    "lastName": "ดวงพัตรา",
+    "fullName": "นายกนกศักดิ์ ดวงพัตรา",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/31/1.jpg",
+    "areaNumber": 31
+  },
+  {
+
+"number": 2,
+    "firstName": "สมเกียรติ",
+    "lastName": "อโนทัยสินทวี",
+    "fullName": "นายสมเกียรติ อโนทัยสินทวี",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/31/2.jpg",
+    "areaNumber": 31
+  },
+  {
+    "number": 3,
+    "firstName": "ริสา",
+    "lastName": "แซ่ฮึง",
+    "fullName": "นางสาวริสา แซ่ฮึง",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/31/3.jpg",
+    "areaNumber": 31
+  },
+  {
+    "number": 4,
+    "firstName": "อำนาจ",
+    "lastName": "อินทรศวร",
+    "fullName": "พันตำรวจเอกอำนาจ อินทรศวร",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/31/4.jpg",
+    "areaNumber": 31
+  },
+  {
+    "number": 5,
+    "firstName": "ปรุงศักดิ์",
+    "lastName": "เชาวน์ชาติ",
+    "fullName": "นายปรุงศักดิ์ เชาวน์ชาติ",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/31/5.jpg",
+    "areaNumber": 31
+  },
+  {
+    "number": 6,
+    "firstName": "ก้องนรา",
+    "lastName": "เสงี่ยมศักดิ์",
+    "fullName": "นายก้องนรา เสงี่ยมศักดิ์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/31/6.jpg",
+    "areaNumber": 31
+  },
+  {
+    "number": 7,
+    "firstName": "สุดคนึง",
+    "lastName": "แก้วทอง",
+    "fullName": "นางสาวสุดคนึง แก้วทอง",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/31/7.jpg",
+    "areaNumber": 31
+  },
+  {
+    "number": 8,
+    "firstName": "ปวิน",
+    "lastName": "แพทยานนท์",
+    "fullName": "นายปวิน แพทยานนท์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/31/8.jpg",
+    "areaNumber": 31
+  },
+  {
+    "number": 1,
+    "firstName": "อรรถเวช",
+    "lastName": "กองนักวงษ์",
+    "fullName": "นายอรรถเวช กองนักวงษ์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/32/1.jpg",
+    "areaNumber": 32
+  },
+  {
+    "number": 2,
+    "firstName": "เย็นฤดี",
+    "lastName": "สมาคม",
+    "fullName": "นางสาวเย็นฤดี สมาคม",
+    "partyId": 8,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/32/2.jpg",
+    "areaNumber": 32
+  },
+  {
+    "number": 3,
+    "firstName": "ธนวัฒน์",
+    "lastName": "เชิดชูกิจกุล",
+    "fullName": "นายธนวัฒน์ เชิดชูกิจกุล",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/32/3.jpg",
+    "areaNumber": 32
+  },
+  {
+    "number": 4,
+    "firstName": "ทวนชัย",
+    "lastName": "นิยมชาติ",
+    "fullName": "นายทวนชัย นิยมชาติ",
+    "partyId": 6,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/32/4.jpg",
+    "areaNumber": 32
+  },
+  {
+    "number": 5,
+    "firstName": "อภิชาติ",
+    "lastName": "จรัสโภคา",
+    "fullName": "นายอภิชาติ จรัสโภคา",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/32/5.jpg",
+    "areaNumber": 32
+  },
+  {
+    "number": 6,
+    "firstName": "ฐาปนีย์",
+    "lastName": "สุขสำราญ",
+    "fullName": "นางสาวฐาปนีย์ สุขสำราญ",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/32/6.jpg",
+    "areaNumber": 32
+  },
+  {
+    "number": 7,
+    "firstName": "อิบรอเฮม",
+    "lastName": "หวันแหละ",
+
+"fullName": "นายอิบรอเฮม หวันแหละ",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/32/7.jpg",
+    "areaNumber": 32
+  },
+  {
+    "number": 8,
+    "firstName": "วีรกิตติ์",
+    "lastName": "อภิโชควัชรศักดิ์",
+    "fullName": "นายวีรกิตติ์ อภิโชควัชรศักดิ์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/32/8.jpg",
+    "areaNumber": 32
+  },
+  {
+    "number": 1,
+    "firstName": "ธีรพล",
+    "lastName": "คำทองสุข",
+    "fullName": "นายธีรพล คำทองสุข",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/33/1.jpg",
+    "areaNumber": 33
+  },
+  {
+    "number": 2,
+    "firstName": "คมจักร",
+    "lastName": "จักรพันธุ์ ณ อยุธยา",
+    "fullName": "นายคมจักร จักรพันธุ์ ณ อยุธยา",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/33/2.jpg",
+    "areaNumber": 33
+  },
+  {
+    "number": 3,
+    "firstName": "ธามน",
+    "lastName": "จารุฉันท์",
+    "fullName": "นางสาวธามน จารุฉันท์",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/33/3.jpg",
+    "areaNumber": 33
+  },
+  {
+    "number": 4,
+    "firstName": "ต่อศักดิ์",
+    "lastName": "ใหลสุวรรณ",
+    "fullName": "นายต่อศักดิ์ ใหลสุวรรณ",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/33/4.jpg",
+    "areaNumber": 33
+  },
+  {
+    "number": 5,
+    "firstName": "สุชัย",
+    "lastName": "พงษ์เพียรชอบ",
+    "fullName": "นายสุชัย พงษ์เพียรชอบ",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/33/5.jpg",
+    "areaNumber": 33
+  },
+  {
+    "number": 6,
+    "firstName": "ปานชัย",
+    "lastName": "แก้วอัมพรดี",
+    "fullName": "นายปานชัย แก้วอัมพรดี",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/33/6.jpg",
+    "areaNumber": 33
+  },
+  {
+    "number": 7,
+    "firstName": "ไซราม",
+    "lastName": "ประกายกิจ",
+    "fullName": "ว่าที่ร้อยตรีไซราม ประกายกิจ",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/33/7.jpg",
+    "areaNumber": 33
+  },
+  {
+    "number": 1,
+    "firstName": "ปิยะวรรณ",
+    "lastName": "จระกา",
+    "fullName": "นางสาวปิยะวรรณ จระกา",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/1.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 2,
+    "firstName": "หทัยรัตน์",
+    "lastName": "ธนากิจอำนวย",
+    "fullName": "นางสาวหทัยรัตน์ ธนากิจอำนวย",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/2.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 3,
+    "firstName": "โสภา",
+    "lastName": "อมราศรัยศรี",
+    "fullName": "นางสาวโสภา อมราศรัยศรี",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/3.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 4,
+    "firstName": "สิทธิ",
+    "lastName": "นาคนาวา",
+    "fullName": "นายสิทธิ นาคนาวา",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/4.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 5,
+    "firstName": "กฤตภาส",
+    "lastName": "สัมมาพรต",
+
+"fullName": "พ.ต.อ.กฤตภาส สัมมาพรต",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/5.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 6,
+    "firstName": "พงศ์ไพศาล",
+    "lastName": "มะลูลีม",
+    "fullName": "นายพงศ์ไพศาล มะลูลีม",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/6.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 7,
+    "firstName": "ไพศาล",
+    "lastName": "มั่งมี",
+    "fullName": "ร.ต.อ.ไพศาล มั่งมี",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/7.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 8,
+    "firstName": "เอกรินทร์",
+    "lastName": "อยู่บำรุง",
+    "fullName": "นายเอกรินทร์ อยู่บำรุง",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/8.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 9,
+    "firstName": "มาโนช",
+    "lastName": "วงศ์เกตุใจ",
+    "fullName": "นายมาโนช วงศ์เกตุใจ",
+    "partyId": 10,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/9.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 10,
+    "firstName": "แพรลฎา",
+    "lastName": "พจนารถ",
+    "fullName": "นางสาวแพรลฎา พจนารถ",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/34/10.jpg",
+    "areaNumber": 34
+  },
+  {
+    "number": 1,
+    "firstName": "จักรกฤช",
+    "lastName": "ปิ่นกร",
+    "fullName": "ร้อยตำรวจเอกจักรกฤช ปิ่นกร",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/35/1.jpg",
+    "areaNumber": 35
+  },
+  {
+    "number": 2,
+    "firstName": "ศิริชัย",
+    "lastName": "เกียรติศิริลักษณ์",
+    "fullName": "นายศิริชัย เกียรติศิริลักษณ์",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/35/2.jpg",
+    "areaNumber": 35
+  },
+  {
+    "number": 3,
+    "firstName": "วีระชัย",
+    "lastName": "เตชะโสภณมณี",
+    "fullName": "นายวีระชัย เตชะโสภณมณี",
+    "partyId": 6,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/35/3.jpg",
+    "areaNumber": 35
+  },
+  {
+    "number": 4,
+    "firstName": "ธัญธร",
+    "lastName": "ธนินวัฒนาธร",
+    "fullName": "นายธัญธร ธนินวัฒนาธร",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/35/4.jpg",
+    "areaNumber": 35
+  },
+  {
+    "number": 5,
+    "firstName": "มินทร์",
+    "lastName": "ลักษิตานนท์",
+    "fullName": "นายมินทร์ ลักษิตานนท์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/35/5.jpg",
+    "areaNumber": 35
+  },
+  {
+    "number": 6,
+    "firstName": "ภาณุภณ",
+    "lastName": "พฤฒิวโรดม",
+    "fullName": "นายภาณุภณ พฤฒิวโรดม",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/35/6.jpg",
+    "areaNumber": 35
+  },
+  {
+    "number": 7,
+    "firstName": "อรรคภัสร์",
+    "lastName": "สุขศรีวงศ์",
+    "fullName": "นายอรรคภัสร์ สุขศรีวงศ์",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/35/7.jpg",
+    "areaNumber": 35
+  },
+  {
+    "number": 8,
+    "firstName": "สุทธิชัย",
+    "lastName": "วีรกุลสุนทร",
+    "fullName": "นายสุทธิชัย วีรกุลสุนทร",
+
+"partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/35/8.jpg",
+    "areaNumber": 35
+  },
+  {
+    "number": 9,
+    "firstName": "ธนวัฒน์",
+    "lastName": "จันทร์เศรษฐ",
+    "fullName": "นายธนวัฒน์ จันทร์เศรษฐ",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/35/9.jpg",
+    "areaNumber": 35
+  },
+  {
+    "number": 1,
+    "firstName": "วีรยา",
+    "lastName": "กลั่นปัญญา",
+    "fullName": "นางสาววีรยา กลั่นปัญญา",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/36/1.jpg",
+    "areaNumber": 36
+  },
+  {
+    "number": 2,
+    "firstName": "กนกนุช",
+    "lastName": "กลิ่นสังข์",
+    "fullName": "นางกนกนุช กลิ่นสังข์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/36/2.jpg",
+    "areaNumber": 36
+  },
+  {
+    "number": 3,
+    "firstName": "พนา",
+    "lastName": "วุฒิเดช",
+    "fullName": "นายพนา วุฒิเดช",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/36/3.jpg",
+    "areaNumber": 36
+  },
+  {
+    "number": 4,
+    "firstName": "ศิววงศ์",
+    "lastName": "วงศ์พิชญา",
+    "fullName": "นายศิววงศ์ วงศ์พิชญา",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/36/4.jpg",
+    "areaNumber": 36
+  },
+  {
+    "number": 5,
+    "firstName": "ไกรศักดิ์",
+    "lastName": "เสาเวียง",
+    "fullName": "นายไกรศักดิ์ เสาเวียง",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/36/5.jpg",
+    "areaNumber": 36
+  },
+  {
+    "number": 6,
+    "firstName": "อดิเรก",
+    "lastName": "สังข์นุช",
+    "fullName": "นายอดิเรก สังข์นุช",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/36/6.jpg",
+    "areaNumber": 36
+  },
+  {
+    "number": 7,
+    "firstName": "ฤดีมาศ",
+    "lastName": "เที่ยงทัศน์",
+    "fullName": "นางสาวฤดีมาศ เที่ยงทัศน์",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/36/7.jpg",
+    "areaNumber": 36
+  },
+  {
+    "number": 1,
+    "firstName": "เอกกวิน",
+    "lastName": "โชคประสพรวย",
+    "fullName": "นายเอกกวิน โชคประสพรวย",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/37/1.jpg",
+    "areaNumber": 37
+  },
+  {
+    "number": 2,
+    "firstName": "อนุชาญ",
+    "lastName": "กวางทอง",
+    "fullName": "นายอนุชาญ กวางทอง",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/37/2.jpg",
+    "areaNumber": 37
+  },
+  {
+    "number": 3,
+    "firstName": "พาริส",
+    "lastName": "เจริญศิลป์",
+    "fullName": "นายพาริส เจริญศิลป์",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/37/3.jpg",
+    "areaNumber": 37
+  },
+  {
+    "number": 4,
+    "firstName": "ธนาวิทย์",
+    "lastName": "ฤทธิศรี",
+    "fullName": "นายธนาวิทย์ ฤทธิศรี",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/37/4.jpg",
+    "areaNumber": 37
+  },
+  {
+    "number": 5,
+    "firstName": "ทัศนัย",
+    "lastName": "จินดาวนิช",
+    "fullName": "นายทัศนัย จินดาวนิช",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/37/5.jpg",
+    "areaNumber": 37
+  },
+  {
+    "number": 6,
+
+"firstName": "ผุสดี",
+    "lastName": "วงศ์กำแหง",
+    "fullName": "นางผุสดี วงศ์กำแหง",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/37/6.jpg",
+    "areaNumber": 37
+  },
+  {
+    "number": 7,
+    "firstName": "วัทธิกร",
+    "lastName": "หรุ่นศิริ",
+    "fullName": "นายวัทธิกร หรุ่นศิริ",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/37/7.jpg",
+    "areaNumber": 37
+  },
+  {
+    "number": 8,
+    "firstName": "ทัดดาว",
+    "lastName": "ตั้งตรงเจริญ",
+    "fullName": "นางสาวทัดดาว ตั้งตรงเจริญ",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/37/8.jpg",
+    "areaNumber": 37
+  },
+  {
+    "number": 1,
+    "firstName": "รุ้งตะวัน",
+    "lastName": "ธัญภัทรานนท์",
+    "fullName": "นางสาวรุ้งตะวัน ธัญภัทรานนท์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/38/1.jpg",
+    "areaNumber": 38
+  },
+  {
+    "number": 2,
+    "firstName": "สมชาติ",
+    "lastName": "จงผิตะ",
+    "fullName": "นายสมชาติ จงผิตะ",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/38/2.jpg",
+    "areaNumber": 38
+  },
+  {
+    "number": 3,
+    "firstName": "สมพร",
+    "lastName": "อิทธิภูวกุล",
+    "fullName": "นายสมพร อิทธิภูวกุล",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/38/3.jpg",
+    "areaNumber": 38
+  },
+  {
+    "number": 4,
+    "firstName": "ธนิตศักดิ์",
+    "lastName": "ดารามั่น",
+    "fullName": "ว่าที่ ร.ต.ธนิตศักดิ์ ดารามั่น",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/38/4.jpg",
+    "areaNumber": 38
+  },
+  {
+    "number": 5,
+    "firstName": "สัญชัย",
+    "lastName": "สวยพรมราช",
+    "fullName": "นายสัญชัย สวยพรมราช",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/38/5.jpg",
+    "areaNumber": 38
+  },
+  {
+    "number": 6,
+    "firstName": "ณภัค",
+    "lastName": "เพ็งสุข",
+    "fullName": "นายณภัค เพ็งสุข",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/38/6.jpg",
+    "areaNumber": 38
+  },
+  {
+    "number": 7,
+    "firstName": "ขวัญนภา",
+    "lastName": "พลายมนต์",
+    "fullName": "นางสาวขวัญนภา พลายมนต์",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/38/7.jpg",
+    "areaNumber": 38
+  },
+  {
+    "number": 8,
+    "firstName": "นนท์ปวิธ",
+    "lastName": "แก้วงาม",
+    "fullName": "นายนนท์ปวิธ แก้วงาม",
+    "partyId": 10,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/38/8.jpg",
+    "areaNumber": 38
+  },
+  {
+    "number": 9,
+    "firstName": "กรวิชญ์",
+    "lastName": "พูนผล",
+    "fullName": "นายกรวิชญ์ พูนผล",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/38/9.jpg",
+    "areaNumber": 38
+  },
+  {
+    "number": 1,
+    "firstName": "สัณห์สิทธิ์",
+    "lastName": "เนาถาวร",
+    "fullName": "นายสัณห์สิทธิ์ เนาถาวร",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/39/1.jpg",
+    "areaNumber": 39
+  },
+  {
+    "number": 2,
+    "firstName": "ยุทธพิชัย",
+    "lastName": "ชาญเลขา",
+
+"fullName": "นายยุทธพิชัย ชาญเลขา",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/39/2.jpg",
+    "areaNumber": 39
+  },
+  {
+    "number": 3,
+    "firstName": "วีรานันท์",
+    "lastName": "สดากรวงศ์วัชร์",
+    "fullName": "นางสาววีรานันท์ สดากรวงศ์วัชร์",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/39/3.jpg",
+    "areaNumber": 39
+  },
+  {
+    "number": 4,
+    "firstName": "ภูโช",
+    "lastName": "ซานไทโว",
+    "fullName": "นายภูโช ซานไทโว",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/39/4.jpg",
+    "areaNumber": 39
+  },
+  {
+    "number": 5,
+    "firstName": "ประสิทธิ์",
+    "lastName": "รักสลาม",
+    "fullName": "นายประสิทธิ์ รักสลาม",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/39/5.jpg",
+    "areaNumber": 39
+  },
+  {
+    "number": 6,
+    "firstName": "พลศักดิ์",
+    "lastName": "แดงบัว",
+    "fullName": "นายพลศักดิ์ แดงบัว",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/39/6.jpg",
+    "areaNumber": 39
+  },
+  {
+    "number": 7,
+    "firstName": "นิกร",
+    "lastName": "ซัจเดว",
+    "fullName": "นายนิกร ซัจเดว",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/39/7.jpg",
+    "areaNumber": 39
+  },
+  {
+    "number": 8,
+    "firstName": "จักรพันธ์",
+    "lastName": "สุรีย์ส่อง",
+    "fullName": "นายจักรพันธ์ สุรีย์ส่อง",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/39/8.jpg",
+    "areaNumber": 39
+  },
+  {
+    "number": 1,
+    "firstName": "ศุภกิตติ์",
+    "lastName": "ศีลอุดม",
+    "fullName": "นายศุภกิตติ์ ศีลอุดม",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/40/1.jpg",
+    "areaNumber": 40
+  },
+  {
+    "number": 2,
+    "firstName": "เอกชัย",
+    "lastName": "ผ่องจิตร์",
+    "fullName": "นายเอกชัย ผ่องจิตร์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/40/2.jpg",
+    "areaNumber": 40
+  },
+  {
+    "number": 3,
+    "firstName": "เริง",
+    "lastName": "ม่วงชุ่ม",
+    "fullName": "นายเริง ม่วงชุ่ม",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/40/3.jpg",
+    "areaNumber": 40
+  },
+  {
+    "number": 4,
+    "firstName": "นิรันด์",
+    "lastName": "พรมจีน",
+    "fullName": "นายนิรันด์ พรมจีน",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/40/4.jpg",
+    "areaNumber": 40
+  },
+  {
+    "number": 5,
+    "firstName": "กฤษณี",
+    "lastName": "ท้ายวัด",
+    "fullName": "นางสาวกฤษณี ท้ายวัด",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/40/5.jpg",
+    "areaNumber": 40
+  },
+  {
+    "number": 6,
+    "firstName": "อำนาจ",
+    "lastName": "ปานเผือก",
+    "fullName": "นายอำนาจ ปานเผือก",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/40/6.jpg",
+    "areaNumber": 40
+  },
+  {
+    "number": 7,
+    "firstName": "วรุตม์",
+    "lastName": "ธารณา",
+    "fullName": "นายวรุตม์ ธารณา",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/40/7.jpg",
+    "areaNumber": 40
+  },
+  {
+    "number": 8,
+
+"firstName": "ปภัสรินทร์",
+    "lastName": "กีรติอัคราวัชร์",
+    "fullName": "นางสาวปภัสรินทร์ กีรติอัคราวัชร์",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/40/8.jpg",
+    "areaNumber": 40
+  },
+  {
+    "number": 9,
+    "firstName": "วิชาญชัย",
+    "lastName": "บุญแสง",
+    "fullName": "นายวิชาญชัย บุญแสง",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/40/9.jpg",
+    "areaNumber": 40
+  },
+  {
+    "number": 1,
+    "firstName": "รังสรรค์",
+    "lastName": "กียปัจจ์",
+    "fullName": "นายรังสรรค์ กียปัจจ์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/41/1.jpg",
+    "areaNumber": 41
+  },
+  {
+    "number": 2,
+    "firstName": "ตกานต์",
+    "lastName": "สุนนทวุฒิ",
+    "fullName": "นายตกานต์ สุนนทวุฒิ",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/41/2.jpg",
+    "areaNumber": 41
+  },
+  {
+    "number": 3,
+    "firstName": "ธราธพ",
+    "lastName": "ชาตรี",
+    "fullName": "นายธราธพ ชาตรี",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/41/3.jpg",
+    "areaNumber": 41
+  },
+  {
+    "number": 4,
+    "firstName": "สิระ",
+    "lastName": "ขาวนุ่น",
+    "fullName": "นายสิระ ขาวนุ่น",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/41/4.jpg",
+    "areaNumber": 41
+  },
+  {
+    "number": 5,
+    "firstName": "ลลิศา",
+    "lastName": "ไตรรัตนจรัสพร",
+    "fullName": "นางสาวลลิศา ไตรรัตนจรัสพร",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/41/5.jpg",
+    "areaNumber": 41
+  },
+  {
+    "number": 6,
+    "firstName": "วิรัชย์ชล",
+    "lastName": "วริทธิ์ภานิช",
+    "fullName": "นายวิรัชย์ชล วริทธิ์ภานิช",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/41/6.jpg",
+    "areaNumber": 41
+  },
+  {
+    "number": 7,
+    "firstName": "มโนกร",
+    "lastName": "โรจนสุวรรณ",
+    "fullName": "นายมโนกร โรจนสุวรรณ",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/41/7.jpg",
+    "areaNumber": 41
+  },
+  {
+    "number": 1,
+    "firstName": "นิกม์",
+    "lastName": "แสงศิรินาวิน",
+    "fullName": "นายนิกม์ แสงศิรินาวิน",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/42/1.jpg",
+    "areaNumber": 42
+  },
+  {
+    "number": 2,
+    "firstName": "จักรรัตน์",
+    "lastName": "กนะกาศัย",
+    "fullName": "นายจักรรัตน์ กนะกาศัย",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/42/2.jpg",
+    "areaNumber": 42
+  },
+  {
+    "number": 3,
+    "firstName": "ณรงค์ศักดิ์",
+    "lastName": "ฤทธิวรผล",
+    "fullName": "นายณรงค์ศักดิ์ ฤทธิวรผล",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/42/3.jpg",
+    "areaNumber": 42
+  },
+  {
+    "number": 4,
+    "firstName": "รัตติกาล",
+    "lastName": "แก้วเกิดมี",
+    "fullName": "นางสาวรัตติกาล แก้วเกิดมี",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/42/4.jpg",
+    "areaNumber": 42
+  },
+  {
+    "number": 5,
+    "firstName": "ลมุลจิต",
+
+"lastName": "วิเชียรศรี",
+    "fullName": "นางสาวลมุลจิต วิเชียรศรี",
+    "partyId": 8,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/42/5.jpg",
+    "areaNumber": 42
+  },
+  {
+    "number": 6,
+    "firstName": "ณัฐกานต์",
+    "lastName": "ศิริ",
+    "fullName": "นายณัฐกานต์ ศิริ",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/42/6.jpg",
+    "areaNumber": 42
+  },
+  {
+    "number": 7,
+    "firstName": "ยิ่งศักดิ์",
+    "lastName": "เลาหะตานนท์",
+    "fullName": "นายยิ่งศักดิ์ เลาหะตานนท์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/42/7.jpg",
+    "areaNumber": 42
+  },
+  {
+    "number": 8,
+    "firstName": "เดชบดินทร์",
+    "lastName": "มาสิลีรังสี",
+    "fullName": "นายเดชบดินทร์ มาสิลีรังสี",
+    "partyId": 3,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/42/8.jpg",
+    "areaNumber": 42
+  },
+  {
+    "number": 1,
+    "firstName": "ณัฐธนนท์",
+    "lastName": "ทับเจริญ",
+    "fullName": "นายณัฐธนนท์ ทับเจริญ",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/43/1.jpg",
+    "areaNumber": 43
+  },
+  {
+    "number": 2,
+    "firstName": "สว่าง",
+    "lastName": "แก้วมณี",
+    "fullName": "นายสว่าง แก้วมณี",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/43/2.jpg",
+    "areaNumber": 43
+  },
+  {
+    "number": 3,
+    "firstName": "ปวริศา",
+    "lastName": "คุณาวรนนท์",
+    "fullName": "นางสาวปวริศา คุณาวรนนท์",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/43/3.jpg",
+    "areaNumber": 43
+  },
+  {
+    "number": 4,
+    "firstName": "วีรพล",
+    "lastName": "วงษ์มะเซาะ",
+    "fullName": "ว่าที่ร้อยเอกวีรพล วงษ์มะเซาะ",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/43/4.jpg",
+    "areaNumber": 43
+  },
+  {
+    "number": 5,
+    "firstName": "ชญาดา",
+    "lastName": "วิภัติภูมิประเทศ",
+    "fullName": "นางชญาดา วิภัติภูมิประเทศ",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/43/5.jpg",
+    "areaNumber": 43
+  },
+  {
+    "number": 6,
+    "firstName": "สุนันท์",
+    "lastName": "มีนมณี",
+    "fullName": "นายสุนันท์ มีนมณี",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/43/6.jpg",
+    "areaNumber": 43
+  },
+  {
+    "number": 1,
+    "firstName": "อดุลย์",
+    "lastName": "เซะวิเศษ",
+    "fullName": "นายอดุลย์ เซะวิเศษ",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/44/1.jpg",
+    "areaNumber": 44
+  },
+  {
+    "number": 2,
+    "firstName": "สมเกียรติ",
+    "lastName": "ปานดำ",
+    "fullName": "นายสมเกียรติ ปานดำ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/44/2.jpg",
+    "areaNumber": 44
+  },
+  {
+    "number": 3,
+    "firstName": "มธุรส",
+    "lastName": "เบนท์",
+    "fullName": "นางสาวมธุรส เบนท์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/44/3.jpg",
+    "areaNumber": 44
+  },
+  {
+    "number": 4,
+    "firstName": "สมัย",
+    "lastName": "ภูมรินทร",
+    "fullName": "นายสมัย ภูมรินทร",
+    "partyId": 2,
+
+"imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/44/4.jpg",
+    "areaNumber": 44
+  },
+  {
+    "number": 5,
+    "firstName": "ภูเบศ",
+    "lastName": "โพธิ์โซ๊ะ",
+    "fullName": "นายภูเบศ โพธิ์โซ๊ะ",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/44/5.jpg",
+    "areaNumber": 44
+  },
+  {
+    "number": 6,
+    "firstName": "จิตริน",
+    "lastName": "จันทร์ดี",
+    "fullName": "นายจิตริน จันทร์ดี",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/44/6.jpg",
+    "areaNumber": 44
+  },
+  {
+    "number": 7,
+    "firstName": "วิบูลย์ศักดิ์",
+    "lastName": "หนันดี",
+    "fullName": "นายวิบูลย์ศักดิ์ หนันดี",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/44/7.jpg",
+    "areaNumber": 44
+  },
+  {
+    "number": 8,
+    "firstName": "วินิตา",
+    "lastName": "ยุทธา",
+    "fullName": "นางสาววินิตา ยุทธา",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/44/8.jpg",
+    "areaNumber": 44
+  },
+  {
+    "number": 1,
+    "firstName": "ดำรงค์",
+    "lastName": "สาหร่ายวัง",
+    "fullName": "นายดำรงค์ สาหร่ายวัง",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/45/1.jpg",
+    "areaNumber": 45
+  },
+  {
+    "number": 2,
+    "firstName": "ปฏิมา",
+    "lastName": "ชุติมันต์",
+    "fullName": "นางสาวปฏิมา ชุติมันต์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/45/2.jpg",
+    "areaNumber": 45
+  },
+  {
+    "number": 3,
+    "firstName": "บุษยา",
+    "lastName": "รัตนะ",
+    "fullName": "นางสาวบุษยา รัตนะ",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/45/3.jpg",
+    "areaNumber": 45
+  },
+  {
+    "number": 4,
+    "firstName": "สุรภา",
+    "lastName": "ประยงค์ระวิกูล",
+    "fullName": "นางสุรภา ประยงค์ระวิกูล",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/45/4.jpg",
+    "areaNumber": 45
+  },
+  {
+    "number": 5,
+    "firstName": "นฤธัช",
+    "lastName": "สีบุญเรือง",
+    "fullName": "นายนฤธัช สีบุญเรือง",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/45/5.jpg",
+    "areaNumber": 45
+  },
+  {
+    "number": 6,
+    "firstName": "พงศ์ธร",
+    "lastName": "เพชรชาติ",
+    "fullName": "นายพงศ์ธร เพชรชาติ",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/45/6.jpg",
+    "areaNumber": 45
+  },
+  {
+    "number": 7,
+    "firstName": "ซาม่าฮ์",
+    "lastName": "เอลกอรดี",
+    "fullName": "นางสาวซาม่าฮ์ เอลกอรดี",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/45/7.jpg",
+    "areaNumber": 45
+  },
+  {
+    "number": 8,
+    "firstName": "กิตติพัฒน์",
+    "lastName": "มีสุวรรณ",
+    "fullName": "นายกิตติพัฒน์ มีสุวรรณ",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/45/8.jpg",
+    "areaNumber": 45
+  },
+  {
+    "number": 9,
+    "firstName": "อนุรักษ์",
+    "lastName": "เลิศวัฒนาไพบูลย์",
+    "fullName": "นายอนุรักษ์ เลิศวัฒนาไพบูลย์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/45/9.jpg",
+    "areaNumber": 45
+  },
+  {
+
+"number": 1,
+    "firstName": "นฤนันมนต์",
+    "lastName": "ห่วงทรัพย์",
+    "fullName": "นางสาวนฤนันมนต์ ห่วงทรัพย์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/46/1.jpg",
+    "areaNumber": 46
+  },
+  {
+    "number": 2,
+    "firstName": "นที",
+    "lastName": "เข็มศรีสุวรรณ",
+    "fullName": "นายนที เข็มศรีสุวรรณ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/46/2.jpg",
+    "areaNumber": 46
+  },
+  {
+    "number": 3,
+    "firstName": "โสภณ",
+    "lastName": "แก้วศรีจันทร์",
+    "fullName": "นายโสภณ แก้วศรีจันทร์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/46/3.jpg",
+    "areaNumber": 46
+  },
+  {
+    "number": 4,
+    "firstName": "วิรัช",
+    "lastName": "อินช่วย",
+    "fullName": "นายวิรัช อินช่วย",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/46/4.jpg",
+    "areaNumber": 46
+  },
+  {
+    "number": 5,
+    "firstName": "มนูญ",
+    "lastName": "อินช่วย",
+    "fullName": "นายมนูญ อินช่วย",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/46/5.jpg",
+    "areaNumber": 46
+  },
+  {
+    "number": 6,
+    "firstName": "ขุนธรรม",
+    "lastName": "เดือดขุนทด",
+    "fullName": "นายขุนธรรม เดือดขุนทด",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/46/6.jpg",
+    "areaNumber": 46
+  },
+  {
+    "number": 7,
+    "firstName": "ปิยะนุช",
+    "lastName": "จงบรรเจิด",
+    "fullName": "นางปิยะนุช จงบรรเจิด",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/46/7.jpg",
+    "areaNumber": 46
+  },
+  {
+    "number": 1,
+    "firstName": "พลาวุฒิ",
+    "lastName": "เลิศศิลาทอง",
+    "fullName": "นายพลาวุฒิ เลิศศิลาทอง",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/47/1.jpg",
+    "areaNumber": 47
+  },
+  {
+    "number": 2,
+    "firstName": "ปรินต์",
+    "lastName": "ทองปุสสะ",
+    "fullName": "นายปรินต์ ทองปุสสะ",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/47/2.jpg",
+    "areaNumber": 47
+  },
+  {
+    "number": 3,
+    "firstName": "ฉัตรชัย",
+    "lastName": "หมอดี",
+    "fullName": "นายฉัตรชัย หมอดี",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/47/3.jpg",
+    "areaNumber": 47
+  },
+  {
+    "number": 4,
+    "firstName": "วรรณะ",
+    "lastName": "เดชรา",
+    "fullName": "นายวรรณะ เดชรา",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/47/4.jpg",
+    "areaNumber": 47
+  },
+  {
+    "number": 5,
+    "firstName": "ดลสุข",
+    "lastName": "รุ่งเรือง",
+    "fullName": "นายดลสุข รุ่งเรือง",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/47/5.jpg",
+    "areaNumber": 47
+  },
+  {
+    "number": 6,
+    "firstName": "คำรณ",
+    "lastName": "บำรุงรักษ์",
+    "fullName": "นายคำรณ บำรุงรักษ์",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/47/6.jpg",
+    "areaNumber": 47
+  },
+  {
+    "number": 7,
+    "firstName": "ณัฐวีณ์",
+    "lastName": "เปาชัย",
+    "fullName": "นางสาวณัฐวีณ์ เปาชัย",
+    "partyId": 7,
+
+"imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/47/7.png",
+    "areaNumber": 47
+  },
+  {
+    "number": 1,
+    "firstName": "ยงวุฒิ",
+    "lastName": "ทองอยู่",
+    "fullName": "นายยงวุฒิ ทองอยู่",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/48/1.jpg",
+    "areaNumber": 48
+  },
+  {
+    "number": 2,
+    "firstName": "ประเวช",
+    "lastName": "แสวงสุข",
+    "fullName": "นายประเวช แสวงสุข",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/48/2.jpg",
+    "areaNumber": 48
+  },
+  {
+    "number": 3,
+    "firstName": "ยิ่งยงค์",
+    "lastName": "จิตเพียรธรรม",
+    "fullName": "นายยิ่งยงค์ จิตเพียรธรรม",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/48/3.jpg",
+    "areaNumber": 48
+  },
+  {
+    "number": 4,
+    "firstName": "พรพิมล",
+    "lastName": "สูญญาจารย์",
+    "fullName": "นางพรพิมล สูญญาจารย์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/48/4.jpg",
+    "areaNumber": 48
+  },
+  {
+    "number": 5,
+    "firstName": "อนุตรา",
+    "lastName": "ยุวสถาพร",
+    "fullName": "นางอนุตรา ยุวสถาพร",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/48/5.jpg",
+    "areaNumber": 48
+  },
+  {
+    "number": 6,
+    "firstName": "วีรพงษ์",
+    "lastName": "บุญพาเพียรเลิศ",
+    "fullName": "นายวีรพงษ์ บุญพาเพียรเลิศ",
+    "partyId": 1,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/48/6.jpg",
+    "areaNumber": 48
+  },
+  {
+    "number": 7,
+    "firstName": "ชลพฤกษ",
+    "lastName": "วงศ์อรุณนิยม",
+    "fullName": "นายชลพฤกษ วงศ์อรุณนิยม",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/48/7.jpg",
+    "areaNumber": 48
+  },
+  {
+    "number": 1,
+    "firstName": "พงศ์พัทธ์",
+    "lastName": "เปี่ยมสวัสดิ์",
+    "fullName": "นายพงศ์พัทธ์ เปี่ยมสวัสดิ์",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/49/1.jpg",
+    "areaNumber": 49
+  },
+  {
+    "number": 2,
+    "firstName": "สุรชัย",
+    "lastName": "บินซาเลห์",
+    "fullName": "นายสุรชัย บินซาเลห์",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/49/2.jpg",
+    "areaNumber": 49
+  },
+  {
+    "number": 3,
+    "firstName": "ฉัตรพล",
+    "lastName": "ขวัญบัว",
+    "fullName": "นายฉัตรพล ขวัญบัว",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/49/3.jpg",
+    "areaNumber": 49
+  },
+  {
+    "number": 4,
+    "firstName": "ธนนรินทร์",
+    "lastName": "ศิริหิรัญพงษ์",
+    "fullName": "นายธนนรินทร์ ศิริหิรัญพงษ์",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/49/4.jpg",
+    "areaNumber": 49
+  },
+  {
+    "number": 5,
+    "firstName": "เจริญศักดิ์",
+    "lastName": "มณีรัตนสุบรรณ",
+    "fullName": "นายเจริญศักดิ์ มณีรัตนสุบรรณ",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/49/5.jpg",
+    "areaNumber": 49
+  },
+  {
+    "number": 6,
+    "firstName": "ชยิน",
+    "lastName": "พึ่งสาย",
+    "fullName": "นายชยิน พึ่งสาย",
+    "partyId": 4,
+
+"imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/49/6.jpg",
+    "areaNumber": 49
+  },
+  {
+    "number": 7,
+    "firstName": "พิสิษฐ์",
+    "lastName": "เลิศศรีปัญญา",
+    "fullName": "นายพิสิษฐ์ เลิศศรีปัญญา",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/49/7.jpg",
+    "areaNumber": 49
+  },
+  {
+    "number": 8,
+    "firstName": "กิตติพงศ์",
+    "lastName": "รวยฟูพันธ์",
+    "fullName": "นายกิตติพงศ์ รวยฟูพันธ์",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/49/8.jpg",
+    "areaNumber": 49
+  },
+  {
+    "number": 9,
+    "firstName": "นดา",
+    "lastName": "แวยูโซ๊ะ",
+    "fullName": "นางสาวนดา แวยูโซ๊ะ",
+    "partyId": 7,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/49/9.jpg",
+    "areaNumber": 49
+  },
+  {
+    "number": 1,
+    "firstName": "สงกรานต์",
+    "lastName": "พงษ์พันนา",
+    "fullName": "นายสงกรานต์ พงษ์พันนา",
+    "partyId": 13,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/50/1.jpg",
+    "areaNumber": 50
+  },
+  {
+    "number": 2,
+    "firstName": "นิธิกร",
+    "lastName": "บุญยกุลเจริญ",
+    "fullName": "นายนิธิกร บุญยกุลเจริญ",
+    "partyId": 2,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/50/2.jpg",
+    "areaNumber": 50
+  },
+  {
+    "number": 3,
+    "firstName": "ณรงค์ศักดิ์",
+    "lastName": "ม่วงศิริ",
+    "fullName": "นายณรงค์ศักดิ์ ม่วงศิริ",
+    "partyId": 4,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/50/3.jpg",
+    "areaNumber": 50
+  },
+  {
+    "number": 4,
+    "firstName": "สมพร",
+    "lastName": "คงโครัด",
+    "fullName": "นายสมพร คงโครัด",
+    "partyId": 5,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/50/4.jpg",
+    "areaNumber": 50
+  },
+  {
+    "number": 5,
+    "firstName": "เมืองชัย",
+    "lastName": "จันทวิมล",
+    "fullName": "นายเมืองชัย จันทวิมล",
+    "partyId": 9,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/50/5.jpg",
+    "areaNumber": 50
+  },
+  {
+    "number": 6,
+    "firstName": "สรรพสิฐ",
+    "lastName": "รักท้วม",
+    "fullName": "นายสรรพสิฐ รักท้วม",
+    "partyId": 11,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/50/6.jpg",
+    "areaNumber": 50
+  },
+  {
+    "number": 7,
+    "firstName": "มานพ",
+    "lastName": "มารุ่งเรือง",
+    "fullName": "นายมานพ มารุ่งเรือง",
+    "partyId": 12,
+    "imgUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/candidates/bangkok-council/50/7.jpg",
+    "areaNumber": 50
+  }
+]

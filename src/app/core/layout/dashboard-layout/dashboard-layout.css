@@ -59,12 +59,18 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    /* Desktop default: 2-column */
     grid-template-columns: 1fr 400px;
     grid-template-rows: auto 1fr;
     grid-template-areas:
         "map     hero"
         "map     candidates";
+}
+
+.content-grid.is-sk-mode {
+    grid-template-areas:
+        "map     candidates"
+        "map     candidates";
+    grid-template-rows: 1fr;
 }
 
 /* Search bar: absolute floating over map on desktop */
@@ -156,6 +162,13 @@
         gap: 12px;
     }
 
+    .content-grid.is-sk-mode {
+        grid-template-areas:
+            "search"
+            "map"
+            "candidates";
+    }
+
     /* ใส่ grid-area + sticky ให้ search bar ติดบนสุดของ stacked layout */
     .area-search {
         grid-area: search;
@@ -197,6 +210,13 @@
         gap: 12px;
     }
 
+    .content-grid.is-sk-mode {
+        grid-template-areas:
+            "search"
+            "map"
+            "candidates";
+    }
+
     .area-search {
         grid-area: search;
         position: sticky;
@@ -229,6 +249,13 @@
         padding: 20px;
         padding-bottom: 24px; /* tablet มี sidebar ด้านข้าง ไม่มี bottom nav */
         gap: 20px;
+    }
+
+    .content-grid.is-sk-mode {
+        grid-template-areas:
+            "search"
+            "map"
+            "candidates";
     }
 
     .area-search {

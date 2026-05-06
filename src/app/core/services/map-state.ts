@@ -19,6 +19,8 @@ export class MapStateService {
 
   selectedDistrictId = signal<number | null>(null);
   selectedCandidateId = signal<number | null>(null);
+  activeTab = signal<'summary' | 'sk'>('summary');
+  councilView = signal<'quota' | 'district'>('quota');
 
   selectedDistrict = computed(() => {
     const id = this.selectedDistrictId();

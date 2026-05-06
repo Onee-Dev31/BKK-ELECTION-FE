@@ -1,0 +1,184 @@
+@if (council.isLoading()) {
+  <div class="flex items-center justify-center h-full">
+    <div class="w-5 h-5 rounded-full border-2 border-teal-400/30 border-t-teal-400 animate-spin"></div>
+  </div>
+
+} @else if (selectedDistrictId()) {
+  <!-- District view -->
+  <div class="flex flex-col h-full">
+    <div class="px-4 py-2.5 border-b border-white/5 flex items-center gap-2 flex-shrink-0 bg-white/2">
+      <button (click)="clearDistrict()"
+        class="w-6 h-6 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+        <svg class="w-3 h-3 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <div class="flex flex-col">
+        <span class="text-white/90 text-xs font-black">เขต{{ selectedDistrictId() }} — {{ districtName() }}</span>
+        <span class="text-teal-400/50 text-[9px] font-bold uppercase tracking-widest">
+          {{ districtCandidates().length }} ผู้สมัคร ส.ก.
+        </span>
+      </div>
+    </div>
+
+    <!-- District Statistics -->
+    @if (currentDistrictSummary(); as summary) {
+      <div class="px-4 py-3 bg-white/2 border-b border-white/5 grid grid-cols-2 gap-4">
+        <div class="flex flex-col">
+          <span class="text-[9px] text-white/30 font-bold uppercase tracking-wider">ผู้มาใช้สิทธิ</span>
+          <span class="text-xs text-teal-400 font-black">
+            {{ summary.overallStatistics.totalVotes | number }}
+            <span class="text-[10px] text-white/40 font-normal ml-1">
+              ({{ (summary.overallStatistics.totalVotes / summary.overallStatistics.totalEligible * 100) | number:'1.1-1' }}%)
+            </span>
+          </span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[9px] text-white/30 font-bold uppercase tracking-wider">บัตรดี</span>
+          <span class="text-xs text-white/80 font-black">
+            {{ summary.overallStatistics.goodVotes | number }}
+            <span class="text-[10px] text-white/40 font-normal ml-1">
+              ({{ summary.overallStatistics.percentGoodVotes | number:'1.1-1' }}%)
+            </span>
+          </span>
+        </div>
+      </div>
+    }
+
+    <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar">
+      @for (c of districtCandidates(); track c.number) {
+        @let party = getParty(c.partyId);
+        @let leaderInfo = getLeaderInfo(c.number);
+        
+        <div class="flex items-center gap-3 px-4 py-3 border-b border-white/5 hover:bg-white/3 transition-colors">
+          <div class="relative flex-shrink-0">
+            <img [src]="c.imgUrl" [alt]="c.fullName"
+              class="w-10 h-10 rounded-full object-cover bg-white/5"
+              onerror="this.style.display='none'" />
+            <div class="absolute -bottom-0.5 -right-0.5 w-4.5 h-4.5 rounded-full flex items-center justify-center text-[9px] font-black text-white shadow-lg"
+              [style.backgroundColor]="party?.color ?? '#64748b'">
+              {{ c.number }}
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-white/90 text-xs font-bold truncate">{{ c.fullName }}</div>
+            @if (party) {
+              <div class="flex items-center gap-1 mt-0.5">
+                <img [src]="party.partyLogoUrl" class="w-3.5 h-3.5 object-contain" />
+                <span class="text-[10px] font-bold" [style.color]="party.color">{{ party.partyName }}</span>
+              </div>
+            }
+          </div>
+
+          @if (leaderInfo) {
+            <div class="flex flex-col items-end flex-shrink-0">
+              <div class="text-xs font-black text-white">{{ leaderInfo.totalVotes | number }}</div>
+              <div class="text-[10px] font-bold text-teal-400/80">{{ leaderInfo.percentVotes }}%</div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+} @else {
+  <!-- Overview: parliament chart or district list -->
+  <div class="flex flex-col h-full">
+
+    @if (mapState.councilView() === 'district') {
+      <!-- DISTRICT LIST VIEW (Reference Style) -->
+      <header class="px-4 py-3 border-b border-white/5 bg-white/2">
+        <div class="relative">
+          <input type="text" placeholder="ค้นหาจากชื่อเขต" 
+            [value]="searchQuery()"
+            (input)="searchQuery.set($any($event.target).value)"
+            class="w-full bg-white/5 border border-white/10 rounded-lg py-2 pl-9 pr-4 text-xs text-white/90 placeholder:text-white/20 focus:outline-none focus:border-teal-500/50 transition-colors">
+          <svg class="absolute left-3 top-2.5 w-4 h-4 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </header>
+      
+      <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar">
+        @for (item of filteredWinners(); track item.districtId) {
+          @let party = getParty(item.winner.partyId);
+          @let winnerLeader = item.summary.leaders[0];
+          <div (click)="mapState.selectedDistrictId.set(item.districtId)"
+            class="flex items-center gap-3 px-4 py-3 border-b border-white/5 hover:bg-white/3 cursor-pointer transition-colors group">
+            <div class="relative flex-shrink-0">
+              <img [src]="item.winner.imgUrl" class="w-10 h-10 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-teal-500/50 transition-all shadow-lg" />
+              <div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-black/80 flex items-center justify-center p-1 border border-white/10">
+                @if (party) {
+                  <img [src]="party.partyLogoUrl" class="w-full h-full object-contain" />
+                }
+              </div>
+            </div>
+            
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-1.5">
+                <span class="text-[9px] font-black text-teal-400 uppercase tracking-tighter">เขต {{ item.districtId }}</span>
+                <span class="text-[11px] font-black text-white/90 truncate">{{ ELECTION_CONSTANTS.DISTRICT_NAMES[item.districtId - 1] }}</span>
+              </div>
+              <div class="text-[10px] font-bold text-white/50 truncate mt-0.5">{{ item.winner.fullName }}</div>
+              @if (party) {
+                <div class="text-[9px] font-black mt-0.5" [style.color]="party.color">{{ party.partyName }}</div>
+              }
+            </div>
+
+            <div class="flex flex-col items-end flex-shrink-0 leading-none">
+              <span class="text-xs font-black text-white">{{ winnerLeader.totalVotes | number }}</span>
+              <span class="text-[9px] font-bold text-white/20 uppercase tracking-widest mt-1">คะแนน</span>
+            </div>
+          </div>
+        }
+      </div>
+
+    } @else {
+      <!-- QUOTA VIEW (Semicircle chart) -->
+      <div class="px-3 pt-4 pb-1 flex-shrink-0">
+        <svg viewBox="0 0 300 145" class="w-full" style="max-height: 140px;">
+          @for (dot of parliamentDots(); track $index) {
+            <circle
+              [attr.cx]="dot.x"
+              [attr.cy]="dot.y"
+              r="7"
+              [attr.fill]="dot.color"
+              opacity="0.92">
+              <title>{{ dot.partyName }}</title>
+            </circle>
+          }
+        </svg>
+        <p class="text-center text-[9px] text-white/20 font-bold uppercase tracking-widest mt-1">
+          สมาชิกสภากรุงเทพมหานคร 50 ที่นั่ง
+        </p>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-white/5 mx-4 mb-0"></div>
+
+      <!-- Party list -->
+      <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar">
+        @for (item of council.partySummary(); track item.party.partyId) {
+          <div class="flex items-center gap-3 px-4 py-2.5 border-b border-white/5 hover:bg-white/3 transition-colors">
+            <img [src]="item.party.partyLogoUrl" [alt]="item.party.partyName"
+              class="w-6 h-6 object-contain flex-shrink-0" />
+            <div class="flex-1 min-w-0">
+              <div class="text-white/80 text-[11px] font-bold truncate">{{ item.party.partyName }}</div>
+              <div class="mt-1 h-1 rounded-full bg-white/5 overflow-hidden">
+                <div class="h-full rounded-full"
+                  [style.width.%]="(item.seats / 50) * 100"
+                  [style.backgroundColor]="item.party.color">
+                </div>
+              </div>
+            </div>
+            <div class="flex-shrink-0 text-right">
+              <span class="text-sm font-black" [style.color]="item.party.color">{{ item.seats }}</span>
+              <div class="text-[9px] text-white/25">ที่นั่ง</div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+  </div>
+}

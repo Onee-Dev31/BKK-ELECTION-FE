@@ -1,0 +1,2305 @@
+{
+    "latestFetchedAt": "2022-05-24T05:06:23.067Z",
+    "data": [
+        {
+            "number": 1,
+            "interestingFactor": 14.73,
+            "leaders": [
+                {
+                    "number": 6,
+                    "rank": 1,
+                    "totalVotes": 5703,
+                    "percentVotes": 28.05
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 2708,
+                    "percentVotes": 13.32
+                },
+                {
+                    "number": 3,
+                    "rank": 3,
+                    "totalVotes": 2672,
+                    "percentVotes": 13.14
+                },
+                {
+                    "number": 5,
+                    "rank": 4,
+                    "totalVotes": 2554,
+                    "percentVotes": 12.56
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 1554,
+                    "percentVotes": 7.64
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 20329,
+                "goodVotes": 17464,
+                "badVotes": 1162,
+                "noVotes": 1703,
+                "percentGoodVotes": 85.91,
+                "percentBadVotes": 5.72,
+                "percentNoVotes": 8.38,
+                "totalEligible": 34398
+            }
+        },
+        {
+            "number": 2,
+            "interestingFactor": 13.96,
+            "leaders": [
+                {
+                    "number": 8,
+                    "rank": 1,
+                    "totalVotes": 9416,
+                    "percentVotes": 29.52
+                },
+                {
+                    "number": 2,
+                    "rank": 2,
+                    "totalVotes": 4963,
+                    "percentVotes": 15.56
+                },
+                {
+                    "number": 1,
+                    "rank": 3,
+                    "totalVotes": 4339,
+                    "percentVotes": 13.6
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 2790,
+                    "percentVotes": 8.75
+                },
+                {
+                    "number": 5,
+                    "rank": 4,
+                    "totalVotes": 2478,
+                    "percentVotes": 7.77
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 31899,
+                "goodVotes": 28295,
+                "badVotes": 564,
+                "noVotes": 3040,
+                "percentGoodVotes": 88.7,
+                "percentBadVotes": 1.77,
+                "percentNoVotes": 9.53,
+                "totalEligible": 62528
+            }
+        },
+        {
+            "number": 3,
+            "interestingFactor": 2.05,
+            "leaders": [
+                {
+                    "number": 4,
+                    "rank": 1,
+                    "totalVotes": 26542,
+                    "percentVotes": 33.48
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 24912,
+                    "percentVotes": 31.43
+                },
+                {
+                    "number": 7,
+                    "rank": 3,
+                    "totalVotes": 7666,
+                    "percentVotes": 9.67
+                },
+                {
+                    "number": 2,
+                    "rank": 4,
+                    "totalVotes": 4380,
+                    "percentVotes": 5.53
+                },
+                {
+                    "number": 3,
+                    "rank": 5,
+                    "totalVotes": 2402,
+                    "percentVotes": 3.03
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 79272,
+                "goodVotes": 68875,
+                "badVotes": 5458,
+                "noVotes": 4939,
+                "percentGoodVotes": 86.88,
+                "percentBadVotes": 6.89,
+                "percentNoVotes": 6.23,
+                "totalEligible": 134941
+            }
+        },
+        {
+            "number": 4,
+            "interestingFactor": 1.91,
+            "leaders": [
+                {
+                    "number": 8,
+                    "rank": 1,
+                    "totalVotes": 3480,
+                    "percentVotes": 18.82
+                },
+                {
+                    "number": 3,
+                    "rank": 2,
+                    "totalVotes": 3127,
+                    "percentVotes": 16.91
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 3074,
+                    "percentVotes": 16.62
+                },
+                {
+                    "number": 5,
+                    "rank": 4,
+                    "totalVotes": 2723,
+                    "percentVotes": 14.73
+                },
+                {
+                    "number": 1,
+                    "rank": 5,
+                    "totalVotes": 1851,
+                    "percentVotes": 10.01
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 18492,
+                "goodVotes": 16791,
+                "badVotes": 306,
+                "noVotes": 1395,
+                "percentGoodVotes": 90.8,
+                "percentBadVotes": 1.65,
+                "percentNoVotes": 7.54,
+                "totalEligible": 29809
+            }
+        },
+        {
+            "number": 5,
+            "interestingFactor": 2.96,
+            "leaders": [
+                {
+                    "number": 8,
+                    "rank": 1,
+                    "totalVotes": 24213,
+                    "percentVotes": 25.2
+                },
+                {
+                    "number": 3,
+                    "rank": 2,
+                    "totalVotes": 21367,
+                    "percentVotes": 22.24
+                },
+                {
+                    "number": 2,
+                    "rank": 3,
+                    "totalVotes": 15094,
+                    "percentVotes": 15.71
+                },
+                {
+                    "number": 1,
+                    "rank": 4,
+                    "totalVotes": 13193,
+                    "percentVotes": 13.73
+                },
+                {
+                    "number": 6,
+                    "rank": 5,
+                    "totalVotes": 6360,
+                    "percentVotes": 6.62
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 96082,
+                "goodVotes": 88213,
+                "badVotes": 1353,
+                "noVotes": 6516,
+                "percentGoodVotes": 91.81,
+                "percentBadVotes": 1.41,
+                "percentNoVotes": 6.78,
+                "totalEligible": 150213
+            }
+        },
+        {
+            "number": 6,
+            "interestingFactor": 8.19,
+            "leaders": [
+                {
+                    "number": 4,
+                    "rank": 1,
+                    "totalVotes": 16428,
+                    "percentVotes": 24.06
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 10839,
+                    "percentVotes": 15.87
+                },
+                {
+                    "number": 2,
+                    "rank": 3,
+                    "totalVotes": 9903,
+                    "percentVotes": 14.5
+                },
+                {
+                    "number": 5,
+                    "rank": 4,
+                    "totalVotes": 8647,
+                    "percentVotes": 12.66
+                },
+                {
+                    "number": 6,
+                    "rank": 5,
+                    "totalVotes": 7662,
+                    "percentVotes": 11.22
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 68286,
+                "goodVotes": 59966,
+                "badVotes": 3418,
+                "noVotes": 5902,
+                "percentGoodVotes": 87.82,
+                "percentBadVotes": 5.01,
+                "percentNoVotes": 8.64,
+                "totalEligible": 114084
+            }
+        },
+        {
+            "number": 7,
+            "interestingFactor": 1.56,
+            "leaders": [
+                {
+                    "number": 6,
+                    "rank": 1,
+                    "totalVotes": 3685,
+                    "percentVotes": 20.89
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 3411,
+                    "percentVotes": 19.33
+                },
+                {
+                    "number": 3,
+                    "rank": 3,
+                    "totalVotes": 2408,
+                    "percentVotes": 13.65
+                },
+                {
+                    "number": 2,
+                    "rank": 4,
+                    "totalVotes": 2295,
+                    "percentVotes": 13.01
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 1759,
+                    "percentVotes": 9.97
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 17644,
+                "goodVotes": 15959,
+                "badVotes": 358,
+                "noVotes": 1327,
+                "percentGoodVotes": 90.45,
+                "percentBadVotes": 2.03,
+                "percentNoVotes": 7.52,
+                "totalEligible": 30692
+            }
+        },
+        {
+            "number": 8,
+            "interestingFactor": 12.26,
+            "leaders": [
+                {
+                    "number": 5,
+                    "rank": 1,
+                    "totalVotes": 5690,
+                    "percentVotes": 30.82
+                },
+                {
+                    "number": 3,
+                    "rank": 2,
+                    "totalVotes": 3427,
+                    "percentVotes": 18.56
+                },
+                {
+                    "number": 8,
+                    "rank": 3,
+                    "totalVotes": 2419,
+                    "percentVotes": 13.1
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 2030,
+                    "percentVotes": 10.99
+                },
+                {
+                    "number": 1,
+                    "rank": 5,
+                    "totalVotes": 1792,
+                    "percentVotes": 9.71
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 18464,
+                "goodVotes": 16803,
+                "badVotes": 379,
+                "noVotes": 1282,
+                "percentGoodVotes": 91,
+                "percentBadVotes": 2.05,
+                "percentNoVotes": 6.94,
+                "totalEligible": 31889
+            }
+        },
+        {
+            "number": 9,
+            "interestingFactor": 2.1,
+            "leaders": [
+                {
+                    "number": 6,
+                    "rank": 1,
+                    "totalVotes": 9336,
+                    "percentVotes": 21.86
+                },
+                {
+                    "number": 8,
+                    "rank": 2,
+                    "totalVotes": 8439,
+                    "percentVotes": 19.76
+                },
+                {
+                    "number": 3,
+                    "rank": 3,
+                    "totalVotes": 7391,
+                    "percentVotes": 17.3
+                },
+                {
+                    "number": 2,
+                    "rank": 4,
+                    "totalVotes": 5137,
+                    "percentVotes": 12.03
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 3811,
+                    "percentVotes": 8.92
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 42717,
+                "goodVotes": 38747,
+                "badVotes": 837,
+                "noVotes": 3133,
+                "percentGoodVotes": 90.71,
+                "percentBadVotes": 1.96,
+                "percentNoVotes": 7.33,
+                "totalEligible": 71143
+            }
+        },
+        {
+            "number": 10,
+            "interestingFactor": 18.66,
+            "leaders": [
+                {
+                    "number": 7,
+                    "rank": 1,
+                    "totalVotes": 24658,
+                    "percentVotes": 35.18
+                },
+                {
+                    "number": 3,
+                    "rank": 2,
+                    "totalVotes": 11577,
+                    "percentVotes": 16.52
+                },
+                {
+                    "number": 5,
+                    "rank": 3,
+                    "totalVotes": 7679,
+                    "percentVotes": 10.96
+                },
+                {
+                    "number": 2,
+                    "rank": 4,
+                    "totalVotes": 6123,
+                    "percentVotes": 8.74
+                },
+                {
+                    "number": 6,
+                    "rank": 5,
+                    "totalVotes": 6112,
+                    "percentVotes": 8.72
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 70082,
+                "goodVotes": 61447,
+                "badVotes": 4147,
+                "noVotes": 4488,
+                "percentGoodVotes": 87.68,
+                "percentBadVotes": 5.92,
+                "percentNoVotes": 6.4,
+                "totalEligible": 108267
+            }
+        },
+        {
+            "number": 11,
+            "interestingFactor": 33.8,
+            "leaders": [
+                {
+                    "number": 2,
+                    "rank": 1,
+                    "totalVotes": 38130,
+                    "percentVotes": 47.07
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 10749,
+                    "percentVotes": 13.27
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 7544,
+                    "percentVotes": 9.31
+                },
+                {
+                    "number": 5,
+                    "rank": 4,
+                    "totalVotes": 5380,
+                    "percentVotes": 6.64
+                },
+                {
+                    "number": 7,
+                    "rank": 5,
+                    "totalVotes": 4137,
+                    "percentVotes": 5.11
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 81001,
+                "goodVotes": 74641,
+                "badVotes": 1825,
+                "noVotes": 4535,
+                "percentGoodVotes": 92.15,
+                "percentBadVotes": 2.25,
+                "percentNoVotes": 5.6,
+                "totalEligible": 137361
+            }
+        },
+        {
+            "number": 12,
+            "interestingFactor": 5.79,
+            "leaders": [
+                {
+                    "number": 3,
+                    "rank": 1,
+                    "totalVotes": 8106,
+                    "percentVotes": 23.65
+                },
+                {
+                    "number": 7,
+                    "rank": 2,
+                    "totalVotes": 6122,
+                    "percentVotes": 17.86
+                },
+                {
+                    "number": 2,
+                    "rank": 3,
+                    "totalVotes": 5271,
+                    "percentVotes": 15.38
+                },
+                {
+                    "number": 1,
+                    "rank": 4,
+                    "totalVotes": 3545,
+                    "percentVotes": 10.34
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 3140,
+                    "percentVotes": 9.16
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 34273,
+                "goodVotes": 30676,
+                "badVotes": 652,
+                "noVotes": 2945,
+                "percentGoodVotes": 89.5,
+                "percentBadVotes": 1.9,
+                "percentNoVotes": 8.59,
+                "totalEligible": 59875
+            }
+        },
+        {
+            "number": 13,
+            "interestingFactor": 28.49,
+            "leaders": [
+                {
+                    "number": 2,
+                    "rank": 1,
+                    "totalVotes": 4613,
+                    "percentVotes": 44.69
+                },
+                {
+                    "number": 3,
+                    "rank": 2,
+                    "totalVotes": 1672,
+                    "percentVotes": 16.2
+                },
+                {
+                    "number": 1,
+                    "rank": 3,
+                    "totalVotes": 1078,
+                    "percentVotes": 10.44
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 1048,
+                    "percentVotes": 10.15
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 628,
+                    "percentVotes": 6.08
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 10322,
+                "goodVotes": 9259,
+                "badVotes": 482,
+                "noVotes": 581,
+                "percentGoodVotes": 89.7,
+                "percentBadVotes": 4.67,
+                "percentNoVotes": 5.63,
+                "totalEligible": 17018
+            }
+        },
+        {
+            "number": 14,
+            "interestingFactor": 8.18,
+            "leaders": [
+                {
+                    "number": 7,
+                    "rank": 1,
+                    "totalVotes": 8585,
+                    "percentVotes": 26.56
+                },
+                {
+                    "number": 8,
+                    "rank": 2,
+                    "totalVotes": 5941,
+                    "percentVotes": 18.38
+                },
+                {
+                    "number": 3,
+                    "rank": 3,
+                    "totalVotes": 4099,
+                    "percentVotes": 12.68
+                },
+                {
+                    "number": 1,
+                    "rank": 4,
+                    "totalVotes": 3286,
+                    "percentVotes": 10.17
+                },
+                {
+                    "number": 6,
+                    "rank": 5,
+                    "totalVotes": 3219,
+                    "percentVotes": 9.96
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 32324,
+                "goodVotes": 29074,
+                "badVotes": 417,
+                "noVotes": 2833,
+                "percentGoodVotes": 89.95,
+                "percentBadVotes": 1.29,
+                "percentNoVotes": 8.76,
+                "totalEligible": 51265
+            }
+        },
+        {
+            "number": 15,
+            "interestingFactor": 20.08,
+            "leaders": [
+                {
+                    "number": 1,
+                    "rank": 1,
+                    "totalVotes": 16597,
+                    "percentVotes": 34.99
+                },
+                {
+                    "number": 7,
+                    "rank": 2,
+                    "totalVotes": 7074,
+                    "percentVotes": 14.91
+                },
+                {
+                    "number": 5,
+                    "rank": 3,
+                    "totalVotes": 5879,
+                    "percentVotes": 12.39
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 5033,
+                    "percentVotes": 10.61
+                },
+                {
+                    "number": 8,
+                    "rank": 5,
+                    "totalVotes": 2840,
+                    "percentVotes": 5.99
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 47431,
+                "goodVotes": 42677,
+                "badVotes": 1131,
+                "noVotes": 3623,
+                "percentGoodVotes": 89.98,
+                "percentBadVotes": 2.38,
+                "percentNoVotes": 7.64,
+                "totalEligible": 82778
+            }
+        },
+        {
+            "number": 16,
+            "interestingFactor": 10.8,
+            "leaders": [
+                {
+                    "number": 4,
+                    "rank": 1,
+                    "totalVotes": 9329,
+                    "percentVotes": 29.66
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 5933,
+                    "percentVotes": 18.86
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 5329,
+                    "percentVotes": 16.94
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 2311,
+                    "percentVotes": 7.35
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 2142,
+                    "percentVotes": 6.81
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 31454,
+                "goodVotes": 27370,
+                "badVotes": 1949,
+                "noVotes": 2135,
+                "percentGoodVotes": 87.02,
+                "percentBadVotes": 6.2,
+                "percentNoVotes": 6.79,
+                "totalEligible": 52054
+            }
+        },
+        {
+            "number": 17,
+            "interestingFactor": 5.57,
+            "leaders": [
+                {
+                    "number": 6,
+                    "rank": 1,
+                    "totalVotes": 11120,
+                    "percentVotes": 27.1
+                },
+                {
+                    "number": 2,
+                    "rank": 2,
+                    "totalVotes": 8836,
+                    "percentVotes": 21.53
+                },
+                {
+                    "number": 1,
+                    "rank": 3,
+                    "totalVotes": 5399,
+                    "percentVotes": 13.16
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 3911,
+                    "percentVotes": 9.53
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 2733,
+                    "percentVotes": 6.66
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 41038,
+                "goodVotes": 36292,
+                "badVotes": 713,
+                "noVotes": 4033,
+                "percentGoodVotes": 88.44,
+                "percentBadVotes": 1.74,
+                "percentNoVotes": 9.83,
+                "totalEligible": 66710
+            }
+        },
+        {
+            "number": 18,
+            "interestingFactor": 4.72,
+            "leaders": [
+                {
+                    "number": 1,
+                    "rank": 1,
+                    "totalVotes": 7703,
+                    "percentVotes": 24.12
+                },
+                {
+                    "number": 6,
+                    "rank": 2,
+                    "totalVotes": 6196,
+                    "percentVotes": 19.4
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 5429,
+                    "percentVotes": 17
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 2450,
+                    "percentVotes": 7.67
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 2339,
+                    "percentVotes": 7.32
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 31939,
+                "goodVotes": 27906,
+                "badVotes": 1686,
+                "noVotes": 2347,
+                "percentGoodVotes": 87.37,
+                "percentBadVotes": 5.28,
+                "percentNoVotes": 7.35,
+                "totalEligible": 52831
+            }
+        },
+        {
+            "number": 19,
+            "interestingFactor": 10.82,
+            "leaders": [
+                {
+                    "number": 1,
+                    "rank": 1,
+                    "totalVotes": 13667,
+                    "percentVotes": 26.04
+                },
+                {
+                    "number": 5,
+                    "rank": 2,
+                    "totalVotes": 7987,
+                    "percentVotes": 15.22
+                },
+                {
+                    "number": 2,
+                    "rank": 3,
+                    "totalVotes": 5896,
+                    "percentVotes": 11.24
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 5412,
+                    "percentVotes": 10.31
+                },
+                {
+                    "number": 3,
+                    "rank": 5,
+                    "totalVotes": 4928,
+                    "percentVotes": 9.39
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 52477,
+                "goodVotes": 37890,
+                "badVotes": 7997,
+                "noVotes": 6590,
+                "percentGoodVotes": 72.2,
+                "percentBadVotes": 15.24,
+                "percentNoVotes": 12.56,
+                "totalEligible": 84193
+            }
+        },
+        {
+            "number": 20,
+            "interestingFactor": 9.28,
+            "leaders": [
+                {
+                    "number": 4,
+                    "rank": 1,
+                    "totalVotes": 14573,
+                    "percentVotes": 30.73
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 10172,
+                    "percentVotes": 21.45
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 5468,
+                    "percentVotes": 11.53
+                },
+                {
+                    "number": 2,
+                    "rank": 4,
+                    "totalVotes": 4367,
+                    "percentVotes": 9.21
+                },
+                {
+                    "number": 3,
+                    "rank": 5,
+                    "totalVotes": 3514,
+                    "percentVotes": 7.41
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 47416,
+                "goodVotes": 41072,
+                "badVotes": 2959,
+                "noVotes": 3385,
+                "percentGoodVotes": 86.62,
+                "percentBadVotes": 6.24,
+                "percentNoVotes": 7.14,
+                "totalEligible": 82805
+            }
+        },
+        {
+            "number": 21,
+            "interestingFactor": 16.85,
+            "leaders": [
+                {
+                    "number": 4,
+                    "rank": 1,
+                    "totalVotes": 34158,
+                    "percentVotes": 39.97
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 19756,
+                    "percentVotes": 23.12
+                },
+                {
+                    "number": 5,
+                    "rank": 3,
+                    "totalVotes": 10522,
+                    "percentVotes": 12.31
+                },
+                {
+                    "number": 6,
+                    "rank": 4,
+                    "totalVotes": 4028,
+                    "percentVotes": 4.71
+                },
+                {
+                    "number": 2,
+                    "rank": 5,
+                    "totalVotes": 3009,
+                    "percentVotes": 3.52
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 85459,
+                "goodVotes": 74163,
+                "badVotes": 5786,
+                "noVotes": 5510,
+                "percentGoodVotes": 86.78,
+                "percentBadVotes": 6.77,
+                "percentNoVotes": 6.45,
+                "totalEligible": 141802
+            }
+        },
+        {
+            "number": 22,
+            "interestingFactor": 16.91,
+            "leaders": [
+                {
+                    "number": 6,
+                    "rank": 1,
+                    "totalVotes": 21814,
+                    "percentVotes": 35.63
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 11461,
+                    "percentVotes": 18.72
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 10178,
+                    "percentVotes": 16.62
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 5771,
+                    "percentVotes": 9.43
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 2004,
+                    "percentVotes": 3.27
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 61228,
+                "goodVotes": 52732,
+                "badVotes": 3967,
+                "noVotes": 4529,
+                "percentGoodVotes": 86.12,
+                "percentBadVotes": 6.48,
+                "percentNoVotes": 7.4,
+                "totalEligible": 99457
+            }
+        },
+        {
+            "number": 23,
+            "interestingFactor": 24.98,
+            "leaders": [
+                {
+                    "number": 4,
+                    "rank": 1,
+                    "totalVotes": 29996,
+                    "percentVotes": 40.43
+                },
+                {
+                    "number": 2,
+                    "rank": 2,
+                    "totalVotes": 11464,
+                    "percentVotes": 15.45
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 8028,
+                    "percentVotes": 10.82
+                },
+                {
+                    "number": 1,
+                    "rank": 4,
+                    "totalVotes": 5770,
+                    "percentVotes": 7.78
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 4936,
+                    "percentVotes": 6.65
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 74184,
+                "goodVotes": 63332,
+                "badVotes": 5609,
+                "noVotes": 5243,
+                "percentGoodVotes": 85.37,
+                "percentBadVotes": 7.56,
+                "percentNoVotes": 7.07,
+                "totalEligible": 122252
+            }
+        },
+        {
+            "number": 24,
+            "interestingFactor": 9.82,
+            "leaders": [
+                {
+                    "number": 3,
+                    "rank": 1,
+                    "totalVotes": 9195,
+                    "percentVotes": 25.73
+                },
+                {
+                    "number": 6,
+                    "rank": 2,
+                    "totalVotes": 5686,
+                    "percentVotes": 15.91
+                },
+                {
+                    "number": 7,
+                    "rank": 3,
+                    "totalVotes": 4197,
+                    "percentVotes": 11.74
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 4161,
+                    "percentVotes": 11.64
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 4159,
+                    "percentVotes": 11.64
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 35735,
+                "goodVotes": 31709,
+                "badVotes": 917,
+                "noVotes": 3109,
+                "percentGoodVotes": 88.73,
+                "percentBadVotes": 2.57,
+                "percentNoVotes": 8.7,
+                "totalEligible": 61806
+            }
+        },
+        {
+            "number": 25,
+            "interestingFactor": 9.93,
+            "leaders": [
+                {
+                    "number": 6,
+                    "rank": 1,
+                    "totalVotes": 12575,
+                    "percentVotes": 26.99
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 7950,
+                    "percentVotes": 17.06
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 7632,
+                    "percentVotes": 16.38
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 5503,
+                    "percentVotes": 11.81
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 5006,
+                    "percentVotes": 10.75
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 46588,
+                "goodVotes": 40240,
+                "badVotes": 2741,
+                "noVotes": 3607,
+                "percentGoodVotes": 86.37,
+                "percentBadVotes": 5.88,
+                "percentNoVotes": 7.74,
+                "totalEligible": 73809
+            }
+        },
+        {
+            "number": 26,
+            "interestingFactor": 3.2,
+            "leaders": [
+                {
+                    "number": 6,
+                    "rank": 1,
+                    "totalVotes": 14615,
+                    "percentVotes": 26.3
+                },
+                {
+                    "number": 5,
+                    "rank": 2,
+                    "totalVotes": 12836,
+                    "percentVotes": 23.1
+                },
+                {
+                    "number": 3,
+                    "rank": 3,
+                    "totalVotes": 11238,
+                    "percentVotes": 20.23
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 5224,
+                    "percentVotes": 9.4
+                },
+                {
+                    "number": 1,
+                    "rank": 5,
+                    "totalVotes": 4410,
+                    "percentVotes": 7.94
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 55564,
+                "goodVotes": 48760,
+                "badVotes": 3153,
+                "noVotes": 3651,
+                "percentGoodVotes": 87.75,
+                "percentBadVotes": 5.67,
+                "percentNoVotes": 6.57,
+                "totalEligible": 92829
+            }
+        },
+        {
+            "number": 27,
+            "interestingFactor": 12.28,
+            "leaders": [
+                {
+                    "number": 3,
+                    "rank": 1,
+                    "totalVotes": 20993,
+                    "percentVotes": 30.17
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 12450,
+                    "percentVotes": 17.89
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 11148,
+                    "percentVotes": 16.02
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 7774,
+                    "percentVotes": 11.17
+                },
+                {
+                    "number": 7,
+                    "rank": 5,
+                    "totalVotes": 4262,
+                    "percentVotes": 6.12
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 69586,
+                "goodVotes": 63085,
+                "badVotes": 1253,
+                "noVotes": 44134,
+                "percentGoodVotes": 90.66,
+                "percentBadVotes": 1.8,
+                "percentNoVotes": 63.42,
+                "totalEligible": 112401
+            }
+        },
+        {
+            "number": 28,
+            "interestingFactor": 4.61,
+            "leaders": [
+                {
+                    "number": 1,
+                    "rank": 1,
+                    "totalVotes": 8335,
+                    "percentVotes": 24.16
+                },
+                {
+                    "number": 5,
+                    "rank": 2,
+                    "totalVotes": 6745,
+                    "percentVotes": 19.55
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 3933,
+                    "percentVotes": 11.4
+                },
+                {
+                    "number": 6,
+                    "rank": 4,
+                    "totalVotes": 3691,
+                    "percentVotes": 10.7
+                },
+                {
+                    "number": 3,
+                    "rank": 5,
+                    "totalVotes": 3457,
+                    "percentVotes": 10.02
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 34499,
+                "goodVotes": 29712,
+                "badVotes": 1890,
+                "noVotes": 2897,
+                "percentGoodVotes": 86.12,
+                "percentBadVotes": 5.48,
+                "percentNoVotes": 8.4,
+                "totalEligible": 59307
+            }
+        },
+        {
+            "number": 29,
+            "interestingFactor": 15.2,
+            "leaders": [
+                {
+                    "number": 3,
+                    "rank": 1,
+                    "totalVotes": 19103,
+                    "percentVotes": 31.82
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 9980,
+                    "percentVotes": 16.62
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 7252,
+                    "percentVotes": 12.08
+                },
+                {
+                    "number": 5,
+                    "rank": 4,
+                    "totalVotes": 7096,
+                    "percentVotes": 11.82
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 5210,
+                    "percentVotes": 8.68
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 60042,
+                "goodVotes": 48641,
+                "badVotes": 5485,
+                "noVotes": 5916,
+                "percentGoodVotes": 81.01,
+                "percentBadVotes": 9.14,
+                "percentNoVotes": 9.85,
+                "totalEligible": 99984
+            }
+        },
+        {
+            "number": 30,
+            "interestingFactor": 13.5,
+            "leaders": [
+                {
+                    "number": 4,
+                    "rank": 1,
+                    "totalVotes": 22356,
+                    "percentVotes": 29.05
+                },
+                {
+                    "number": 3,
+                    "rank": 2,
+                    "totalVotes": 11965,
+                    "percentVotes": 15.55
+                },
+                {
+                    "number": 2,
+                    "rank": 3,
+                    "totalVotes": 10414,
+                    "percentVotes": 13.53
+                },
+                {
+                    "number": 1,
+                    "rank": 4,
+                    "totalVotes": 9528,
+                    "percentVotes": 12.38
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 8913,
+                    "percentVotes": 11.58
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 76954,
+                "goodVotes": 66293,
+                "badVotes": 3693,
+                "noVotes": 6968,
+                "percentGoodVotes": 86.15,
+                "percentBadVotes": 4.8,
+                "percentNoVotes": 9.05,
+                "totalEligible": 125819
+            }
+        },
+        {
+            "number": 31,
+            "interestingFactor": 5.42,
+            "leaders": [
+                {
+                    "number": 8,
+                    "rank": 1,
+                    "totalVotes": 9045,
+                    "percentVotes": 24.02
+                },
+                {
+                    "number": 7,
+                    "rank": 2,
+                    "totalVotes": 7005,
+                    "percentVotes": 18.6
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 6566,
+                    "percentVotes": 17.44
+                },
+                {
+                    "number": 1,
+                    "rank": 4,
+                    "totalVotes": 3377,
+                    "percentVotes": 8.97
+                },
+                {
+                    "number": 2,
+                    "rank": 5,
+                    "totalVotes": 2522,
+                    "percentVotes": 6.7
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 37656,
+                "goodVotes": 34166,
+                "badVotes": 767,
+                "noVotes": 2723,
+                "percentGoodVotes": 90.73,
+                "percentBadVotes": 2.04,
+                "percentNoVotes": 7.23,
+                "totalEligible": 64427
+            }
+        },
+        {
+            "number": 32,
+            "interestingFactor": 6.6,
+            "leaders": [
+                {
+                    "number": 3,
+                    "rank": 1,
+                    "totalVotes": 22971,
+                    "percentVotes": 28.26
+                },
+                {
+                    "number": 6,
+                    "rank": 2,
+                    "totalVotes": 17603,
+                    "percentVotes": 21.66
+                },
+                {
+                    "number": 8,
+                    "rank": 3,
+                    "totalVotes": 11742,
+                    "percentVotes": 14.45
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 8415,
+                    "percentVotes": 10.35
+                },
+                {
+                    "number": 7,
+                    "rank": 5,
+                    "totalVotes": 4256,
+                    "percentVotes": 5.24
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 81276,
+                "goodVotes": 73065,
+                "badVotes": 1810,
+                "noVotes": 6401,
+                "percentGoodVotes": 89.9,
+                "percentBadVotes": 2.23,
+                "percentNoVotes": 7.88,
+                "totalEligible": 138420
+            }
+        },
+        {
+            "number": 33,
+            "interestingFactor": 15.76,
+            "leaders": [
+                {
+                    "number": 5,
+                    "rank": 1,
+                    "totalVotes": 13871,
+                    "percentVotes": 33.48
+                },
+                {
+                    "number": 4,
+                    "rank": 2,
+                    "totalVotes": 7341,
+                    "percentVotes": 17.72
+                },
+                {
+                    "number": 7,
+                    "rank": 3,
+                    "totalVotes": 5966,
+                    "percentVotes": 14.4
+                },
+                {
+                    "number": 6,
+                    "rank": 4,
+                    "totalVotes": 2894,
+                    "percentVotes": 6.98
+                },
+                {
+                    "number": 1,
+                    "rank": 5,
+                    "totalVotes": 2754,
+                    "percentVotes": 6.65
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 41432,
+                "goodVotes": 36030,
+                "badVotes": 2495,
+                "noVotes": 2907,
+                "percentGoodVotes": 86.96,
+                "percentBadVotes": 6.02,
+                "percentNoVotes": 7.02,
+                "totalEligible": 72544
+            }
+        },
+        {
+            "number": 34,
+            "interestingFactor": 2.75,
+            "leaders": [
+                {
+                    "number": 1,
+                    "rank": 1,
+                    "totalVotes": 13491,
+                    "percentVotes": 23.29
+                },
+                {
+                    "number": 4,
+                    "rank": 2,
+                    "totalVotes": 11898,
+                    "percentVotes": 20.54
+                },
+                {
+                    "number": 3,
+                    "rank": 3,
+                    "totalVotes": 7094,
+                    "percentVotes": 12.25
+                },
+                {
+                    "number": 7,
+                    "rank": 4,
+                    "totalVotes": 6777,
+                    "percentVotes": 11.7
+                },
+                {
+                    "number": 8,
+                    "rank": 5,
+                    "totalVotes": 3916,
+                    "percentVotes": 6.76
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 57920,
+                "goodVotes": 52522,
+                "badVotes": 868,
+                "noVotes": 4530,
+                "percentGoodVotes": 90.68,
+                "percentBadVotes": 1.5,
+                "percentNoVotes": 7.82,
+                "totalEligible": 96149
+            }
+        },
+        {
+            "number": 35,
+            "interestingFactor": 23.66,
+            "leaders": [
+                {
+                    "number": 8,
+                    "rank": 1,
+                    "totalVotes": 28443,
+                    "percentVotes": 42.13
+                },
+                {
+                    "number": 4,
+                    "rank": 2,
+                    "totalVotes": 12467,
+                    "percentVotes": 18.47
+                },
+                {
+                    "number": 9,
+                    "rank": 3,
+                    "totalVotes": 4126,
+                    "percentVotes": 6.11
+                },
+                {
+                    "number": 5,
+                    "rank": 4,
+                    "totalVotes": 4040,
+                    "percentVotes": 5.98
+                },
+                {
+                    "number": 2,
+                    "rank": 5,
+                    "totalVotes": 3520,
+                    "percentVotes": 5.21
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 67509,
+                "goodVotes": 61522,
+                "badVotes": 1284,
+                "noVotes": 4703,
+                "percentGoodVotes": 91.13,
+                "percentBadVotes": 1.9,
+                "percentNoVotes": 6.97,
+                "totalEligible": 116639
+            }
+        },
+        {
+            "number": 36,
+            "interestingFactor": 3.62,
+            "leaders": [
+                {
+                    "number": 2,
+                    "rank": 1,
+                    "totalVotes": 21238,
+                    "percentVotes": 26.46
+                },
+                {
+                    "number": 3,
+                    "rank": 2,
+                    "totalVotes": 18329,
+                    "percentVotes": 22.84
+                },
+                {
+                    "number": 5,
+                    "rank": 3,
+                    "totalVotes": 11237,
+                    "percentVotes": 14
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 9862,
+                    "percentVotes": 12.29
+                },
+                {
+                    "number": 6,
+                    "rank": 5,
+                    "totalVotes": 3494,
+                    "percentVotes": 4.35
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 80260,
+                "goodVotes": 68461,
+                "badVotes": 5103,
+                "noVotes": 6696,
+                "percentGoodVotes": 85.3,
+                "percentBadVotes": 6.36,
+                "percentNoVotes": 8.34,
+                "totalEligible": 131756
+            }
+        },
+        {
+            "number": 37,
+            "interestingFactor": 3.98,
+            "leaders": [
+                {
+                    "number": 1,
+                    "rank": 1,
+                    "totalVotes": 7107,
+                    "percentVotes": 26.92
+                },
+                {
+                    "number": 8,
+                    "rank": 2,
+                    "totalVotes": 6057,
+                    "percentVotes": 22.94
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 2671,
+                    "percentVotes": 10.12
+                },
+                {
+                    "number": 5,
+                    "rank": 4,
+                    "totalVotes": 2491,
+                    "percentVotes": 9.44
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 2130,
+                    "percentVotes": 8.07
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 26401,
+                "goodVotes": 23941,
+                "badVotes": 521,
+                "noVotes": 1939,
+                "percentGoodVotes": 90.68,
+                "percentBadVotes": 1.97,
+                "percentNoVotes": 7.34,
+                "totalEligible": 48195
+            }
+        },
+        {
+            "number": 38,
+            "interestingFactor": 8.82,
+            "leaders": [
+                {
+                    "number": 6,
+                    "rank": 1,
+                    "totalVotes": 15222,
+                    "percentVotes": 25.69
+                },
+                {
+                    "number": 3,
+                    "rank": 2,
+                    "totalVotes": 9993,
+                    "percentVotes": 16.87
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 8162,
+                    "percentVotes": 13.78
+                },
+                {
+                    "number": 1,
+                    "rank": 4,
+                    "totalVotes": 6628,
+                    "percentVotes": 11.19
+                },
+                {
+                    "number": 7,
+                    "rank": 5,
+                    "totalVotes": 5871,
+                    "percentVotes": 9.91
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 59251,
+                "goodVotes": 53127,
+                "badVotes": 850,
+                "noVotes": 5274,
+                "percentGoodVotes": 89.66,
+                "percentBadVotes": 1.43,
+                "percentNoVotes": 8.9,
+                "totalEligible": 93630
+            }
+        },
+        {
+            "number": 39,
+            "interestingFactor": 12.65,
+            "leaders": [
+                {
+                    "number": 1,
+                    "rank": 1,
+                    "totalVotes": 8819,
+                    "percentVotes": 29.35
+                },
+                {
+                    "number": 5,
+                    "rank": 2,
+                    "totalVotes": 5018,
+                    "percentVotes": 16.7
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 4293,
+                    "percentVotes": 14.29
+                },
+                {
+                    "number": 7,
+                    "rank": 4,
+                    "totalVotes": 3111,
+                    "percentVotes": 10.36
+                },
+                {
+                    "number": 2,
+                    "rank": 5,
+                    "totalVotes": 1624,
+                    "percentVotes": 5.41
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 30043,
+                "goodVotes": 26876,
+                "badVotes": 534,
+                "noVotes": 2633,
+                "percentGoodVotes": 89.46,
+                "percentBadVotes": 1.78,
+                "percentNoVotes": 8.76,
+                "totalEligible": 55181
+            }
+        },
+        {
+            "number": 40,
+            "interestingFactor": 1.65,
+            "leaders": [
+                {
+                    "number": 6,
+                    "rank": 1,
+                    "totalVotes": 19809,
+                    "percentVotes": 20.55
+                },
+                {
+                    "number": 2,
+                    "rank": 2,
+                    "totalVotes": 18226,
+                    "percentVotes": 18.9
+                },
+                {
+                    "number": 3,
+                    "rank": 3,
+                    "totalVotes": 14487,
+                    "percentVotes": 15.03
+                },
+                {
+                    "number": 5,
+                    "rank": 4,
+                    "totalVotes": 8695,
+                    "percentVotes": 9.02
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 7014,
+                    "percentVotes": 7.28
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 96412,
+                "goodVotes": 86555,
+                "badVotes": 1938,
+                "noVotes": 7919,
+                "percentGoodVotes": 89.78,
+                "percentBadVotes": 2.01,
+                "percentNoVotes": 8.21,
+                "totalEligible": 155294
+            }
+        },
+        {
+            "number": 41,
+            "interestingFactor": 6.46,
+            "leaders": [
+                {
+                    "number": 2,
+                    "rank": 1,
+                    "totalVotes": 15101,
+                    "percentVotes": 29.8
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 11827,
+                    "percentVotes": 23.34
+                },
+                {
+                    "number": 5,
+                    "rank": 3,
+                    "totalVotes": 7329,
+                    "percentVotes": 14.46
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 3810,
+                    "percentVotes": 7.52
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 2860,
+                    "percentVotes": 5.64
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 50675,
+                "goodVotes": 43384,
+                "badVotes": 2726,
+                "noVotes": 4565,
+                "percentGoodVotes": 85.61,
+                "percentBadVotes": 5.38,
+                "percentNoVotes": 9.01,
+                "totalEligible": 81940
+            }
+        },
+        {
+            "number": 42,
+            "interestingFactor": 19.61,
+            "leaders": [
+                {
+                    "number": 4,
+                    "rank": 1,
+                    "totalVotes": 44507,
+                    "percentVotes": 44.84
+                },
+                {
+                    "number": 2,
+                    "rank": 2,
+                    "totalVotes": 25045,
+                    "percentVotes": 25.23
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 9230,
+                    "percentVotes": 9.3
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 4133,
+                    "percentVotes": 4.16
+                },
+                {
+                    "number": 8,
+                    "rank": 5,
+                    "totalVotes": 3769,
+                    "percentVotes": 3.8
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 99268,
+                "goodVotes": 91837,
+                "badVotes": 1670,
+                "noVotes": 5761,
+                "percentGoodVotes": 92.51,
+                "percentBadVotes": 1.68,
+                "percentNoVotes": 5.8,
+                "totalEligible": 161106
+            }
+        },
+        {
+            "number": 43,
+            "interestingFactor": 25.76,
+            "leaders": [
+                {
+                    "number": 5,
+                    "rank": 1,
+                    "totalVotes": 18443,
+                    "percentVotes": 41.75
+                },
+                {
+                    "number": 1,
+                    "rank": 2,
+                    "totalVotes": 7062,
+                    "percentVotes": 15.99
+                },
+                {
+                    "number": 6,
+                    "rank": 3,
+                    "totalVotes": 5031,
+                    "percentVotes": 11.39
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 3180,
+                    "percentVotes": 7.2
+                },
+                {
+                    "number": 4,
+                    "rank": 5,
+                    "totalVotes": 2341,
+                    "percentVotes": 5.3
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 44176,
+                "goodVotes": 37876,
+                "badVotes": 2894,
+                "noVotes": 3406,
+                "percentGoodVotes": 85.74,
+                "percentBadVotes": 6.55,
+                "percentNoVotes": 7.71,
+                "totalEligible": 69654
+            }
+        },
+        {
+            "number": 44,
+            "interestingFactor": 15.64,
+            "leaders": [
+                {
+                    "number": 3,
+                    "rank": 1,
+                    "totalVotes": 14715,
+                    "percentVotes": 30.54
+                },
+                {
+                    "number": 4,
+                    "rank": 2,
+                    "totalVotes": 7180,
+                    "percentVotes": 14.9
+                },
+                {
+                    "number": 1,
+                    "rank": 3,
+                    "totalVotes": 7176,
+                    "percentVotes": 14.89
+                },
+                {
+                    "number": 6,
+                    "rank": 4,
+                    "totalVotes": 5181,
+                    "percentVotes": 10.75
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 4275,
+                    "percentVotes": 8.87
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 48190,
+                "goodVotes": 40997,
+                "badVotes": 2619,
+                "noVotes": 4574,
+                "percentGoodVotes": 85.07,
+                "percentBadVotes": 5.43,
+                "percentNoVotes": 9.49,
+                "totalEligible": 75298
+            }
+        },
+        {
+            "number": 45,
+            "interestingFactor": 0.04,
+            "leaders": [
+                {
+                    "number": 9,
+                    "rank": 1,
+                    "totalVotes": 9381,
+                    "percentVotes": 17.94
+                },
+                {
+                    "number": 5,
+                    "rank": 2,
+                    "totalVotes": 9359,
+                    "percentVotes": 17.9
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 8207,
+                    "percentVotes": 15.69
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 6425,
+                    "percentVotes": 12.29
+                },
+                {
+                    "number": 8,
+                    "rank": 5,
+                    "totalVotes": 6169,
+                    "percentVotes": 11.8
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 52294,
+                "goodVotes": 47860,
+                "badVotes": 816,
+                "noVotes": 3618,
+                "percentGoodVotes": 91.52,
+                "percentBadVotes": 1.56,
+                "percentNoVotes": 6.92,
+                "totalEligible": 84415
+            }
+        },
+        {
+            "number": 46,
+            "interestingFactor": 12.58,
+            "leaders": [
+                {
+                    "number": 1,
+                    "rank": 1,
+                    "totalVotes": 29867,
+                    "percentVotes": 30.8
+                },
+                {
+                    "number": 4,
+                    "rank": 2,
+                    "totalVotes": 17670,
+                    "percentVotes": 18.22
+                },
+                {
+                    "number": 5,
+                    "rank": 3,
+                    "totalVotes": 12649,
+                    "percentVotes": 13.04
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 12357,
+                    "percentVotes": 12.74
+                },
+                {
+                    "number": 7,
+                    "rank": 5,
+                    "totalVotes": 5901,
+                    "percentVotes": 6.09
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 96970,
+                "goodVotes": 84221,
+                "badVotes": 5895,
+                "noVotes": 6854,
+                "percentGoodVotes": 86.85,
+                "percentBadVotes": 6.08,
+                "percentNoVotes": 7.07,
+                "totalEligible": 157456
+            }
+        },
+        {
+            "number": 47,
+            "interestingFactor": 4.99,
+            "leaders": [
+                {
+                    "number": 3,
+                    "rank": 1,
+                    "totalVotes": 8827,
+                    "percentVotes": 21.95
+                },
+                {
+                    "number": 6,
+                    "rank": 2,
+                    "totalVotes": 6819,
+                    "percentVotes": 16.96
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 6454,
+                    "percentVotes": 16.05
+                },
+                {
+                    "number": 1,
+                    "rank": 4,
+                    "totalVotes": 6395,
+                    "percentVotes": 15.91
+                },
+                {
+                    "number": 5,
+                    "rank": 5,
+                    "totalVotes": 2572,
+                    "percentVotes": 6.4
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 40206,
+                "goodVotes": 33564,
+                "badVotes": 2870,
+                "noVotes": 3772,
+                "percentGoodVotes": 83.48,
+                "percentBadVotes": 7.14,
+                "percentNoVotes": 9.38,
+                "totalEligible": 70421
+            }
+        },
+        {
+            "number": 48,
+            "interestingFactor": 0.78,
+            "leaders": [
+                {
+                    "number": 3,
+                    "rank": 1,
+                    "totalVotes": 7827,
+                    "percentVotes": 18.1
+                },
+                {
+                    "number": 2,
+                    "rank": 2,
+                    "totalVotes": 7490,
+                    "percentVotes": 17.32
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 6807,
+                    "percentVotes": 15.74
+                },
+                {
+                    "number": 7,
+                    "rank": 4,
+                    "totalVotes": 5499,
+                    "percentVotes": 12.71
+                },
+                {
+                    "number": 1,
+                    "rank": 5,
+                    "totalVotes": 4143,
+                    "percentVotes": 9.58
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 43249,
+                "goodVotes": 37827,
+                "badVotes": 2190,
+                "noVotes": 3232,
+                "percentGoodVotes": 87.46,
+                "percentBadVotes": 5.06,
+                "percentNoVotes": 7.47,
+                "totalEligible": 64021
+            }
+        },
+        {
+            "number": 49,
+            "interestingFactor": 28.77,
+            "leaders": [
+                {
+                    "number": 8,
+                    "rank": 1,
+                    "totalVotes": 25931,
+                    "percentVotes": 43.31
+                },
+                {
+                    "number": 6,
+                    "rank": 2,
+                    "totalVotes": 8703,
+                    "percentVotes": 14.54
+                },
+                {
+                    "number": 4,
+                    "rank": 3,
+                    "totalVotes": 7752,
+                    "percentVotes": 12.95
+                },
+                {
+                    "number": 3,
+                    "rank": 4,
+                    "totalVotes": 3297,
+                    "percentVotes": 5.51
+                },
+                {
+                    "number": 2,
+                    "rank": 5,
+                    "totalVotes": 3184,
+                    "percentVotes": 5.32
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 59867,
+                "goodVotes": 55399,
+                "badVotes": 984,
+                "noVotes": 3484,
+                "percentGoodVotes": 92.54,
+                "percentBadVotes": 1.64,
+                "percentNoVotes": 5.82,
+                "totalEligible": 97328
+            }
+        },
+        {
+            "number": 50,
+            "interestingFactor": 1.64,
+            "leaders": [
+                {
+                    "number": 3,
+                    "rank": 1,
+                    "totalVotes": 11610,
+                    "percentVotes": 23.48
+                },
+                {
+                    "number": 2,
+                    "rank": 2,
+                    "totalVotes": 10800,
+                    "percentVotes": 21.84
+                },
+                {
+                    "number": 5,
+                    "rank": 3,
+                    "totalVotes": 10150,
+                    "percentVotes": 20.53
+                },
+                {
+                    "number": 4,
+                    "rank": 4,
+                    "totalVotes": 6504,
+                    "percentVotes": 13.15
+                },
+                {
+                    "number": 1,
+                    "rank": 5,
+                    "totalVotes": 1990,
+                    "percentVotes": 4.02
+                }
+            ],
+            "overallStatistics": {
+                "totalVotes": 49447,
+                "goodVotes": 43531,
+                "badVotes": 2824,
+                "noVotes": 3092,
+                "percentGoodVotes": 88.04,
+                "percentBadVotes": 5.71,
+                "percentNoVotes": 6.25,
+                "totalEligible": 78904
+            }
+        }
+    ]
+}

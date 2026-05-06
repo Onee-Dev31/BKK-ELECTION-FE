@@ -4,6 +4,7 @@ import { lastValueFrom } from 'rxjs';
 import { ELECTION_CONSTANTS } from '../constants/election.constants';
 import { Candidate, CandidatePolicy, DistrictResult, ElectionData } from '../models/election.models';
 import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.constants';
+import { ThaiPBSService } from './thai-pbs.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,14 @@ import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.cons
 export class ElectionService {
   electionState = signal<ElectionData | null>(null);
 
-  candidates = computed(() => this.electionState()?.candidates || []);
+  candidates = computed(() => {
+    const raw = this.electionState()?.candidates || [];
+    const colorMap = this.thaipbs.candidateMap();
+    return raw.map(c => ({
+      ...c,
+      color: colorMap.get(c.number)?.theme?.colorDark ?? c.color
+    }));
+  });
 
   private districtResultsMap = computed(() => {
     const map = new Map<number, DistrictResult>();
@@ -39,6 +47,7 @@ export class ElectionService {
   error = signal<string | null>(null);
 
   private http = inject(HttpClient);
+  private thaipbs = inject(ThaiPBSService);
   private apiUrl = ELECTION_CONSTANTS.API.SUMMARY;
   private districtApiUrl = ELECTION_CONSTANTS.API.DISTRICTS;
 

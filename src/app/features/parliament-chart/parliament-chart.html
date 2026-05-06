@@ -1,0 +1,28 @@
+<div class="parliament-wrap">
+
+  <div class="parliament-title">
+    <span class="title-label">ผลการเลือก ส.ก.</span>
+    <span class="title-sub">สมาชิกสภากรุงเทพมหานคร 50 ที่นั่ง</span>
+  </div>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 800 380" class="parliament-svg">
+      @for (dot of dots(); track $index) {
+        <circle [attr.cx]="dot.x" [attr.cy]="dot.y" r="18" [attr.fill]="dot.color" opacity="0.92" class="seat-dot" />
+      }
+    </svg>
+  </div>
+
+  <div class="party-legend">
+    @for (p of partyResults(); track p.party.partyName) {
+      <div class="legend-item">
+        <div class="legend-dot" [style.backgroundColor]="p.party.color"></div>
+        <img [src]="p.party.partyLogoUrl" class="legend-logo" />
+        <span class="legend-name">{{ p.party.partyName }}</span>
+        <span class="legend-seats" [style.color]="p.party.color">{{ p.seats }}</span>
+        <span class="legend-unit">ที่นั่ง</span>
+      </div>
+    }
+  </div>
+
+</div>
