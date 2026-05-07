@@ -42,13 +42,13 @@
               <div class="flex items-center justify-between mt-4 gap-6">
                  <div class="flex-1">
                     <div class="progress-bar-bg bg-emerald-50/50 shadow-inner">
-                       <div class="progress-bar-fill transition-all duration-1000 ease-out shadow-sm" 
-                            [style.width]="item.percentage + '%'" 
+                       <div class="progress-bar-fill transition-all duration-1000 ease-out shadow-sm"
+                            [style.width]="item.percentage + '%'"
                             [style.backgroundColor]="item.info.color">
-                         <span class="px-4 text-[10px] font-black text-white/95 uppercase tracking-widest truncate">{{ item.votes | number }} คะแนน</span>
                        </div>
                     </div>
                  </div>
+                 <span class="text-[10px] font-black text-slate-900 uppercase tracking-widest shrink-0">{{ item.votes | number }} คะแนน</span>
                  <div class="text-lg font-black text-slate-900 tabular-nums shrink-0 tracking-tighter">{{ item.percentage }}%</div>
               </div>
            </div>
