@@ -3,39 +3,35 @@
   <!-- Header -->
   <div class="flex items-start justify-between px-5 pt-5 pb-4">
     <div>
-      <div class="text-[10px] font-black tracking-[0.25em] text-teal-400/60 uppercase mb-1">ผู้ว่าราชการ กทม.</div>
-      <div class="text-white font-black text-2xl tracking-tighter leading-none">กรุงเทพมหานคร</div>
+      <div class="text-[10px] font-black tracking-[0.25em] uppercase mb-1 hc-label">ผู้ว่าราชการ กทม.</div>
+      <div class="font-black text-2xl tracking-tighter leading-none hc-title">กรุงเทพมหานคร</div>
     </div>
-    <div class="text-5xl font-black leading-none tracking-tighter"
-         style="color: rgba(45,212,191,0.15)">2026</div>
+    <div class="text-5xl font-black leading-none tracking-tighter hc-year">2026</div>
   </div>
 
   <!-- Leading candidate card -->
   @if (candidates().length > 0) {
-  <div class="mx-4 mb-4 rounded-2xl overflow-hidden border border-white/8 relative"
-       style="background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)">
+  <div class="mx-4 mb-4 rounded-2xl overflow-hidden relative hc-leading-card">
     <div class="flex items-stretch min-h-[110px]">
 
       <!-- Photo (left, full-height) -->
       <div class="w-[88px] flex-shrink-0 relative">
         <img [src]="candidates()[0].imageUrl"
              class="absolute inset-0 w-full h-full object-cover object-top">
-        <!-- fade to right -->
-        <div class="absolute inset-0"
-             style="background: linear-gradient(to right, transparent 40%, #0a1f19 100%)"></div>
+        <div class="absolute inset-0 hc-photo-fade"></div>
       </div>
 
       <!-- Info -->
       <div class="flex-1 px-4 py-3.5 flex flex-col justify-between">
         <div>
           <div class="flex items-center gap-2 mb-1.5">
-            <span class="px-2 py-0.5 rounded-full bg-teal-400 text-teal-950 text-[8px] font-black uppercase tracking-wide">LEADING</span>
-            <span class="text-teal-400/50 text-[9px] font-bold uppercase tracking-widest">No.{{ candidates()[0].number }}</span>
+            <span class="px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-wide hc-leading-badge">LEADING</span>
+            <span class="text-[9px] font-bold uppercase tracking-widest hc-no-label">No.{{ candidates()[0].number }}</span>
           </div>
-          <div class="text-white font-black text-[18px] leading-tight tracking-tight">{{ candidates()[0].name }}</div>
+          <div class="font-black text-[18px] leading-tight tracking-tight hc-candidate-name">{{ candidates()[0].name }}</div>
           <div class="flex items-center gap-1.5 mt-1">
             <img [src]="candidates()[0].partyLogoUrl" class="w-3.5 h-3.5 object-contain opacity-60">
-            <span class="text-[9px] font-bold text-white/35 uppercase tracking-widest">{{ candidates()[0].party }}</span>
+            <span class="text-[9px] font-bold uppercase tracking-widest hc-party-name">{{ candidates()[0].party }}</span>
           </div>
         </div>
 
@@ -44,11 +40,11 @@
           <div class="flex items-baseline gap-2 mb-1.5">
             <span class="text-2xl font-black tabular-nums leading-none"
                   [style.color]="candidates()[0].color">{{ candidates()[0].percentage }}%</span>
-            <span class="text-[10px] font-bold text-white/30 tabular-nums">
+            <span class="text-[10px] font-bold tabular-nums hc-votes-label">
               {{ (candidates()[0].votes / 1000000).toFixed(2) }}M votes
             </span>
           </div>
-          <div class="h-1.5 w-full rounded-full overflow-hidden" style="background: rgba(255,255,255,0.08)">
+          <div class="h-1.5 w-full rounded-full overflow-hidden hc-bar-bg">
             <div class="h-full rounded-full transition-all duration-1000 ease-out"
                  [style.width]="candidates()[0].percentage + '%'"
                  [style.backgroundColor]="candidates()[0].color"
@@ -63,33 +59,33 @@
 
   <!-- Key stats -->
   <div class="grid grid-cols-2 gap-2 px-4 mb-3">
-    <div class="rounded-xl border border-teal-500/10 p-3" style="background: rgba(20,83,60,0.2)">
-      <div class="text-[18px] font-black text-white tabular-nums leading-none">
+    <div class="rounded-xl p-3 hc-stat-card">
+      <div class="text-[18px] font-black tabular-nums leading-none hc-stat-value">
         {{ electionService.eligibleVoters() | number }}
       </div>
-      <div class="text-[9px] font-bold text-teal-700/70 uppercase tracking-wide mt-1.5">ELIGIBLE VOTERS</div>
+      <div class="text-[9px] font-bold uppercase tracking-wide mt-1.5 hc-stat-label">ELIGIBLE VOTERS</div>
     </div>
-    <div class="rounded-xl border border-teal-500/10 p-3" style="background: rgba(20,83,60,0.2)">
-      <div class="text-[18px] font-black text-teal-400 tabular-nums leading-none">
+    <div class="rounded-xl p-3 hc-stat-card">
+      <div class="text-[18px] font-black tabular-nums leading-none hc-accent-value">
         {{ electionService.turnoutPercent() }}%
       </div>
-      <div class="text-[9px] font-bold text-teal-700/70 uppercase tracking-wide mt-1.5">TURNOUT RATE</div>
+      <div class="text-[9px] font-bold uppercase tracking-wide mt-1.5 hc-stat-label">TURNOUT RATE</div>
     </div>
   </div>
 
   <!-- Vote breakdown -->
   <div class="grid grid-cols-3 gap-1.5 px-4 pb-5 mt-auto">
-    <div class="rounded-xl border border-white/5 py-2.5 text-center" style="background: rgba(255,255,255,0.03)">
-      <div class="text-[13px] font-black text-white tabular-nums">{{ electionService.goodVotes() | number }}</div>
-      <div class="text-[8px] font-bold text-teal-700 uppercase tracking-wide mt-0.5">บัตรดี</div>
+    <div class="rounded-xl py-2.5 text-center hc-good-card">
+      <div class="text-[13px] font-black tabular-nums hc-stat-value">{{ electionService.goodVotes() | number }}</div>
+      <div class="text-[8px] font-bold uppercase tracking-wide mt-0.5 hc-accent-value">บัตรดี</div>
     </div>
-    <div class="rounded-xl border border-red-500/10 py-2.5 text-center" style="background: rgba(127,29,29,0.15)">
-      <div class="text-[13px] font-black text-red-400 tabular-nums">{{ electionService.badVotes() | number }}</div>
-      <div class="text-[8px] font-bold text-red-900 uppercase tracking-wide mt-0.5">บัตรเสีย</div>
+    <div class="rounded-xl py-2.5 text-center hc-bad-card">
+      <div class="text-[13px] font-black tabular-nums hc-bad-value">{{ electionService.badVotes() | number }}</div>
+      <div class="text-[8px] font-bold uppercase tracking-wide mt-0.5 hc-bad-label">บัตรเสีย</div>
     </div>
-    <div class="rounded-xl border border-slate-500/10 py-2.5 text-center" style="background: rgba(15,23,42,0.3)">
-      <div class="text-[13px] font-black text-slate-400 tabular-nums">{{ electionService.noVotes() | number }}</div>
-      <div class="text-[8px] font-bold text-slate-600 uppercase tracking-wide mt-0.5">ไม่ลงคะแนน</div>
+    <div class="rounded-xl py-2.5 text-center hc-no-card">
+      <div class="text-[13px] font-black tabular-nums hc-no-value">{{ electionService.noVotes() | number }}</div>
+      <div class="text-[8px] font-bold uppercase tracking-wide mt-0.5 hc-abstain-label">ไม่ลงคะแนน</div>
     </div>
   </div>
 

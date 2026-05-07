@@ -66,3 +66,16 @@
   .legend-name  { font-size: 10px; }
   .legend-seats { font-size: 12px; }
 }
+
+/* ── Light Theme ─────────────────── */
+:host-context(html.light) .party-legend {
+  scrollbar-color: rgba(132, 177, 121, 0.3) transparent;
+}
+
+:host-context(html.light) .legend-name {
+  color: rgba(45, 74, 37, 0.7);
+}
+
+:host-context(html.light) .legend-unit {
+  color: rgba(45, 74, 37, 0.4);
+}

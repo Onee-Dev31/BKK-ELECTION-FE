@@ -1,0 +1,176 @@
+/* ── Header ── */
+.hc-label {
+  color: rgba(45, 212, 191, 0.6);
+}
+
+.hc-title {
+  color: white;
+}
+
+.hc-year {
+  color: rgba(45, 212, 191, 0.15);
+}
+
+/* ── Leading card ── */
+.hc-leading-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.hc-photo-fade {
+  background: linear-gradient(to right, transparent 40%, #0a1f19 100%);
+}
+
+.hc-leading-badge {
+  background: #2dd4bf;
+  color: #042f2e;
+}
+
+.hc-no-label {
+  color: rgba(45, 212, 191, 0.5);
+}
+
+.hc-candidate-name {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hc-party-name {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.hc-votes-label {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.hc-bar-bg {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Stats ── */
+.hc-stat-card {
+  background: rgba(20, 83, 60, 0.2);
+  border: 1px solid rgba(45, 212, 191, 0.1);
+}
+
+.hc-stat-value {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hc-stat-label {
+  color: rgba(20, 184, 166, 0.7);
+}
+
+.hc-accent-value {
+  color: #2dd4bf;
+}
+
+/* ── Breakdown cards ── */
+.hc-good-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hc-bad-card {
+  background: rgba(127, 29, 29, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+.hc-no-card {
+  background: rgba(15, 23, 42, 0.3);
+  border: 1px solid rgba(100, 116, 139, 0.1);
+}
+
+.hc-bad-value {
+  color: #f87171;
+}
+
+.hc-bad-label {
+  color: #7f1d1d;
+}
+
+.hc-no-value {
+  color: #94a3b8;
+}
+
+.hc-abstain-label {
+  color: #475569;
+}
+
+/* ── Light Theme ─────────────────── */
+:host-context(html.light) .hc-label {
+  color: rgba(90, 138, 82, 0.7);
+}
+
+:host-context(html.light) .hc-title {
+  color: #2d4a25;
+}
+
+:host-context(html.light) .hc-year {
+  color: rgba(132, 177, 121, 0.35);
+}
+
+:host-context(html.light) .hc-leading-card {
+  border-color: rgba(132, 177, 121, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+:host-context(html.light) .hc-photo-fade {
+  background: linear-gradient(to right, transparent 40%, rgba(232, 245, 189, 0.95) 100%);
+}
+
+:host-context(html.light) .hc-leading-badge {
+  background: #84b179;
+  color: #1e3a17;
+}
+
+:host-context(html.light) .hc-no-label {
+  color: rgba(90, 138, 82, 0.6);
+}
+
+:host-context(html.light) .hc-candidate-name {
+  color: #2d4a25;
+}
+
+:host-context(html.light) .hc-party-name {
+  color: rgba(45, 74, 37, 0.45);
+}
+
+:host-context(html.light) .hc-votes-label {
+  color: rgba(45, 74, 37, 0.4);
+}
+
+:host-context(html.light) .hc-bar-bg {
+  background: rgba(132, 177, 121, 0.15);
+}
+
+:host-context(html.light) .hc-stat-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(132, 177, 121, 0.2);
+}
+
+:host-context(html.light) .hc-stat-value {
+  color: #2d4a25;
+}
+
+:host-context(html.light) .hc-stat-label {
+  color: rgba(90, 138, 82, 0.7);
+}
+
+:host-context(html.light) .hc-accent-value {
+  color: #5a8a52;
+}
+
+:host-context(html.light) .hc-good-card {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(132, 177, 121, 0.15);
+}
+
+:host-context(html.light) .hc-bad-card {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+:host-context(html.light) .hc-no-card {
+  background: rgba(148, 163, 184, 0.1);
+  border-color: rgba(100, 116, 139, 0.15);
+}

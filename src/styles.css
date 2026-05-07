@@ -168,3 +168,143 @@
     background: rgba(4, 30, 26, 0.95);
     border: 1px solid rgba(51, 255, 133, 0.2);
 }
+
+/* ── Light Theme (html.light) ─────────────────── */
+html.light {
+    --color-bkk-bg: #e8f5bd;
+    --color-bkk-green: #84b179;
+    --color-bkk-accent: #a2cb8b;
+    --color-bkk-muted: #6b8f63;
+    --color-bkk-glass: rgba(255, 255, 255, 0.82);
+    --color-bkk-border: rgba(132, 177, 121, 0.28);
+}
+
+html.light body {
+    background-color: #e8f5bd !important;
+    color: #2d4a25 !important;
+}
+
+html.light .panel-glass {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(132, 177, 121, 0.3);
+    box-shadow:
+        0 25px 80px -20px rgba(100, 150, 80, 0.2),
+        inset 0 0 30px rgba(162, 203, 139, 0.05),
+        0 0 0 1px rgba(132, 177, 121, 0.15);
+}
+
+html.light .panel-glass::after {
+    background: linear-gradient(135deg, rgba(132, 177, 121, 0.5), transparent 30%, transparent 70%, rgba(132, 177, 121, 0.5));
+    filter: drop-shadow(0 0 8px rgba(132, 177, 121, 0.3));
+}
+
+html.light ::-webkit-scrollbar-thumb {
+    background: rgba(132, 177, 121, 0.4);
+}
+
+html.light .district-tooltip .ant-tooltip-inner {
+    background: rgba(255, 255, 255, 0.97);
+    border-color: rgba(132, 177, 121, 0.3);
+    box-shadow: 0 10px 30px rgba(100, 150, 80, 0.2);
+    color: #2d4a25;
+}
+
+html.light .district-tooltip .ant-tooltip-arrow-content {
+    background: rgba(255, 255, 255, 0.97);
+    border-color: rgba(132, 177, 121, 0.3);
+}
+
+/* ── Council Result light theme (hardcoded Tailwind overrides) ── */
+html.light app-council-result [class*="text-white"],
+html.light app-council-result [class*="text-slate"] {
+  color: rgba(45, 74, 37, 0.85);
+}
+
+html.light app-council-result [class*="text-teal"] {
+  color: #5a8a52;
+}
+
+html.light app-council-result [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+html.light app-council-result [class*="border-white"] {
+  border-color: rgba(132, 177, 121, 0.2);
+}
+
+html.light app-council-result [class*="bg-black"] {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Parliament chart light theme ── */
+html.light app-parliament-chart [class*="text-white"],
+html.light app-parliament-chart [class*="text-slate"] {
+  color: rgba(45, 74, 37, 0.85);
+}
+
+html.light app-parliament-chart [class*="text-teal"] {
+  color: #5a8a52;
+}
+
+html.light app-parliament-chart [class*="bg-black"],
+html.light app-parliament-chart [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+html.light app-parliament-chart [class*="border-white"] {
+  border-color: rgba(132, 177, 121, 0.2);
+}
+
+/* ── Policy list light theme ── */
+html.light app-policy-list [class*="text-white"],
+html.light app-policy-list [class*="text-slate"] {
+  color: rgba(45, 74, 37, 0.85);
+}
+
+html.light app-policy-list [class*="text-teal"] {
+  color: #5a8a52;
+}
+
+html.light app-policy-list [class*="bg-black"],
+html.light app-policy-list [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+html.light app-policy-list [class*="border-white"] {
+  border-color: rgba(132, 177, 121, 0.2);
+}
+
+/* ── Bottom Nav Theme Classes ─────────────────── */
+.theme-bottom-nav {
+    background: rgba(2, 21, 13, 0.85);
+    border-top: 1px solid rgba(51, 255, 133, 0.08);
+}
+
+html.light .theme-bottom-nav {
+    background: rgba(255, 255, 255, 0.92);
+    border-top: 1px solid rgba(132, 177, 121, 0.2);
+}
+
+.theme-nav-btn {
+    color: rgba(148, 163, 184, 0.7);
+}
+
+.theme-nav-btn.active {
+    color: #00d65b;
+}
+
+html.light .theme-nav-btn {
+    color: rgba(45, 74, 37, 0.5);
+}
+
+html.light .theme-nav-btn.active {
+    color: #5a8a52;
+}
+
+.theme-active-dot {
+    background: #00d65b;
+}
+
+html.light .theme-active-dot {
+    background: #84b179;
+}

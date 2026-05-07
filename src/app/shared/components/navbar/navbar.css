@@ -173,3 +173,59 @@ nav:focus-within .shortcut-hint {
     opacity: 1;
     transform: scale(1.1);
 }
+
+/* ── Light Theme ─────────────────── */
+:host-context(html.light) nav:focus-within {
+    border-color: #84b179;
+    box-shadow: 0 0 15px rgba(132, 177, 121, 0.3);
+    background: rgba(132, 177, 121, 0.12);
+}
+
+:host-context(html.light) .search-results-dropdown {
+    background: rgba(255, 255, 255, 0.97);
+    border-color: rgba(132, 177, 121, 0.2);
+    box-shadow: 0 10px 40px rgba(100, 150, 80, 0.2);
+}
+
+:host-context(html.light) .result-item:hover,
+:host-context(html.light) .result-item.is-active {
+    background: rgba(132, 177, 121, 0.12);
+}
+
+:host-context(html.light) .result-item.is-active {
+    outline-color: rgba(132, 177, 121, 0.4);
+}
+
+:host-context(html.light) .result-icon {
+    background: rgba(132, 177, 121, 0.1);
+    color: #5a8a52;
+}
+
+:host-context(html.light) .result-icon.district {
+    color: #2d4a25;
+    background: rgba(132, 177, 121, 0.2);
+}
+
+:host-context(html.light) .result-title {
+    color: #2d4a25;
+}
+
+:host-context(html.light) .result-subtitle {
+    color: rgba(45, 74, 37, 0.55);
+}
+
+:host-context(html.light) .shortcut-hint {
+    color: rgba(45, 74, 37, 0.35);
+    background: rgba(132, 177, 121, 0.1);
+    border-color: rgba(132, 177, 121, 0.2);
+}
+
+:host-context(html.light) .clear-button {
+    background: rgba(132, 177, 121, 0.15);
+    color: #2d4a25;
+}
+
+:host-context(html.light) .clear-button:hover {
+    background: #84b179;
+    color: #1e3a17;
+}

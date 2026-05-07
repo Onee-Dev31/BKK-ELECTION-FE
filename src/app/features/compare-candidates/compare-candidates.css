@@ -161,3 +161,71 @@
   .tilt-card { padding: 1.25rem; border-radius: 24px; }
   .tilt-photo-wrap { width: 70px; }
 }
+
+/* ── Light Theme ─────────────────── */
+:host-context(html.light) [class*="text-white"] {
+  color: rgba(45, 74, 37, 0.85);
+}
+
+:host-context(html.light) [class*="text-teal"] {
+  color: #5a8a52;
+}
+
+:host-context(html.light) [class*="bg-black"] {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+:host-context(html.light) [class*="border-white"] {
+  border-color: rgba(132, 177, 121, 0.2);
+}
+
+:host-context(html.light) .layout-content-area {
+  background: radial-gradient(circle at 50% 0%, rgba(132, 177, 121, 0.12) 0%, #e8f5bd 70%);
+}
+
+:host-context(html.light) .glass-panel {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(132, 177, 121, 0.15);
+}
+
+:host-context(html.light) .select-dark {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(132, 177, 121, 0.25);
+  color: #2d4a25;
+}
+
+:host-context(html.light) .select-dark option {
+  background: #e8f5bd;
+  color: #2d4a25;
+}
+
+:host-context(html.light) .select-dark:focus {
+  border-color: #84b179;
+  box-shadow: 0 0 0 3px rgba(132, 177, 121, 0.2);
+}
+
+:host-context(html.light) .tilt-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(132, 177, 121, 0.2);
+  box-shadow: 0 20px 60px rgba(100, 150, 80, 0.15);
+}
+
+:host-context(html.light) .number-badge {
+  color: #1e3a17;
+}
+
+:host-context(html.light) .policy-card {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+:host-context(html.light) .policy-card:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+:host-context(html.light) .policy-desc {
+  color: rgba(45, 74, 37, 0.65);
+}
+
+:host-context(html.light) .policy-card:hover .policy-desc {
+  color: rgba(45, 74, 37, 0.9);
+}

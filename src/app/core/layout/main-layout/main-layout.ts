@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
 import { Sidebar } from '../../../shared/components/sidebar/sidebar';
+import { Theme } from '../../services/theme/theme';
 
 @Component({
   selector: 'app-main-layout',
@@ -10,6 +11,7 @@ import { Sidebar } from '../../../shared/components/sidebar/sidebar';
 })
 export class MainLayout {
   router = inject(Router);
+  theme = inject(Theme);
 
   navItems = [
     { path: '/', id: 'map', label: 'หน้าแรก' },

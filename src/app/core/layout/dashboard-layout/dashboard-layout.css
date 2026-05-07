@@ -412,6 +412,79 @@
     }
 }
 
+/* ── Light Theme ─────────────────── */
+:host-context(html.light) [class*="text-white"] {
+  color: rgba(45, 74, 37, 0.8);
+}
+
+:host-context(html.light) [class*="text-teal"] {
+  color: #5a8a52;
+}
+
+:host-context(html.light) [class*="bg-black"] {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+:host-context(html.light) [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+:host-context(html.light) [class*="border-white"] {
+  border-color: rgba(132, 177, 121, 0.2);
+}
+
+:host-context(html.light) .logo-brand span:last-child {
+  text-shadow: 0 0 20px rgba(132, 177, 121, 0.5) !important;
+}
+
+:host-context(html.light) .toggle-pill {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(132, 177, 121, 0.25);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+:host-context(html.light) .toggle-pill-sm {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+:host-context(html.light) .toggle-btn {
+    color: rgba(45, 74, 37, 0.45);
+}
+
+:host-context(html.light) .toggle-btn:hover:not(.toggle-btn-active) {
+    color: rgba(45, 74, 37, 0.7);
+    background: rgba(132, 177, 121, 0.08);
+}
+
+:host-context(html.light) .toggle-btn-active {
+    background: rgba(132, 177, 121, 0.85);
+    color: #1e3a17;
+    box-shadow:
+        0 1px 8px rgba(132, 177, 121, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+:host-context(html.light) .logo-accent-bar {
+    background: linear-gradient(to bottom, rgba(132, 177, 121, 0.8), rgba(132, 177, 121, 0));
+}
+
+:host-context(html.light) .stage-bg-img {
+    filter: saturate(1.0) brightness(0.9) contrast(0.9) hue-rotate(130deg);
+}
+
+:host-context(html.light) .stage-bg-overlay {
+    background: radial-gradient(circle at 50% 50%,
+        rgba(232, 245, 189, 0.6) 0%,
+        rgba(232, 245, 189, 0.97) 100%);
+}
+
+:host-context(html.light) .stage-bg::after {
+    background-image:
+        radial-gradient(circle at 15% 25%, rgba(132, 177, 121, 0.12) 0%, transparent 20%),
+        radial-gradient(circle at 85% 75%, rgba(162, 203, 139, 0.12) 0%, transparent 20%),
+        radial-gradient(circle at 70% 30%, rgba(132, 177, 121, 0.08) 0%, transparent 30%);
+}
+
 /* Tablet portrait (iPad แนวตั้ง — 768–1199px) */
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
     .content-grid {

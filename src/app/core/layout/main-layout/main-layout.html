@@ -8,33 +8,26 @@
       <app-sidebar class="block w-fit h-fit"></app-sidebar>
   </div>
 
-  <!-- Mobile/tablet bottom navigation (hidden on lg+) -->
+  <!-- Mobile/tablet bottom navigation -->
   <nav class="fixed bottom-0 left-0 right-0 z-50 flex lg:hidden items-center justify-around
-              px-2 py-2
-              bg-[#041e1a]/90 backdrop-blur-2xl
-              border-t border-white/8
-              safe-bottom">
+              px-2 py-2 backdrop-blur-2xl safe-bottom theme-bottom-nav">
     @for (item of navItems; track item.id) {
       <button (click)="navigate(item.path)"
-              class="flex flex-col items-center gap-1 px-4 py-2 rounded-2xl transition-all duration-300"
-              [class.text-[#00d65b]]="isActive(item.path)"
-              [class.text-white/40]="!isActive(item.path)">
+              class="flex flex-col items-center gap-1 px-4 py-2 rounded-2xl transition-all duration-300 theme-nav-btn"
+              [class.active]="isActive(item.path)">
 
-        <!-- Map icon -->
         @if (item.id === 'map') {
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
               d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
           </svg>
         }
-        <!-- Compare icon -->
         @if (item.id === 'compare') {
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
               d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
         }
-        <!-- Top10 icon -->
         @if (item.id === 'top10') {
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
@@ -44,11 +37,27 @@
 
         <span class="text-[10px] font-bold tracking-wide">{{ item.label }}</span>
 
-        <!-- Active indicator dot -->
         @if (isActive(item.path)) {
-          <span class="w-1 h-1 rounded-full bg-[#00d65b] shadow-[0_0_6px_#00d65b]"></span>
+          <span class="w-1 h-1 rounded-full theme-active-dot"></span>
         }
       </button>
     }
+
+    <!-- Theme toggle in bottom nav -->
+    <button (click)="theme.toggle()"
+            class="flex flex-col items-center gap-1 px-3 py-2 rounded-2xl transition-all duration-300 theme-nav-btn">
+      @if (theme.isDark()) {
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      } @else {
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      }
+      <span class="text-[10px] font-bold tracking-wide">{{ theme.isDark() ? 'Light' : 'Dark' }}</span>
+    </button>
   </nav>
 </div>
