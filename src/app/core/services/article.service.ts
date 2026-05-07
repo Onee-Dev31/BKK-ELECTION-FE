@@ -27,7 +27,6 @@ export class ArticleService {
     try {
       const res = await lastValueFrom(this.http.get<Article[]>(this.API_URL));
       this.articles.set(res ?? []);
-      console.log('[ArticleService] GetArticles response:', res);
     } catch (err) {
       this.error.set('โหลดข้อมูลไม่สำเร็จ');
       console.error('[ArticleService] GetArticles error:', err);

@@ -4,16 +4,6 @@ import { lastValueFrom } from 'rxjs';
 import { CouncilCandidate, CouncilSummaryData, CouncilDistrictSummary } from '../models/election.models';
 import { ThaiPBSService } from './thai-pbs.service';
 
-// Final results: 2022 Bangkok Council Election (50 seats total)
-const COUNCIL_SEATS: Record<number, number> = {
-  9: 20,  // เพื่อไทย
-  2: 14,  // ก้าวไกล
-  4: 9,   // ประชาธิปัตย์
-  13: 3,  // อิสระ(กลุ่มรักษ์กรุงเทพ)
-  5: 2,   // พลังประชารัฐ
-  11: 2,  // ไทยสร้างไทย
-};
-
 @Injectable({ providedIn: 'root' })
 export class CouncilService {
   private http = inject(HttpClient);
@@ -32,7 +22,6 @@ export class CouncilService {
   async loadData() {
     this.isLoading.set(true);
     try {
-      // Load candidates with fallback
       const candidates = await lastValueFrom(
         this.http.get<CouncilCandidate[]>('https://bkkelection65-data.thaipbs.or.th/website/council.json')
       ).catch(async () => {
@@ -41,7 +30,6 @@ export class CouncilService {
       });
       this.candidates.set(candidates);
 
-      // Load summary data
       const summary = await lastValueFrom(
         this.http.get<CouncilSummaryData>('data/district-council-results.json')
       ).catch(err => {
@@ -74,7 +62,6 @@ export class CouncilService {
     summary.data.forEach(d => {
       const winner = d.leaders.find(l => l.rank === 1);
       if (winner) {
-        // Find the candidate in this district with this number
         const c = candidates.find(c => c.areaNumber === d.number && c.number === winner.number);
         if (c) map.set(d.number, c.partyId);
       }
@@ -100,7 +87,6 @@ export class CouncilService {
       }
     });
     
-    // Sort by district number
     return winners.sort((a, b) => a.districtId - b.districtId);
   });
 
