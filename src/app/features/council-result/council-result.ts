@@ -3,26 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CouncilService } from '../../core/services/council.service';
 import { MapStateService } from '../../core/services/map-state';
 import { ELECTION_CONSTANTS } from '../../core/constants/election.constants';
-
-interface ParliamentDot {
-  x: number;
-  y: number;
-  color: string;
-  partyName: string;
-}
-
-const ROWS = [
-  { radius: 60, count: 9 },
-  { radius: 80, count: 13 },
-  { radius: 100, count: 14 },
-  { radius: 120, count: 14 },
-];
-const TOTAL_DOTS = ROWS.reduce((s, r) => s + r.count, 0); // 50
+import { CouncilMiniChart } from '../../shared/components/council-mini-chart/council-mini-chart';
 
 @Component({
   selector: 'app-council-result',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CouncilMiniChart],
   templateUrl: './council-result.html',
   styleUrl: './council-result.css',
 })
@@ -42,7 +28,6 @@ export class CouncilResult {
     
     if (!summary) return candidates;
     
-    // Sort by rank in summary, or by number if not in leaders
     return [...candidates].sort((a, b) => {
       const rankA = summary.leaders.find(l => l.number === a.number)?.rank ?? 999;
       const rankB = summary.leaders.find(l => l.number === b.number)?.rank ?? 999;
@@ -77,40 +62,6 @@ export class CouncilResult {
     );
   });
 
-  parliamentDots = computed((): ParliamentDot[] => {
-    const summary = this.council.partySummary();
-    if (!summary.length) return [];
-
-    // Use actual seat counts (50 total)
-    const colors: { color: string; name: string }[] = [];
-    summary.forEach(item => {
-      for (let i = 0; i < item.seats; i++) {
-        colors.push({ color: item.party.color, name: item.party.partyName });
-      }
-    });
-    while (colors.length < TOTAL_DOTS) colors.push({ color: '#334155', name: '' });
-    colors.length = TOTAL_DOTS;
-
-    const cx = 150, cy = 138;
-    const dots: ParliamentDot[] = [];
-    let idx = 0;
-
-    ROWS.forEach(row => {
-      for (let i = 0; i < row.count; i++) {
-        const angle = Math.PI * i / (row.count - 1);
-        dots.push({
-          x: cx - row.radius * Math.cos(angle),
-          y: cy - row.radius * Math.sin(angle),
-          color: colors[idx].color,
-          partyName: colors[idx].name,
-        });
-        idx++;
-      }
-    });
-
-    return dots;
-  });
-
   getParty(partyId: number) {
     return this.council.partyMap().get(partyId);
   }
@@ -118,4 +69,5 @@ export class CouncilResult {
   clearDistrict() {
     this.mapState.selectedDistrictId.set(null);
   }
+
 }

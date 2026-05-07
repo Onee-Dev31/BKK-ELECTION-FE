@@ -1,0 +1,13 @@
+<div class="party-legend">
+  @for (p of parties; track p.party.partyName) {
+    @if (p.seats > 0) {
+      <div class="legend-item">
+        <div class="legend-dot" [style.backgroundColor]="p.party.color"></div>
+        <img [src]="p.party.partyLogoUrl" class="legend-logo" />
+        <span class="legend-name">{{ p.party.partyName }}</span>
+        <span class="legend-seats" [style.color]="p.party.color">{{ p.seats }}</span>
+        <span class="legend-unit">ที่นั่ง</span>
+      </div>
+    }
+  }
+</div>

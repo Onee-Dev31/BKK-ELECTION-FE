@@ -6,7 +6,7 @@
 } @else if (selectedDistrictId()) {
   <!-- District view -->
   <div class="flex flex-col h-full">
-    <div class="px-4 py-2.5 border-b border-white/5 flex items-center gap-2 flex-shrink-0 bg-white/2">
+    <div class="px-4 py-2.5 border-b border-white/5 flex items-center gap-2 shrink-0 bg-white/2">
       <button (click)="clearDistrict()"
         class="w-6 h-6 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
         <svg class="w-3 h-3 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,7 +51,7 @@
         @let leaderInfo = getLeaderInfo(c.number);
         
         <div class="flex items-center gap-3 px-4 py-3 border-b border-white/5 hover:bg-white/3 transition-colors">
-          <div class="relative flex-shrink-0">
+          <div class="relative shrink-0">
             <img [src]="c.imgUrl" [alt]="c.fullName"
               class="w-10 h-10 rounded-full object-cover bg-white/5"
               onerror="this.style.display='none'" />
@@ -71,7 +71,7 @@
           </div>
 
           @if (leaderInfo) {
-            <div class="flex flex-col items-end flex-shrink-0">
+            <div class="flex flex-col items-end shrink-0">
               <div class="text-xs font-black text-white">{{ leaderInfo.totalVotes | number }}</div>
               <div class="text-[10px] font-bold text-teal-400/80">{{ leaderInfo.percentVotes }}%</div>
             </div>
@@ -105,7 +105,7 @@
           @let winnerLeader = item.summary.leaders[0];
           <div (click)="mapState.selectedDistrictId.set(item.districtId)"
             class="flex items-center gap-3 px-4 py-3 border-b border-white/5 hover:bg-white/3 cursor-pointer transition-colors group">
-            <div class="relative flex-shrink-0">
+            <div class="relative shrink-0">
               <img [src]="item.winner.imgUrl" class="w-10 h-10 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-teal-500/50 transition-all shadow-lg" />
               <div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-black/80 flex items-center justify-center p-1 border border-white/10">
                 @if (party) {
@@ -125,7 +125,7 @@
               }
             </div>
 
-            <div class="flex flex-col items-end flex-shrink-0 leading-none">
+            <div class="flex flex-col items-end shrink-0 leading-none">
               <span class="text-xs font-black text-white">{{ winnerLeader.totalVotes | number }}</span>
               <span class="text-[9px] font-bold text-white/20 uppercase tracking-widest mt-1">คะแนน</span>
             </div>
@@ -135,23 +135,7 @@
 
     } @else {
       <!-- QUOTA VIEW (Semicircle chart) -->
-      <div class="px-3 pt-4 pb-1 flex-shrink-0">
-        <svg viewBox="0 0 300 145" class="w-full" style="max-height: 140px;">
-          @for (dot of parliamentDots(); track $index) {
-            <circle
-              [attr.cx]="dot.x"
-              [attr.cy]="dot.y"
-              r="7"
-              [attr.fill]="dot.color"
-              opacity="0.92">
-              <title>{{ dot.partyName }}</title>
-            </circle>
-          }
-        </svg>
-        <p class="text-center text-[9px] text-white/20 font-bold uppercase tracking-widest mt-1">
-          สมาชิกสภากรุงเทพมหานคร 50 ที่นั่ง
-        </p>
-      </div>
+      <app-council-mini-chart class="shrink-0"></app-council-mini-chart>
 
       <!-- Divider -->
       <div class="border-t border-white/5 mx-4 mb-0"></div>
@@ -161,7 +145,7 @@
         @for (item of council.partySummary(); track item.party.partyId) {
           <div class="flex items-center gap-3 px-4 py-2.5 border-b border-white/5 hover:bg-white/3 transition-colors">
             <img [src]="item.party.partyLogoUrl" [alt]="item.party.partyName"
-              class="w-6 h-6 object-contain flex-shrink-0" />
+              class="w-6 h-6 object-contain shrink-0" />
             <div class="flex-1 min-w-0">
               <div class="text-white/80 text-[11px] font-bold truncate">{{ item.party.partyName }}</div>
               <div class="mt-1 h-1 rounded-full bg-white/5 overflow-hidden">
@@ -171,7 +155,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex-shrink-0 text-right">
+            <div class="shrink-0 text-right">
               <span class="text-sm font-black" [style.color]="item.party.color">{{ item.seats }}</span>
               <div class="text-[9px] text-white/25">ที่นั่ง</div>
             </div>

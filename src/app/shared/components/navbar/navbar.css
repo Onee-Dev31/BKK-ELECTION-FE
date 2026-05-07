@@ -131,6 +131,26 @@ nav:focus-within {
         transform: translateY(0);
     }
 }
+.shortcut-hint {
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.22);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    user-select: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+}
+
+nav:focus-within .shortcut-hint {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .clear-button {
     background: rgba(255, 255, 255, 0.15);
     border: none;

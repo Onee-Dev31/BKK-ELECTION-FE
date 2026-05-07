@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
-import { CloudGate } from '../../../shared/components/cloud-gate/cloud-gate';
 import { Sidebar } from '../../../shared/components/sidebar/sidebar';
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [RouterOutlet, CloudGate, Sidebar],
+  imports: [RouterOutlet, Sidebar],
   templateUrl: './main-layout.html'
 })
 export class MainLayout {

@@ -1,27 +1,139 @@
-@keyframes value-pop {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.02);
-        color: #10b981;
-    }
-
-    100% {
-        transform: scale(1);
-    }
+.policy-row {
+  display: grid;
+  grid-template-columns: 30px 44px 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "rank photo info vote"
+    ".    .     bar  bar";
+  align-items: center;
+  column-gap: 10px;
+  padding: 10px 16px 8px 12px;
+  border-bottom: 1px solid rgba(45,212,191,0.06);
+  transition: background 0.15s;
+  cursor: pointer;
 }
 
-.tabular-nums {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.policy-row:last-child { border-bottom: none; }
+.policy-row:hover      { background: rgba(45,212,191,0.04); }
+.policy-row.rank-top   { background: rgba(45,212,191,0.02); }
+
+/* Rank */
+.rank-col {
+  grid-area: rank;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Smooth transition for progress bar */
-:host ::ng-deep .ant-progress-bg {
-    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+.rank-medal {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 900;
 }
 
-.candidate-value {
-    display: inline-block;
+.rank-medal.gold   { background: rgba(251,191,36,0.15);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+.rank-medal.silver { background: rgba(148,163,184,0.15); color: #94a3b8; border: 1px solid rgba(148,163,184,0.25); }
+.rank-medal.bronze { background: rgba(180,83,9,0.15);    color: #d97706; border: 1px solid rgba(180,83,9,0.25); }
+
+.rank-num {
+  font-size: 11px;
+  font-weight: 900;
+  color: rgba(45,212,191,0.22);
+}
+
+/* Photo */
+.photo-col { grid-area: photo; }
+
+.photo-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.04);
+  flex-shrink: 0;
+}
+
+.photo-img        { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.photo-fallback   { font-size: 15px; font-weight: 900; }
+
+/* Info */
+.info-col {
+  grid-area: info;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cand-name {
+  font-size: 13px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.cand-party {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.party-micro { width: 12px; height: 12px; object-fit: contain; opacity: 0.55; }
+
+.cand-party span {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(45,212,191,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Vote % */
+.vote-col { grid-area: vote; text-align: right; flex-shrink: 0; }
+
+.vote-pct {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.vote-mil {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.22);
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Bar */
+.bar-col { grid-area: bar; padding-top: 7px; }
+
+.bar-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 1s ease-out;
 }

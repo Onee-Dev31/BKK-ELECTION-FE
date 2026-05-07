@@ -1,57 +1,52 @@
-<div
-    class="flex flex-col py-2.5 cursor-pointer group hover:bg-teal-900/40 transition-all border-b border-teal-500/10 last:border-b-0">
-    <div class="flex items-center gap-3 px-4 py-2.5">
+<div class="policy-row" [class.rank-top]="rank() <= 3">
 
-        <!-- Rank number -->
-        <div class="flex-shrink-0 w-6 text-center">
-            <span class="text-xs font-black text-teal-800 group-hover:text-teal-400 transition-colors">{{
-                rank() }}</span>
-        </div>
+  <!-- Rank -->
+  <div class="rank-col">
+    @if (rank() === 1) {
+      <span class="rank-medal gold">1</span>
+    } @else if (rank() === 2) {
+      <span class="rank-medal silver">2</span>
+    } @else if (rank() === 3) {
+      <span class="rank-medal bronze">3</span>
+    } @else {
+      <span class="rank-num">{{ rank() }}</span>
+    }
+  </div>
 
-        <!-- Avatar (Emerald Dark Optimized) -->
-        <div class="relative flex-shrink-0">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-black text-lg ring-2 ring-offset-2 ring-teal-950/50 transition-all group-hover:scale-110 shadow-lg"
-                [style.ring-color]="candidate().color"
-                [style.background]="'linear-gradient(135deg, ' + candidate().color + '30, ' + candidate().color + '10)'">
-                @if(candidate().imageUrl) {
-                <img [src]="candidate().imageUrl" alt="" class="w-full h-full rounded-full object-cover">
-                } @else {
-                {{ candidate().name.charAt(0) }}
-                }
-            </div>
-        </div>
-
-        <!-- Name + party -->
-        <div class="flex-1 min-w-0">
-            <div
-                class="text-base font-black text-white/90 leading-tight truncate group-hover:text-white transition-colors">
-                {{ candidate().name }}</div>
-            <div class="flex items-center gap-1.5 mt-1">
-                <img [src]="candidate().partyLogoUrl" alt=""
-                    class="w-3 h-3 object-contain opacity-70 group-hover:opacity-100 transition-all">
-                <div class="text-[9px] font-bold text-teal-700 uppercase tracking-widest truncate">{{ candidate().party
-                    }}</div>
-            </div>
-        </div>
-
-        <!-- Percentage -->
-        <div class="flex-shrink-0 text-right">
-            <div class="text-lg font-black tabular-nums tracking-tighter drop-shadow-sm"
-                [style.color]="candidate().color">{{
-                candidate().percentage }}%</div>
-            <div
-                class="text-[10px] font-black text-teal-400/60 uppercase tabular-nums tracking-widest leading-none mt-0.5">
-                {{ (candidate().votes / 1000000).toFixed(2) }}M</div>
-        </div>
+  <!-- Photo -->
+  <div class="photo-col">
+    <div class="photo-wrap" [style.borderColor]="candidate().color + '66'">
+      @if (candidate().imageUrl) {
+        <img [src]="candidate().imageUrl" class="photo-img">
+      } @else {
+        <span class="photo-fallback" [style.color]="candidate().color">{{ candidate().name.charAt(0) }}</span>
+      }
     </div>
+  </div>
 
-    <!-- Progress bar (Organic Grass style - Custom implementation) -->
-    <div class="px-4 pb-2">
-        <div class="w-full h-1 bg-teal-950/50 rounded-full overflow-hidden">
-            <div class="h-full transition-all duration-1000 ease-out shadow-[0_0_8px_currentColor]"
-                [style.width.%]="candidate().percentage" [style.background-color]="candidate().color"
-                [style.color]="candidate().color">
-            </div>
-        </div>
+  <!-- Info -->
+  <div class="info-col">
+    <div class="cand-name">{{ candidate().name }}</div>
+    <div class="cand-party">
+      <img [src]="candidate().partyLogoUrl" class="party-micro">
+      <span>{{ candidate().party }}</span>
     </div>
+  </div>
+
+  <!-- Vote % -->
+  <div class="vote-col">
+    <div class="vote-pct" [style.color]="candidate().color">{{ candidate().percentage }}%</div>
+    <div class="vote-mil">{{ (candidate().votes / 1000000).toFixed(2) }}M</div>
+  </div>
+
+  <!-- Bar -->
+  <div class="bar-col">
+    <div class="bar-track">
+      <div class="bar-fill"
+           [style.width]="candidate().percentage + '%'"
+           [style.backgroundColor]="candidate().color">
+      </div>
+    </div>
+  </div>
+
 </div>

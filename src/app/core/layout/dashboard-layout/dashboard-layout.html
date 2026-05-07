@@ -10,49 +10,39 @@
     <div class="content-grid w-full h-full relative z-10" [class.is-sk-mode]="mapState.activeTab() === 'sk'">
         <article class="area-map flex flex-col min-h-0 relative">
             <!-- Logo + Toggle: always visible over map area -->
-            <div class="absolute top-0 left-10 z-50 flex items-center gap-4 pt-6" style="pointer-events:none;">
+            <div class="map-logo-toggle absolute top-0 z-50" style="pointer-events:none;">
                 <div class="logo-accent-bar"></div>
                 <div class="flex flex-col gap-3">
-                    <div class="flex flex-col">
-                        <span class="text-white font-black text-[11px] tracking-[0.2em] uppercase opacity-70">BKK ELECTION</span>
-                        <span class="text-teal-400 font-black text-3xl leading-none tracking-tighter drop-shadow-[0_0_15px_rgba(45,212,191,0.4)]">2026</span>
+                    <!-- Logo -->
+                    <div class="logo-brand flex flex-col">
+                        <span class="text-white/60 font-black text-[10px] tracking-[0.25em] uppercase">BKK ELECTION</span>
+                        <span class="text-teal-400 font-black text-3xl leading-none tracking-tighter"
+                              style="text-shadow: 0 0 20px rgba(45,212,191,0.5)">2026</span>
                     </div>
                     <!-- Main toggle -->
-                    <div class="flex items-center gap-1 bg-black/40 backdrop-blur-md rounded-xl p-1 border border-white/10 w-[240px]" style="pointer-events:auto;">
-                        <button
-                            (click)="mapState.activeTab.set('summary')"
-                            class="flex-1 py-1.5 rounded-lg text-[11px] font-black tracking-tight transition-all duration-200"
-                            [class.bg-teal-500]="mapState.activeTab() === 'summary'"
-                            [class.text-white]="mapState.activeTab() === 'summary'"
-                            [class.text-white/40]="mapState.activeTab() !== 'summary'">
+                    <div class="toggle-pill" style="pointer-events:auto;">
+                        <button (click)="mapState.activeTab.set('summary')"
+                            class="toggle-btn"
+                            [class.toggle-btn-active]="mapState.activeTab() === 'summary'">
                             ผลรวม
                         </button>
-                        <button
-                            (click)="mapState.activeTab.set('sk')"
-                            class="flex-1 py-1.5 rounded-lg text-[11px] font-black tracking-tight transition-all duration-200"
-                            [class.bg-teal-500]="mapState.activeTab() === 'sk'"
-                            [class.text-white]="mapState.activeTab() === 'sk'"
-                            [class.text-white/40]="mapState.activeTab() !== 'sk'">
+                        <button (click)="mapState.activeTab.set('sk')"
+                            class="toggle-btn"
+                            [class.toggle-btn-active]="mapState.activeTab() === 'sk'">
                             ผลการเลือก ส.ก.
                         </button>
                     </div>
                     <!-- Secondary toggle: only in ส.ก. mode -->
                     @if (mapState.activeTab() === 'sk') {
-                    <div class="flex items-center gap-1 bg-black/20 backdrop-blur-sm rounded-lg p-1 border border-white/8 w-[200px]" style="pointer-events:auto;">
-                        <button
-                            (click)="mapState.councilView.set('quota')"
-                            class="flex-1 py-1 rounded-md text-[10px] font-black tracking-tight transition-all duration-200"
-                            [class.bg-white/15]="mapState.councilView() === 'quota'"
-                            [class.text-white]="mapState.councilView() === 'quota'"
-                            [class.text-white/35]="mapState.councilView() !== 'quota'">
+                    <div class="toggle-pill toggle-pill-sm" style="pointer-events:auto;">
+                        <button (click)="mapState.councilView.set('quota')"
+                            class="toggle-btn toggle-btn-sm"
+                            [class.toggle-btn-active]="mapState.councilView() === 'quota'">
                             ผลตามที่นั่ง
                         </button>
-                        <button
-                            (click)="mapState.councilView.set('district')"
-                            class="flex-1 py-1 rounded-md text-[10px] font-black tracking-tight transition-all duration-200"
-                            [class.bg-white/15]="mapState.councilView() === 'district'"
-                            [class.text-white]="mapState.councilView() === 'district'"
-                            [class.text-white/35]="mapState.councilView() !== 'district'">
+                        <button (click)="mapState.councilView.set('district')"
+                            class="toggle-btn toggle-btn-sm"
+                            [class.toggle-btn-active]="mapState.councilView() === 'district'">
                             ผลรายเขต
                         </button>
                     </div>
@@ -61,17 +51,17 @@
             </div>
             <main class="flex-1 min-h-0 w-full" style="container-type:size;">
                 @if (mapState.activeTab() === 'sk' && mapState.councilView() === 'quota') {
-                    <app-parliament-chart class="block w-full h-full"></app-parliament-chart>
+                <app-parliament-chart class="block w-full h-full"></app-parliament-chart>
                 } @else {
-                    <app-map-viewer class="block w-full h-full"></app-map-viewer>
+                <app-map-viewer class="block w-full h-full"></app-map-viewer>
                 }
             </main>
         </article>
 
         <app-navbar class="area-search block w-full"></app-navbar>
-        
+
         @if (mapState.activeTab() === 'summary') {
-            <app-hero-card class="panel-glass area-hero flex flex-col"></app-hero-card>
+        <app-hero-card class="panel-glass area-hero flex flex-col"></app-hero-card>
         }
 
         <section class="panel-glass area-candidates flex flex-col overflow-hidden min-h-0">
@@ -95,16 +85,16 @@
             </header>
             <div class="flex-1 overflow-hidden min-h-0">
                 @if (mapState.activeTab() === 'summary') {
-                    <div class="overflow-y-auto h-full custom-scrollbar">
-                        <app-policy-list class="block w-full h-full"></app-policy-list>
-                    </div>
+                <div class="overflow-y-auto h-full custom-scrollbar">
+                    <app-policy-list class="block w-full h-full"></app-policy-list>
+                </div>
                 } @else {
-                    <app-council-result class="block h-full"></app-council-result>
+                <app-council-result class="block h-full"></app-council-result>
                 }
             </div>
             <footer
                 class="px-4 py-2 border-t border-white/5 bg-black/20 text-[9px] font-bold text-teal-400/40 text-center flex-shrink-0 uppercase tracking-widest leading-relaxed">
-                Source: EC of Thailand & Thai PBS<br />bkkelection65-data.thaipbs.or.th
+                Source: <br />bkkelection65-data
             </footer>
         </section>
 

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SearchService, SearchResult } from '../../../core/services/search';
@@ -12,8 +12,18 @@ import { MapStateService } from '../../../core/services/map-state';
   styleUrl: './navbar.css',
 })
 export class Navbar {
+  @ViewChild('searchInput') private searchInputRef!: ElementRef<HTMLInputElement>;
+
   currentTime = signal(new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }));
   currentDate = signal(new Date().toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }));
+
+  @HostListener('document:keydown', ['$event'])
+  onGlobalKeyDown(e: KeyboardEvent) {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      this.searchInputRef?.nativeElement.focus();
+    }
+  }
 
   searchService = inject(SearchService);
   mapState = inject(MapStateService);

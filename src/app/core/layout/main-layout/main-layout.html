@@ -1,17 +1,15 @@
-<div class="h-dvh w-screen bg-[#041e1a] overflow-hidden relative text-white">
-  <app-cloud-gate class="z-[100]"></app-cloud-gate>
-
-  <div class="absolute inset-0 z-0 sm:pl-24 overflow-y-auto">
+<div class="h-dvh w-screen bg-bkk-bg overflow-hidden relative text-white">
+  <div class="absolute inset-0 z-0 lg:pl-24 overflow-y-auto">
       <router-outlet></router-outlet>
   </div>
 
   <!-- Desktop sidebar -->
-  <div class="absolute left-4 top-0 z-50 h-full w-fit hidden sm:flex flex-col justify-center">
+  <div class="absolute left-4 top-0 z-50 h-full w-fit hidden lg:flex flex-col justify-center">
       <app-sidebar class="block w-fit h-fit"></app-sidebar>
   </div>
 
-  <!-- Mobile bottom navigation (hidden on sm+) -->
-  <nav class="fixed bottom-0 left-0 right-0 z-50 flex sm:hidden items-center justify-around
+  <!-- Mobile/tablet bottom navigation (hidden on lg+) -->
+  <nav class="fixed bottom-0 left-0 right-0 z-50 flex lg:hidden items-center justify-around
               px-2 py-2
               bg-[#041e1a]/90 backdrop-blur-2xl
               border-t border-white/8

@@ -1,6 +1,6 @@
 .stack-page {
   min-height: 100vh;
-  background: #0a1a14;
+  background: var(--color-bkk-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,7 +117,7 @@
   overflow: hidden;
   flex-shrink: 0;
   cursor: pointer;
-  background: #111e18;
+  background: rgba(255, 255, 255, 0.04);
   box-shadow: 0 8px 24px rgba(0,0,0,0.5);
   transition:
     transform 0.35s cubic-bezier(.23,1,.32,1),

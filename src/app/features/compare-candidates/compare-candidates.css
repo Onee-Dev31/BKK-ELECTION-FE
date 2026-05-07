@@ -1,10 +1,39 @@
-.glass-panel {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(32px) saturate(220%);
-  -webkit-backdrop-filter: blur(32px) saturate(220%);
-}
 .layout-content-area {
-  background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.05) 0%, rgba(240, 253, 244, 0.1) 100%);
+  background: radial-gradient(circle at 50% 0%, rgba(0, 214, 91, 0.07) 0%, var(--color-bkk-bg) 70%);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.select-dark {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 14px 48px 14px 20px;
+  color: white;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.select-dark:focus {
+  border-color: var(--color-bkk-green);
+  box-shadow: 0 0 0 3px rgba(0, 214, 91, 0.15);
+}
+
+.select-dark option {
+  background: #02150d;
+  color: white;
 }
 
 /* ===== 3D Tilt Card ===== */
@@ -21,8 +50,10 @@
   padding: 2rem;
   transform-style: preserve-3d;
   will-change: transform;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   overflow: visible !important;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .tilt-glare {
@@ -33,18 +64,17 @@
   border-radius: 40px;
 }
 
-/* photo floats up in 3D */
 .tilt-photo-wrap {
   position: absolute;
   top: -30px;
   right: 24px;
   width: 110px;
   transform: translateZ(0px);
-  transition: transform 0.4s cubic-bezier(.23,1,.32,1), opacity 0.3s ease;
+  transition: transform 0.4s cubic-bezier(.23, 1, .32, 1), opacity 0.3s ease;
   opacity: 0;
   pointer-events: none;
   z-index: 20;
-  filter: drop-shadow(0 16px 32px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.6));
 }
 
 .tilt-scene:hover .tilt-photo-wrap {
@@ -59,7 +89,7 @@
   object-position: top;
   border-radius: 16px;
   display: block;
-  box-shadow: 0 20px 48px rgba(0,0,0,0.35);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
 }
 
 .tilt-body {
@@ -70,6 +100,55 @@
   z-index: 5;
 }
 
+.number-badge {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 2.25rem;
+  flex-shrink: 0;
+  border: 3px solid;
+  color: white;
+}
+
+.policy-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid;
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  transition: background 0.2s;
+}
+
+.policy-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.policy-category {
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.policy-desc {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.6;
+  transition: color 0.2s;
+}
+
+.policy-card:hover .policy-desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .tilt-card { padding: 1.5rem; border-radius: 28px; }
@@ -77,9 +156,7 @@
 }
 
 @media (max-width: 768px) {
-  .tilt-scene:hover .tilt-photo-wrap {
-    transform: translateZ(0) translateY(-10px);
-  }
+  .tilt-scene:hover .tilt-photo-wrap { transform: translateZ(0) translateY(-10px); }
   .tilt-body { gap: 1.25rem; }
   .tilt-card { padding: 1.25rem; border-radius: 24px; }
   .tilt-photo-wrap { width: 70px; }

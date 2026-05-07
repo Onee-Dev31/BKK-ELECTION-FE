@@ -1,7 +1,6 @@
-import { Component, inject, signal, computed, OnInit } from '@angular/core';
+import { Component, inject, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ElectionService } from '../../core/services/election.service';
-import { ArticleService } from '../../core/services/article.service';
 import { ELECTION_CONSTANTS } from '../../core/constants/election.constants';
 
 @Component({
@@ -11,13 +10,8 @@ import { ELECTION_CONSTANTS } from '../../core/constants/election.constants';
   templateUrl: './candidates-stack.html',
   styleUrl: './candidates-stack.css',
 })
-export class CandidatesStack implements OnInit {
+export class CandidatesStack {
   private svc = inject(ElectionService);
-  articleService = inject(ArticleService);
-
-  async ngOnInit() {
-    await this.articleService.loadArticles();
-  }
 
   top10 = computed(() =>
     [...this.svc.candidates()]
@@ -28,7 +22,6 @@ export class CandidatesStack implements OnInit {
   hoveredIdx = signal<number | null>(null);
 
   onPointerEnter(idx: number, event: PointerEvent) {
-    // เฉพาะ mouse เท่านั้น — touch ไม่ใช้ hover เพื่อป้องกัน double-tap
     if (event.pointerType === 'mouse') {
       this.hoveredIdx.set(idx);
     }
@@ -40,7 +33,6 @@ export class CandidatesStack implements OnInit {
 
     if (!isSame) {
       setTimeout(() => {
-        // scroll ให้เห็น card-col ทั้งหมด ไม่ใช้ detail panel เพื่อไม่ให้ header หาย
         colEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 360);
     }
