@@ -343,6 +343,13 @@
     }
 }
 
+/* === Phone: hide legend (overlaps hexagons on small screens) === */
+@media (max-width: 767px) {
+    .map-legend-box {
+        display: none;
+    }
+}
+
 /* === Touch devices: disable hover tooltip + scale effects ===
    ป้องกัน double-tap ที่เกิดจาก :hover ถูก trigger ก่อน click บน touchscreen */
 @media (hover: none) {
@@ -387,6 +394,12 @@
 }
 
 /* ── Light Theme ─────────────────── */
+:host-context(html.light) .map-legend-box {
+  background: rgba(232, 245, 189, 0.88);
+  border-color: rgba(132, 177, 121, 0.25);
+  backdrop-filter: blur(12px);
+}
+
 :host-context(html.light) [class*="text-white"] {
   color: rgba(45, 74, 37, 0.85);
 }

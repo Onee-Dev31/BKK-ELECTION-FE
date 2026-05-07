@@ -506,6 +506,7 @@
             "search"
             "map"
             "candidates";
+        grid-template-rows: auto auto 1fr;
     }
 
     .area-search {
