@@ -9,7 +9,7 @@
   gap: 2rem;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 1023px) {
   .stack-page {
     justify-content: flex-start;
     padding-top: 24px;

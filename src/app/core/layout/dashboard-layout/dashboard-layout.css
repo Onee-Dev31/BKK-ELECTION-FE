@@ -496,7 +496,7 @@
             "hero"
             "candidates";
         padding: 20px;
-        padding-bottom: 24px;
+        padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
         gap: 20px;
         overflow-y: auto;
     }
