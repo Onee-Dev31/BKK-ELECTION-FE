@@ -682,3 +682,13 @@
   .countdown-number { font-size: 1.25rem; }
   .countdown-label { font-size: 0.55rem; }
 }
+
+@media (max-width: 360px) {
+  .main_wrapper { width: 18em; height: 18em; transform: scale(0.65); }
+  .cs-title { font-size: 1.5rem; }
+  .countdown { gap: 0.25rem; }
+  .countdown-unit { min-width: 38px; padding: 0.4rem 0.5rem; }
+  .countdown-number { font-size: 1.1rem; }
+  .countdown-sep { font-size: 1.1rem; }
+  .cs-nav { padding: 1rem 1.25rem; }
+}

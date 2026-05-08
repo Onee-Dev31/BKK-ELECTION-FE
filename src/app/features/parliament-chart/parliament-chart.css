@@ -111,7 +111,8 @@
 
 /* ── Responsive ── */
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
-  .parliament-wrap { padding: 140px 24px 20px; }
+  .parliament-wrap { padding: 110px 24px 20px; justify-content: center; }
+  .svg-wrap { flex: none; width: 100%; aspect-ratio: 2 / 1; }
   .chart-sub { font-size: 22px; }
 }
 
@@ -121,14 +122,15 @@
 }
 
 @media (max-width: 767px) {
-  .parliament-wrap { padding: 100px 12px 16px; gap: 10px; }
+  .parliament-wrap { padding: 64px 12px 12px; gap: 8px; justify-content: center; }
+  .svg-wrap { flex: none; width: 100%; aspect-ratio: 2 / 1; }
   .chart-sub { font-size: 18px; }
   .chart-label { font-size: 9px; }
   .seat-bar { height: 5px; }
 }
 
 @media (orientation: landscape) and (max-height: 549px) {
-  .parliament-wrap { padding: 72px 12px 8px; gap: 6px; }
+  .parliament-wrap { padding: 52px 12px 8px; gap: 6px; }
   .chart-footer { gap: 6px; }
   .chart-sub { font-size: 15px; }
   .chart-label { display: none; }

@@ -53,12 +53,22 @@
 @media (max-width: 767px) {
   .party-legend {
     gap: 6px 12px;
-    max-height: 72px;
+    max-height: 80px;
   }
   .legend-logo  { width: 14px; height: 14px; }
   .legend-name  { font-size: 11px; }
   .legend-seats { font-size: 14px; }
   .legend-unit  { font-size: 9px; }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .party-legend {
+    gap: 7px 16px;
+    max-height: 96px;
+  }
+  .legend-logo  { width: 16px; height: 16px; }
+  .legend-name  { font-size: 12px; }
+  .legend-seats { font-size: 16px; }
 }
 
 @media (orientation: landscape) and (max-height: 549px) {

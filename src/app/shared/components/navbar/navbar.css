@@ -40,6 +40,8 @@ nav:focus-within {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     padding: 8px;
     z-index: 100;
+    max-height: min(320px, 50dvh);
+    overflow-y: auto;
     animation: slideDown 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
 

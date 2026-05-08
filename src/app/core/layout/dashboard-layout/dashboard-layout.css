@@ -142,9 +142,7 @@
 }
 
 .content-grid.is-sk-mode {
-    grid-template-areas:
-        "map     candidates"
-        "map     candidates";
+    grid-template-areas: "map candidates";
     grid-template-rows: 1fr;
 }
 
@@ -220,6 +218,7 @@
             "map    candidates";
         gap: 14px;
         padding: 14px;
+        padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
         overflow-y: auto;
     }
 
@@ -274,16 +273,15 @@
 @media (max-width: 767px) {
     .content-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: auto auto 1fr;
         grid-template-areas:
             "search"
             "map"
-            "hero"
             "candidates";
         padding: 12px;
         padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
         gap: 12px;
-        overflow-y: auto;
+        overflow: hidden;
     }
 
     .content-grid.is-sk-mode {
@@ -309,14 +307,16 @@
     }
 
     .area-map {
-        height: 360px;
+        height: clamp(260px, calc(100dvh - 360px), 360px);
         min-height: 0;
     }
 
-    /* ให้ grid auto-size จาก content ของ hero card จริงๆ ไม่ใส่ min-height เกิน */
     .area-hero {
-        height: auto;
-        /* min-height: 0; */
+        display: none;
+    }
+
+    .area-candidates {
+        min-height: 0;
     }
 
     .map-logo-toggle {
@@ -489,16 +489,15 @@
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
     .content-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: auto auto 1fr;
         grid-template-areas:
             "search"
             "map"
-            "hero"
             "candidates";
         padding: 20px;
         padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
         gap: 20px;
-        overflow-y: auto;
+        overflow: hidden;
     }
 
     .content-grid.is-sk-mode {
@@ -523,16 +522,16 @@
     }
 
     .area-map {
-        height: 520px;
+        height: 420px;
         min-height: 0;
     }
 
     .area-hero {
-        min-height: 400px;
+        display: none;
     }
 
     .area-candidates {
-        min-height: 440px;
+        min-height: 0;
     }
 
     .map-logo-toggle {
@@ -548,5 +547,65 @@
     }
     .toggle-pill {
         width: 210px;
+    }
+}
+
+/* ── Parliament quota view: hide candidates panel on tablet/mobile ── */
+@media (max-width: 1199px) {
+    .content-grid.parliament-quota .area-candidates {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) and (min-height: 550px) {
+    .content-grid.parliament-quota {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "search"
+            "map";
+    }
+}
+
+@media (max-width: 767px) {
+    .content-grid.parliament-quota {
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "search"
+            "map";
+    }
+    .content-grid.parliament-quota .area-map {
+        height: auto;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 549px) {
+    .content-grid.parliament-quota {
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "search"
+            "map"
+            "hero";
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+    .content-grid.parliament-quota {
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "search"
+            "map";
+    }
+    .content-grid.parliament-quota .area-map {
+        height: auto;
+    }
+}
+
+/* ── Desktop: push toggle past sidebar right edge (≈84px) ──
+   Must come AFTER tablet-portrait rule so min-width:1024px wins the cascade
+   even on portrait-oriented tablets in the 1024–1199px width range. ── */
+@media (min-width: 1024px) {
+    .map-logo-toggle {
+        left: 4.5rem;
+        padding-top: 1.5rem;
     }
 }

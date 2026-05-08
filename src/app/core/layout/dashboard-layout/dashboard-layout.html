@@ -7,7 +7,7 @@
         <div class="stage-bg-overlay"></div>
     </div>
 
-    <div class="content-grid w-full h-full relative z-10" [class.is-sk-mode]="mapState.activeTab() === 'sk'">
+    <div class="content-grid w-full h-full relative z-10" [class.is-sk-mode]="mapState.activeTab() === 'sk'" [class.parliament-quota]="mapState.activeTab() === 'sk' && mapState.councilView() === 'quota'">
         <article class="area-map flex flex-col min-h-0 relative">
             <!-- Logo + Toggle: always visible over map area -->
             <div class="map-logo-toggle absolute top-0 z-50" style="pointer-events:none;">
@@ -83,11 +83,9 @@
                     <span class="text-rose-600 text-[10px] font-black tracking-widest uppercase">Live</span>
                 </div>
             </header>
-            <div class="flex-1 overflow-hidden min-h-0">
+            <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar">
                 @if (mapState.activeTab() === 'summary') {
-                <div class="overflow-y-auto h-full custom-scrollbar">
-                    <app-policy-list class="block w-full h-full"></app-policy-list>
-                </div>
+                <app-policy-list class="block w-full"></app-policy-list>
                 } @else {
                 <app-council-result class="block h-full"></app-council-result>
                 }

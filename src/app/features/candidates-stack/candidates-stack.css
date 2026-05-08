@@ -52,8 +52,16 @@
   }
 }
 
+@media (max-width: 767px) and (min-width: 601px) {
+  .cards-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: calc(100vw - 48px);
+  }
+}
+
 @media (max-width: 600px) {
-  .stack-page { padding: 1.25rem 0.75rem 84px; gap: 1.25rem; }
+  .stack-page { padding: 1.25rem 0.75rem calc(84px + env(safe-area-inset-bottom, 0px)); gap: 1.25rem; }
   .stack-title { font-size: 1.4rem; }
   .stack-sub { font-size: 0.6rem; }
   .cards-row {

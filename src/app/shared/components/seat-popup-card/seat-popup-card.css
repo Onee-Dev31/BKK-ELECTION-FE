@@ -12,10 +12,11 @@
   backdrop-filter: blur(16px);
   padding: 16px 20px;
   min-width: 240px;
-  max-width: 320px;
+  max-width: min(320px, calc(100vw - 32px));
   animation: fadeInUp 0.15s ease;
   pointer-events: all;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .seat-card-close {
@@ -96,8 +97,8 @@
 
 @media (max-width: 767px) {
   .seat-card {
-    min-width: 200px;
-    max-width: 260px;
+    min-width: 180px;
+    max-width: min(260px, calc(100vw - 32px));
     padding: 12px 14px;
   }
   .seat-card-photo { width: 44px; height: 44px; }

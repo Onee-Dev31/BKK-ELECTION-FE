@@ -266,7 +266,7 @@
 /* === Phone portrait (≤ 767px) === */
 @media (max-width: 767px) {
     .map-container {
-        padding: 8px;
+        padding: 80px 8px 8px;
         align-items: center;
         justify-content: center;
     }
@@ -293,7 +293,7 @@
 /* === Tablet portrait (768–1199px, แนวตั้ง) — map อยู่ด้านบน มีพื้นที่มากกว่า phone === */
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
     .map-container {
-        padding: 16px;
+        padding: 110px 16px 16px;
         align-items: center;
         justify-content: center;
     }
@@ -343,8 +343,8 @@
     }
 }
 
-/* === Phone: hide legend (overlaps hexagons on small screens) === */
-@media (max-width: 767px) {
+/* === Phone + Tablet: hide legend (overlaps hexagons on small screens) === */
+@media (max-width: 1199px) {
     .map-legend-box {
         display: none;
     }
