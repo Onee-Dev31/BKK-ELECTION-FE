@@ -136,3 +136,16 @@
   .chart-label { display: none; }
   .seat-bar { height: 4px; }
 }
+
+/* ── Light Theme ─────────────────── */
+:host-context(html.light) .chart-label {
+  color: rgba(45, 74, 37, 0.45);
+}
+
+:host-context(html.light) .chart-sub {
+  color: rgba(30, 58, 23, 0.88);
+}
+
+:host-context(html.light) .chart-sub strong {
+  color: #1e3a17;
+}

@@ -106,6 +106,21 @@
   .seat-card-district { font-size: 9px; }
 }
 
+@media (orientation: landscape) and (max-height: 549px) {
+  .seat-card {
+    min-width: 160px;
+    max-width: min(240px, calc(100vw - 32px));
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+  .seat-card-inner { gap: 10px; }
+  .seat-card-photo { width: 36px; height: 36px; }
+  .seat-card-name  { font-size: 12px; }
+  .seat-card-district { font-size: 8px; }
+  .seat-card-party span { font-size: 10px; }
+  .seat-card-party-logo { width: 12px; height: 12px; }
+}
+
 /* ── Light Theme ─────────────────── */
 :host-context(html.light) .seat-card {
   background: rgba(255, 255, 255, 0.97);

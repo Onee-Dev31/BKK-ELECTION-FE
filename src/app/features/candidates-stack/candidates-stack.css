@@ -70,9 +70,27 @@
     width: calc(100vw - 48px);
   }
   .card.is-hovered { transform: translateY(-8px) scale(1.02); filter: brightness(0.45) saturate(0.5); }
-  .detail-panel.detail-visible { max-height: 70px; }
+  .detail-panel.detail-visible { max-height: 90px; }
   .card-photo-popup { width: 140%; }
   .card-col.col-active .card-photo-popup { transform: translateX(-50%) translateY(-25%) scale(1.05); }
+}
+
+@media (orientation: landscape) and (max-height: 549px) {
+  .stack-page {
+    padding: 0.75rem 0.75rem calc(70px + env(safe-area-inset-bottom, 0px));
+    gap: 0.75rem;
+    justify-content: flex-start;
+  }
+  .stack-title { font-size: 1.25rem; }
+  .stack-sub { font-size: 0.6rem; }
+  .cards-row {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    width: min(700px, calc(100vw - 48px));
+  }
+  .detail-panel.detail-visible { max-height: 70px; }
+  .card-photo-popup { width: 160%; }
+  .card-col.col-active .card-photo-popup { transform: translateX(-50%) translateY(-30%) scale(1.2); }
 }
 
 .card-col {
@@ -195,7 +213,7 @@
 }
 
 .card-number {
-  font-size: 0.5rem;
+  font-size: 0.625rem;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -203,7 +221,7 @@
 }
 
 .card-name {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 900;
   color: #fff;
   white-space: nowrap;
@@ -214,7 +232,7 @@
 }
 
 .card-party {
-  font-size: 0.45rem;
+  font-size: 0.6rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   border: 1px solid;
@@ -247,7 +265,7 @@
 }
 
 .detail-panel.detail-visible {
-  max-height: 80px;
+  max-height: 90px;
   opacity: 1;
   padding: 8px 10px;
 }
@@ -260,7 +278,7 @@
 }
 
 .detail-label {
-  font-size: 0.45rem;
+  font-size: 0.6rem;
   color: rgba(255,255,255,0.45);
   font-weight: 700;
   text-transform: uppercase;
@@ -268,7 +286,7 @@
 }
 
 .detail-value {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 900;
 }
 
@@ -287,7 +305,35 @@
 }
 
 .detail-pct {
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   font-weight: 900;
   text-align: right;
+}
+
+/* ── Light Theme ─────────────────── */
+:host-context(html.light) .stack-title {
+  color: #1e3a17;
+}
+
+:host-context(html.light) .stack-sub {
+  color: rgba(45, 74, 37, 0.45);
+}
+
+:host-context(html.light) .card {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(100, 150, 80, 0.2);
+}
+
+:host-context(html.light) .detail-panel {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(132, 177, 121, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+:host-context(html.light) .detail-label {
+  color: rgba(45, 74, 37, 0.5);
+}
+
+:host-context(html.light) .detail-bar-bg {
+  background: rgba(45, 74, 37, 0.1);
 }
