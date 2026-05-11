@@ -66,7 +66,6 @@ export class SearchService {
       let score = 0;
       const lowerMockName = mockName.toLowerCase();
 
-      // Priority match for exact district name
       if (lowerMockName === q) score += 30;
       else if (lowerMockName.includes(q)) score += 10;
       

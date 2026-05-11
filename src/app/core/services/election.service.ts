@@ -21,6 +21,12 @@ export class ElectionService {
     }));
   });
 
+  candidateMap = computed(() => {
+    const map = new Map<number, Candidate>();
+    this.candidates().forEach(c => map.set(c.id, c));
+    return map;
+  });
+
   private districtResultsMap = computed(() => {
     const map = new Map<number, DistrictResult>();
     const results = this.electionState()?.districtResults;
@@ -64,7 +70,6 @@ export class ElectionService {
   }
 
   async fetchOverallSummary() {
-    if (!this.http) return;
     this.isLoading.set(true);
     try {
       const data: any = await lastValueFrom(this.http.get(this.apiUrl));
@@ -117,7 +122,6 @@ export class ElectionService {
   }
 
   async fetchDistrictResults() {
-    if (!this.http) return;
     try {
       const data: any = await lastValueFrom(this.http.get(this.districtApiUrl));
       if (!data || !data.districts) return;
@@ -178,4 +182,3 @@ export class ElectionService {
     return CANDIDATE_POLICIES[candidateId] || DEFAULT_POLICIES;
   }
 }
-

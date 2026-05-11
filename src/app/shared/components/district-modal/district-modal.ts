@@ -4,6 +4,7 @@ import { MapStateService } from '../../../core/services/map-state';
 import { ElectionService } from '../../../core/services/election.service';
 import { CouncilService } from '../../../core/services/council.service';
 import { ELECTION_CONSTANTS } from '../../../core/constants/election.constants';
+import { sumVotes, calcPercent } from '../../../core/utils/election.utils';
 
 @Component({
   selector: 'app-district-modal',
@@ -28,8 +29,6 @@ export class DistrictModal {
       const summary = this.councilService.getDistrictSummary(districtId);
       if (!summary) return [];
 
-      const totalVotes = summary.overallStatistics.goodVotes;
-
       return candidates.map(c => {
         const leader = summary.leaders.find(l => l.number === c.number);
         const party = this.councilService.partyMap().get(c.partyId);
@@ -52,18 +51,20 @@ export class DistrictModal {
       const result = this.electionService.getDistrictResults(districtId);
       if (!result || !result.candidateResults) return [];
 
-      const totalVotes = result.candidateResults.reduce((sum, curr) => sum + curr.votes, 0);
+      const totalVotes = sumVotes(result.candidateResults);
+      const candidateMap = this.electionService.candidateMap();
 
       return result.candidateResults
         .map(cr => {
-          const candidateInfo = this.electionService.candidates().find(c => c.id === cr.candidateId);
+          const candidateInfo = candidateMap.get(cr.candidateId);
+          if (!candidateInfo) return null;
           return {
-            info: candidateInfo!,
+            info: candidateInfo,
             votes: cr.votes,
-            percentage: totalVotes > 0 ? ((cr.votes / totalVotes) * 100).toFixed(2) : '0.00'
+            percentage: calcPercent(cr.votes, totalVotes)
           };
         })
-        .filter(item => item.info !== undefined && (item.votes > 0 || item.info.number < 20))
+        .filter((item): item is NonNullable<typeof item> => item !== null && (item.votes > 0 || item.info.number < 20))
         .sort((a, b) => b.votes - a.votes);
     }
   });

@@ -1,6 +1,7 @@
 import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CouncilService } from '../../../core/services/council.service';
+import { hexPoints } from '../../../core/utils/election.utils';
 
 interface MiniDot {
   x: number;
@@ -60,10 +61,5 @@ export class CouncilMiniChart {
     return result;
   });
 
-  hexPoints(cx: number, cy: number, r: number): string {
-    return Array.from({ length: 6 }, (_, i) => {
-      const angle = (Math.PI / 3) * i;
-      return `${cx + r * Math.cos(angle)},${cy + r * Math.sin(angle)}`;
-    }).join(' ');
-  }
+  hexPoints = hexPoints;
 }

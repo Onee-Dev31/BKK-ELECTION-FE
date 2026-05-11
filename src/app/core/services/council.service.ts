@@ -54,19 +54,7 @@ export class CouncilService {
 
   leadingPartyByDistrict = computed(() => {
     const map = new Map<number, number>();
-    const summary = this.summaryData();
-    const candidates = this.candidates();
-    
-    if (!summary || !candidates.length) return map;
-
-    summary.data.forEach(d => {
-      const winner = d.leaders.find(l => l.rank === 1);
-      if (winner) {
-        const c = candidates.find(c => c.areaNumber === d.number && c.number === winner.number);
-        if (c) map.set(d.number, c.partyId);
-      }
-    });
-
+    this.districtWinners().forEach(w => map.set(w.districtId, w.winner.partyId));
     return map;
   });
 

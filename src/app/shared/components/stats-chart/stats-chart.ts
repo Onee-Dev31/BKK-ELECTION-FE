@@ -11,7 +11,6 @@ export class StatsChart {
   private electionService = inject(ElectionService);
   candidates = this.electionService.candidates;
 
-  // Convert votes to conic-gradient segments using computed signal
   conicGradient = computed(() => {
     const total = this.candidates().reduce((sum, c) => sum + c.votes, 0);
     let angle = 0;

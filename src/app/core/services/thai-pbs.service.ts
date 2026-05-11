@@ -58,7 +58,4 @@ export class ThaiPBSService {
     }
   }
 
-  getCandidateColor(number: number): string {
-    return this.candidateMap().get(number)?.theme?.colorDark ?? '';
-  }
 }

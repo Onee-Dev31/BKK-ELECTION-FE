@@ -31,13 +31,12 @@ export class Navbar {
   isSearchFocused = signal(false);
   activeIndex = signal(-1);
 
-  // Getter/setter for ngModel binding to the signal
   get searchQuery(): string {
     return this.searchService.searchQuery();
   }
   set searchQuery(val: string) {
     this.searchService.searchQuery.set(val);
-    this.activeIndex.set(-1); // Reset index on type
+    this.activeIndex.set(-1);
   }
 
   get searchResults() {
@@ -104,7 +103,6 @@ export class Navbar {
   getHighlightedText(text: string, query: string): string {
     if (!query || !text) return text;
     
-    // Normalize query for highlighting
     const q = query.toLowerCase().replace(/^(เขต|แขวง)/, '').trim();
     if (!q) return text;
 

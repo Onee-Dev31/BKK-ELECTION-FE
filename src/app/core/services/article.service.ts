@@ -1,6 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 export interface Article {
   id: number;
@@ -15,7 +16,7 @@ export interface Article {
 export class ArticleService {
   private http = inject(HttpClient);
 
-  private readonly API_URL = 'https://electionbkk-api.oneeclick.co:8000/api/Article/GetArticles';
+  private readonly API_URL = `${environment.api_url}/Article/GetArticles`;
 
   articles = signal<Article[]>([]);
   loading = signal(false);

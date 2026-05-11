@@ -4,6 +4,7 @@ import { CouncilService } from '../../core/services/council.service';
 import { CouncilCandidate } from '../../core/models/election.models';
 import { PartyLegend } from '../../shared/components/party-legend/party-legend';
 import { SeatPopupCard, SeatCardData } from '../../shared/components/seat-popup-card/seat-popup-card';
+import { hexPoints } from '../../core/utils/election.utils';
 
 const VB_W = 800;
 const VB_H = 400;
@@ -37,15 +38,10 @@ export class ParliamentChart {
   @ViewChild('svgWrap') private svgWrapRef!: ElementRef<HTMLElement>;
   @ViewChild('svgEl')   private svgElRef!:   ElementRef<SVGSVGElement>;
 
-  partyResults = computed(() => this.council.partySummary());
+  partyResults = this.council.partySummary;
   selectedSeat = signal<SelectedSeat | null>(null);
 
-  hexPoints(cx: number, cy: number, r: number): string {
-    return Array.from({ length: 6 }, (_, i) => {
-      const angle = (Math.PI / 3) * i;
-      return `${cx + r * Math.cos(angle)},${cy + r * Math.sin(angle)}`;
-    }).join(' ');
-  }
+  hexPoints = hexPoints;
 
   seatCardData = computed((): SeatCardData | null => {
     const sel = this.selectedSeat();

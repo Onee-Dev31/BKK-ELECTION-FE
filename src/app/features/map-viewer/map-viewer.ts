@@ -5,6 +5,7 @@ import { ElectionService } from '../../core/services/election.service';
 import { CouncilService } from '../../core/services/council.service';
 import { ThaiPBSService } from '../../core/services/thai-pbs.service';
 import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
+import { sumVotes, calcPercent } from '../../core/utils/election.utils';
 
 @Component({
   selector: 'app-map-viewer',
@@ -30,7 +31,7 @@ export class MapViewer {
   }
 
   getGovernorColor(candidateId?: number): string {
-    const c = this.electionService.candidates().find(can => can.id === candidateId);
+    const c = candidateId != null ? this.electionService.candidateMap().get(candidateId) : undefined;
     return c ? c.color : '#1e293b';
   }
 
@@ -52,13 +53,11 @@ export class MapViewer {
     if (!result || !result.candidateResults.length) return null;
 
     const topResult = [...result.candidateResults].sort((a, b) => b.votes - a.votes)[0];
-    const candidateInfo = this.electionService.candidates().find(c => c.id === topResult.candidateId);
+    const candidateInfo = this.electionService.candidateMap().get(topResult.candidateId);
     if (!candidateInfo) return null;
 
-    const totalDistrictVotes = result.candidateResults.reduce((sum, curr) => sum + curr.votes, 0);
-    const percentage = totalDistrictVotes > 0
-      ? ((topResult.votes / totalDistrictVotes) * 100).toFixed(2)
-      : '0.00';
+    const totalDistrictVotes = sumVotes(result.candidateResults);
+    const percentage = calcPercent(topResult.votes, totalDistrictVotes);
 
     return {
       type: 'governor' as const,
