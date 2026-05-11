@@ -23,7 +23,7 @@ export class CouncilService {
     this.isLoading.set(true);
     try {
       const candidates = await lastValueFrom(
-        this.http.get<CouncilCandidate[]>('https://bkkelection65-data.thaipbs.or.th/website/council.json')
+        this.http.get<CouncilCandidate[]>('/bkk-api/website/council.json')
       ).catch(async () => {
         console.warn('External council candidates load failed, trying local');
         return await lastValueFrom(this.http.get<CouncilCandidate[]>('data/council.json'));

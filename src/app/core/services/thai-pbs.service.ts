@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { CouncilParty, ThaipbsCandidate, ThaipbsDistrict } from '../models/election.models';
 
-const BASE = 'https://bkkelection65-data.thaipbs.or.th/website';
+const BASE = '/bkk-api/website';
 
 @Injectable({ providedIn: 'root' })
 export class ThaiPBSService {

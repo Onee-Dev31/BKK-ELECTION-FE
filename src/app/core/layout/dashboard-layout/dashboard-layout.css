@@ -601,9 +601,8 @@
 }
 
 /* ── Desktop: push toggle past sidebar right edge (≈84px) ──
-   Must come AFTER tablet-portrait rule so min-width:1024px wins the cascade
-   even on portrait-oriented tablets in the 1024–1199px width range. ── */
-@media (min-width: 1024px) {
+   Sidebar shows at xl (≥1280px), so only offset toggle there. ── */
+@media (min-width: 1280px) {
     .map-logo-toggle {
         left: 4.5rem;
         padding-top: 1.5rem;
