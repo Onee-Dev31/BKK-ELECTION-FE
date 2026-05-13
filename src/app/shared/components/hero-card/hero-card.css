@@ -8,7 +8,7 @@
 }
 
 .hc-year {
-  color: rgba(45, 212, 191, 0.15);
+  color: rgba(45, 212, 191, 0.07);
 }
 
 /* ── Leading card ── */
@@ -18,7 +18,7 @@
 }
 
 .hc-photo-fade {
-  background: linear-gradient(to right, transparent 40%, #0a1f19 100%);
+  background: none;
 }
 
 .hc-leading-badge {
@@ -106,7 +106,7 @@
 }
 
 :host-context(html.light) .hc-year {
-  color: rgba(132, 177, 121, 0.35);
+  color: rgba(132, 177, 121, 0.05);
 }
 
 :host-context(html.light) .hc-leading-card {
@@ -115,7 +115,7 @@
 }
 
 :host-context(html.light) .hc-photo-fade {
-  background: linear-gradient(to right, transparent 40%, rgba(232, 245, 189, 0.95) 100%);
+  background: none;
 }
 
 :host-context(html.light) .hc-leading-badge {
