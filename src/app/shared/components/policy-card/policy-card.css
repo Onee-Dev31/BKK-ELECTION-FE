@@ -1,3 +1,9 @@
+:host {
+  container-type: inline-size;
+  display: block;
+  width: 100%;
+}
+
 .policy-row {
   display: grid;
   grid-template-columns: 30px 44px 1fr auto;
@@ -136,6 +142,41 @@
   height: 100%;
   border-radius: 99px;
   transition: width 1s ease-out;
+}
+
+/* ── Container: narrow panel (tablet landscape ≈ 280px) ── */
+@container (max-width: 295px) {
+  .policy-row {
+    grid-template-columns: 26px 34px 1fr auto;
+    padding: 8px 10px 6px 8px;
+    column-gap: 7px;
+  }
+  .photo-wrap { width: 34px; height: 34px; }
+  .cand-name { font-size: 11px; }
+  .cand-party span { font-size: 8px; }
+  .vote-pct { font-size: 13px; }
+  .vote-mil { font-size: 8px; }
+  .rank-medal { width: 20px; height: 20px; font-size: 9px; border-radius: 5px; }
+  .bar-col { padding-top: 5px; }
+}
+
+/* ── Container: wide panel (tablet portrait ≈ 728-1159px) ── */
+@container (min-width: 560px) {
+  .policy-row {
+    grid-template-columns: 36px 52px 1fr auto;
+    padding: 14px 24px 10px 16px;
+    column-gap: 14px;
+  }
+  .photo-wrap { width: 48px; height: 48px; }
+  .cand-name { font-size: 15px; }
+  .cand-party span { font-size: 10px; }
+  .party-micro { width: 14px; height: 14px; }
+  .vote-pct { font-size: 18px; }
+  .vote-mil { font-size: 10px; }
+  .rank-medal { width: 26px; height: 26px; font-size: 12px; border-radius: 7px; }
+  .rank-num { font-size: 13px; }
+  .bar-col { padding-top: 8px; }
+  .bar-track { height: 3.5px; }
 }
 
 /* ── Light Theme ─────────────────── */

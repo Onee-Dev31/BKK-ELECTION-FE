@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal, computed, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ElectionService } from '../../core/services/election.service';
 import { ELECTION_CONSTANTS } from '../../core/constants/election.constants';
@@ -10,8 +10,9 @@ import { ELECTION_CONSTANTS } from '../../core/constants/election.constants';
   templateUrl: './candidates-stack.html',
   styleUrl: './candidates-stack.css',
 })
-export class CandidatesStack {
+export class CandidatesStack implements OnInit, OnDestroy {
   private svc = inject(ElectionService);
+  private el = inject(ElementRef);
 
   top10 = computed(() =>
     [...this.svc.candidates()]
@@ -20,6 +21,25 @@ export class CandidatesStack {
   );
 
   hoveredIdx = signal<number | null>(null);
+  showScrollTop = signal(false);
+
+  private scrollContainer: HTMLElement | null = null;
+  private scrollHandler = () => {
+    this.showScrollTop.set((this.scrollContainer?.scrollTop ?? 0) > 300);
+  };
+
+  ngOnInit() {
+    this.scrollContainer = this.el.nativeElement.parentElement as HTMLElement;
+    this.scrollContainer?.addEventListener('scroll', this.scrollHandler, { passive: true });
+  }
+
+  ngOnDestroy() {
+    this.scrollContainer?.removeEventListener('scroll', this.scrollHandler);
+  }
+
+  scrollToTop() {
+    this.scrollContainer?.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   onPointerEnter(idx: number, event: PointerEvent) {
     if (event.pointerType === 'mouse') {

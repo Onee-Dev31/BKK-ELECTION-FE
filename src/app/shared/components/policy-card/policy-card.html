@@ -35,8 +35,10 @@
 
   <!-- Vote % -->
   <div class="vote-col">
-    <div class="vote-pct" [style.color]="candidate().color">{{ candidate().percentage }}%</div>
-    <div class="vote-mil">{{ (candidate().votes / 1000000).toFixed(2) }}M</div>
+    <div class="vote-pct" [style.color]="candidate().color">
+      <app-count-up [value]="candidate().percentage" format="1.1-1" />%
+    </div>
+    <div class="vote-mil"><app-count-up [value]="candidate().votes / 1000000" format="1.2-2" />M</div>
   </div>
 
   <!-- Bar -->

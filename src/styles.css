@@ -287,10 +287,12 @@ html.light .theme-bottom-nav {
 
 .theme-nav-btn {
     color: rgba(148, 163, 184, 0.7);
+    transition: color 0.25s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .theme-nav-btn.active {
     color: #00d65b;
+    transform: scale(1.1) translateY(-2px);
 }
 
 html.light .theme-nav-btn {
@@ -307,4 +309,68 @@ html.light .theme-nav-btn.active {
 
 html.light .theme-active-dot {
     background: #84b179;
+}
+
+/* ── Scroll-to-top button ─────────────────── */
+.scroll-top-btn {
+    position: fixed;
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px) + 12px);
+    right: 20px;
+    z-index: 200;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 214, 91, 0.15);
+    border: 1px solid rgba(0, 214, 91, 0.3);
+    color: #00d65b;
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+    animation: fade-in-up 0.25s ease forwards;
+}
+
+.scroll-top-btn:hover {
+    background: rgba(0, 214, 91, 0.28);
+    transform: scale(1.1) translateY(-2px);
+}
+
+@media (min-width: 1280px) {
+    .scroll-top-btn {
+        bottom: 24px;
+    }
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Copy toast ─────────────────── */
+.copy-toast {
+    position: fixed;
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px) + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 300;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(0, 214, 91, 0.18);
+    border: 1px solid rgba(0, 214, 91, 0.35);
+    color: #00d65b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(12px);
+    animation: fade-in-up 0.25s ease forwards;
+    pointer-events: none;
+}
+
+@media (min-width: 1280px) {
+    .copy-toast {
+        bottom: 24px;
+    }
 }

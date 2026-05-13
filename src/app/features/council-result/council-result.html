@@ -1,6 +1,21 @@
 @if (council.isLoading()) {
-  <div class="flex items-center justify-center h-full">
-    <div class="w-5 h-5 rounded-full border-2 border-teal-400/30 border-t-teal-400 animate-spin"></div>
+  <div class="flex flex-col animate-pulse">
+    <div class="px-4 py-3 border-b border-white/5">
+      <div class="h-5 rounded-lg bg-white/10 w-2/3"></div>
+    </div>
+    @for (i of [1,2,3,4,5,6,7,8,9,10]; track i) {
+      <div class="flex items-center gap-3 px-4 py-3 border-b border-white/5">
+        <div class="w-10 h-10 rounded-full bg-white/10 flex-shrink-0"></div>
+        <div class="flex-1 space-y-2">
+          <div class="h-3 rounded-full bg-white/10 w-3/4"></div>
+          <div class="h-2 rounded-full bg-white/[0.05] w-1/2"></div>
+        </div>
+        <div class="flex flex-col items-end gap-1.5">
+          <div class="h-3 rounded-full bg-white/10 w-14"></div>
+          <div class="h-2 rounded-full bg-white/[0.05] w-8"></div>
+        </div>
+      </div>
+    }
   </div>
 
 } @else if (selectedDistrictId()) {

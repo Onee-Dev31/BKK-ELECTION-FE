@@ -39,9 +39,11 @@
         <div class="mt-3">
           <div class="flex items-baseline gap-2 mb-1.5">
             <span class="text-2xl font-black tabular-nums leading-none"
-                  [style.color]="candidates()[0].color">{{ candidates()[0].percentage }}%</span>
+                  [style.color]="candidates()[0].color">
+              <app-count-up [value]="candidates()[0].percentage" format="1.1-1" />%
+            </span>
             <span class="text-[10px] font-bold tabular-nums hc-votes-label">
-              {{ (candidates()[0].votes / 1000000).toFixed(2) }}M votes
+              <app-count-up [value]="candidates()[0].votes / 1000000" format="1.2-2" />M votes
             </span>
           </div>
           <div class="h-1.5 w-full rounded-full overflow-hidden hc-bar-bg">
@@ -61,13 +63,13 @@
   <div class="grid grid-cols-2 gap-2 px-4 mb-3">
     <div class="rounded-xl p-3 hc-stat-card">
       <div class="text-[18px] font-black tabular-nums leading-none hc-stat-value">
-        {{ electionService.eligibleVoters() | number }}
+        <app-count-up [value]="electionService.eligibleVoters()" />
       </div>
       <div class="text-[9px] font-bold uppercase tracking-wide mt-1.5 hc-stat-label">ELIGIBLE VOTERS</div>
     </div>
     <div class="rounded-xl p-3 hc-stat-card">
       <div class="text-[18px] font-black tabular-nums leading-none hc-accent-value">
-        {{ electionService.turnoutPercent() }}%
+        <app-count-up [value]="electionService.turnoutPercent()" format="1.1-1" />%
       </div>
       <div class="text-[9px] font-bold uppercase tracking-wide mt-1.5 hc-stat-label">TURNOUT RATE</div>
     </div>

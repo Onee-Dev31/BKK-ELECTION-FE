@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal, computed, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ElectionService } from '../../core/services/election.service';
@@ -28,6 +28,18 @@ export class CompareCandidates {
 
   tiltA = signal<Tilt>({ ...RESET });
   tiltB = signal<Tilt>({ ...RESET });
+
+  showScrollTop = signal(false);
+
+  @ViewChild('scrollEl') scrollElRef!: ElementRef<HTMLElement>;
+
+  onScroll(el: HTMLElement) {
+    this.showScrollTop.set(el.scrollTop > 300);
+  }
+
+  scrollToTop() {
+    this.scrollElRef?.nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   getImageUrl(number: number): string {
     return ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', number.toString());
