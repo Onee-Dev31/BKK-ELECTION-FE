@@ -214,8 +214,7 @@
     }
 }
 
-/* Tablet landscape (768–1199px, landscape, height ≥ 550px):
-   stacked layout — search bar as grid item, map + sidebar side by side below */
+/* Tablet landscape (768–1199px, landscape, height ≥ 550px) */
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) and (min-height: 550px) {
     .content-grid {
         grid-template-columns: 1fr 280px;
@@ -255,6 +254,29 @@
     .area-hero {
         display: none;
     }
+
+    .map-logo-toggle {
+        left: 1.25rem;
+        padding-top: 1rem;
+        gap: 0.5rem;
+    }
+
+    .map-logo-toggle .logo-brand,
+    .map-logo-toggle .logo-accent-bar {
+        display: none;
+    }
+
+    .toggle-pill {
+        width: 210px;
+    }
+
+    .area-candidates > header {
+        padding: 10px 14px;
+    }
+
+    .area-candidates > footer {
+        padding: 6px 14px;
+    }
 }
 
 /* ============================================================
@@ -263,28 +285,6 @@
    2. Phone landscape (landscape + height < 550px)
    3. Tablet portrait (768–1199px + portrait)
    ============================================================ */
-
-/* Tablet landscape: compact toggle — hide logo to save vertical space */
-@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) and (min-height: 550px) {
-    .map-logo-toggle {
-        left: 1.25rem;
-        padding-top: 1rem;
-        gap: 0.5rem;
-    }
-    .map-logo-toggle .logo-brand,
-    .map-logo-toggle .logo-accent-bar {
-        display: none;
-    }
-    .toggle-pill {
-        width: 210px;
-    }
-    .area-candidates > header {
-        padding: 10px 14px;
-    }
-    .area-candidates > footer {
-        padding: 6px 14px;
-    }
-}
 
 /* Phone portrait */
 @media (max-width: 767px) {

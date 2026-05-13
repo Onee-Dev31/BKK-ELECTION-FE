@@ -220,48 +220,6 @@
     transform: scale(0.95) !important;
 }
 
-/* Branding Logo Styling */
-.election-logo-container {
-    position: absolute;
-    top: 0;
-    left: 40px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    z-index: 100;
-    pointer-events: none;
-    animation: fadeInSlide 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.election-logo-container button {
-    pointer-events: auto;
-}
-
-.logo-accent {
-    width: 4px;
-    height: 48px;
-    background: var(--color-bkk-green);
-    box-shadow: 0 0 15px var(--color-bkk-green);
-    border-radius: 2px;
-}
-
-.logo-title {
-    font-size: 1.2rem;
-    font-weight: 900;
-    letter-spacing: 0.15em;
-    color: white;
-    line-height: 1;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.logo-year {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--color-bkk-green);
-    line-height: 1;
-    letter-spacing: 0.05em;
-    text-shadow: 0 0 20px rgba(0, 214, 91, 0.3);
-}
 
 /* === Phone portrait (≤ 767px) === */
 @media (max-width: 767px) {
@@ -275,10 +233,6 @@
     .map-grid-wrapper {
         width: min(98cqw, 92cqh);
         aspect-ratio: 1;
-    }
-
-    .election-logo-container {
-        display: none;
     }
 
     .district-number {
@@ -303,11 +257,6 @@
         aspect-ratio: 1.1;
     }
 
-    /* ซ่อน logo เพราะ search bar sticky อยู่บนสุด */
-    .election-logo-container {
-        display: none;
-    }
-
     .district-number {
         font-size: min(0.9rem, 3.6cqw);
     }
@@ -330,10 +279,6 @@
         aspect-ratio: 1.1;
     }
 
-    .election-logo-container {
-        display: none;
-    }
-
     .district-number {
         font-size: min(1rem, 3.5cqw);
     }
@@ -354,10 +299,6 @@
     .map-grid-wrapper {
         width: min(95cqw, 88cqh * 1.1);
         aspect-ratio: 1.1;
-    }
-
-    .election-logo-container {
-        display: none;
     }
 
     .district-number {
