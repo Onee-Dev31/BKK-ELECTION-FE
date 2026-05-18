@@ -360,6 +360,63 @@
     }
 }
 
+/* ── Map Mode Toggle ─────────────── */
+.map-mode-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.map-mode-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.45);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.map-mode-btn:hover {
+    color: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.map-mode-btn-active {
+    color: #2dd4bf !important;
+    background: rgba(45, 212, 191, 0.12) !important;
+}
+
+@media (max-width: 767px) {
+    .map-mode-toggle {
+        top: 10px;
+        right: 10px;
+    }
+    .map-mode-btn span {
+        display: none;
+    }
+    .map-mode-btn {
+        padding: 5px 7px;
+    }
+}
+
 /* ── Light Theme ─────────────────── */
 :host-context(html.light) .map-legend-box {
   background: rgba(232, 245, 189, 0.88);

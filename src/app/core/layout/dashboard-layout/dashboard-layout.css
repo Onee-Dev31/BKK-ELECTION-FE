@@ -18,6 +18,15 @@
     margin-top: 4px;
 }
 
+/* ── Election logo ── */
+.election-logo {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
 /* ── Toggle pill container ── */
 .toggle-pill {
     display: flex;
@@ -450,9 +459,6 @@
   border-color: rgba(132, 177, 121, 0.2);
 }
 
-:host-context(html.light) .logo-brand span:last-child {
-  text-shadow: 0 0 20px rgba(132, 177, 121, 0.5) !important;
-}
 
 :host-context(html.light) .toggle-pill {
     background: rgba(255, 255, 255, 0.85);
@@ -559,10 +565,7 @@
     .map-logo-toggle .logo-accent-bar {
         height: 36px;
     }
-    .map-logo-toggle .logo-brand span:last-child {
-        font-size: 1.5rem;
-    }
-    .toggle-pill {
+.toggle-pill {
         width: 210px;
     }
 }
