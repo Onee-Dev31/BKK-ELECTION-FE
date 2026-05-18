@@ -1,0 +1,210 @@
+:host {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.geo-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8% 6%;
+    box-sizing: border-box;
+}
+
+.geo-svg {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.28)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.18));
+    overflow: visible;
+}
+
+.district-path {
+    stroke: rgba(255, 255, 255, 0.55);
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    paint-order: fill stroke;
+    transition: filter 0.2s ease, opacity 0.3s ease, stroke-opacity 0.2s ease;
+}
+
+.district-path:hover {
+    stroke: rgba(255, 255, 255, 1);
+    filter: brightness(1.18);
+}
+
+.district-path.is-selected {
+    stroke: #ffffff;
+    stroke-width: 2.5;
+    filter: brightness(1.25) drop-shadow(0 0 8px rgba(255, 255, 255, 0.25));
+}
+
+.district-path.is-highlighted {
+    stroke: rgba(255, 255, 255, 0.85);
+    filter: brightness(1.1);
+}
+
+.district-path.is-faded {
+    opacity: 0.2;
+    filter: grayscale(0.7);
+    pointer-events: none;
+}
+
+.district-label {
+    font-size: 9px;
+    font-weight: 900;
+    fill: rgba(255, 255, 255, 0);
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+    paint-order: stroke fill;
+    stroke: rgba(0, 0, 0, 0);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+    font-family: inherit;
+    transition: fill 0.2s ease, opacity 0.2s ease;
+}
+
+.label-hovered {
+    fill: rgba(10, 10, 10, 0.9);
+    stroke: rgba(255, 255, 255, 0.95);
+    stroke-width: 3;
+}
+
+.label-selected {
+    fill: rgba(10, 10, 10, 0.9);
+    stroke: rgba(255, 255, 255, 0.95);
+    stroke-width: 3;
+    font-size: 10px;
+}
+
+.label-faded {
+    opacity: 0;
+}
+
+/* Tooltip */
+.geo-tooltip {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, calc(-100% - 16px));
+    width: 220px;
+    padding: 18px;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow:
+        0 20px 40px -10px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(45, 212, 191, 0.1);
+    animation: tooltipIn 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.geo-tooltip-above {
+    transform: translate(-50%, 16px);
+}
+
+@keyframes tooltipIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, calc(-100% - 24px));
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, calc(-100% - 16px));
+    }
+}
+
+/* Legend */
+.geo-legend {
+    position: absolute;
+    bottom: 24px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 50;
+}
+
+/* Loading dots */
+.geo-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.geo-loading-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(45, 212, 191, 0.6);
+    animation: dotPulse 1.2s ease-in-out infinite;
+}
+
+.geo-loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.geo-loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotPulse {
+    0%, 100% { transform: scale(0.6); opacity: 0.4; }
+    50% { transform: scale(1); opacity: 1; }
+}
+
+/* Mobile: hide legend */
+@media (max-width: 1199px) {
+    .geo-legend { display: none; }
+}
+
+/* Touch: no hover effects */
+@media (hover: none) {
+    .district-path:hover {
+        filter: none;
+        stroke: rgba(255, 255, 255, 0.25);
+    }
+    .district-path:active {
+        filter: brightness(1.2);
+    }
+    .geo-tooltip {
+        display: none !important;
+    }
+}
+
+/* Light theme */
+:host-context(html.light) .geo-svg {
+    filter: drop-shadow(0 6px 24px rgba(60, 100, 50, 0.22)) drop-shadow(0 2px 6px rgba(60, 100, 50, 0.14));
+}
+
+:host-context(html.light) .district-path {
+    stroke: rgba(255, 255, 255, 0.75);
+}
+
+:host-context(html.light) .district-path:hover {
+    stroke: rgba(255, 255, 255, 1);
+}
+
+:host-context(html.light) .district-path.is-selected {
+    stroke: #ffffff;
+}
+
+:host-context(html.light) .geo-tooltip {
+    background: rgba(255, 255, 255, 0.97);
+    border-color: rgba(132, 177, 121, 0.3);
+}
+
+:host-context(html.light) .geo-legend {
+    background: rgba(232, 245, 189, 0.88);
+    border-color: rgba(132, 177, 121, 0.25);
+}
