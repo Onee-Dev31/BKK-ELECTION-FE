@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'DB Adman X';
+    src: url('/fonts DB/DB Adman X Li v3.2.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'DB Adman X';
+    src: url('/fonts DB/DB Adman X v3.2.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'DB Adman X';
+    src: url('/fonts DB/DB Adman X Bd v3.2.ttf') format('truetype');
+    font-weight: 600 700;
+    font-display: swap;
+}
+
 @theme {
     --color-bkk-bg: #02150d;
     /* Deep Forest Black */
@@ -20,7 +39,7 @@
     body {
         height: 100%;
         overflow: hidden;
-        font-family: 'Kanit', sans-serif !important;
+        font-family: 'DB Adman X', sans-serif !important;
         background-color: var(--color-bkk-bg) !important;
         color: #e2e8f0 !important;
         /* Off-white for dark mode */

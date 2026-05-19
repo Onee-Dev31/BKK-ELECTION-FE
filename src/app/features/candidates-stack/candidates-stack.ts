@@ -17,7 +17,7 @@ export class CandidatesStack implements OnInit, OnDestroy {
   top10 = computed(() =>
     [...this.svc.candidates()]
       .sort((a, b) => b.votes - a.votes)
-      .slice(0, 10)
+      .slice(0, 5)
   );
 
   hoveredIdx = signal<number | null>(null);
