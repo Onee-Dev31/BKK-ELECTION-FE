@@ -164,7 +164,7 @@
 }
 
 .piece-name {
-    font-size: 18px;
+    font-size: 17px;
     /* font-weight: 300; */
     fill: rgba(255, 255, 255, 0.82);
     text-anchor: middle;
@@ -181,7 +181,7 @@
 
 .piece-name.is-long {
     /* font-size: 12.5px; */
-    letter-spacing: 0;
+    letter-spacing: 1;
     stroke-width: 2.6;
 }
 
@@ -256,6 +256,14 @@
 :host-context(html.light) .jigsaw-legend {
     background: rgba(232, 245, 189, 0.88) !important;
     border-color: rgba(132, 177, 121, 0.25) !important;
+}
+
+:host-context(html.light) .jigsaw-legend [class*="text-white"] {
+    color: #1f3d2a !important;
+}
+
+:host-context(html.light) .jigsaw-legend [class*="text-white/40"] {
+    color: rgba(31, 61, 42, 0.55) !important;
 }
 
 :host-context(html.light) .map-bg-grid {

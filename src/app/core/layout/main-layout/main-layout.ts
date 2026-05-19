@@ -16,7 +16,7 @@ export class MainLayout {
   navItems = [
     { path: '/', id: 'map', label: 'หน้าแรก' },
     { path: '/compare', id: 'compare', label: 'เปรียบเทียบ' },
-    { path: '/top10', id: 'top10', label: 'Top 10' },
+    { path: '/top5', id: 'top5', label: 'Top 5' },
   ];
 
   isActive(path: string) {

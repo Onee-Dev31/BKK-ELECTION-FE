@@ -10,11 +10,12 @@ export const routes: Routes = [
     {
         path: '',
         component: MainLayout,
-        canActivate: [electionGuard],
+        // canActivate: [electionGuard],
         children: [
-            { path: '', component: DashboardLayout },
+            { path: '', component: CandidatesStack },
+            { path: 'dashboard', component: DashboardLayout },
             { path: 'compare', component: CompareCandidates },
-            { path: 'top10', component: CandidatesStack }
+            { path: 'top5', component: CandidatesStack }
         ]
     },
     { path: 'coming-soon', component: ComingSoon },

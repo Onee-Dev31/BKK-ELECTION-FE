@@ -247,3 +247,11 @@
     background: rgba(232, 245, 189, 0.88);
     border-color: rgba(132, 177, 121, 0.25);
 }
+
+:host-context(html.light) .geo-legend [class*="text-white"] {
+    color: #1f3d2a !important;
+}
+
+:host-context(html.light) .geo-legend [class*="text-white/40"] {
+    color: rgba(31, 61, 42, 0.55) !important;
+}

@@ -14,9 +14,9 @@ export class Sidebar {
   router = inject(Router);
 
   navItems = [
-    { path: '/', id: 'map', icon: '🗺️', label: 'หน้าแรก' },
+    { path: '/dashboard', id: 'map', icon: '🗺️', label: 'หน้าแรก' },
     { path: '/compare', id: 'compare', icon: '⚖️', label: 'เปรียบเทียบนโยบาย' },
-    { path: '/top10', id: 'top10', icon: '🏆', label: 'Top 10 ผู้สมัคร' }
+    // { path: '/top5', id: 'top5', icon: '🏆', label: 'Top 5 ผู้สมัคร' }
   ];
 
   isActive(path: string) {
