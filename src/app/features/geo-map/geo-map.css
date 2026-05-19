@@ -168,6 +168,25 @@
     .geo-legend { display: none; }
 }
 
+@media (max-width: 767px) {
+    .geo-wrapper {
+        padding: 54px 2% 4px;
+    }
+
+    .geo-svg {
+        width: min(116cqw, 100cqh * 1.33);
+        height: auto;
+        aspect-ratio: 4 / 3;
+        max-height: 100%;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 549px) {
+    .geo-wrapper {
+        padding: 8px 48px 8px 8px;
+    }
+}
+
 /* Touch: no hover effects */
 @media (hover: none) {
     .district-path:hover {
@@ -202,6 +221,26 @@
 :host-context(html.light) .geo-tooltip {
     background: rgba(255, 255, 255, 0.97);
     border-color: rgba(132, 177, 121, 0.3);
+    color: #1f3d2a;
+    box-shadow:
+        0 20px 40px -10px rgba(100, 150, 80, 0.22),
+        0 0 20px rgba(132, 177, 121, 0.1);
+}
+
+:host-context(html.light) .geo-tooltip [class*="text-white"] {
+    color: #1f3d2a !important;
+}
+
+:host-context(html.light) .geo-tooltip [class*="text-white/40"] {
+    color: rgba(31, 61, 42, 0.55) !important;
+}
+
+:host-context(html.light) .geo-tooltip [class*="text-teal"] {
+    color: #008f7a !important;
+}
+
+:host-context(html.light) .geo-tooltip [class*="border-white"] {
+    border-color: rgba(31, 61, 42, 0.12) !important;
 }
 
 :host-context(html.light) .geo-legend {

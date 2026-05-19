@@ -224,23 +224,25 @@
 /* === Phone portrait (≤ 767px) === */
 @media (max-width: 767px) {
     .map-container {
-        padding: 80px 8px 8px;
+        padding: 54px 4px 4px;
         align-items: center;
         justify-content: center;
     }
 
     /* ใช้ min(cqw, cqh) เพื่อไม่ให้ล้นทั้งแนวนอนและแนวตั้ง */
     .map-grid-wrapper {
-        width: min(98cqw, 92cqh);
-        aspect-ratio: 1;
+        width: min(112cqw, 100cqh * 1.1);
+        aspect-ratio: 1.1;
     }
 
     .district-number {
-        font-size: min(0.75rem, 3.5cqw);
+        font-size: min(0.64rem, 3.05cqw);
     }
 
     .district-title {
-        font-size: min(0.4rem, 1.6cqw);
+        font-size: min(0.34rem, 1.35cqw);
+        margin-top: 1px;
+        letter-spacing: 0;
     }
 }
 
@@ -291,22 +293,24 @@
 /* === Phone landscape (จอสั้น) — map compact === */
 @media (orientation: landscape) and (max-height: 549px) {
     .map-container {
-        padding: 8px;
+        padding: 8px 48px 8px 8px;
         align-items: center;
         justify-content: center;
     }
 
     .map-grid-wrapper {
-        width: min(95cqw, 88cqh * 1.1);
+        width: min(96cqw, 96cqh * 1.1);
         aspect-ratio: 1.1;
     }
 
     .district-number {
-        font-size: min(0.75rem, 3.5cqw);
+        font-size: min(0.62rem, 3.1cqw);
     }
 
     .district-title {
-        font-size: min(0.4rem, 1.6cqw);
+        font-size: min(0.32rem, 1.35cqw);
+        margin-top: 1px;
+        letter-spacing: 0;
     }
 }
 

@@ -13,7 +13,7 @@
             (click)="selectDistrict(district.id)">
 
             <!-- Tooltip -->
-            <div class="cell-tooltip" [class.is-bottom]="district.row <= 2">
+            <div class="cell-tooltip" [class.is-bottom]="district.row <= 4">
                 @if (getDistrictTooltipData(district.id); as tooltip) {
                 <div class="flex flex-col gap-2">
                     <div class="font-black text-sm text-white mb-1 border-b border-white/10 pb-2">
@@ -69,8 +69,8 @@
                 </defs>
                 <path [attr.d]="pathFor(district.id)" [attr.fill]="getColor(district.id)" class="piece-path"/>
                 <path [attr.d]="pathFor(district.id)" [attr.fill]="'url(#bg-' + district.id + ')'" class="piece-overlay"/>
-                <text x="50" y="45" class="piece-num">{{ district.number }}</text>
-                <text x="50" y="62" class="piece-name">{{ getShortName(district.id) }}</text>
+                <text x="50" y="43" class="piece-num">{{ district.number }}</text>
+                <text x="50" y="64" class="piece-name" [class.is-long]="isLongName(district.id)">{{ getShortName(district.id) }}</text>
             </svg>
         </div>
         }
