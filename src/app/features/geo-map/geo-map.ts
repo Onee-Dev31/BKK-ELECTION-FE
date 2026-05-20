@@ -47,7 +47,7 @@ export class GeoMap implements OnInit {
   private centroidCache = new Map<number, [number, number]>();
 
   async ngOnInit() {
-    const data: any = await lastValueFrom(this.http.get('/data/bangkok-districts.geojson'));
+    const data: any = await lastValueFrom(this.http.get('/data/bangkok-districts.json'));
     const feats: GeoFeature[] = data.features;
     feats.forEach(f => {
       this.pathCache.set(f.properties.id, this.buildPath(f));
