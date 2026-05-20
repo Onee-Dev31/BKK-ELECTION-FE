@@ -33,7 +33,7 @@
 }
 
 .legend-name {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
   color: rgba(255,255,255,0.65);
 }
@@ -44,7 +44,7 @@
 }
 
 .legend-unit {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 700;
   color: rgba(255,255,255,0.3);
   text-transform: uppercase;
@@ -56,9 +56,9 @@
     max-height: 80px;
   }
   .legend-logo  { width: 14px; height: 14px; }
-  .legend-name  { font-size: 14px; }
-  .legend-seats { font-size: 14px; }
-  .legend-unit  { font-size: 13px; }
+  .legend-name  { font-size: 17px; }
+  .legend-seats { font-size: 17px; }
+  .legend-unit  { font-size: 16px; }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -67,14 +67,14 @@
     max-height: 96px;
   }
   .legend-logo  { width: 16px; height: 16px; }
-  .legend-name  { font-size: 12px; }
+  .legend-name  { font-size: 15px; }
   .legend-seats { font-size: 16px; }
 }
 
 @media (orientation: landscape) and (max-height: 549px) {
   .party-legend { max-height: 56px; gap: 4px 10px; }
-  .legend-name  { font-size: 13px; }
-  .legend-seats { font-size: 12px; }
+  .legend-name  { font-size: 16px; }
+  .legend-seats { font-size: 15px; }
 }
 
 /* ── Light Theme ─────────────────── */

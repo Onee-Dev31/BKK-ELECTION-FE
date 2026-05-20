@@ -3,7 +3,7 @@
   <!-- Header -->
   <div class="flex items-start justify-between px-5 pt-5 pb-4">
     <div>
-      <div class="text-[13px] font-black tracking-[0.25em] uppercase mb-1 hc-label">ผู้ว่าราชการ กทม.</div>
+      <div class="text-[16px] font-black tracking-[0.25em] uppercase mb-1 hc-label">ผู้ว่าราชการ กทม.</div>
       <div class="font-black text-2xl tracking-tighter leading-none hc-title">กรุงเทพมหานคร</div>
     </div>
     <div class="text-4xl sm:text-5xl font-black leading-none tracking-tighter hc-year">2026</div>
@@ -26,12 +26,12 @@
         <div>
           <div class="flex items-center gap-2 mb-1.5">
             <span class="px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-wide hc-leading-badge">LEADING</span>
-            <span class="text-[13px] font-bold uppercase tracking-widest hc-no-label">No.{{ candidates()[0].number }}</span>
+            <span class="text-[16px] font-bold uppercase tracking-widest hc-no-label">No.{{ candidates()[0].number }}</span>
           </div>
           <div class="font-black text-[18px] leading-tight tracking-tight hc-candidate-name">{{ candidates()[0].name }}</div>
           <div class="flex items-center gap-1.5 mt-1">
             <img [src]="candidates()[0].partyLogoUrl" class="w-3.5 h-3.5 object-contain opacity-60">
-            <span class="text-[13px] font-bold uppercase tracking-widest hc-party-name">{{ candidates()[0].party }}</span>
+            <span class="text-[16px] font-bold uppercase tracking-widest hc-party-name">{{ candidates()[0].party }}</span>
           </div>
         </div>
 
@@ -42,7 +42,7 @@
                   [style.color]="candidates()[0].color">
               <app-count-up [value]="candidates()[0].percentage" format="1.1-1" />%
             </span>
-            <span class="text-[13px] font-bold tabular-nums hc-votes-label">
+            <span class="text-[16px] font-bold tabular-nums hc-votes-label">
               <app-count-up [value]="candidates()[0].votes / 1000000" format="1.2-2" />M votes
             </span>
           </div>
@@ -65,28 +65,28 @@
       <div class="text-[18px] font-black tabular-nums leading-none hc-stat-value">
         <app-count-up [value]="electionService.eligibleVoters()" />
       </div>
-      <div class="text-[13px] font-bold uppercase tracking-wide mt-1.5 hc-stat-label">ELIGIBLE VOTERS</div>
+      <div class="text-[16px] font-bold uppercase tracking-wide mt-1.5 hc-stat-label">ELIGIBLE VOTERS</div>
     </div>
     <div class="rounded-xl p-3 hc-stat-card">
       <div class="text-[18px] font-black tabular-nums leading-none hc-accent-value">
         <app-count-up [value]="electionService.turnoutPercent()" format="1.1-1" />%
       </div>
-      <div class="text-[13px] font-bold uppercase tracking-wide mt-1.5 hc-stat-label">TURNOUT RATE</div>
+      <div class="text-[16px] font-bold uppercase tracking-wide mt-1.5 hc-stat-label">TURNOUT RATE</div>
     </div>
   </div>
 
   <!-- Vote breakdown -->
   <div class="grid grid-cols-3 gap-1.5 px-4 pb-5 mt-auto">
     <div class="rounded-xl py-2.5 text-center hc-good-card">
-      <div class="text-[13px] font-black tabular-nums hc-stat-value">{{ electionService.goodVotes() | number }}</div>
+      <div class="text-[16px] font-black tabular-nums hc-stat-value">{{ electionService.goodVotes() | number }}</div>
       <div class="text-[8px] font-bold uppercase tracking-wide mt-0.5 hc-accent-value">บัตรดี</div>
     </div>
     <div class="rounded-xl py-2.5 text-center hc-bad-card">
-      <div class="text-[13px] font-black tabular-nums hc-bad-value">{{ electionService.badVotes() | number }}</div>
+      <div class="text-[16px] font-black tabular-nums hc-bad-value">{{ electionService.badVotes() | number }}</div>
       <div class="text-[8px] font-bold uppercase tracking-wide mt-0.5 hc-bad-label">บัตรเสีย</div>
     </div>
     <div class="rounded-xl py-2.5 text-center hc-no-card">
-      <div class="text-[13px] font-black tabular-nums hc-no-value">{{ electionService.noVotes() | number }}</div>
+      <div class="text-[16px] font-black tabular-nums hc-no-value">{{ electionService.noVotes() | number }}</div>
       <div class="text-[8px] font-bold uppercase tracking-wide mt-0.5 hc-abstain-label">ไม่ลงคะแนน</div>
     </div>
   </div>

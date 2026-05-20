@@ -54,7 +54,7 @@
     flex: 1;
     padding: 6px 0;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 900;
     letter-spacing: -0.01em;
     color: rgba(255,255,255,0.38);
@@ -79,7 +79,7 @@
 
 .toggle-btn-sm {
     padding: 5px 0;
-    font-size: 13px;
+    font-size: 16px;
     border-radius: 8px;
 }
 
@@ -361,14 +361,14 @@
     }
     .toggle-btn {
         padding: 5px 0;
-        font-size: 13px;
+        font-size: 16px;
     }
     .toggle-pill-sm {
         width: 166px;
         border-radius: 9px;
     }
     .toggle-btn-sm {
-        font-size: 13px;
+        font-size: 16px;
     }
 }
 
@@ -430,7 +430,7 @@
     }
     .toggle-btn {
         padding: 4px 0;
-        font-size: 13px;
+        font-size: 16px;
     }
     .toggle-pill-sm {
         width: 166px;

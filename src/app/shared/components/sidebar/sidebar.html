@@ -1,25 +1,20 @@
-<nav
-    class="flex flex-col items-center py-6 bg-black/10 backdrop-blur-3xl border border-white/5 rounded-[32px] shadow-2xl">
-    <div class="mb-6 group cursor-pointer relative" (click)="navigate('/')" role="button" aria-label="หน้าหลัก">
-        <div
-            class="absolute inset-0 bg-bkk-green/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-        </div>
-        <div
-            class="relative w-11 h-11 rounded-2xl bg-bkk-bg border border-bkk-border flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:border-bkk-green/50">
-            <span class="text-bkk-green font-black text-[13px] tracking-tighter">BKK</span>
-        </div>
+<nav class="flex flex-col items-center">
+    <!-- BKK logo -->
+    <div class="mb-8 cursor-pointer" (click)="navigate('/')" role="button" aria-label="หน้าหลัก">
+        <span class="text-bkk-green font-black text-[15px] tracking-[0.2em] uppercase opacity-70 hover:opacity-100 transition-opacity duration-200">BKK</span>
     </div>
 
-    <div class="flex flex-col items-center gap-4 mb-6">
+    <!-- Nav items -->
+    <div class="flex flex-col items-center gap-1">
         @for (item of navItems; track item.id) {
         <div class="nav-item-wrapper group cursor-pointer">
             <button (click)="navigate(item.path)" [id]="'nav-' + item.id"
                 style="cursor: pointer"
-                class="relative w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-500"
+                class="relative w-12 h-12 flex items-center justify-center transition-all duration-200"
                 [class.active-item]="isActive(item.path)"
                 [class.inactive-item]="!isActive(item.path)">
 
-                <div class="relative z-10 transition-transform duration-500 group-hover:scale-110">
+                <div class="relative z-10 transition-transform duration-300 group-hover:scale-110">
                     @if (item.id === 'map') {
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -40,22 +35,18 @@
                     </svg>
                     }
                 </div>
-
-                @if (isActive(item.path)) {
-                <div class="absolute inset-0 bg-bkk-green/15 rounded-2xl blur-lg"></div>
-                }
             </button>
             <div class="sidebar-tooltip">{{ item.label }}</div>
         </div>
         }
     </div>
 
-    <!-- Theme toggle button -->
-    <div class="flex flex-col gap-3 mt-auto">
+    <!-- Theme toggle -->
+    <div class="mt-auto">
         <div class="nav-item-wrapper group cursor-pointer">
             <button (click)="themeService.toggle()" style="cursor: pointer"
-                class="relative w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-500 inactive-item">
-                <div class="relative z-10 transition-transform duration-500 group-hover:scale-110">
+                class="relative w-12 h-12 flex items-center justify-center transition-all duration-200 inactive-item">
+                <div class="relative z-10 transition-transform duration-300 group-hover:scale-110">
                     @if (themeService.isDark()) {
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

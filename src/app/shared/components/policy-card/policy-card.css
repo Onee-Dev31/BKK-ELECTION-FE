@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 900;
 }
 
@@ -47,7 +47,7 @@
 .rank-medal.bronze { background: rgba(180,83,9,0.15);    color: #d97706; border: 1px solid rgba(180,83,9,0.25); }
 
 .rank-num {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 900;
   color: rgba(45,212,191,0.22);
 }
@@ -81,7 +81,7 @@
 }
 
 .cand-name {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 900;
   color: rgba(255,255,255,0.9);
   white-space: nowrap;
@@ -99,7 +99,7 @@
 .party-micro { width: 12px; height: 12px; object-fit: contain; opacity: 0.55; }
 
 .cand-party span {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: rgba(45,212,191,0.35);
   text-transform: uppercase;
@@ -120,7 +120,7 @@
 }
 
 .vote-mil {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: rgba(255,255,255,0.22);
   margin-top: 2px;
@@ -152,11 +152,11 @@
     column-gap: 7px;
   }
   .photo-wrap { width: 34px; height: 34px; }
-  .cand-name { font-size: 14px; }
+  .cand-name { font-size: 17px; }
   .cand-party span { font-size: 8px; }
-  .vote-pct { font-size: 13px; }
+  .vote-pct { font-size: 16px; }
   .vote-mil { font-size: 8px; }
-  .rank-medal { width: 20px; height: 20px; font-size: 13px; border-radius: 5px; }
+  .rank-medal { width: 20px; height: 20px; font-size: 16px; border-radius: 5px; }
   .bar-col { padding-top: 5px; }
 }
 
@@ -169,12 +169,12 @@
   }
   .photo-wrap { width: 48px; height: 48px; }
   .cand-name { font-size: 15px; }
-  .cand-party span { font-size: 13px; }
+  .cand-party span { font-size: 16px; }
   .party-micro { width: 14px; height: 14px; }
   .vote-pct { font-size: 18px; }
-  .vote-mil { font-size: 13px; }
-  .rank-medal { width: 26px; height: 26px; font-size: 12px; border-radius: 7px; }
-  .rank-num { font-size: 13px; }
+  .vote-mil { font-size: 16px; }
+  .rank-medal { width: 26px; height: 26px; font-size: 15px; border-radius: 7px; }
+  .rank-num { font-size: 16px; }
   .bar-col { padding-top: 8px; }
   .bar-track { height: 3.5px; }
 }

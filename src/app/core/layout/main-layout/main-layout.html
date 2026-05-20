@@ -3,7 +3,7 @@
   <!-- Bangkok skyline bg — full viewport -->
   <div class="bkk-skyline-layer" aria-hidden="true"></div>
 
-  <div class="absolute inset-0 z-10 xl:pl-32 overflow-y-auto">
+  <div class="absolute inset-0 z-10 xl:pl-20 overflow-y-auto">
       <router-outlet></router-outlet>
   </div>
 
@@ -39,7 +39,7 @@
           </svg>
         }
 
-        <span class="text-[13px] font-bold tracking-wide">{{ item.label }}</span>
+        <span class="text-[16px] font-bold tracking-wide">{{ item.label }}</span>
 
         @if (isActive(item.path)) {
           <span class="w-1 h-1 rounded-full theme-active-dot"></span>
@@ -61,7 +61,7 @@
             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       }
-      <span class="text-[13px] font-bold tracking-wide">{{ theme.isDark() ? 'Light' : 'Dark' }}</span>
+      <span class="text-[16px] font-bold tracking-wide">{{ theme.isDark() ? 'Light' : 'Dark' }}</span>
     </button>
   </nav>
 </div>

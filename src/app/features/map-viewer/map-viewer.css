@@ -365,6 +365,77 @@
 }
 
 /* ── Map Mode Toggle ─────────────── */
+.candidate-filter-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px;
+    background: rgba(2, 14, 8, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(0, 214, 91, 0.18);
+    color: white;
+    animation: slide-up 0.25s ease forwards;
+}
+
+.candidate-filter-banner .filter-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(0, 214, 91, 0.35);
+    flex-shrink: 0;
+}
+
+.candidate-filter-banner .filter-label {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0, 214, 91, 0.8);
+    line-height: 1;
+    margin-bottom: 3px;
+}
+
+.candidate-filter-banner .filter-name {
+    font-size: 16px;
+    font-weight: 900;
+    color: white;
+    line-height: 1.2;
+}
+
+.candidate-filter-banner .filter-close {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.candidate-filter-banner .filter-close:hover {
+    background: rgba(239, 68, 68, 0.25);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+@keyframes slide-up {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
 .map-mode-toggle {
     position: absolute;
     top: 16px;
@@ -387,7 +458,7 @@
     gap: 5px;
     padding: 5px 10px;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 900;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.45);

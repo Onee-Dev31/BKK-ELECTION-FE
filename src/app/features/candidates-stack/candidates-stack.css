@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   padding: 3rem 2.5rem;
-  gap: 2rem;
+  gap: 1rem;
   position: relative;
   overflow: hidden;
 }
@@ -38,12 +38,26 @@
 
 .stack-header { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
 
+.hero-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+  white-space: nowrap;
+}
+
 .stack-logo {
-  width: 140px;
+  width: 350px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
-  margin-bottom: 4px;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+  margin-bottom: 1px;
 }
 
 .stack-title {
@@ -55,7 +69,7 @@
 }
 
 .stack-sub {
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   color: rgba(255,255,255,0.35);
   margin: 0.35rem 0 0;
   font-weight: 600;
@@ -69,22 +83,22 @@
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 340px minmax(0, 680px);
-  gap: 28px;
+  grid-template-columns: 380px minmax(0, 720px);
+  gap: 32px;
   align-items: start;
 }
 
 @media (min-width: 1280px) {
   .hero-layout {
-    grid-template-columns: 380px minmax(0, 760px);
-    gap: 36px;
+    grid-template-columns: 420px minmax(0, 820px);
+    gap: 40px;
   }
 }
 
 @media (min-width: 1600px) {
   .hero-layout {
-    grid-template-columns: 440px minmax(0, 960px);
-    gap: 48px;
+    grid-template-columns: 480px minmax(0, 1040px);
+    gap: 52px;
   }
   .leaderboard {
     display: grid;
@@ -163,7 +177,7 @@
 }
 
 .hero-rank-label {
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: rgba(255,255,255,0.5);
   letter-spacing: 0.1em;
@@ -291,7 +305,7 @@
 }
 
 .hero-vote-label {
-  font-size: 0.65rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: rgba(255,255,255,0.4);
   letter-spacing: 0.05em;
@@ -301,7 +315,7 @@
 .hero-info { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
 
 .hero-name {
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: #fff;
   margin: 0;
@@ -312,7 +326,7 @@
 .hero-tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; }
 
 .hero-num-tag {
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   border: 1px solid;
@@ -321,7 +335,7 @@
 }
 
 .hero-party-tag {
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: rgba(255,255,255,0.5);
 }
@@ -380,7 +394,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 900;
   color: #fff;
   flex-shrink: 0;
@@ -388,8 +402,8 @@
 }
 
 .lb-photo-ring {
-  width: 72px;
-  height: 72px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   border: 2px solid;
   overflow: hidden;
@@ -407,7 +421,7 @@
 .lb-info { min-width: 0; display: flex; flex-direction: column; gap: 5px; }
 
 .lb-name {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 900;
   color: #fff;
   white-space: nowrap;
@@ -418,7 +432,7 @@
 .lb-meta { display: flex; align-items: center; gap: 8px; }
 
 .lb-num-tag {
-  font-size: 0.62rem;
+  font-size: 0.9rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   border: 1px solid;
@@ -427,7 +441,7 @@
 }
 
 .lb-party {
-  font-size: 0.65rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: rgba(255,255,255,0.45);
 }
@@ -455,7 +469,7 @@
 }
 
 .lb-votes {
-  font-size: 0.78rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: rgba(255,255,255,0.45);
   font-variant-numeric: tabular-nums;
@@ -521,7 +535,7 @@
   .lb-row { padding: 14px 14px 20px; }
   .lb-pct { font-size: 1.8rem; }
   .lb-photo-ring { width: 56px; height: 56px; }
-  .lb-name { font-size: 0.88rem; }
+  .lb-name { font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
@@ -608,7 +622,7 @@
   border: 1px solid rgba(255,255,255,0.2);
   background: transparent;
   color: rgba(255,255,255,0.75);
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
   transition: background 0.18s, color 0.18s, border-color 0.18s;
@@ -621,7 +635,7 @@
   border-radius: 999px;
   border: none;
   color: #fff;
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   font-weight: 800;
   cursor: pointer;
   opacity: 0.92;
@@ -693,16 +707,16 @@
 .modal-meta { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 
 .modal-number-tag {
-  font-size: 0.85rem; font-weight: 900; letter-spacing: 0.08em;
+  font-size: 1rem; font-weight: 900; letter-spacing: 0.08em;
   border: 1px solid; border-radius: 999px; padding: 4px 14px;
 }
 
-.modal-party-tag { font-size: 0.85rem; font-weight: 700; opacity: 0.75; }
+.modal-party-tag { font-size: 1rem; font-weight: 700; opacity: 0.75; }
 
 .modal-right { display: flex; flex-direction: column; gap: 14px; }
 
 .modal-section-title {
-  font-size: 0.85rem; font-weight: 900;
+  font-size: 1rem; font-weight: 900;
   color: rgba(255,255,255,0.65);
   letter-spacing: 0.06em; text-transform: uppercase; margin: 0;
 }
@@ -720,7 +734,7 @@
 }
 
 .rank-stat-num { font-size: 2.6rem; font-weight: 900; color: rgba(255,255,255,0.8); line-height: 1; }
-.rank-stat-label { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: 0.05em; }
+.rank-stat-label { font-size: 0.95rem; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: 0.05em; }
 .rank-stat-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.08); flex-shrink: 0; }
 
 .mini-map-wrap { display: flex; justify-content: center; }
@@ -734,7 +748,7 @@
   display: flex; flex-direction: column; gap: 6px;
 }
 
-.top-district-name { font-size: 0.85rem; font-weight: 900; color: rgba(255,255,255,0.85); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.top-district-name { font-size: 1rem; font-weight: 900; color: rgba(255,255,255,0.85); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .top-district-votes { font-size: 1.15rem; font-weight: 900; line-height: 1.2; }
 .top-district-meta { display: flex; flex-direction: column; gap: 1px; }
 .top-district-pct { font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.45); }
@@ -798,3 +812,16 @@
 :host-context(html.light) .modal-total-votes { color: rgba(0,0,0,0.5); }
 :host-context(html.light) .modal-name { color: #1e3a17; }
 :host-context(html.light) .mini-hex-svg polygon { stroke: rgba(0,0,0,0.1) !important; }
+:host-context(html.light) .stack-title { color: #1e3a17; }
+:host-context(html.light) .stack-sub { color: rgba(30,58,23,0.45); }
+:host-context(html.light) .hero-section-label { color: rgba(30,58,23,0.45); }
+:host-context(html.light) .hero-rank-label { color: rgba(30,58,23,0.45); }
+:host-context(html.light) .hero-vote-label { color: rgba(30,58,23,0.4); }
+:host-context(html.light) .hero-num-tag { border-color: currentColor; }
+:host-context(html.light) .lb-votes { color: rgba(30,58,23,0.45); }
+:host-context(html.light) .lb-party { color: rgba(30,58,23,0.5); }
+:host-context(html.light) .lb-rank-badge { color: #fff; }
+:host-context(html.light) .leaderboard-panel {
+  background: rgba(255,255,255,0.6);
+  border-color: rgba(132,177,121,0.25);
+}

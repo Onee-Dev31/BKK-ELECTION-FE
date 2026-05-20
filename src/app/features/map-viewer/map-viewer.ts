@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MapStateService } from '../../core/services/map-state';
 import { ElectionService } from '../../core/services/election.service';
@@ -22,6 +22,16 @@ export class MapViewer {
   councilService = inject(CouncilService);
   thaipbs = inject(ThaiPBSService);
   districts = this.mapState.districts;
+
+  filterCandidate = computed(() => {
+    const id = this.mapState.selectedCandidateId();
+    if (id === null) return null;
+    return this.electionService.candidateMap().get(id) ?? null;
+  });
+
+  clearFilter() {
+    this.mapState.selectedCandidateId.set(null);
+  }
 
   selectDistrict(id: number) {
     this.mapState.selectedDistrictId.set(id);

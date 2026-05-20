@@ -121,6 +121,10 @@ export class GeoMap implements OnInit {
   }
 
   onMouseMove(event: MouseEvent) {
+    if ((event.target as Element).tagName !== 'path') {
+      this.hoveredId.set(null);
+      return;
+    }
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;

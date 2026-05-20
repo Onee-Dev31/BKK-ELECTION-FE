@@ -39,7 +39,7 @@
     body {
         height: 100%;
         overflow: hidden;
-        font-size: 18px;
+        font-size: 20px;
         font-family: 'DB Adman X', sans-serif !important;
         background-color: var(--color-bkk-bg) !important;
         color: #e2e8f0 !important;
@@ -395,7 +395,7 @@ html.light .theme-active-dot {
     background: rgba(0, 214, 91, 0.18);
     border: 1px solid rgba(0, 214, 91, 0.35);
     color: #00d65b;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -408,4 +408,43 @@ html.light .theme-active-dot {
     .copy-toast {
         bottom: 24px;
     }
+}
+
+/* ── Candidates Stack light theme ── */
+html.light app-candidates-stack [class*="text-white"] {
+  color: rgba(30, 58, 23, 0.85);
+}
+
+html.light app-candidates-stack [class*="text-slate"] {
+  color: rgba(30, 58, 23, 0.7);
+}
+
+html.light app-candidates-stack [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+html.light app-candidates-stack [class*="bg-black"] {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+html.light app-candidates-stack [class*="border-white"] {
+  border-color: rgba(132, 177, 121, 0.25);
+}
+
+/* Compare candidates light theme */
+html.light app-compare-candidates [class*="text-white"] {
+  color: rgba(30, 58, 23, 0.85);
+}
+
+html.light app-compare-candidates [class*="text-slate"] {
+  color: rgba(30, 58, 23, 0.7);
+}
+
+html.light app-compare-candidates [class*="bg-black"],
+html.light app-compare-candidates [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+html.light app-compare-candidates [class*="border-white"] {
+  border-color: rgba(132, 177, 121, 0.25);
 }

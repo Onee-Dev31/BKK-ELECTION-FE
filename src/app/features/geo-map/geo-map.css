@@ -55,7 +55,7 @@
 }
 
 .district-label {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 900;
     fill: rgba(255, 255, 255, 0);
     text-anchor: middle;
@@ -79,7 +79,7 @@
     fill: rgba(10, 10, 10, 0.9);
     stroke: rgba(255, 255, 255, 0.95);
     stroke-width: 3;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .label-faded {

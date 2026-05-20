@@ -87,12 +87,12 @@ nav:focus-within {
 .result-title {
     color: white;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .result-subtitle {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
     margin-top: 1px;
 }
@@ -135,7 +135,7 @@ nav:focus-within {
 }
 .shortcut-hint {
     font-family: ui-monospace, monospace;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     color: rgba(255,255,255,0.22);
     background: rgba(255,255,255,0.06);
