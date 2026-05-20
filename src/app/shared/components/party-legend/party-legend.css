@@ -44,7 +44,7 @@
 }
 
 .legend-unit {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   color: rgba(255,255,255,0.3);
   text-transform: uppercase;
@@ -56,9 +56,9 @@
     max-height: 80px;
   }
   .legend-logo  { width: 14px; height: 14px; }
-  .legend-name  { font-size: 11px; }
+  .legend-name  { font-size: 14px; }
   .legend-seats { font-size: 14px; }
-  .legend-unit  { font-size: 9px; }
+  .legend-unit  { font-size: 13px; }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -73,7 +73,7 @@
 
 @media (orientation: landscape) and (max-height: 549px) {
   .party-legend { max-height: 56px; gap: 4px 10px; }
-  .legend-name  { font-size: 10px; }
+  .legend-name  { font-size: 13px; }
   .legend-seats { font-size: 12px; }
 }
 

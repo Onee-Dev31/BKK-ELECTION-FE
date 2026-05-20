@@ -39,6 +39,7 @@
     body {
         height: 100%;
         overflow: hidden;
+        font-size: 18px;
         font-family: 'DB Adman X', sans-serif !important;
         background-color: var(--color-bkk-bg) !important;
         color: #e2e8f0 !important;
@@ -101,6 +102,21 @@
     /* padding เพิ่มให้ nav ไม่ทับ home indicator */
     padding-bottom: env(safe-area-inset-bottom);
 }
+
+/* Bangkok skyline — full viewport bg layer below all content */
+.bkk-skyline-layer {
+    position: absolute;
+    inset: 0;
+    background-image: url('/bangkok-bg.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 1;
+}
+
+html.light .bkk-skyline-layer { opacity: 0.05; }
 
 /* Sidebar and Navbar layout properties are managed in their respective CSS and dashboard-layout.css */
 
@@ -379,7 +395,7 @@ html.light .theme-active-dot {
     background: rgba(0, 214, 91, 0.18);
     border: 1px solid rgba(0, 214, 91, 0.35);
     color: #00d65b;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;

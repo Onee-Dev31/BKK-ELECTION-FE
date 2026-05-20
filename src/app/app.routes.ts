@@ -4,7 +4,6 @@ import { CompareCandidates } from './features/compare-candidates/compare-candida
 import { MainLayout } from './core/layout/main-layout/main-layout';
 import { ComingSoon } from './features/coming-soon/coming-soon';
 import { CandidatesStack } from './features/candidates-stack/candidates-stack';
-import { electionGuard } from './core/guards/election.guard';
 
 export const routes: Routes = [
     {

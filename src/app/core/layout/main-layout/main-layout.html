@@ -1,10 +1,14 @@
-<div class="h-dvh w-screen bg-bkk-bg overflow-hidden relative text-white">
-  <div class="absolute inset-0 z-0 xl:pl-24 overflow-y-auto">
+<div class="h-dvh w-screen overflow-hidden relative text-white">
+
+  <!-- Bangkok skyline bg — full viewport -->
+  <div class="bkk-skyline-layer" aria-hidden="true"></div>
+
+  <div class="absolute inset-0 z-10 xl:pl-32 overflow-y-auto">
       <router-outlet></router-outlet>
   </div>
 
   <!-- Desktop sidebar -->
-  <div class="absolute left-4 top-0 z-50 h-full w-fit hidden xl:flex flex-col justify-center">
+  <div class="absolute left-4 top-0 z-50 h-full w-fit hidden xl:flex flex-col justify-center" style="z-index:60">
       <app-sidebar class="block w-fit h-fit"></app-sidebar>
   </div>
 
@@ -35,7 +39,7 @@
           </svg>
         }
 
-        <span class="text-[10px] font-bold tracking-wide">{{ item.label }}</span>
+        <span class="text-[13px] font-bold tracking-wide">{{ item.label }}</span>
 
         @if (isActive(item.path)) {
           <span class="w-1 h-1 rounded-full theme-active-dot"></span>
@@ -57,7 +61,7 @@
             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       }
-      <span class="text-[10px] font-bold tracking-wide">{{ theme.isDark() ? 'Light' : 'Dark' }}</span>
+      <span class="text-[13px] font-bold tracking-wide">{{ theme.isDark() ? 'Light' : 'Dark' }}</span>
     </button>
   </nav>
 </div>

@@ -4,7 +4,7 @@
       <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">เปรียบเทียบนโยบาย</h1>
       <div class="flex items-center gap-2 mt-3">
         <div class="h-1 w-12 rounded-full" style="background: var(--color-bkk-green)"></div>
-        <p class="text-white/35 font-bold uppercase tracking-widest text-[11px]">Compare Vision & Policy</p>
+        <p class="text-white/35 font-bold uppercase tracking-widest text-[14px]">Compare Vision & Policy</p>
       </div>
     </div>
 
@@ -15,7 +15,7 @@
         <div class="glass-panel p-6 rounded-[28px] relative overflow-hidden">
           <div class="absolute inset-0 opacity-10 pointer-events-none" [style.backgroundColor]="candidateA()?.color"></div>
           <div class="relative z-10">
-            <label class="block text-[10px] font-black mb-4 uppercase tracking-widest leading-none" style="color: var(--color-bkk-green)">แคนดิเดตคนที่ 1</label>
+            <label class="block text-[13px] font-black mb-4 uppercase tracking-widest leading-none" style="color: var(--color-bkk-green)">แคนดิเดตคนที่ 1</label>
             <div class="relative">
               <select class="select-dark"
                       [ngModel]="selectedIdA()" (ngModelChange)="selectedIdA.set($event)">
@@ -47,7 +47,7 @@
               </div>
               <div>
                 <h2 class="text-xl sm:text-3xl font-black text-white leading-none tracking-tight">{{ candidateA()?.name }}</h2>
-                <span class="rounded-full px-4 py-1.5 border text-[11px] font-black mt-4 inline-block uppercase tracking-widest"
+                <span class="rounded-full px-4 py-1.5 border text-[14px] font-black mt-4 inline-block uppercase tracking-widest"
                   [style.borderColor]="candidateA()!.color + '50'"
                   [style.backgroundColor]="candidateA()!.color + '15'"
                   [style.color]="candidateA()?.color">
@@ -77,7 +77,7 @@
         <div class="glass-panel p-6 rounded-[28px] relative overflow-hidden">
           <div class="absolute inset-0 opacity-10 pointer-events-none" [style.backgroundColor]="candidateB()?.color"></div>
           <div class="relative z-10">
-            <label class="block text-[10px] font-black mb-4 uppercase tracking-widest leading-none" style="color: var(--color-bkk-green)">แคนดิเดตคนที่ 2</label>
+            <label class="block text-[13px] font-black mb-4 uppercase tracking-widest leading-none" style="color: var(--color-bkk-green)">แคนดิเดตคนที่ 2</label>
             <div class="relative">
               <select class="select-dark"
                       [ngModel]="selectedIdB()" (ngModelChange)="selectedIdB.set($event)">
@@ -109,7 +109,7 @@
               </div>
               <div>
                 <h2 class="text-xl sm:text-3xl font-black text-white leading-none tracking-tight">{{ candidateB()?.name }}</h2>
-                <span class="rounded-full px-4 py-1.5 border text-[11px] font-black mt-4 inline-block uppercase tracking-widest"
+                <span class="rounded-full px-4 py-1.5 border text-[14px] font-black mt-4 inline-block uppercase tracking-widest"
                   [style.borderColor]="candidateB()!.color + '50'"
                   [style.backgroundColor]="candidateB()!.color + '15'"
                   [style.color]="candidateB()?.color">

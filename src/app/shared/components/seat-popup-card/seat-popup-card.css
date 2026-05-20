@@ -58,7 +58,7 @@
 }
 
 .seat-card-district {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 800;
   color: rgba(255,255,255,0.35);
   text-transform: uppercase;
@@ -103,7 +103,7 @@
   }
   .seat-card-photo { width: 44px; height: 44px; }
   .seat-card-name  { font-size: 13px; }
-  .seat-card-district { font-size: 9px; }
+  .seat-card-district { font-size: 13px; }
 }
 
 @media (orientation: landscape) and (max-height: 549px) {
@@ -117,7 +117,7 @@
   .seat-card-photo { width: 36px; height: 36px; }
   .seat-card-name  { font-size: 12px; }
   .seat-card-district { font-size: 8px; }
-  .seat-card-party span { font-size: 10px; }
+  .seat-card-party span { font-size: 13px; }
   .seat-card-party-logo { width: 12px; height: 12px; }
 }
 

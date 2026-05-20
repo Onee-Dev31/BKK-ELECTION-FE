@@ -66,7 +66,7 @@
 }
 
 .chart-label {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.35);
   text-transform: uppercase;
@@ -125,7 +125,7 @@
   .parliament-wrap { padding: 64px 12px 12px; gap: 8px; justify-content: center; }
   .svg-wrap { flex: none; width: 100%; aspect-ratio: 2 / 1; }
   .chart-sub { font-size: 18px; }
-  .chart-label { font-size: 9px; }
+  .chart-label { font-size: 13px; }
   .seat-bar { height: 5px; }
 }
 

@@ -1,68 +1,116 @@
 <div class="stack-page">
 
   <div class="stack-header">
+    <img class="stack-logo" src="/Logo%20วันเลือกตั้ง%20ผู้ว่าฯ%20กทม.%2069%20Final.png" alt="วันเลือกตั้ง ผู้ว่าฯ กทม 69" />
     <h1 class="stack-title">Top 5 ผู้สมัคร</h1>
     <p class="stack-sub">เรียงตามคะแนนสูงสุด</p>
   </div>
 
-  <div class="cards-row" (mouseleave)="hoveredIdx.set(null)">
-    @for (c of top10(); track c.id; let i = $index) {
+  <div class="hero-layout">
 
-      <div #cardCol class="card-col" [class.col-active]="hoveredIdx() === i">
+    <!-- ══ HERO: Rank 1 ══════════════════════════════════════ -->
+    @if (top10()[0]; as hero) {
+    <div class="hero-panel"
+         [style.--hero-color]="hero.color"
+         [style.--hero-glow]="hexToRgba(hero.color, 0.35)"
+         (click)="openModal(hero, 1)">
 
-        <!-- wrapper คุม popup ให้อยู่แค่ในพื้นที่การ์ด ไม่ล้นลงมาทับ detail -->
-        <div class="card-wrapper">
+      <!-- shimmer sweep -->
+      <div class="hero-shimmer"></div>
 
-          <!-- 3D PNG popup -->
-          <img class="card-photo-popup"
-               [src]="imgUrl3D(c.number)" [alt]="c.name" />
+      <!-- rank badge (top-left) -->
+      <div class="hero-rank-block">
+        <span class="hero-rank-label">อันดับ</span>
+        <div class="hero-rank-circle">
+          <span class="hero-rank-num">1</span>
+          <svg class="hero-crown" viewBox="0 0 40 26" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="0,22 8,4 20,16 32,4 40,22" fill="url(#hcg)" stroke="rgba(255,200,0,0.4)" stroke-width="1" stroke-linejoin="round"/>
+            <rect x="0" y="23" width="40" height="3" rx="1.5" fill="url(#hcg)"/>
+            <defs>
+              <linearGradient id="hcg" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ffe566"/>
+                <stop offset="100%" stop-color="#f0a500"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
 
-          <!-- card -->
-          <div class="card"
-               [class.is-hovered]="hoveredIdx() === i"
-               [class.is-dimmed]="hoveredIdx() !== null && hoveredIdx() !== i"
-               (pointerenter)="onPointerEnter(i, $event)"
-               (click)="selectCard(i, cardCol)">
+      <!-- photo section with overlapping stats -->
+      <div class="hero-photo-section">
+        <!-- pentagon background shape -->
+        <div class="hero-pentagon" [style.backgroundColor]="hero.color"></div>
+        <!-- 3D photo -->
+        <img class="hero-photo-3d" [src]="imgUrl3D(hero.number)" [alt]="hero.name"
+             onerror="this.style.opacity='0'" />
+        <!-- stats card overlapping bottom -->
+        <div class="hero-stats-card">
+          <span class="hero-pct" [style.color]="hero.color">{{ hero.percentage }}%</span>
+          <span class="hero-stats-sep"></span>
+          <div class="hero-stats-right">
+            <span class="hero-vote-count">{{ getDisplayVotes(hero.id) }}</span>
+            <span class="hero-vote-label">คะแนน</span>
+          </div>
+        </div>
+      </div>
 
-            <div class="card-img-wrap">
-              <img [src]="imgUrl(c.number)" [alt]="c.name" class="card-img"
+      <!-- name & tags (below photo section) -->
+      <div class="hero-info">
+        <h2 class="hero-name">{{ hero.name }}</h2>
+        <div class="hero-tags">
+          <span class="hero-num-tag"
+                [style.color]="hero.color"
+                [style.borderColor]="hero.color + '55'">เบอร์ {{ hero.number }}</span>
+          <span class="hero-party-tag">{{ hero.party }}</span>
+        </div>
+      </div>
+
+    </div>
+    }
+
+    <!-- ══ LEADERBOARD: Rank 2–5 ══════════════════════════════ -->
+    <div class="leaderboard">
+      @for (c of top10(); track c.id; let i = $index) {
+        @if (i > 0) {
+        <div class="lb-row"
+             [style.--lb-color]="c.color"
+             [style.--lb-delay]="((i - 1) * 100) + 'ms'"
+             [style.--bar-w]="lbBarWidth(c.votes) + '%'"
+             (click)="openModal(c, i + 1)">
+
+          <!-- left: rank + photo + info -->
+          <div class="lb-left">
+            <div class="lb-rank-badge" [style.backgroundColor]="c.color">{{ i + 1 }}</div>
+            <div class="lb-photo-ring" [style.borderColor]="c.color + '66'">
+              <img class="lb-photo" [src]="imgUrl(c.number)" [alt]="c.name"
                    onerror="this.style.display='none'" />
-              <div class="card-img-overlay"
-                   [style.background]="'linear-gradient(to top,' + c.color + 'cc 0%,transparent 50%)'">
+            </div>
+            <div class="lb-info">
+              <div class="lb-name">{{ c.name }}</div>
+              <div class="lb-meta">
+                <span class="lb-num-tag" [style.color]="c.color" [style.borderColor]="c.color + '44'">เบอร์ {{ c.number }}</span>
+                <span class="lb-party">{{ c.party }}</span>
               </div>
             </div>
-
-            <div class="card-rank" [style.backgroundColor]="c.color">{{ i + 1 }}</div>
-
-            <div class="card-info">
-              <div class="card-number" [style.color]="c.color">เบอร์ {{ c.number }}</div>
-              <div class="card-name">{{ c.name }}</div>
-              <span class="card-party" [style.color]="c.color" [style.borderColor]="c.color + '55'">
-                {{ c.party }}
-              </span>
-            </div>
-          </div><!-- /card -->
-
-        </div><!-- /card-wrapper -->
-
-        <!-- detail panel ใต้การ์ด -->
-        <div class="detail-panel" [class.detail-visible]="hoveredIdx() === i">
-          <div class="detail-row">
-            <span class="detail-label">คะแนน</span>
-            <span class="detail-value" [style.color]="c.color">{{ formatVotes(c.votes) }}</span>
           </div>
-          <div class="detail-bar-bg">
-            <div class="detail-bar-fill"
-                 [style.width]="hoveredIdx() === i ? c.percentage + '%' : '0%'"
-                 [style.backgroundColor]="c.color">
-            </div>
+
+          <!-- right: % + votes -->
+          <div class="lb-right">
+            <div class="lb-pct" [style.color]="c.color">{{ c.percentage }}<span class="lb-pct-unit">%</span></div>
+            <div class="lb-votes">{{ getDisplayVotes(c.id) }} คะแนน</div>
           </div>
-          <div class="detail-pct" [style.color]="c.color">{{ c.percentage }}%</div>
+
+          <!-- progress bar -->
+          <div class="lb-bar-track">
+            <div class="lb-bar-fill" [style.backgroundColor]="c.color"></div>
+          </div>
+
         </div>
-      </div><!-- /card-col -->
+        }
+      }
+    </div>
 
-    }
-  </div>
+  </div><!-- /hero-layout -->
 
   @if (showScrollTop()) {
   <button class="scroll-top-btn" (click)="scrollToTop()" aria-label="Scroll to top">
@@ -73,3 +121,102 @@
   }
 
 </div>
+
+<!-- ══════════════════════════════════════════════════════════
+     Candidate Detail Modal
+     ══════════════════════════════════════════════════════════ -->
+@if (selectedModal(); as modal) {
+<div class="modal-backdrop" (click)="closeModal()">
+  <div class="modal-panel" (click)="$event.stopPropagation()">
+
+    <button class="modal-close" (click)="closeModal()" aria-label="ปิด">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <div class="modal-action-row">
+      <button class="modal-btn-ghost" (click)="goToDashboard()">ดูข้อมูลผู้สมัคร</button>
+      <button class="modal-btn-primary" [style.backgroundColor]="modal.c.color" (click)="goToCompare()">
+        เปรียบเทียบกับผู้สมัครอื่น
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="modal-btn-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4M4 17h12m0 0l-4-4m4 4l-4 4"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="modal-body">
+
+      <!-- Left -->
+      <div class="modal-left">
+        <div class="modal-photo-area" [style.--accent]="modal.c.color">
+          <div class="modal-rank-label">อันดับ</div>
+          <div class="modal-rank-num" [style.backgroundColor]="modal.c.color">{{ modal.rank }}</div>
+          <img class="modal-photo-img" [src]="imgUrl3D(modal.c.number)" [alt]="modal.c.name"
+               onerror="this.src='/assets/placeholder.png'" />
+        </div>
+        <div class="modal-votes-block">
+          <span class="modal-pct" [style.color]="modal.c.color">{{ modal.c.percentage }}%</span>
+          <span class="modal-total-votes">{{ formatVotes(modal.c.votes) }} คะแนน</span>
+        </div>
+        <h2 class="modal-name">{{ modal.c.name }}</h2>
+        <div class="modal-meta">
+          <span class="modal-number-tag" [style.color]="modal.c.color" [style.borderColor]="modal.c.color + '44'">
+            เบอร์ {{ modal.c.number }}
+          </span>
+          <span class="modal-party-tag" [style.color]="modal.c.color">{{ modal.c.party }}</span>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="modal-right">
+        <h3 class="modal-section-title">ฐานคะแนนจาก 50 เขต</h3>
+        <div class="modal-rank-stats">
+          <div class="rank-stat">
+            <span class="rank-stat-num" [style.color]="modal.c.color">{{ modalRankCounts().rank1 }}</span>
+            <span class="rank-stat-label">อันดับ 1</span>
+          </div>
+          <div class="rank-stat-divider"></div>
+          <div class="rank-stat">
+            <span class="rank-stat-num">{{ modalRankCounts().rank2 }}</span>
+            <span class="rank-stat-label">อันดับ 2</span>
+          </div>
+          <div class="rank-stat-divider"></div>
+          <div class="rank-stat">
+            <span class="rank-stat-num">{{ modalRankCounts().rank3 }}</span>
+            <span class="rank-stat-label">อันดับ 3</span>
+          </div>
+        </div>
+
+        <div class="mini-map-wrap">
+          <svg class="mini-hex-svg"
+               [attr.viewBox]="'0 0 ' + miniSvgW + ' ' + miniSvgH"
+               [attr.width]="miniSvgW" [attr.height]="miniSvgH">
+            @for (h of miniHexes; track h.id) {
+            <polygon [attr.points]="h.points"
+                     [attr.fill]="hexFill(h.id)"
+                     [attr.fill-opacity]="hexOpacity(h.id)"
+                     stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+            }
+          </svg>
+        </div>
+
+        <h3 class="modal-section-title">คะแนนมาจากเขตใดมากสุด</h3>
+        <div class="top-districts-grid">
+          @for (d of modalTopDistricts(); track d.id) {
+          <div class="top-district-card">
+            <div class="top-district-name">{{ d.name }}</div>
+            <div class="top-district-votes" [style.color]="modal.c.color">{{ formatVotes(d.votes) }}</div>
+            <div class="top-district-meta">
+              <span class="top-district-pct">{{ d.pct }}%</span>
+              <span class="top-district-rank">อันดับ {{ d.rank }}</span>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+}
