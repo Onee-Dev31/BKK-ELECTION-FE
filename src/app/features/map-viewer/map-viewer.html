@@ -103,7 +103,7 @@
 
             <div class="district-inner">
                 <div class="hexagon-content"
-                    [style.--candidate-color]="mapState.activeTab() === 'sk' ? getCouncilColor(district.id) : getGovernorColor(district.leadingCandidateId)">
+                    [ngStyle]="hexStyle(district.id, district.leadingCandidateId)">
                     <span class="district-number">{{ district.number }}</span>
                     <span class="district-title">{{ getShortName(district.id) }}</span>
                 </div>

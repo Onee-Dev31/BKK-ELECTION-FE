@@ -23,6 +23,7 @@ export class CompareCandidates {
   private router = inject(Router);
 
   candidates = this.electionService.candidates;
+  sortedCandidates = computed(() => [...this.candidates()].sort((a, b) => a.id - b.id));
 
   selectedIdA = signal<number>(1);
   selectedIdB = signal<number>(2);

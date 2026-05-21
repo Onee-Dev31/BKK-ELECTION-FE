@@ -12,7 +12,7 @@
     <app-cand-panel
       class="cand-a"
       [info]="candidateAInfo()"
-      [candidates]="candidates()"
+      [candidates]="sortedCandidates()"
       [selectedId]="selectedIdA()"
       (selectedIdChange)="selectedIdA.set($event)">
     </app-cand-panel>
@@ -78,7 +78,7 @@
     <app-cand-panel
       class="cand-b"
       [info]="candidateBInfo()"
-      [candidates]="candidates()"
+      [candidates]="sortedCandidates()"
       [selectedId]="selectedIdB()"
       (selectedIdChange)="selectedIdB.set($event)">
     </app-cand-panel>

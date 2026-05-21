@@ -42,6 +42,13 @@ export class MapViewer {
     return DISTRICT_MAP_NAMES[id] || 'N/A';
   }
 
+  hexStyle(districtId: number, leadingCandidateId?: number): Record<string, string> {
+    const color = this.mapState.activeTab() === 'sk'
+      ? this.getCouncilColor(districtId)
+      : this.getGovernorColor(leadingCandidateId);
+    return { '--candidate-color': color };
+  }
+
   getGovernorColor(candidateId?: number): string {
     const c = candidateId != null ? this.electionService.candidateMap().get(candidateId) : undefined;
     return c ? c.color : '#1e293b';
