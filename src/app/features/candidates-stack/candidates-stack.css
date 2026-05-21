@@ -774,8 +774,6 @@
 
 /* ── Light Theme ─────────────────────────────────────────── */
 
- ิ
-
 :host-context(html.light) .hero-panel {
   background: rgba(255,255,255,0.6);
   border-color: rgba(132,177,121,0.25);

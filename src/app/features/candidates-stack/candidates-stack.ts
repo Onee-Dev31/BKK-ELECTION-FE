@@ -221,7 +221,7 @@ export class CandidatesStack implements OnInit, OnDestroy {
   private readonly AVAILABLE_3D = new Set([1, 8, 4, 3, 6]);
 
   imgUrl3D(n: number): string {
-    const num = this.AVAILABLE_3D.has(n) ? n : 'orther';
+    const num = this.AVAILABLE_3D.has(n) ? n : 'other';
     return `/3D/${num}.png`;
   }
 
