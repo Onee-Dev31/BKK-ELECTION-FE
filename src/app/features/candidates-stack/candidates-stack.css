@@ -89,6 +89,9 @@
 }
 
 @media (min-width: 1280px) {
+  .stack-page {
+    padding-left: 5rem;
+  }
   .hero-layout {
     grid-template-columns: 420px minmax(0, 820px);
     gap: 40px;
