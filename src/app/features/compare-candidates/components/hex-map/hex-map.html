@@ -1,0 +1,29 @@
+@if (candidateA && candidateB && districtH2H) {
+  <!-- Legend -->
+  <div class="hex-legend-row">
+    <div class="hex-legend-item">
+      <span class="hex-legend-dot" [style.backgroundColor]="candidateA.color"></span>
+      <span class="hex-legend-name">{{ candidateA.name }}</span>
+      <span class="hex-legend-count" [style.color]="candidateA.color">นำอยู่ {{ districtH2H.aLeads }} เขต</span>
+    </div>
+    <div class="hex-legend-item">
+      <span class="hex-legend-dot" [style.backgroundColor]="candidateB.color"></span>
+      <span class="hex-legend-name">{{ candidateB.name }}</span>
+      <span class="hex-legend-count" [style.color]="candidateB.color">นำอยู่ {{ districtH2H.bLeads }} เขต</span>
+    </div>
+  </div>
+
+  <!-- Hex SVG -->
+  <div class="hex-map-wrap">
+    <svg class="hex-svg"
+         [attr.viewBox]="'0 0 ' + miniSvgW + ' ' + miniSvgH"
+         [attr.width]="miniSvgW" [attr.height]="miniSvgH">
+      @for (h of miniHexes; track h.id) {
+        <polygon [attr.points]="h.points"
+                 [attr.fill]="hexFill(h.id)"
+                 [attr.fill-opacity]="hexOpacity(h.id)"
+                 stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+      }
+    </svg>
+  </div>
+}

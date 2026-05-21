@@ -1,0 +1,28 @@
+<!-- Tabs -->
+<div class="district-tabs">
+  <button class="district-tab" [class.active]="districtView === 'closest'" (click)="districtViewChange.emit('closest')">
+    5 เขตที่สู้กัน
+  </button>
+  <button class="district-tab" [class.active]="districtView === 'a'" (click)="districtViewChange.emit('a')"
+          [style.--tab-color]="candidateA?.color">
+    {{ firstName(candidateA?.name) }}
+  </button>
+  <button class="district-tab" [class.active]="districtView === 'b'" (click)="districtViewChange.emit('b')"
+          [style.--tab-color]="candidateB?.color">
+    {{ firstName(candidateB?.name) }}
+  </button>
+</div>
+
+<!-- Bar chart -->
+<div class="bar-chart-wrap">
+  @for (d of shownDistricts; track d.id) {
+    <div class="bar-col">
+      <div class="bar-diff-label">ห่างกัน {{ formatVotes(d.diff) }}</div>
+      <div class="bar-pair">
+        <div class="bar bar-a" [style.height]="barHeightA(d)" [style.backgroundColor]="candidateA?.color"></div>
+        <div class="bar bar-b" [style.height]="barHeightB(d)" [style.backgroundColor]="candidateB?.color"></div>
+      </div>
+      <div class="bar-district-name">{{ d.name }}</div>
+    </div>
+  }
+</div>

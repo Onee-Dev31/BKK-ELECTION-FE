@@ -1,0 +1,41 @@
+@if (info; as c) {
+
+  <!-- Rank badge -->
+  <div class="cand-rank-row">
+    <span class="cand-rank-label">อันดับ</span>
+    <div class="cand-rank-circle" [style.backgroundColor]="c.color">{{ c.rank }}</div>
+  </div>
+
+  <!-- Photo -->
+  <div class="cand-photo-wrap" [style.--accent]="c.color">
+    <div class="cand-photo-glow" [style.background]="c.color + '30'"></div>
+    <img class="cand-photo" [src]="getImageUrl(c.number)" [alt]="c.name"
+         onerror="this.style.opacity='0.3'" />
+  </div>
+
+  <!-- Stats -->
+  <div class="cand-stats">
+    <span class="cand-pct" [style.color]="c.color">{{ c.percentage }}%</span>
+    <span class="cand-votes">{{ formatVotes(c.votes) }} คะแนน</span>
+  </div>
+
+  <!-- Name & party -->
+  <h2 class="cand-name">{{ c.name }}</h2>
+  <div class="cand-meta">
+    <span class="cand-num-tag" [style.color]="c.color" [style.borderColor]="c.color + '55'">เบอร์ {{ c.number }}</span>
+    <span class="cand-party-tag" [style.color]="c.color">{{ c.party }}</span>
+  </div>
+
+  <!-- Candidate selector -->
+  <div class="cand-select-wrap">
+    <select class="cand-select"
+            [ngModel]="selectedId" (ngModelChange)="selectedIdChange.emit(+$event)">
+      @for (cand of candidates; track cand.id) {
+        <option [ngValue]="cand.id">{{ cand.name }} (เบอร์ {{ cand.number }})</option>
+      }
+    </select>
+    <svg class="cand-select-arrow" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+    </svg>
+  </div>
+}

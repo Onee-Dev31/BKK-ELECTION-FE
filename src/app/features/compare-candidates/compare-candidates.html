@@ -1,147 +1,97 @@
-<div #scrollEl class="w-full h-full overflow-y-auto p-4 sm:p-6 lg:p-10 layout-content-area relative text-white" style="padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px))" (scroll)="onScroll(scrollEl)">
-  <div class="max-w-6xl mx-auto">
-    <div class="mb-6 lg:mb-12">
-      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">เปรียบเทียบนโยบาย</h1>
-      <div class="flex items-center gap-2 mt-3">
-        <div class="h-1 w-12 rounded-full" style="background: var(--color-bkk-green)"></div>
-        <p class="text-white/35 font-bold uppercase tracking-widest text-[17px]">Compare Vision & Policy</p>
-      </div>
-    </div>
+<div #scrollEl class="compare-page" (scroll)="onScroll(scrollEl)">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-
-      <!-- ── Candidate A ── -->
-      <div class="flex flex-col gap-10">
-        <div class="glass-panel p-6 rounded-[28px] relative overflow-hidden">
-          <div class="absolute inset-0 opacity-10 pointer-events-none" [style.backgroundColor]="candidateA()?.color"></div>
-          <div class="relative z-10">
-            <label class="block text-[16px] font-black mb-4 uppercase tracking-widest leading-none" style="color: var(--color-bkk-green)">แคนดิเดตคนที่ 1</label>
-            <div class="relative">
-              <select class="select-dark"
-                      [ngModel]="selectedIdA()" (ngModelChange)="selectedIdA.set($event)">
-                @for (c of candidates(); track c.id) {
-                  <option [ngValue]="c.id">{{ c.name }} (เบอร์ {{ c.number }}) - พรรค{{ c.party }}</option>
-                }
-              </select>
-              <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none" style="color: var(--color-bkk-green)">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        @if (candidateA()) {
-        <div class="tilt-scene" (mousemove)="onMove($event, 'A')" (mouseleave)="onLeave('A')">
-          <div class="tilt-card" [ngStyle]="tiltStyle(tiltA())">
-            <div class="tilt-glare" [ngStyle]="glareStyle(tiltA())"></div>
-            <div class="tilt-photo-wrap">
-              <img [src]="getImageUrl(candidateA()!.number)" [alt]="candidateA()!.name" class="tilt-photo" />
-            </div>
-            <div class="tilt-body">
-              <div class="number-badge"
-                [style.borderColor]="candidateA()?.color"
-                [style.backgroundColor]="candidateA()!.color + '20'">
-                {{ candidateA()?.number }}
-              </div>
-              <div>
-                <h2 class="text-xl sm:text-3xl font-black text-white leading-none tracking-tight">{{ candidateA()?.name }}</h2>
-                <span class="rounded-full px-4 py-1.5 border text-[17px] font-black mt-4 inline-block uppercase tracking-widest"
-                  [style.borderColor]="candidateA()!.color + '50'"
-                  [style.backgroundColor]="candidateA()!.color + '15'"
-                  [style.color]="candidateA()?.color">
-                  พรรค{{ candidateA()?.party }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        }
-
-        <div class="flex flex-col gap-4">
-          @for (policy of getPolicies(candidateA()?.id); track policy.category) {
-            <div class="policy-card" [style.borderLeftColor]="candidateA()?.color || 'var(--color-bkk-green)'">
-              <div class="policy-category" [style.color]="candidateA()?.color || 'var(--color-bkk-green)'">
-                <span class="w-1.5 h-1.5 rounded-full shrink-0" [style.backgroundColor]="candidateA()?.color || 'var(--color-bkk-green)'"></span>
-                {{ policy.category }}
-              </div>
-              <p class="policy-desc">{{ policy.description }}</p>
-            </div>
-          }
-        </div>
-      </div>
-
-      <!-- ── Candidate B ── -->
-      <div class="flex flex-col gap-10">
-        <div class="glass-panel p-6 rounded-[28px] relative overflow-hidden">
-          <div class="absolute inset-0 opacity-10 pointer-events-none" [style.backgroundColor]="candidateB()?.color"></div>
-          <div class="relative z-10">
-            <label class="block text-[16px] font-black mb-4 uppercase tracking-widest leading-none" style="color: var(--color-bkk-green)">แคนดิเดตคนที่ 2</label>
-            <div class="relative">
-              <select class="select-dark"
-                      [ngModel]="selectedIdB()" (ngModelChange)="selectedIdB.set($event)">
-                @for (c of candidates(); track c.id) {
-                  <option [ngValue]="c.id">{{ c.name }} (เบอร์ {{ c.number }}) - พรรค{{ c.party }}</option>
-                }
-              </select>
-              <div class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none" style="color: var(--color-bkk-green)">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        @if (candidateB()) {
-        <div class="tilt-scene" (mousemove)="onMove($event, 'B')" (mouseleave)="onLeave('B')">
-          <div class="tilt-card" [ngStyle]="tiltStyle(tiltB())">
-            <div class="tilt-glare" [ngStyle]="glareStyle(tiltB())"></div>
-            <div class="tilt-photo-wrap">
-              <img [src]="getImageUrl(candidateB()!.number)" [alt]="candidateB()!.name" class="tilt-photo" />
-            </div>
-            <div class="tilt-body">
-              <div class="number-badge"
-                [style.borderColor]="candidateB()?.color"
-                [style.backgroundColor]="candidateB()!.color + '20'">
-                {{ candidateB()?.number }}
-              </div>
-              <div>
-                <h2 class="text-xl sm:text-3xl font-black text-white leading-none tracking-tight">{{ candidateB()?.name }}</h2>
-                <span class="rounded-full px-4 py-1.5 border text-[17px] font-black mt-4 inline-block uppercase tracking-widest"
-                  [style.borderColor]="candidateB()!.color + '50'"
-                  [style.backgroundColor]="candidateB()!.color + '15'"
-                  [style.color]="candidateB()?.color">
-                  พรรค{{ candidateB()?.party }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        }
-
-        <div class="flex flex-col gap-4">
-          @for (policy of getPolicies(candidateB()?.id); track policy.category) {
-            <div class="policy-card" [style.borderLeftColor]="candidateB()?.color || 'var(--color-bkk-green)'">
-              <div class="policy-category" [style.color]="candidateB()?.color || 'var(--color-bkk-green)'">
-                <span class="w-1.5 h-1.5 rounded-full shrink-0" [style.backgroundColor]="candidateB()?.color || 'var(--color-bkk-green)'"></span>
-                {{ policy.category }}
-              </div>
-              <p class="policy-desc">{{ policy.description }}</p>
-            </div>
-          }
-        </div>
-      </div>
-
-    </div>
+  <!-- Page header (mobile only) -->
+  <div class="page-header-mobile">
+    <h1 class="page-title-mobile">เปรียบเทียบผู้สมัคร</h1>
+    <div class="page-subtitle-mobile">Compare Candidates</div>
   </div>
 
+  <div class="compare-grid">
+
+    <!-- Left candidate panel -->
+    <app-cand-panel
+      class="cand-a"
+      [info]="candidateAInfo()"
+      [candidates]="candidates()"
+      [selectedId]="selectedIdA()"
+      (selectedIdChange)="selectedIdA.set($event)">
+    </app-cand-panel>
+
+    <!-- Center panel -->
+    <div class="center-panel">
+
+      <!-- Desktop header -->
+      <div class="page-header-desktop">
+        <h1 class="page-title-desktop">เปรียบเทียบผู้สมัคร</h1>
+        <div class="page-subtitle-desktop">Compare Candidates</div>
+      </div>
+
+      <!-- Vote difference bar -->
+      @if (voteDiff()) {
+        <div class="glass-card vote-diff-card">
+          <app-vote-bar
+            [voteDiff]="voteDiff()"
+            [candidateA]="candidateA()"
+            [candidateB]="candidateB()">
+          </app-vote-bar>
+        </div>
+      }
+
+      <!-- Swap button (mobile) -->
+      <div class="swap-row-mobile">
+        <button class="swap-btn" (click)="swap()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="swap-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4M4 17h12m0 0l-4-4m4 4l-4 4"/>
+          </svg>
+          สลับ
+        </button>
+      </div>
+
+      <!-- Hex map -->
+      <div class="glass-card">
+        <h3 class="section-title">เปรียบเทียบฐานคะแนน</h3>
+        <app-hex-map
+          [miniHexes]="miniHexes"
+          [miniSvgW]="miniSvgW"
+          [miniSvgH]="miniSvgH"
+          [candidateA]="candidateA()"
+          [candidateB]="candidateB()"
+          [districtH2H]="districtH2H()">
+        </app-hex-map>
+      </div>
+
+      <!-- District comparison chart -->
+      <div class="glass-card">
+        <h3 class="section-title">เปรียบเทียบรายเขต</h3>
+        <app-district-chart
+          [shownDistricts]="shownDistricts()"
+          [districtView]="districtView()"
+          [candidateA]="candidateA()"
+          [candidateB]="candidateB()"
+          (districtViewChange)="districtView.set($event)">
+        </app-district-chart>
+      </div>
+
+    </div>
+
+    <!-- Right candidate panel -->
+    <app-cand-panel
+      class="cand-b"
+      [info]="candidateBInfo()"
+      [candidates]="candidates()"
+      [selectedId]="selectedIdB()"
+      (selectedIdChange)="selectedIdB.set($event)">
+    </app-cand-panel>
+
+  </div><!-- /compare-grid -->
+
+  <!-- Scroll to top -->
   @if (showScrollTop()) {
-  <button class="scroll-top-btn" (click)="scrollToTop()" aria-label="Scroll to top">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
-    </svg>
-  </button>
+    <button class="scroll-top-btn" (click)="scrollToTop()" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
   }
+
 </div>

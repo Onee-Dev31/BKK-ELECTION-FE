@@ -42,8 +42,9 @@
         font-size: 20px;
         font-family: 'DB Adman X', sans-serif !important;
         background-color: var(--color-bkk-bg) !important;
+        background-image: linear-gradient(to bottom, rgba(0, 214, 91, 0.04) 0%, transparent 100%);
+        background-attachment: fixed;
         color: #e2e8f0 !important;
-        /* Off-white for dark mode */
         -webkit-font-smoothing: antialiased;
     }
 
@@ -114,6 +115,8 @@
     opacity: 0.07;
     pointer-events: none;
     z-index: 1;
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 20%, transparent 45%);
+    mask-image: linear-gradient(to top, black 0%, black 20%, transparent 45%);
 }
 
 html.light .bkk-skyline-layer { opacity: 0.05; }
@@ -216,6 +219,7 @@ html.light {
 
 html.light body {
     background-color: #e8f5bd !important;
+    background-image: linear-gradient(to bottom, rgba(132, 177, 121, 0.1) 0%, transparent 50%);
     color: #2d4a25 !important;
 }
 

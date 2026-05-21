@@ -189,8 +189,9 @@ export class CandidatesStack implements OnInit, OnDestroy {
   }
 
   goToCompare() {
+    const m = this.selectedModal();
     this.closeModal();
-    this.router.navigate(['/compare']);
+    this.router.navigate(['/compare'], { queryParams: m ? { a: m.c.id } : {} });
   }
 
   // ── Scroll ───────────────────────────────────────────────────

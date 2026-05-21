@@ -1,0 +1,17 @@
+@if (voteDiff && candidateA && candidateB) {
+  <div class="vote-diff-label">ห่างกัน {{ formatVotes(voteDiff.diff) }} คะแนน</div>
+
+  <div class="vote-bar-row">
+    <img class="vote-bar-avatar" [src]="getImageUrl(candidateA.number)" [alt]="candidateA.name" />
+    <div class="vote-bar-track">
+      <div class="vote-bar-a" [style.width]="voteDiff.aWidth + '%'" [style.backgroundColor]="candidateA.color"></div>
+      <div class="vote-bar-b" [style.width]="voteDiff.bWidth + '%'" [style.backgroundColor]="candidateB.color"></div>
+    </div>
+    <img class="vote-bar-avatar" [src]="getImageUrl(candidateB.number)" [alt]="candidateB.name" />
+  </div>
+
+  <div class="vote-bar-pcts">
+    <span [style.color]="candidateA.color">{{ voteDiff.aWidth.toFixed(1) }}%</span>
+    <span [style.color]="candidateB.color">{{ voteDiff.bWidth.toFixed(1) }}%</span>
+  </div>
+}

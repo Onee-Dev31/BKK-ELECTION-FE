@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+
+.hex-legend-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.hex-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 15px;
+}
+
+.hex-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hex-legend-name {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+  flex: 1;
+}
+
+.hex-legend-count {
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.hex-map-wrap {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 220px;
+}
+
+.hex-svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Responsive ── */
+@media (min-width: 1280px) {
+  .hex-map-wrap { max-height: 170px; }
+}
+
+@media (max-width: 1279px) and (min-width: 641px) {
+  .hex-map-wrap { max-height: 190px; }
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .hex-map-wrap { height: 160px; }
+}
+
+@media (max-width: 480px) {
+  .hex-map-wrap { max-height: 180px; }
+}
+
+/* ── Light theme ── */
+:host-context(html.light) .hex-legend-name { color: rgba(45, 74, 37, 0.7); }
