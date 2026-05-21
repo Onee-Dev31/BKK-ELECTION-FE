@@ -17,20 +17,16 @@ export class DistrictChart {
   @Input() candidateB: Candidate | undefined;
   @Output() districtViewChange = new EventEmitter<DistrictView>();
 
-  get maxA(): number {
-    return Math.max(...this.shownDistricts.map(d => d.aVotes), 1);
-  }
-
-  get maxB(): number {
-    return Math.max(...this.shownDistricts.map(d => d.bVotes), 1);
+  get maxVotes(): number {
+    return Math.max(...this.shownDistricts.flatMap(d => [d.aVotes, d.bVotes]), 1);
   }
 
   barHeightA(d: DistrictEntry): string {
-    return ((d.aVotes / this.maxA) * 100).toFixed(1) + '%';
+    return ((d.aVotes / this.maxVotes) * 100).toFixed(1) + '%';
   }
 
   barHeightB(d: DistrictEntry): string {
-    return ((d.bVotes / this.maxB) * 100).toFixed(1) + '%';
+    return ((d.bVotes / this.maxVotes) * 100).toFixed(1) + '%';
   }
 
   firstName(name: string | undefined): string {

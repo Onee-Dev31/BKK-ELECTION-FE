@@ -9,14 +9,17 @@ import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
 import { sumVotes, calcPercent } from '../../core/utils/election.utils';
 
 // Piece in a 100x100 SVG viewBox; tabs protrude outside via overflow: visible.
-const MALE_TAB_SIZE = 32;
-const FEMALE_TAB_SIZE = 38;
+// Male and female sizes must match so adjacent tabs interlock seamlessly.
+// COL_STEP ≈ 1.1 × cell_width (9.6 ≈ 1.1 × 8.72) so SVG boundaries of
+// adjacent cells align, letting the symmetric ±17.5-unit tabs fit perfectly.
+const MALE_TAB_SIZE = 35;
+const FEMALE_TAB_SIZE = 35;
 const CORNER_RADIUS = 10;
-const COL_STEP = 10;  
-const ROW_STEP = 10.7;
-const MALE_TAB_NECK = 22;
-const FEMALE_TAB_NECK = 36;
-const FEMALE_TAB_LIP_ROUNDING = 4;
+const COL_STEP = 9.6;
+const ROW_STEP = 10.3;
+const MALE_TAB_NECK = 28;
+const FEMALE_TAB_NECK = 28;
+const FEMALE_TAB_LIP_ROUNDING = 0;
 
 @Component({
   selector: 'app-jigsaw-map',

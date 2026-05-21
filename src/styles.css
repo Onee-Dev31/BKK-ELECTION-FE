@@ -119,7 +119,12 @@
     mask-image: linear-gradient(to top, black 0%, black 20%, transparent 45%);
 }
 
-html.light .bkk-skyline-layer { opacity: 0.05; }
+html.light .bkk-skyline-layer {
+    opacity: 0.18;
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 30%, transparent 65%);
+    mask-image: linear-gradient(to top, black 0%, black 30%, transparent 65%);
+    mix-blend-mode: multiply;
+}
 
 /* Sidebar and Navbar layout properties are managed in their respective CSS and dashboard-layout.css */
 
