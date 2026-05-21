@@ -23,6 +23,10 @@
     overflow: visible;
 }
 
+@keyframes path-reveal {
+    from { opacity: 0; transform: scale(0.88); }
+}
+
 .district-path {
     stroke: rgba(255, 255, 255, 0.55);
     stroke-width: 1.5;
@@ -30,6 +34,13 @@
     vector-effect: non-scaling-stroke;
     paint-order: fill stroke;
     transition: filter 0.2s ease, opacity 0.3s ease, stroke-opacity 0.2s ease;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: path-reveal 0.5s ease backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .district-path { animation: none; }
 }
 
 .district-path:hover {

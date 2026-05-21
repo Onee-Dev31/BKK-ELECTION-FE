@@ -40,6 +40,10 @@
     container-type: inline-size;
 }
 
+@keyframes hex-appear {
+    from { opacity: 0; transform: scale(0.45); }
+}
+
 .district-cell {
     position: absolute;
     cursor: pointer;
@@ -49,6 +53,11 @@
     z-index: 1;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     will-change: transform;
+    animation: hex-appear 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .district-cell { animation: none; }
 }
 
 .district-cell:hover {

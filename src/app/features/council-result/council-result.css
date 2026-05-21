@@ -4,3 +4,15 @@
   height: 100%;
   overflow: hidden;
 }
+
+@keyframes row-in {
+  from { opacity: 0; transform: translateX(-10px); }
+}
+
+.list-row {
+  animation: row-in 0.28s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-row { animation: none; }
+}
