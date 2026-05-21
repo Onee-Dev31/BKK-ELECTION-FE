@@ -2,8 +2,14 @@
    PAGE SHELL
    ══════════════════════════════════════════════════════════ */
 
+:host {
+  display: block;
+  height: 100%;
+  overflow-y: auto;
+}
+
 .stack-page {
-  min-height: 100vh;
+  min-height: 100%;
   background: transparent;
   display: flex;
   flex-direction: column;

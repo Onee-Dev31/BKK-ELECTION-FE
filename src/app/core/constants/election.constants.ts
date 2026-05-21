@@ -10,7 +10,7 @@ export const ELECTION_CONSTANTS = {
         PARTY_LOGO: 'https://storage.googleapis.com/ers-static/parties/{id}.png'
     },
     CANDIDATE_COLORS: {
-        8: '#22c55e', // ชัชชาติ
+        8: '#2E875B', // ชัชชาติ
         4: '#3b82f6', // สุชัชวีร์
         1: '#f97316', // วิโรจน์
         3: '#0ea5e9', // สกลธี
