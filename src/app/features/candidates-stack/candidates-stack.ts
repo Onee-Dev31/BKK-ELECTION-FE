@@ -4,37 +4,13 @@ import { Router } from '@angular/router';
 import { ElectionService } from '../../core/services/election.service';
 import { MapStateService } from '../../core/services/map-state';
 import { ELECTION_CONSTANTS } from '../../core/constants/election.constants';
-import { DISTRICT_LAYOUTS } from '../../core/constants/map-layout.constants';
 import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
 import { Candidate } from '../../core/models/election.models';
+import { formatVotes, hexToRgba } from '../../core/utils/election.utils';
+import { MINI_HEXES, MINI_SVG_W, MINI_SVG_H } from '../compare-candidates/compare-hex.utils';
 
-// Mini hex map geometry
-const HEX_R = 17;
-const COL_STEP = HEX_R * Math.sqrt(3);
-const ROW_STEP = HEX_R * 1.5;
-const ROW_OFFSET = COL_STEP / 2;
-const PAD = HEX_R + 8;
-
-interface MiniHex { id: number; points: string; }
-
-const MINI_HEXES: MiniHex[] = DISTRICT_LAYOUTS.map(d => {
-  const cx = PAD + (d.col - 1) * COL_STEP + (d.row % 2 === 0 ? ROW_OFFSET : 0);
-  const cy = PAD + (d.row - 1) * ROW_STEP;
-  const h = HEX_R * 0.866;
-  const h2 = HEX_R * 0.5;
-  const pts = [
-    `${cx.toFixed(1)},${(cy - HEX_R).toFixed(1)}`,
-    `${(cx + h).toFixed(1)},${(cy - h2).toFixed(1)}`,
-    `${(cx + h).toFixed(1)},${(cy + h2).toFixed(1)}`,
-    `${cx.toFixed(1)},${(cy + HEX_R).toFixed(1)}`,
-    `${(cx - h).toFixed(1)},${(cy + h2).toFixed(1)}`,
-    `${(cx - h).toFixed(1)},${(cy - h2).toFixed(1)}`,
-  ].join(' ');
-  return { id: d.id, points: pts };
-});
-
-const MINI_SVG_W = Math.ceil(PAD + (10 - 1) * COL_STEP + ROW_OFFSET + HEX_R + 4);
-const MINI_SVG_H = Math.ceil(PAD + (9 - 1) * ROW_STEP + HEX_R + 4);
+const RANK_OPACITY: Record<number, number> = { 1: 1, 2: 0.55, 3: 0.3 };
+const AVAILABLE_3D = new Set([1, 3, 4, 6, 8]);
 
 @Component({
   selector: 'app-candidates-stack',
@@ -50,16 +26,14 @@ export class CandidatesStack implements OnInit, OnDestroy {
   private mapState = inject(MapStateService);
 
   top10 = computed(() =>
-    [...this.svc.candidates()]
-      .sort((a, b) => b.votes - a.votes)
-      .slice(0, 5)
+    [...this.svc.candidates()].sort((a, b) => b.votes - a.votes).slice(0, 5)
   );
 
   showScrollTop = signal(false);
 
-  // ── CountUp ─────────────────────────────────────────────────
   private countUpMap = signal<Map<number, number>>(new Map());
   private countUpStarted = false;
+  private rafId = 0;
 
   constructor() {
     effect(() => {
@@ -83,9 +57,9 @@ export class CandidatesStack implements OnInit, OnDestroy {
       const m = new Map<number, number>();
       candidates.forEach(c => m.set(c.id, Math.round(c.votes * eased)));
       this.countUpMap.set(m);
-      if (t < 1) requestAnimationFrame(tick);
+      if (t < 1) this.rafId = requestAnimationFrame(tick);
     };
-    requestAnimationFrame(tick);
+    this.rafId = requestAnimationFrame(tick);
   }
 
   getDisplayVotes(id: number): string {
@@ -93,20 +67,13 @@ export class CandidatesStack implements OnInit, OnDestroy {
     return this.formatVotes(v);
   }
 
-  // Leaderboard bar width relative to rank 1
   lbBarWidth(votes: number): number {
     const top = this.top10()[0]?.votes ?? 1;
     return Math.round((votes / top) * 100);
   }
 
-  hexToRgba(hex: string, alpha: number): string {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-  }
+  readonly hexToRgba = hexToRgba;
 
-  // ── Modal state ─────────────────────────────────────────────
   selectedModal = signal<{ c: Candidate; rank: number } | null>(null);
 
   readonly miniHexes = MINI_HEXES;
@@ -165,10 +132,7 @@ export class CandidatesStack implements OnInit, OnDestroy {
   hexOpacity(id: number): number {
     const d = this.modalDistrictMap().get(id);
     if (!d || d.votes === 0) return 0.18;
-    if (d.rank === 1) return 1;
-    if (d.rank === 2) return 0.55;
-    if (d.rank === 3) return 0.3;
-    return 0.12;
+    return RANK_OPACITY[d.rank] ?? 0.12;
   }
 
   openModal(c: Candidate, rank: number) {
@@ -194,7 +158,6 @@ export class CandidatesStack implements OnInit, OnDestroy {
     this.router.navigate(['/compare'], { queryParams: m ? { a: m.c.id } : {} });
   }
 
-  // ── Scroll ───────────────────────────────────────────────────
   private scrollContainer: HTMLElement | null = null;
   private scrollHandler = () => {
     this.showScrollTop.set((this.scrollContainer?.scrollTop ?? 0) > 300);
@@ -206,6 +169,7 @@ export class CandidatesStack implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    cancelAnimationFrame(this.rafId);
     this.scrollContainer?.removeEventListener('scroll', this.scrollHandler);
     document.body.style.overflow = '';
   }
@@ -218,14 +182,10 @@ export class CandidatesStack implements OnInit, OnDestroy {
     return ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', n.toString());
   }
 
-  private readonly AVAILABLE_3D = new Set([1, 8, 4, 3, 6]);
-
   imgUrl3D(n: number): string {
-    const num = this.AVAILABLE_3D.has(n) ? n : 'other';
+    const num = AVAILABLE_3D.has(n) ? n : 'other';
     return `/3D/${num}.png`;
   }
 
-  formatVotes(v: number) {
-    return v.toLocaleString('th-TH');
-  }
+  readonly formatVotes = formatVotes;
 }

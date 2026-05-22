@@ -11,10 +11,7 @@ import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.cons
 export class ElectionService {
   electionState = signal<ElectionData | null>(null);
 
-  candidates = computed(() => {
-    const raw = this.electionState()?.candidates || [];
-    return raw.map(c => ({ ...c }));
-  });
+  candidates = computed(() => this.electionState()?.candidates ?? []);
 
   candidateMap = computed(() => {
     const map = new Map<number, Candidate>();

@@ -53,6 +53,6 @@ export class DashboardLayout implements OnInit {
     navigator.clipboard.writeText(url).then(() => {
       this.copyToast.set(true);
       setTimeout(() => this.copyToast.set(false), 2200);
-    });
+    }).catch(() => {});
   }
 }

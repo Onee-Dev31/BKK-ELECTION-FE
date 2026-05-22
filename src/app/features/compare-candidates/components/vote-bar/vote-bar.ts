@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Candidate } from '../../../../core/models/election.models';
 import { VoteDiff } from '../../compare-candidates.types';
 import { ELECTION_CONSTANTS } from '../../../../core/constants/election.constants';
+import { formatVotes } from '../../../../core/utils/election.utils';
 
 @Component({
   selector: 'app-vote-bar',
@@ -20,7 +21,5 @@ export class VoteBar {
     return ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', number.toString());
   }
 
-  formatVotes(v: number): string {
-    return v.toLocaleString('th-TH');
-  }
+  readonly formatVotes = formatVotes;
 }

@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Candidate } from '../../../../core/models/election.models';
 import { DistrictEntry, DistrictView } from '../../compare-candidates.types';
+import { formatVotes } from '../../../../core/utils/election.utils';
 
 @Component({
   selector: 'app-district-chart',
@@ -33,7 +34,5 @@ export class DistrictChart {
     return (name ?? '').split(' ')[0];
   }
 
-  formatVotes(v: number): string {
-    return v.toLocaleString('th-TH');
-  }
+  readonly formatVotes = formatVotes;
 }
