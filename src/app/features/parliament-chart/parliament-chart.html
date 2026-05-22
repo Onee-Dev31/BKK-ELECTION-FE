@@ -11,6 +11,7 @@
           [class.seat-selected]="selectedSeat()?.dot?.districtId === dot.districtId"
           (click)="$event.stopPropagation(); selectSeat(dot)"
           [style.cursor]="dot.candidate ? 'pointer' : 'default'"
+          [style.animation-delay]="$index * 15 + 'ms'"
          >
           <title>{{ dot.candidate ? dot.candidate.fullName + ' — เขต ' + dot.districtId : '' }}</title>
         </polygon>

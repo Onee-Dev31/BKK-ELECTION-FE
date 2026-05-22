@@ -32,16 +32,18 @@
     transition: filter 0.2s ease, opacity 0.3s ease, stroke-opacity 0.2s ease;
 }
 
-@keyframes map-fade-in {
-    from { opacity: 0; }
+@keyframes district-pop-in {
+    from { transform: scale(0); }
 }
 
-.geo-svg {
-    animation: map-fade-in 0.4s ease-out both;
+.district-path {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: district-pop-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .geo-svg { animation: none; }
+    .district-path { animation: none; }
 }
 
 .district-path:hover {

@@ -6,11 +6,11 @@
 }
 
 @keyframes row-in {
-  from { opacity: 0; transform: translateX(-10px); }
+  from { opacity: 0; transform: translateY(10px); }
 }
 
 .list-row {
-  animation: row-in 0.28s ease both;
+  animation: row-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
