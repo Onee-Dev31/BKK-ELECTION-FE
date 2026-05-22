@@ -14,9 +14,10 @@ export class Sidebar {
   router = inject(Router);
 
   navItems = [
-    { path: '/dashboard', id: 'map', icon: '🗺️', label: 'หน้าแรก' },
-    { path: '/compare', id: 'compare', icon: '⚖️', label: 'เปรียบเทียบนโยบาย' },
-    // { path: '/top5', id: 'top5', icon: '🏆', label: 'Top 5 ผู้สมัคร' }
+    { path: '/dashboard', id: 'map', label: 'หน้าแรก' },
+    { path: '/candidates', id: 'candidates', label: 'ผู้สมัคร' },
+    { path: '/districts', id: 'districts', label: 'รายเขต' },
+    { path: '/compare', id: 'compare', label: 'เปรียบเทียบ' },
   ];
 
   isActive(path: string) {

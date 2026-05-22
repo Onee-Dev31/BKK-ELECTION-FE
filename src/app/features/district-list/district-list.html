@@ -1,0 +1,56 @@
+<app-district-modal></app-district-modal>
+
+<div class="page">
+
+  <div class="page-header">
+    <h1 class="page-title">ผลคะแนนรายเขต</h1>
+    <div class="sort-pills">
+      <button class="sort-btn" [class.sort-btn-active]="sortKey() === 'number'" (click)="sortKey.set('number')">เขต</button>
+      <button class="sort-btn" [class.sort-btn-active]="sortKey() === 'votes'" (click)="sortKey.set('votes')">คะแนน</button>
+      <button class="sort-btn" [class.sort-btn-active]="sortKey() === 'leader'" (click)="sortKey.set('leader')">เบอร์</button>
+    </div>
+  </div>
+
+  <div class="district-list">
+    @for (d of districts(); track d.id) {
+      <div class="district-row" (click)="openDistrict(d.id)">
+
+        <div class="district-num">{{ d.id }}</div>
+
+        <div class="district-info">
+          <div class="district-name">{{ d.name }}</div>
+          @if (d.leader) {
+            <div class="leader-meta">
+              <span class="leader-dot" [style.backgroundColor]="d.leader.color"></span>
+              <span class="leader-name" [style.color]="d.leader.color">เบอร์ {{ d.leader.number }} {{ d.leader.name }}</span>
+            </div>
+          } @else {
+            <div class="no-data">ยังไม่มีข้อมูล</div>
+          }
+        </div>
+
+        <div class="district-right">
+          @if (d.leader) {
+            <div class="leader-votes">{{ formatVotes(d.leaderVotes) }}</div>
+            <div class="pct-row">
+              <div class="top3-dots">
+                @for (t of d.top3; track $index) {
+                  <div class="top3-dot" [style.backgroundColor]="t.color"></div>
+                }
+              </div>
+              <span class="pct-val">{{ d.pct }}%</span>
+            </div>
+          }
+        </div>
+
+        <div class="arrow-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </div>
+
+      </div>
+    }
+  </div>
+
+</div>

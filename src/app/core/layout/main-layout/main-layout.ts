@@ -14,9 +14,10 @@ export class MainLayout {
   theme = inject(Theme);
 
   navItems = [
-    { path: '/', id: 'map', label: 'หน้าแรก' },
+    { path: '/dashboard', id: 'map', label: 'หน้าแรก' },
+    { path: '/candidates', id: 'candidates', label: 'ผู้สมัคร' },
+    { path: '/districts', id: 'districts', label: 'รายเขต' },
     { path: '/compare', id: 'compare', label: 'เปรียบเทียบ' },
-    { path: '/top5', id: 'top5', label: 'Top 5' },
   ];
 
   isActive(path: string) {

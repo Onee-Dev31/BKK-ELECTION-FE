@@ -1,0 +1,49 @@
+<div class="page">
+
+  <div class="page-header">
+    <h1 class="page-title">ผู้สมัครทั้งหมด</h1>
+    <div class="sort-pills">
+      <button class="sort-btn" [class.sort-btn-active]="sortKey() === 'rank'" (click)="sortKey.set('rank')">คะแนน</button>
+      <button class="sort-btn" [class.sort-btn-active]="sortKey() === 'number'" (click)="sortKey.set('number')">เบอร์</button>
+    </div>
+  </div>
+
+  <div class="cand-list">
+    @for (c of candidates(); track c.id) {
+      <div class="cand-row" (click)="goToMap(c.id)" [style.--c]="c.color">
+
+        <div class="rank-badge" [style.backgroundColor]="c.color">{{ c.rank }}</div>
+
+        <div class="photo-wrap" [style.borderColor]="c.color + '55'">
+          <img class="photo" [src]="imgUrl(c.number)" [alt]="c.name"
+               onerror="this.style.opacity='0'" />
+        </div>
+
+        <div class="cand-info">
+          <div class="cand-name">{{ c.name }}</div>
+          <div class="cand-meta">
+            <span class="num-badge" [style.color]="c.color" [style.borderColor]="c.color + '44'">เบอร์ {{ c.number }}</span>
+            <span class="party-name">{{ c.party }}</span>
+          </div>
+        </div>
+
+        <div class="cand-right">
+          <div class="vote-count">{{ formatVotes(c.votes) }}</div>
+          <div class="pct-line">
+            <div class="pct-bar-bg">
+              <div class="pct-bar-fill" [style.width]="(c.votes / maxVotes() * 100) + '%'" [style.backgroundColor]="c.color"></div>
+            </div>
+            <span class="pct-label">{{ c.percentage }}%</span>
+          </div>
+        </div>
+
+        <div class="map-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </div>
+      </div>
+    }
+  </div>
+
+</div>

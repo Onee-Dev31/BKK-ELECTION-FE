@@ -4,6 +4,8 @@ import { CompareCandidates } from './features/compare-candidates/compare-candida
 import { MainLayout } from './core/layout/main-layout/main-layout';
 import { ComingSoon } from './features/coming-soon/coming-soon';
 import { CandidatesStack } from './features/candidates-stack/candidates-stack';
+import { AllCandidates } from './features/all-candidates/all-candidates';
+import { DistrictList } from './features/district-list/district-list';
 
 export const routes: Routes = [
     {
@@ -14,6 +16,8 @@ export const routes: Routes = [
             { path: '', component: CandidatesStack },
             { path: 'dashboard', component: DashboardLayout },
             { path: 'compare', component: CompareCandidates },
+            { path: 'candidates', component: AllCandidates },
+            { path: 'districts', component: DistrictList },
             { path: 'top5', component: CandidatesStack }
         ]
     },

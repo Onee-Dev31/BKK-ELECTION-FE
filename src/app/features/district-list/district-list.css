@@ -1,0 +1,210 @@
+:host {
+  display: block;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.page {
+  min-height: 100%;
+  padding: 2rem 1.5rem calc(90px + env(safe-area-inset-bottom, 0px));
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1280px) {
+  .page { padding: 2.5rem 2rem 2.5rem; }
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.page-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--text-primary, #fff);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.sort-pills {
+  display: flex;
+  gap: 0.35rem;
+  background: rgba(255,255,255,0.06);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.sort-btn {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+}
+
+.sort-btn-active {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* ── District list ───────────────────────────────────────── */
+
+.district-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.district-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.9rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  cursor: pointer;
+  transition: background 0.18s, transform 0.15s;
+}
+
+.district-row:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateX(2px);
+}
+
+.district-num {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.6);
+}
+
+.district-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.district-name {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-primary, #fff);
+  letter-spacing: -0.01em;
+}
+
+.leader-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+}
+
+.leader-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.leader-name {
+  font-size: 0.72rem;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.01em;
+}
+
+.no-data {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.25);
+  margin-top: 0.2rem;
+}
+
+.district-right {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  min-width: 90px;
+}
+
+.leader-votes {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: var(--text-primary, #fff);
+  letter-spacing: -0.01em;
+}
+
+.pct-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top3-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.top3-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+.top3-dot:nth-child(2) { opacity: 0.5; }
+.top3-dot:nth-child(3) { opacity: 0.3; }
+
+.pct-val {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.45);
+}
+
+.arrow-hint {
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.district-row:hover .arrow-hint {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── Light theme ─────────────────────────────────────────── */
+
+:host-context(.light-theme) .page-title { color: #0f172a; }
+:host-context(.light-theme) .sort-pills { background: rgba(0,0,0,0.06); }
+:host-context(.light-theme) .sort-btn { color: rgba(0,0,0,0.4); }
+:host-context(.light-theme) .sort-btn-active { background: rgba(0,0,0,0.1); color: #0f172a; }
+:host-context(.light-theme) .district-row { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.07); }
+:host-context(.light-theme) .district-row:hover { background: rgba(0,0,0,0.06); }
+:host-context(.light-theme) .district-num { background: rgba(0,0,0,0.07); color: rgba(0,0,0,0.5); }
+:host-context(.light-theme) .district-name { color: #0f172a; }
+:host-context(.light-theme) .no-data { color: rgba(0,0,0,0.3); }
+:host-context(.light-theme) .leader-votes { color: #0f172a; }
+:host-context(.light-theme) .pct-val { color: rgba(0,0,0,0.4); }
+:host-context(.light-theme) .arrow-hint { color: rgba(0,0,0,0.2); }
+:host-context(.light-theme) .district-row:hover .arrow-hint { color: rgba(0,0,0,0.4); }
