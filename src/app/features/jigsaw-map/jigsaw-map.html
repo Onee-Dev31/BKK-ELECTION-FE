@@ -6,7 +6,7 @@
         <div class="jigsaw-cell group"
             [style.left.%]="cellLeft(district)"
             [style.top.%]="cellTop(district)"
-            [style.animation-delay]="i * 20 + 'ms'"
+            [style.animation-delay]="i * 6 + 'ms'"
             [class.is-selected]="mapState.selectedDistrictId() === district.id"
             [class.is-highlighted]="isHighlighted(district.id)"
             [class.is-faded]="isFaded(district.id)"
