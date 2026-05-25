@@ -114,15 +114,15 @@
 /* ── Light theme ── */
 :host-context(html.light) .district-tab {
   background: rgba(255,255,255,0.4);
-  border-color: rgba(132, 177, 121, 0.2);
-  color: rgba(45, 74, 37, 0.5);
+  border-color: rgba(0, 140, 220, 0.2);
+  color: rgba(10, 30, 61, 0.5);
 }
 
 :host-context(html.light) .district-tab.active {
   background: rgba(255,255,255,0.85);
-  border-color: rgba(132, 177, 121, 0.4);
-  color: #1e3a17;
+  border-color: rgba(0, 140, 220, 0.4);
+  color: #0a1e3d;
 }
 
-:host-context(html.light) .bar-diff-label { color: rgba(45, 74, 37, 0.55); }
-:host-context(html.light) .bar-district-name { color: rgba(45, 74, 37, 0.55); }
+:host-context(html.light) .bar-diff-label { color: rgba(10, 30, 61, 0.55); }
+:host-context(html.light) .bar-district-name { color: rgba(10, 30, 61, 0.55); }

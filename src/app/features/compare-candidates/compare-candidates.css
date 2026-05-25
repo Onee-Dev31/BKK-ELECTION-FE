@@ -239,33 +239,33 @@
 /* ── Light theme ─────────────────────────────────────────── */
 :host-context(html.light) .glass-card {
   background: rgba(255, 255, 255, 0.55);
-  border-color: rgba(132, 177, 121, 0.15);
+  border-color: rgba(0, 140, 220, 0.15);
 }
 
 :host-context(html.light) .page-title-desktop,
 :host-context(html.light) .page-title-mobile,
 :host-context(html.light) .section-title {
-  color: #1e3a17;
+  color: #0a1e3d;
 }
 
 :host-context(html.light) .page-subtitle-desktop,
 :host-context(html.light) .page-subtitle-mobile {
-  color: rgba(45, 74, 37, 0.55);
+  color: rgba(10, 30, 61, 0.55);
 }
 
 :host-context(html.light) .swap-btn {
   background: rgba(255,255,255,0.5);
-  border-color: rgba(132, 177, 121, 0.2);
-  color: rgba(45, 74, 37, 0.6);
+  border-color: rgba(0, 140, 220, 0.2);
+  color: rgba(10, 30, 61, 0.6);
 }
 
 :host-context(html.light) .swap-btn:hover {
   background: rgba(255,255,255,0.8);
-  color: #1e3a17;
+  color: #0a1e3d;
 }
 
 :host-context(html.light) .scroll-top-btn {
   background: rgba(255,255,255,0.7);
-  border-color: rgba(132, 177, 121, 0.2);
-  color: #1e3a17;
+  border-color: rgba(0, 140, 220, 0.2);
+  color: #0a1e3d;
 }

@@ -23,11 +23,11 @@ nav {
 }
 
 .active-item {
-    color: var(--color-bkk-green);
+    color: var(--color-bkk-cyan);
     background: transparent;
     border: none;
     border-radius: 0;
-    box-shadow: inset 3px 0 0 var(--color-bkk-green);
+    box-shadow: inset 3px 0 0 var(--color-bkk-cyan);
     cursor: pointer !important;
 }
 
@@ -70,21 +70,21 @@ nav {
 
 /* ── Light Theme ─────────────────── */
 :host-context(html.light) .active-item {
-    color: #5a8a52;
-    box-shadow: inset 3px 0 0 #5a8a52;
+    color: #0077cc;
+    box-shadow: inset 3px 0 0 #0077cc;
 }
 
 :host-context(html.light) .inactive-item {
-    color: rgba(45, 74, 37, 0.35);
+    color: rgba(10, 30, 61, 0.35);
 }
 
 :host-context(html.light) .inactive-item:hover {
-    color: rgba(45, 74, 37, 0.75);
+    color: rgba(10, 30, 61, 0.75);
 }
 
 :host-context(html.light) .sidebar-tooltip {
     background: rgba(255, 255, 255, 0.97);
-    color: #2d4a25;
-    border-color: rgba(132, 177, 121, 0.3);
+    color: #0a1e3d;
+    border-color: rgba(0, 140, 220, 0.3);
     box-shadow: 0 8px 24px rgba(100, 150, 80, 0.2);
 }

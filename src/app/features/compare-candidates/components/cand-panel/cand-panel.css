@@ -135,11 +135,11 @@
 }
 
 .cand-select:focus {
-  border-color: var(--color-bkk-green);
+  border-color: var(--color-bkk-cyan);
 }
 
 .cand-select option {
-  background: #02150d;
+  background: #030b18;
   color: white;
 }
 
@@ -214,22 +214,22 @@
 /* ── Light theme ── */
 :host-context(html.light) {
   background: rgba(255, 255, 255, 0.55);
-  border-color: rgba(132, 177, 121, 0.15);
+  border-color: rgba(0, 140, 220, 0.15);
 }
 
-:host-context(html.light) .cand-name { color: #1e3a17; }
+:host-context(html.light) .cand-name { color: #0a1e3d; }
 
-:host-context(html.light) .cand-votes { color: rgba(45, 74, 37, 0.55); }
+:host-context(html.light) .cand-votes { color: rgba(10, 30, 61, 0.55); }
 
-:host-context(html.light) .cand-party-tag { color: rgba(45, 74, 37, 0.5); }
+:host-context(html.light) .cand-party-tag { color: rgba(10, 30, 61, 0.5); }
 
 :host-context(html.light) .cand-select {
   background: rgba(255, 255, 255, 0.8);
-  border-color: rgba(132, 177, 121, 0.25);
-  color: #2d4a25;
+  border-color: rgba(0, 140, 220, 0.25);
+  color: #0a1e3d;
 }
 
 :host-context(html.light) .cand-select option {
-  background: #e8f5bd;
-  color: #2d4a25;
+  background: #e8f4ff;
+  color: #0a1e3d;
 }

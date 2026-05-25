@@ -1,6 +1,6 @@
 /* ── Header ── */
 .hc-label {
-  color: rgba(45, 212, 191, 0.6);
+  color: rgba(0, 180, 255, 0.6);
 }
 
 .hc-title {
@@ -8,7 +8,7 @@
 }
 
 .hc-year {
-  color: rgba(45, 212, 191, 1);
+  color: rgba(0, 180, 255, 1);
 }
 
 /* ── Leading card ── */
@@ -27,7 +27,7 @@
 }
 
 .hc-no-label {
-  color: rgba(45, 212, 191, 0.5);
+  color: rgba(0, 180, 255, 0.5);
 }
 
 .hc-candidate-name {
@@ -49,7 +49,7 @@
 /* ── Stats ── */
 .hc-stat-card {
   background: rgba(20, 83, 60, 0.2);
-  border: 1px solid rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(0, 180, 255, 0.1);
 }
 
 .hc-stat-value {
@@ -102,15 +102,15 @@
 }
 
 :host-context(html.light) .hc-title {
-  color: #2d4a25;
+  color: #0a1e3d;
 }
 
 :host-context(html.light) .hc-year {
-  color: rgba(132, 177, 121, 1);
+  color: rgba(0, 140, 220, 1);
 }
 
 :host-context(html.light) .hc-leading-card {
-  border-color: rgba(132, 177, 121, 0.2);
+  border-color: rgba(0, 140, 220, 0.2);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
 }
 
@@ -119,8 +119,8 @@
 }
 
 :host-context(html.light) .hc-leading-badge {
-  background: #84b179;
-  color: #1e3a17;
+  background: #0077cc;
+  color: #0a1e3d;
 }
 
 :host-context(html.light) .hc-no-label {
@@ -128,28 +128,28 @@
 }
 
 :host-context(html.light) .hc-candidate-name {
-  color: #2d4a25;
+  color: #0a1e3d;
 }
 
 :host-context(html.light) .hc-party-name {
-  color: rgba(45, 74, 37, 0.45);
+  color: rgba(10, 30, 61, 0.45);
 }
 
 :host-context(html.light) .hc-votes-label {
-  color: rgba(45, 74, 37, 0.4);
+  color: rgba(10, 30, 61, 0.4);
 }
 
 :host-context(html.light) .hc-bar-bg {
-  background: rgba(132, 177, 121, 0.15);
+  background: rgba(0, 140, 220, 0.15);
 }
 
 :host-context(html.light) .hc-stat-card {
   background: rgba(255, 255, 255, 0.6);
-  border-color: rgba(132, 177, 121, 0.2);
+  border-color: rgba(0, 140, 220, 0.2);
 }
 
 :host-context(html.light) .hc-stat-value {
-  color: #2d4a25;
+  color: #0a1e3d;
 }
 
 :host-context(html.light) .hc-stat-label {
@@ -157,12 +157,12 @@
 }
 
 :host-context(html.light) .hc-accent-value {
-  color: #5a8a52;
+  color: #0077cc;
 }
 
 :host-context(html.light) .hc-good-card {
   background: rgba(255, 255, 255, 0.5);
-  border-color: rgba(132, 177, 121, 0.15);
+  border-color: rgba(0, 140, 220, 0.15);
 }
 
 :host-context(html.light) .hc-bad-card {

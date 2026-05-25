@@ -115,7 +115,7 @@
     border-radius: 20px;
     box-shadow:
         0 20px 40px -10px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(45, 212, 191, 0.1);
+        0 0 20px rgba(0, 180, 255, 0.1);
     animation: tooltipIn 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -165,7 +165,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(45, 212, 191, 0.6);
+    background: rgba(0, 180, 255, 0.6);
     animation: dotPulse 1.2s ease-in-out infinite;
 }
 
@@ -234,11 +234,11 @@
 
 :host-context(html.light) .geo-tooltip {
     background: rgba(255, 255, 255, 0.97);
-    border-color: rgba(132, 177, 121, 0.3);
+    border-color: rgba(0, 140, 220, 0.3);
     color: #1f3d2a;
     box-shadow:
         0 20px 40px -10px rgba(100, 150, 80, 0.22),
-        0 0 20px rgba(132, 177, 121, 0.1);
+        0 0 20px rgba(0, 140, 220, 0.1);
 }
 
 :host-context(html.light) .geo-tooltip [class*="text-white"] {
@@ -249,7 +249,7 @@
     color: rgba(31, 61, 42, 0.55) !important;
 }
 
-:host-context(html.light) .geo-tooltip [class*="text-teal"] {
+:host-context(html.light) .geo-tooltip [class*="text-sky"] {
     color: #008f7a !important;
 }
 
@@ -258,8 +258,8 @@
 }
 
 :host-context(html.light) .geo-legend {
-    background: rgba(232, 245, 189, 0.88);
-    border-color: rgba(132, 177, 121, 0.25);
+    background: rgba(232, 244, 255, 0.88);
+    border-color: rgba(0, 140, 220, 0.25);
 }
 
 :host-context(html.light) .geo-legend [class*="text-white"] {

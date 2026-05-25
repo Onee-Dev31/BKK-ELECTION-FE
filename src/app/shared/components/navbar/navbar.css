@@ -22,9 +22,9 @@ nav {
 }
 
 nav:focus-within {
-    border-color: var(--color-bkk-green);
-    box-shadow: 0 0 15px rgba(0, 214, 91, 0.3);
-    background: rgba(0, 214, 91, 0.15);
+    border-color: var(--color-bkk-cyan);
+    box-shadow: 0 0 15px rgba(0, 180, 255, 0.3);
+    background: rgba(0, 180, 255, 0.15);
 }
 
 .search-results-dropdown {
@@ -57,11 +57,11 @@ nav:focus-within {
 
 .result-item:hover,
 .result-item.is-active {
-    background: rgba(0, 214, 91, 0.1);
+    background: rgba(0, 180, 255, 0.1);
 }
 
 .result-item.is-active {
-    outline: 1px solid rgba(0, 214, 91, 0.3);
+    outline: 1px solid rgba(0, 180, 255, 0.3);
 }
 
 .result-icon {
@@ -72,12 +72,12 @@ nav:focus-within {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-bkk-green);
+    color: var(--color-bkk-cyan);
 }
 
 .result-icon.district {
     color: #e2e8f0;
-    background: rgba(0, 214, 91, 0.2);
+    background: rgba(0, 180, 255, 0.2);
 }
 
 .result-info {
@@ -98,9 +98,9 @@ nav:focus-within {
 }
 
 ::ng-deep .highlight {
-    color: var(--color-bkk-green);
+    color: var(--color-bkk-cyan);
     font-weight: 900;
-    text-shadow: 0 0 8px rgba(0, 214, 91, 0.4);
+    text-shadow: 0 0 8px rgba(0, 180, 255, 0.4);
 }
 
 /* Mobile: search bar ชิดขอบ เต็มความกว้าง */
@@ -110,7 +110,7 @@ nav:focus-within {
         padding: 0 16px;
         box-shadow:
             0 2px 16px rgba(0, 0, 0, 0.4),
-            0 0 0 1px rgba(0, 214, 91, 0.08);
+            0 0 0 1px rgba(0, 180, 255, 0.08);
     }
 }
 
@@ -170,7 +170,7 @@ nav:focus-within .shortcut-hint {
 }
 
 .clear-button:hover {
-    background: var(--color-bkk-green);
+    background: var(--color-bkk-cyan);
     color: black;
     opacity: 1;
     transform: scale(1.1);
@@ -178,56 +178,56 @@ nav:focus-within .shortcut-hint {
 
 /* ── Light Theme ─────────────────── */
 :host-context(html.light) nav:focus-within {
-    border-color: #84b179;
-    box-shadow: 0 0 15px rgba(132, 177, 121, 0.3);
-    background: rgba(132, 177, 121, 0.12);
+    border-color: #0077cc;
+    box-shadow: 0 0 15px rgba(0, 140, 220, 0.3);
+    background: rgba(0, 140, 220, 0.12);
 }
 
 :host-context(html.light) .search-results-dropdown {
     background: rgba(255, 255, 255, 0.97);
-    border-color: rgba(132, 177, 121, 0.2);
+    border-color: rgba(0, 140, 220, 0.2);
     box-shadow: 0 10px 40px rgba(100, 150, 80, 0.2);
 }
 
 :host-context(html.light) .result-item:hover,
 :host-context(html.light) .result-item.is-active {
-    background: rgba(132, 177, 121, 0.12);
+    background: rgba(0, 140, 220, 0.12);
 }
 
 :host-context(html.light) .result-item.is-active {
-    outline-color: rgba(132, 177, 121, 0.4);
+    outline-color: rgba(0, 140, 220, 0.4);
 }
 
 :host-context(html.light) .result-icon {
-    background: rgba(132, 177, 121, 0.1);
-    color: #5a8a52;
+    background: rgba(0, 140, 220, 0.1);
+    color: #0077cc;
 }
 
 :host-context(html.light) .result-icon.district {
-    color: #2d4a25;
-    background: rgba(132, 177, 121, 0.2);
+    color: #0a1e3d;
+    background: rgba(0, 140, 220, 0.2);
 }
 
 :host-context(html.light) .result-title {
-    color: #2d4a25;
+    color: #0a1e3d;
 }
 
 :host-context(html.light) .result-subtitle {
-    color: rgba(45, 74, 37, 0.55);
+    color: rgba(10, 30, 61, 0.55);
 }
 
 :host-context(html.light) .shortcut-hint {
-    color: rgba(45, 74, 37, 0.35);
-    background: rgba(132, 177, 121, 0.1);
-    border-color: rgba(132, 177, 121, 0.2);
+    color: rgba(10, 30, 61, 0.35);
+    background: rgba(0, 140, 220, 0.1);
+    border-color: rgba(0, 140, 220, 0.2);
 }
 
 :host-context(html.light) .clear-button {
-    background: rgba(132, 177, 121, 0.15);
-    color: #2d4a25;
+    background: rgba(0, 140, 220, 0.15);
+    color: #0a1e3d;
 }
 
 :host-context(html.light) .clear-button:hover {
-    background: #84b179;
-    color: #1e3a17;
+    background: #0077cc;
+    color: #0a1e3d;
 }

@@ -150,7 +150,7 @@
 
 /* ── Light Theme ─────────────────── */
 :host-context(html.light) .chart-label {
-  color: rgba(45, 74, 37, 0.45);
+  color: rgba(10, 30, 61, 0.45);
 }
 
 :host-context(html.light) .chart-sub {
@@ -158,5 +158,5 @@
 }
 
 :host-context(html.light) .chart-sub strong {
-  color: #1e3a17;
+  color: #0a1e3d;
 }

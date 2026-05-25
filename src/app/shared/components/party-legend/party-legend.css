@@ -79,13 +79,13 @@
 
 /* ── Light Theme ─────────────────── */
 :host-context(html.light) .party-legend {
-  scrollbar-color: rgba(132, 177, 121, 0.3) transparent;
+  scrollbar-color: rgba(0, 140, 220, 0.3) transparent;
 }
 
 :host-context(html.light) .legend-name {
-  color: rgba(45, 74, 37, 0.7);
+  color: rgba(10, 30, 61, 0.7);
 }
 
 :host-context(html.light) .legend-unit {
-  color: rgba(45, 74, 37, 0.4);
+  color: rgba(10, 30, 61, 0.4);
 }

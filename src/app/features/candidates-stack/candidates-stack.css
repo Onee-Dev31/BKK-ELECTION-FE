@@ -27,7 +27,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 40% at 20% 10%, rgba(0, 214, 91, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 10%, rgba(0, 180, 255, 0.07) 0%, transparent 70%),
     radial-gradient(ellipse 50% 35% at 80% 80%, rgba(0, 150, 200, 0.06) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
@@ -784,7 +784,7 @@
   border-color: rgba(100,150,80,0.2);
 }
 :host-context(html.light) .hero-vote-count { color: rgba(0,0,0,0.5); }
-:host-context(html.light) .hero-name { color: #1e3a17; }
+:host-context(html.light) .hero-name { color: #0a1e3d; }
 :host-context(html.light) .hero-party-tag { color: rgba(0,0,0,0.4); }
 
 :host-context(html.light) .lb-row {
@@ -793,7 +793,7 @@
 :host-context(html.light) .lb-row:hover {
   background: rgba(0,0,0,0.03);
 }
-:host-context(html.light) .lb-name { color: #1e3a17; }
+:host-context(html.light) .lb-name { color: #0a1e3d; }
 :host-context(html.light) .lb-party { color: rgba(0,0,0,0.4); }
 :host-context(html.light) .lb-votes { color: rgba(0,0,0,0.45); }
 :host-context(html.light) .lb-bar-track { background: rgba(0,0,0,0.06); }
@@ -817,9 +817,9 @@
 :host-context(html.light) .top-district-pct { color: rgba(0,0,0,0.4); }
 :host-context(html.light) .top-district-rank { color: rgba(0,0,0,0.3); }
 :host-context(html.light) .modal-total-votes { color: rgba(0,0,0,0.5); }
-:host-context(html.light) .modal-name { color: #1e3a17; }
+:host-context(html.light) .modal-name { color: #0a1e3d; }
 :host-context(html.light) .mini-hex-svg polygon { stroke: rgba(0,0,0,0.1) !important; }
-:host-context(html.light) .stack-title { color: #1e3a17; }
+:host-context(html.light) .stack-title { color: #0a1e3d; }
 :host-context(html.light) .stack-sub { color: rgba(30,58,23,0.45); }
 :host-context(html.light) .hero-section-label { color: rgba(30,58,23,0.45); }
 :host-context(html.light) .hero-rank-label { color: rgba(30,58,23,0.45); }

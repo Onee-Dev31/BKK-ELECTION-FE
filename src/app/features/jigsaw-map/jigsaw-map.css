@@ -20,9 +20,9 @@
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(rgba(45, 212, 191, 0.08) 1.5px, transparent 0),
-        linear-gradient(rgba(45, 212, 191, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(45, 212, 191, 0.03) 1px, transparent 1px);
+        radial-gradient(rgba(0, 180, 255, 0.08) 1.5px, transparent 0),
+        linear-gradient(rgba(0, 180, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 180, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px, 9.5cqw 9cqh;
     background-position: center center;
     mask-image: radial-gradient(circle at center, black 40%, transparent 95%);
@@ -77,7 +77,7 @@
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(45, 212, 191, 0.1);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 180, 255, 0.1);
     z-index: 500;
     pointer-events: none;
     opacity: 0;
@@ -233,15 +233,15 @@
 /* Light theme */
 :host-context(html.light) .cell-tooltip {
     background: rgba(255, 255, 255, 0.97);
-    border-color: rgba(132, 177, 121, 0.3);
+    border-color: rgba(0, 140, 220, 0.3);
     color: #1f3d2a;
     box-shadow:
         0 20px 40px -10px rgba(100, 150, 80, 0.22),
-        0 0 20px rgba(132, 177, 121, 0.1);
+        0 0 20px rgba(0, 140, 220, 0.1);
 }
 
 :host-context(html.light) .piece-path {
-    stroke: rgba(232, 245, 189, 0.92);
+    stroke: rgba(210, 235, 255, 0.92);
 }
 
 :host-context(html.light) .cell-tooltip [class*="text-white"] {
@@ -252,7 +252,7 @@
     color: rgba(31, 61, 42, 0.55) !important;
 }
 
-:host-context(html.light) .cell-tooltip [class*="text-teal"] {
+:host-context(html.light) .cell-tooltip [class*="text-sky"] {
     color: #008f7a !important;
 }
 
@@ -261,8 +261,8 @@
 }
 
 :host-context(html.light) .jigsaw-legend {
-    background: rgba(232, 245, 189, 0.88) !important;
-    border-color: rgba(132, 177, 121, 0.25) !important;
+    background: rgba(232, 244, 255, 0.88) !important;
+    border-color: rgba(0, 140, 220, 0.25) !important;
 }
 
 :host-context(html.light) .jigsaw-legend [class*="text-white"] {
@@ -275,7 +275,7 @@
 
 :host-context(html.light) .map-bg-grid {
     background-image:
-        radial-gradient(rgba(132, 177, 121, 0.15) 1.5px, transparent 0),
-        linear-gradient(rgba(132, 177, 121, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(132, 177, 121, 0.06) 1px, transparent 1px);
+        radial-gradient(rgba(0, 140, 220, 0.15) 1.5px, transparent 0),
+        linear-gradient(rgba(0, 140, 220, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 140, 220, 0.06) 1px, transparent 1px);
 }

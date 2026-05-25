@@ -101,11 +101,11 @@ export class JigsawMap {
     if (this.mapState.activeTab() === 'sk') {
       const partyId = this.councilService.leadingPartyByDistrict().get(id);
       const party = partyId ? this.thaipbs.partyMap().get(partyId) : null;
-      return party ? party.color : '#1a3a2a';
+      return party ? party.color : '#0a1e3d';
     }
     const leadingId = this.electionService.getLeadingCandidateId(id);
     const c = leadingId != null ? this.electionService.candidateMap().get(leadingId) : undefined;
-    return c ? c.color : '#1e293b';
+    return c ? c.color : '#0a1e3d';
   }
 
   isHighlighted(id: number): boolean {
