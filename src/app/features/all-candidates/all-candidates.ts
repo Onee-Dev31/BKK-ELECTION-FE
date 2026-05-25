@@ -1,17 +1,16 @@
 import { Component, inject, computed, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ElectionService } from '../../core/services/election.service';
 import { MapStateService } from '../../core/services/map-state';
-import { ELECTION_CONSTANTS } from '../../core/constants/election.constants';
-import { formatVotes } from '../../core/utils/election.utils';
+import { SortPills, SortOption } from '../../shared/components/sort-pills/sort-pills';
+import { CandidateRow } from './components/candidate-row/candidate-row';
 
 type SortKey = 'rank' | 'number';
 
 @Component({
   selector: 'app-all-candidates',
   standalone: true,
-  imports: [CommonModule],
+  imports: [SortPills, CandidateRow],
   templateUrl: './all-candidates.html',
   styleUrl: './all-candidates.css',
 })
@@ -20,13 +19,15 @@ export class AllCandidates {
   private router = inject(Router);
   private mapState = inject(MapStateService);
 
-  readonly formatVotes = formatVotes;
   sortKey = signal<SortKey>('rank');
 
-  ranked = computed(() =>
-    [...this.svc.candidates()]
-      .sort((a, b) => b.votes - a.votes)
-      .map((c, i) => ({ ...c, rank: i + 1 }))
+  readonly sortOptions: SortOption[] = [
+    { key: 'rank', label: 'คะแนน' },
+    { key: 'number', label: 'เบอร์' },
+  ];
+
+  private ranked = computed(() =>
+    [...this.svc.candidates()].sort((a, b) => b.votes - a.votes)
   );
 
   candidates = computed(() => {
@@ -38,9 +39,7 @@ export class AllCandidates {
 
   maxVotes = computed(() => this.ranked()[0]?.votes ?? 1);
 
-  imgUrl(n: number): string {
-    return ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', n.toString());
-  }
+  setSort(key: string) { this.sortKey.set(key as SortKey); }
 
   goToMap(id: number) {
     this.mapState.selectedCandidateId.set(id);

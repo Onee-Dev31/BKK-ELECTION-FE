@@ -1,0 +1,29 @@
+<div class="rank-badge" [style.backgroundColor]="candidate().color">{{ rank() }}</div>
+
+<div class="photo-wrap" [style.borderColor]="candidate().color + '55'">
+  <img class="photo" [src]="imgUrl()" [alt]="candidate().name" onerror="this.style.opacity='0'" />
+</div>
+
+<div class="cand-info">
+  <div class="cand-name">{{ candidate().name }}</div>
+  <div class="cand-meta">
+    <span class="num-badge" [style.color]="candidate().color" [style.borderColor]="candidate().color + '44'">เบอร์ {{ candidate().number }}</span>
+    <span class="party-name">{{ candidate().party }}</span>
+  </div>
+</div>
+
+<div class="cand-right">
+  <div class="vote-count">{{ formatVotes(candidate().votes) }}</div>
+  <div class="pct-line">
+    <div class="pct-bar-bg">
+      <div class="pct-bar-fill" [style.width]="(candidate().votes / maxVotes() * 100) + '%'" [style.backgroundColor]="candidate().color"></div>
+    </div>
+    <span class="pct-label">{{ candidate().percentage }}%</span>
+  </div>
+</div>
+
+<div class="map-hint">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <polyline points="9 18 15 12 9 6"/>
+  </svg>
+</div>

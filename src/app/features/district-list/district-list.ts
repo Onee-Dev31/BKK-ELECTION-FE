@@ -1,17 +1,18 @@
 import { Component, inject, computed, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ElectionService } from '../../core/services/election.service';
 import { MapStateService } from '../../core/services/map-state';
 import { DistrictModal } from '../../shared/components/district-modal/district-modal';
 import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
-import { sumVotes, formatVotes } from '../../core/utils/election.utils';
+import { sumVotes } from '../../core/utils/election.utils';
+import { SortPills, SortOption } from '../../shared/components/sort-pills/sort-pills';
+import { DistrictRow } from './components/district-row/district-row';
 
 type SortKey = 'number' | 'votes' | 'leader';
 
 @Component({
   selector: 'app-district-list',
   standalone: true,
-  imports: [CommonModule, DistrictModal],
+  imports: [DistrictModal, SortPills, DistrictRow],
   templateUrl: './district-list.html',
   styleUrl: './district-list.css',
 })
@@ -19,8 +20,13 @@ export class DistrictList {
   private svc = inject(ElectionService);
   mapState = inject(MapStateService);
 
-  readonly formatVotes = formatVotes;
   sortKey = signal<SortKey>('number');
+
+  readonly sortOptions: SortOption[] = [
+    { key: 'number', label: 'เขต' },
+    { key: 'votes', label: 'คะแนน' },
+    { key: 'leader', label: 'เบอร์' },
+  ];
 
   private allDistricts = computed(() => {
     const candidateMap = this.svc.candidateMap();
@@ -57,6 +63,8 @@ export class DistrictList {
     if (key === 'leader') return [...list].sort((a, b) => (a.leader?.number ?? 99) - (b.leader?.number ?? 99));
     return list;
   });
+
+  setSort(key: string) { this.sortKey.set(key as SortKey); }
 
   openDistrict(id: number) {
     this.mapState.activeTab.set('summary');
