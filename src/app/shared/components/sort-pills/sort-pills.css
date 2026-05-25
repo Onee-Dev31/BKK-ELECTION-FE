@@ -26,15 +26,15 @@
 
 /* ── Light theme ─────────────────────────────────────────── */
 
-:host-context(.light-theme) {
+:host-context(.light) {
   background: rgba(0,0,0,0.06);
 }
 
-:host-context(.light-theme) .sort-btn {
+:host-context(.light) .sort-btn {
   color: rgba(0,0,0,0.4);
 }
 
-:host-context(.light-theme) .sort-btn-active {
+:host-context(.light) .sort-btn-active {
   background: rgba(0,0,0,0.1);
   color: #0f172a;
 }

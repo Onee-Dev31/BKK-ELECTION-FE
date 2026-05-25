@@ -126,19 +126,19 @@
 
 /* ── Light theme ─────────────────────────────────────────── */
 
-:host-context(.light-theme) {
+:host-context(.light) {
   background: rgba(0,0,0,0.03);
   border-color: rgba(0,0,0,0.07);
 }
 
-:host-context(.light-theme):hover {
+:host-context(.light):hover {
   background: rgba(0,0,0,0.06);
 }
 
-:host-context(.light-theme) .district-num { background: rgba(0,0,0,0.07); color: rgba(0,0,0,0.5); }
-:host-context(.light-theme) .district-name { color: #0f172a; }
-:host-context(.light-theme) .no-data { color: rgba(0,0,0,0.3); }
-:host-context(.light-theme) .leader-votes { color: #0f172a; }
-:host-context(.light-theme) .pct-val { color: rgba(0,0,0,0.4); }
-:host-context(.light-theme) .arrow-hint { color: rgba(0,0,0,0.2); }
-:host-context(.light-theme):hover .arrow-hint { color: rgba(0,0,0,0.4); }
+:host-context(.light) .district-num { background: rgba(0,0,0,0.07); color: rgba(0,0,0,0.5); }
+:host-context(.light) .district-name { color: #0f172a; }
+:host-context(.light) .no-data { color: rgba(0,0,0,0.3); }
+:host-context(.light) .leader-votes { color: #0f172a; }
+:host-context(.light) .pct-val { color: rgba(0,0,0,0.4); }
+:host-context(.light) .arrow-hint { color: rgba(0,0,0,0.2); }
+:host-context(.light):hover .arrow-hint { color: rgba(0,0,0,0.4); }

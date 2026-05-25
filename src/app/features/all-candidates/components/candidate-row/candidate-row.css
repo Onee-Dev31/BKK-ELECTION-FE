@@ -145,20 +145,20 @@
 
 /* ── Light theme ─────────────────────────────────────────── */
 
-:host-context(.light-theme) {
+:host-context(.light) {
   background: rgba(0,0,0,0.03);
   border-color: rgba(0,0,0,0.07);
 }
 
-:host-context(.light-theme):hover {
+:host-context(.light):hover {
   background: rgba(0,0,0,0.06);
 }
 
-:host-context(.light-theme) .cand-name { color: #0f172a; }
-:host-context(.light-theme) .party-name { color: rgba(0,0,0,0.4); }
-:host-context(.light-theme) .vote-count { color: #0f172a; }
-:host-context(.light-theme) .pct-bar-bg { background: rgba(0,0,0,0.08); }
-:host-context(.light-theme) .pct-label { color: rgba(0,0,0,0.45); }
-:host-context(.light-theme) .map-hint { color: rgba(0,0,0,0.2); }
-:host-context(.light-theme):hover .map-hint { color: rgba(0,0,0,0.4); }
-:host-context(.light-theme) .photo-wrap { background: rgba(0,0,0,0.05); }
+:host-context(.light) .cand-name { color: #0f172a; }
+:host-context(.light) .party-name { color: rgba(0,0,0,0.4); }
+:host-context(.light) .vote-count { color: #0f172a; }
+:host-context(.light) .pct-bar-bg { background: rgba(0,0,0,0.08); }
+:host-context(.light) .pct-label { color: rgba(0,0,0,0.45); }
+:host-context(.light) .map-hint { color: rgba(0,0,0,0.2); }
+:host-context(.light):hover .map-hint { color: rgba(0,0,0,0.4); }
+:host-context(.light) .photo-wrap { background: rgba(0,0,0,0.05); }

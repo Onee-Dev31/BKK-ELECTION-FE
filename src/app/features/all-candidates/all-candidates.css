@@ -39,4 +39,4 @@
 
 /* ── Light theme ─────────────────────────────────────────── */
 
-:host-context(.light-theme) .page-title { color: #0f172a; }
+:host-context(.light) .page-title { color: #0f172a; }
