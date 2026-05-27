@@ -1,7 +1,7 @@
 <nav class="flex flex-col items-center">
     <!-- Logo -->
     <div class="mb-6 cursor-pointer" (click)="navigate('/')" role="button" aria-label="หน้าหลัก">
-        <img src="/Logo%20วันเลือกตั้ง%20ผู้ว่าฯ%20กทม.%2069%20Final.png"
+        <img src="/Logo%20วันเลือกตั้ง%20ผู้วาฯ%20กทม.%2069%20Final%20200569.png"
              alt="วันเลือกตั้ง ผู้ว่าฯ กทม 69"
              class="w-12 h-auto opacity-90 hover:opacity-100 transition-opacity duration-200" />
     </div>
@@ -45,26 +45,4 @@
         }
     </div>
 
-    <!-- Theme toggle -->
-    <div class="mt-auto">
-        <div class="nav-item-wrapper group cursor-pointer">
-            <button (click)="themeService.toggle()" style="cursor: pointer"
-                class="relative w-12 h-12 flex items-center justify-center transition-all duration-200 inactive-item">
-                <div class="relative z-10 transition-transform duration-300 group-hover:scale-110">
-                    @if (themeService.isDark()) {
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                    } @else {
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    }
-                </div>
-            </button>
-            <div class="sidebar-tooltip">{{ themeService.isDark() ? 'Light Mode' : 'Dark Mode' }}</div>
-        </div>
-    </div>
 </nav>

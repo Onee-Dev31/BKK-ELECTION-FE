@@ -178,14 +178,26 @@ export class CandidatesStack implements OnInit, OnDestroy {
     this.scrollContainer?.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  private readonly imgOverrides: Record<number, string> = {
+    8: '/messageImage_1779875875371.jpg',
+  };
+
   imgUrl(n: number) {
-    return ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', n.toString());
+    return this.imgOverrides[n] ?? ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', n.toString());
   }
 
   imgUrl3D(n: number): string {
     const num = AVAILABLE_3D.has(n) ? n : 'other';
     return `/3D/${num}.png`;
   }
+
+  r1Shadow = computed(() => {
+    const c = this.top10()[0];
+    if (!c) return '';
+    const a = hexToRgba(c.color, 0.55);
+    const b = hexToRgba(c.color, 0.25);
+    return `0 0 24px ${a}, 0 0 48px ${b}`;
+  });
 
   readonly formatVotes = formatVotes;
 }

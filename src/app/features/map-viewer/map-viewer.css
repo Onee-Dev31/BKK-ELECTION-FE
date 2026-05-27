@@ -35,6 +35,23 @@
     from { transform: scale(0); }
 }
 
+.map-panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+    will-change: opacity;
+}
+
+.map-panel-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .map-grid-wrapper {
     position: relative;
     width: min(90cqw, 90cqh * 1.1);
@@ -162,8 +179,6 @@
         0 0 15px var(--candidate-color, transparent);
 }
 
-
-
 .district-cell:hover .hexagon-content {
     filter: brightness(1.2) contrast(1.15) drop-shadow(0 0 10px var(--candidate-color, #ffffff));
     border-color: rgba(255, 255, 255, 0.6);
@@ -227,7 +242,6 @@
 .district-cell:active {
     transform: scale(0.95) !important;
 }
-
 
 /* === Phone portrait (≤ 767px) === */
 @media (max-width: 767px) {
@@ -498,55 +512,4 @@
     .map-mode-btn {
         padding: 5px 7px;
     }
-}
-
-/* ── Light Theme ─────────────────── */
-:host-context(html.light) .hexagon-content {
-  border-color: rgba(255, 255, 255, 0.75);
-}
-
-:host-context(html.light) .map-legend-box {
-  background: rgba(232, 245, 189, 0.88);
-  border-color: rgba(132, 177, 121, 0.25);
-  backdrop-filter: blur(12px);
-}
-
-:host-context(html.light) [class*="text-white"] {
-  color: rgba(45, 74, 37, 0.85);
-}
-
-:host-context(html.light) [class*="text-teal"] {
-  color: #5a8a52;
-}
-
-:host-context(html.light) [class*="bg-black"] {
-  background-color: rgba(255, 255, 255, 0.88);
-}
-
-:host-context(html.light) [class*="border-white"] {
-  border-color: rgba(132, 177, 121, 0.2);
-}
-
-:host-context(html.light) .map-bg-grid {
-    background-image:
-        radial-gradient(rgba(132, 177, 121, 0.15) 1.5px, transparent 0),
-        linear-gradient(rgba(132, 177, 121, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(132, 177, 121, 0.06) 1px, transparent 1px);
-}
-
-:host-context(html.light) .custom-tooltip-box {
-    background: rgba(255, 255, 255, 0.97);
-    border-color: rgba(132, 177, 121, 0.3);
-    box-shadow:
-        0 20px 40px -10px rgba(100, 150, 80, 0.2),
-        0 0 20px rgba(132, 177, 121, 0.1);
-}
-
-:host-context(html.light) .logo-title {
-    color: #2d4a25;
-    text-shadow: none;
-}
-
-:host-context(html.light) .logo-year {
-    text-shadow: 0 0 20px rgba(132, 177, 121, 0.3);
 }

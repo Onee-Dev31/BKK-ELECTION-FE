@@ -6,8 +6,10 @@
   gap: 0.5rem;
   padding: 0.875rem 0.75rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   align-self: stretch;
 }
@@ -21,7 +23,7 @@
 .cand-rank-label {
   font-size: 14px;
   font-weight: 700;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.65);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -77,7 +79,7 @@
 .cand-votes {
   font-size: 14px;
   font-weight: 700;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.75);
 }
 
 .cand-name {
@@ -209,27 +211,4 @@
   .cand-pct { font-size: 1.4rem; }
   .cand-name { font-size: 0.9rem; }
   .cand-num-tag, .cand-party-tag { font-size: 13px; }
-}
-
-/* ── Light theme ── */
-:host-context(html.light) {
-  background: rgba(255, 255, 255, 0.55);
-  border-color: rgba(132, 177, 121, 0.15);
-}
-
-:host-context(html.light) .cand-name { color: #1e3a17; }
-
-:host-context(html.light) .cand-votes { color: rgba(45, 74, 37, 0.55); }
-
-:host-context(html.light) .cand-party-tag { color: rgba(45, 74, 37, 0.5); }
-
-:host-context(html.light) .cand-select {
-  background: rgba(255, 255, 255, 0.8);
-  border-color: rgba(132, 177, 121, 0.25);
-  color: #2d4a25;
-}
-
-:host-context(html.light) .cand-select option {
-  background: #e8f5bd;
-  color: #2d4a25;
 }

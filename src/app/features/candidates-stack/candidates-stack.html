@@ -1,106 +1,94 @@
 <div class="stack-page">
 
   <div class="stack-header">
-    <img class="stack-logo" src="/Logo%20วันเลือกตั้ง%20ผู้ว่าฯ%20กทม.%2069%20Final.png" alt="วันเลือกตั้ง ผู้ว่าฯ กทม 69" />
+    <img class="stack-logo" src="/Logo%20วันเลือกตั้ง%20ผู้วาฯ%20กทม.%2069%20Final%20200569.png" alt="วันเลือกตั้ง ผู้ว่าฯ กทม 69" />
   </div>
 
-  <div class="hero-layout">
+  @if (top10().length >= 3) {
+  <div class="card-stage">
 
-    <!-- ══ HERO: Rank 1 ══════════════════════════════════════ -->
-    <div class="hero-col">
-    @if (top10()[0]; as hero) {
-    <div class="hero-panel"
-         [style.--hero-color]="hero.color"
-         [style.--hero-glow]="hexToRgba(hero.color, 0.35)"
-         (click)="openModal(hero, 1)">
-
-      <!-- shimmer sweep -->
-      <div class="hero-shimmer"></div>
-
-      <!-- rank badge (top-left) -->
-      <div class="hero-rank-block">
-        <span class="hero-rank-label">อันดับ</span>
-        <div class="hero-rank-circle">
-          <span class="hero-rank-num">1</span>
+    <!-- Rank 4 (far left) -->
+    @if (top10().length >= 4) {
+    <div class="cand-card cc-r4" style="--cd:200ms" (click)="openModal(top10()[3], 4)">
+      <img class="cc-photo" [src]="imgUrl(top10()[3].number)" [alt]="top10()[3].name"
+           onerror="this.style.opacity='0'">
+      <div class="cc-color-veil" [style.background]="hexToRgba(top10()[3].color, 0.08)"></div>
+      <div class="cc-rank-badge">4</div>
+      <div class="cc-overlay">
+        <div class="cc-name">{{ top10()[3].name }}</div>
+        <div class="cc-bottom">
+          <span class="cc-pct" [style.color]="top10()[3].color">{{ top10()[3].percentage }}%</span>
+          <span class="cc-votes">{{ getDisplayVotes(top10()[3].id) }}</span>
         </div>
       </div>
-
-      <!-- photo section with overlapping stats -->
-      <div class="hero-photo-section">
-        <!-- pentagon background shape -->
-        <div class="hero-pentagon" [style.backgroundColor]="hero.color"></div>
-        <!-- 3D photo -->
-        <img class="hero-photo-3d" [src]="imgUrl3D(hero.number)" [alt]="hero.name"
-             onerror="this.style.opacity='0'" />
-        <!-- stats card overlapping bottom -->
-        <div class="hero-stats-card">
-          <span class="hero-pct" [style.color]="hero.color">{{ hero.percentage }}%</span>
-          <span class="hero-stats-sep"></span>
-          <div class="hero-stats-right">
-            <span class="hero-vote-count">{{ getDisplayVotes(hero.id) }}</span>
-            <span class="hero-vote-label">คะแนน</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- name & tags (below photo section) -->
-      <div class="hero-info">
-        <h2 class="hero-name">{{ hero.name }}</h2>
-        <div class="hero-tags">
-          <span class="hero-num-tag"
-                [style.color]="hero.color"
-                [style.borderColor]="hero.color + '55'">เบอร์ {{ hero.number }}</span>
-          <span class="hero-party-tag">{{ hero.party }}</span>
-        </div>
-      </div>
-
     </div>
     }
-    </div><!-- /hero-col -->
 
-    <!-- ══ LEADERBOARD: Rank 2–5 ══════════════════════════════ -->
-    <div class="leaderboard">
-      @for (c of top10(); track c.id; let i = $index) {
-        @if (i > 0) {
-        <div class="lb-row"
-             [style.--lb-color]="c.color"
-             [style.--lb-delay]="((i - 1) * 100) + 'ms'"
-             [style.--bar-w]="lbBarWidth(c.votes) + '%'"
-             (click)="openModal(c, i + 1)">
-
-          <!-- left: rank + photo + info -->
-          <div class="lb-left">
-            <div class="lb-rank-badge" [style.backgroundColor]="c.color">{{ i + 1 }}</div>
-            <div class="lb-photo-ring" [style.borderColor]="c.color + '66'">
-              <img class="lb-photo" [src]="imgUrl(c.number)" [alt]="c.name"
-                   onerror="this.style.display='none'" />
-            </div>
-            <div class="lb-info">
-              <div class="lb-name">{{ c.name }}</div>
-              <div class="lb-meta">
-                <span class="lb-num-tag" [style.color]="c.color" [style.borderColor]="c.color + '44'">เบอร์ {{ c.number }}</span>
-                <span class="lb-party">{{ c.party }}</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- right: % + votes -->
-          <div class="lb-right">
-            <div class="lb-pct" [style.color]="c.color">{{ c.percentage }}<span class="lb-pct-unit">%</span></div>
-            <div class="lb-votes">{{ getDisplayVotes(c.id) }} คะแนน</div>
-          </div>
-
-          <!-- progress bar -->
-          <div class="lb-bar-track">
-            <div class="lb-bar-fill" [style.backgroundColor]="c.color"></div>
-          </div>
-
+    <!-- Rank 2 -->
+    <div class="cand-card cc-r2" style="--cd:100ms" (click)="openModal(top10()[1], 2)">
+      <img class="cc-photo" [src]="imgUrl(top10()[1].number)" [alt]="top10()[1].name"
+           onerror="this.style.opacity='0'">
+      <div class="cc-color-veil" [style.background]="hexToRgba(top10()[1].color, 0.08)"></div>
+      <div class="cc-rank-badge cc-badge-silver">2</div>
+      <div class="cc-overlay">
+        <div class="cc-name">{{ top10()[1].name }}</div>
+        <div class="cc-bottom">
+          <span class="cc-pct" [style.color]="top10()[1].color">{{ top10()[1].percentage }}%</span>
+          <span class="cc-votes">{{ getDisplayVotes(top10()[1].id) }}</span>
         </div>
-        }
-      }
+      </div>
     </div>
 
-  </div><!-- /hero-layout -->
+    <!-- Rank 1 (center, hero) -->
+    <div class="cand-card cc-r1" style="--cd:0ms" (click)="openModal(top10()[0], 1)">
+      <img class="cc-photo" [src]="imgUrl(top10()[0].number)" [alt]="top10()[0].name"
+           onerror="this.style.opacity='0'">
+      <div class="cc-color-veil" [style.background]="hexToRgba(top10()[0].color, 0.12)"></div>
+      <div class="cc-hero-glow" [style.background]="hexToRgba(top10()[0].color, 0.25)"></div>
+      <div class="cc-rank-badge cc-badge-gold">1</div>
+      <div class="cc-overlay cc-overlay-r1">
+        <div class="cc-name cc-name-r1">{{ top10()[0].name }}</div>
+        <div class="cc-bottom">
+          <span class="cc-pct cc-pct-r1" [style.color]="top10()[0].color">{{ top10()[0].percentage }}%</span>
+          <span class="cc-votes cc-votes-r1">{{ getDisplayVotes(top10()[0].id) }} คะแนน</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rank 3 -->
+    <div class="cand-card cc-r3" style="--cd:150ms" (click)="openModal(top10()[2], 3)">
+      <img class="cc-photo" [src]="imgUrl(top10()[2].number)" [alt]="top10()[2].name"
+           onerror="this.style.opacity='0'">
+      <div class="cc-color-veil" [style.background]="hexToRgba(top10()[2].color, 0.08)"></div>
+      <div class="cc-rank-badge cc-badge-bronze">3</div>
+      <div class="cc-overlay">
+        <div class="cc-name">{{ top10()[2].name }}</div>
+        <div class="cc-bottom">
+          <span class="cc-pct" [style.color]="top10()[2].color">{{ top10()[2].percentage }}%</span>
+          <span class="cc-votes">{{ getDisplayVotes(top10()[2].id) }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rank 5 (far right) -->
+    @if (top10().length >= 5) {
+    <div class="cand-card cc-r5" style="--cd:250ms" (click)="openModal(top10()[4], 5)">
+      <img class="cc-photo" [src]="imgUrl(top10()[4].number)" [alt]="top10()[4].name"
+           onerror="this.style.opacity='0'">
+      <div class="cc-color-veil" [style.background]="hexToRgba(top10()[4].color, 0.08)"></div>
+      <div class="cc-rank-badge">5</div>
+      <div class="cc-overlay">
+        <div class="cc-name">{{ top10()[4].name }}</div>
+        <div class="cc-bottom">
+          <span class="cc-pct" [style.color]="top10()[4].color">{{ top10()[4].percentage }}%</span>
+          <span class="cc-votes">{{ getDisplayVotes(top10()[4].id) }}</span>
+        </div>
+      </div>
+    </div>
+    }
+
+  </div>
+  }
 
   @if (showScrollTop()) {
   <button class="scroll-top-btn" (click)="scrollToTop()" aria-label="Scroll to top">
@@ -136,8 +124,6 @@
     </div>
 
     <div class="modal-body">
-
-      <!-- Left -->
       <div class="modal-left">
         <div class="modal-photo-area" [style.--accent]="modal.c.color">
           <div class="modal-rank-label">อันดับ</div>
@@ -158,7 +144,6 @@
         </div>
       </div>
 
-      <!-- Right -->
       <div class="modal-right">
         <h3 class="modal-section-title">ฐานคะแนนจาก 50 เขต</h3>
         <div class="modal-rank-stats">
@@ -205,7 +190,6 @@
           }
         </div>
       </div>
-
     </div>
   </div>
 </div>

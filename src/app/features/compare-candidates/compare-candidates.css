@@ -47,7 +47,7 @@
 .page-subtitle-mobile {
   font-size: 13px;
   font-weight: 700;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.55);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-top: 4px;
@@ -68,7 +68,7 @@
 .page-subtitle-desktop {
   font-size: 12px;
   font-weight: 700;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.55);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-top: 2px;
@@ -85,8 +85,10 @@
 
 /* ── Shared glass card ─────────────────────────────────── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 0.875rem;
 }
@@ -234,38 +236,4 @@
   }
 
   .section-title { font-size: 13px; }
-}
-
-/* ── Light theme ─────────────────────────────────────────── */
-:host-context(html.light) .glass-card {
-  background: rgba(255, 255, 255, 0.55);
-  border-color: rgba(132, 177, 121, 0.15);
-}
-
-:host-context(html.light) .page-title-desktop,
-:host-context(html.light) .page-title-mobile,
-:host-context(html.light) .section-title {
-  color: #1e3a17;
-}
-
-:host-context(html.light) .page-subtitle-desktop,
-:host-context(html.light) .page-subtitle-mobile {
-  color: rgba(45, 74, 37, 0.55);
-}
-
-:host-context(html.light) .swap-btn {
-  background: rgba(255,255,255,0.5);
-  border-color: rgba(132, 177, 121, 0.2);
-  color: rgba(45, 74, 37, 0.6);
-}
-
-:host-context(html.light) .swap-btn:hover {
-  background: rgba(255,255,255,0.8);
-  color: #1e3a17;
-}
-
-:host-context(html.light) .scroll-top-btn {
-  background: rgba(255,255,255,0.7);
-  border-color: rgba(132, 177, 121, 0.2);
-  color: #1e3a17;
 }

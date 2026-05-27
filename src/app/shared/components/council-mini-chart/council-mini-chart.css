@@ -22,8 +22,3 @@
 @media (max-width: 767px) {
   :host { display: none; }
 }
-
-/* ── Light Theme ─────────────────── */
-:host-context(html.light) .mini-chart-label {
-  color: rgba(45, 74, 37, 0.4);
-}

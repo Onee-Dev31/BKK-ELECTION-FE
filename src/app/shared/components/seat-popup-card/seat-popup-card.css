@@ -120,30 +120,3 @@
   .seat-card-party span { font-size: 16px; }
   .seat-card-party-logo { width: 12px; height: 12px; }
 }
-
-/* ── Light Theme ─────────────────── */
-:host-context(html.light) .seat-card {
-  background: rgba(255, 255, 255, 0.97);
-  border-color: rgba(132, 177, 121, 0.3);
-  box-shadow: 0 12px 40px rgba(100, 150, 80, 0.2);
-}
-
-:host-context(html.light) .seat-card-close {
-  color: rgba(45, 74, 37, 0.35);
-}
-
-:host-context(html.light) .seat-card-close:hover {
-  color: rgba(45, 74, 37, 0.8);
-}
-
-:host-context(html.light) .seat-card-photo {
-  background: rgba(132, 177, 121, 0.1);
-}
-
-:host-context(html.light) .seat-card-district {
-  color: rgba(45, 74, 37, 0.45);
-}
-
-:host-context(html.light) .seat-card-name {
-  color: #2d4a25;
-}

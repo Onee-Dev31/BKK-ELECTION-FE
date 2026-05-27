@@ -1,3 +1,77 @@
-@for (candidate of candidates(); track candidate.id; let i = $index) {
-<app-policy-card [candidate]="candidate" [rank]="i + 1"></app-policy-card>
+@if (candidates().length >= 1) {
+  <div class="podium-section">
+
+    <!-- Olympic podium: 2nd | 1st | 3rd -->
+    <div class="podium-stage">
+
+      <!-- 2nd -->
+      @if (candidates()[1]; as c) {
+        <div class="podium-slot podium-2">
+          <div class="podium-avatar-wrap">
+            @if (c.imageUrl) {
+              <img [src]="c.imageUrl" class="podium-avatar">
+            } @else {
+              <span class="podium-avatar-fallback" [style.color]="c.color">{{ c.name.charAt(0) }}</span>
+            }
+            <span class="podium-badge silver">2</span>
+          </div>
+          <div class="podium-info">
+            <div class="podium-name">{{ c.name }}</div>
+            <div class="podium-pct" [style.color]="c.color">{{ c.percentage.toFixed(1) }}%</div>
+          </div>
+          <div class="podium-block block-2"><span class="block-num">2</span></div>
+        </div>
+      }
+
+      <!-- 1st -->
+      @if (candidates()[0]; as c) {
+        <div class="podium-slot podium-1">
+          <div class="podium-avatar-wrap">
+            @if (c.imageUrl) {
+              <img [src]="c.imageUrl" class="podium-avatar">
+            } @else {
+              <span class="podium-avatar-fallback" [style.color]="c.color">{{ c.name.charAt(0) }}</span>
+            }
+            <span class="podium-badge gold">1</span>
+          </div>
+          <div class="podium-info">
+            <div class="podium-name champion">{{ c.name }}</div>
+            <div class="podium-pct champion-pct" [style.color]="c.color">{{ c.percentage.toFixed(1) }}%</div>
+          </div>
+          <div class="podium-block block-1"><span class="block-num">1</span></div>
+        </div>
+      }
+
+      <!-- 3rd -->
+      @if (candidates()[2]; as c) {
+        <div class="podium-slot podium-3">
+          <div class="podium-avatar-wrap">
+            @if (c.imageUrl) {
+              <img [src]="c.imageUrl" class="podium-avatar">
+            } @else {
+              <span class="podium-avatar-fallback" [style.color]="c.color">{{ c.name.charAt(0) }}</span>
+            }
+            <span class="podium-badge bronze">3</span>
+          </div>
+          <div class="podium-info">
+            <div class="podium-name">{{ c.name }}</div>
+            <div class="podium-pct" [style.color]="c.color">{{ c.percentage.toFixed(1) }}%</div>
+          </div>
+          <div class="podium-block block-3"><span class="block-num">3</span></div>
+        </div>
+      }
+
+    </div><!-- /podium-stage -->
+
+    <!-- Rank 4 & 5 as compact rows -->
+    @for (candidate of candidates().slice(3, 5); track candidate.id; let i = $index) {
+      <app-policy-card [candidate]="candidate" [rank]="i + 4"></app-policy-card>
+    }
+
+  </div>
+}
+
+<!-- Rank 6+ as normal rows -->
+@for (candidate of candidates().slice(5); track candidate.id; let i = $index) {
+  <app-policy-card [candidate]="candidate" [rank]="i + 6"></app-policy-card>
 }

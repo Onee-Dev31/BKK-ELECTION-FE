@@ -5,7 +5,7 @@
 .vote-diff-label {
   font-size: 15px;
   font-weight: 800;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.8);
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -55,7 +55,3 @@
   font-size: 15px;
   font-weight: 800;
 }
-
-/* ── Light theme ── */
-:host-context(html.light) .vote-diff-label { color: rgba(45, 74, 37, 0.55); }
-:host-context(html.light) .vote-bar-track { background: rgba(0,0,0,0.06); }

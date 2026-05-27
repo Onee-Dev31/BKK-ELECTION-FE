@@ -2,10 +2,7 @@
 
 <div class="stage w-full h-full relative">
 
-    <div class="stage-bg">
-        <div class="stage-bg-img" style="background-image:url('/assets/S__104603666.jpg');"></div>
-        <div class="stage-bg-overlay"></div>
-    </div>
+
 
     <div class="content-grid w-full h-full relative z-10 xl:pl-20" [class.is-sk-mode]="mapState.activeTab() === 'sk'" [class.parliament-quota]="mapState.activeTab() === 'sk' && mapState.councilView() === 'quota'">
         <article class="area-map flex flex-col min-h-0 relative">
@@ -15,7 +12,7 @@
                 <div class="flex flex-col gap-3">
                     <!-- Logo -->
                     <div class="logo-brand">
-                        <img src="/Logo%20วันเลือกตั้ง%20ผู้ว่าฯ%20กทม.%2069%20Final.png" alt="วันเลือกตั้งผู้ว่าฯ กทม. 69" class="election-logo">
+                        <img src="/Logo%20วันเลือกตั้ง%20ผู้วาฯ%20กทม.%2069%20Final%20200569.png" alt="วันเลือกตั้งผู้ว่าฯ กทม. 69" class="election-logo">
                     </div>
                     <!-- Main toggle -->
                     <div class="toggle-pill" style="pointer-events:auto;">
@@ -48,11 +45,14 @@
                 </div>
             </div>
             <main class="flex-1 min-h-0 w-full" style="container-type:size;">
-                @if (mapState.activeTab() === 'sk' && mapState.councilView() === 'quota') {
-                <app-parliament-chart class="block w-full h-full"></app-parliament-chart>
-                } @else {
-                <app-map-viewer class="block w-full h-full"></app-map-viewer>
-                }
+                <app-parliament-chart
+                    class="block w-full h-full"
+                    [style.display]="(mapState.activeTab() === 'sk' && mapState.councilView() === 'quota') ? 'block' : 'none'">
+                </app-parliament-chart>
+                <app-map-viewer
+                    class="block w-full h-full"
+                    [style.display]="!(mapState.activeTab() === 'sk' && mapState.councilView() === 'quota') ? 'block' : 'none'">
+                </app-map-viewer>
             </main>
         </article>
 
@@ -92,11 +92,14 @@
                 </div>
             </header>
             <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar">
-                @if (mapState.activeTab() === 'summary') {
-                <app-policy-list class="block w-full"></app-policy-list>
-                } @else {
-                <app-council-result class="block h-full"></app-council-result>
-                }
+                <app-policy-list
+                    class="block w-full"
+                    [style.display]="mapState.activeTab() === 'summary' ? 'block' : 'none'">
+                </app-policy-list>
+                <app-council-result
+                    class="block h-full"
+                    [style.display]="mapState.activeTab() !== 'summary' ? 'block' : 'none'">
+                </app-council-result>
             </div>
             <footer
                 class="px-4 py-2 border-t border-white/5 bg-black/20 text-[16px] font-bold text-teal-400/40 text-center flex-shrink-0 uppercase tracking-widest leading-relaxed">

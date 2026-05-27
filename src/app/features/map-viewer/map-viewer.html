@@ -40,80 +40,87 @@
     </div>
     }
 
-    @if (mapState.mapMode() === 'geo') {
-    <app-geo-map class="block w-full h-full"></app-geo-map>
-    } @else if (mapState.mapMode() === 'jigsaw') {
-    <app-jigsaw-map class="block w-full h-full"></app-jigsaw-map>
-    } @else {
-
-    <div class="map-grid-wrapper">
-        @for (district of districts(); track district.id; let i = $index) {
-        <div class="district-cell group"
-            [style.left.%]="0.6 + (district.col - 1 + (district.row % 2 === 0 ? 0.5 : 0)) * 9.5"
-            [style.top.%]="9 + (district.row - 1) * 9" [style.animation-delay]="i * 6 + 'ms'"
-            [class.is-selected]="mapState.selectedDistrictId() === district.id" 
-            [class.is-highlighted]="mapState.selectedCandidateId() !== null && district.leadingCandidateId === mapState.selectedCandidateId()"
-            [class.is-faded]="mapState.selectedCandidateId() !== null && district.leadingCandidateId !== mapState.selectedCandidateId()"
-            (click)="selectDistrict(district.id)">
-
-            <div class="custom-tooltip-box" [class.is-bottom]="district.row <= 2">
-                @if (getDistrictTooltipData(district.id); as tooltip) {
-                <div class="flex flex-col gap-2">
-                    <div class="font-black text-sm text-white mb-1 border-b border-white/10 pb-2">
-                        เขต {{ getShortName(district.id) }}
-                        <span class="text-teal-400 font-bold ml-1 text-xs">#{{ district.number }}</span>
-                    </div>
-
-                    @if (tooltip.type === 'governor') {
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full ring-2 ring-white/10 ring-offset-2 ring-offset-teal-950 p-0.5 overflow-hidden shrink-0">
-                            <img [src]="tooltip.imageUrl" class="w-full h-full rounded-full object-cover">
-                        </div>
-                        <div class="flex flex-col flex-1 leading-tight min-w-0">
-                            <div class="flex items-center gap-1.5 mb-0.5">
-                                <img [src]="tooltip.partyLogoUrl" class="w-3 h-3 object-contain opacity-70">
-                                <span class="text-[16px] text-teal-400 font-black uppercase tracking-widest truncate">{{ tooltip.partyName }}</span>
-                            </div>
-                            <div class="text-[16px] font-black text-white leading-tight truncate">{{ tooltip.candidateName }}</div>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-end mt-1 pt-2 border-t border-white/5">
-                        <span class="text-[16px] text-teal-500 font-bold tracking-widest uppercase">VOTES</span>
-                        <div class="flex flex-col items-end leading-none">
-                            <span class="text-sm font-black text-white">{{ tooltip.votes | number }}</span>
-                            <span class="text-[16px] font-bold text-teal-400 mt-0.5">{{ tooltip.percentage }}%</span>
-                        </div>
-                    </div>
-                    }
-
-                    @if (tooltip.type === 'council') {
-                    <div class="flex items-center gap-3">
-                        @if (tooltip.partyLogoUrl) {
-                        <img [src]="tooltip.partyLogoUrl" class="w-8 h-8 object-contain shrink-0">
-                        }
-                        <div class="flex flex-col leading-tight min-w-0">
-                            <span class="text-[17px] font-black" [style.color]="tooltip.color">{{ tooltip.partyName }}</span>
-                            <span class="text-[16px] text-white/40 mt-0.5">{{ tooltip.count }} ผู้สมัคร ส.ก.</span>
-                        </div>
-                    </div>
-                    }
-                </div>
-                }
-            </div>
-
-            <div class="district-inner">
-                <div class="hexagon-content"
-                    [ngStyle]="hexStyle(district.id, district.leadingCandidateId)">
-                    <span class="district-number">{{ district.number }}</span>
-                    <span class="district-title">{{ getShortName(district.id) }}</span>
-                </div>
-            </div>
-        </div>
-        }
+    <!-- Geo map: always in DOM — ngOnInit fetches GeoJSON once, no re-fetch on mode switch -->
+    <div class="map-panel" [class.map-panel-active]="mapState.mapMode() === 'geo'">
+        <app-geo-map class="block w-full h-full"></app-geo-map>
     </div>
 
-    <!-- Map Legend (Only for SK) -->
-    @if (mapState.activeTab() === 'sk') {
+    <!-- Jigsaw map: always in DOM -->
+    <div class="map-panel" [class.map-panel-active]="mapState.mapMode() === 'jigsaw'">
+        <app-jigsaw-map class="block w-full h-full"></app-jigsaw-map>
+    </div>
+
+    <!-- Hex grid: always in DOM, entry animation plays only on first render -->
+    <div class="map-panel" [class.map-panel-active]="mapState.mapMode() === 'hex'">
+        <div class="map-grid-wrapper">
+            @for (district of districts(); track district.id; let i = $index) {
+            <div class="district-cell group"
+                [style.left.%]="0.6 + (district.col - 1 + (district.row % 2 === 0 ? 0.5 : 0)) * 9.5"
+                [style.top.%]="9 + (district.row - 1) * 9" [style.animation-delay]="i * 6 + 'ms'"
+                [class.is-selected]="mapState.selectedDistrictId() === district.id"
+                [class.is-highlighted]="mapState.selectedCandidateId() !== null && district.leadingCandidateId === mapState.selectedCandidateId()"
+                [class.is-faded]="mapState.selectedCandidateId() !== null && district.leadingCandidateId !== mapState.selectedCandidateId()"
+                (click)="selectDistrict(district.id)">
+
+                <div class="custom-tooltip-box" [class.is-bottom]="district.row <= 2">
+                    @if (getDistrictTooltipData(district.id); as tooltip) {
+                    <div class="flex flex-col gap-2">
+                        <div class="font-black text-sm text-white mb-1 border-b border-white/10 pb-2">
+                            เขต {{ getShortName(district.id) }}
+                            <span class="text-teal-400 font-bold ml-1 text-xs">#{{ district.number }}</span>
+                        </div>
+
+                        @if (tooltip.type === 'governor') {
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full ring-2 ring-white/10 ring-offset-2 ring-offset-teal-950 p-0.5 overflow-hidden shrink-0">
+                                <img [src]="tooltip.imageUrl" class="w-full h-full rounded-full object-cover">
+                            </div>
+                            <div class="flex flex-col flex-1 leading-tight min-w-0">
+                                <div class="flex items-center gap-1.5 mb-0.5">
+                                    <img [src]="tooltip.partyLogoUrl" class="w-3 h-3 object-contain opacity-70">
+                                    <span class="text-[16px] text-teal-400 font-black uppercase tracking-widest truncate">{{ tooltip.partyName }}</span>
+                                </div>
+                                <div class="text-[16px] font-black text-white leading-tight truncate">{{ tooltip.candidateName }}</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-end mt-1 pt-2 border-t border-white/5">
+                            <span class="text-[16px] text-teal-500 font-bold tracking-widest uppercase">VOTES</span>
+                            <div class="flex flex-col items-end leading-none">
+                                <span class="text-sm font-black text-white">{{ tooltip.votes | number }}</span>
+                                <span class="text-[16px] font-bold text-teal-400 mt-0.5">{{ tooltip.percentage }}%</span>
+                            </div>
+                        </div>
+                        }
+
+                        @if (tooltip.type === 'council') {
+                        <div class="flex items-center gap-3">
+                            @if (tooltip.partyLogoUrl) {
+                            <img [src]="tooltip.partyLogoUrl" class="w-8 h-8 object-contain shrink-0">
+                            }
+                            <div class="flex flex-col leading-tight min-w-0">
+                                <span class="text-[17px] font-black" [style.color]="tooltip.color">{{ tooltip.partyName }}</span>
+                                <span class="text-[16px] text-white/40 mt-0.5">{{ tooltip.count }} ผู้สมัคร ส.ก.</span>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <div class="district-inner">
+                    <div class="hexagon-content"
+                        [ngStyle]="hexStyle(district.id, district.leadingCandidateId)">
+                        <span class="district-number">{{ district.number }}</span>
+                        <span class="district-title">{{ getShortName(district.id) }}</span>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+
+    <!-- Map Legend (Only for SK + hex mode) -->
+    @if (mapState.activeTab() === 'sk' && mapState.mapMode() === 'hex') {
     <div class="map-legend-box absolute bottom-6 right-10 flex flex-col gap-3 bg-black/40 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl z-50">
         <div class="flex flex-col mb-1">
             <span class="text-[17px] font-black text-white/90 uppercase tracking-wider leading-none">พรรคที่นำอันดับ 1 ในแต่ละเขต</span>
@@ -132,5 +139,4 @@
     </div>
     }
 
-    }
 </div>

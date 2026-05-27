@@ -4,19 +4,19 @@
     font-family: 'DB Adman X';
     src: url('/fonts DB/DB Adman X Li v3.2.ttf') format('truetype');
     font-weight: 300;
-    font-display: swap;
+    font-display: optional;
 }
 @font-face {
     font-family: 'DB Adman X';
     src: url('/fonts DB/DB Adman X v3.2.ttf') format('truetype');
     font-weight: 400;
-    font-display: swap;
+    font-display: optional;
 }
 @font-face {
     font-family: 'DB Adman X';
     src: url('/fonts DB/DB Adman X Bd v3.2.ttf') format('truetype');
     font-weight: 600 700;
-    font-display: swap;
+    font-display: optional;
 }
 
 @theme {
@@ -41,10 +41,7 @@
         overflow: hidden;
         font-size: 20px;
         font-family: 'DB Adman X', sans-serif !important;
-        background-color: var(--color-bkk-bg) !important;
-        background-image: linear-gradient(to bottom, rgba(0, 214, 91, 0.04) 0%, transparent 100%);
-        background-attachment: fixed;
-        color: #e2e8f0 !important;
+        color: #ffffff !important;
         -webkit-font-smoothing: antialiased;
     }
 
@@ -59,10 +56,10 @@
 /* ── Emerald Glass Panel Components ─────────────────── */
 @layer components {
     .panel-glass {
-        background: var(--color-bkk-glass);
-        backdrop-filter: blur(12px) saturate(140%);
-        -webkit-backdrop-filter: blur(12px) saturate(140%);
-        border: 1px solid var(--color-bkk-border);
+        background: rgba(8, 15, 30, 0.78);
+        backdrop-filter: blur(16px) saturate(160%);
+        -webkit-backdrop-filter: blur(16px) saturate(160%);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 32px;
         overflow: hidden;
         box-shadow:
@@ -108,22 +105,12 @@
 .bkk-skyline-layer {
     position: absolute;
     inset: 0;
-    background-image: url('/S__104603666.jpg');
+    background-image: url('/ChatGPT%20Image%20May%2027%2C%202026%2C%2003_52_05%20PM.png');
     background-size: cover;
-    background-position: center bottom;
+    background-position: center center;
     background-repeat: no-repeat;
-    opacity: 0.07;
     pointer-events: none;
     z-index: 1;
-    -webkit-mask-image: linear-gradient(to top, black 0%, black 20%, transparent 45%);
-    mask-image: linear-gradient(to top, black 0%, black 20%, transparent 45%);
-}
-
-html.light .bkk-skyline-layer {
-    opacity: 0.18;
-    -webkit-mask-image: linear-gradient(to top, black 0%, black 30%, transparent 65%);
-    mask-image: linear-gradient(to top, black 0%, black 30%, transparent 65%);
-    mix-blend-mode: multiply;
 }
 
 /* Sidebar and Navbar layout properties are managed in their respective CSS and dashboard-layout.css */
@@ -212,121 +199,10 @@ html.light .bkk-skyline-layer {
     border: 1px solid rgba(51, 255, 133, 0.2);
 }
 
-/* ── Light Theme (html.light) ─────────────────── */
-html.light {
-    --color-bkk-bg: #e8f5bd;
-    --color-bkk-green: #84b179;
-    --color-bkk-accent: #a2cb8b;
-    --color-bkk-muted: #6b8f63;
-    --color-bkk-glass: rgba(255, 255, 255, 0.82);
-    --color-bkk-border: rgba(132, 177, 121, 0.28);
-}
-
-html.light body {
-    background-color: #e8f5bd !important;
-    background-image: linear-gradient(to bottom, rgba(132, 177, 121, 0.1) 0%, transparent 50%);
-    color: #2d4a25 !important;
-}
-
-html.light .panel-glass {
-    background: rgba(255, 255, 255, 0.75);
-    border-color: rgba(132, 177, 121, 0.3);
-    box-shadow:
-        0 25px 80px -20px rgba(100, 150, 80, 0.2),
-        inset 0 0 30px rgba(162, 203, 139, 0.05),
-        0 0 0 1px rgba(132, 177, 121, 0.15);
-}
-
-html.light .panel-glass::after {
-    background: linear-gradient(135deg, rgba(132, 177, 121, 0.5), transparent 30%, transparent 70%, rgba(132, 177, 121, 0.5));
-    filter: drop-shadow(0 0 8px rgba(132, 177, 121, 0.3));
-}
-
-html.light ::-webkit-scrollbar-thumb {
-    background: rgba(132, 177, 121, 0.4);
-}
-
-html.light .district-tooltip .ant-tooltip-inner {
-    background: rgba(255, 255, 255, 0.97);
-    border-color: rgba(132, 177, 121, 0.3);
-    box-shadow: 0 10px 30px rgba(100, 150, 80, 0.2);
-    color: #2d4a25;
-}
-
-html.light .district-tooltip .ant-tooltip-arrow-content {
-    background: rgba(255, 255, 255, 0.97);
-    border-color: rgba(132, 177, 121, 0.3);
-}
-
-/* ── Council Result light theme (hardcoded Tailwind overrides) ── */
-html.light app-council-result [class*="text-white"],
-html.light app-council-result [class*="text-slate"] {
-  color: rgba(45, 74, 37, 0.85);
-}
-
-html.light app-council-result [class*="text-teal"] {
-  color: #5a8a52;
-}
-
-html.light app-council-result [class*="bg-white"] {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-html.light app-council-result [class*="border-white"] {
-  border-color: rgba(132, 177, 121, 0.2);
-}
-
-html.light app-council-result [class*="bg-black"] {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-/* ── Parliament chart light theme ── */
-html.light app-parliament-chart [class*="text-white"],
-html.light app-parliament-chart [class*="text-slate"] {
-  color: rgba(45, 74, 37, 0.85);
-}
-
-html.light app-parliament-chart [class*="text-teal"] {
-  color: #5a8a52;
-}
-
-html.light app-parliament-chart [class*="bg-black"],
-html.light app-parliament-chart [class*="bg-white"] {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-html.light app-parliament-chart [class*="border-white"] {
-  border-color: rgba(132, 177, 121, 0.2);
-}
-
-/* ── Policy list light theme ── */
-html.light app-policy-list [class*="text-white"],
-html.light app-policy-list [class*="text-slate"] {
-  color: rgba(45, 74, 37, 0.85);
-}
-
-html.light app-policy-list [class*="text-teal"] {
-  color: #5a8a52;
-}
-
-html.light app-policy-list [class*="bg-black"],
-html.light app-policy-list [class*="bg-white"] {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-html.light app-policy-list [class*="border-white"] {
-  border-color: rgba(132, 177, 121, 0.2);
-}
-
 /* ── Bottom Nav Theme Classes ─────────────────── */
 .theme-bottom-nav {
-    background: rgba(2, 21, 13, 0.85);
-    border-top: 1px solid rgba(51, 255, 133, 0.08);
-}
-
-html.light .theme-bottom-nav {
-    background: rgba(255, 255, 255, 0.92);
-    border-top: 1px solid rgba(132, 177, 121, 0.2);
+    background: rgba(5, 10, 20, 0.88);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .theme-nav-btn {
@@ -339,20 +215,8 @@ html.light .theme-bottom-nav {
     transform: scale(1.1) translateY(-2px);
 }
 
-html.light .theme-nav-btn {
-    color: rgba(45, 74, 37, 0.5);
-}
-
-html.light .theme-nav-btn.active {
-    color: #5a8a52;
-}
-
 .theme-active-dot {
     background: #00d65b;
-}
-
-html.light .theme-active-dot {
-    background: #84b179;
 }
 
 /* ── Scroll-to-top button ─────────────────── */
@@ -392,6 +256,16 @@ html.light .theme-active-dot {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Page transition: fade-in when router swaps a component */
+@keyframes page-enter {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+router-outlet ~ * {
+    animation: page-enter 0.2s ease both;
+}
+
 /* ── Copy toast ─────────────────── */
 .copy-toast {
     position: fixed;
@@ -419,41 +293,3 @@ html.light .theme-active-dot {
     }
 }
 
-/* ── Candidates Stack light theme ── */
-html.light app-candidates-stack [class*="text-white"] {
-  color: rgba(30, 58, 23, 0.85);
-}
-
-html.light app-candidates-stack [class*="text-slate"] {
-  color: rgba(30, 58, 23, 0.7);
-}
-
-html.light app-candidates-stack [class*="bg-white"] {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-html.light app-candidates-stack [class*="bg-black"] {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-html.light app-candidates-stack [class*="border-white"] {
-  border-color: rgba(132, 177, 121, 0.25);
-}
-
-/* Compare candidates light theme */
-html.light app-compare-candidates [class*="text-white"] {
-  color: rgba(30, 58, 23, 0.85);
-}
-
-html.light app-compare-candidates [class*="text-slate"] {
-  color: rgba(30, 58, 23, 0.7);
-}
-
-html.light app-compare-candidates [class*="bg-black"],
-html.light app-compare-candidates [class*="bg-white"] {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-html.light app-compare-candidates [class*="border-white"] {
-  border-color: rgba(132, 177, 121, 0.25);
-}
