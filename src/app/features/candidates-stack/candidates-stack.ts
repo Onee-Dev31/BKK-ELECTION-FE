@@ -179,7 +179,11 @@ export class CandidatesStack implements OnInit, OnDestroy {
   }
 
   private readonly imgOverrides: Record<number, string> = {
-    8: '/messageImage_1779875875371.jpg',
+    8: '/Dicus/ชัชชาติ.png',
+    4: '/Dicus/ชัยวัฒน์ สถาวรวิจิตร 01.png',
+    3: '/Dicus/อนุชา บูรพชัยศรี 02.png',
+    1: '/Dicus/ชัยวัฒน์ สถาวรวิจิตร 01.png',
+    6: '/Dicus/อนุชา บูรพชัยศรี 02.png',
   };
 
   imgUrl(n: number) {
@@ -200,4 +204,15 @@ export class CandidatesStack implements OnInit, OnDestroy {
   });
 
   readonly formatVotes = formatVotes;
+
+  muteColor(hex: string, amount = 0.55): string {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    const gray = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
+    const nr = Math.round(r + (gray - r) * amount);
+    const ng = Math.round(g + (gray - g) * amount);
+    const nb = Math.round(b + (gray - b) * amount);
+    return `rgb(${nr},${ng},${nb})`;
+  }
 }
