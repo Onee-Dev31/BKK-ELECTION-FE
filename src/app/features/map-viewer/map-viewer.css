@@ -478,17 +478,23 @@
 .map-mode-toggle {
     position: absolute;
     top: 16px;
-    right: 16px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
     z-index: 60;
     display: flex;
     align-items: center;
     gap: 2px;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 3px;
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 11px;
+    padding: 2px;
+    box-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .map-mode-btn {
@@ -496,11 +502,11 @@
     align-items: center;
     gap: 5px;
     padding: 5px 10px;
-    border-radius: 7px;
+    border-radius: 8px;
     font-size: 16px;
     font-weight: 900;
     letter-spacing: 0.04em;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(30, 50, 60, 0.45);
     background: transparent;
     border: none;
     cursor: pointer;
@@ -509,19 +515,37 @@
 }
 
 .map-mode-btn:hover {
-    color: rgba(255, 255, 255, 0.75);
-    background: rgba(255, 255, 255, 0.07);
+    color: rgba(30, 50, 60, 0.65);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .map-mode-btn-active {
-    color: #2dd4bf !important;
-    background: rgba(45, 212, 191, 0.12) !important;
+    color: #fff !important;
+    background: rgba(20, 184, 166, 0.88) !important;
+    box-shadow:
+        0 1px 8px rgba(20, 184, 166, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Desktop: below main toggle, same right-anchor */
+@media (min-width: 1280px) {
+    .map-mode-toggle {
+        top: 62px;
+        right: 16px;
+        left: auto;
+        transform: none;
+    }
+}
+
+.map-mode-toggle.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
 }
 
 @media (max-width: 767px) {
     .map-mode-toggle {
         top: 10px;
-        right: 10px;
     }
     .map-mode-btn span {
         display: none;

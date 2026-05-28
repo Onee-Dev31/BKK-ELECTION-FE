@@ -2,18 +2,12 @@
 .map-logo-toggle {
     left: 2.85rem;
     padding-top: 1.75rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }
 
-.map-logo-toggle .toggle-pill {
-    margin-top: 6px;
-    transform: translate(290px, 0px);
-}
-
-.map-logo-toggle .toggle-pill-sm {
-    transform: translate(290px, 0px);
+.map-toggle-area {
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 1.75rem;
 }
 
 /* ── Logo accent bar ── */
@@ -44,18 +38,30 @@
     padding: 3px;
     width: 240px;
     border-radius: 14px;
-    background: rgba(0,0,0,0.55);
+    background: rgba(255,255,255,0.62);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow:
+        0 2px 12px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.8);
 }
 
 .toggle-pill-sm {
-    width: 200px;
     border-radius: 11px;
     padding: 2px;
-    background: rgba(0,0,0,0.35);
+    background: rgba(255,255,255,0.62);
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow:
+        0 2px 12px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toggle-pill-sm.is-hidden {
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none !important;
 }
 
 /* ── Toggle buttons ── */
@@ -66,7 +72,7 @@
     font-size: 17px;
     font-weight: 900;
     letter-spacing: -0.01em;
-    color: rgba(255,255,255,0.38);
+    color: rgba(30,50,60,0.45);
     background: transparent;
     border: none;
     cursor: pointer;
@@ -74,16 +80,16 @@
 }
 
 .toggle-btn:hover:not(.toggle-btn-active) {
-    color: rgba(255,255,255,0.6);
-    background: rgba(255,255,255,0.04);
+    color: rgba(30,50,60,0.65);
+    background: rgba(255,255,255,0.3);
 }
 
 .toggle-btn-active {
-    background: rgba(20,184,166,0.85);
+    background: rgba(20,184,166,0.88);
     color: #fff;
     box-shadow:
         0 1px 8px rgba(20,184,166,0.4),
-        inset 0 1px 0 rgba(255,255,255,0.15);
+        inset 0 1px 0 rgba(255,255,255,0.25);
 }
 
 .toggle-btn-sm {
@@ -269,7 +275,10 @@
     .map-logo-toggle {
         left: 1.25rem;
         padding-top: 1rem;
-        gap: 0.5rem;
+    }
+
+    .map-toggle-area {
+        padding-top: 1rem;
     }
 
     .map-logo-toggle .logo-brand,
@@ -615,5 +624,33 @@
     .map-logo-toggle {
         left: 1rem;
         padding-top: 1rem;
+    }
+    /* >1600px: [search LEFT][toggle RIGHT] — search has larger right value */
+    .area-search {
+        right: 728px;   /* toggle_right_edge(480+240=720) + 8px gap = 728 */
+        left: auto;
+        top: 47px;
+    }
+    .map-toggle-area {
+        right: 480px;   /* 16px inside map right edge */
+        left: auto;
+        transform: none;
+        padding-top: 0;
+        top: 47px;
+    }
+}
+
+/* 1280–1600px: sidebar=360px+gap20+pad20=400px → map right = W-400 */
+@media (min-width: 1280px) and (max-width: 1600px) {
+    .area-search {
+        right: 664px;   /* toggle_right_edge(416+240=656) + 8px gap = 664 */
+        left: auto;
+        top: 36px;
+    }
+    .map-toggle-area {
+        right: 416px;   /* 16px inside map right edge (W-400-16) */
+        left: auto;
+        top: 36px;
+        padding-top: 0;
     }
 }

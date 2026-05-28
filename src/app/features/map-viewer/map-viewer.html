@@ -1,8 +1,8 @@
 <div class="map-container">
     <div class="map-bg-grid"></div>
 
-    <!-- Map Mode Toggle -->
-    <div class="map-mode-toggle">
+    <!-- Map Mode Toggle: hide in sk mode (toggle-pill-sm takes that slot) -->
+    <div class="map-mode-toggle" [class.is-hidden]="mapState.activeTab() === 'sk'">
         <button class="map-mode-btn" [class.map-mode-btn-active]="mapState.mapMode() === 'hex'" (click)="mapState.mapMode.set('hex')" title="แผนที่ตาราง">
             <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5">
                 <path d="M12 2L22 7.5v9L12 22 2 16.5v-9L12 2zm0 2.3L4 8.6v6.8L12 19.7l8-4.3V8.6L12 4.3z"/>
