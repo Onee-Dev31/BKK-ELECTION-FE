@@ -11,8 +11,8 @@
     @if (top10().length >= 4) {
     <div class="cand-card cc-r4" style="--cd:200ms" (click)="openModal(top10()[3], 4)" [style.background]="muteColor(top10()[3].color)">
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[3].number)" [alt]="top10()[3].name" onerror="this.style.opacity='0'">
         <div class="cc-rank-badge">{{ top10()[3].number }}</div>
+        <img class="cc-photo" [src]="imgUrl(top10()[3].number)" [alt]="top10()[3].name" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel">
         <div class="cc-name" [style.color]="top10()[3].color">{{ top10()[3].name }}</div>
@@ -27,8 +27,8 @@
     <!-- Rank 2 -->
     <div class="cand-card cc-r2" style="--cd:100ms" (click)="openModal(top10()[1], 2)" [style.background]="muteColor(top10()[1].color)">
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[1].number)" [alt]="top10()[1].name" onerror="this.style.opacity='0'">
         <div class="cc-rank-badge cc-badge-silver">{{ top10()[1].number }}</div>
+        <img class="cc-photo" [src]="imgUrl(top10()[1].number)" [alt]="top10()[1].name" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel">
         <div class="cc-name" [style.color]="top10()[1].color">{{ top10()[1].name }}</div>
@@ -42,8 +42,8 @@
     <!-- Rank 1 (center, hero) -->
     <div class="cand-card cc-r1" style="--cd:0ms" (click)="openModal(top10()[0], 1)" [style.background]="muteColor(top10()[0].color)">
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[0].number)" [alt]="top10()[0].name" onerror="this.style.opacity='0'">
         <div class="cc-rank-badge cc-badge-gold">{{ top10()[0].number }}</div>
+        <img class="cc-photo" [src]="imgUrl(top10()[0].number)" [alt]="top10()[0].name" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel cc-info-panel-r1">
         <div class="cc-name cc-name-r1" [style.color]="top10()[0].color">{{ top10()[0].name }}</div>
@@ -57,8 +57,8 @@
     <!-- Rank 3 -->
     <div class="cand-card cc-r3" style="--cd:150ms" (click)="openModal(top10()[2], 3)" [style.background]="muteColor(top10()[2].color)">
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[2].number)" [alt]="top10()[2].name" onerror="this.style.opacity='0'">
         <div class="cc-rank-badge cc-badge-bronze">{{ top10()[2].number }}</div>
+        <img class="cc-photo" [src]="imgUrl(top10()[2].number)" [alt]="top10()[2].name" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel">
         <div class="cc-name" [style.color]="top10()[2].color">{{ top10()[2].name }}</div>
@@ -73,8 +73,8 @@
     @if (top10().length >= 5) {
     <div class="cand-card cc-r5" style="--cd:250ms" (click)="openModal(top10()[4], 5)" [style.background]="muteColor(top10()[4].color)">
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[4].number)" [alt]="top10()[4].name" onerror="this.style.opacity='0'">
         <div class="cc-rank-badge">{{ top10()[4].number }}</div>
+        <img class="cc-photo" [src]="imgUrl(top10()[4].number)" [alt]="top10()[4].name" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel">
         <div class="cc-name" [style.color]="top10()[4].color">{{ top10()[4].name }}</div>
