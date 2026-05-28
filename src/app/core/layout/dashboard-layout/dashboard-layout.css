@@ -514,11 +514,68 @@
     }
 }
 
-/* ── Desktop: push toggle past sidebar right edge (≈84px) ──
-   Sidebar shows at xl (≥1280px), so only offset toggle there. ── */
+@keyframes candidates-glow-cycle {
+  0%   { box-shadow: 0 0 18px 6px rgba(255,150,150,0.55), 0 0 35px 12px rgba(255,150,150,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  17%  { box-shadow: 0 0 18px 6px rgba(255,220,100,0.55), 0 0 35px 12px rgba(255,220,100,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  33%  { box-shadow: 0 0 18px 6px rgba(130,220,165,0.55), 0 0 35px 12px rgba(130,220,165,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  50%  { box-shadow: 0 0 18px 6px rgba(130,185,255,0.55), 0 0 35px 12px rgba(130,185,255,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  67%  { box-shadow: 0 0 18px 6px rgba(205,150,255,0.55), 0 0 35px 12px rgba(205,150,255,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  83%  { box-shadow: 0 0 18px 6px rgba(255,165,195,0.55), 0 0 35px 12px rgba(255,165,195,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  100% { box-shadow: 0 0 18px 6px rgba(255,150,150,0.55), 0 0 35px 12px rgba(255,150,150,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+}
+
+/* ── area-candidates: frosted white glass (matches area-hero) ── */
+.area-candidates {
+    overflow: visible;
+    border: 5px solid rgba(255, 255, 255, 1);
+    border-radius: 34px;
+    background: rgba(235, 248, 243, 0.82);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    animation: candidates-glow-cycle 4s linear infinite;
+}
+
+.area-candidates > header {
+    border-color: rgba(0, 0, 0, 0.07);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.area-candidates > footer {
+    border-color: rgba(0, 0, 0, 0.07);
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(0, 128, 110, 0.6);
+}
+
+.area-candidates::after {
+    opacity: 0;
+}
+
+.area-candidates::before {
+    display: none;
+}
+
+@media (max-width: 1600px) {
+    .area-candidates::after {
+        inset: -1.5px;
+        padding: 3px;
+    }
+    .area-candidates::before {
+        inset: -8px -7px -12px;
+    }
+}
+
+/* ── Desktop: remove area-map's relative so map-logo-toggle escapes
+   to content-grid (viewport top-left). Override padding-left in
+   component CSS so it beats xl:pl-20 specificity. ── */
 @media (min-width: 1280px) {
+    .content-grid {
+        padding-left: 5rem;
+    }
+    .area-map {
+        position: static;
+    }
     .map-logo-toggle {
-        left: 4.5rem;
-        padding-top: 1.5rem;
+        left: 1rem;
+        padding-top: 1rem;
     }
 }

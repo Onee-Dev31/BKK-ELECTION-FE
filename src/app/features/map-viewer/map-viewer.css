@@ -54,7 +54,7 @@
 
 .map-grid-wrapper {
     position: relative;
-    width: min(90cqw, 90cqh * 1.1);
+    width: min(100cqw, 99cqh * 1.1);
     aspect-ratio: 1.1;
     contain: layout inline-size;
     container-type: inline-size;

@@ -22,7 +22,7 @@
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
   -webkit-mask-composite: xor !important;
   mask-composite: exclude !important;
-  background:
+  /* background:
     linear-gradient(
       180deg,
       rgba(255, 255, 255, 1) 0%,
@@ -30,7 +30,7 @@
       rgba(168, 188, 198, 0.95) 48%,
       rgba(76, 87, 94, 0.88) 72%,
       rgba(255, 255, 255, 1) 100%
-    ) !important;
+    ) !important; */
   filter:
     drop-shadow(0 0 7px rgba(255, 255, 255, 0.82))
     drop-shadow(0 14px 18px rgba(255, 255, 255, 0.34)) !important;

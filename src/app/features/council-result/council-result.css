@@ -5,6 +5,9 @@
   overflow: hidden;
 }
 
+/* ── Force dark text for light glass background ── */
+.list-row { color: #334155; }
+
 @keyframes row-in {
   from { opacity: 0; transform: translateY(10px); }
 }

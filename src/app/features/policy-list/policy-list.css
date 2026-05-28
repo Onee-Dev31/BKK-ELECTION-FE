@@ -42,7 +42,7 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.1);
   display: block;
 }
 
@@ -57,8 +57,8 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.06);
+  border: 2px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +102,7 @@
 .podium-name {
   font-size: 14px;
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(15, 23, 42, 0.8);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -111,7 +111,7 @@
 
 .podium-name.champion {
   font-size: 15px;
-  color: #fff;
+  color: #0f172a;
 }
 
 .podium-pct {
