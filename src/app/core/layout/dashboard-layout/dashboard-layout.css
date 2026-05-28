@@ -1,10 +1,19 @@
 /* ── Map overlay: logo + toggle ── */
 .map-logo-toggle {
-    left: 2.5rem;
-    padding-top: 1.5rem;
+    left: 2.85rem;
+    padding-top: 1.75rem;
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.map-logo-toggle .toggle-pill {
+    margin-top: 6px;
+    transform: translate(290px, 0px);
+}
+
+.map-logo-toggle .toggle-pill-sm {
+    transform: translate(290px, 0px);
 }
 
 /* ── Logo accent bar ── */
@@ -20,7 +29,7 @@
 
 /* ── Election logo ── */
 .election-logo {
-    height: 72px;
+    height: 130px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -123,12 +132,18 @@
    left = center of the map column (1fr) within the 1fr+400px+32px grid */
 .area-search {
     position: absolute;
-    top: 32px;
-    left: calc((100% - 432px) / 2 + 50px);
-    transform: translateX(-50%);
-    width: 440px;
+    top: 47px;
+    right: 660px;
+    left: auto;
+    transform: none;
+    width: 48px;
     height: 48px;
     z-index: 100;
+    transition: width 0.25s ease;
+}
+
+.area-search:focus-within {
+    width: 440px;
 }
 
 .area-map {
@@ -136,6 +151,23 @@
     min-height: 0;
     display: flex;
     flex-direction: column;
+}
+
+.area-map > main {
+    border-radius: 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(235, 248, 243, 0.18) 42%, rgba(255, 255, 255, 0.22)),
+        rgba(235, 248, 243, 0.52);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 4px solid rgba(255, 255, 255, 0.86);
+    box-shadow:
+        0 0 0 1px rgba(39, 54, 62, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.62),
+        inset 0 0 20px rgba(44, 61, 70, 0.12),
+        0 18px 44px rgba(18, 34, 42, 0.1),
+        0 0 26px rgba(255, 255, 255, 0.38);
+    overflow: hidden;
 }
 
 .area-hero {
@@ -169,14 +201,20 @@
     }
 
     .area-search {
-        top: 20px;
-        left: calc((100% - 380px) / 2 + 50px);
+        top: -10px;
+        right: 338px;
+        left: auto;
+        transform: none;
+        width: 48px;
+    }
+
+    .area-search:focus-within {
         width: 440px;
     }
 
     .map-logo-toggle {
-        left: 2rem;
-        padding-top: 1.25rem;
+        left: 2.35rem;
+        padding-top: 1.55rem;
     }
 }
 

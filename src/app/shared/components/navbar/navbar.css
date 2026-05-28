@@ -7,24 +7,64 @@
 nav {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    background: var(--color-bkk-glass);
+    background: rgba(14, 87, 158, 0.92);
     backdrop-filter: blur(32px) saturate(180%);
     -webkit-backdrop-filter: blur(32px) saturate(180%);
-    border: 1px solid var(--color-bkk-border);
-    border-radius: 24px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-    padding: 0 20px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    box-shadow:
+        0 10px 24px rgba(14, 87, 158, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    padding: 0;
     position: relative;
     z-index: 50;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-nav:focus-within {
-    border-color: var(--color-bkk-green);
+nav:not(.is-expanded) {
+    gap: 0;
+}
+
+nav.is-expanded {
+    justify-content: flex-start;
+    border-color: rgba(255, 255, 255, 0.42);
     box-shadow: 0 0 15px rgba(0, 214, 91, 0.3);
-    background: rgba(0, 214, 91, 0.15);
+    background: rgba(14, 87, 158, 0.94);
+    padding: 0 18px;
+    cursor: text;
+}
+
+nav input {
+    width: 0;
+    min-width: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, width 0.25s ease;
+}
+
+nav:not(.is-expanded) input {
+    display: none;
+}
+
+nav.is-expanded input {
+    width: auto;
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+nav > svg {
+    flex: 0 0 auto;
+    color: #ffffff;
+}
+
+nav:not(.is-expanded) .shortcut-hint,
+nav:not(.is-expanded) .clear-button {
+    display: none;
 }
 
 .search-results-dropdown {

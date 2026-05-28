@@ -28,6 +28,7 @@ export class Navbar {
   searchService = inject(SearchService);
   mapState = inject(MapStateService);
 
+  isSearchExpanded = signal(false);
   isSearchFocused = signal(false);
   activeIndex = signal(-1);
 
@@ -44,8 +45,14 @@ export class Navbar {
   }
 
   handleSearchFocus() {
+    this.isSearchExpanded.set(true);
     this.isSearchFocused.set(true);
     this.activeIndex.set(-1);
+  }
+
+  focusSearch() {
+    this.isSearchExpanded.set(true);
+    setTimeout(() => this.searchInputRef?.nativeElement.focus());
   }
 
   handleSearchBlur() {
@@ -53,6 +60,9 @@ export class Navbar {
     setTimeout(() => {
       this.isSearchFocused.set(false);
       this.activeIndex.set(-1);
+      if (!this.searchQuery) {
+        this.isSearchExpanded.set(false);
+      }
     }, 200);
   }
 
@@ -74,6 +84,10 @@ export class Navbar {
       }
     } else if (event.key === 'Escape') {
       this.isSearchFocused.set(false);
+      if (!this.searchQuery) {
+        this.isSearchExpanded.set(false);
+      }
+      this.searchInputRef?.nativeElement.blur();
     }
   }
 
@@ -89,6 +103,7 @@ export class Navbar {
     // Fill search box with the selected result title for premium feel
     this.searchQuery = result.title;
     this.isSearchFocused.set(false);
+    this.isSearchExpanded.set(false);
     this.activeIndex.set(-1);
   }
 
@@ -97,6 +112,7 @@ export class Navbar {
     this.mapState.selectedCandidateId.set(null);
     this.mapState.selectedDistrictId.set(null);
     this.isSearchFocused.set(false);
+    this.isSearchExpanded.set(false);
     this.activeIndex.set(-1);
   }
 

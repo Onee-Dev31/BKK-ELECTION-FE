@@ -12,7 +12,8 @@ export class Sidebar {
   router = inject(Router);
 
   navItems = [
-    { path: '/dashboard', id: 'map', label: 'หน้าแรก' },
+    { path: '/', id: 'home', label: 'หน้าแรก' },
+    { path: '/dashboard', id: 'map', label: 'แผนที่' },
     { path: '/compare', id: 'compare', label: 'เปรียบเทียบ' },
   ];
 
