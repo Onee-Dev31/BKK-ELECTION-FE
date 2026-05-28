@@ -55,9 +55,10 @@
 
         <app-navbar class="area-search block w-full"></app-navbar>
 
-        @if (mapState.activeTab() === 'summary') {
-        <app-hero-card class="panel-glass area-hero flex flex-col"></app-hero-card>
-        }
+        <app-hero-card
+            class="panel-glass area-hero flex flex-col"
+            [class.area-hero--hidden]="mapState.activeTab() !== 'summary'">
+        </app-hero-card>
 
         <section class="panel-glass area-candidates flex flex-col overflow-hidden min-h-0">
             <header

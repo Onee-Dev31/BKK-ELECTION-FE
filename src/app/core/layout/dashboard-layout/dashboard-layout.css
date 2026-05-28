@@ -183,6 +183,10 @@
     flex-direction: column;
 }
 
+.area-hero--hidden {
+    display: none;
+}
+
 .area-candidates {
     grid-area: candidates;
     min-height: 0;
