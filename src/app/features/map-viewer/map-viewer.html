@@ -50,7 +50,7 @@
             @for (district of districts(); track district.id; let i = $index) {
             <div class="district-cell group"
                 [style.left.%]="0.6 + (district.col - 1 + (district.row % 2 === 0 ? 0.5 : 0)) * 9.5"
-                [style.top.%]="9 + (district.row - 1) * 9" [style.animation-delay]="i * 4 + 'ms'"
+                [style.top.%]="9 + (district.row - 1) * 9" [style.animation-delay]="i * 7 + 'ms'"
                 [class.is-selected]="mapState.selectedDistrictId() === district.id"
                 [class.is-highlighted]="mapState.selectedCandidateId() !== null && district.leadingCandidateId === mapState.selectedCandidateId()"
                 [class.is-faded]="mapState.selectedCandidateId() !== null && district.leadingCandidateId !== mapState.selectedCandidateId()"
