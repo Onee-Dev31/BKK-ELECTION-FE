@@ -337,7 +337,7 @@
 }
 
 .picker-title {
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 900;
   color: rgba(0,0,0,0.8);
 }
@@ -383,8 +383,8 @@
 .picker-item-active { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.15); }
 
 .picker-photo {
-  width: 48px;
-  height: 48px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
@@ -392,10 +392,10 @@
   border: 2.5px solid;
 }
 
-.picker-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 1; }
+.picker-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1; }
 
 .picker-name {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 800;
   color: rgba(0,0,0,0.8);
   line-height: 1.2;
@@ -404,15 +404,15 @@
 .picker-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 
 .picker-num {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   background: rgba(0,0,0,0.06);
   border-radius: 999px;
-  padding: 1px 8px;
+  padding: 2px 10px;
 }
 
 .picker-party {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: rgba(0,0,0,0.4);
 }
