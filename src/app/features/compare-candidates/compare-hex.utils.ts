@@ -20,7 +20,7 @@ export const MINI_HEXES: MiniHex[] = DISTRICT_LAYOUTS.map(d => {
     `${(cx - h).toFixed(1)},${(cy + h2).toFixed(1)}`,
     `${(cx - h).toFixed(1)},${(cy - h2).toFixed(1)}`,
   ].join(' ');
-  return { id: d.id, points: pts };
+  return { id: d.id, points: pts, cx, cy };
 });
 
 export const MINI_SVG_W = Math.ceil(PAD + (10 - 1) * COL_STEP + ROW_OFFSET + HEX_R + 4);

@@ -5,6 +5,8 @@ export type DistrictView = 'closest' | 'a' | 'b';
 export interface MiniHex {
   id: number;
   points: string;
+  cx: number;
+  cy: number;
 }
 
 export interface DistrictEntry {

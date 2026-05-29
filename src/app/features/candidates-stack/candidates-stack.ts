@@ -7,7 +7,34 @@ import { ELECTION_CONSTANTS } from '../../core/constants/election.constants';
 import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
 import { Candidate } from '../../core/models/election.models';
 import { formatVotes, hexToRgba } from '../../core/utils/election.utils';
-import { MINI_HEXES, MINI_SVG_W, MINI_SVG_H } from '../compare-candidates/compare-hex.utils';
+import { DISTRICT_LAYOUTS } from '../../core/constants/map-layout.constants';
+
+const HEX_R_MODAL = 15;
+const HEX_GAP = 2;
+const SCALE = (HEX_R_MODAL - HEX_GAP) / HEX_R_MODAL;
+const COL_STEP_M = HEX_R_MODAL * Math.sqrt(3);
+const ROW_STEP_M = HEX_R_MODAL * 1.5;
+const ROW_OFFSET_M = COL_STEP_M / 2;
+const PAD_M = HEX_R_MODAL + 8;
+const h = HEX_R_MODAL * SCALE * 0.866;
+const h2 = HEX_R_MODAL * SCALE * 0.5;
+const r = HEX_R_MODAL * SCALE;
+
+export const MODAL_HEXES = DISTRICT_LAYOUTS.map(d => {
+  const cx = PAD_M + (d.col - 1) * COL_STEP_M + (d.row % 2 === 0 ? ROW_OFFSET_M : 0);
+  const cy = PAD_M + (d.row - 1) * ROW_STEP_M;
+  const pts = [
+    `${cx.toFixed(1)},${(cy - r).toFixed(1)}`,
+    `${(cx + h).toFixed(1)},${(cy - h2).toFixed(1)}`,
+    `${(cx + h).toFixed(1)},${(cy + h2).toFixed(1)}`,
+    `${cx.toFixed(1)},${(cy + r).toFixed(1)}`,
+    `${(cx - h).toFixed(1)},${(cy + h2).toFixed(1)}`,
+    `${(cx - h).toFixed(1)},${(cy - h2).toFixed(1)}`,
+  ].join(' ');
+  return { id: d.id, points: pts, cx, cy };
+});
+export const MODAL_SVG_W = Math.ceil(PAD_M + (10 - 1) * COL_STEP_M + ROW_OFFSET_M + HEX_R_MODAL + 4);
+export const MODAL_SVG_H = Math.ceil(PAD_M + (9 - 1) * ROW_STEP_M + HEX_R_MODAL + 4);
 
 const RANK_OPACITY: Record<number, number> = { 1: 1, 2: 0.55, 3: 0.3 };
 const AVAILABLE_3D = new Set([1, 3, 4, 6, 8]);
@@ -34,7 +61,21 @@ export class CandidatesStack implements OnInit, OnDestroy {
   );
   progressPercent = computed(() => this.svc.progressPercent());
   eligibleVoters = computed(() => this.svc.eligibleVoters());
+  turnoutPercent = computed(() => this.svc.turnoutPercent());
+  goodVotes = computed(() => this.svc.goodVotes());
+  badVotes = computed(() => this.svc.badVotes());
+  noVotes = computed(() => this.svc.noVotes());
+  goodVotesPct = computed(() => {
+    const t = this.countedVotes(); return t > 0 ? (this.svc.goodVotes() / t * 100) : 0;
+  });
+  badVotesPct = computed(() => {
+    const t = this.countedVotes(); return t > 0 ? (this.svc.badVotes() / t * 100) : 0;
+  });
+  noVotesPct = computed(() => {
+    const t = this.countedVotes(); return t > 0 ? (this.svc.noVotes() / t * 100) : 0;
+  });
 
+  showFlagTooltip = signal(false);
   showScrollTop = signal(false);
 
   private countUpMap = signal<Map<number, number>>(new Map());
@@ -82,9 +123,9 @@ export class CandidatesStack implements OnInit, OnDestroy {
 
   selectedModal = signal<{ c: Candidate; rank: number } | null>(null);
 
-  readonly miniHexes = MINI_HEXES;
-  readonly miniSvgW = MINI_SVG_W;
-  readonly miniSvgH = MINI_SVG_H;
+  readonly miniHexes = MODAL_HEXES;
+  readonly miniSvgW = MODAL_SVG_W;
+  readonly miniSvgH = MODAL_SVG_H;
 
   private modalDistrictMap = computed(() => {
     const m = this.selectedModal();
@@ -137,8 +178,8 @@ export class CandidatesStack implements OnInit, OnDestroy {
 
   hexOpacity(id: number): number {
     const d = this.modalDistrictMap().get(id);
-    if (!d || d.votes === 0) return 0.18;
-    return RANK_OPACITY[d.rank] ?? 0.12;
+    if (!d || d.votes === 0) return 0.35;
+    return RANK_OPACITY[d.rank] ?? 0.2;
   }
 
   openModal(c: Candidate, rank: number) {
