@@ -34,7 +34,12 @@ export class CompareCandidates {
 
   openPickerA() { this.pickerFor.set('a'); }
   openPickerB() { this.pickerFor.set('b'); }
-  closePicker() { this.pickerFor.set(null); }
+  closePicker() {
+    const side = this.pickerFor();
+    if (side === 'a' && !this.selectedIdA()) return;
+    if (side === 'b' && !this.selectedIdB()) return;
+    this.pickerFor.set(null);
+  }
   pickCandidate(id: number) {
     const side = this.pickerFor();
     if (side === 'a') {
