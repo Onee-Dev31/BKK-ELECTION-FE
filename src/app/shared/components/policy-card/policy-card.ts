@@ -11,5 +11,8 @@ import { CountUp } from '../count-up/count-up';
 export class PolicyCard {
   candidate = input.required<Candidate>();
   rank = input<number>(0);
-}
 
+  firstName(name: string): string {
+    return name.trim().split(/\s+/)[0] ?? name;
+  }
+}

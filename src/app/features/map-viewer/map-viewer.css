@@ -668,9 +668,9 @@
 
 .map-mode-btn-active {
     color: #fff !important;
-    background: rgba(20, 184, 166, 0.88) !important;
+    background: rgba(14, 87, 158, 0.92) !important;
     box-shadow:
-        0 1px 8px rgba(20, 184, 166, 0.4),
+        0 1px 8px rgba(14, 87, 158, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 

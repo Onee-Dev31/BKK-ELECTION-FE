@@ -158,7 +158,7 @@ export class CandidatesStack implements OnInit, OnDestroy {
       else if (d.rank === 3) r3++;
     });
     return { rank1: r1, rank2: r2, rank3: r3 };
-  });
+  }); 
 
   modalTopDistricts = computed(() => {
     if (!this.selectedModal()) return [];

@@ -16,7 +16,7 @@
             <span class="podium-badge silver">2</span>
           </div>
           <div class="podium-info">
-            <div class="podium-name">{{ c.name }}</div>
+            <div class="podium-name">{{ firstName(c.name) }}</div>
             <div class="podium-pct" [style.color]="c.color">{{ c.percentage.toFixed(1) }}%</div>
           </div>
           <div class="podium-block block-2"><span class="block-num">2</span></div>
@@ -35,7 +35,7 @@
             <span class="podium-badge gold">1</span>
           </div>
           <div class="podium-info">
-            <div class="podium-name champion">{{ c.name }}</div>
+            <div class="podium-name champion">{{ firstName(c.name) }}</div>
             <div class="podium-pct champion-pct" [style.color]="c.color">{{ c.percentage.toFixed(1) }}%</div>
           </div>
           <div class="podium-block block-1"><span class="block-num">1</span></div>
@@ -54,7 +54,7 @@
             <span class="podium-badge bronze">3</span>
           </div>
           <div class="podium-info">
-            <div class="podium-name">{{ c.name }}</div>
+            <div class="podium-name">{{ firstName(c.name) }}</div>
             <div class="podium-pct" [style.color]="c.color">{{ c.percentage.toFixed(1) }}%</div>
           </div>
           <div class="podium-block block-3"><span class="block-num">3</span></div>

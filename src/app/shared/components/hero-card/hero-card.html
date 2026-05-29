@@ -3,8 +3,8 @@
   <!-- Header -->
   <div class="flex items-start justify-between px-5 pt-5 pb-4">
     <div>
-      <div class="text-[16px] font-black tracking-[0.25em] uppercase mb-1 hc-label">ผู้ว่าราชการ กทม.</div>
-      <div class="font-black text-2xl tracking-tighter leading-none hc-title">กรุงเทพมหานคร</div>
+      <div class="text-[20px] font-black  uppercase mb-1 hc-label">ผู้ว่าราชการ กทม.</div>
+      <div class="font-black tracking-tighter leading-none hc-title">กรุงเทพมหานคร</div>
     </div>
     <div class="text-4xl sm:text-5xl font-black leading-none tracking-tighter hc-year">2026</div>
   </div>
@@ -28,10 +28,15 @@
       <div class="flex-1 px-4 py-3.5 flex flex-col justify-between">
         <div>
           <div class="flex items-center gap-2 mb-1.5">
-            <span class="px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-wide hc-leading-badge">LEADING</span>
-            <span class="text-[16px] font-bold uppercase tracking-widest hc-no-label">No.{{ candidates()[0].number }}</span>
+            <span class="px-2 py-0.5 rounded-full text-[14px] font-black uppercase tracking-wide hc-leading-badge">LEADING</span>
+            <span class="hc-number-pill"
+                  [style.backgroundColor]="candidates()[0].color + '18'"
+                  [style.borderColor]="candidates()[0].color + '66'"
+                  [style.color]="candidates()[0].color">
+              No. {{ candidates()[0].number }}
+            </span>
           </div>
-          <div class="font-black text-[18px] leading-tight tracking-tight hc-candidate-name">{{ candidates()[0].name }}</div>
+          <div class="font-black leading-tight tracking-tight hc-candidate-name">{{ candidates()[0].name }}</div>
           <div class="flex items-center gap-1.5 mt-1">
             <img [src]="candidates()[0].partyLogoUrl"
                  class="w-3.5 h-3.5 object-contain opacity-60"

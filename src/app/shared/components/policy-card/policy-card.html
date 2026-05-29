@@ -23,14 +23,14 @@
              [attr.fetchpriority]="rank() <= 5 ? 'high' : 'low'"
              decoding="async">
       } @else {
-        <span class="photo-fallback" [style.color]="candidate().color">{{ candidate().name.charAt(0) }}</span>
+        <span class="photo-fallback" [style.color]="candidate().color">{{ firstName(candidate().name).charAt(0) }}</span>
       }
     </div>
   </div>
 
   <!-- Info -->
   <div class="info-col">
-    <div class="cand-name">{{ candidate().name }}</div>
+    <div class="cand-name">{{ firstName(candidate().name) }}</div>
     <div class="cand-party">
       <img [src]="candidate().partyLogoUrl"
            class="party-micro"
