@@ -134,18 +134,6 @@
         </app-hex-map>
       </div>
 
-      <!-- District comparison chart -->
-      <div class="glass-card">
-        <h3 class="section-title">เปรียบเทียบรายเขต</h3>
-        <app-district-chart
-          [shownDistricts]="shownDistricts()"
-          [districtView]="districtView()"
-          [candidateA]="candidateA()"
-          [candidateB]="candidateB()"
-          (districtViewChange)="districtView.set($event)">
-        </app-district-chart>
-      </div>
-
     </div>
 
     <!-- Right candidate panel -->
@@ -159,6 +147,18 @@
     </app-cand-panel>
 
   </div><!-- /compare-grid -->
+
+  <!-- District comparison chart — full width below grid -->
+  <div class="district-row glass-card">
+    <h3 class="section-title">เปรียบเทียบรายเขต</h3>
+    <app-district-chart
+      [shownDistricts]="shownDistricts()"
+      [districtView]="districtView()"
+      [candidateA]="candidateA()"
+      [candidateB]="candidateB()"
+      (districtViewChange)="districtView.set($event)">
+    </app-district-chart>
+  </div>
 
   <!-- Candidate Picker Modal -->
   @if (pickerFor()) {

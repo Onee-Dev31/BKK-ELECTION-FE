@@ -76,10 +76,17 @@
 }
 
 /* ── 3-column grid ─────────────────────────────────────── */
+.district-row {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .compare-grid {
   display: grid;
   grid-template-columns: 240px 1fr 240px;
   position: relative;
+  align-items: center;
   grid-template-rows: auto;
   gap: 0.75rem;
   max-width: 1100px;
