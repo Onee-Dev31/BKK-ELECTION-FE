@@ -1,5 +1,5 @@
 <div class="stack-page">
-  <div class="corner-flag">
+  <div class="corner-flag" (click)="showFlagTooltip.set(!showFlagTooltip())" [class.flag-open]="showFlagTooltip()">
     <div class="cf-label">นับคะแนนแล้ว</div>
     <div class="cf-sub">(อย่างไม่เป็นทางการ)</div>
     <div class="cf-big">{{ countedVotes() | number }}</div>
@@ -8,7 +8,55 @@
     <div class="cf-sub">ผู้มีสิทธิเลือกตั้งครั้งนี้</div>
     <div class="cf-pct">{{ progressPercent() | number:'1.2-2' }}<span class="cf-pct-sym">%</span></div>
     <div class="cf-sub">ของประมาณการผู้มาใช้สิทธิ</div>
+    <div class="cf-tap-hint">
+      <span>{{ showFlagTooltip() ? 'ปิด' : 'ดูรายละเอียด' }}</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
   </div>
+
+  @if (showFlagTooltip()) {
+  <div class="flag-tooltip-backdrop" (click)="showFlagTooltip.set(false)"></div>
+  <div class="flag-tooltip" (click)="$event.stopPropagation()">
+    <button class="ft-close" (click)="showFlagTooltip.set(false)" aria-label="ปิด">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+      ปิด
+    </button>
+    <div class="ft-row">
+      <span class="ft-label">ผู้มีสิทธิเลือกตั้ง</span>
+      <span class="ft-value">{{ eligibleVoters() | number }} <span class="ft-unit">คน</span></span>
+    </div>
+    <div class="ft-row">
+      <span class="ft-label">ผู้มาใช้สิทธิเลือกตั้ง</span>
+      <span class="ft-value">{{ countedVotes() | number }} <span class="ft-unit">คน</span></span>
+    </div>
+    <div class="ft-row ft-highlight">
+      <span class="ft-label">คิดเป็น</span>
+      <span class="ft-value ft-pct">{{ turnoutPercent() | number:'1.2-2' }}%</span>
+    </div>
+    <div class="ft-divider"></div>
+    <div class="ft-ballot-row">
+      <div class="ft-ballot">
+        <div class="ft-ballot-label">บัตรดี</div>
+        <div class="ft-ballot-pct" style="color:#16a34a">{{ goodVotesPct() | number:'1.2-2' }}%</div>
+        <div class="ft-ballot-count">{{ goodVotes() | number }} ใบ</div>
+      </div>
+      <div class="ft-ballot">
+        <div class="ft-ballot-label">บัตรเสีย</div>
+        <div class="ft-ballot-pct" style="color:#dc2626">{{ badVotesPct() | number:'1.2-2' }}%</div>
+        <div class="ft-ballot-count">{{ badVotes() | number }} ใบ</div>
+      </div>
+      <div class="ft-ballot">
+        <div class="ft-ballot-label">ไม่ออกเสียง</div>
+        <div class="ft-ballot-pct" style="color:#9ca3af">{{ noVotesPct() | number:'1.2-2' }}%</div>
+        <div class="ft-ballot-count">{{ noVotes() | number }} ใบ</div>
+      </div>
+    </div>
+  </div>
+  }
 
   <div class="stack-header">
     <img class="stack-logo" src="/LOGO_ELECTION_BKK_V2/LOGO_ELECTION_BKK_V2.png" alt="วันเลือกตั้ง ผู้ว่าฯ กทม 69" />
@@ -137,11 +185,14 @@
       </button>
     </div>
 
+    <div class="modal-rank-flag" [style.background]="modal.c.color">
+      <span class="modal-rank-flag-label">อันดับ</span>
+      <span class="modal-rank-flag-num">{{ modal.rank }}</span>
+    </div>
+
     <div class="modal-body">
       <div class="modal-left">
         <div class="modal-photo-area" [style.--accent]="modal.c.color">
-          <div class="modal-rank-label">อันดับ</div>
-          <div class="modal-rank-num" [style.backgroundColor]="modal.c.color">{{ modal.rank }}</div>
           <img class="modal-photo-img" [src]="imgUrl3D(modal.c.number)" [alt]="modal.c.name"
                onerror="this.src='/assets/placeholder.png'" />
         </div>
@@ -185,7 +236,11 @@
             <polygon [attr.points]="h.points"
                      [attr.fill]="hexFill(h.id)"
                      [attr.fill-opacity]="hexOpacity(h.id)"
-                     stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
+                     stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+            <text [attr.x]="h.cx" [attr.y]="h.cy + 4"
+                  text-anchor="middle"
+                  font-size="12" font-weight="900"
+                  fill="rgba(255,255,255,0.85)">{{ h.id }}</text>
             }
           </svg>
         </div>
