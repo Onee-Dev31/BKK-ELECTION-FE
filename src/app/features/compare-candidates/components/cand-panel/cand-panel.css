@@ -185,9 +185,29 @@
   color: rgba(255,255,255,0.75);
 }
 
+/* ── Responsive: tablet (641–900px) ── */
+@media (max-width: 900px) and (min-width: 641px) {
+  .cand-card { min-height: 380px; }
+  .cand-pct { font-size: 2.8rem; }
+  .cand-name { font-size: 1.2rem; }
+  .cand-rank-num { font-size: 1.4rem; }
+}
+
 /* ── Responsive: mobile (≤640px) ── */
 @media (max-width: 640px) {
-  .cand-card { min-height: 260px; }
+  .cand-card { min-height: 280px; }
+  .cand-pct { font-size: 2.4rem; }
+  .cand-name { font-size: 1.1rem; }
+  .cand-votes { font-size: 14px; }
+  .cand-num-tag { font-size: 14px; }
+  .cand-party-tag { font-size: 13px; }
+  .cand-rank-num { font-size: 1.4rem; }
+  .cand-rank-flag { width: 42px; left: 12px; }
+}
+
+/* ── Responsive: small phone (≤480px) ── */
+@media (max-width: 480px) {
+  .cand-card { min-height: 220px; }
   .cand-pct { font-size: 2rem; }
-  .cand-name { font-size: 1rem; }
+  .cand-overlay { padding: 14px 12px 12px; }
 }

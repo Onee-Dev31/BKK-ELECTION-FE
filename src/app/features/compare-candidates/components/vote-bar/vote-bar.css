@@ -55,3 +55,16 @@
   font-size: 22px;
   font-weight: 800;
 }
+
+@media (max-width: 900px) {
+  .vote-diff-label { font-size: 18px; }
+  .vote-bar-pcts { font-size: 18px; }
+  .vote-bar-avatar { width: 36px; height: 36px; }
+}
+
+@media (max-width: 640px) {
+  .vote-diff-label { font-size: 16px; }
+  .vote-bar-pcts { font-size: 16px; }
+  .vote-bar-avatar { width: 30px; height: 30px; }
+  .vote-bar-track { height: 12px; }
+}

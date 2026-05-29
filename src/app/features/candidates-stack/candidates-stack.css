@@ -304,6 +304,42 @@
   .stack-logo {
     height: 80px;
   }
+  .corner-flag {
+    right: 0;
+    width: 160px;
+    padding: 12px 10px 32px;
+  }
+  .corner-flag::after {
+    border-left: 80px solid #0f2a52;
+    border-right: 80px solid #0f2a52;
+    border-bottom: 24px solid transparent;
+    bottom: -24px;
+  }
+  .cf-big { font-size: 1.4rem; }
+  .cf-pct { font-size: 2rem; }
+  .cf-label { font-size: 0.85rem; }
+  .flag-tooltip { right: 172px; width: 240px; }
+}
+
+@media (max-width: 767px) {
+  .corner-flag {
+    right: 0;
+    width: 120px;
+    padding: 10px 8px 28px;
+    gap: 1px;
+  }
+  .corner-flag::after {
+    border-left: 60px solid #0f2a52;
+    border-right: 60px solid #0f2a52;
+    border-bottom: 20px solid transparent;
+    bottom: -20px;
+  }
+  .cf-big { font-size: 1.1rem; }
+  .cf-pct { font-size: 1.5rem; }
+  .cf-label { font-size: 0.7rem; }
+  .cf-sub { font-size: 0.65rem; }
+  .cf-tap-hint { font-size: 0.6rem; padding: 3px 7px; }
+  .flag-tooltip { right: 4px; top: auto; bottom: calc(-200px); width: min(280px, 90vw); }
 }
 
 /* ══════════════════════════════════════════════════════════
