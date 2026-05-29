@@ -6,10 +6,14 @@
   gap: 0.5rem;
   padding: 0.875rem 0.75rem;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(4, 20, 12, 0.52);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(51, 255, 133, 0.18);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.3),
+    inset 0 0 24px rgba(51, 255, 133, 0.04),
+    0 0 0 1px rgba(51, 255, 133, 0.08);
   overflow: hidden;
   align-self: stretch;
 }
