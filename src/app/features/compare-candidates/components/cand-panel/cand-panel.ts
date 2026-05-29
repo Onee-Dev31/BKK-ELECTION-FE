@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Candidate } from '../../../../core/models/election.models';
@@ -23,5 +23,6 @@ export class CandPanel {
     return ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', number.toString());
   }
 
+  @Output() openPicker = new EventEmitter<void>();
   readonly formatVotes = formatVotes;
 }

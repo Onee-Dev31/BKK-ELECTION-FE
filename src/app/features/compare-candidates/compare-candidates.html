@@ -1,5 +1,64 @@
 <div #scrollEl class="compare-page" (scroll)="onScroll(scrollEl)">
 
+  <div class="corner-flag" (click)="showFlagTooltip.set(!showFlagTooltip())" [class.flag-open]="showFlagTooltip()">
+    <div class="cf-label">นับคะแนนแล้ว</div>
+    <div class="cf-sub">(อย่างไม่เป็นทางการ)</div>
+    <div class="cf-big">{{ countedVotes() | number }}</div>
+    <div class="cf-divider"></div>
+    <div class="cf-label">ประมาณการผู้มาใช้สิทธิ</div>
+    <div class="cf-sub">ผู้มีสิทธิเลือกตั้งครั้งนี้</div>
+    <div class="cf-pct">{{ progressPercent() | number:'1.2-2' }}<span class="cf-pct-sym">%</span></div>
+    <div class="cf-sub">ของประมาณการผู้มาใช้สิทธิ</div>
+    <div class="cf-tap-hint">
+      <span>{{ showFlagTooltip() ? 'ปิด' : 'ดูรายละเอียด' }}</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </div>
+
+  @if (showFlagTooltip()) {
+  <div class="flag-tooltip-backdrop" (click)="showFlagTooltip.set(false)"></div>
+  <div class="flag-tooltip" (click)="$event.stopPropagation()">
+    <button class="ft-close" (click)="showFlagTooltip.set(false)" aria-label="ปิด">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+      ปิด
+    </button>
+    <div class="ft-row">
+      <span class="ft-label">ผู้มีสิทธิเลือกตั้ง</span>
+      <span class="ft-value">{{ eligibleVoters() | number }} <span class="ft-unit">คน</span></span>
+    </div>
+    <div class="ft-row">
+      <span class="ft-label">ผู้มาใช้สิทธิเลือกตั้ง</span>
+      <span class="ft-value">{{ countedVotes() | number }} <span class="ft-unit">คน</span></span>
+    </div>
+    <div class="ft-row ft-highlight">
+      <span class="ft-label">คิดเป็น</span>
+      <span class="ft-value ft-pct">{{ turnoutPercent() | number:'1.2-2' }}%</span>
+    </div>
+    <div class="ft-divider"></div>
+    <div class="ft-ballot-row">
+      <div class="ft-ballot">
+        <div class="ft-ballot-label">บัตรดี</div>
+        <div class="ft-ballot-pct" style="color:#16a34a">{{ goodVotesPct() | number:'1.2-2' }}%</div>
+        <div class="ft-ballot-count">{{ goodVotes() | number }} ใบ</div>
+      </div>
+      <div class="ft-ballot">
+        <div class="ft-ballot-label">บัตรเสีย</div>
+        <div class="ft-ballot-pct" style="color:#dc2626">{{ badVotesPct() | number:'1.2-2' }}%</div>
+        <div class="ft-ballot-count">{{ badVotes() | number }} ใบ</div>
+      </div>
+      <div class="ft-ballot">
+        <div class="ft-ballot-label">ไม่ออกเสียง</div>
+        <div class="ft-ballot-pct" style="color:#9ca3af">{{ noVotesPct() | number:'1.2-2' }}%</div>
+        <div class="ft-ballot-count">{{ noVotes() | number }} ใบ</div>
+      </div>
+    </div>
+  </div>
+  }
+
   <!-- Election logo: desktop only, top-left -->
   <div class="compare-logo">
     <img src="/Logo%20วันเลือกตั้ง%20ผู้วาฯ%20กทม.%2069%20Final%20200569.png"
@@ -21,7 +80,8 @@
       [info]="candidateAInfo()"
       [candidates]="sortedCandidates()"
       [selectedId]="selectedIdA()"
-      (selectedIdChange)="selectedIdA.set($event)">
+      (selectedIdChange)="selectedIdA.set($event)"
+      (openPicker)="openPickerA()">
     </app-cand-panel>
 
     <!-- Center panel -->
@@ -87,10 +147,39 @@
       [info]="candidateBInfo()"
       [candidates]="sortedCandidates()"
       [selectedId]="selectedIdB()"
-      (selectedIdChange)="selectedIdB.set($event)">
+      (selectedIdChange)="selectedIdB.set($event)"
+      (openPicker)="openPickerB()">
     </app-cand-panel>
 
   </div><!-- /compare-grid -->
+
+  <!-- Candidate Picker Modal -->
+  @if (pickerFor()) {
+  <div class="picker-backdrop" (click)="closePicker()"></div>
+  <div class="picker-modal" (click)="$event.stopPropagation()">
+    <div class="picker-header">
+      <span class="picker-title">เลือกผู้สมัครเพื่อเปรียบเทียบ</span>
+      <button class="picker-close" (click)="closePicker()">✕</button>
+    </div>
+    <div class="picker-grid">
+      @for (cand of sortedCandidates(); track cand.id) {
+      <button class="picker-item"
+              [class.picker-item-active]="cand.id === (pickerFor() === 'a' ? selectedIdA() : selectedIdB())"
+              (click)="pickCandidate(cand.id)">
+        <img class="picker-photo" [src]="'https://storage.googleapis.com/ers-static/candidates/governor/No' + cand.number + '.jpg'"
+             [alt]="cand.name" onerror="this.style.opacity='0.3'" [style.borderColor]="cand.color">
+        <div class="picker-info">
+          <span class="picker-name">{{ cand.name }}</span>
+          <div class="picker-tags">
+            <span class="picker-num" [style.color]="cand.color">เบอร์ {{ cand.number }}</span>
+            <span class="picker-party">{{ cand.party }}</span>
+          </div>
+        </div>
+      </button>
+      }
+    </div>
+  </div>
+  }
 
   <!-- Scroll to top -->
   @if (showScrollTop()) {

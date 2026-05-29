@@ -470,14 +470,56 @@
 
 /* ── Card size tiers ────────────────────────────────────── */
 
-.cc-r1 {
+.cc-r1-border {
   flex: 7;
   min-width: 200px;
+  position: relative;
+  border-radius: 27px;
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.6);
+}
+
+.cc-r1-border::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 27px;
+  padding: 3px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 70%,
+    rgba(51,255,133,0.6) 80%,
+    #33ff85 85%,
+    rgba(51,255,133,0.6) 90%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: border-spin 5s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-spin {
+  to { --angle: 360deg; }
+}
+
+.cc-r1 {
+  width: 100%;
   height: 58vh;
   border-radius: 24px;
-  box-shadow:
-    0 20px 56px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 .cc-r2,

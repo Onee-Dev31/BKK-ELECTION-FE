@@ -1,5 +1,5 @@
-import { Component, inject, signal, computed, effect, ViewChild, ElementRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, signal, computed, effect, untracked, ViewChild, ElementRef } from '@angular/core';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ElectionService } from '../../core/services/election.service';
 import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
@@ -13,7 +13,7 @@ import { DistrictChart } from './components/district-chart/district-chart';
 @Component({
   selector: 'app-compare-candidates',
   standalone: true,
-  imports: [CommonModule, CandPanel, VoteBar, HexMap, DistrictChart],
+  imports: [CommonModule, DecimalPipe, CandPanel, VoteBar, HexMap, DistrictChart],
   templateUrl: './compare-candidates.html',
   styleUrl: './compare-candidates.css'
 })
@@ -25,10 +25,38 @@ export class CompareCandidates {
   candidates = this.electionService.candidates;
   sortedCandidates = computed(() => [...this.candidates()].sort((a, b) => a.id - b.id));
 
-  selectedIdA = signal<number>(1);
-  selectedIdB = signal<number>(2);
+  selectedIdA = signal<number>(0);
+  selectedIdB = signal<number>(0);
   districtView = signal<DistrictView>('closest');
   showScrollTop = signal(false);
+  showFlagTooltip = signal(false);
+  pickerFor = signal<'a' | 'b' | null>(null);
+
+  openPickerA() { this.pickerFor.set('a'); }
+  openPickerB() { this.pickerFor.set('b'); }
+  closePicker() { this.pickerFor.set(null); }
+  pickCandidate(id: number) {
+    const side = this.pickerFor();
+    if (side === 'a') {
+      this.selectedIdA.set(id);
+      this.closePicker();
+      if (!this.selectedIdB()) this.pickerFor.set('b');
+    } else if (side === 'b') {
+      this.selectedIdB.set(id);
+      this.closePicker();
+    }
+  }
+
+  goodVotes = computed(() => this.electionService.goodVotes());
+  badVotes  = computed(() => this.electionService.badVotes());
+  noVotes   = computed(() => this.electionService.noVotes());
+  countedVotes    = computed(() => this.goodVotes() + this.badVotes() + this.noVotes());
+  progressPercent = computed(() => this.electionService.progressPercent());
+  eligibleVoters  = computed(() => this.electionService.eligibleVoters());
+  turnoutPercent  = computed(() => this.electionService.turnoutPercent());
+  goodVotesPct = computed(() => { const t = this.countedVotes(); return t > 0 ? this.goodVotes() / t * 100 : 0; });
+  badVotesPct  = computed(() => { const t = this.countedVotes(); return t > 0 ? this.badVotes()  / t * 100 : 0; });
+  noVotesPct   = computed(() => { const t = this.countedVotes(); return t > 0 ? this.noVotes()   / t * 100 : 0; });
 
   readonly miniHexes = MINI_HEXES;
   readonly miniSvgW = MINI_SVG_W;
@@ -114,25 +142,40 @@ export class CompareCandidates {
   });
 
   constructor() {
-    this.route.queryParamMap.subscribe(params => {
-      const a = params.get('a');
-      const b = params.get('b');
+    let initialized = false;
+
+    effect(() => {
       const cands = this.candidates();
-      if (cands.length === 0) return;
-      if (a) {
-        const idA = Number(a);
-        if (cands.some(c => c.id === idA)) this.selectedIdA.set(idA);
-      }
-      if (b) {
-        const idB = Number(b);
-        if (cands.some(c => c.id === idB)) this.selectedIdB.set(idB);
-      }
+      if (cands.length === 0 || initialized) return;
+      initialized = true;
+
+      untracked(() => {
+        const params = this.route.snapshot.queryParamMap;
+        const a = params.get('a');
+        const b = params.get('b');
+
+        if (a) {
+          const idA = Number(a);
+          if (cands.some(c => c.id === idA)) this.selectedIdA.set(idA);
+          if (!b) this.pickerFor.set('b');
+        } else {
+          this.pickerFor.set('a');
+        }
+
+        if (b) {
+          const idB = Number(b);
+          if (cands.some(c => c.id === idB)) this.selectedIdB.set(idB);
+        }
+      });
     });
 
     effect(() => {
+      const a = this.selectedIdA();
+      const b = this.selectedIdB();
+      if (!a || !b) return;
       this.router.navigate([], {
         relativeTo: this.route,
-        queryParams: { a: this.selectedIdA(), b: this.selectedIdB() },
+        queryParams: { a, b },
         replaceUrl: true,
       });
     });

@@ -100,17 +100,19 @@
     </div>
 
     <!-- Rank 1 (center, hero) -->
-    <div class="cand-card cc-r1" style="--cd:0ms" (click)="openModal(top10()[0], 1)" [style.background]="muteColor(top10()[0].color)">
-      <div class="cc-order-rank cc-order-rank-r1 cc-flag-r1"><span class="cc-rank-label">อันดับ</span><div class="cc-rank-circle">1</div></div>
-      <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[0].number)" [alt]="top10()[0].name" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.opacity='0'">
-      </div>
-      <div class="cc-info-panel cc-info-panel-r1">
-        <div class="cc-rank-badge cc-badge-gold">{{ top10()[0].number }}</div>
-        <div class="cc-name cc-name-r1" [style.color]="top10()[0].color">{{ top10()[0].name }}</div>
-        <div class="cc-bottom">
-          <span class="cc-pct cc-pct-r1" [style.color]="top10()[0].color">{{ top10()[0].percentage }}%</span>
-          <span class="cc-votes cc-votes-r1">{{ getDisplayVotes(top10()[0].id) }} คะแนน</span>
+    <div class="cc-r1-border">
+      <div class="cand-card cc-r1" style="--cd:0ms" (click)="openModal(top10()[0], 1)" [style.background]="muteColor(top10()[0].color)">
+        <div class="cc-order-rank cc-order-rank-r1 cc-flag-r1"><span class="cc-rank-label">อันดับ</span><div class="cc-rank-circle">1</div></div>
+        <div class="cc-photo-area">
+          <img class="cc-photo" [src]="imgUrl(top10()[0].number)" [alt]="top10()[0].name" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.opacity='0'">
+        </div>
+        <div class="cc-info-panel cc-info-panel-r1">
+          <div class="cc-rank-badge cc-badge-gold">{{ top10()[0].number }}</div>
+          <div class="cc-name cc-name-r1" [style.color]="top10()[0].color">{{ top10()[0].name }}</div>
+          <div class="cc-bottom">
+            <span class="cc-pct cc-pct-r1" [style.color]="top10()[0].color">{{ top10()[0].percentage }}%</span>
+            <span class="cc-votes cc-votes-r1">{{ getDisplayVotes(top10()[0].id) }} คะแนน</span>
+          </div>
         </div>
       </div>
     </div>
