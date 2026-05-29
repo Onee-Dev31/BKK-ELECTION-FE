@@ -17,7 +17,10 @@
       <!-- Photo (left, full-height) -->
       <div class="w-[88px] flex-shrink-0 relative">
         <img [src]="candidates()[0].imageUrl"
-             class="absolute inset-0 w-full h-full object-cover object-top">
+             class="absolute inset-0 w-full h-full object-cover object-top"
+             loading="eager"
+             fetchpriority="high"
+             decoding="async">
         <div class="absolute inset-0 hc-photo-fade"></div>
       </div>
 
@@ -30,7 +33,11 @@
           </div>
           <div class="font-black text-[18px] leading-tight tracking-tight hc-candidate-name">{{ candidates()[0].name }}</div>
           <div class="flex items-center gap-1.5 mt-1">
-            <img [src]="candidates()[0].partyLogoUrl" class="w-3.5 h-3.5 object-contain opacity-60">
+            <img [src]="candidates()[0].partyLogoUrl"
+                 class="w-3.5 h-3.5 object-contain opacity-60"
+                 loading="eager"
+                 fetchpriority="high"
+                 decoding="async">
             <span class="text-[16px] font-bold uppercase tracking-widest hc-party-name">{{ candidates()[0].party }}</span>
           </div>
         </div>

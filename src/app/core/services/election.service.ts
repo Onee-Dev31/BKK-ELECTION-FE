@@ -10,6 +10,7 @@ import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.cons
 })
 export class ElectionService {
   electionState = signal<ElectionData | null>(null);
+  private preloadedImageUrls = new Set<string>();
 
   candidates = computed(() => this.electionState()?.candidates ?? []);
 
@@ -85,6 +86,8 @@ export class ElectionService {
         };
       });
 
+      this.preloadCandidateAssets(candidates.slice(0, 5));
+
       const rawSummary = data._rawSummary?.data;
 
       this.electionState.update(current => ({
@@ -156,6 +159,27 @@ export class ElectionService {
 
   private getCandidateColor(no: number): string {
     return ELECTION_CONSTANTS.CANDIDATE_COLORS[no] || ELECTION_CONSTANTS.CANDIDATE_COLORS['def'];
+  }
+
+  private preloadCandidateAssets(candidates: Candidate[]) {
+    if (typeof document === 'undefined') return;
+
+    for (const candidate of candidates) {
+      this.preloadImage(candidate.imageUrl);
+      this.preloadImage(candidate.partyLogoUrl);
+    }
+  }
+
+  private preloadImage(url: string) {
+    if (!url || this.preloadedImageUrls.has(url)) return;
+    this.preloadedImageUrls.add(url);
+
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = url;
+    link.setAttribute('fetchpriority', 'high');
+    document.head.appendChild(link);
   }
 
   getDistrictResults(districtId: number): DistrictResult | undefined {

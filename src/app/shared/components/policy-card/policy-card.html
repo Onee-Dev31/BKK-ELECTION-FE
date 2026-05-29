@@ -17,7 +17,11 @@
   <div class="photo-col">
     <div class="photo-wrap" [style.borderColor]="candidate().color + '66'">
       @if (candidate().imageUrl) {
-        <img [src]="candidate().imageUrl" class="photo-img">
+        <img [src]="candidate().imageUrl"
+             class="photo-img"
+             [attr.loading]="rank() <= 5 ? 'eager' : 'lazy'"
+             [attr.fetchpriority]="rank() <= 5 ? 'high' : 'low'"
+             decoding="async">
       } @else {
         <span class="photo-fallback" [style.color]="candidate().color">{{ candidate().name.charAt(0) }}</span>
       }
@@ -28,7 +32,11 @@
   <div class="info-col">
     <div class="cand-name">{{ candidate().name }}</div>
     <div class="cand-party">
-      <img [src]="candidate().partyLogoUrl" class="party-micro">
+      <img [src]="candidate().partyLogoUrl"
+           class="party-micro"
+           [attr.loading]="rank() <= 5 ? 'eager' : 'lazy'"
+           [attr.fetchpriority]="rank() <= 5 ? 'high' : 'low'"
+           decoding="async">
       <span>{{ candidate().party }}</span>
     </div>
   </div>

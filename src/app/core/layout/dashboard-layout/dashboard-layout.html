@@ -1,4 +1,8 @@
-<app-district-modal></app-district-modal>
+@if (mapState.selectedDistrictId() !== null) {
+    @defer (when mapState.selectedDistrictId() !== null) {
+        <app-district-modal></app-district-modal>
+    }
+}
 
 <div class="stage w-full h-full relative">
 
@@ -42,23 +46,21 @@
                     </div>
             </div>
             <main class="flex-1 min-h-0 w-full" style="container-type:size;">
-                <app-parliament-chart
-                    class="block w-full h-full"
-                    [style.display]="(mapState.activeTab() === 'sk' && mapState.councilView() === 'quota') ? 'block' : 'none'">
-                </app-parliament-chart>
-                <app-map-viewer
-                    class="block w-full h-full"
-                    [style.display]="!(mapState.activeTab() === 'sk' && mapState.councilView() === 'quota') ? 'block' : 'none'">
-                </app-map-viewer>
+                @if (mapState.activeTab() === 'sk' && mapState.councilView() === 'quota') {
+                    @defer (when mapState.activeTab() === 'sk' && mapState.councilView() === 'quota') {
+                        <app-parliament-chart class="block w-full h-full"></app-parliament-chart>
+                    }
+                } @else {
+                    <app-map-viewer class="block w-full h-full"></app-map-viewer>
+                }
             </main>
         </article>
 
         <app-navbar class="area-search block w-full"></app-navbar>
 
-        <app-hero-card
-            class="panel-glass area-hero flex flex-col"
-            [class.area-hero--hidden]="mapState.activeTab() !== 'summary'">
-        </app-hero-card>
+        @if (mapState.activeTab() === 'summary') {
+            <app-hero-card class="panel-glass area-hero flex flex-col"></app-hero-card>
+        }
 
         <section class="panel-glass area-candidates flex flex-col overflow-hidden min-h-0">
             <header
@@ -88,14 +90,13 @@
                 </div>
             </header>
             <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar">
-                <app-policy-list
-                    class="block w-full"
-                    [style.display]="mapState.activeTab() === 'summary' ? 'block' : 'none'">
-                </app-policy-list>
-                <app-council-result
-                    class="block h-full"
-                    [style.display]="mapState.activeTab() !== 'summary' ? 'block' : 'none'">
-                </app-council-result>
+                @if (mapState.activeTab() === 'summary') {
+                    <app-policy-list class="block w-full"></app-policy-list>
+                } @else {
+                    @defer (when mapState.activeTab() !== 'summary') {
+                        <app-council-result class="block h-full"></app-council-result>
+                    }
+                }
             </div>
         </section>
 

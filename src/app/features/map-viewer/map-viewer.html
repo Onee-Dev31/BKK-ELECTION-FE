@@ -35,19 +35,22 @@
     </div>
     }
 
-    <!-- Geo map: always in DOM — ngOnInit fetches GeoJSON once, no re-fetch on mode switch -->
-    <div class="map-panel" [class.map-panel-active]="mapState.mapMode() === 'geo'">
-        <app-geo-map class="block w-full h-full"></app-geo-map>
+    @if (mapState.mapMode() === 'geo') {
+    <div class="map-panel map-panel-active">
+        @defer (when mapState.mapMode() === 'geo') {
+            <app-geo-map class="block w-full h-full"></app-geo-map>
+        }
     </div>
+    }
 
 
-<!-- Hex grid: always in DOM, entry animation plays only on first render -->
-    <div class="map-panel" [class.map-panel-active]="mapState.mapMode() === 'hex'">
+    @if (mapState.mapMode() === 'hex') {
+    <div class="map-panel map-panel-active">
         <div class="map-grid-wrapper">
             @for (district of districts(); track district.id; let i = $index) {
             <div class="district-cell group"
                 [style.left.%]="0.6 + (district.col - 1 + (district.row % 2 === 0 ? 0.5 : 0)) * 9.5"
-                [style.top.%]="9 + (district.row - 1) * 9" [style.animation-delay]="i * 6 + 'ms'"
+                [style.top.%]="9 + (district.row - 1) * 9" [style.animation-delay]="i * 4 + 'ms'"
                 [class.is-selected]="mapState.selectedDistrictId() === district.id"
                 [class.is-highlighted]="mapState.selectedCandidateId() !== null && district.leadingCandidateId === mapState.selectedCandidateId()"
                 [class.is-faded]="mapState.selectedCandidateId() !== null && district.leadingCandidateId !== mapState.selectedCandidateId()"
@@ -109,6 +112,7 @@
             }
         </div>
     </div>
+    }
 
     <!-- Map Legend (Only for SK + hex mode) -->
     @if (mapState.activeTab() === 'sk' && mapState.mapMode() === 'hex') {

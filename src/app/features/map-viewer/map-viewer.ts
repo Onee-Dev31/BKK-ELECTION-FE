@@ -7,12 +7,11 @@ import { ThaiPBSService } from '../../core/services/thai-pbs.service';
 import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
 import { sumVotes, calcPercent } from '../../core/utils/election.utils';
 import { GeoMap } from '../geo-map/geo-map';
-import { JigsawMap } from '../jigsaw-map/jigsaw-map';
 
 @Component({
   selector: 'app-map-viewer',
   standalone: true,
-  imports: [CommonModule, GeoMap, JigsawMap],
+  imports: [CommonModule, GeoMap],
   templateUrl: './map-viewer.html',
   styleUrl: './map-viewer.css',
 })
