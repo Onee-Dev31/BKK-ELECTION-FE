@@ -23,7 +23,7 @@
   position: fixed !important;
   top: 0;
   right: 40px;
-  width: 200px;
+  width: 230px;
   background: linear-gradient(180deg, #082b60 0%, #0f2a52 100%);
   z-index: 200;
   pointer-events: auto;
@@ -82,8 +82,8 @@
   left: 0;
   width: 0;
   height: 0;
-  border-left: 100px solid #0f2a52;
-  border-right: 100px solid #0f2a52;
+  border-left: 115px solid #0f2a52;
+  border-right: 115px solid #0f2a52;
   border-bottom: 34px solid transparent;
 }
 
@@ -126,8 +126,8 @@
 }
 
 .cf-pct-sym {
-  font-size: 1.3rem;
-  vertical-align: super;
+  font-size: 1em;
+  vertical-align: baseline;
 }
 
 .flag-tooltip-backdrop {
