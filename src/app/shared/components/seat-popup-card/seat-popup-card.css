@@ -8,8 +8,9 @@
   z-index: 200;
   border: 1px solid;
   border-radius: 16px;
-  background: rgba(4, 30, 26, 0.95);
-  backdrop-filter: blur(16px);
+  background: rgba(10, 15, 30, 0.97);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
   padding: 16px 20px;
   min-width: 240px;
   max-width: min(320px, calc(100vw - 32px));
@@ -17,6 +18,7 @@
   pointer-events: all;
   white-space: normal;
   word-break: break-word;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 .seat-card-close {
@@ -60,7 +62,7 @@
 .seat-card-district {
   font-size: 16px;
   font-weight: 800;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.65);
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }

@@ -2,19 +2,35 @@
 
   <div class="svg-wrap" #svgWrap>
     <svg viewBox="0 0 800 400" class="parliament-svg" #svgEl>
+      <defs>
+        <linearGradient id="glass-sheen" x1="0.2" y1="0" x2="0.8" y2="1">
+          <stop offset="0%"   stop-color="rgba(255,255,255,0.35)"/>
+          <stop offset="40%"  stop-color="rgba(255,255,255,0.04)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0.06)"/>
+        </linearGradient>
+      </defs>
       @for (dot of dots(); track $index) {
-        <polygon
-          [attr.points]="hexPoints(dot.x, dot.y, 22)"
-          [attr.fill]="dot.color"
-          [attr.opacity]="selectedSeat() && selectedSeat()?.dot?.districtId !== dot.districtId ? 0.3 : 0.92"
+        <g
           [class.seat-dot]="true"
           [class.seat-selected]="selectedSeat()?.dot?.districtId === dot.districtId"
           (click)="$event.stopPropagation(); selectSeat(dot)"
           [style.cursor]="dot.candidate ? 'pointer' : 'default'"
           [style.animation-delay]="$index * 15 + 'ms'"
-         >
+        >
+          <polygon
+            [attr.points]="hexPoints(dot.x, dot.y, 22)"
+            [attr.fill]="dot.color"
+            [attr.opacity]="selectedSeat() && selectedSeat()?.dot?.districtId !== dot.districtId ? 0.3 : 1"
+            stroke="rgba(255,255,255,0.5)" stroke-width="1.5"
+          />
+          <polygon
+            [attr.points]="hexPoints(dot.x, dot.y, 22)"
+            fill="url(#glass-sheen)"
+            [attr.opacity]="selectedSeat() && selectedSeat()?.dot?.districtId !== dot.districtId ? 0.3 : 1"
+            pointer-events="none"
+          />
           <title>{{ dot.candidate ? dot.candidate.fullName + ' — เขต ' + dot.districtId : '' }}</title>
-        </polygon>
+        </g>
       }
     </svg>
 
