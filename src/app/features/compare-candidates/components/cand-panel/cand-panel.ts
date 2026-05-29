@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, signal } from '@angular/core';
+import { Component, Input, Output, EventEmitter, signal, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Candidate } from '../../../../core/models/election.models';
@@ -13,7 +13,7 @@ import { formatVotes } from '../../../../core/utils/election.utils';
   templateUrl: './cand-panel.html',
   styleUrl: './cand-panel.css'
 })
-export class CandPanel {
+export class CandPanel implements OnChanges {
   @Input() info!: CandidateInfo | null;
   @Input() candidates: Candidate[] = [];
   @Input() selectedId = 0;
@@ -25,4 +25,8 @@ export class CandPanel {
 
   @Output() openPicker = new EventEmitter<void>();
   readonly formatVotes = formatVotes;
+  photoFailed = signal(false);
+
+  ngOnChanges() { this.photoFailed.set(false); }
+  onPhotoError() { this.photoFailed.set(true); }
 }
