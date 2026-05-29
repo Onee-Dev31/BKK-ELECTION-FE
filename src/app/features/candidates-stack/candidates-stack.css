@@ -299,7 +299,7 @@
 
 @media (max-width: 1279px) {
   .stack-page {
-    padding: 1rem 0.75rem calc(84px + env(safe-area-inset-bottom, 0px));
+    padding: 1rem 170px calc(84px + env(safe-area-inset-bottom, 0px)) 0.75rem;
   }
   .stack-logo {
     height: 80px;
@@ -322,6 +322,9 @@
 }
 
 @media (max-width: 767px) {
+  .stack-page {
+    padding: 1rem 130px calc(84px + env(safe-area-inset-bottom, 0px)) 0.75rem;
+  }
   .corner-flag {
     right: 0;
     width: 120px;
@@ -339,7 +342,29 @@
   .cf-label { font-size: 0.7rem; }
   .cf-sub { font-size: 0.65rem; }
   .cf-tap-hint { font-size: 0.6rem; padding: 3px 7px; }
-  .flag-tooltip { right: 4px; top: auto; bottom: calc(-200px); width: min(280px, 90vw); }
+  .flag-tooltip { right: 4px; top: 120px; width: min(280px, calc(100vw - 8px)); }
+}
+
+@media (max-width: 480px) {
+  .stack-page {
+    padding: 0.75rem 100px calc(84px + env(safe-area-inset-bottom, 0px)) 0.5rem;
+  }
+  .corner-flag {
+    width: 90px;
+    padding: 8px 5px 22px;
+  }
+  .corner-flag::after {
+    border-left: 45px solid #0f2a52;
+    border-right: 45px solid #0f2a52;
+    border-bottom: 16px solid transparent;
+    bottom: -16px;
+  }
+  .cf-big { font-size: 0.9rem; }
+  .cf-pct { font-size: 1.2rem; }
+  .cf-label { font-size: 0.6rem; }
+  .cf-sub { display: none; }
+  .cf-divider { display: none; }
+  .cf-tap-hint { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -736,6 +761,9 @@
 }
 
 @media (max-width: 767px) {
+  .stack-page {
+    padding: 1rem 130px calc(84px + env(safe-area-inset-bottom, 0px)) 0.75rem;
+  }
   .card-stage {
     gap: 6px;
   }

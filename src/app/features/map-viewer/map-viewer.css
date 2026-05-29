@@ -422,11 +422,11 @@
     }
 
     .district-number {
-        font-size: min(0.64rem, 3.05cqw);
+        font-size: max(min(0.64rem, 3.05cqw), 0.5rem);
     }
 
     .district-title {
-        font-size: min(0.34rem, 1.35cqw);
+        font-size: max(min(0.34rem, 1.35cqw), 0.28rem);
         margin-top: 1px;
         letter-spacing: 0;
     }

@@ -294,6 +294,9 @@
     padding: 1rem 1.25rem;
     padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
   }
+  .corner-flag { right: 0; width: 150px; padding: 12px 10px 32px; }
+  .corner-flag::after { border-left: 75px solid #0f2a52; border-right: 75px solid #0f2a52; border-bottom: 24px solid transparent; bottom: -24px; }
+  .flag-tooltip { right: 162px; width: 220px; }
 }
 
 /* ── Candidate Picker Modal ─────────────────────────────── */

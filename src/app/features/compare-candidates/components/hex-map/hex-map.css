@@ -57,8 +57,18 @@
 
 @media (max-width: 900px) and (min-width: 641px) {
   .hex-map-wrap { height: 160px; }
+  .hex-legend-item { font-size: 16px; }
+  .hex-legend-count { font-size: 16px; }
+}
+
+@media (max-width: 640px) {
+  .hex-map-wrap { max-height: 200px; }
+  .hex-legend-item { font-size: 15px; }
+  .hex-legend-count { font-size: 15px; }
 }
 
 @media (max-width: 480px) {
-  .hex-map-wrap { max-height: 180px; }
+  .hex-map-wrap { max-height: 160px; }
+  .hex-legend-item { font-size: 14px; }
+  .hex-legend-count { font-size: 14px; }
 }

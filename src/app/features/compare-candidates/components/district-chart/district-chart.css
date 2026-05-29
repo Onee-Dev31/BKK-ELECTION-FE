@@ -94,19 +94,26 @@
 
 @media (max-width: 1279px) and (min-width: 641px) {
   .bar-chart-wrap { height: 120px; }
+  .district-tab { font-size: 17px; }
 }
 
 @media (max-width: 900px) and (min-width: 641px) {
   .bar-chart-wrap { height: 100px; }
-  .district-tab { font-size: 13px; padding: 6px 6px; }
+  .district-tab { font-size: 15px; padding: 6px 6px; }
+  .bar-diff-label { font-size: 12px; }
+  .bar-district-name { font-size: 12px; }
 }
 
 @media (max-width: 640px) {
-  .bar-chart-wrap { height: 120px; }
-  .district-tab { font-size: 13px; padding: 6px 6px; }
+  .bar-chart-wrap { height: 120px; padding-top: 1.8rem; }
+  .district-tab { font-size: 15px; padding: 8px 6px; }
+  .bar-diff-label { font-size: 12px; top: -1.6rem; }
+  .bar-district-name { font-size: 12px; }
 }
 
 @media (max-width: 480px) {
-  .bar-chart-wrap { height: 100px; }
-  .district-tab { font-size: 12px; padding: 5px 4px; }
+  .bar-chart-wrap { height: 100px; padding-top: 1.6rem; }
+  .district-tab { font-size: 13px; padding: 6px 4px; }
+  .bar-diff-label { font-size: 11px; }
+  .bar-district-name { font-size: 11px; }
 }

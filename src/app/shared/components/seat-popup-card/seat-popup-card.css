@@ -108,6 +108,18 @@
   .seat-card-district { font-size: 16px; }
 }
 
+@media (max-width: 480px) {
+  .seat-card {
+    min-width: 160px;
+    max-width: min(220px, calc(100vw - 24px));
+    padding: 10px 12px;
+  }
+  .seat-card-photo { width: 38px; height: 38px; }
+  .seat-card-name  { font-size: 14px; }
+  .seat-card-district { font-size: 13px; }
+  .seat-card-party span { font-size: 13px; }
+}
+
 @media (orientation: landscape) and (max-height: 549px) {
   .seat-card {
     min-width: 160px;

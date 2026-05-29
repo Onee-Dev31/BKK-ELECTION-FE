@@ -134,8 +134,15 @@
   .parliament-wrap { padding: 64px 12px 12px; gap: 8px; justify-content: center; }
   .svg-wrap { flex: none; width: 100%; aspect-ratio: 2 / 1; }
   .chart-sub { font-size: 18px; }
-  .chart-label { font-size: 16px; }
+  .chart-label { font-size: 14px; }
   .seat-bar { height: 5px; }
+}
+
+@media (max-width: 480px) {
+  .parliament-wrap { padding: 56px 8px 8px; gap: 6px; }
+  .chart-sub { font-size: 15px; }
+  .chart-label { font-size: 12px; letter-spacing: 0.08em; }
+  .seat-bar { height: 4px; }
 }
 
 @media (orientation: landscape) and (max-height: 549px) {
