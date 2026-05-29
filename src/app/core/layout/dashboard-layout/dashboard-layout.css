@@ -123,10 +123,10 @@
     overflow: hidden;
 
     grid-template-columns: 1fr 400px;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 1fr auto;
     grid-template-areas:
-        "map     hero"
-        "map     candidates";
+        "map     candidates"
+        "map     hero";
 }
 
 .content-grid.is-sk-mode {
@@ -395,8 +395,8 @@
         grid-template-areas:
             "search"
             "map"
-            "hero"
-            "candidates";
+            "candidates"
+            "hero";
         padding: 12px;
         padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
         gap: 12px;

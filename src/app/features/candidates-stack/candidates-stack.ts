@@ -1,5 +1,5 @@
 import { Component, inject, signal, computed, effect, untracked, ElementRef, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { ElectionService } from '../../core/services/election.service';
 import { MapStateService } from '../../core/services/map-state';
@@ -15,7 +15,7 @@ const AVAILABLE_3D = new Set([1, 3, 4, 6, 8]);
 @Component({
   selector: 'app-candidates-stack',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DecimalPipe],
   templateUrl: './candidates-stack.html',
   styleUrl: './candidates-stack.css',
 })
@@ -28,6 +28,12 @@ export class CandidatesStack implements OnInit, OnDestroy {
   top10 = computed(() =>
     [...this.svc.candidates()].sort((a, b) => b.votes - a.votes).slice(0, 5)
   );
+
+  countedVotes = computed(() =>
+    this.svc.goodVotes() + this.svc.badVotes() + this.svc.noVotes()
+  );
+  progressPercent = computed(() => this.svc.progressPercent());
+  eligibleVoters = computed(() => this.svc.eligibleVoters());
 
   showScrollTop = signal(false);
 
