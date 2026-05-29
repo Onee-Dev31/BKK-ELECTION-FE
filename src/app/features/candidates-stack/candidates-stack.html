@@ -59,7 +59,7 @@
   }
 
   <div class="stack-header">
-    <img class="stack-logo" src="/LOGO_ELECTION_BKK_V2/LOGO_ELECTION_BKK_V2.png" alt="วันเลือกตั้ง ผู้ว่าฯ กทม 69" />
+    <img class="stack-logo" src="/LOGO_ELECTION_BKK_V2/LOGO_ELECTION_BKK_V2.png" alt="วันเลือกตั้ง ผู้ว่าฯ กทม 69" loading="eager" fetchpriority="high" decoding="async" />
   </div>
 
   @if (top10().length >= 3) {
@@ -70,7 +70,7 @@
     <div class="cand-card cc-r4" style="--cd:200ms" (click)="openModal(top10()[3], 4)" [style.background]="muteColor(top10()[3].color)">
       <div class="cc-order-rank cc-flag-r4"><span class="cc-rank-label">อันดับ</span><div class="cc-rank-circle">4</div></div>
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[3].number)" [alt]="top10()[3].name" onerror="this.style.opacity='0'">
+        <img class="cc-photo" [src]="imgUrl(top10()[3].number)" [alt]="top10()[3].name" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel">
         <div class="cc-rank-badge">{{ top10()[3].number }}</div>
@@ -87,7 +87,7 @@
     <div class="cand-card cc-r2" style="--cd:100ms" (click)="openModal(top10()[1], 2)" [style.background]="muteColor(top10()[1].color)">
       <div class="cc-order-rank cc-flag-r2"><span class="cc-rank-label">อันดับ</span><div class="cc-rank-circle">2</div></div>
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[1].number)" [alt]="top10()[1].name" onerror="this.style.opacity='0'">
+        <img class="cc-photo" [src]="imgUrl(top10()[1].number)" [alt]="top10()[1].name" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel">
         <div class="cc-rank-badge cc-badge-silver">{{ top10()[1].number }}</div>
@@ -103,7 +103,7 @@
     <div class="cand-card cc-r1" style="--cd:0ms" (click)="openModal(top10()[0], 1)" [style.background]="muteColor(top10()[0].color)">
       <div class="cc-order-rank cc-order-rank-r1 cc-flag-r1"><span class="cc-rank-label">อันดับ</span><div class="cc-rank-circle">1</div></div>
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[0].number)" [alt]="top10()[0].name" onerror="this.style.opacity='0'">
+        <img class="cc-photo" [src]="imgUrl(top10()[0].number)" [alt]="top10()[0].name" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel cc-info-panel-r1">
         <div class="cc-rank-badge cc-badge-gold">{{ top10()[0].number }}</div>
@@ -119,7 +119,7 @@
     <div class="cand-card cc-r3" style="--cd:150ms" (click)="openModal(top10()[2], 3)" [style.background]="muteColor(top10()[2].color)">
       <div class="cc-order-rank cc-flag-r3"><span class="cc-rank-label">อันดับ</span><div class="cc-rank-circle">3</div></div>
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[2].number)" [alt]="top10()[2].name" onerror="this.style.opacity='0'">
+        <img class="cc-photo" [src]="imgUrl(top10()[2].number)" [alt]="top10()[2].name" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel">
         <div class="cc-rank-badge cc-badge-bronze">{{ top10()[2].number }}</div>
@@ -136,7 +136,7 @@
     <div class="cand-card cc-r5" style="--cd:250ms" (click)="openModal(top10()[4], 5)" [style.background]="muteColor(top10()[4].color)">
       <div class="cc-order-rank cc-flag-r5"><span class="cc-rank-label">อันดับ</span><div class="cc-rank-circle">5</div></div>
       <div class="cc-photo-area">
-        <img class="cc-photo" [src]="imgUrl(top10()[4].number)" [alt]="top10()[4].name" onerror="this.style.opacity='0'">
+        <img class="cc-photo" [src]="imgUrl(top10()[4].number)" [alt]="top10()[4].name" loading="eager" fetchpriority="high" decoding="async" onerror="this.style.opacity='0'">
       </div>
       <div class="cc-info-panel">
         <div class="cc-rank-badge">{{ top10()[4].number }}</div>

@@ -81,15 +81,18 @@ export class CandidatesStack implements OnInit, OnDestroy {
   private countUpMap = signal<Map<number, number>>(new Map());
   private countUpStarted = false;
   private rafId = 0;
+  private countUpStartTimer = 0;
+  private preloadedImageUrls = new Set<string>();
 
   constructor() {
     effect(() => {
       const candidates = this.top10();
       if (candidates.length === 0) return;
       untracked(() => {
+        this.preloadCardImages(candidates);
         if (!this.countUpStarted) {
           this.countUpStarted = true;
-          this.startCountUp(candidates);
+          this.countUpStartTimer = window.setTimeout(() => this.startCountUp(candidates), 120);
         }
       });
     });
@@ -98,12 +101,18 @@ export class CandidatesStack implements OnInit, OnDestroy {
   private startCountUp(candidates: Candidate[]): void {
     const duration = 1800;
     const start = performance.now();
+    let lastPaint = 0;
     const tick = (now: number) => {
       const t = Math.min((now - start) / duration, 1);
-      const eased = 1 - (1 - t) ** 3;
-      const m = new Map<number, number>();
-      candidates.forEach(c => m.set(c.id, Math.round(c.votes * eased)));
-      this.countUpMap.set(m);
+
+      if (now - lastPaint > 48 || t === 1) {
+        lastPaint = now;
+        const eased = 1 - (1 - t) ** 3;
+        const m = new Map<number, number>();
+        candidates.forEach(c => m.set(c.id, Math.round(c.votes * eased)));
+        this.countUpMap.set(m);
+      }
+
       if (t < 1) this.rafId = requestAnimationFrame(tick);
     };
     this.rafId = requestAnimationFrame(tick);
@@ -216,6 +225,7 @@ export class CandidatesStack implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    window.clearTimeout(this.countUpStartTimer);
     cancelAnimationFrame(this.rafId);
     this.scrollContainer?.removeEventListener('scroll', this.scrollHandler);
     document.body.style.overflow = '';
@@ -235,6 +245,27 @@ export class CandidatesStack implements OnInit, OnDestroy {
 
   imgUrl(n: number) {
     return this.imgOverrides[n] ?? ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', n.toString());
+  }
+
+  private preloadCardImages(candidates: Candidate[]) {
+    if (typeof document === 'undefined') return;
+
+    for (const candidate of candidates) {
+      this.preloadImage(this.imgUrl(candidate.number));
+    }
+    this.preloadImage('/LOGO_ELECTION_BKK_V2/LOGO_ELECTION_BKK_V2.png');
+  }
+
+  private preloadImage(url: string) {
+    if (!url || this.preloadedImageUrls.has(url)) return;
+    this.preloadedImageUrls.add(url);
+
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = url;
+    link.setAttribute('fetchpriority', 'high');
+    document.head.appendChild(link);
   }
 
   imgUrl3D(n: number): string {
