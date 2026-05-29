@@ -172,6 +172,8 @@
       @for (cand of sortedCandidates(); track cand.id) {
       <button class="picker-item"
               [class.picker-item-active]="cand.id === (pickerFor() === 'a' ? selectedIdA() : selectedIdB())"
+              [class.picker-item-disabled]="cand.id === (pickerFor() === 'a' ? selectedIdB() : selectedIdA())"
+              [disabled]="cand.id === (pickerFor() === 'a' ? selectedIdB() : selectedIdA())"
               (click)="pickCandidate(cand.id)">
         <img class="picker-photo" [src]="'https://storage.googleapis.com/ers-static/candidates/governor/No' + cand.number + '.jpg'"
              [alt]="cand.name" onerror="this.style.opacity='0.3'" [style.borderColor]="cand.color">
