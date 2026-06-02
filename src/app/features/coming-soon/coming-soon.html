@@ -9,7 +9,7 @@
   </div>
 
   <div class="cs-nav">
-    <img src="one_logo.png" alt="ONE Logo" class="cs-logo" />
+    <img src="/LOGO_ELECTION_BKK.png" alt="วันเลือกตั้งผู้ว่าฯ กทม. 69" class="cs-logo" />
   </div>
 
   <div class="cs-body">
@@ -72,8 +72,12 @@
 
     <div class="cs-content">
       @if (!isExpired()) {
-      <h1 class="cs-title">เร็วๆ นี้!</h1>
-      <p class="cs-subtitle">เลือกตั้งผู้ว่าราชการกรุงเทพมหานคร</p>
+      <div class="cs-election-heading">
+        <div>
+          <h1 class="cs-title">เลือกตั้งผู้ว่าราชการ กทม.</h1>
+        </div>
+        <p class="cs-year">2026</p>
+      </div>
       <p class="cs-date">28 มิถุนายน 2569 เวลา 08:00 น.</p>
 
       <div class="countdown">
@@ -98,8 +102,13 @@
         </div>
       </div>
       } @else {
-      <h1 class="cs-title">เริ่มแล้ว!</h1>
-      <p class="cs-subtitle">การเลือกตั้งเริ่มต้นแล้ว</p>
+      <div class="cs-election-heading">
+        <div>
+          <h1 class="cs-title">เริ่มแล้ว!</h1>
+          <p class="cs-subtitle">การเลือกตั้งเริ่มต้นแล้ว</p>
+        </div>
+        <p class="cs-year">2026</p>
+      </div>
       }
 
     </div>
