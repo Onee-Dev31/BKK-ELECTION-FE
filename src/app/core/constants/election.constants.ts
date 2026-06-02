@@ -4,7 +4,7 @@ export const ELECTION_CONSTANTS = {
     API: {
         SUMMARY: environment.api.summary,
         DISTRICTS: environment.api.districts,
-        GOVERNOR_AUTO_CANDIDATES: '/api/elections/bkk-governor-2026/auto/candidates',
+        GOVERNOR_AUTO_CANDIDATES: `${environment.apiBase}/api/elections/bkk-governor-2026/auto/candidates`,
     },
     ASSETS: {
         CANDIDATE_IMAGE: 'https://storage.googleapis.com/ers-static/candidates/governor/No{no}.jpg',
