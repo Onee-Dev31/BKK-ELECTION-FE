@@ -210,7 +210,7 @@
         gap: 36px;
         padding: 36px;
     }
-    .election-logo { height: 160px; }
+    .election-logo { height: 130px; }
     .toggle-btn { font-size: 19px; }
     .area-search { right: 790px; top: 56px; }
     .area-search:focus-within { width: 520px; }
@@ -652,6 +652,9 @@
     }
     .area-map {
         position: static;
+    }
+    .area-map > main {
+        padding-top: 20px;
     }
     .map-logo-toggle {
         left: 1rem;

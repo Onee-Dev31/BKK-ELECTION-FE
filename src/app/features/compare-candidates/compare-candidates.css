@@ -282,11 +282,12 @@
   .cf-big   { font-size: 1.7rem; margin: 5px 0; }
   .cf-pct   { font-size: 2.4rem; margin: 5px 0 2px; }
   .cf-tap-hint { font-size: 0.65rem; }
-  .compare-election-logo { height: 160px; }
+  .compare-election-logo { height: 130px; }
 }
 
 /* ── Responsive: desktop large (≥1280px) — compact so grid floats ── */
 @media (min-width: 1280px) {
+  .compare-election-logo { height: 90px; }
   .compare-page       { padding: 30px 260px; }
   .compare-grid       { grid-template-columns: 210px 1fr 210px; max-width: 900px; }
   .corner-flag {

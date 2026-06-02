@@ -726,6 +726,11 @@
 
 .cs-btn:hover { background: #333; }
 
+/* ===== Desktop logo alignment ===== */
+@media (min-width: 1280px) { .cs-logo { height: 90px; } }
+@media (min-width: 1600px) { .cs-logo { height: 130px; } }
+@media (min-width: 1920px) { .cs-logo { height: 150px; } }
+
 /* ===== Responsive ===== */
 @media (max-width: 1180px) {
   .cs-logo {
