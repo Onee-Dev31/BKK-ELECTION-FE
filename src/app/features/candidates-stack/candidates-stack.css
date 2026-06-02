@@ -734,16 +734,37 @@
    ══════════════════════════════════════════════════════════ */
 
 
+@media (min-width: 1280px) {
+  .stack-page   { padding: 1rem 2rem 0 160px; gap: 0.75rem; }
+  .stack-logo   { height: 90px; }
+  .corner-flag  { width: 170px; right: 20px; padding: 14px 12px 34px; gap: 1px; }
+  .corner-flag::after { border-left-width: 85px; border-right-width: 85px; border-bottom-width: 26px; bottom: -26px; }
+  .cf-label { font-size: 0.75rem; }
+  .cf-sub   { font-size: 0.65rem; }
+  .cf-big   { font-size: 1.35rem; margin: 3px 0; }
+  .cf-pct   { font-size: 1.9rem; margin: 3px 0 1px; }
+  .cf-divider { margin: 4px 0; }
+  .cf-tap-hint { font-size: 0.6rem; padding: 3px 8px; margin-top: 5px; }
+  .card-stage   { gap: 12px; max-width: 1200px; }
+  .cc-r1        { height: 54vh; }
+  .cc-r2, .cc-r3 { height: 43vh; }
+  .cc-r4, .cc-r5 { height: 34vh; }
+  .cc-name-r1   { font-size: 1.6rem; }
+  .cc-pct-r1    { font-size: 2.2rem; }
+  .cc-pct       { font-size: 1.4rem; }
+  .cc-name      { font-size: 1.2rem; }
+}
+
 @media (min-width: 1600px) {
   .stack-page   { padding: 1.25rem 3rem 0 200px; gap: 1rem; }
-  .stack-logo   { height: 120px; }
-  .corner-flag  { width: 210px; right: 30px; padding: 18px 16px 42px; }
-  .corner-flag::after { border-left-width: 105px; border-right-width: 105px; border-bottom-width: 32px; bottom: -32px; }
-  .cf-label { font-size: 0.9rem; }
-  .cf-sub   { font-size: 0.75rem; }
-  .cf-big   { font-size: 1.7rem; margin: 5px 0; }
-  .cf-pct   { font-size: 2.4rem; margin: 5px 0 2px; }
-  .cf-tap-hint { font-size: 0.65rem; }
+  .stack-logo   { height: 130px; }
+  .corner-flag  { width: 220px; right: 30px; padding: 18px 16px 42px; }
+  .corner-flag::after { border-left-width: 110px; border-right-width: 110px; border-bottom-width: 32px; bottom: -32px; }
+  .cf-label { font-size: 0.95rem; }
+  .cf-sub   { font-size: 0.78rem; }
+  .cf-big   { font-size: 1.8rem; margin: 5px 0; }
+  .cf-pct   { font-size: 2.5rem; margin: 5px 0 2px; }
+  .cf-tap-hint { font-size: 0.68rem; }
   .card-stage   { gap: 16px; max-width: 1600px; }
   .cc-r1        { height: 60vh; }
   .cc-r2, .cc-r3 { height: 48vh; }
@@ -754,59 +775,27 @@
   .cc-name      { font-size: 1.4rem; }
 }
 
-@media (min-width: 1280px) {
-  .stack-page {
-    padding: 1rem 2rem 0 160px;
-    gap: 0.75rem;
-  }
-  .stack-logo {
-    height: 90px;
-  }
-  .corner-flag {
-    width: 170px;
-    right: 20px;
-    padding: 14px 12px 34px;
-    gap: 1px;
-  }
-  .corner-flag::after {
-    border-left-width: 85px;
-    border-right-width: 85px;
-    border-bottom-width: 26px;
-    bottom: -26px;
-  }
-  .cf-label { font-size: 0.75rem; }
-  .cf-sub   { font-size: 0.65rem; }
-  .cf-big   { font-size: 1.35rem; margin: 3px 0; }
-  .cf-pct   { font-size: 1.9rem;  margin: 3px 0 1px; }
-  .cf-divider { margin: 4px 0; }
-  .cf-tap-hint { font-size: 0.6rem; padding: 3px 8px; margin-top: 5px; }
-  .card-stage {
-    gap: 12px;
-    max-width: 1200px;
-  }
-  .cc-r1 {
-    height: 54vh;
-  }
-  .cc-r2,
-  .cc-r3 {
-    height: 43vh;
-  }
-  .cc-r4,
-  .cc-r5 {
-    height: 34vh;
-  }
-  .cc-name-r1 {
-    font-size: 1.6rem;
-  }
-  .cc-pct-r1 {
-    font-size: 2.2rem;
-  }
-  .cc-pct {
-    font-size: 1.4rem;
-  }
-  .cc-name {
-    font-size: 1.2rem;
-  }
+@media (min-width: 1920px) {
+  .stack-page   { padding: 1.25rem 3rem 0 205px; gap: 1rem; }
+  .stack-logo   { height: 150px; }
+  .corner-flag  { width: 228px; right: 32px; padding: 19px 16px 44px; }
+  .corner-flag::after { border-left-width: 114px; border-right-width: 114px; border-bottom-width: 33px; bottom: -33px; }
+  .cf-label { font-size: 0.95rem; }
+  .cf-sub   { font-size: 0.78rem; }
+  .cf-big   { font-size: 1.75rem; margin: 5px 0; }
+  .cf-pct   { font-size: 2.5rem; margin: 5px 0 2px; }
+  .cf-tap-hint { font-size: 0.68rem; }
+  .flag-tooltip { right: 254px; width: 270px; }
+  .card-stage   { gap: 17px; max-width: 1580px; }
+  .cc-r1        { height: 58vh; }
+  .cc-r2, .cc-r3 { height: 46vh; }
+  .cc-r4, .cc-r5 { height: 37vh; }
+  .cc-name-r1   { font-size: 1.85rem; }
+  .cc-pct-r1    { font-size: 2.5rem; }
+  .cc-pct       { font-size: 1.65rem; }
+  .cc-name      { font-size: 1.4rem; }
+  .cc-rank-badge { font-size: 3rem; }
+  .cc-r1 .cc-rank-badge { font-size: 4rem; }
 }
 
 /* ── Tablet portrait (641–900px) ── */
@@ -819,6 +808,10 @@
   .cc-name-r1 { font-size: 1.1rem; }
   .cc-pct { font-size: 1.2rem; }
   .cc-pct-r1 { font-size: 1.7rem; }
+}
+
+@media (max-width: 768px) {
+  .cc-r4, .cc-r5 { display: none; }
 }
 
 @media (max-width: 767px) {

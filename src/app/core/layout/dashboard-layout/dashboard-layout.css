@@ -36,7 +36,7 @@
     align-items: center;
     gap: 3px;
     padding: 3px;
-    width: 240px;
+    width: 280px;
     border-radius: 14px;
     background: rgba(255,255,255,0.62);
     backdrop-filter: blur(20px);
@@ -76,6 +76,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    white-space: nowrap;
     transition: color 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
@@ -210,7 +211,6 @@
         padding: 36px;
     }
     .election-logo { height: 160px; }
-    .toggle-pill { width: 280px; }
     .toggle-btn { font-size: 19px; }
     .area-search { right: 790px; top: 56px; }
     .area-search:focus-within { width: 520px; }
@@ -304,10 +304,6 @@
         display: none;
     }
 
-    .toggle-pill {
-        width: 210px;
-    }
-
     .area-candidates > header {
         padding: 10px 14px;
     }
@@ -384,7 +380,6 @@
         display: none;
     }
     .toggle-pill {
-        width: 188px;
         border-radius: 12px;
         padding: 2px;
     }
@@ -393,7 +388,6 @@
         font-size: 16px;
     }
     .toggle-pill-sm {
-        width: 166px;
         border-radius: 9px;
     }
     .toggle-btn-sm {
@@ -453,7 +447,6 @@
         display: none;
     }
     .toggle-pill {
-        width: 188px;
         border-radius: 12px;
         padding: 2px;
     }
@@ -462,7 +455,6 @@
         font-size: 16px;
     }
     .toggle-pill-sm {
-        width: 166px;
         border-radius: 9px;
     }
 }
@@ -523,9 +515,6 @@
     }
     .map-logo-toggle .logo-accent-bar {
         height: 36px;
-    }
-.toggle-pill {
-        width: 210px;
     }
 }
 
@@ -668,14 +657,14 @@
         left: 1rem;
         padding-top: 1rem;
     }
-    /* >1600px: [search LEFT][toggle RIGHT] — search has larger right value */
+    /* >1600px grid: 1fr 460px gap36 pad-right36 → map-right=532px from vp-right */
     .area-search {
-        right: 728px;   /* toggle_right_edge(480+240=720) + 8px gap = 728 */
+        right: 836px;   /* toggle_right_edge(548+280=828) + 8px gap = 836 */
         left: auto;
         top: 47px;
     }
     .map-toggle-area {
-        right: 480px;   /* 16px inside map right edge */
+        right: 548px;   /* 16px inside map right edge (532+16) */
         left: auto;
         transform: none;
         padding-top: 0;
@@ -686,7 +675,7 @@
 /* 1280–1600px: sidebar=360px+gap20+pad20=400px → map right = W-400 */
 @media (min-width: 1280px) and (max-width: 1600px) {
     .area-search {
-        right: 664px;   /* toggle_right_edge(416+240=656) + 8px gap = 664 */
+        right: 704px;   /* toggle_right_edge(416+280=696) + 8px gap = 704 */
         left: auto;
         top: 36px;
     }
