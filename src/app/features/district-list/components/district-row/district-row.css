@@ -124,6 +124,20 @@
   align-items: center;
 }
 
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  :host { padding: 0.55rem 0.75rem; gap: 0.6rem; }
+  .district-right { min-width: 72px; }
+  .top3-dots { display: none; }
+}
+
+@media (max-width: 480px) {
+  :host { padding: 0.5rem 0.625rem; gap: 0.5rem; }
+  .district-right { min-width: 58px; }
+  .arrow-hint { display: none; }
+}
+
 /* ── Light theme ─────────────────────────────────────────── */
 
 :host-context(.light) {

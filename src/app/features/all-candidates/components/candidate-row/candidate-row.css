@@ -143,6 +143,24 @@
   align-items: center;
 }
 
+/* ── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  :host { padding: 0.6rem 0.75rem; gap: 0.6rem; }
+  .photo-wrap { width: 2.25rem; height: 2.25rem; }
+  .cand-right { min-width: 90px; }
+  .pct-bar-bg { max-width: 60px; }
+}
+
+@media (max-width: 480px) {
+  :host { padding: 0.5rem 0.625rem; gap: 0.5rem; }
+  .photo-wrap { width: 2rem; height: 2rem; }
+  .rank-badge { width: 1.5rem; height: 1.5rem; font-size: 0.65rem; }
+  .cand-right { min-width: 72px; }
+  .pct-bar-bg { max-width: 44px; }
+  .map-hint { display: none; }
+}
+
 /* ── Light theme ─────────────────────────────────────────── */
 
 :host-context(.light) {

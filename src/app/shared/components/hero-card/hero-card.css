@@ -110,6 +110,20 @@
   z-index: 3;
 }
 
+@media (max-width: 767px) {
+  .hc-label { font-size: 22px; }
+  .hc-title { font-size: 18px; }
+  .hc-candidate-name { font-size: 18px; }
+  .hc-number-pill { font-size: 13px; min-width: 36px; }
+}
+
+@media (max-width: 480px) {
+  .hc-label { font-size: 18px; }
+  .hc-title { font-size: 15px; }
+  .hc-candidate-name { font-size: 15px; }
+  .hc-number-pill { font-size: 12px; min-width: 30px; }
+}
+
 @media (max-width: 1600px) {
   :host::after {
     inset: -1.5px !important;
