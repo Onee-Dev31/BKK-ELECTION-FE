@@ -87,8 +87,8 @@
 }
 
 .mobile-tv-logo {
-  display: block;
-  width: min(620px, 46vw);
+  display: none;
+  width: min(320px, 82vw);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
@@ -146,7 +146,7 @@
 
 /* ===== UIverse TV (from kelvyn_8843 / Praashoo7) ===== */
 .main_wrapper {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 36em;
@@ -733,11 +733,6 @@
 
 .cs-btn:hover { background: #333; }
 
-/* ===== Desktop logo alignment ===== */
-@media (min-width: 1280px) { .cs-logo { height: 90px; } }
-@media (min-width: 1600px) { .cs-logo { height: 130px; } }
-@media (min-width: 1920px) { .cs-logo { height: 150px; } }
-
 /* ===== Responsive ===== */
 @media (max-width: 1180px) {
   .cs-logo {
@@ -845,7 +840,6 @@
   .mobile-tv-logo {
     display: block;
     flex-shrink: 0;
-    width: min(320px, 82vw);
     margin: 0 auto clamp(0.75rem, 4vw, 1.25rem);
   }
 
