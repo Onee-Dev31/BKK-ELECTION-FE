@@ -32,6 +32,8 @@ export class CompareCandidates {
   showFlagTooltip = signal(false);
   pickerFor = signal<'a' | 'b' | null>(null);
 
+  goHome() { this.router.navigate(['/']); }
+
   openPickerA() { this.pickerFor.set('a'); }
   openPickerB() { this.pickerFor.set('b'); }
   closePicker() {

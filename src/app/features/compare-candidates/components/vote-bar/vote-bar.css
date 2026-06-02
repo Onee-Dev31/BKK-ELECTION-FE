@@ -56,7 +56,7 @@
   font-weight: 800;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 641px) {
   .vote-diff-label { font-size: 18px; }
   .vote-bar-pcts { font-size: 18px; }
   .vote-bar-avatar { width: 36px; height: 36px; }
@@ -67,4 +67,11 @@
   .vote-bar-pcts { font-size: 16px; }
   .vote-bar-avatar { width: 30px; height: 30px; }
   .vote-bar-track { height: 12px; }
+}
+
+@media (max-width: 480px) {
+  .vote-diff-label { font-size: 14px; }
+  .vote-bar-pcts { font-size: 14px; }
+  .vote-bar-avatar { width: 26px; height: 26px; }
+  .vote-bar-track { height: 10px; }
 }

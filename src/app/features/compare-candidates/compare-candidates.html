@@ -166,7 +166,7 @@
   <div class="picker-modal" (click)="$event.stopPropagation()">
     <div class="picker-header">
       <span class="picker-title">เลือกผู้สมัครเพื่อเปรียบเทียบ</span>
-      <button class="picker-close" (click)="closePicker()">✕</button>
+      <button class="picker-close" (click)="goHome()">✕</button>
     </div>
     <div class="picker-grid">
       @for (cand of sortedCandidates(); track cand.id) {
