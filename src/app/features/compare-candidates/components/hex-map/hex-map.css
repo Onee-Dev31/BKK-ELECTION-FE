@@ -24,9 +24,12 @@
 }
 
 .hex-legend-name {
-  color: rgba(0,0,0,0.75);
+  color: rgba(0, 0, 0, 0.75);
   font-weight: 600;
   flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hex-legend-count {
@@ -48,27 +51,49 @@
 
 /* ── Responsive ── */
 @media (min-width: 1280px) {
-  .hex-map-wrap { max-height: 150px; }
+  .hex-map-wrap {
+    max-height: 120px;
+  }
 }
 
 @media (max-width: 1279px) and (min-width: 641px) {
-  .hex-map-wrap { max-height: 190px; }
+  .hex-map-wrap {
+    max-height: 190px;
+  }
 }
 
 @media (max-width: 900px) and (min-width: 641px) {
-  .hex-map-wrap { height: 160px; }
-  .hex-legend-item { font-size: 16px; }
-  .hex-legend-count { font-size: 16px; }
+  .hex-map-wrap {
+    height: 160px;
+  }
+  .hex-legend-item {
+    font-size: 16px;
+  }
+  .hex-legend-count {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 640px) {
-  .hex-map-wrap { max-height: 200px; }
-  .hex-legend-item { font-size: 15px; }
-  .hex-legend-count { font-size: 15px; }
+  .hex-map-wrap {
+    max-height: 150px;
+  }
+  .hex-legend-item {
+    font-size: 14px;
+  }
+  .hex-legend-count {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 480px) {
-  .hex-map-wrap { max-height: 160px; }
-  .hex-legend-item { font-size: 14px; }
-  .hex-legend-count { font-size: 14px; }
+  .hex-map-wrap {
+    max-height: 120px;
+  }
+  .hex-legend-item {
+    font-size: 13px;
+  }
+  .hex-legend-count {
+    font-size: 13px;
+  }
 }

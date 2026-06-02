@@ -266,11 +266,48 @@
   display: none;
 }
 
+/* ── Responsive: large screen (≥1600px) ─────────────────── */
+@media (min-width: 1600px) {
+  .compare-page       { padding: 40px 320px; }
+  .compare-grid       { grid-template-columns: 260px 1fr 260px; max-width: 1200px; }
+  .district-row       { max-width: 1200px; }
+  .glass-card         { padding: 1.25rem; }
+  .vote-diff-card     { padding: 0.875rem 1.25rem; }
+  .section-title      { font-size: 22px; }
+  .center-panel       { gap: 0.75rem; }
+  .corner-flag        { width: 210px; right: 30px; padding: 18px 16px 42px; }
+  .corner-flag::after { border-left-width: 105px; border-right-width: 105px; border-bottom-width: 32px; bottom: -32px; }
+  .cf-label { font-size: 0.9rem; }
+  .cf-sub   { font-size: 0.75rem; }
+  .cf-big   { font-size: 1.7rem; margin: 5px 0; }
+  .cf-pct   { font-size: 2.4rem; margin: 5px 0 2px; }
+  .cf-tap-hint { font-size: 0.65rem; }
+  .compare-election-logo { height: 160px; }
+}
+
 /* ── Responsive: desktop large (≥1280px) — compact so grid floats ── */
 @media (min-width: 1280px) {
-  .compare-page       { padding: 3rem 5rem; overflow-y: auto; justify-content: flex-start; }
-  .compare-grid       { grid-template-columns: 240px 1fr 240px; max-width: 1100px; }
-  .district-row       { max-width: 1100px; }
+  .compare-page       { padding: 30px 260px; }
+  .compare-grid       { grid-template-columns: 210px 1fr 210px; max-width: 900px; }
+  .corner-flag {
+    width: 170px;
+    right: 20px;
+    padding: 14px 12px 34px;
+    gap: 1px;
+  }
+  .corner-flag::after {
+    border-left-width: 85px;
+    border-right-width: 85px;
+    border-bottom-width: 26px;
+    bottom: -26px;
+  }
+  .cf-label { font-size: 0.75rem; }
+  .cf-sub   { font-size: 0.65rem; }
+  .cf-big   { font-size: 1.35rem; margin: 3px 0; }
+  .cf-pct   { font-size: 1.9rem;  margin: 3px 0 1px; }
+  .cf-divider { margin: 4px 0; }
+  .cf-tap-hint { font-size: 0.6rem; padding: 3px 8px; margin-top: 5px; }
+  .district-row       { max-width: 900px; }
   .glass-card         { padding: 0.875rem; }
   .vote-diff-card     { padding: 0.625rem 0.875rem; }
   .center-panel       { gap: 0.5rem; }
@@ -304,6 +341,7 @@
     padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
   }
   .corner-flag { right: 0; width: 150px; padding: 12px 10px 32px; }
+
   .corner-flag::after { border-left: 75px solid #0f2a52; border-right: 75px solid #0f2a52; border-bottom: 24px solid transparent; bottom: -24px; }
   .flag-tooltip { right: 162px; width: 220px; }
 }
@@ -434,17 +472,24 @@
   color: rgba(0,0,0,0.4);
 }
 
-/* ── Responsive: tablet landscape (900–1279px) ──────────── */
-@media (max-width: 1279px) and (min-width: 641px) {
-  .compare-grid { grid-template-columns: 220px 1fr 220px; }
-  .corner-flag { right: 0; width: 160px; padding: 12px 10px 32px; }
-  .corner-flag::after { border-left: 80px solid #0f2a52; border-right: 80px solid #0f2a52; border-bottom: 24px solid transparent; bottom: -24px; }
-  .flag-tooltip { right: 172px; width: 220px; }
+/* ── Hide corner-flag at ≤1024px ────────────────────────── */
+@media (max-width: 1024px) {
+  .corner-flag { display: none !important; }
+  .flag-tooltip { display: none !important; }
+  .flag-tooltip-backdrop { display: none !important; }
 }
 
-/* ── Responsive: tablet portrait (640–900px) ────────────── */
+/* ── Responsive: tablet landscape (900–1279px) ──────────── */
+@media (max-width: 1279px) and (min-width: 641px) {
+  .compare-page { padding-right: 24px; overflow-y: auto; justify-content: flex-start; }
+  .compare-grid { grid-template-columns: 200px 1fr 200px; }
+  .glass-card { padding: 14px; }
+}
+
+/* ── Responsive: tablet portrait (641–900px) ────────────── */
 @media (max-width: 900px) and (min-width: 641px) {
-  .compare-grid { grid-template-columns: 180px 1fr 180px; gap: 0.5rem; }
+  .compare-grid { grid-template-columns: 160px 1fr 160px; gap: 10px; }
+  .glass-card { padding: 12px; }
   .section-title { font-size: 16px; }
   .picker-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -452,7 +497,8 @@
 /* ── Responsive: mobile (≤640px) ───────────────────────── */
 @media (max-width: 640px) {
   .compare-page {
-    padding: 0.75rem 0.5rem calc(84px + env(safe-area-inset-bottom, 0px));
+    padding: 12px 8px;
+    padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
     overflow-y: auto;
     justify-content: flex-start;
   }
@@ -479,18 +525,12 @@
   .picker-grid { grid-template-columns: 1fr 1fr; }
   .picker-name { font-size: 14px; }
   .picker-photo { width: 48px; height: 48px; }
-  .corner-flag { width: 100px; right: 0; padding: 8px 6px 24px; gap: 1px; }
-  .corner-flag::after { border-left: 50px solid #0f2a52; border-right: 50px solid #0f2a52; border-bottom: 18px solid transparent; bottom: -18px; }
-  .cf-big { font-size: 0.95rem; }
-  .cf-pct { font-size: 1.3rem; }
-  .cf-label { font-size: 0.6rem; }
-  .cf-sub { display: none; }
-  .flag-tooltip { right: 4px; top: 200px; width: min(260px, 90vw); }
+  .glass-card { padding: 12px; }
 }
 
 /* ── Responsive: small phone (≤480px) ──────────────────── */
 @media (max-width: 480px) {
-  .compare-page { padding: 0.5rem 0.5rem calc(84px + env(safe-area-inset-bottom, 0px)); }
+  .compare-page { padding: 8px; padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
   .section-title { font-size: 15px; }
   .picker-grid { grid-template-columns: 1fr; }
   .picker-name { font-size: 16px; }

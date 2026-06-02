@@ -149,7 +149,7 @@
 }
 
 .area-search:focus-within {
-    width: 440px;
+    width: clamp(280px, 90vw, 440px);
 }
 
 .area-map {
@@ -219,7 +219,7 @@
     }
 
     .area-search:focus-within {
-        width: 440px;
+        width: clamp(280px, 90vw, 440px);
     }
 
     .map-logo-toggle {

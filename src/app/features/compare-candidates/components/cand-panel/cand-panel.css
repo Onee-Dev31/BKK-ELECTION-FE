@@ -3,7 +3,7 @@
   height: 100%;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 56px rgba(0,0,0,0.35);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.35);
 }
 
 .cand-card {
@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .cand-rank-flag::after {
@@ -48,7 +48,7 @@
 .cand-rank-label {
   font-size: 13px;
   font-weight: 900;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.04em;
   line-height: 1;
 }
@@ -70,18 +70,26 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(8px);
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
-.cand-change-btn svg { width: 16px; height: 16px; }
-.cand-change-btn:hover { background: rgba(255,255,255,0.2); color: #fff; }
+.cand-change-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.cand-change-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
 
 /* ── Photo area ── */
 .cand-photo-area {
@@ -145,13 +153,13 @@
   color: #fff;
   line-height: 1;
   letter-spacing: -0.03em;
-  text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
 }
 
 .cand-votes {
   font-size: 17px;
   font-weight: 700;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .cand-name {
@@ -160,7 +168,7 @@
   color: #fff;
   line-height: 1.2;
   margin: 0;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .cand-tags {
@@ -174,8 +182,8 @@
   font-size: 19px;
   font-weight: 800;
   color: #fff;
-  background: rgba(255,255,255,0.18);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 999px;
   padding: 4px 14px;
 }
@@ -183,43 +191,116 @@
 .cand-party-tag {
   font-size: 18px;
   font-weight: 600;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Responsive: large screen (≥1600px) ── */
+@media (min-width: 1600px) {
+  .cand-card { min-height: 520px; max-height: 76vh; }
+  .cand-pct  { font-size: 4rem; }
+  .cand-name { font-size: 1.5rem; }
+  .cand-votes { font-size: 19px; }
+  .cand-num-tag { font-size: 21px; }
+  .cand-party-tag { font-size: 20px; }
+  .cand-overlay { padding: 24px 20px 18px; }
 }
 
 /* ── Responsive: desktop (≥1280px) ── */
 @media (min-width: 1280px) {
-  .cand-card { min-height: 460px; max-height: 72vh; }
-  .cand-pct  { font-size: 3.2rem; }
-  .cand-name { font-size: 1.35rem; }
+  .cand-card {
+    min-height: 420px;
+    max-height: 70vh;
+  }
+  .cand-pct {
+    font-size: 3.2rem;
+  }
+  .cand-name {
+    font-size: 1.15rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 }
 
 /* ── Responsive: tablet (641–900px) ── */
 @media (max-width: 900px) and (min-width: 641px) {
-  .cand-card { min-height: 380px; }
-  .cand-pct { font-size: 2.8rem; }
-  .cand-name { font-size: 1.2rem; }
-  .cand-rank-num { font-size: 1.4rem; }
+  .cand-card {
+    min-height: 380px;
+  }
+  .cand-pct {
+    font-size: 2.8rem;
+  }
+  .cand-name {
+    font-size: 1.2rem;
+  }
+  .cand-rank-num {
+    font-size: 1.4rem;
+  }
 }
 
 /* ── Responsive: mobile (≤640px) ── */
 @media (max-width: 640px) {
-  .cand-card { min-height: 340px; max-height: 55vh; }
-  .cand-pct { font-size: 2rem; }
-  .cand-name { font-size: 1rem; line-height: 1.15; }
-  .cand-votes { font-size: 12px; }
-  .cand-num-tag { font-size: 12px; padding: 2px 8px; }
-  .cand-party-tag { font-size: 12px; }
-  .cand-rank-num { font-size: 1.3rem; }
-  .cand-rank-flag { width: 38px; left: 10px; padding: 7px 3px 14px; }
-  .cand-rank-flag::after { border-left: 19px solid var(--color, #888); border-right: 19px solid var(--color, #888); border-bottom: 12px solid transparent; bottom: -12px; }
-  .cand-overlay { padding: 14px 10px 12px; gap: 4px; }
-  .cand-change-btn { width: 30px; height: 30px; top: 10px; right: 10px; }
-  .cand-pct-block { gap: 5px; }
+  .cand-card {
+    min-height: 340px;
+    max-height: 55vh;
+  }
+  .cand-pct {
+    font-size: 2rem;
+  }
+  .cand-name {
+    font-size: 1rem;
+    line-height: 1.15;
+  }
+  .cand-votes {
+    font-size: 12px;
+  }
+  .cand-num-tag {
+    font-size: 12px;
+    padding: 2px 8px;
+  }
+  .cand-party-tag {
+    font-size: 12px;
+  }
+  .cand-rank-num {
+    font-size: 1.3rem;
+  }
+  .cand-rank-flag {
+    width: 38px;
+    left: 10px;
+    padding: 7px 3px 14px;
+  }
+  .cand-rank-flag::after {
+    border-left: 19px solid var(--color, #888);
+    border-right: 19px solid var(--color, #888);
+    border-bottom: 12px solid transparent;
+    bottom: -12px;
+  }
+  .cand-overlay {
+    padding: 14px 10px 12px;
+    gap: 4px;
+  }
+  .cand-change-btn {
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+  }
+  .cand-pct-block {
+    gap: 5px;
+  }
 }
 
 /* ── Responsive: small phone (≤480px) ── */
 @media (max-width: 480px) {
-  .cand-card { min-height: 220px; }
-  .cand-pct { font-size: 2rem; }
-  .cand-overlay { padding: 14px 12px 12px; }
+  .cand-card {
+    min-height: 260px;
+  }
+  .cand-pct {
+    font-size: 2rem;
+  }
+  .cand-overlay {
+    padding: 14px 12px 12px;
+  }
 }
