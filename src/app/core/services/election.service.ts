@@ -69,33 +69,19 @@ export class ElectionService {
 
       const { candidates: candidateList, statistics, coverage, lastUpdate } = listRes.data;
 
-      const detailResponses: any[] = await Promise.all(
-        candidateList.map((c: any) =>
-          lastValueFrom(this.http.get(`${this.apiUrl}/${c.id}`))
-        )
-      );
-
-      const candidates: Candidate[] = detailResponses.map((res: any) => {
-        const detail = res.data.candidate;
-        const summary = candidateList.find((c: any) => c.id === detail.id);
-
-        let name: string = detail.name ?? '';
-        ELECTION_CONSTANTS.NAME_PREFIXES.forEach(prefix => {
-          name = name.replace(prefix, '');
-        });
-
-        return {
-          id: detail.number,
-          name: name.trim(),
-          party: detail.party?.name ?? '',
-          number: detail.number,
-          votes: summary?.totalVotes ?? 0,
-          percentage: Number((summary?.percentage ?? 0).toFixed(2)),
-          imageUrl: ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', detail.number.toString()),
+      const candidates: Candidate[] = candidateList
+        .sort((a: any, b: any) => a.rank - b.rank)
+        .map((c: any) => ({
+          id: c.rank,
+          name: `ผู้สมัครอันดับที่ ${c.rank}`,
+          party: '',
+          number: c.rank,
+          votes: c.totalVotes,
+          percentage: Number(c.percentage.toFixed(2)),
+          imageUrl: '',
           partyLogoUrl: '',
-          color: detail.party?.color ?? ELECTION_CONSTANTS.CANDIDATE_COLORS['def']
-        };
-      }).sort((a: Candidate, b: Candidate) => b.votes - a.votes);
+          color: ELECTION_CONSTANTS.CANDIDATE_COLORS[c.rank] ?? ELECTION_CONSTANTS.CANDIDATE_COLORS['def']
+        }));
 
       this.preloadCandidateAssets(candidates.slice(0, 5));
 
