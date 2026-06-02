@@ -154,6 +154,15 @@ nav:not(.is-expanded) .clear-button {
     }
 }
 
+@media (max-width: 480px) {
+    nav { border-radius: 12px; padding: 0 12px; }
+    .result-title    { font-size: 15px; }
+    .result-subtitle { font-size: 14px; }
+    .result-item     { padding: 10px 12px; gap: 10px; }
+    .search-results-dropdown { max-height: min(260px, 42dvh); border-radius: 16px; }
+    .shortcut-hint { font-size: 14px; }
+}
+
 /* Tablet portrait */
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
     nav {

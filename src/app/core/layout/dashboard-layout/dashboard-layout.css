@@ -202,6 +202,20 @@
    RESPONSIVE OVERRIDES — ทุก media query มาหลัง base styles
    ============================================================ */
 
+/* 4K / large screen (>1600px): expand for more breathing room */
+@media (min-width: 1601px) {
+    .content-grid {
+        grid-template-columns: 1fr 460px;
+        gap: 36px;
+        padding: 36px;
+    }
+    .election-logo { height: 160px; }
+    .toggle-pill { width: 280px; }
+    .toggle-btn { font-size: 19px; }
+    .area-search { right: 790px; top: 56px; }
+    .area-search:focus-within { width: 520px; }
+}
+
 /* Mac + medium desktop (≤1600px): compact sidebar */
 @media (max-width: 1600px) {
     .content-grid {

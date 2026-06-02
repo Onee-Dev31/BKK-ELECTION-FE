@@ -38,3 +38,13 @@
   background: rgba(0,0,0,0.1);
   color: #0f172a;
 }
+
+@media (max-width: 640px) {
+  :host { gap: 0.25rem; }
+  .sort-btn { padding: 0.25rem 0.7rem; font-size: 0.72rem; }
+}
+
+@media (max-width: 480px) {
+  :host { gap: 0.2rem; }
+  .sort-btn { padding: 0.2rem 0.55rem; font-size: 0.65rem; }
+}
