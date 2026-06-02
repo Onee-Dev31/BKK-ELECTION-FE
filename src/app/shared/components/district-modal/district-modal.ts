@@ -2,7 +2,9 @@ import { Component, inject, computed } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { MapStateService } from '../../../core/services/map-state';
 import { ElectionService } from '../../../core/services/election.service';
+import { CouncilService } from '../../../core/services/council.service';
 import { ELECTION_CONSTANTS } from '../../../core/constants/election.constants';
+import { sumVotes, calcPercent } from '../../../core/utils/election.utils';
 
 @Component({
   selector: 'app-district-modal',
@@ -14,30 +16,57 @@ import { ELECTION_CONSTANTS } from '../../../core/constants/election.constants';
 export class DistrictModal {
   mapState = inject(MapStateService);
   electionService = inject(ElectionService);
+  councilService = inject(CouncilService);
 
   selectedDistrict = this.mapState.selectedDistrict;
-  candidates = this.electionService.candidates;
 
   districtCandidates = computed(() => {
     const districtId = this.selectedDistrict()?.id;
     if (!districtId) return [];
 
-    const result = this.electionService.getDistrictResults(districtId);
-    if (!result || !result.candidateResults) return [];
+    if (this.mapState.activeTab() === 'sk') {
+      const candidates = this.councilService.candidatesByDistrict(districtId);
+      const summary = this.councilService.getDistrictSummary(districtId);
+      if (!summary) return [];
 
-    const totalVotes = result.candidateResults.reduce((sum, curr) => sum + curr.votes, 0);
-
-    return result.candidateResults
-      .map(cr => {
-        const candidateInfo = this.electionService.candidates().find(c => c.id === cr.candidateId);
+      return candidates.map(c => {
+        const leader = summary.leaders.find(l => l.number === c.number);
+        const party = this.councilService.partyMap().get(c.partyId);
         return {
-          info: candidateInfo!,
-          votes: cr.votes,
-          percentage: totalVotes > 0 ? ((cr.votes / totalVotes) * 100).toFixed(2) : '0.00'
+          info: {
+            id: c.number,
+            name: c.fullName,
+            party: party?.partyName ?? '',
+            number: c.number,
+            imageUrl: c.imgUrl,
+            partyLogoUrl: party?.partyLogoUrl ?? '',
+            color: party?.color ?? '#64748b'
+          },
+          votes: leader?.totalVotes ?? 0,
+          percentage: leader?.percentVotes ?? '0.00'
         };
-      })
-      .filter(item => item.info !== undefined && item.votes > 0)
-      .sort((a, b) => b.votes - a.votes);
+      }).sort((a, b) => b.votes - a.votes);
+    } else {
+      // Governor mode
+      const result = this.electionService.getDistrictResults(districtId);
+      if (!result || !result.candidateResults) return [];
+
+      const totalVotes = sumVotes(result.candidateResults);
+      const candidateMap = this.electionService.candidateMap();
+
+      return result.candidateResults
+        .map(cr => {
+          const candidateInfo = candidateMap.get(cr.candidateId);
+          if (!candidateInfo) return null;
+          return {
+            info: candidateInfo,
+            votes: cr.votes,
+            percentage: calcPercent(cr.votes, totalVotes)
+          };
+        })
+        .filter((item): item is NonNullable<typeof item> => item !== null && (item.votes > 0 || item.info.number < 20))
+        .sort((a, b) => b.votes - a.votes);
+    }
   });
 
   closeModal() {

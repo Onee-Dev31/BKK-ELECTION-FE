@@ -263,3 +263,28 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 767px) {
+    .cloud-logo-wrapper { padding: 2rem 3rem; }
+    .logo-text-bkk      { font-size: 3rem; }
+    .logo-text-year     { font-size: 1.4rem; letter-spacing: 0.2em; }
+    .logo-text-subtitle { font-size: 0.8rem; margin-bottom: 2rem; }
+    .premium-spinner    { width: 48px; height: 48px; }
+    .css-sun            { width: 90px; height: 90px; }
+}
+
+@media (max-width: 480px) {
+    .cloud-logo-wrapper { padding: 1.5rem 2.25rem; border-radius: 28px; }
+    .logo-text-bkk      { font-size: 2.4rem; }
+    .logo-text-year     { font-size: 1.1rem; margin-top: 0.35rem; }
+    .logo-text-subtitle { font-size: 0.72rem; margin-top: 0.75rem; margin-bottom: 1.5rem; }
+    .premium-spinner    { width: 40px; height: 40px; }
+    .premium-spinner-inner { inset: 8px; }
+    .css-sun            { width: 70px; height: 70px; }
+}
+
+@media (max-width: 360px) {
+    .cloud-logo-wrapper { padding: 1.25rem 1.75rem; }
+    .logo-text-bkk      { font-size: 2rem; }
+    .logo-text-year     { font-size: 0.95rem; }
+}

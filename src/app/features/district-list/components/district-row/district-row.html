@@ -1,0 +1,33 @@
+<div class="district-num">{{ rank() }}</div>
+
+<div class="district-info">
+  <div class="district-name">{{ district().name }}</div>
+  @if (district().leader) {
+    <div class="leader-meta">
+      <span class="leader-dot" [style.backgroundColor]="district().leader!.color"></span>
+      <span class="leader-name" [style.color]="district().leader!.color">เบอร์ {{ district().leader!.number }} {{ district().leader!.name }}</span>
+    </div>
+  } @else {
+    <div class="no-data">ยังไม่มีข้อมูล</div>
+  }
+</div>
+
+<div class="district-right">
+  @if (district().leader) {
+    <div class="leader-votes">{{ formatVotes(district().leaderVotes) }}</div>
+    <div class="pct-row">
+      <div class="top3-dots">
+        @for (t of district().top3; track $index) {
+          <div class="top3-dot" [style.backgroundColor]="t.color"></div>
+        }
+      </div>
+      <span class="pct-val">{{ district().pct }}%</span>
+    </div>
+  }
+</div>
+
+<div class="arrow-hint">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <polyline points="9 18 15 12 9 6"/>
+  </svg>
+</div>

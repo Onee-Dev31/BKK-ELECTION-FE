@@ -23,6 +23,42 @@ export interface DistrictResult {
   }[];
 }
 
+export interface CouncilCandidate {
+  number: number;
+  firstName: string;
+  lastName: string;
+  fullName: string;
+  partyId: number;
+  imgUrl: string;
+  areaNumber: number;
+}
+
+export interface CouncilParty {
+  partyId: number;
+  code: string;
+  partyName: string;
+  partyLogoUrl: string;
+  color: string;
+  active: boolean;
+}
+
+export interface ThaipbsCandidate {
+  number: number;
+  title: string;
+  firstName: string;
+  lastName: string;
+  fullName: string;
+  partyId: number;
+  updatedAt: string;
+  imgUrl: string;
+  theme?: { colorLight: string; colorDark: string };
+}
+
+export interface ThaipbsDistrict {
+  number: number;
+  name: string;
+}
+
 export interface ElectionData {
   candidates: Candidate[];
   districtResults: DistrictResult[];
@@ -38,4 +74,30 @@ export interface ElectionData {
   lastUpdated: string;
   electionYear: number;
   progressPercent: number;
+}
+
+export interface CouncilDistrictSummary {
+  number: number;
+  interestingFactor: number;
+  leaders: {
+    number: number;
+    rank: number;
+    totalVotes: number;
+    percentVotes: number;
+  }[];
+  overallStatistics: {
+    totalVotes: number;
+    goodVotes: number;
+    badVotes: number;
+    noVotes: number;
+    percentGoodVotes: number;
+    percentBadVotes: number;
+    percentNoVotes: number;
+    totalEligible: number;
+  };
+}
+
+export interface CouncilSummaryData {
+  latestFetchedAt: string;
+  data: CouncilDistrictSummary[];
 }

@@ -1,0 +1,14 @@
+<div class="page">
+
+  <div class="page-header">
+    <h1 class="page-title">ผู้สมัครทั้งหมด</h1>
+    <app-sort-pills [options]="sortOptions" [activeKey]="sortKey()" (keyChange)="setSort($event)" />
+  </div>
+
+  <div class="cand-list">
+    @for (c of candidates(); track c.id; let i = $index) {
+      <app-candidate-row [candidate]="c" [rank]="i + 1" [maxVotes]="maxVotes()" (clicked)="goToMap(c.id)" />
+    }
+  </div>
+
+</div>

@@ -1,53 +1,104 @@
-<nav
-    class="flex flex-col items-center py-6 bg-black/10 backdrop-blur-3xl border border-white/5 rounded-[32px] shadow-2xl">
-    <div class="mb-6 group cursor-pointer relative">
-        <div
-            class="absolute inset-0 bg-bkk-green/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-        </div>
-        <div
-            class="relative w-11 h-11 rounded-2xl bg-bkk-bg border border-bkk-border flex items-center justify-center shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:border-bkk-green/50">
-            <span class="text-bkk-green font-black text-[10px] tracking-tighter">BKK</span>
-        </div>
-    </div>
-
-    <div class="flex flex-col items-center gap-4 mb-6">
-        @for (item of navItems; track item.id) {
-        <div class="nav-item-wrapper group">
-            <button (click)="navigate(item.path)" [id]="'nav-' + item.id"
-                class="relative w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-500"
-                [class]="isActive(item.path) ? 'active-item' : 'inactive-item'">
-
-                <div class="relative z-10 transition-transform duration-500 group-hover:scale-110">
-                    @if (item.id === 'map') {
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
-                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                    </svg>
-                    } @else if (item.id === 'compare') {
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
-                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                    }
-                </div>
-
-                @if (isActive(item.path)) {
-                <div class="absolute inset-0 bg-bkk-green/15 rounded-2xl blur-lg"></div>
-                }
-            </button>
-            <div class="sidebar-tooltip">{{ item.label }}</div>
-        </div>
-        }
-    </div>
-
-    <div class="flex flex-col gap-4">
+<nav class="flex flex-col items-center">
+  <!-- Logo -->
+  <!-- <div class="mb-6 cursor-pointer" (click)="navigate('/')" role="button" aria-label="หน้าหลัก">
+        <img src="/Logo%20วันเลือกตั้ง%20ผู้วาฯ%20กทม.%2069%20Final%20200569.png"
+             alt="วันเลือกตั้ง ผู้ว่าฯ กทม 69"
+             class="w-12 h-auto opacity-90 hover:opacity-100 transition-opacity duration-200" />
+    </div> -->
+    
+  <!-- Nav items -->
+  <div class="flex flex-col items-center gap-3">
+    @for (item of navItems; track item.id) {
+      <div class="nav-item-wrapper group cursor-pointer">
         <button
-            class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors group">
-            <div
-                class="w-2 h-2 rounded-full bg-bkk-green group-hover:scale-150 transition-transform shadow-[0_0_10px_#00d65b]">
-            </div>
+          (click)="navigate(item.path)"
+          [id]="'nav-' + item.id"
+          style="cursor: pointer"
+          class="relative w-12 h-12 flex items-center justify-center transition-all duration-200"
+          [class.active-item]="isActive(item.path)"
+          [class.inactive-item]="!isActive(item.path)"
+        >
+          <div class="relative z-10 transition-transform duration-300 group-hover:scale-110">
+            @if (item.id === 'home') {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.2"
+                  d="M3 10.75L12 3l9 7.75M5.5 9.25V20h13V9.25M9.5 20v-6h5v6"
+                />
+              </svg>
+            } @else if (item.id === 'map') {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.2"
+                  d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                />
+              </svg>
+            } @else if (item.id === 'candidates') {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            } @else if (item.id === 'districts') {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.2"
+                  d="M4 6h16M4 10h16M4 14h16M4 18h16"
+                />
+              </svg>
+            } @else if (item.id === 'compare') {
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                />
+              </svg>
+            }
+          </div>
         </button>
-    </div>
+        <div class="sidebar-tooltip">{{ item.label }}</div>
+      </div>
+    }
+  </div>
 </nav>

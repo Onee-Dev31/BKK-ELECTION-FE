@@ -1,109 +1,202 @@
-<div class="w-full h-full overflow-y-auto p-10 layout-content-area relative text-slate-800">
-  <div class="max-w-6xl mx-auto">
-    <div class="mb-12">
-      <h1 class="text-4xl font-black text-slate-900 tracking-tight">เปรียบเทียบนโยบาย</h1>
-      <div class="flex items-center gap-2 mt-3">
-         <div class="h-1 w-12 bg-emerald-500 rounded-full"></div>
-         <p class="text-slate-400 font-bold text-lg uppercase tracking-widest text-[11px]">Compare Vision & Policy</p>
-      </div>
-    </div>
+<div #scrollEl class="compare-page" (scroll)="onScroll(scrollEl)">
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      
-      <div class="flex flex-col gap-10">
-        <div class="glass-panel p-6 rounded-[32px] border border-white relative overflow-hidden shadow-sm">
-           <div class="absolute inset-0 opacity-10 pointer-events-none" [style.backgroundColor]="candidateA()?.color"></div>
-           <div class="relative z-10">
-             <label class="block text-[10px] text-emerald-600 font-black mb-4 uppercase tracking-widest leading-none">แคนดิเดตคนที่ 1</label>
-             <div class="relative">
-                <select class="w-full bg-white/50 border border-emerald-100 rounded-2xl px-6 py-4 text-slate-800 font-black outline-none focus:ring-4 focus:ring-emerald-500/10 transition-all appearance-none shadow-inner"
-                        [ngModel]="selectedIdA()" (ngModelChange)="selectedIdA.set($event)">
-                    @for (c of candidates(); track c.id) {
-                        <option class="bg-white text-slate-800" [ngValue]="c.id">{{ c.name }} (เบอร์ {{ c.number }}) - พรรค{{ c.party }}</option>
-                    }
-                </select>
-                <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-emerald-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-             </div>
-           </div>
-        </div>
-
-        @if(candidateA()) {
-        <div class="glass-panel p-8 rounded-[40px] flex items-center gap-8 border border-white shadow-md relative overflow-hidden group">
-          <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div class="w-24 h-24 rounded-full flex items-center justify-center font-black text-4xl text-slate-800 border-4 ring-4 ring-emerald-50 shadow-sm transition-transform group-hover:scale-105" [style.borderColor]="candidateA()?.color" [style.backgroundColor]="candidateA()?.color + '15'">
-            {{ candidateA()?.number }}
-          </div>
-          <div>
-            <h2 class="text-3xl font-black text-slate-900 leading-none tracking-tight">{{ candidateA()?.name }}</h2>
-            <span class="rounded-full px-4 py-1.5 border text-[11px] font-black mt-4 inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateA()?.color + '30'" [style.backgroundColor]="candidateA()?.color + '08'" [style.color]="candidateA()?.color">พรรค{{ candidateA()?.party }}</span>
-          </div>
-        </div>
-        }
-
-        <div class="flex flex-col gap-6">
-          @for (policy of getPolicies(candidateA()?.id); track policy.category) {
-            <div class="glass-panel p-8 rounded-[32px] hover:bg-white/80 transition-all border-l-8 shadow-sm group" [style.borderLeftColor]="candidateA()?.color || '#333'">
-              <div class="text-[11px] font-black uppercase tracking-widest mb-4 flex items-center gap-2" [style.color]="candidateA()?.color || '#ccc'">
-                <span class="w-1.5 h-1.5 rounded-full" [style.backgroundColor]="candidateA()?.color || '#ccc'"></span>
-                {{ policy.category }}
-              </div>
-              <p class="text-slate-600 font-bold leading-relaxed text-base group-hover:text-slate-900 transition-colors">{{ policy.description }}</p>
-            </div>
-          }
-        </div>
-      </div>
-
-      <div class="flex flex-col gap-10">
-        <div class="glass-panel p-6 rounded-[32px] border border-white relative overflow-hidden shadow-sm">
-           <div class="absolute inset-0 opacity-10 pointer-events-none" [style.backgroundColor]="candidateB()?.color"></div>
-           <div class="relative z-10">
-             <label class="block text-[10px] text-emerald-600 font-black mb-4 uppercase tracking-widest leading-none">แคนดิเดตคนที่ 2</label>
-             <div class="relative">
-                <select class="w-full bg-white/50 border border-emerald-100 rounded-2xl px-6 py-4 text-slate-800 font-black outline-none focus:ring-4 focus:ring-emerald-500/10 transition-all appearance-none shadow-inner"
-                        [ngModel]="selectedIdB()" (ngModelChange)="selectedIdB.set($event)">
-                    @for (c of candidates(); track c.id) {
-                        <option class="bg-white text-slate-800" [ngValue]="c.id">{{ c.name }} (เบอร์ {{ c.number }}) - พรรค{{ c.party }}</option>
-                    }
-                </select>
-                <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-emerald-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-             </div>
-           </div>
-        </div>
-
-        @if(candidateB()) {
-        <div class="glass-panel p-8 rounded-[40px] flex items-center gap-8 border border-white shadow-md relative overflow-hidden group">
-          <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div class="w-24 h-24 rounded-full flex items-center justify-center font-black text-4xl text-slate-800 border-4 ring-4 ring-emerald-50 shadow-sm transition-transform group-hover:scale-105" [style.borderColor]="candidateB()?.color" [style.backgroundColor]="candidateB()?.color + '15'">
-            {{ candidateB()?.number }}
-          </div>
-          <div>
-            <h2 class="text-3xl font-black text-slate-900 leading-none tracking-tight">{{ candidateB()?.name }}</h2>
-            <span class="rounded-full px-4 py-1.5 border text-[11px] font-black mt-4 inline-block uppercase tracking-widest shadow-sm" [style.borderColor]="candidateB()?.color + '30'" [style.backgroundColor]="candidateB()?.color + '08'" [style.color]="candidateB()?.color">พรรค{{ candidateB()?.party }}</span>
-          </div>
-        </div>
-        }
-
-        <div class="flex flex-col gap-6">
-          @for (policy of getPolicies(candidateB()?.id); track policy.category) {
-            <div class="glass-panel p-8 rounded-[32px] hover:bg-white/80 transition-all border-l-8 shadow-sm group" [style.borderLeftColor]="candidateB()?.color || '#333'">
-              <div class="text-[11px] font-black uppercase tracking-widest mb-4 flex items-center gap-2" [style.color]="candidateB()?.color || '#ccc'">
-                <span class="w-1.5 h-1.5 rounded-full" [style.backgroundColor]="candidateB()?.color || '#ccc'"></span>
-                {{ policy.category }}
-              </div>
-              <p class="text-slate-600 font-bold leading-relaxed text-base group-hover:text-slate-900 transition-colors">{{ policy.description }}</p>
-            </div>
-          }
-        </div>
-      </div>
-
+  <div class="corner-flag" (click)="showFlagTooltip.set(!showFlagTooltip())" [class.flag-open]="showFlagTooltip()">
+    <div class="cf-label">นับคะแนนแล้ว</div>
+    <div class="cf-sub">(อย่างไม่เป็นทางการ)</div>
+    <div class="cf-big">{{ countedVotes() | number }}</div>
+    <div class="cf-divider"></div>
+    <div class="cf-label">ประมาณการผู้มาใช้สิทธิ</div>
+    <div class="cf-sub">ผู้มีสิทธิเลือกตั้งครั้งนี้</div>
+    <div class="cf-pct">{{ progressPercent() | number:'1.2-2' }}<span class="cf-pct-sym">%</span></div>
+    <div class="cf-sub">ของประมาณการผู้มาใช้สิทธิ</div>
+    <div class="cf-tap-hint">
+      <span>{{ showFlagTooltip() ? 'ปิด' : 'ดูรายละเอียด' }}</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
     </div>
   </div>
+
+  @if (showFlagTooltip()) {
+  <div class="flag-tooltip-backdrop" (click)="showFlagTooltip.set(false)"></div>
+  <div class="flag-tooltip" (click)="$event.stopPropagation()">
+    <button class="ft-close" (click)="showFlagTooltip.set(false)" aria-label="ปิด">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+      ปิด
+    </button>
+    <div class="ft-row">
+      <span class="ft-label">ผู้มีสิทธิเลือกตั้ง</span>
+      <span class="ft-value">{{ eligibleVoters() | number }} <span class="ft-unit">คน</span></span>
+    </div>
+    <div class="ft-row">
+      <span class="ft-label">ผู้มาใช้สิทธิเลือกตั้ง</span>
+      <span class="ft-value">{{ countedVotes() | number }} <span class="ft-unit">คน</span></span>
+    </div>
+    <div class="ft-row ft-highlight">
+      <span class="ft-label">คิดเป็น</span>
+      <span class="ft-value ft-pct">{{ turnoutPercent() | number:'1.2-2' }}%</span>
+    </div>
+    <div class="ft-divider"></div>
+    <div class="ft-ballot-row">
+      <div class="ft-ballot">
+        <div class="ft-ballot-label">บัตรดี</div>
+        <div class="ft-ballot-pct" style="color:#16a34a">{{ goodVotesPct() | number:'1.2-2' }}%</div>
+        <div class="ft-ballot-count">{{ goodVotes() | number }} ใบ</div>
+      </div>
+      <div class="ft-ballot">
+        <div class="ft-ballot-label">บัตรเสีย</div>
+        <div class="ft-ballot-pct" style="color:#dc2626">{{ badVotesPct() | number:'1.2-2' }}%</div>
+        <div class="ft-ballot-count">{{ badVotes() | number }} ใบ</div>
+      </div>
+      <div class="ft-ballot">
+        <div class="ft-ballot-label">ไม่ออกเสียง</div>
+        <div class="ft-ballot-pct" style="color:#9ca3af">{{ noVotesPct() | number:'1.2-2' }}%</div>
+        <div class="ft-ballot-count">{{ noVotes() | number }} ใบ</div>
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- Election logo: desktop only, top-left -->
+  <div class="compare-logo">
+    <img src="/LOGO_ELECTION_BKK.png"
+         alt="วันเลือกตั้งผู้ว่าฯ กทม. 69"
+         class="compare-election-logo">
+  </div>
+
+  <!-- Page header (mobile only) -->
+  <div class="page-header-mobile">
+    <h1 class="page-title-mobile">เปรียบเทียบผู้สมัคร</h1>
+    <div class="page-subtitle-mobile">Compare Candidates</div>
+  </div>
+
+  <div class="compare-grid">
+
+    <!-- Left candidate panel -->
+    <app-cand-panel
+      class="cand-a"
+      [info]="candidateAInfo()"
+      [candidates]="sortedCandidates()"
+      [selectedId]="selectedIdA()"
+      (selectedIdChange)="selectedIdA.set($event)"
+      (openPicker)="openPickerA()">
+    </app-cand-panel>
+
+    <!-- Center panel -->
+    <div class="center-panel">
+
+      <!-- Desktop header -->
+      <div class="page-header-desktop">
+        <h1 class="page-title-desktop">เปรียบเทียบผู้สมัคร</h1>
+        <div class="page-subtitle-desktop">Compare Candidates</div>
+      </div>
+
+      <!-- Vote difference bar -->
+      @if (voteDiff()) {
+        <div class="glass-card vote-diff-card">
+          <app-vote-bar
+            [voteDiff]="voteDiff()"
+            [candidateA]="candidateA()"
+            [candidateB]="candidateB()">
+          </app-vote-bar>
+        </div>
+      }
+
+      <!-- Swap button (mobile) -->
+      <div class="swap-row-mobile">
+        <button class="swap-btn" (click)="swap()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="swap-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4M4 17h12m0 0l-4-4m4 4l-4 4"/>
+          </svg>
+          สลับ
+        </button>
+      </div>
+
+      <!-- VS -->
+      <div class="vs-row">
+        <div class="vs-line"></div>
+        <div class="vs-badge">VS</div>
+        <div class="vs-line"></div>
+      </div>
+
+      <!-- Hex map -->
+      <div class="glass-card">
+        <h3 class="section-title">เปรียบเทียบฐานคะแนน</h3>
+        <app-hex-map
+          [miniHexes]="miniHexes"
+          [miniSvgW]="miniSvgW"
+          [miniSvgH]="miniSvgH"
+          [candidateA]="candidateA()"
+          [candidateB]="candidateB()"
+          [districtH2H]="districtH2H()">
+        </app-hex-map>
+      </div>
+
+    </div>
+
+    <!-- Right candidate panel -->
+    <app-cand-panel
+      class="cand-b"
+      [info]="candidateBInfo()"
+      [candidates]="sortedCandidates()"
+      [selectedId]="selectedIdB()"
+      (selectedIdChange)="selectedIdB.set($event)"
+      (openPicker)="openPickerB()">
+    </app-cand-panel>
+
+  </div><!-- /compare-grid -->
+
+  <!-- District comparison chart — full width below grid -->
+  <div class="district-row glass-card">
+    <h3 class="section-title">เปรียบเทียบรายเขต</h3>
+    <app-district-chart
+      [shownDistricts]="shownDistricts()"
+      [districtView]="districtView()"
+      [candidateA]="candidateA()"
+      [candidateB]="candidateB()"
+      (districtViewChange)="districtView.set($event)">
+    </app-district-chart>
+  </div>
+
+  <!-- Candidate Picker Modal -->
+  @if (pickerFor()) {
+  <div class="picker-backdrop" (click)="closePicker()"></div>
+  <div class="picker-modal" (click)="$event.stopPropagation()">
+    <div class="picker-header">
+      <span class="picker-title">เลือกผู้สมัครเพื่อเปรียบเทียบ</span>
+      <button class="picker-close" (click)="goHome()">✕</button>
+    </div>
+    <div class="picker-grid">
+      @for (cand of sortedCandidates(); track cand.id) {
+      <button class="picker-item"
+              [class.picker-item-active]="cand.id === (pickerFor() === 'a' ? selectedIdA() : selectedIdB())"
+              [class.picker-item-disabled]="cand.id === (pickerFor() === 'a' ? selectedIdB() : selectedIdA())"
+              [disabled]="cand.id === (pickerFor() === 'a' ? selectedIdB() : selectedIdA())"
+              (click)="pickCandidate(cand.id)">
+        <img class="picker-photo" [src]="'https://storage.googleapis.com/ers-static/candidates/governor/No' + cand.number + '.jpg'"
+             [alt]="cand.name" onerror="this.style.opacity='0.3'" [style.borderColor]="cand.color">
+        <div class="picker-info">
+          <span class="picker-name">{{ cand.name }}</span>
+          <div class="picker-tags">
+            <span class="picker-num" [style.color]="cand.color">เบอร์ {{ cand.number }}</span>
+            <span class="picker-party">{{ cand.party }}</span>
+          </div>
+        </div>
+      </button>
+      }
+    </div>
+  </div>
+  }
+
+  <!-- Scroll to top -->
+  @if (showScrollTop()) {
+    <button class="scroll-top-btn" (click)="scrollToTop()" aria-label="Scroll to top">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+  }
+
 </div>

@@ -1,8 +1,539 @@
-.glass-panel {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(32px) saturate(220%);
-  -webkit-backdrop-filter: blur(32px) saturate(220%);
+/* ========================================================
+   Compare Candidates — Layout & Shared Styles
+   ======================================================== */
+
+/* ── Corner Flag (shared with candidates-stack) ── */
+.corner-flag {
+  position: fixed !important;
+  top: 0;
+  right: 40px;
+  width: 230px;
+  background: linear-gradient(180deg, #082b60 0%, #0f2a52 100%);
+  z-index: 200;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  transition: filter 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 16px 42px;
+  gap: 2px;
+  text-align: center;
+  color: #fff;
 }
-.layout-content-area {
-  background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.05) 0%, rgba(240, 253, 244, 0.1) 100%);
+.corner-flag:hover { filter: brightness(1.15); box-shadow: 0 8px 32px rgba(0,0,0,0.6); }
+.corner-flag.flag-open { filter: brightness(0.85); }
+.corner-flag::after {
+  content: '';
+  position: absolute;
+  bottom: -34px; left: 0;
+  width: 0; height: 0;
+  border-left: 115px solid #0f2a52;
+  border-right: 115px solid #0f2a52;
+  border-bottom: 34px solid transparent;
+}
+.cf-tap-hint { margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 4px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 4px 10px; font-size: 0.7rem; font-weight: 800; color: rgba(255,255,255,0.9); letter-spacing: 0.04em; }
+.corner-flag.flag-open .cf-tap-hint { background: rgba(255,255,255,0.28); }
+.cf-label { font-size: 1rem; font-weight: 900; letter-spacing: 0.04em; line-height: 1.2; opacity: 0.9; }
+.cf-sub { font-size: 0.8rem; font-weight: 600; opacity: 0.75; line-height: 1.2; }
+.cf-big { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; margin: 5px 0; }
+.cf-divider { width: 80%; height: 1px; background: rgba(255,255,255,0.25); margin: 6px 0; }
+.cf-pct { font-size: 2.6rem; font-weight: 900; letter-spacing: -0.03em; line-height: 1; margin: 5px 0 2px; }
+.cf-pct-sym { font-size: 1em; vertical-align: baseline; }
+.flag-tooltip-backdrop { position: fixed !important; inset: 0; z-index: 198; background: rgba(0,0,0,0.45); backdrop-filter: blur(2px); }
+.flag-tooltip { position: fixed !important; top: 20px; right: 282px; z-index: 199; width: 260px; background: linear-gradient(145deg, rgba(8,20,48,0.96), rgba(4,12,36,0.98)); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255,255,255,0.12); border-top: 1px solid rgba(255,255,255,0.22); border-radius: 20px; padding: 18px 18px 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 10px; color: #fff; animation: ftFadeIn 0.22s cubic-bezier(0.23,1,0.32,1); }
+@keyframes ftFadeIn { from { opacity: 0; transform: translateY(-10px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.ft-close { display: flex; align-items: center; gap: 5px; align-self: flex-end; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 4px 12px; font-size: 0.7rem; font-weight: 800; color: rgba(255,255,255,0.55); cursor: pointer; transition: background 0.15s, color 0.15s; letter-spacing: 0.04em; }
+.ft-close:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.ft-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.ft-label { font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.45); letter-spacing: 0.02em; }
+.ft-value { font-size: 1rem; font-weight: 900; color: #fff; }
+.ft-unit { font-size: 0.65rem; font-weight: 600; color: rgba(255,255,255,0.4); }
+.ft-highlight { background: rgba(125,211,252,0.08); border: 1px solid rgba(125,211,252,0.18); border-radius: 10px; padding: 8px 10px; }
+.ft-pct { font-size: 1.5rem; color: #7dd3fc; letter-spacing: -0.02em; }
+.ft-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 2px 0; }
+.ft-ballot-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.ft-ballot { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 10px 6px; text-align: center; display: flex; flex-direction: column; gap: 3px; }
+.ft-ballot-label { font-size: 0.6rem; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: 0.03em; }
+.ft-ballot-pct { font-size: 1.1rem; font-weight: 900; line-height: 1; }
+.ft-ballot-count { font-size: 0.58rem; font-weight: 600; color: rgba(255,255,255,0.3); }
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+/* ── Page wrapper ─────────────────────────────────────── */
+.compare-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── 3-column grid ─────────────────────────────────────── */
+.district-row {
+  width: 100%;
+  max-width: 1100px;
+  margin: 1rem auto 0;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr 240px;
+  position: relative;
+  grid-template-rows: auto;
+  gap: 1.25rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* ── Mobile header (hidden on desktop) ─────────────────── */
+.page-header-mobile {
+  display: none;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.page-title-mobile {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: rgba(0,0,0,0.85);
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle-mobile {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 4px;
+}
+
+/* ── Desktop header (inside center panel) ──────────────── */
+.page-header-desktop {
+  margin-bottom: 0.5rem;
+}
+
+.page-title-desktop {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: rgba(0,0,0,0.85);
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle-desktop {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 2px;
+}
+
+/* ── VS Badge ──────────────────────────────────────────── */
+.vs-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 4px;
+}
+
+.vs-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(0,0,0,0.12);
+}
+
+.vs-badge {
+  height: 44px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1a1a2e, #0f2a52);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 0 2px rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.2em;
+  flex-shrink: 0;
+}
+
+/* ── Center Panel ──────────────────────────────────────── */
+.center-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+  align-self: start;
+}
+
+/* ── Shared glass card ─────────────────────────────────── */
+.glass-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(235, 248, 243, 0.18) 42%, rgba(255, 255, 255, 0.22)), rgba(235, 248, 243, 0.52);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.vote-diff-card {
+  padding: 0.75rem 1rem;
+}
+
+/* ── Section title (shared across sub-components) ───────── */
+.section-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: #00a845;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Swap button (mobile) ──────────────────────────────── */
+.swap-row-mobile {
+  display: none;
+  justify-content: center;
+}
+
+.swap-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(0,0,0,0.55);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.swap-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: rgba(0,0,0,0.85);
+}
+
+.swap-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Scroll-to-top ─────────────────────────────────────── */
+.scroll-top-btn {
+  position: fixed;
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px) + 1rem);
+  right: 1.25rem;
+  z-index: 50;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.scroll-top-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-2px);
+}
+
+/* ── Election logo: hidden on mobile/tablet ── */
+.compare-logo {
+  display: none;
+}
+
+/* ── Responsive: large screen (≥1600px) ─────────────────── */
+@media (min-width: 1600px) {
+  .compare-page       { padding: 40px 320px; }
+  .compare-grid       { grid-template-columns: 260px 1fr 260px; max-width: 1200px; }
+  .district-row       { max-width: 1200px; }
+  .glass-card         { padding: 1.25rem; }
+  .vote-diff-card     { padding: 0.875rem 1.25rem; }
+  .section-title      { font-size: 22px; }
+  .center-panel       { gap: 0.75rem; }
+  .corner-flag        { width: 210px; right: 30px; padding: 18px 16px 42px; }
+  .corner-flag::after { border-left-width: 105px; border-right-width: 105px; border-bottom-width: 32px; bottom: -32px; }
+  .cf-label { font-size: 0.9rem; }
+  .cf-sub   { font-size: 0.75rem; }
+  .cf-big   { font-size: 1.7rem; margin: 5px 0; }
+  .cf-pct   { font-size: 2.4rem; margin: 5px 0 2px; }
+  .cf-tap-hint { font-size: 0.65rem; }
+  .compare-election-logo { height: 130px; }
+}
+
+/* ── Responsive: desktop large (≥1280px) — compact so grid floats ── */
+@media (min-width: 1280px) {
+  .compare-election-logo { height: 90px; }
+  .compare-page       { padding: 30px 260px; }
+  .compare-grid       { grid-template-columns: 210px 1fr 210px; max-width: 900px; }
+  .corner-flag {
+    width: 170px;
+    right: 20px;
+    padding: 14px 12px 34px;
+    gap: 1px;
+  }
+  .corner-flag::after {
+    border-left-width: 85px;
+    border-right-width: 85px;
+    border-bottom-width: 26px;
+    bottom: -26px;
+  }
+  .cf-label { font-size: 0.75rem; }
+  .cf-sub   { font-size: 0.65rem; }
+  .cf-big   { font-size: 1.35rem; margin: 3px 0; }
+  .cf-pct   { font-size: 1.9rem;  margin: 3px 0 1px; }
+  .cf-divider { margin: 4px 0; }
+  .cf-tap-hint { font-size: 0.6rem; padding: 3px 8px; margin-top: 5px; }
+  .district-row       { max-width: 900px; }
+  .glass-card         { padding: 0.875rem; }
+  .vote-diff-card     { padding: 0.625rem 0.875rem; }
+  .center-panel       { gap: 0.5rem; }
+  .page-header-desktop { margin-bottom: 0.375rem; }
+
+  .compare-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: fixed;
+    left: 1rem;
+    top: 0;
+    padding-top: 1rem;
+    z-index: 50;
+    pointer-events: none;
+  }
+
+.compare-election-logo {
+    height: 130px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  }
+}
+
+/* ── Responsive: bottom nav present (<1280px) ───────────── */
+@media (max-width: 1279px) {
+  .compare-page {
+    padding: 1.5rem 1.5rem;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+  .corner-flag { right: 0; width: 150px; padding: 12px 10px 32px; }
+
+  .corner-flag::after { border-left: 75px solid #0f2a52; border-right: 75px solid #0f2a52; border-bottom: 24px solid transparent; bottom: -24px; }
+  .flag-tooltip { right: 162px; width: 220px; }
+}
+
+/* ── Candidate Picker Modal ─────────────────────────────── */
+.picker-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(4px);
+}
+
+.picker-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 501;
+  width: min(900px, 92vw);
+  max-height: 82vh;
+  background: rgba(250, 248, 244, 0.98);
+  border-radius: 24px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: pickerIn 0.22s cubic-bezier(0.23,1,0.32,1);
+}
+
+@keyframes pickerIn {
+  from { opacity: 0; transform: translate(-50%, -48%) scale(0.97); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+
+.picker-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: rgba(0,0,0,0.8);
+}
+
+.picker-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.07);
+  color: rgba(0,0,0,0.5);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.picker-close:hover { background: rgba(0,0,0,0.14); }
+
+.picker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 12px 16px 20px;
+  overflow-y: auto;
+}
+
+.picker-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  text-align: left;
+  font-family: inherit;
+}
+.picker-item:hover:not(:disabled) { background: rgba(0,0,0,0.05); }
+.picker-item-active { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.15); }
+.picker-item-disabled, .picker-item:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.picker-photo {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  flex-shrink: 0;
+  border: 2.5px solid;
+}
+
+.picker-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1; }
+
+.picker-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(0,0,0,0.8);
+  line-height: 1.2;
+}
+
+.picker-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+.picker-num {
+  font-size: 14px;
+  font-weight: 800;
+  background: rgba(0,0,0,0.06);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.picker-party {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.4);
+}
+
+/* ── Hide corner-flag at ≤1024px ────────────────────────── */
+@media (max-width: 1024px) {
+  .corner-flag { display: none !important; }
+  .flag-tooltip { display: none !important; }
+  .flag-tooltip-backdrop { display: none !important; }
+}
+
+/* ── Responsive: tablet landscape (900–1279px) ──────────── */
+@media (max-width: 1279px) and (min-width: 641px) {
+  .compare-page { padding-right: 24px; overflow-y: auto; justify-content: flex-start; }
+  .compare-grid { grid-template-columns: 200px 1fr 200px; }
+  .glass-card { padding: 14px; }
+}
+
+/* ── Responsive: tablet portrait (641–900px) ────────────── */
+@media (max-width: 900px) and (min-width: 641px) {
+  .compare-grid { grid-template-columns: 160px 1fr 160px; gap: 10px; }
+  .glass-card { padding: 12px; }
+  .section-title { font-size: 16px; }
+  .picker-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Responsive: mobile (≤640px) ───────────────────────── */
+@media (max-width: 640px) {
+  .compare-page {
+    padding: 12px 8px;
+    padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    justify-content: flex-start;
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+    align-self: unset;
+    gap: 0.5rem;
+  }
+
+  .cand-a { grid-column: 1; grid-row: 1; order: unset; }
+  .cand-b { grid-column: 2; grid-row: 1; order: unset; }
+  .center-panel { grid-column: 1 / -1; grid-row: 2; overflow-y: visible; align-self: unset; order: unset; }
+
+  .page-header-mobile { display: block; }
+  .page-header-desktop { display: none; }
+  .swap-row-mobile { display: none; }
+  .compare-logo { display: none; }
+  .section-title { font-size: 15px; }
+  .vs-row { padding: 0; }
+  .vs-badge { height: 32px; font-size: 14px; padding: 0 14px; }
+  .picker-grid { grid-template-columns: 1fr 1fr; }
+  .picker-name { font-size: 14px; }
+  .picker-photo { width: 48px; height: 48px; }
+  .glass-card { padding: 12px; }
+}
+
+/* ── Responsive: small phone (≤480px) ──────────────────── */
+@media (max-width: 480px) {
+  .compare-page { padding: 8px; padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+  .section-title { font-size: 15px; }
+  .picker-grid { grid-template-columns: 1fr; }
+  .picker-name { font-size: 16px; }
+  .picker-photo { width: 52px; height: 52px; }
 }

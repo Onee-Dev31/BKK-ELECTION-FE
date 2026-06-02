@@ -1,0 +1,11 @@
+<svg viewBox="0 0 300 145" class="mini-chart-svg">
+  @for (dot of dots(); track $index) {
+    <polygon
+      [attr.points]="hexPoints(dot.x, dot.y, 6)"
+      [attr.fill]="dot.color"
+      opacity="0.92">
+      <title>{{ dot.partyName }}</title>
+    </polygon>
+  }
+</svg>
+<p class="mini-chart-label">สมาชิกสภากรุงเทพมหานคร 50 ที่นั่ง</p>

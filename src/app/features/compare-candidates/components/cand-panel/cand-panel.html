@@ -1,0 +1,44 @@
+@if (info; as c) {
+  <div class="cand-card" [style.--color]="c.color" [style.background]="c.color + '28'">
+
+    <!-- Rank flag -->
+    <div class="cand-rank-flag" [style.background]="c.color">
+      <span class="cand-rank-label">อันดับ</span>
+      <span class="cand-rank-num">{{ c.rank }}</span>
+    </div>
+
+    <!-- Change button -->
+    <button class="cand-change-btn" (click)="openPicker.emit()" title="เปลี่ยนผู้สมัคร">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4M4 17h12m0 0l-4-4m4 4l-4 4"/>
+      </svg>
+    </button>
+
+    <!-- Photo -->
+    <div class="cand-photo-area">
+      @if (!photoFailed()) {
+        <img class="cand-photo" [src]="getImageUrl(c.number)" [alt]="c.name"
+             (error)="onPhotoError()" />
+      } @else {
+        <div class="cand-no-photo" [style.background]="'linear-gradient(160deg, ' + c.color + '55, ' + c.color + '22)'">
+          <span class="cand-no-photo-num" [style.color]="c.color + 'cc'">{{ c.number }}</span>
+        </div>
+      }
+      <div class="cand-photo-gradient" [style.background]="'linear-gradient(to top, ' + c.color + 'ee 0%, ' + c.color + '44 40%, transparent 70%)'"></div>
+    </div>
+
+    <!-- Overlay info -->
+    <div class="cand-overlay">
+      <div class="cand-pct-block">
+        <span class="cand-pct">{{ c.percentage }}%</span>
+        <span class="cand-votes">{{ formatVotes(c.votes) }} คะแนน</span>
+      </div>
+      <h2 class="cand-name">{{ c.name }}</h2>
+      <div class="cand-tags">
+        <span class="cand-num-tag">เบอร์ {{ c.number }}</span>
+        <span class="cand-party-tag">{{ c.party }}</span>
+      </div>
+    </div>
+
+  </div>
+}

@@ -1,0 +1,5 @@
+@for (opt of options(); track opt.key) {
+  <button class="sort-btn" [class.sort-btn-active]="activeKey() === opt.key" (click)="keyChange.emit(opt.key)">
+    {{ opt.label }}
+  </button>
+}

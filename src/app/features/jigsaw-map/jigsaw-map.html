@@ -1,0 +1,98 @@
+<div class="jigsaw-container">
+    <div class="map-bg-grid"></div>
+
+    <div class="jigsaw-grid-wrapper">
+        @for (district of districts(); track district.id; let i = $index) {
+        <div class="jigsaw-cell group"
+            [style.left.%]="cellLeft(district)"
+            [style.top.%]="cellTop(district)"
+            [style.animation-delay]="i * 6 + 'ms'"
+            [class.is-selected]="mapState.selectedDistrictId() === district.id"
+            [class.is-highlighted]="isHighlighted(district.id)"
+            [class.is-faded]="isFaded(district.id)"
+            (click)="selectDistrict(district.id)">
+
+            <!-- Tooltip -->
+            <div class="cell-tooltip" [class.is-bottom]="district.row <= 4">
+                @if (getDistrictTooltipData(district.id); as tooltip) {
+                <div class="flex flex-col gap-2">
+                    <div class="font-black text-sm text-white mb-1 border-b border-white/10 pb-2">
+                        เขต {{ getShortName(district.id) }}
+                        <span class="text-teal-400 font-bold ml-1 text-xs">#{{ district.number }}</span>
+                    </div>
+
+                    @if (tooltip.type === 'governor') {
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full ring-2 ring-white/10 ring-offset-2 ring-offset-teal-950 p-0.5 overflow-hidden shrink-0">
+                            <img [src]="tooltip.imageUrl" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div class="flex flex-col flex-1 leading-tight min-w-0">
+                            <div class="flex items-center gap-1.5 mb-0.5">
+                                <img [src]="tooltip.partyLogoUrl" class="w-3 h-3 object-contain opacity-70">
+                                <span class="text-[16px] text-teal-400 font-black uppercase tracking-widest truncate">{{ tooltip.partyName }}</span>
+                            </div>
+                            <div class="text-[16px] font-black text-white leading-tight truncate">{{ tooltip.candidateName }}</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-end mt-1 pt-2 border-t border-white/5">
+                        <span class="text-[16px] text-teal-500 font-bold tracking-widest uppercase">VOTES</span>
+                        <div class="flex flex-col items-end leading-none">
+                            <span class="text-sm font-black text-white">{{ tooltip.votes | number }}</span>
+                            <span class="text-[16px] font-bold text-teal-400 mt-0.5">{{ tooltip.percentage }}%</span>
+                        </div>
+                    </div>
+                    }
+
+                    @if (tooltip.type === 'council') {
+                    <div class="flex items-center gap-3">
+                        @if (tooltip.partyLogoUrl) {
+                        <img [src]="tooltip.partyLogoUrl" class="w-8 h-8 object-contain shrink-0">
+                        }
+                        <div class="flex flex-col leading-tight min-w-0">
+                            <span class="text-[17px] font-black" [style.color]="tooltip.color">{{ tooltip.partyName }}</span>
+                            <span class="text-[16px] text-white/40 mt-0.5">{{ tooltip.count }} ผู้สมัคร ส.ก.</span>
+                        </div>
+                    </div>
+                    }
+                </div>
+                }
+            </div>
+
+            <!-- Puzzle piece SVG -->
+            <svg viewBox="0 0 100 100" class="piece-svg" overflow="visible">
+                <defs>
+                    <linearGradient [attr.id]="'bg-' + district.id" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+                        <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+                        <stop offset="100%" stop-color="rgba(0,0,0,0.2)"/>
+                    </linearGradient>
+                </defs>
+                <path [attr.d]="pathFor(district.id)" [attr.fill]="getColor(district.id)" class="piece-path"/>
+                <path [attr.d]="pathFor(district.id)" [attr.fill]="'url(#bg-' + district.id + ')'" class="piece-overlay"/>
+                <text x="50" y="43" class="piece-num">{{ district.number }}</text>
+                <text x="50" y="64" class="piece-name" [class.is-long]="isLongName(district.id)">{{ getShortName(district.id) }}</text>
+            </svg>
+        </div>
+        }
+    </div>
+
+    <!-- SK Legend -->
+    @if (mapState.activeTab() === 'sk') {
+    <div class="jigsaw-legend absolute bottom-6 right-10 flex flex-col gap-3 bg-black/40 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl z-50">
+        <div class="flex flex-col mb-1">
+            <span class="text-[17px] font-black text-white/90 uppercase tracking-wider leading-none">พรรคที่นำอันดับ 1 ในแต่ละเขต</span>
+            <span class="text-[16px] text-white/40 font-bold mt-1.5">* ข้อมูลรายเขตเป็นผลคะแนนอย่างไม่เป็นทางการ</span>
+        </div>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-2">
+            @for (item of councilService.partySummary(); track item.party.partyId) {
+                @if (item.seats > 0) {
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-3 h-3 rounded-full" [style.backgroundColor]="item.party.color"></div>
+                        <span class="text-[16px] font-bold text-white/70 whitespace-nowrap">{{ item.party.partyName }} ({{ item.seats }})</span>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,223 @@
+:host {
+  container-type: inline-size;
+  display: block;
+  width: 100%;
+}
+
+/* ── Podium section ─────────────────────────────── */
+.podium-section {
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(45, 212, 191, 0.08);
+  margin-bottom: 4px;
+}
+
+/* Stage: horizontal flex, items bottom-aligned */
+.podium-stage {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 12px 0;
+}
+
+/* Each slot: column, centered */
+.podium-slot {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+/* ── Avatar ── */
+.podium-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.podium-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.podium-slot.podium-1 .podium-avatar {
+  width: 64px;
+  height: 64px;
+  border-color: rgba(251, 191, 36, 0.5);
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.25);
+}
+
+.podium-avatar-fallback {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.06);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.podium-slot.podium-1 .podium-avatar-fallback {
+  width: 64px;
+  height: 64px;
+  font-size: 22px;
+}
+
+/* Badge (rank number overlay) */
+.podium-badge {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 900;
+  border: 1.5px solid rgba(0, 0, 0, 0.3);
+}
+
+.podium-badge.gold   { background: #fbbf24; color: #000; }
+.podium-badge.silver { background: #94a3b8; color: #000; }
+.podium-badge.bronze { background: #d97706; color: #fff; }
+
+/* ── Info ── */
+.podium-info {
+  text-align: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.podium-name {
+  font-size: 20px;
+  font-weight: 900;
+  color: rgba(15, 23, 42, 0.8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.podium-name.champion {
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.podium-pct {
+  font-size: 15px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  margin-top: 1px;
+  line-height: 1;
+}
+
+.podium-pct.champion-pct {
+  font-size: 18px;
+}
+
+/* ── Podium blocks (bars at bottom) ── */
+.podium-block {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.block-1 {
+  height: 72px;
+  background: linear-gradient(
+    to bottom,
+    rgba(251, 191, 36, 0.48) 0%,
+    rgba(245, 158, 11, 0.34) 52%,
+    rgba(146, 64, 14, 0.18) 100%
+  );
+  border: 1px solid rgba(245, 158, 11, 0.58);
+  border-bottom: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.block-2 {
+  height: 52px;
+  background: linear-gradient(
+    to bottom,
+    rgba(203, 213, 225, 0.44) 0%,
+    rgba(148, 163, 184, 0.3) 54%,
+    rgba(71, 85, 105, 0.18) 100%
+  );
+  border: 1px solid rgba(148, 163, 184, 0.52);
+  border-bottom: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.block-3 {
+  height: 36px;
+  background: linear-gradient(
+    to bottom,
+    rgba(251, 146, 60, 0.42) 0%,
+    rgba(217, 119, 6, 0.3) 55%,
+    rgba(124, 45, 18, 0.18) 100%
+  );
+  border: 1px solid rgba(217, 119, 6, 0.5);
+  border-bottom: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
+}
+
+.block-num {
+  font-size: 20px;
+  font-weight: 900;
+  color: #000;
+  opacity: 0.48;
+}
+
+.block-1 .block-num { font-size: 26px; }
+.block-3 .block-num { font-size: 16px; }
+
+/* ── Container overrides ── */
+@container (max-width: 295px) {
+  .podium-stage { gap: 4px; padding: 12px 8px 0; }
+  .podium-slot.podium-1 .podium-avatar { width: 52px; height: 52px; }
+  .podium-avatar { width: 38px; height: 38px; }
+  .podium-slot.podium-1 .podium-avatar-fallback { width: 52px; height: 52px; }
+  .podium-avatar-fallback { width: 38px; height: 38px; }
+  .podium-name { font-size: 12px; }
+  .podium-name.champion { font-size: 13px; }
+  .podium-pct { font-size: 13px; }
+  .podium-pct.champion-pct { font-size: 15px; }
+  .block-1 { height: 58px; }
+  .block-2 { height: 42px; }
+  .block-3 { height: 28px; }
+  .block-1 .block-num { font-size: 20px; }
+  .block-num { font-size: 16px; }
+}
+
+@container (min-width: 560px) {
+  .podium-stage { gap: 12px; padding: 24px 24px 0; }
+  .podium-slot.podium-1 .podium-avatar { width: 80px; height: 80px; }
+  .podium-avatar { width: 60px; height: 60px; }
+  .podium-slot.podium-1 .podium-avatar-fallback { width: 80px; height: 80px; }
+  .podium-avatar-fallback { width: 60px; height: 60px; }
+  .podium-name { font-size: 15px; }
+  .podium-name.champion { font-size: 17px; }
+  .podium-pct { font-size: 16px; }
+  .podium-pct.champion-pct { font-size: 20px; }
+  .block-1 { height: 90px; }
+  .block-2 { height: 66px; }
+  .block-3 { height: 46px; }
+  .block-1 .block-num { font-size: 32px; }
+  .block-2 .block-num { font-size: 24px; }
+  .block-3 .block-num { font-size: 20px; }
+  .podium-badge { width: 24px; height: 24px; font-size: 13px; }
+}

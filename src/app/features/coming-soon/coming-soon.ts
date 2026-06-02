@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { environment } from '../../../environments/environment';
 
 interface TimeLeft {

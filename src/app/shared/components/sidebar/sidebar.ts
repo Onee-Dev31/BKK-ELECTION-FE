@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Theme } from '../../../core/services/theme/theme';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,12 +9,12 @@ import { Theme } from '../../../core/services/theme/theme';
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
-  themeService = inject(Theme);
   router = inject(Router);
 
   navItems = [
-    { path: '/', id: 'map', icon: '🗺️', label: 'หน้าแรก' },
-    { path: '/compare', id: 'compare', icon: '⚖️', label: 'เปรียบเทียบนโยบาย' }
+    { path: '/', id: 'home', label: 'หน้าแรก' },
+    { path: '/dashboard', id: 'map', label: 'แผนที่' },
+    { path: '/compare', id: 'compare', label: 'เปรียบเทียบ' },
   ];
 
   isActive(path: string) {

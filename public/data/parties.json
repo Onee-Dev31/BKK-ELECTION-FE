@@ -1,0 +1,122 @@
+[
+    {
+        "partyId": 1,
+        "code": "KLA",
+        "partyName": "กล้า",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/1.png",
+        "color": "#8E682F",
+        "active": true
+    },
+    {
+        "partyId": 2,
+        "code": "MFP",
+        "partyName": "ก้าวไกล",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/2.png",
+        "color": "#FF7F2B",
+        "active": true
+    },
+    {
+        "partyId": 3,
+        "code": "TCP",
+        "partyName": "ประชากรไทย",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/3.png",
+        "color": "#BBCDFC",
+        "active": true
+    },
+    {
+        "partyId": 4,
+        "code": "DEMOCRAT",
+        "partyName": "ประชาธิปัตย์",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/4.png",
+        "color": "#2FA3E1",
+        "active": true
+    },
+    {
+        "partyId": 5,
+        "code": "PPRP",
+        "partyName": "พลังประชารัฐ",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/5.png",
+        "color": "#2A5DAA",
+        "active": true
+    },
+    {
+        "partyId": 6,
+        "code": "BJT",
+        "partyName": "ภูมิใจไทย",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/6.png",
+        "color": "#090E3D",
+        "active": true
+    },
+    {
+        "partyId": 7,
+        "code": "RTU",
+        "partyName": "รวมไทยยูไนเต็ด",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/7.png",
+        "color": "#C1687A",
+        "active": true
+    },
+    {
+        "partyId": 8,
+        "code": "TF",
+        "partyName": "อนาคตไทย",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/8.png",
+        "color": "#A6181E",
+        "active": true
+    },
+    {
+        "partyId": 9,
+        "code": "PT",
+        "partyName": "เพื่อไทย",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/9.png",
+        "color": "#E13232",
+        "active": true
+    },
+    {
+        "partyId": 10,
+        "code": "TLP",
+        "partyName": "เสรีรวมไทย",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/10.png",
+        "color": "#E5C525",
+        "active": true
+    },
+    {
+        "partyId": 11,
+        "code": "TST",
+        "partyName": "ไทยสร้างไทย",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/11.png",
+        "color": "#681ACC",
+        "active": true
+    },
+    {
+        "partyId": 12,
+        "code": "FREEDOM",
+        "partyName": "อิสระ",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/12.png",
+        "color": "#ABA18D",
+        "active": true
+    },
+    {
+        "partyId": 13,
+        "code": "RUKBKK",
+        "partyName": "อิสระ(กลุ่มรักษ์กรุงเทพ)",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/13.png",
+        "color": "#E09819",
+        "active": true
+    },
+    {
+        "partyId": 14,
+        "code": "SICHAI",
+        "partyName": "อิสระ(กลุ่มใส่ใจ)",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/14.png",
+        "color": "#C267B3",
+        "active": true
+    },
+    {
+        "partyId": 15,
+        "code": "GREEN",
+        "partyName": "กรีน",
+        "partyLogoUrl": "https://bkkelection65-asset.thaipbs.or.th/assets/parties/15.png",
+        "color": "#0F9B1F",
+        "active": true
+    }
+]

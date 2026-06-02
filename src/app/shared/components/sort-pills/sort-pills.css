@@ -1,0 +1,50 @@
+:host {
+  display: flex;
+  gap: 0.35rem;
+  background: rgba(255,255,255,0.06);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.sort-btn {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+}
+
+.sort-btn-active {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* ── Light theme ─────────────────────────────────────────── */
+
+:host-context(.light) {
+  background: rgba(0,0,0,0.06);
+}
+
+:host-context(.light) .sort-btn {
+  color: rgba(0,0,0,0.4);
+}
+
+:host-context(.light) .sort-btn-active {
+  background: rgba(0,0,0,0.1);
+  color: #0f172a;
+}
+
+@media (max-width: 640px) {
+  :host { gap: 0.25rem; }
+  .sort-btn { padding: 0.25rem 0.7rem; font-size: 0.72rem; }
+}
+
+@media (max-width: 480px) {
+  :host { gap: 0.2rem; }
+  .sort-btn { padding: 0.2rem 0.55rem; font-size: 0.65rem; }
+}

@@ -10,8 +10,15 @@ import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.cons
 })
 export class ElectionService {
   electionState = signal<ElectionData | null>(null);
+  private preloadedImageUrls = new Set<string>();
 
-  candidates = computed(() => this.electionState()?.candidates || []);
+  candidates = computed(() => this.electionState()?.candidates ?? []);
+
+  candidateMap = computed(() => {
+    const map = new Map<number, Candidate>();
+    this.candidates().forEach(c => map.set(c.id, c));
+    return map;
+  });
 
   private districtResultsMap = computed(() => {
     const map = new Map<number, DistrictResult>();
@@ -55,7 +62,6 @@ export class ElectionService {
   }
 
   async fetchOverallSummary() {
-    if (!this.http) return;
     this.isLoading.set(true);
     try {
       const data: any = await lastValueFrom(this.http.get(this.apiUrl));
@@ -79,6 +85,8 @@ export class ElectionService {
           color: this.getCandidateColor(c.idno)
         };
       });
+
+      this.preloadCandidateAssets(candidates.slice(0, 5));
 
       const rawSummary = data._rawSummary?.data;
 
@@ -108,7 +116,6 @@ export class ElectionService {
   }
 
   async fetchDistrictResults() {
-    if (!this.http) return;
     try {
       const data: any = await lastValueFrom(this.http.get(this.districtApiUrl));
       if (!data || !data.districts) return;
@@ -154,6 +161,27 @@ export class ElectionService {
     return ELECTION_CONSTANTS.CANDIDATE_COLORS[no] || ELECTION_CONSTANTS.CANDIDATE_COLORS['def'];
   }
 
+  private preloadCandidateAssets(candidates: Candidate[]) {
+    if (typeof document === 'undefined') return;
+
+    for (const candidate of candidates) {
+      this.preloadImage(candidate.imageUrl);
+      this.preloadImage(candidate.partyLogoUrl);
+    }
+  }
+
+  private preloadImage(url: string) {
+    if (!url || this.preloadedImageUrls.has(url)) return;
+    this.preloadedImageUrls.add(url);
+
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = url;
+    link.setAttribute('fetchpriority', 'high');
+    document.head.appendChild(link);
+  }
+
   getDistrictResults(districtId: number): DistrictResult | undefined {
     return this.districtResultsMap().get(districtId);
   }
@@ -169,4 +197,3 @@ export class ElectionService {
     return CANDIDATE_POLICIES[candidateId] || DEFAULT_POLICIES;
   }
 }
-

@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* safe area: กัน content ไม่ให้อยู่ใต้ notch/status bar และ home indicator */
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
   animation: fadeIn 0.4s ease-out forwards;
 }
 
@@ -19,13 +21,44 @@
   border-radius: 40px;
   width: 100%;
   max-width: 540px;
-  max-height: 85vh;
+  max-height: 85dvh;
   overflow-y: auto;
-  box-shadow: 
-    0 40px 100px -20px rgba(16, 185, 129, 0.15), 
+  box-shadow:
+    0 40px 100px -20px rgba(16, 185, 129, 0.15),
     0 0 0 1px rgba(255, 255, 255, 0.6) inset;
   animation: slideUp 0.5s cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
   clip-path: inset(0 0 0 0 round 40px);
+}
+
+@media (max-width: 767px) {
+  .modal-content {
+    border-radius: 28px;
+    max-height: 90dvh;
+    clip-path: inset(0 0 0 0 round 28px);
+  }
+
+  .modal-header {
+    padding: 20px 20px;
+  }
+
+  .candidate-row {
+    padding: 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    border-radius: 20px;
+    clip-path: inset(0 0 0 0 round 20px);
+  }
+
+  .modal-header {
+    padding: 16px 16px;
+  }
+
+  .candidate-row {
+    padding: 16px 16px;
+  }
 }
 
 .modal-content::-webkit-scrollbar {

@@ -5,17 +5,23 @@
 }
 
 nav {
-    width: fit-content;
-    background: var(--color-bkk-glass);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    width: 86px;
+    min-height: 300px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(238, 237, 246, 0.92)),
+        rgba(241, 240, 248, 0.86);
+    backdrop-filter: blur(28px) saturate(150%);
+    -webkit-backdrop-filter: blur(28px) saturate(150%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--color-bkk-border);
-    border-radius: 28px;
-    padding: 24px 12px;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    border-radius: 999px;
+    padding: 30px 12px;
+    box-shadow:
+        0 24px 48px rgba(24, 40, 52, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -24px 36px rgba(207, 205, 220, 0.34);
 }
 
 .nav-item-wrapper {
@@ -23,47 +29,89 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 62px;
+    height: 70px;
+}
+
+.home-button {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(38, 48, 62, 0.62);
+    background:
+        radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 1), rgba(244, 243, 250, 0.86));
+    border: 1px solid rgba(255, 255, 255, 0.84);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow:
+        0 10px 22px rgba(42, 44, 58, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.98),
+        inset 0 -10px 18px rgba(214, 212, 226, 0.36);
+    transition: color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.home-button:hover {
+    color: #00d65b;
+    transform: translateY(-1px);
+    box-shadow:
+        0 0 0 6px rgba(0, 214, 91, 0.07),
+        0 12px 26px rgba(0, 214, 91, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.98),
+        inset 0 -10px 18px rgba(168, 245, 204, 0.26);
 }
 
 .active-item {
-    background: rgba(0, 214, 91, 0.1);
-    color: var(--color-bkk-green);
-    border: 1px solid rgba(0, 214, 91, 0.3);
+    color: rgb(14, 87, 158);
+    background:
+        radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 1), rgba(244, 250, 247, 0.95) 58%, rgba(218, 242, 255, 0.72));
+    border: 1px solid rgba(14, 87, 158, 0.2);
+    border-radius: 50%;
     box-shadow:
-        inset 0 0 10px rgba(0, 214, 91, 0.05),
-        0 0 20px rgba(0, 214, 91, 0.1);
+        0 0 0 6px rgba(14, 87, 158, 0.08),
+        0 12px 26px rgba(14, 87, 158, 0.18),
+        0 8px 20px rgba(42, 44, 58, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.98),
+        inset 0 -10px 18px rgba(190, 226, 247, 0.3);
+    cursor: pointer !important;
+    transform: scale(1.08);
 }
 
 .inactive-item {
-    color: rgba(148, 163, 184, 0.5);
-    background: transparent;
-    border: 1px solid transparent;
+    color: rgba(121, 128, 145, 0.46);
+    background: rgba(255, 255, 255, 0.28);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer !important;
 }
 
 .inactive-item:hover {
-    color: var(--color-bkk-green);
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.05);
+    color: rgba(65, 72, 88, 0.72);
+    background: rgba(255, 255, 255, 0.54);
+    box-shadow:
+        0 8px 18px rgba(42, 44, 58, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.86);
 }
 
 .sidebar-tooltip {
     position: absolute;
     left: 100%;
-    margin-left: 20px;
-    background: var(--color-bkk-bg);
+    margin-left: 16px;
+    background: rgba(2, 21, 13, 0.92);
     backdrop-filter: blur(12px);
     color: white;
-    padding: 8px 16px;
-    border-radius: 12px;
-    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 15px;
     font-weight: 700;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transform: translateX(-15px);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateX(-10px);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     border: 1px solid var(--color-bkk-border);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     z-index: 100;
 }
 
@@ -72,13 +120,30 @@ nav {
     transform: translateX(0);
 }
 
-.w-12 {
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+/* ── Light Theme ─────────────────── */
+:host-context(html.light) .active-item {
+    color: rgb(14, 87, 158);
+    background:
+        radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 1), rgba(244, 250, 247, 0.95) 58%, rgba(218, 242, 255, 0.72));
+    box-shadow:
+        0 0 0 6px rgba(14, 87, 158, 0.08),
+        0 12px 26px rgba(14, 87, 158, 0.18),
+        0 8px 20px rgba(42, 44, 58, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.98),
+        inset 0 -10px 18px rgba(190, 226, 247, 0.3);
 }
 
-.flex-1 {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding-top: 20px;
+:host-context(html.light) .inactive-item {
+    color: rgba(45, 74, 37, 0.35);
+}
+
+:host-context(html.light) .inactive-item:hover {
+    color: rgba(45, 74, 37, 0.75);
+}
+
+:host-context(html.light) .sidebar-tooltip {
+    background: rgba(255, 255, 255, 0.97);
+    color: #2d4a25;
+    border-color: rgba(132, 177, 121, 0.3);
+    box-shadow: 0 8px 24px rgba(100, 150, 80, 0.2);
 }

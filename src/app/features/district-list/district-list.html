@@ -1,0 +1,16 @@
+<app-district-modal></app-district-modal>
+
+<div class="page">
+
+  <div class="page-header">
+    <h1 class="page-title">ผลคะแนนรายเขต</h1>
+    <app-sort-pills [options]="sortOptions" [activeKey]="sortKey()" (keyChange)="setSort($event)" />
+  </div>
+
+  <div class="district-list">
+    @for (d of districts(); track d.id; let i = $index) {
+      <app-district-row [district]="d" [rank]="i + 1" (clicked)="openDistrict(d.id)" />
+    }
+  </div>
+
+</div>

@@ -11,5 +11,8 @@ import { PolicyCard } from '../../shared/components/policy-card/policy-card';
 export class PolicyList {
   private electionService = inject(ElectionService);
   candidates = this.electionService.candidates;
-}
 
+  firstName(name: string): string {
+    return name.trim().split(/\s+/)[0] ?? name;
+  }
+}

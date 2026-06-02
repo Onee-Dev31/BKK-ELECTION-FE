@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'DB Adman X';
+    src: url('/fonts DB/DB Adman X Li v3.2.ttf') format('truetype');
+    font-weight: 300;
+    font-display: optional;
+}
+@font-face {
+    font-family: 'DB Adman X';
+    src: url('/fonts DB/DB Adman X v3.2.ttf') format('truetype');
+    font-weight: 400;
+    font-display: optional;
+}
+@font-face {
+    font-family: 'DB Adman X';
+    src: url('/fonts DB/DB Adman X Bd v3.2.ttf') format('truetype');
+    font-weight: 600 700;
+    font-display: optional;
+}
+
 @theme {
     --color-bkk-bg: #02150d;
     /* Deep Forest Black */
@@ -20,10 +39,9 @@
     body {
         height: 100%;
         overflow: hidden;
-        font-family: 'Kanit', sans-serif !important;
-        background-color: var(--color-bkk-bg) !important;
-        color: #e2e8f0 !important;
-        /* Off-white for dark mode */
+        font-size: 20px;
+        font-family: 'DB Adman X', sans-serif !important;
+        color: #ffffff !important;
         -webkit-font-smoothing: antialiased;
     }
 
@@ -38,10 +56,10 @@
 /* ── Emerald Glass Panel Components ─────────────────── */
 @layer components {
     .panel-glass {
-        background: var(--color-bkk-glass);
-        backdrop-filter: blur(12px) saturate(140%);
-        -webkit-backdrop-filter: blur(12px) saturate(140%);
-        border: 1px solid var(--color-bkk-border);
+        background: rgba(8, 15, 30, 0.78);
+        backdrop-filter: blur(16px) saturate(160%);
+        -webkit-backdrop-filter: blur(16px) saturate(160%);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 32px;
         overflow: hidden;
         box-shadow:
@@ -74,6 +92,25 @@
         border: 1px solid rgba(255, 255, 255, 0.05);
         border-radius: 12px;
     }
+}
+
+/* ── iOS Safe Area ─────────────────────────────────── */
+/* ต้องใช้ร่วมกับ viewport-fit=cover ใน meta tag */
+.safe-bottom {
+    /* padding เพิ่มให้ nav ไม่ทับ home indicator */
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Bangkok skyline — full viewport bg layer below all content */
+.bkk-skyline-layer {
+    position: absolute;
+    inset: 0;
+    background-image: url('/ChatGPT%20Image%20May%2027%2C%202026%2C%2003_52_05%20PM.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* Sidebar and Navbar layout properties are managed in their respective CSS and dashboard-layout.css */
@@ -160,4 +197,124 @@
 .district-tooltip .ant-tooltip-arrow-content {
     background: rgba(4, 30, 26, 0.95);
     border: 1px solid rgba(51, 255, 133, 0.2);
+}
+
+/* ── Bottom Nav Theme Classes ─────────────────── */
+.theme-bottom-nav {
+    background: rgba(5, 10, 20, 0.88);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-nav-btn {
+    color: rgba(148, 163, 184, 0.7);
+    transition: color 0.25s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-nav-btn.active {
+    color: #00d65b;
+    transform: scale(1.1) translateY(-2px);
+}
+
+.theme-active-dot {
+    background: #00d65b;
+}
+
+/* ── Scroll-to-top button ─────────────────── */
+.scroll-top-btn {
+    position: fixed;
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px) + 12px);
+    right: 20px;
+    z-index: 200;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 214, 91, 0.15);
+    border: 1px solid rgba(0, 214, 91, 0.3);
+    color: #00d65b;
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+    animation: fade-in-up 0.25s ease forwards;
+}
+
+.scroll-top-btn:hover {
+    background: rgba(0, 214, 91, 0.28);
+    transform: scale(1.1) translateY(-2px);
+}
+
+@media (min-width: 1280px) {
+    .scroll-top-btn {
+        bottom: 24px;
+    }
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Page transition: fade-in when router swaps a component */
+@keyframes page-enter {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+router-outlet ~ * {
+    animation: page-enter 0.2s ease both;
+}
+
+/* ── Copy toast ─────────────────── */
+.copy-toast {
+    position: fixed;
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px) + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 300;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(0, 214, 91, 0.18);
+    border: 1px solid rgba(0, 214, 91, 0.35);
+    color: #00d65b;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(12px);
+    animation: fade-in-up 0.25s ease forwards;
+    pointer-events: none;
+}
+
+@media (min-width: 1280px) {
+    .copy-toast {
+        bottom: 24px;
+    }
+}
+
+
+/* ── View Transitions: smooth route navigation ── */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+}
+
+::view-transition-old(root) {
+    animation-name: vt-fade-out;
+}
+
+::view-transition-new(root) {
+    animation-name: vt-fade-in;
+}
+
+@keyframes vt-fade-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@keyframes vt-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

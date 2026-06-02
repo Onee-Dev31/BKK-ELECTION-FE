@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SearchService, SearchResult } from '../../../core/services/search';
@@ -12,22 +12,32 @@ import { MapStateService } from '../../../core/services/map-state';
   styleUrl: './navbar.css',
 })
 export class Navbar {
+  @ViewChild('searchInput') private searchInputRef!: ElementRef<HTMLInputElement>;
+
   currentTime = signal(new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }));
   currentDate = signal(new Date().toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }));
+
+  @HostListener('document:keydown', ['$event'])
+  onGlobalKeyDown(e: KeyboardEvent) {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      this.searchInputRef?.nativeElement.focus();
+    }
+  }
 
   searchService = inject(SearchService);
   mapState = inject(MapStateService);
 
+  isSearchExpanded = signal(false);
   isSearchFocused = signal(false);
   activeIndex = signal(-1);
 
-  // Getter/setter for ngModel binding to the signal
   get searchQuery(): string {
     return this.searchService.searchQuery();
   }
   set searchQuery(val: string) {
     this.searchService.searchQuery.set(val);
-    this.activeIndex.set(-1); // Reset index on type
+    this.activeIndex.set(-1);
   }
 
   get searchResults() {
@@ -35,8 +45,14 @@ export class Navbar {
   }
 
   handleSearchFocus() {
+    this.isSearchExpanded.set(true);
     this.isSearchFocused.set(true);
     this.activeIndex.set(-1);
+  }
+
+  focusSearch() {
+    this.isSearchExpanded.set(true);
+    setTimeout(() => this.searchInputRef?.nativeElement.focus());
   }
 
   handleSearchBlur() {
@@ -44,6 +60,9 @@ export class Navbar {
     setTimeout(() => {
       this.isSearchFocused.set(false);
       this.activeIndex.set(-1);
+      if (!this.searchQuery) {
+        this.isSearchExpanded.set(false);
+      }
     }, 200);
   }
 
@@ -65,6 +84,10 @@ export class Navbar {
       }
     } else if (event.key === 'Escape') {
       this.isSearchFocused.set(false);
+      if (!this.searchQuery) {
+        this.isSearchExpanded.set(false);
+      }
+      this.searchInputRef?.nativeElement.blur();
     }
   }
 
@@ -80,6 +103,7 @@ export class Navbar {
     // Fill search box with the selected result title for premium feel
     this.searchQuery = result.title;
     this.isSearchFocused.set(false);
+    this.isSearchExpanded.set(false);
     this.activeIndex.set(-1);
   }
 
@@ -88,13 +112,13 @@ export class Navbar {
     this.mapState.selectedCandidateId.set(null);
     this.mapState.selectedDistrictId.set(null);
     this.isSearchFocused.set(false);
+    this.isSearchExpanded.set(false);
     this.activeIndex.set(-1);
   }
 
   getHighlightedText(text: string, query: string): string {
     if (!query || !text) return text;
     
-    // Normalize query for highlighting
     const q = query.toLowerCase().replace(/^(เขต|แขวง)/, '').trim();
     if (!q) return text;
 

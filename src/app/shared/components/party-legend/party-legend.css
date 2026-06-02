@@ -1,0 +1,78 @@
+:host {
+  display: block;
+}
+
+.party-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  max-height: 112px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.legend-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(15,23,42,0.75);
+}
+
+.legend-seats {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.legend-unit {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(15,23,42,0.85);
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .party-legend {
+    gap: 6px 12px;
+    max-height: 80px;
+  }
+  .legend-logo  { width: 14px; height: 14px; }
+  .legend-name  { font-size: 17px; }
+  .legend-seats { font-size: 17px; }
+  .legend-unit  { font-size: 16px; }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .party-legend {
+    gap: 7px 16px;
+    max-height: 96px;
+  }
+  .legend-logo  { width: 16px; height: 16px; }
+  .legend-name  { font-size: 15px; }
+  .legend-seats { font-size: 16px; }
+}
+
+@media (orientation: landscape) and (max-height: 549px) {
+  .party-legend { max-height: 56px; gap: 4px 10px; }
+  .legend-name  { font-size: 16px; }
+  .legend-seats { font-size: 15px; }
+}

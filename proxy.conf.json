@@ -1,0 +1,10 @@
+{
+  "/bkk-api": {
+    "target": "https://bkkelection65-data.thaipbs.or.th",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/bkk-api": ""
+    },
+    "secure": true
+  }
+}

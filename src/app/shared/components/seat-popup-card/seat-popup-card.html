@@ -1,0 +1,19 @@
+<div class="seat-card"
+     [style.left]="data.leftPct + '%'"
+     [style.top]="data.topPct + '%'"
+     [style.borderColor]="data.color + '55'"
+     (click)="$event.stopPropagation()">
+  <button class="seat-card-close" (click)="close.emit()">✕</button>
+  <div class="seat-card-inner">
+    <img [src]="data.candidate.imgUrl" [alt]="data.candidate.fullName" class="seat-card-photo"
+      onerror="this.style.display='none'" />
+    <div class="seat-card-info">
+      <div class="seat-card-district">เขต {{ data.districtId }}</div>
+      <div class="seat-card-name">{{ data.candidate.fullName }}</div>
+      <div class="seat-card-party">
+        <img [src]="data.partyLogoUrl" class="seat-card-party-logo" />
+        <span [style.color]="data.color">{{ data.partyName }}</span>
+      </div>
+    </div>
+  </div>
+</div>

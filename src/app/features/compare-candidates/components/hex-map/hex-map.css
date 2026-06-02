@@ -1,0 +1,99 @@
+:host {
+  display: block;
+}
+
+.hex-legend-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.hex-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 18px;
+}
+
+.hex-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hex-legend-name {
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: 600;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hex-legend-count {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.hex-map-wrap {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 220px;
+}
+
+.hex-svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Responsive ── */
+@media (min-width: 1280px) {
+  .hex-map-wrap {
+    max-height: 120px;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 641px) {
+  .hex-map-wrap {
+    max-height: 190px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .hex-map-wrap {
+    height: 160px;
+  }
+  .hex-legend-item {
+    font-size: 16px;
+  }
+  .hex-legend-count {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hex-map-wrap {
+    max-height: 150px;
+  }
+  .hex-legend-item {
+    font-size: 14px;
+  }
+  .hex-legend-count {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hex-map-wrap {
+    max-height: 120px;
+  }
+  .hex-legend-item {
+    font-size: 13px;
+  }
+  .hex-legend-count {
+    font-size: 13px;
+  }
+}

@@ -1,3 +1,104 @@
+/* ── Map overlay: logo + toggle ── */
+.map-logo-toggle {
+    left: 2.85rem;
+    padding-top: 1.75rem;
+}
+
+.map-toggle-area {
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 1.75rem;
+}
+
+/* ── Logo accent bar ── */
+.logo-accent-bar {
+    width: 3px;
+    height: 44px;
+    border-radius: 99px;
+    background: linear-gradient(to bottom, rgba(45,212,191,0.8), rgba(45,212,191,0));
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 4px;
+}
+
+/* ── Election logo ── */
+.election-logo {
+    height: 130px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* ── Toggle pill container ── */
+.toggle-pill {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px;
+    width: 280px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.62);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow:
+        0 2px 12px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.toggle-pill-sm {
+    border-radius: 11px;
+    padding: 2px;
+    background: rgba(255,255,255,0.62);
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow:
+        0 2px 12px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toggle-pill-sm.is-hidden {
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none !important;
+}
+
+/* ── Toggle buttons ── */
+.toggle-btn {
+    flex: 1;
+    padding: 6px 0;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: rgba(30,50,60,0.45);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.toggle-btn:hover:not(.toggle-btn-active) {
+    color: rgba(30,50,60,0.65);
+    background: rgba(255,255,255,0.3);
+}
+
+.toggle-btn-active {
+    background: rgba(14, 87, 158, 0.92);
+    color: #fff;
+    box-shadow:
+        0 1px 8px rgba(14, 87, 158, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.toggle-btn-sm {
+    padding: 5px 0;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
 /* Stage: background + grid */
 .stage {
     position: absolute;
@@ -6,136 +107,591 @@
     display: flex;
 }
 
-/* Background image layers */
-.stage-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
 
-.stage-bg-img {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    filter: saturate(1.2) brightness(0.5) contrast(1.1) hue-rotate(130deg);
-    /* Dark, emerald tinted city */
-}
 
-.stage-bg-overlay {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 50%,
-            rgba(0, 214, 91, 0.15) 0%,
-            rgba(2, 21, 13, 0.95) 100%);
-}
-
-/* Mockup Bokeh Lights */
-.stage-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        radial-gradient(circle at 15% 25%, rgba(51, 255, 133, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 85% 75%, rgba(51, 255, 133, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 70% 30%, rgba(0, 214, 91, 0.05) 0%, transparent 30%);
-    filter: blur(40px);
-    opacity: 0.5;
-    pointer-events: none;
-    z-index: 1;
-}
+/* ============================================================
+   BASE ELEMENT STYLES — ต้องอยู่ก่อน media queries
+   เพื่อให้ responsive overrides override ได้ถูกต้อง
+   ============================================================ */
 
 .content-grid {
     position: relative;
     flex: 1;
     z-index: 10;
     display: grid;
-    gap: 24px;
-    padding: 24px;
-    overflow-y: auto; 
-    overflow-x: hidden;
+    gap: 32px;
+    padding: 32px;
+    overflow: hidden;
 
     grid-template-columns: 1fr 400px;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 1fr auto;
     grid-template-areas:
-        "map     hero"
-        "map     candidates";
+        "map     candidates"
+        "map     hero";
 }
 
-@media (max-width: 1200px) {
-    .content-grid {
-        grid-template-columns: 1fr 340px;
-        gap: 20px;
-        padding: 20px;
-    }
+.content-grid.is-sk-mode {
+    grid-template-areas: "map candidates";
+    grid-template-rows: 1fr;
 }
 
-/* Mobile Stacking Layout */
-@media (max-width: 900px) {
-    .content-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-            "map"
-            "hero"
-            "candidates";
-        padding: 16px;
-        gap: 16px;
-    }
-
-    .area-search {
-        position: sticky;
-        top: 0;
-        width: calc(100% - 32px);
-        margin: 16px auto 0;
-        transform: none;
-        left: 0;
-        right: 0;
-    }
-}
-
+/* Search bar: absolute floating over map on desktop.
+   left = center of the map column (1fr) within the 1fr+400px+32px grid */
 .area-search {
     position: absolute;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
+    top: 47px;
+    right: 660px;
+    left: auto;
+    transform: none;
+    width: 48px;
     height: 48px;
     z-index: 100;
+    transition: width 0.25s ease;
 }
 
-.area-hero {
-    grid-area: hero;
-    min-height: 420px;
-    display: flex;
-    flex-direction: column;
+.area-search:focus-within {
+    width: clamp(280px, 90vw, 440px);
 }
 
 .area-map {
     grid-area: map;
-    min-height: 500px; 
+    min-height: 0;
     display: flex;
     flex-direction: column;
 }
 
-@media (max-width: 600px) {
-    .area-map {
-        min-height: 400px;
-    }
-    
-    .area-search {
-        width: calc(100% - 24px);
-        margin: 12px auto 0;
-    }
+.area-map > main {
+    border-radius: 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(235, 248, 243, 0.18) 42%, rgba(255, 255, 255, 0.22)),
+        rgba(235, 248, 243, 0.52);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 4px solid rgba(255, 255, 255, 0.86);
+    box-shadow:
+        0 0 0 1px rgba(39, 54, 62, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.62),
+        inset 0 0 20px rgba(44, 61, 70, 0.12),
+        0 18px 44px rgba(18, 34, 42, 0.1),
+        0 0 26px rgba(255, 255, 255, 0.38);
+    overflow: hidden;
+}
+
+.area-hero {
+    grid-area: hero;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.area-hero--hidden {
+    display: none;
 }
 
 .area-candidates {
     grid-area: candidates;
-    min-height: 400px;
+    min-height: 0;
     display: flex;
     flex-direction: column;
 }
 
 .area-donut {
     display: none;
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES — ทุก media query มาหลัง base styles
+   ============================================================ */
+
+/* 4K / large screen (>1600px): expand for more breathing room */
+@media (min-width: 1601px) {
+    .content-grid {
+        grid-template-columns: 1fr 460px;
+        gap: 36px;
+        padding: 36px;
+    }
+    .election-logo { height: 130px; }
+    .toggle-btn { font-size: 19px; }
+    .area-search { right: 790px; top: 56px; }
+    .area-search:focus-within { width: 520px; }
+}
+
+/* Mac + medium desktop (≤1600px): compact sidebar */
+@media (max-width: 1600px) {
+    .content-grid {
+        grid-template-columns: 1fr 360px;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .area-search {
+        top: -10px;
+        right: 338px;
+        left: auto;
+        transform: none;
+        width: 48px;
+    }
+
+    .area-search:focus-within {
+        width: clamp(280px, 90vw, 440px);
+    }
+
+    .map-logo-toggle {
+        left: 2.35rem;
+        padding-top: 1.55rem;
+    }
+}
+
+/* 1200–1279px: desktop layout แต่ bottom nav ยังโผล่ (sidebar ยังไม่มี ที่ xl=1280px) */
+@media (min-width: 1200px) and (max-width: 1279px) {
+    .content-grid {
+        padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
+/* Tablet landscape (768–1199px, landscape, height ≥ 550px) */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) and (min-height: 550px) {
+    .content-grid {
+        grid-template-columns: 1fr 280px;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "search search"
+            "map    candidates";
+        gap: 14px;
+        padding: 14px;
+        padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+        overflow-y: auto;
+    }
+
+    .content-grid.is-sk-mode {
+        grid-template-areas:
+            "search search"
+            "map    candidates";
+        grid-template-rows: auto 1fr;
+    }
+
+    .area-search {
+        grid-area: search;
+        position: static;
+        top: unset;
+        left: unset;
+        transform: none;
+        width: 100%;
+        height: 48px;
+        margin: 0;
+        z-index: 100;
+    }
+
+    .area-map {
+        min-height: 0;
+    }
+
+    .area-hero {
+        display: none;
+    }
+
+    .map-logo-toggle {
+        left: 1.25rem;
+        padding-top: 1rem;
+    }
+
+    .map-toggle-area {
+        padding-top: 1rem;
+    }
+    .toggle-pill { width: 240px; }
+    .toggle-btn  { font-size: 15px; }
+
+    .map-logo-toggle .logo-brand,
+    .map-logo-toggle .logo-accent-bar {
+        display: none;
+    }
+
+    .area-candidates > header {
+        padding: 10px 14px;
+    }
+
+    .area-candidates > footer {
+        padding: 6px 14px;
+    }
+}
+
+/* ============================================================
+   STACKED LAYOUT:
+   1. Phone portrait (≤ 767px)
+   2. Phone landscape (landscape + height < 550px)
+   3. Tablet portrait (768–1199px + portrait)
+   ============================================================ */
+
+/* Phone portrait */
+@media (max-width: 767px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "search"
+            "map"
+            "candidates";
+        padding: 12px;
+        padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+        gap: 12px;
+        overflow: hidden;
+    }
+
+    .content-grid.is-sk-mode {
+        grid-template-areas:
+            "search"
+            "map"
+            "candidates";
+        grid-template-rows: auto auto 1fr;
+    }
+
+    /* ใส่ grid-area + sticky ให้ search bar ติดบนสุดของ stacked layout */
+    .area-search {
+        grid-area: search;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        height: 48px;
+        margin: 0;
+        z-index: 100;
+    }
+
+    .area-map {
+        height: clamp(260px, calc(100dvh - 360px), 360px);
+        min-height: 0;
+    }
+
+    .area-hero {
+        display: none;
+    }
+
+    .area-candidates {
+        min-height: 0;
+    }
+
+    .map-logo-toggle {
+        left: 1rem;
+        padding-top: 1rem;
+        gap: 0;
+    }
+    .map-logo-toggle .logo-accent-bar,
+    .map-logo-toggle .logo-brand {
+        display: none;
+    }
+    .toggle-pill {
+        width: 220px;
+        border-radius: 12px;
+        padding: 2px;
+    }
+    .toggle-btn {
+        padding: 5px 0;
+        font-size: 14px;
+    }
+    .toggle-pill-sm {
+        border-radius: 9px;
+    }
+    .toggle-btn-sm {
+        font-size: 14px;
+    }
+}
+
+/* Phone landscape (จอสั้น < 550px) */
+@media (orientation: landscape) and (max-height: 549px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "search"
+            "map"
+            "candidates"
+            "hero";
+        padding: 12px;
+        padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+        gap: 12px;
+        overflow-y: auto;
+    }
+
+    .content-grid.is-sk-mode {
+        grid-template-areas:
+            "search"
+            "map"
+            "candidates";
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .area-search {
+        grid-area: search;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        height: 48px;
+        margin: 0;
+        z-index: 100;
+    }
+
+    .area-map {
+        height: 260px;
+        min-height: 0;
+    }
+
+    .map-logo-toggle {
+        left: 1rem;
+        padding-top: 0.75rem;
+        gap: 0;
+    }
+    .map-logo-toggle .logo-accent-bar,
+    .map-logo-toggle .logo-brand {
+        display: none;
+    }
+    .toggle-pill {
+        width: 220px;
+        border-radius: 12px;
+        padding: 2px;
+    }
+    .toggle-btn {
+        padding: 4px 0;
+        font-size: 14px;
+    }
+    .toggle-pill-sm {
+        border-radius: 9px;
+    }
+}
+
+/* Tablet portrait (iPad แนวตั้ง — 768–1199px) */
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "search"
+            "map"
+            "candidates";
+        padding: 20px;
+        padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+        gap: 20px;
+        overflow: hidden;
+    }
+
+    .content-grid.is-sk-mode {
+        grid-template-areas:
+            "search"
+            "map"
+            "candidates";
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .area-search {
+        grid-area: search;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        height: 48px;
+        margin: 0;
+        z-index: 100;
+    }
+
+    .area-map {
+        height: clamp(450px, 48dvh, 580px);
+        min-height: 0;
+    }
+
+    .area-hero {
+        display: none;
+    }
+
+    .area-candidates {
+        min-height: 0;
+    }
+
+    .map-logo-toggle {
+        left: 1.25rem;
+        padding-top: 1.25rem;
+        gap: 0.5rem;
+    }
+    .map-logo-toggle .logo-accent-bar {
+        height: 36px;
+    }
+    .toggle-pill { width: 240px; }
+    .toggle-btn  { font-size: 15px; }
+}
+
+/* ── Parliament quota view: hide candidates panel on tablet/mobile ── */
+@media (max-width: 1199px) {
+    .content-grid.parliament-quota .area-candidates {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: landscape) and (min-height: 550px) {
+    .content-grid.parliament-quota {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "search"
+            "map";
+    }
+}
+
+@media (max-width: 767px) {
+    .content-grid.parliament-quota {
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "search"
+            "map";
+    }
+    .content-grid.parliament-quota .area-map {
+        height: auto;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 549px) {
+    .content-grid.parliament-quota {
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "search"
+            "map"
+            "hero";
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+    .content-grid.parliament-quota {
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "search"
+            "map";
+    }
+    .content-grid.parliament-quota .area-map {
+        height: auto;
+    }
+}
+
+@keyframes candidates-glow-cycle {
+  0%   { box-shadow: 0 0 18px 6px rgba(255,150,150,0.55), 0 0 35px 12px rgba(255,150,150,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  17%  { box-shadow: 0 0 18px 6px rgba(255,220,100,0.55), 0 0 35px 12px rgba(255,220,100,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  33%  { box-shadow: 0 0 18px 6px rgba(130,220,165,0.55), 0 0 35px 12px rgba(130,220,165,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  50%  { box-shadow: 0 0 18px 6px rgba(130,185,255,0.55), 0 0 35px 12px rgba(130,185,255,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  67%  { box-shadow: 0 0 18px 6px rgba(205,150,255,0.55), 0 0 35px 12px rgba(205,150,255,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  83%  { box-shadow: 0 0 18px 6px rgba(255,165,195,0.55), 0 0 35px 12px rgba(255,165,195,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+  100% { box-shadow: 0 0 18px 6px rgba(255,150,150,0.55), 0 0 35px 12px rgba(255,150,150,0.2), 0 18px 48px rgba(0,0,0,0.18); }
+}
+
+/* ── area-candidates: frosted white glass (matches area-hero) ── */
+.area-candidates {
+    overflow: visible;
+    border: 5px solid rgba(255, 255, 255, 1);
+    border-radius: 34px;
+    background: rgba(235, 248, 243, 0.82);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    animation: candidates-glow-cycle 4s linear infinite;
+}
+
+.area-candidates > header {
+    border-color: rgba(0, 0, 0, 0.07);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.candidates-header {
+    gap: 12px;
+}
+
+.candidates-header > div:first-child {
+    min-width: 0;
+}
+
+.candidates-title {
+    display: block;
+    font-size: clamp(18px, 4.7vw, 30px);
+    line-height: 1.35;
+    overflow-wrap: normal;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+.candidates-title-nowrap {
+    white-space: nowrap;
+}
+
+.candidates-live-actions {
+    flex-shrink: 0;
+}
+
+.area-candidates > footer {
+    border-color: rgba(0, 0, 0, 0.07);
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(0, 128, 110, 0.6);
+}
+
+.area-candidates::after {
+    opacity: 0;
+}
+
+.area-candidates::before {
+    display: none;
+}
+
+@media (max-width: 1600px) {
+    .area-candidates::after {
+        inset: -1.5px;
+        padding: 3px;
+    }
+    .area-candidates::before {
+        inset: -8px -7px -12px;
+    }
+}
+
+/* ── Desktop: remove area-map's relative so map-logo-toggle escapes
+   to content-grid (viewport top-left). Override padding-left in
+   component CSS so it beats xl:pl-20 specificity. ── */
+@media (min-width: 1280px) {
+    .content-grid {
+        padding-left: 5rem;
+    }
+    .area-map {
+        position: static;
+    }
+    .area-map > main {
+        padding-top: 20px;
+    }
+    .map-logo-toggle {
+        left: 1rem;
+        padding-top: 1rem;
+    }
+    /* >1600px grid: 1fr 460px gap36 pad-right36 → map-right=532px from vp-right */
+    .area-search {
+        right: 836px;   /* toggle_right_edge(548+280=828) + 8px gap = 836 */
+        left: auto;
+        top: 47px;
+    }
+    .map-toggle-area {
+        right: 548px;   /* 16px inside map right edge (532+16) */
+        left: auto;
+        transform: none;
+        padding-top: 0;
+        top: 47px;
+    }
+}
+
+/* 1280–1600px: sidebar=360px+gap20+pad20=400px → map right = W-400 */
+@media (min-width: 1280px) and (max-width: 1600px) {
+    .area-search {
+        right: 704px;   /* toggle_right_edge(416+280=696) + 8px gap = 704 */
+        left: auto;
+        top: 36px;
+    }
+    .map-toggle-area {
+        right: 416px;   /* 16px inside map right edge (W-400-16) */
+        left: auto;
+        top: 36px;
+        padding-top: 0;
+    }
 }

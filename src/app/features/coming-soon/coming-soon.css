@@ -1,12 +1,28 @@
 /* ===== Page ===== */
 .coming-soon-page {
+  height: 100vh;
+  height: 100dvh;
   min-height: 100vh;
+  min-height: 100dvh;
   background: #f0ede8;
   display: flex;
   flex-direction: column;
-  font-family: 'Inter', sans-serif;
+  font-family: 'DB Adman X', sans-serif;
   position: relative;
   overflow: hidden;
+}
+
+.coming-soon-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/ChatGPT%20Image%20May%2027%2C%202026%2C%2003_52_05%20PM.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ===== Cloud Background ===== */
@@ -14,7 +30,7 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .bg-cloud {
@@ -50,20 +66,32 @@
 .cs-nav,
 .cs-body {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .cs-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
   padding: 1.25rem 2rem;
 }
 
 .cs-logo {
-  height: 50px;
+  display: none;
+  height: 130px;
+  max-width: min(360px, calc(100vw - 4rem));
   width: auto;
   object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+.mobile-tv-logo {
+  display: block;
+  width: min(620px, 46vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 .avatar-circle {
@@ -76,20 +104,54 @@
 
 .cs-body {
   flex: 1;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4rem;
   padding: 2rem;
+  margin: 0 4.5rem 1.5rem;
+  box-sizing: border-box;
+  border: 5px solid rgba(255, 255, 255, 1);
+  border-radius: 34px;
+  background: rgba(235, 248, 243, 0);
+  backdrop-filter: blur(8px) saturate(145%);
+  -webkit-backdrop-filter: blur(8px) saturate(145%);
+  box-shadow:
+    0 0 18px 6px rgba(255, 255, 255, 0.32),
+    0 18px 48px rgba(0, 0, 0, 0),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  overflow: visible;
+}
+
+.cs-body::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(255, 255, 255, 0.28) 35%,
+    rgba(255, 255, 255, 0.18) 65%,
+    rgba(255, 255, 255, 0.98)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 2px;
 }
 
 /* ===== UIverse TV (from kelvyn_8843 / Praashoo7) ===== */
 .main_wrapper {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  width: 30em;
-  height: 30em;
+  width: 36em;
+  height: 36em;
+  flex: 0 1 36em;
 }
 
 .main {
@@ -100,6 +162,7 @@
   margin-top: 5em;
   position: relative;
   isolation: isolate;
+  transform: scale(1.5);
 }
 
 .antenna {
@@ -108,9 +171,10 @@
   border-radius: 50%;
   border: 2px solid black;
   background-color: #f27405;
-  margin-bottom: -6em;
+  margin-bottom: -8em;
   margin-left: 0em;
   z-index: 1;
+  transform: translateY(-2.45em);
 }
 
 .antenna_shadow {
@@ -276,6 +340,7 @@
 }
 
 .tv {
+  position: relative;
   width: 17em;
   height: 9em;
   margin-top: 3em;
@@ -285,19 +350,11 @@
   justify-content: center;
   border: 2px solid #1d0e01;
   box-shadow: inset 0.2em 0.2em #e69635;
+  z-index: 2;
 }
 
 .tv::after {
-  content: "";
-  position: absolute;
-  width: 17em;
-  height: 9em;
-  border-radius: 15px;
-  background:
-    repeating-radial-gradient(#d36604 0 0.0001%, #00000070 0 0.0002%) 50% 0/2500px 2500px,
-    repeating-conic-gradient(#d36604 0 0.0001%, #00000070 0 0.0002%) 60% 60%/2500px 2500px;
-  background-blend-mode: difference;
-  opacity: 0.09;
+  display: none;
 }
 
 .curve_svg {
@@ -309,6 +366,8 @@
 }
 
 .display_div {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   align-self: center;
@@ -336,17 +395,8 @@
   width: 13em;
   height: 7.85em;
   position: relative;
-  font-family: Montserrat, sans-serif;
-  background: linear-gradient(
-    to right,
-    #002fc6 0%, #002bb2 14.2857142857%,
-    #3a3a3a 14.2857142857%, #303030 28.5714285714%,
-    #ff0afe 28.5714285714%, #f500f4 42.8571428571%,
-    #6c6c6c 42.8571428571%, #626262 57.1428571429%,
-    #0affd9 57.1428571429%, #00f5ce 71.4285714286%,
-    #3a3a3a 71.4285714286%, #303030 85.7142857143%,
-    white 85.7142857143%, #fafafa 100%
-  );
+  font-family: 'DB Adman X', sans-serif;
+  background: #fff;
   border-radius: 10px;
   border: 2px solid black;
   z-index: 99;
@@ -358,6 +408,13 @@
   letter-spacing: 0.15em;
   text-align: center;
   overflow: hidden;
+  box-shadow: none;
+  animation: none;
+}
+
+.screenM * {
+  animation: none !important;
+  transition: none !important;
 }
 
 .screenM::before,
@@ -370,32 +427,33 @@
 }
 
 .screenM::before {
-  top: 0;
-  height: 68.4782608696%;
-  background: linear-gradient(
-    to right,
-    white 0%, #fafafa 14.2857142857%,
-    #ffe60a 14.2857142857%, #f5dc00 28.5714285714%,
-    #0affd9 28.5714285714%, #00f5ce 42.8571428571%,
-    #10ea00 42.8571428571%, #0ed600 57.1428571429%,
-    #ff0afe 57.1428571429%, #f500f4 71.4285714286%,
-    #ed0014 71.4285714286%, #d90012 85.7142857143%,
-    #002fc6 85.7142857143%, #002bb2 100%
-  );
+  display: none;
 }
 
 .screenM::after {
-  bottom: 0;
-  height: 21.7391304348%;
-  background: linear-gradient(
-    to right,
-    #006c6b 0%, #005857 16.6666666667%,
-    white 16.6666666667%, #fafafa 33.3333333333%,
-    #001b75 33.3333333333%, #001761 50%,
-    #6c6c6c 50%, #626262 66.6666666667%,
-    #929292 66.6666666667%, #888888 83.3333333333%,
-    #3a3a3a 83.3333333333%, #303030 100%
-  );
+  display: none;
+}
+
+.tv-election-logo {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: none;
+  transform: translateZ(0);
+}
+
+.tv-one-logo {
+  position: absolute;
+  top: 0.55em;
+  right: 0.65em;
+  width: 2em;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+  filter: none;
+  animation: none;
+  transition: none;
 }
 
 .notfound_text {
@@ -432,6 +490,8 @@
 }
 
 .buttons_div {
+  position: relative;
+  z-index: 1;
   width: 4.25em;
   align-self: center;
   height: 8em;
@@ -568,27 +628,50 @@
 
 /* ===== Countdown content ===== */
 .cs-content {
-  max-width: 380px;
+  width: min(420px, 100%);
+  min-width: 0;
+}
+
+.cs-election-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-width: 0;
 }
 
 .cs-title {
-  font-size: 3rem;
+  font-size: clamp(1.75rem, 3.2vw, 2.45rem);
   font-weight: 900;
-  color: #1a1a1a;
-  margin: 0 0 0.5rem;
-  line-height: 1;
+  color: #000;
+  margin: 0 0 0.15rem;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
 }
 
 .cs-subtitle {
-  font-size: 0.95rem;
-  color: #666;
-  margin: 0 0 0.2rem;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 900;
+  color: #000;
+  margin: 0;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.cs-year {
+  color: #000;
+  font-size: clamp(3.2rem, 5.8vw, 4.8rem);
+  font-weight: 900;
+  line-height: 0.9;
+  margin: 0;
+  letter-spacing: 0;
 }
 
 .cs-date {
-  font-size: 0.85rem;
-  color: #999;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  color: #000;
   margin: 0 0 1.75rem;
+  font-weight: 700;
 }
 
 .countdown {
@@ -596,6 +679,7 @@
   align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 2rem;
+  max-width: 100%;
 }
 
 .countdown-unit {
@@ -609,7 +693,7 @@
 }
 
 .countdown-number {
-  font-family: 'Courier New', monospace;
+  font-family: 'DB Adman X', sans-serif;
   font-size: 2rem;
   font-weight: 900;
   color: #fff;
@@ -619,7 +703,7 @@
 
 .countdown-label {
   font-size: 0.65rem;
-  color: #888;
+  color: #fff;
   margin-top: 4px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -649,26 +733,282 @@
 
 .cs-btn:hover { background: #333; }
 
+/* ===== Desktop logo alignment ===== */
+@media (min-width: 1280px) { .cs-logo { height: 90px; } }
+@media (min-width: 1600px) { .cs-logo { height: 130px; } }
+@media (min-width: 1920px) { .cs-logo { height: 150px; } }
+
 /* ===== Responsive ===== */
-@media (max-width: 768px) {
+@media (max-width: 1180px) {
+  .cs-logo {
+    height: 112px;
+  }
+
   .cs-body {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 2rem;
+    margin: 0 2rem 1.25rem;
+    padding: 1.5rem;
   }
 
   .main_wrapper {
-    width: 22em;
-    height: 22em;
-    transform: scale(0.85);
+    width: 31em;
+    height: 31em;
+    flex-basis: 31em;
   }
 
-  .cs-title { font-size: 2.25rem; }
+  .main {
+    margin-top: 3em;
+    transform: scale(1.02);
+  }
+}
+
+@media (max-height: 820px) {
+  .cs-nav {
+    padding: 0.75rem 1.75rem;
+  }
+
+  .cs-logo {
+    height: 96px;
+  }
+
+  .cs-body {
+    gap: 2.5rem;
+    padding: 1rem 1.75rem;
+    margin: 0 3.25rem 1rem;
+  }
+
+  .main_wrapper {
+    width: 28em;
+    height: 28em;
+  }
+
+  .main {
+    margin-top: 2.5em;
+    transform: scale(0.94);
+  }
+}
+
+@media (max-width: 900px) {
+  .cs-logo {
+    height: 104px;
+  }
+
+  .cs-body {
+    gap: 1.25rem;
+    margin: 0 1.25rem 1rem;
+    padding: 1.25rem;
+  }
+
+  .main_wrapper {
+    width: 24em;
+    height: 24em;
+    flex-basis: 24em;
+  }
+
+  .main {
+    transform: scale(0.84);
+  }
+
+  .cs-content {
+    width: min(370px, 100%);
+  }
+
+  .cs-election-heading {
+    gap: 0.8rem;
+  }
+
+  .countdown {
+    gap: 0.35rem;
+  }
 
   .countdown-unit {
-    min-width: 52px;
-    padding: 0.6rem 0.75rem;
+    min-width: 56px;
+    padding: 0.65rem 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .coming-soon-page::before {
+    background-position: center top;
   }
 
-  .countdown-number { font-size: 1.5rem; }
+  .cs-nav {
+    justify-content: center;
+    padding: 0.75rem 1rem 0.5rem;
+  }
+
+  .cs-logo {
+    height: clamp(86px, 28vw, 118px);
+    max-width: calc(100vw - 2rem);
+  }
+
+  .mobile-tv-logo {
+    display: block;
+    flex-shrink: 0;
+    width: min(320px, 82vw);
+    margin: 0 auto clamp(0.75rem, 4vw, 1.25rem);
+  }
+
+  .cs-body {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    padding: clamp(1rem, 5vw, 1.5rem);
+    margin: 0 1rem 1rem;
+    border-radius: 24px;
+    border-width: 4px;
+    overflow: hidden;
+  }
+
+  .main_wrapper {
+    display: none;
+  }
+
+  .cs-content {
+    width: min(390px, 100%);
+    text-align: center;
+  }
+
+  .cs-election-heading {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cs-title {
+    font-size: clamp(1.65rem, 8.5vw, 2.25rem);
+  }
+
+  .cs-subtitle {
+    font-size: clamp(1.05rem, 6vw, 1.45rem);
+  }
+
+  .cs-year {
+    font-size: clamp(3rem, 16vw, 4.25rem);
+  }
+
+  .cs-date {
+    font-size: clamp(0.95rem, 4.2vw, 1.1rem);
+    margin-bottom: 1rem;
+  }
+
+  .countdown {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    justify-content: initial;
+    gap: 0.4rem;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .countdown-unit {
+    min-width: 0;
+    width: auto;
+    padding: 0.55rem 0.45rem;
+    border-radius: 9px;
+  }
+
+  .countdown-number {
+    font-size: clamp(1.35rem, 7vw, 1.75rem);
+  }
+
+  .countdown-label {
+    font-size: clamp(0.52rem, 3vw, 0.62rem);
+  }
+
+  .countdown-sep {
+    display: none;
+  }
+
+  .bc1, .bc2, .bc3, .bc4 { width: 400px; height: 300px; }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .cs-nav {
+    justify-content: flex-start;
+    padding: 0.5rem 1rem 0.25rem;
+  }
+
+  .cs-logo {
+    height: clamp(58px, 16vh, 82px);
+  }
+
+  .cs-body {
+    margin: 0 1rem 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .cs-election-heading {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cs-title {
+    font-size: clamp(1.45rem, 5vw, 2rem);
+  }
+
+  .cs-year {
+    font-size: clamp(2.6rem, 9vw, 3.6rem);
+  }
+}
+
+@media (max-width: 420px) {
+  .cs-election-heading {
+    gap: 0.25rem;
+  }
+
+  .cs-body {
+    margin: 0 0.75rem 0.75rem;
+  }
+
+  .countdown { gap: 0.3rem; }
+}
+
+@media (max-width: 360px) {
+  .cs-nav {
+    padding-inline: 0.75rem;
+  }
+
+  .cs-body {
+    margin: 0 0.5rem 0.5rem;
+    padding: 0.85rem 0.65rem;
+    border-radius: 20px;
+  }
+
+  .mobile-tv-logo {
+    width: min(250px, 78vw);
+  }
+
+  .countdown-unit { padding-inline: 0.25rem; }
+}
+
+@media (max-height: 620px) {
+  .cs-nav {
+    padding-block: 0.45rem 0.25rem;
+  }
+
+  .cs-logo {
+    height: 72px;
+  }
+
+  .mobile-tv-logo {
+    width: min(220px, 42vw);
+    margin-bottom: 0.5rem;
+  }
+
+  .cs-body {
+    padding-block: 0.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .main_wrapper {
+    display: none;
+  }
+
+  .cs-date {
+    margin-bottom: 0.75rem;
+  }
 }
