@@ -4,17 +4,19 @@ import { CompareCandidates } from './features/compare-candidates/compare-candida
 import { MainLayout } from './core/layout/main-layout/main-layout';
 import { ComingSoon } from './features/coming-soon/coming-soon';
 import { CandidatesStack } from './features/candidates-stack/candidates-stack';
+import { electionGuard } from './core/guard/election.guard';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: MainLayout,
-        children: [
-            { path: '', component: CandidatesStack },
-            { path: 'dashboard', component: DashboardLayout },
-            { path: 'compare', component: CompareCandidates },
-        ]
-    },
-    { path: 'coming-soon', component: ComingSoon },
-    { path: '**', redirectTo: 'coming-soon' }
+  {
+    path: '',
+    component: MainLayout,
+    canActivate: [electionGuard],
+    children: [
+      { path: '', component: CandidatesStack },
+      { path: 'dashboard', component: DashboardLayout },
+      { path: 'compare', component: CompareCandidates },
+    ],
+  },
+  { path: 'coming-soon', component: ComingSoon },
+  { path: '**', redirectTo: 'coming-soon' },
 ];
