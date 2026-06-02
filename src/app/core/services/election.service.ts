@@ -46,7 +46,7 @@ export class ElectionService {
   error = signal<string | null>(null);
 
   private http = inject(HttpClient);
-  private apiUrl = ELECTION_CONSTANTS.API.SUMMARY;
+  private apiUrl = ELECTION_CONSTANTS.API.GOVERNOR_AUTO_CANDIDATES;
   private districtApiUrl = ELECTION_CONSTANTS.API.DISTRICTS;
 
   constructor() {
@@ -64,47 +64,60 @@ export class ElectionService {
   async fetchOverallSummary() {
     this.isLoading.set(true);
     try {
-      const data: any = await lastValueFrom(this.http.get(this.apiUrl));
-      if (!data || !data.candidates) return;
+      const listRes: any = await lastValueFrom(this.http.get(this.apiUrl));
+      if (!listRes?.data?.candidates?.length) return;
 
-      const candidates: Candidate[] = data.candidates.map((c: any) => {
-        let name = c._raw.fullName;
+      const { candidates: candidateList, statistics, coverage, lastUpdate } = listRes.data;
+
+      const detailResponses: any[] = await Promise.all(
+        candidateList.map((c: any) =>
+          lastValueFrom(this.http.get(`${this.apiUrl}/${c.id}`))
+        )
+      );
+
+      const candidates: Candidate[] = detailResponses.map((res: any) => {
+        const detail = res.data.candidate;
+        const summary = candidateList.find((c: any) => c.id === detail.id);
+
+        let name: string = detail.name ?? '';
         ELECTION_CONSTANTS.NAME_PREFIXES.forEach(prefix => {
           name = name.replace(prefix, '');
         });
 
         return {
-          id: c.idno,
+          id: detail.number,
           name: name.trim(),
-          party: c._raw.party.name,
-          number: c.idno,
-          votes: c.score,
-          percentage: Number(c.scorePercent.toFixed(2)),
-          imageUrl: c._raw.avatarURL,
-          partyLogoUrl: ELECTION_CONSTANTS.ASSETS.PARTY_LOGO.replace('{id}', c._raw.party.id.toString()),
-          color: this.getCandidateColor(c.idno)
+          party: detail.party?.name ?? '',
+          number: detail.number,
+          votes: summary?.totalVotes ?? 0,
+          percentage: Number((summary?.percentage ?? 0).toFixed(2)),
+          imageUrl: ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', detail.number.toString()),
+          partyLogoUrl: '',
+          color: detail.party?.color ?? ELECTION_CONSTANTS.CANDIDATE_COLORS['def']
         };
-      });
+      }).sort((a: Candidate, b: Candidate) => b.votes - a.votes);
 
       this.preloadCandidateAssets(candidates.slice(0, 5));
 
-      const rawSummary = data._rawSummary?.data;
+      const coveragePct = coverage?.percentage ?? 0;
+      const lastUpdateDate = new Date(lastUpdate);
+      const timeStr = lastUpdateDate.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
 
       this.electionState.update(current => ({
         ...current,
         candidates,
-        totalVotes: data.summary,
-        goodVotes: rawSummary?.goodVotes || 0,
-        badVotes: rawSummary?.badVotes || 0,
-        noVotes: rawSummary?.noVotes || 0,
-        eligibleVoters: rawSummary?.eligible || 0,
-        actualVoters: rawSummary?.voter || 0,
-        turnoutPercent: rawSummary?.percentVoter || 0,
-        countedDistricts: Math.floor(data.summaryPercent / 2),
+        totalVotes: statistics?.totalVotes ?? 0,
+        goodVotes: statistics?.goodVotes ?? 0,
+        badVotes: statistics?.invalidVotes ?? 0,
+        noVotes: statistics?.noVotes ?? 0,
+        eligibleVoters: statistics?.eligibleVoters ?? 0,
+        actualVoters: statistics?.totalVotes ?? 0,
+        turnoutPercent: statistics?.voterTurnoutPercentage ?? 0,
+        countedDistricts: Math.round(coveragePct / 100 * 50),
         totalDistricts: 50,
-        lastUpdated: `อัปเดตล่าสุด ${data.updateAt} น. (${data.summaryPercent}%)`,
-        electionYear: 2022,
-        progressPercent: data.summaryPercent || 0,
+        lastUpdated: `อัปเดตล่าสุด ${timeStr} น. (${coveragePct.toFixed(1)}%)`,
+        electionYear: 2026,
+        progressPercent: coveragePct,
         districtResults: current?.districtResults || []
       }) as ElectionData);
     } catch (err) {
@@ -155,10 +168,6 @@ export class ElectionService {
     } catch (err) {
       console.error('District API Error:', err);
     }
-  }
-
-  private getCandidateColor(no: number): string {
-    return ELECTION_CONSTANTS.CANDIDATE_COLORS[no] || ELECTION_CONSTANTS.CANDIDATE_COLORS['def'];
   }
 
   private preloadCandidateAssets(candidates: Candidate[]) {
