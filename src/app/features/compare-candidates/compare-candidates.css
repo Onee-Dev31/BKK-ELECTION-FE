@@ -327,12 +327,15 @@
   }
 
 .compare-election-logo {
-    height: 130px;
     width: auto;
     object-fit: contain;
     display: block;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
   }
+}
+
+@media (min-width: 1600px) {
+  .compare-election-logo { height: 130px; }
 }
 
 /* ── Responsive: bottom nav present (<1280px) ───────────── */
