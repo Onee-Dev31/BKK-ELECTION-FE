@@ -591,6 +591,31 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
+.candidates-header {
+    gap: 12px;
+}
+
+.candidates-header > div:first-child {
+    min-width: 0;
+}
+
+.candidates-title {
+    display: block;
+    font-size: clamp(18px, 4.7vw, 30px);
+    line-height: 1.35;
+    overflow-wrap: normal;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+.candidates-title-nowrap {
+    white-space: nowrap;
+}
+
+.candidates-live-actions {
+    flex-shrink: 0;
+}
+
 .area-candidates > footer {
     border-color: rgba(0, 0, 0, 0.07);
     background: rgba(255, 255, 255, 0.12);
