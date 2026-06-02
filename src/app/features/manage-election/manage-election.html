@@ -1,0 +1,94 @@
+<div class="page">
+  <div class="tabs">
+    <div class="tab-buttons">
+      <button [class.active]="activeTab === 1" (click)="activeTab = 1">Generate JSON</button>
+
+      <button [class.active]="activeTab === 2" (click)="activeTab = 2">Upload JSON</button>
+    </div>
+
+    <button class="btn btn-danger" (click)="logout()">Logout</button>
+  </div>
+
+  @if (activeTab === 1) {
+    <div class="container">
+      <!-- LEFT -->
+      <div class="left-panel">
+        <div class="top-action">
+          <button class="btn btn-secondary" (click)="refresh()">Refresh</button>
+        </div>
+
+        <hr class="divider" />
+
+        <h2>อัปเดตข้อมูลผู้สมัคร</h2>
+
+        <form [formGroup]="form">
+          <table class="candidate-table">
+            <thead>
+              <tr>
+                <th>ลำดับ</th>
+                <th>ชื่อผู้สมัคร</th>
+                <th>รูปผู้สมัคร</th>
+                <th>พรรค</th>
+                <th>รูปพรรค</th>
+                <th>คะแนน</th>
+              </tr>
+            </thead>
+
+            <tbody formArrayName="candidates">
+              @for (candidate of candidates.controls; track $index) {
+                <tr [formGroupName]="$index">
+                  <td>{{ $index + 1 }}</td>
+
+                  <td>
+                    <input type="text" formControlName="name" />
+                  </td>
+
+                  <td>
+                    <input type="text" formControlName="imageUrl" />
+                  </td>
+
+                  <td>
+                    <input type="text" formControlName="partyName" />
+                  </td>
+
+                  <td>
+                    <input type="text" formControlName="partyLogoUrl" />
+                  </td>
+
+                  <td>
+                    <input type="number" formControlName="votes" />
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </form>
+
+        <div class="action-bar">
+          <button class="btn btn-primary" (click)="submit()">GEN JSON</button>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right-panel">
+        <!-- <div class="action-bar">
+          <button class="btn btn-primary" (click)="submit()">Submit</button>
+
+          <button class="btn btn-secondary" (click)="refresh()">Refresh</button>
+        </div> -->
+
+        <pre>{{ jsonPreview }}</pre>
+      </div>
+    </div>
+  }
+
+  @if (activeTab === 2) {
+    <div class="upload-tab">
+      <h2>Upload JSON</h2>
+
+      <textarea rows="20" placeholder="Paste JSON here..."> </textarea>
+
+      <button class="btn btn-primary">Upload</button>
+    </div>
+  }
+</div>

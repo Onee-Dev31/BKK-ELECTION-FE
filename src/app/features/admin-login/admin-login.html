@@ -1,0 +1,28 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <img src="/LOGO_ELECTION_BKK.png" alt="วันเลือกตั้งผู้ว่าฯ กทม. 69" class="cs-logo" />
+      <!-- <h1>Login</h1> -->
+      <h1>กรุณาเข้าสู่ระบบ</h1>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="username" formControlName="username" placeholder="Enter username" />
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Enter password"
+        />
+      </div>
+
+      <button type="submit" class="login-btn" [disabled]="loginForm.invalid">Sign In</button>
+    </form>
+  </div>
+</div>
