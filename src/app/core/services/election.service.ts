@@ -112,8 +112,9 @@ export class ElectionService {
         publicCandidatesResult.status === 'fulfilled' &&
         publicCandidatesResult.value.success
       ) {
-        // Fallback for unauthenticated visitors: use public auto/candidates
+        // Fallback for unauthenticated visitors: only show candidates with known images
         candidates = [...publicCandidatesResult.value.data.candidates]
+          .filter(c => !!CANDIDATE_IMG_FALLBACK[c.id])
           .sort((a, b) => a.rank - b.rank)
           .map((c, index) => ({
             id: c.rank,
@@ -122,7 +123,7 @@ export class ElectionService {
             number: c.rank,
             votes: c.totalVotes,
             percentage: c.percentage,
-            imageUrl: CANDIDATE_IMG_FALLBACK[c.id] ?? `/Dicus/${c.rank}.png`,
+            imageUrl: CANDIDATE_IMG_FALLBACK[c.id],
             partyLogoUrl: '',
             color: RANK_COLORS[index] ?? '#64748b',
           }));
