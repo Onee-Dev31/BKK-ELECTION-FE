@@ -65,7 +65,7 @@ export class ElectionService {
       const [rankingsResult, statsResult] = await Promise.allSettled([
         lastValueFrom(
           this.http.get<PartyRankingsResponse>(
-            `${this.authApiUrl}/elections/bkk-governor-2026/party-rankings/export`,
+            `${this.govApiUrl}/elections/bkk-governor-2026/party-rankings/export`,
           ),
         ),
         lastValueFrom(
