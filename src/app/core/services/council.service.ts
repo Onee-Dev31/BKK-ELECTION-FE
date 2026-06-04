@@ -1,56 +1,56 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
-import { CouncilCandidate, CouncilSummaryData, CouncilDistrictSummary } from '../models/election.models';
-import { ThaiPBSService } from './thai-pbs.service';
+import {
+  CouncilCandidate,
+  CouncilParty,
+  CouncilSummaryData,
+  CouncilDistrictSummary,
+  CouncilCandidate2026,
+} from '../models/election.models';
+import { environment } from '../../../environments/environment.dev';
 
 @Injectable({ providedIn: 'root' })
 export class CouncilService {
   private http = inject(HttpClient);
-  private thaipbs = inject(ThaiPBSService);
+  private readonly govApiUrl = environment.apiUrl;
 
-  candidates = signal<CouncilCandidate[]>([]);
-  summaryData = signal<CouncilSummaryData | null>(null);
+  // 2026 live data
+  council2026All = signal<CouncilCandidate2026[]>([]);
+  council2026Winners = signal<CouncilCandidate2026[]>([]);
   isLoading = signal(false);
 
-  partyMap = this.thaipbs.partyMap;
+  // Legacy signal kept for backward compat (populated from 2026 API)
+  candidates = computed(() => this.council2026All().map(c => this.toLegacyCandidate(c)));
+  summaryData = signal<CouncilSummaryData | null>(null);
 
-  constructor() {
-    this.loadData();
-  }
-
-  async loadData() {
-    this.isLoading.set(true);
-    try {
-      const candidates = await lastValueFrom(
-        this.http.get<CouncilCandidate[]>('/bkk-api/website/council.json')
-      ).catch(async () => {
-        console.warn('External council candidates load failed, trying local');
-        return await lastValueFrom(this.http.get<CouncilCandidate[]>('data/council.json'));
+  // Party map keyed by parseInt(party.code) for component compatibility
+  partyMap = computed(() => {
+    const map = new Map<number, CouncilParty>();
+    const seen = new Set<string>();
+    for (const c of this.council2026All()) {
+      if (seen.has(c.party.id)) continue;
+      seen.add(c.party.id);
+      const numericId = parseInt(c.party.code) || 0;
+      map.set(numericId, {
+        partyId: numericId,
+        code: c.party.code,
+        partyName: c.party.name,
+        partyLogoUrl: '',
+        color: c.party.color,
+        active: true,
       });
-      this.candidates.set(candidates);
-
-      const summary = await lastValueFrom(
-        this.http.get<CouncilSummaryData>('data/district-council-results.json')
-      ).catch(err => {
-        console.error('Local summary data load failed:', err);
-        return null;
-      });
-      this.summaryData.set(summary);
-
-    } catch (e) {
-      console.error('Council data unexpected error:', e);
-    } finally {
-      this.isLoading.set(false);
     }
-  }
+    return map;
+  });
 
-  getDistrictSummary(districtId: number): CouncilDistrictSummary | undefined {
-    return this.summaryData()?.data.find(d => d.number === districtId);
-  }
-
-  candidatesByDistrict = (districtId: number) =>
-    this.candidates().filter(c => c.areaNumber === districtId);
+  districtWinners = computed(() =>
+    this.council2026Winners().map(w => ({
+      districtId: w.areaNumber,
+      winner: this.toLegacyCandidate(w),
+      summary: this.makeSummary(w),
+    })),
+  );
 
   leadingPartyByDistrict = computed(() => {
     const map = new Map<number, number>();
@@ -58,37 +58,107 @@ export class CouncilService {
     return map;
   });
 
-  districtWinners = computed(() => {
-    const winners: { districtId: number, winner: CouncilCandidate, summary: CouncilDistrictSummary }[] = [];
-    const summary = this.summaryData();
-    const candidates = this.candidates();
-    
-    if (!summary || !candidates.length) return winners;
+  partySummary = computed(() => {
+    const seatCount = new Map<number, { party: CouncilParty; seats: number }>();
+    for (const w of this.districtWinners()) {
+      const party = this.partyMap().get(w.winner.partyId);
+      if (!party) continue;
+      const entry = seatCount.get(w.winner.partyId);
+      if (entry) {
+        entry.seats++;
+      } else {
+        seatCount.set(w.winner.partyId, { party, seats: 1 });
+      }
+    }
+    return Array.from(seatCount.values()).sort((a, b) => b.seats - a.seats);
+  });
 
-    summary.data.forEach(d => {
-      const winnerLeader = d.leaders.find(l => l.rank === 1);
-      if (winnerLeader) {
-        const candidate = candidates.find(c => c.areaNumber === d.number && c.number === winnerLeader.number);
-        if (candidate) {
-          winners.push({ districtId: d.number, winner: candidate, summary: d });
+  constructor() {
+    this.fetchCouncil2026();
+  }
+
+  async fetchCouncil2026(): Promise<void> {
+    this.isLoading.set(true);
+    try {
+      const all: CouncilCandidate2026[] = [];
+      let page = 1;
+      let hasMore = true;
+
+      while (hasMore) {
+        const res = await lastValueFrom(
+          this.http.get<{
+            success: boolean;
+            data: { candidates: CouncilCandidate2026[]; pagination: { hasMore: boolean } };
+          }>(`${this.govApiUrl}/elections/bkk-council-2026/auto/candidates`, {
+            params: { page: page.toString(), limit: '100' },
+          }),
+        );
+        if (res.success && res.data.candidates.length > 0) {
+          all.push(...res.data.candidates);
+          hasMore = res.data.pagination.hasMore;
+          page++;
+        } else {
+          hasMore = false;
         }
       }
-    });
-    
-    return winners.sort((a, b) => a.districtId - b.districtId);
-  });
 
-  partySummary = computed(() => {
-    const counts = new Map<number, number>();
-    this.leadingPartyByDistrict().forEach(partyId => {
-      counts.set(partyId, (counts.get(partyId) || 0) + 1);
-    });
+      this.council2026All.set(all);
 
-    return this.thaipbs.parties()
-      .map(party => ({
-        party,
-        seats: counts.get(party.partyId) ?? 0,
-      }))
-      .sort((a, b) => b.seats - a.seats || a.party.partyId - b.party.partyId);
-  });
+      // Find winner (highest totalVotes) per areaNumber
+      const areaMap = new Map<number, CouncilCandidate2026>();
+      for (const c of all) {
+        const existing = areaMap.get(c.areaNumber);
+        if (!existing || c.totalVotes > existing.totalVotes) {
+          areaMap.set(c.areaNumber, c);
+        }
+      }
+      this.council2026Winners.set(
+        Array.from(areaMap.values()).sort((a, b) => a.areaNumber - b.areaNumber),
+      );
+    } catch (err) {
+      console.error('Council 2026 API error:', err);
+    } finally {
+      this.isLoading.set(false);
+    }
+  }
+
+  getDistrictSummary(districtId: number): CouncilDistrictSummary | undefined {
+    const winner = this.council2026Winners().find(w => w.areaNumber === districtId);
+    return winner ? this.makeSummary(winner) : undefined;
+  }
+
+  candidatesByDistrict = (districtId: number) =>
+    this.candidates().filter(c => c.areaNumber === districtId);
+
+  private toLegacyCandidate(c: CouncilCandidate2026): CouncilCandidate {
+    const stripped = c.name.replace(/^(นาย|นาง|นางสาว)\s*/, '');
+    const parts = stripped.split(' ');
+    return {
+      number: c.number,
+      firstName: parts[0] ?? c.name,
+      lastName: parts.slice(1).join(' '),
+      fullName: c.name,
+      partyId: parseInt(c.party.code) || 0,
+      imgUrl: '',
+      areaNumber: c.areaNumber,
+    };
+  }
+
+  private makeSummary(w: CouncilCandidate2026): CouncilDistrictSummary {
+    return {
+      number: w.areaNumber,
+      interestingFactor: 0,
+      leaders: [{ number: w.number, rank: 1, totalVotes: w.totalVotes, percentVotes: w.percentage }],
+      overallStatistics: {
+        totalVotes: w.totalVotes,
+        goodVotes: w.totalVotes,
+        badVotes: 0,
+        noVotes: 0,
+        percentGoodVotes: 100,
+        percentBadVotes: 0,
+        percentNoVotes: 0,
+        totalEligible: 0,
+      },
+    };
+  }
 }

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MapStateService } from '../../core/services/map-state';
 import { ElectionService } from '../../core/services/election.service';
 import { CouncilService } from '../../core/services/council.service';
-import { ThaiPBSService } from '../../core/services/thai-pbs.service';
 import { DISTRICT_LAYOUTS, District } from '../../core/constants/map-layout.constants';
 import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
 import { sumVotes, calcPercent } from '../../core/utils/election.utils';
@@ -25,7 +24,6 @@ export class JigsawMap {
   mapState = inject(MapStateService);
   private electionService = inject(ElectionService);
   councilService = inject(CouncilService);
-  private thaipbs = inject(ThaiPBSService);
 
   readonly districts = this.mapState.districts;
   private readonly pathCache = new Map<number, string>();
@@ -100,7 +98,7 @@ export class JigsawMap {
   getColor(id: number): string {
     if (this.mapState.activeTab() === 'sk') {
       const partyId = this.councilService.leadingPartyByDistrict().get(id);
-      const party = partyId ? this.thaipbs.partyMap().get(partyId) : null;
+      const party = partyId ? this.councilService.partyMap().get(partyId) : null;
       return party ? party.color : '#1a3a2a';
     }
     const leadingId = this.electionService.getLeadingCandidateId(id);
@@ -157,7 +155,7 @@ export class JigsawMap {
 
   private getCouncilTooltip(id: number) {
     const partyId = this.councilService.leadingPartyByDistrict().get(id);
-    const party = partyId ? this.thaipbs.partyMap().get(partyId) : null;
+    const party = partyId ? this.councilService.partyMap().get(partyId) : null;
     const count = this.councilService.candidatesByDistrict(id).length;
     if (!count) return null;
     return {

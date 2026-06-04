@@ -3,7 +3,6 @@ import { CommonModule, DecimalPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { ElectionService } from '../../core/services/election.service';
 import { MapStateService } from '../../core/services/map-state';
-import { ELECTION_CONSTANTS } from '../../core/constants/election.constants';
 import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
 import { Candidate } from '../../core/models/election.models';
 import { formatVotes, hexToRgba } from '../../core/utils/election.utils';
@@ -37,7 +36,6 @@ export const MODAL_SVG_W = Math.ceil(PAD_M + (10 - 1) * COL_STEP_M + ROW_OFFSET_
 export const MODAL_SVG_H = Math.ceil(PAD_M + (9 - 1) * ROW_STEP_M + HEX_R_MODAL + 4);
 
 const RANK_OPACITY: Record<number, number> = { 1: 1, 2: 0.55, 3: 0.3 };
-const AVAILABLE_3D = new Set([1, 3, 4, 6, 8]);
 
 @Component({
   selector: 'app-candidates-stack',
@@ -235,16 +233,8 @@ export class CandidatesStack implements OnInit, OnDestroy {
     this.scrollContainer?.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  private readonly imgOverrides: Record<number, string> = {
-    8: '/Dicus/ชัชชาติ.png',
-    4: '/Dicus/ชัยวัฒน์ สถาวรวิจิตร 01.png',
-    3: '/Dicus/อนุชา บูรพชัยศรี 02.png',
-    1: '/Dicus/ชัยวัฒน์ สถาวรวิจิตร 01.png',
-    6: '/Dicus/อนุชา บูรพชัยศรี 02.png',
-  };
-
-  imgUrl(n: number) {
-    return this.imgOverrides[n] ?? ELECTION_CONSTANTS.ASSETS.CANDIDATE_IMAGE.replace('{no}', n.toString());
+  imgUrl(n: number): string {
+    return this.top10().find(c => c.number === n)?.imageUrl ?? '';
   }
 
   private preloadCardImages(candidates: Candidate[]) {
@@ -269,8 +259,7 @@ export class CandidatesStack implements OnInit, OnDestroy {
   }
 
   imgUrl3D(n: number): string {
-    const num = AVAILABLE_3D.has(n) ? n : 'other';
-    return `/3D/${num}.png`;
+    return this.top10().find(c => c.number === n)?.imageUrl ?? '';
   }
 
   r1Shadow = computed(() => {

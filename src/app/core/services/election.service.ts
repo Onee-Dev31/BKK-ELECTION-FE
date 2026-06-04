@@ -1,13 +1,16 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
-import { ELECTION_CONSTANTS } from '../constants/election.constants';
-import { Candidate, CandidatePolicy, DistrictResult, ElectionData } from '../models/election.models';
+import { Candidate, CandidatePolicy, DistrictResult, ElectionData, GovernorStats, PartyRankingsResponse } from '../models/election.models';
 import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.constants';
+import { environment } from '../../../environments/environment.dev';
 
-@Injectable({
-  providedIn: 'root'
-})
+const RANK_COLORS = [
+  '#f59e0b', '#94a3b8', '#b45309', '#3b82f6', '#8b5cf6',
+  '#ec4899', '#10b981', '#f97316', '#06b6d4', '#84cc16',
+];
+
+@Injectable({ providedIn: 'root' })
 export class ElectionService {
   electionState = signal<ElectionData | null>(null);
   private preloadedImageUrls = new Set<string>();
@@ -22,10 +25,7 @@ export class ElectionService {
 
   private districtResultsMap = computed(() => {
     const map = new Map<number, DistrictResult>();
-    const results = this.electionState()?.districtResults;
-    if (results) {
-      results.forEach(r => map.set(r.districtId, r));
-    }
+    this.electionState()?.districtResults?.forEach(r => map.set(r.districtId, r));
     return map;
   });
 
@@ -37,17 +37,17 @@ export class ElectionService {
   actualVoters = computed(() => this.electionState()?.actualVoters || 0);
   turnoutPercent = computed(() => this.electionState()?.turnoutPercent || 0);
   countedDistricts = computed(() => this.electionState()?.countedDistricts || 0);
-  totalDistricts = computed(() => this.electionState()?.totalDistricts || 50);
-  lastUpdated = computed(() => this.electionState()?.lastUpdated || 'Official Final Result');
-  electionYear = computed(() => this.electionState()?.electionYear || 2022);
+  totalDistricts = computed(() => this.electionState()?.totalDistricts || 0);
+  lastUpdated = computed(() => this.electionState()?.lastUpdated || '');
+  electionYear = computed(() => this.electionState()?.electionYear || 2026);
   progressPercent = computed(() => this.electionState()?.progressPercent || 0);
 
   isLoading = signal<boolean>(false);
   error = signal<string | null>(null);
 
   private http = inject(HttpClient);
-  private apiUrl = ELECTION_CONSTANTS.API.SUMMARY;
-  private districtApiUrl = ELECTION_CONSTANTS.API.DISTRICTS;
+  private readonly authApiUrl = `${environment.apiUrl}/auth`;
+  private readonly govApiUrl = environment.apiUrl;
 
   constructor() {
     this.refreshData();
@@ -55,125 +55,105 @@ export class ElectionService {
   }
 
   async refreshData() {
-    await Promise.all([
-      this.fetchOverallSummary(),
-      this.fetchDistrictResults()
-    ]);
+    await this.fetchOverallSummary();
   }
 
   async fetchOverallSummary() {
     this.isLoading.set(true);
+    this.error.set(null);
     try {
-      const data: any = await lastValueFrom(this.http.get(this.apiUrl));
-      if (!data || !data.candidates) return;
+      const [rankingsResult, statsResult] = await Promise.allSettled([
+        lastValueFrom(
+          this.http.get<PartyRankingsResponse>(
+            `${this.authApiUrl}/elections/bkk-governor-2026/party-rankings/export`,
+          ),
+        ),
+        lastValueFrom(
+          this.http.get<{ success: boolean; data: GovernorStats }>(
+            `${this.govApiUrl}/elections/bkk-governor-2026/auto/statistics`,
+          ),
+        ),
+      ]);
 
-      const candidates: Candidate[] = data.candidates.map((c: any) => {
-        let name = c._raw.fullName;
-        ELECTION_CONSTANTS.NAME_PREFIXES.forEach(prefix => {
-          name = name.replace(prefix, '');
-        });
+      if (rankingsResult.status === 'rejected' && statsResult.status === 'rejected') {
+        this.error.set('ไม่สามารถเชื่อมต่อ API ได้');
+        return;
+      }
 
-        return {
-          id: c.idno,
-          name: name.trim(),
-          party: c._raw.party.name,
-          number: c.idno,
-          votes: c.score,
-          percentage: Number(c.scorePercent.toFixed(2)),
-          imageUrl: c._raw.avatarURL,
-          partyLogoUrl: ELECTION_CONSTANTS.ASSETS.PARTY_LOGO.replace('{id}', c._raw.party.id.toString()),
-          color: this.getCandidateColor(c.idno)
-        };
-      });
+      let candidates: Candidate[] = this.electionState()?.candidates ?? [];
 
-      this.preloadCandidateAssets(candidates.slice(0, 5));
+      if (rankingsResult.status === 'fulfilled') {
+        candidates = Object.entries(rankingsResult.value)
+          .filter(([key]) => /^rank\d+$/.test(key))
+          .sort(([a], [b]) => parseInt(a.slice(4)) - parseInt(b.slice(4)))
+          .map(([key, entry], index) => {
+            const rank = parseInt(key.slice(4));
+            return {
+              id: rank,
+              name: entry.candidate_name,
+              party: entry.party_name,
+              number: rank,
+              votes: entry.score,
+              percentage: parseFloat(entry.counted) || 0,
+              imageUrl: entry.candidate_img,
+              partyLogoUrl: entry.party_logo,
+              color: RANK_COLORS[index] ?? '#64748b',
+            };
+          });
+        this.preloadCandidateAssets(candidates.slice(0, 3));
+      }
 
-      const rawSummary = data._rawSummary?.data;
-
-      this.electionState.update(current => ({
-        ...current,
+      const current = this.electionState();
+      const next: ElectionData = {
         candidates,
-        totalVotes: data.summary,
-        goodVotes: rawSummary?.goodVotes || 0,
-        badVotes: rawSummary?.badVotes || 0,
-        noVotes: rawSummary?.noVotes || 0,
-        eligibleVoters: rawSummary?.eligible || 0,
-        actualVoters: rawSummary?.voter || 0,
-        turnoutPercent: rawSummary?.percentVoter || 0,
-        countedDistricts: Math.floor(data.summaryPercent / 2),
-        totalDistricts: 50,
-        lastUpdated: `อัปเดตล่าสุด ${data.updateAt} น. (${data.summaryPercent}%)`,
-        electionYear: 2022,
-        progressPercent: data.summaryPercent || 0,
-        districtResults: current?.districtResults || []
-      }) as ElectionData);
+        districtResults: current?.districtResults ?? [],
+        totalVotes: current?.totalVotes ?? 0,
+        goodVotes: current?.goodVotes ?? 0,
+        badVotes: current?.badVotes ?? 0,
+        noVotes: current?.noVotes ?? 0,
+        eligibleVoters: current?.eligibleVoters ?? 0,
+        actualVoters: 0,
+        turnoutPercent: current?.turnoutPercent ?? 0,
+        countedDistricts: current?.countedDistricts ?? 0,
+        totalDistricts: current?.totalDistricts ?? 0,
+        lastUpdated: current?.lastUpdated ?? '',
+        electionYear: 2026,
+        progressPercent: current?.progressPercent ?? 0,
+      };
+
+      if (statsResult.status === 'fulfilled' && statsResult.value.success) {
+        const live = statsResult.value.data;
+        next.totalVotes = live.statistics.totalVotes;
+        next.goodVotes = live.statistics.goodVotes;
+        next.badVotes = live.statistics.invalidVotes;
+        next.noVotes = live.statistics.noVotes;
+        next.eligibleVoters = live.statistics.eligibleVoters;
+        next.turnoutPercent = live.statistics.voterTurnoutPercentage;
+        next.countedDistricts = live.coverage.stationsReported;
+        next.totalDistricts = live.coverage.totalStations;
+        next.progressPercent = live.coverage.percentage;
+        next.lastUpdated = `อัปเดตล่าสุด นับแล้ว ${live.coverage.percentage.toFixed(1)}% (${live.coverage.stationsReported}/${live.coverage.totalStations} หน่วย)`;
+      }
+
+      this.electionState.set(next);
     } catch (err) {
-      console.error('API Error:', err);
+      console.error('ElectionService error:', err);
       this.error.set('ไม่สามารถเชื่อมต่อ API ได้');
     } finally {
       this.isLoading.set(false);
     }
   }
 
-  async fetchDistrictResults() {
-    try {
-      const data: any = await lastValueFrom(this.http.get(this.districtApiUrl));
-      if (!data || !data.districts) return;
-
-      const districtResults: DistrictResult[] = data.districts.map((d: any) => ({
-        districtId: Number(d.id),
-        candidateResults: d.candidates.map((c: any) => ({
-          candidateId: c.idno,
-          votes: c.score
-        }))
-      }));
-
-      this.electionState.update(current => {
-        if (!current) {
-          return {
-            candidates: [],
-            totalVotes: 0,
-            goodVotes: 0,
-            badVotes: 0,
-            noVotes: 0,
-            eligibleVoters: 0,
-            actualVoters: 0,
-            turnoutPercent: 0,
-            countedDistricts: 0,
-            totalDistricts: 50,
-            lastUpdated: '',
-            electionYear: 2022,
-            progressPercent: 0,
-            districtResults
-          } as ElectionData;
-        }
-        return {
-          ...current,
-          districtResults
-        };
-      });
-    } catch (err) {
-      console.error('District API Error:', err);
-    }
-  }
-
-  private getCandidateColor(no: number): string {
-    return ELECTION_CONSTANTS.CANDIDATE_COLORS[no] || ELECTION_CONSTANTS.CANDIDATE_COLORS['def'];
-  }
-
   private preloadCandidateAssets(candidates: Candidate[]) {
     if (typeof document === 'undefined') return;
-
-    for (const candidate of candidates) {
-      this.preloadImage(candidate.imageUrl);
-      this.preloadImage(candidate.partyLogoUrl);
+    for (const c of candidates) {
+      this.preloadImage(c.imageUrl);
     }
   }
 
   private preloadImage(url: string) {
     if (!url || this.preloadedImageUrls.has(url)) return;
     this.preloadedImageUrls.add(url);
-
     const link = document.createElement('link');
     link.rel = 'preload';
     link.as = 'image';
@@ -189,8 +169,7 @@ export class ElectionService {
   getLeadingCandidateId(districtId: number): number | undefined {
     const result = this.getDistrictResults(districtId);
     if (!result) return undefined;
-    const sorted = [...result.candidateResults].sort((a, b) => b.votes - a.votes);
-    return sorted[0]?.candidateId;
+    return [...result.candidateResults].sort((a, b) => b.votes - a.votes)[0]?.candidateId;
   }
 
   getCandidatePolicies(candidateId: number): CandidatePolicy[] {

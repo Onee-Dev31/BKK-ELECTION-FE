@@ -101,3 +101,62 @@ export interface CouncilSummaryData {
   latestFetchedAt: string;
   data: CouncilDistrictSummary[];
 }
+
+export interface PartyRankingEntry {
+  candidate_name: string;
+  candidate_img: string;
+  party_name: string;
+  party_logo: string;
+  score: number;
+  counted: string;
+}
+
+export type PartyRankingsResponse = Record<string, PartyRankingEntry>;
+
+export interface GovernorStats {
+  electionId: string;
+  level: string;
+  lastUpdate: string;
+  statistics: {
+    goodVotes: number;
+    totalVotes: number;
+    invalidVotes: number;
+    noVotes: number;
+    eligibleVoters: number;
+    voterTurnoutPercentage: number;
+  };
+  coverage: {
+    stationsReported: number;
+    totalStations: number;
+    percentage: number;
+  };
+}
+
+export interface GovernorCandidateResult {
+  id: string;
+  totalVotes: number;
+  rank: number;
+  percentage: number;
+}
+
+export interface ExportSettings {
+  enabled: boolean;
+  intervalSeconds: number;
+  exportPath?: string;
+}
+
+export interface CouncilCandidate2026 {
+  id: string;
+  number: number;
+  name: string;
+  areaNumber: number;
+  party: {
+    id: string;
+    code: string;
+    name: string;
+    color: string;
+  };
+  totalVotes: number;
+  rank: number;
+  percentage: number;
+}
