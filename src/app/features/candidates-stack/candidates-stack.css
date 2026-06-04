@@ -801,14 +801,18 @@
 
 /* ── Tablet portrait (641–900px) ── */
 @media (max-width: 900px) and (min-width: 641px) {
-  .card-stage { gap: 8px; }
-  .cc-r1 { height: 56vh; }
-  .cc-r2, .cc-r3 { height: 44vh; }
-  .cc-r4, .cc-r5 { height: 35vh; }
-  .cc-name { font-size: 0.9rem; }
-  .cc-name-r1 { font-size: 1.1rem; }
-  .cc-pct { font-size: 1.2rem; }
-  .cc-pct-r1 { font-size: 1.7rem; }
+  .card-stage { gap: 6px; }
+  /* Remove min-widths so flex ratios distribute freely and all 5 cards fit */
+  .cc-r1-border       { min-width: 0; }
+  .cc-r2, .cc-r3      { min-width: 0; height: 44vh; }
+  .cc-r4, .cc-r5      { min-width: 0; height: 35vh; }
+  .cc-r1              { height: 56vh; }
+  .cc-name            { font-size: 0.85rem; }
+  .cc-name-r1         { font-size: 1rem; }
+  .cc-pct             { font-size: 1.1rem; }
+  .cc-pct-r1          { font-size: 1.6rem; }
+  .cc-rank-badge      { font-size: 2.5rem; }
+  .cc-r1 .cc-rank-badge { font-size: 3.5rem; }
 }
 
 @media (max-width: 768px) {
