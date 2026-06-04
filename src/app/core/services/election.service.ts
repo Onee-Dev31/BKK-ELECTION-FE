@@ -118,7 +118,7 @@ export class ElectionService {
             party: '',
             number: c.rank,
             votes: c.totalVotes,
-            percentage: c.percentage,
+            percentage: parseFloat(c.percentage.toFixed(2)),
             imageUrl: CANDIDATE_IMG_FALLBACK[c.id],
             partyLogoUrl: '',
             color: RANK_COLORS[index] ?? '#64748b',
