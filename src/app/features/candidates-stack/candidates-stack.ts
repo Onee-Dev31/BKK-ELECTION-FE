@@ -7,6 +7,7 @@ import { DISTRICT_MAP_NAMES } from '../../core/constants/map-names.constants';
 import { Candidate } from '../../core/models/election.models';
 import { formatVotes, hexToRgba } from '../../core/utils/election.utils';
 import { DISTRICT_LAYOUTS } from '../../core/constants/map-layout.constants';
+import { DEFAULT_CANDIDATE_IMAGE } from '../../core/constants/election.constants';
 
 const HEX_R_MODAL = 15;
 const HEX_GAP = 2;
@@ -234,7 +235,7 @@ export class CandidatesStack implements OnInit, OnDestroy {
   }
 
   imgUrl(n: number): string {
-    return this.top10().find(c => c.number === n)?.imageUrl ?? '';
+    return this.top10().find(c => c.number === n)?.imageUrl ?? DEFAULT_CANDIDATE_IMAGE;
   }
 
   private preloadCardImages(candidates: Candidate[]) {
@@ -254,12 +255,28 @@ export class CandidatesStack implements OnInit, OnDestroy {
     link.rel = 'preload';
     link.as = 'image';
     link.href = url;
-    link.setAttribute('fetchpriority', 'high');
     document.head.appendChild(link);
   }
 
+  hideBrokenImage(event: Event): void {
+    const img = event.target as HTMLImageElement | null;
+    if (!img) return;
+    if (img.src.endsWith(DEFAULT_CANDIDATE_IMAGE)) {
+      img.classList.add('is-broken');
+      return;
+    }
+    img.src = DEFAULT_CANDIDATE_IMAGE;
+  }
+
+  usePlaceholderImage(event: Event): void {
+    const img = event.target as HTMLImageElement | null;
+    if (!img) return;
+    if (img.src.endsWith(DEFAULT_CANDIDATE_IMAGE)) return;
+    img.src = DEFAULT_CANDIDATE_IMAGE;
+  }
+
   imgUrl3D(n: number): string {
-    return this.top10().find(c => c.number === n)?.imageUrl ?? '';
+    return this.top10().find(c => c.number === n)?.imageUrl ?? DEFAULT_CANDIDATE_IMAGE;
   }
 
   r1Shadow = computed(() => {

@@ -264,6 +264,18 @@
   line-height: 1;
 }
 
+.ft-ballot-pct-good {
+  color: #16a34a;
+}
+
+.ft-ballot-pct-bad {
+  color: #dc2626;
+}
+
+.ft-ballot-pct-none {
+  color: #9ca3af;
+}
+
 .ft-ballot-count {
   font-size: 0.58rem;
   font-weight: 600;
@@ -622,6 +634,10 @@
   object-fit: cover;
   object-position: top center;
   display: block;
+}
+
+.cc-photo.is-broken {
+  opacity: 0;
 }
 
 /* ── Info panel (white glass bottom) ────────────────────── */

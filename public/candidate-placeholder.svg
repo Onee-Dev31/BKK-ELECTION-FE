@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="silhouette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="640" rx="36" fill="url(#bg)"/>
+  <circle cx="240" cy="190" r="92" fill="url(#silhouette)"/>
+  <path
+    d="M112 536c0-78.425 63.575-142 142-142h0c78.425 0 142 63.575 142 142v40H112v-40Z"
+    fill="url(#silhouette)"
+  />
+  <text
+    x="240"
+    y="90"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="28"
+    font-weight="700"
+    fill="#475569"
+  >
+    Candidate
+  </text>
+  <text
+    x="240"
+    y="122"
+    text-anchor="middle"
+    font-family="Arial, sans-serif"
+    font-size="28"
+    font-weight="700"
+    fill="#475569"
+  >
+    Photo
+  </text>
+</svg>

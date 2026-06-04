@@ -63,21 +63,21 @@
       <div class="ft-ballot-row">
         <div class="ft-ballot">
           <div class="ft-ballot-label">บัตรดี</div>
-          <div class="ft-ballot-pct" style="color: #16a34a">
+          <div class="ft-ballot-pct ft-ballot-pct-good">
             {{ goodVotesPct() | number: '1.2-2' }}%
           </div>
           <div class="ft-ballot-count">{{ goodVotes() | number }} ใบ</div>
         </div>
         <div class="ft-ballot">
           <div class="ft-ballot-label">บัตรเสีย</div>
-          <div class="ft-ballot-pct" style="color: #dc2626">
+          <div class="ft-ballot-pct ft-ballot-pct-bad">
             {{ badVotesPct() | number: '1.2-2' }}%
           </div>
           <div class="ft-ballot-count">{{ badVotes() | number }} ใบ</div>
         </div>
         <div class="ft-ballot">
           <div class="ft-ballot-label">ไม่ออกเสียง</div>
-          <div class="ft-ballot-pct" style="color: #9ca3af">
+          <div class="ft-ballot-pct ft-ballot-pct-none">
             {{ noVotesPct() | number: '1.2-2' }}%
           </div>
           <div class="ft-ballot-count">{{ noVotes() | number }} ใบ</div>
@@ -94,7 +94,6 @@
       width="327"
       height="150"
       loading="eager"
-      fetchpriority="high"
       decoding="async"
     />
   </div>
@@ -105,7 +104,7 @@
       @if (top10().length >= 4) {
         <div
           class="cand-card cc-r4"
-          style="--cd: 200ms"
+          [style.--cd]="'200ms'"
           (click)="openModal(top10()[3], 4)"
           [style.background]="muteColor(top10()[3].color)"
         >
@@ -121,9 +120,8 @@
               title="รูปผู้สมัคร"
               [attr.title]="top10()[3].name"
               loading="eager"
-              fetchpriority="high"
               decoding="async"
-              onerror="this.style.opacity = '0'"
+              (error)="hideBrokenImage($event)"
             />
           </div>
           <div class="cc-info-panel">
@@ -142,7 +140,7 @@
       <!-- Rank 2 -->
       <div
         class="cand-card cc-r2"
-        style="--cd: 100ms"
+        [style.--cd]="'100ms'"
         (click)="openModal(top10()[1], 2)"
         [style.background]="muteColor(top10()[1].color)"
       >
@@ -158,9 +156,8 @@
             title="รูปผู้สมัคร"
             [attr.title]="top10()[1].name"
             loading="eager"
-            fetchpriority="high"
             decoding="async"
-            onerror="this.style.opacity = '0'"
+            (error)="hideBrokenImage($event)"
           />
         </div>
         <div class="cc-info-panel">
@@ -179,7 +176,7 @@
       <div class="cc-r1-border">
         <div
           class="cand-card cc-r1"
-          style="--cd: 0ms"
+          [style.--cd]="'0ms'"
           (click)="openModal(top10()[0], 1)"
           [style.background]="muteColor(top10()[0].color)"
         >
@@ -195,9 +192,8 @@
               title="รูปผู้สมัคร"
               [attr.title]="top10()[0].name"
               loading="eager"
-              fetchpriority="high"
               decoding="async"
-              onerror="this.style.opacity = '0'"
+              (error)="hideBrokenImage($event)"
             />
           </div>
           <div class="cc-info-panel cc-info-panel-r1">
@@ -218,7 +214,7 @@
       <!-- Rank 3 -->
       <div
         class="cand-card cc-r3"
-        style="--cd: 150ms"
+        [style.--cd]="'150ms'"
         (click)="openModal(top10()[2], 3)"
         [style.background]="muteColor(top10()[2].color)"
       >
@@ -234,9 +230,8 @@
             title="รูปผู้สมัคร"
             [attr.title]="top10()[2].name"
             loading="eager"
-            fetchpriority="high"
             decoding="async"
-            onerror="this.style.opacity = '0'"
+            (error)="hideBrokenImage($event)"
           />
         </div>
         <div class="cc-info-panel">
@@ -255,7 +250,7 @@
       @if (top10().length >= 5) {
         <div
           class="cand-card cc-r5"
-          style="--cd: 250ms"
+          [style.--cd]="'250ms'"
           (click)="openModal(top10()[4], 5)"
           [style.background]="muteColor(top10()[4].color)"
         >
@@ -271,9 +266,8 @@
               title="รูปผู้สมัคร"
               [attr.title]="top10()[4].name"
               loading="eager"
-              fetchpriority="high"
               decoding="async"
-              onerror="this.style.opacity = '0'"
+              (error)="hideBrokenImage($event)"
             />
           </div>
           <div class="cc-info-panel">
@@ -356,7 +350,7 @@
               [alt]="modal.c.name"
               title="รูปผู้สมัคร"
               [attr.title]="modal.c.name"
-              onerror="this.src = '/assets/placeholder.png'"
+              (error)="usePlaceholderImage($event)"
             />
           </div>
           <div class="modal-votes-block">

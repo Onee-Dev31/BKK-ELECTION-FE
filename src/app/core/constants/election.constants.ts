@@ -1,5 +1,7 @@
 import { environment } from '../../../environments/environment';
 
+export const DEFAULT_CANDIDATE_IMAGE = '/candidate-placeholder.svg';
+
 // UUID → local image path mapping (used as fallback when auth endpoint is unavailable).
 // UUIDs come from GET /api/elections/bkk-governor-2026/auto/candidates
 // Update this map whenever new candidates are added to the election.
@@ -7,6 +9,8 @@ export const CANDIDATE_IMG_FALLBACK: Record<string, string> = {
     'f79d5b06-d99a-4461-8dd7-020223d312c9': '/Dicus/ชัชชาติ.png',
     '082b729e-d3e4-4cbf-a63e-22e04a8b346e': '/Dicus/ชัยวัฒน์ สถาวรวิจิตร 01.png',
     '18854ada-4e26-41ab-b69a-87d9df9ffe92': '/Dicus/อนุชา บูรพชัยศรี 02.png',
+    '28a2c4c3-24d8-487d-9834-ea428d8e109c': DEFAULT_CANDIDATE_IMAGE,
+    '1d22cfc6-326d-4513-a6c6-af3859893d03': DEFAULT_CANDIDATE_IMAGE,
 };
 
 export const ELECTION_CONSTANTS = {
