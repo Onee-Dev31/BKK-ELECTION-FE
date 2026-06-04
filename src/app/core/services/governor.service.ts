@@ -1,7 +1,7 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
-import { environment } from '../../../environments/environment.dev';
+import { environment } from '../../../environments/environment';
 import { GovernorStats, GovernorCandidateResult } from '../models/election.models';
 
 @Injectable({ providedIn: 'root' })

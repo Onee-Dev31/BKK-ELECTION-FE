@@ -8,7 +8,7 @@ import {
   CouncilDistrictSummary,
   CouncilCandidate2026,
 } from '../models/election.models';
-import { environment } from '../../../environments/environment.dev';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class CouncilService {

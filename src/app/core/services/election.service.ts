@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { Candidate, CandidatePolicy, DistrictResult, ElectionData, GovernorStats, PartyRankingsResponse } from '../models/election.models';
 import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.constants';
-import { environment } from '../../../environments/environment.dev';
+import { environment } from '../../../environments/environment';
 
 const RANK_COLORS = [
   '#f59e0b', '#94a3b8', '#b45309', '#3b82f6', '#8b5cf6',
