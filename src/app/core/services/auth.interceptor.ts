@@ -1,15 +1,15 @@
-import { HttpInterceptorFn } from '@angular/common/http';
+// import { HttpInterceptorFn } from '@angular/common/http';
 
-export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  const token = localStorage.getItem('token');
+// export const authInterceptor: HttpInterceptorFn = (req, next) => {
+//   const token = localStorage.getItem('token');
 
-  if (token) {
-    req = req.clone({
-      setHeaders: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-  }
+//   if (token) {
+//     req = req.clone({
+//       setHeaders: {
+//         Authorization: `Bearer ${token}`,
+//       },
+//     });
+//   }
 
-  return next(req);
-};
+//   return next(req);
+// };

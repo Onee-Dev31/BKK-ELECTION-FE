@@ -51,6 +51,11 @@ export class ManageElection {
   }
 
   logout(): void {
+    // หยุด auto refresh
+    clearInterval(this.intervalId);
+
+    this.autoRefreshEnabled = false;
+
     localStorage.removeItem('token');
 
     this.router.navigate(['/admin-login']);
@@ -123,7 +128,7 @@ export class ManageElection {
   refresh(): void {
     this.authService.getElectionJson(this.autoRefreshEnabled, this.refreshSeconds).subscribe({
       next: (res: any) => {
-        // console.log(res);
+        console.log(res);
         if (typeof res === 'string') {
           this.jsonPreview = JSON.stringify(JSON.parse(res), null, 2);
         } else {
