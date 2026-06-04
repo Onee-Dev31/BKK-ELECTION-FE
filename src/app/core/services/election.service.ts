@@ -108,10 +108,10 @@ export class ElectionService {
         publicCandidatesResult.status === 'fulfilled' &&
         publicCandidatesResult.value.success
       ) {
-        // Fallback for unauthenticated visitors: only show candidates with known images
+        // Fallback for unauthenticated visitors: show top 5, image only if known
         candidates = [...publicCandidatesResult.value.data.candidates]
-          .filter(c => !!CANDIDATE_IMG_FALLBACK[c.id])
           .sort((a, b) => a.rank - b.rank)
+          .slice(0, 5)
           .map((c, index) => ({
             id: c.rank,
             name: `ผู้สมัครอันดับที่ ${c.rank}`,
@@ -119,7 +119,7 @@ export class ElectionService {
             number: c.rank,
             votes: c.totalVotes,
             percentage: parseFloat(c.percentage.toFixed(2)),
-            imageUrl: CANDIDATE_IMG_FALLBACK[c.id],
+            imageUrl: CANDIDATE_IMG_FALLBACK[c.id] ?? '',
             partyLogoUrl: '',
             color: RANK_COLORS[index] ?? '#64748b',
           }));
