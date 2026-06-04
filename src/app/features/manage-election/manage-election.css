@@ -24,31 +24,72 @@
 
 .tab-buttons {
     display: flex;
-    gap: 12px;
-}
+    gap: 4px;
 
-.tabs button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
+    padding: 4px;
 
     background: rgba(255, 255, 255, 0.08);
-    color: white;
 
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
-    transition: all 0.2s ease;
+    border-radius: 14px;
+
+    backdrop-filter: blur(20px);
 }
 
-.tabs button:hover {
-    background: rgba(255, 255, 255, 0.15);
+.tab-btn {
+    position: relative;
+
+    min-width: 160px;
+
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #cbd5e1;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: all .25s ease;
 }
 
-.tabs button.active {
-    background: #3b82f6;
+.tab-btn:hover {
     color: white;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg,
+            #2563eb,
+            #3b82f6);
+
+    color: white;
+
     font-weight: 700;
+
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, .35);
+}
+
+.tab-btn.active::after {
+    content: '';
+
+    position: absolute;
+
+    left: 20%;
+    right: 20%;
+    bottom: -6px;
+
+    height: 3px;
+
+    border-radius: 999px;
+
+    background: #60a5fa;
 }
 
 .container {
@@ -149,8 +190,77 @@
 
 .top-action {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+
     margin-bottom: 12px;
+}
+
+.auto-refresh-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: white;
+    font-size: 16px;
+}
+
+.refresh-input {
+    width: 60px;
+    height: 34px;
+
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, .15);
+
+    background: rgba(255, 255, 255, .08);
+    color: white;
+
+    text-align: center;
+}
+
+.switch {
+    position: relative;
+    width: 48px;
+    height: 26px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 255, 255, .15);
+    border-radius: 999px;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.slider::before {
+    content: '';
+
+    position: absolute;
+    left: 3px;
+    top: 3px;
+
+    width: 20px;
+    height: 20px;
+
+    background: white;
+    border-radius: 50%;
+
+    transition: .3s;
+}
+
+.switch input:checked+.slider {
+    background: #2563eb;
+}
+
+.switch input:checked+.slider::before {
+    transform: translateX(22px);
 }
 
 .divider {
@@ -224,6 +334,7 @@
     padding: 6px 24px;
 
     font-weight: 600;
+    font-size: 16px;
 
     transition: all 0.2s ease;
 }

@@ -1,12 +1,18 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../core/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-election',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './manage-election.html',
   styleUrl: './manage-election.css',
 })
@@ -16,6 +22,11 @@ export class ManageElection {
   jsonPreview = '';
 
   form!: FormGroup;
+
+  // TAB 1
+  autoRefreshEnabled = false;
+  refreshSeconds = 5;
+  private intervalId: any;
 
   constructor(
     private fb: FormBuilder,
@@ -48,6 +59,19 @@ export class ManageElection {
 
   get candidates(): FormArray {
     return this.form.get('candidates') as FormArray;
+  }
+
+  // TAB 1
+  toggleAutoRefresh(): void {
+    clearInterval(this.intervalId);
+
+    if (this.autoRefreshEnabled) {
+      this.refresh();
+
+      this.intervalId = setInterval(() => {
+        this.refresh();
+      }, this.refreshSeconds * 1000);
+    }
   }
 
   submit(): void {

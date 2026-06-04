@@ -1,9 +1,13 @@
 <div class="page">
   <div class="tabs">
     <div class="tab-buttons">
-      <button [class.active]="activeTab === 1" (click)="activeTab = 1">Generate JSON</button>
+      <button class="tab-btn" [class.active]="activeTab === 1" (click)="activeTab = 1">
+        Generate JSON
+      </button>
 
-      <button [class.active]="activeTab === 2" (click)="activeTab = 2">Upload JSON</button>
+      <button class="tab-btn" [class.active]="activeTab === 2" (click)="activeTab = 2">
+        Upload JSON
+      </button>
     </div>
 
     <button class="btn btn-danger" (click)="logout()">Logout</button>
@@ -13,7 +17,27 @@
     <div class="container">
       <!-- LEFT -->
       <div class="left-panel">
+        <!-- <div class="top-action">
+          <button class="btn btn-secondary" (click)="refresh()">Refresh</button>
+        </div> -->
         <div class="top-action">
+          <div class="auto-refresh-group">
+            <span>Auto Refresh</span>
+
+            <input type="number" min="1" [(ngModel)]="refreshSeconds" class="refresh-input" />
+
+            <span>sec</span>
+
+            <label class="switch">
+              <input
+                type="checkbox"
+                [(ngModel)]="autoRefreshEnabled"
+                (change)="toggleAutoRefresh()"
+              />
+              <span class="slider"></span>
+            </label>
+          </div>
+
           <button class="btn btn-secondary" (click)="refresh()">Refresh</button>
         </div>
 
