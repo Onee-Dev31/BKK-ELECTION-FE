@@ -838,15 +838,17 @@
 
 /* ── Small phones/narrow tablets 481–640px (e.g. Surface Duo 540px) ── */
 @media (max-width: 640px) and (min-width: 481px) {
-  .stack-logo { height: 52px; }
-  .stack-page  { gap: 0.5rem; }
-  .cc-r1       { height: clamp(260px, 46vh, 340px); }
+  .stack-logo   { height: 52px; }
+  .stack-page   { gap: 0.5rem; }
+  /* Reset min-widths so all 3 cards fit within ~516px content area */
+  .cc-r1-border { min-width: 0; }
   .cc-r2,
-  .cc-r3       { height: clamp(200px, 36vh, 270px); }
-  .cc-name     { font-size: 0.72rem; }
-  .cc-name-r1  { font-size: 0.9rem; }
-  .cc-pct      { font-size: 1rem; }
-  .cc-pct-r1   { font-size: 1.4rem; }
+  .cc-r3        { min-width: 0; height: clamp(200px, 36vh, 270px); }
+  .cc-r1        { height: clamp(260px, 46vh, 340px); }
+  .cc-name      { font-size: 0.72rem; }
+  .cc-name-r1   { font-size: 0.9rem; }
+  .cc-pct       { font-size: 1rem; }
+  .cc-pct-r1    { font-size: 1.4rem; }
 }
 
 @media (max-width: 767px) { /* re-open for remaining rules */
