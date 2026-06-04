@@ -1,3 +1,36 @@
+/* ICON */
+.logout-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.refresh-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.refresh-icon {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+}
+
+.refresh-icon.spinning {
+    animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .page {
     height: 100vh;
     padding: 24px;
@@ -11,8 +44,6 @@
 
     overflow: hidden;
 }
-
-
 
 .tabs {
     display: flex;
@@ -42,7 +73,7 @@
 
     min-width: 160px;
 
-    padding: 12px 24px;
+    padding: 8px 24px;
 
     border: none;
     border-radius: 10px;
@@ -53,7 +84,7 @@
 
     cursor: pointer;
 
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
 
     transition: all .25s ease;
@@ -156,7 +187,7 @@
     text-align: left;
     padding: 10px;
     color: #93c5fd;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .candidate-table td {
@@ -202,7 +233,7 @@
     gap: 10px;
 
     color: white;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .refresh-input {
@@ -270,6 +301,46 @@
     background: rgba(255, 255, 255, 0.12);
 
     margin: 0 0 20px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.counted-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.counted-group label {
+    color: #cbd5e1;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.counted-input {
+    width: 120px;
+    height: 38px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .15);
+
+    background: rgba(255, 255, 255, .08);
+    color: white;
+
+    text-align: center;
+
+    padding: 0 12px;
+}
+
+.counted-input:focus {
+    outline: none;
+    border-color: #60a5fa;
 }
 
 .candidate-card {
@@ -362,6 +433,42 @@
     background: #334155;
 }
 
+.btn-logout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 18px;
+
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 12px;
+
+    background: rgba(239, 68, 68, 0.12);
+    color: #fca5a5;
+
+    cursor: pointer;
+
+    font-weight: 600;
+    font-size: 18px;
+
+    backdrop-filter: blur(12px);
+
+    transition: all .25s ease;
+}
+
+.btn-logout:hover {
+    background: rgba(239, 68, 68, 0.2);
+
+    color: white;
+
+    border-color: rgba(239, 68, 68, 0.5);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(239, 68, 68, 0.25);
+}
+
 pre {
     flex: 1;
 
@@ -380,6 +487,8 @@ pre {
     white-space: pre;
 
     border: 1px solid rgba(96, 165, 250, 0.2);
+
+    font-size: 18px;
 }
 
 .upload-tab textarea {

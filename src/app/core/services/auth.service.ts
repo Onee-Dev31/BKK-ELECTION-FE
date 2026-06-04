@@ -20,9 +20,19 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/login`, payload);
   }
 
-  getElectionJson() {
+  getElectionJson(enabled: boolean, intervalSeconds: number) {
     return this.http.get(`${this.apiUrl}/elections/bkk-governor-2026/party-rankings/export`, {
-      responseType: 'text',
+      params: {
+        enabled: enabled.toString(),
+        intervalSeconds: intervalSeconds.toString(),
+      },
     });
+  }
+
+  generateManual(payload: any) {
+    return this.http.post(
+      `${this.apiUrl}/elections/bkk-governor-2026/party-rankings/override`,
+      payload,
+    );
   }
 }

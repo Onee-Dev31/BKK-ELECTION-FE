@@ -18,15 +18,14 @@ import { Router } from '@angular/router';
 })
 export class ManageElection {
   activeTab = 1;
-
   jsonPreview = '';
 
-  form!: FormGroup;
-
   // TAB 1
+  form!: FormGroup;
   autoRefreshEnabled = false;
-  refreshSeconds = 5;
+  refreshSeconds = 2;
   private intervalId: any;
+  countedPercentage = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -62,6 +61,12 @@ export class ManageElection {
   }
 
   // TAB 1
+  onRefreshSecondsChange(): void {
+    if (this.autoRefreshEnabled) {
+      this.toggleAutoRefresh();
+    }
+  }
+
   toggleAutoRefresh(): void {
     clearInterval(this.intervalId);
 
@@ -75,13 +80,50 @@ export class ManageElection {
   }
 
   submit(): void {
-    this.jsonPreview = JSON.stringify(this.form.value, null, 2);
+    const payload = {
+      candidates: this.candidates.controls.map((candidate: any) => ({
+        name: candidate.value.name,
+        imageUrl: candidate.value.imageUrl,
+        partyName: candidate.value.partyName,
+        partyLogoUrl: candidate.value.partyLogoUrl,
+        votes: Number(candidate.value.votes),
+        counted: `${this.countedPercentage}%`,
+      })),
+    };
+
+    console.log(payload);
+
+    const result: any = {};
+
+    this.candidates.controls.forEach((candidate: any, index: number) => {
+      const value = candidate.value;
+
+      result[`rank${index + 1}`] = {
+        candidate_name: value.name,
+        candidate_img: value.imageUrl,
+        party_name: value.partyName,
+        party_logo: value.partyLogoUrl,
+        score: Number(value.votes),
+        counted: `${this.countedPercentage}%`,
+      };
+    });
+
+    this.authService.generateManual(payload).subscribe({
+      next: (res) => {
+        console.log('Success', res);
+      },
+      error: (err) => {
+        console.error(err);
+      },
+    });
+
+    this.jsonPreview = JSON.stringify(result, null, 2);
   }
 
   refresh(): void {
-    this.authService.getElectionJson().subscribe({
+    this.authService.getElectionJson(this.autoRefreshEnabled, this.refreshSeconds).subscribe({
       next: (res: any) => {
-        console.log(res);
+        // console.log(res);
         if (typeof res === 'string') {
           this.jsonPreview = JSON.stringify(JSON.parse(res), null, 2);
         } else {

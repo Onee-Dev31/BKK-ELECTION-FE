@@ -10,21 +10,52 @@
       </button>
     </div>
 
-    <button class="btn btn-danger" (click)="logout()">Logout</button>
+    <button class="btn btn-logout" (click)="logout()">
+      <svg class="logout-icon" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M21 12L13 12"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <path
+          d="M18 15L20.913 12.087C20.961 12.039 20.961 11.961 20.913 11.913L18 9"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <path
+          d="M16 5V4.5C16 3.67157 15.3284 3 14.5 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H14.5C15.3284 21 16 20.3284 16 19.5V19"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      Logout
+    </button>
   </div>
 
   @if (activeTab === 1) {
     <div class="container">
       <!-- LEFT -->
       <div class="left-panel">
-        <!-- <div class="top-action">
-          <button class="btn btn-secondary" (click)="refresh()">Refresh</button>
-        </div> -->
         <div class="top-action">
           <div class="auto-refresh-group">
             <span>Auto Refresh</span>
 
-            <input type="number" min="1" [(ngModel)]="refreshSeconds" class="refresh-input" />
+            <input
+              type="number"
+              min="1"
+              [(ngModel)]="refreshSeconds"
+              (change)="onRefreshSecondsChange()"
+              class="refresh-input"
+            />
 
             <span>sec</span>
 
@@ -38,12 +69,25 @@
             </label>
           </div>
 
-          <button class="btn btn-secondary" (click)="refresh()">Refresh</button>
+          <!-- <button class="btn btn-secondary" (click)="refresh()">Refresh</button> -->
         </div>
 
         <hr class="divider" />
 
-        <h2>อัปเดตข้อมูลผู้สมัคร</h2>
+        <div class="section-header">
+          <h2>อัปเดตข้อมูลผู้สมัคร</h2>
+
+          <div class="counted-group">
+            <label>นับแล้ว (%)</label>
+
+            <input
+              type="number"
+              [(ngModel)]="countedPercentage"
+              placeholder=""
+              class="counted-input"
+            />
+          </div>
+        </div>
 
         <form [formGroup]="form">
           <table class="candidate-table">
@@ -95,12 +139,6 @@
 
       <!-- RIGHT -->
       <div class="right-panel">
-        <!-- <div class="action-bar">
-          <button class="btn btn-primary" (click)="submit()">Submit</button>
-
-          <button class="btn btn-secondary" (click)="refresh()">Refresh</button>
-        </div> -->
-
         <pre>{{ jsonPreview }}</pre>
       </div>
     </div>
