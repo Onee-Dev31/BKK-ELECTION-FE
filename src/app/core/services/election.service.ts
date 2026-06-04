@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { Candidate, CandidatePolicy, DistrictResult, ElectionData, GovernorCandidateResult, GovernorStats, PartyRankingsResponse } from '../models/election.models';
 import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.constants';
+import { CANDIDATE_IMG_FALLBACK } from '../constants/election.constants';
 import { environment } from '../../../environments/environment';
 
 const RANK_COLORS = [
@@ -121,7 +122,7 @@ export class ElectionService {
             number: c.rank,
             votes: c.totalVotes,
             percentage: c.percentage,
-            imageUrl: `/Dicus/${c.rank}.png`,
+            imageUrl: CANDIDATE_IMG_FALLBACK[c.id] ?? `/Dicus/${c.rank}.png`,
             partyLogoUrl: '',
             color: RANK_COLORS[index] ?? '#64748b',
           }));

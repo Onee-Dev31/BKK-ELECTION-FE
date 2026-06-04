@@ -1,5 +1,14 @@
 import { environment } from '../../../environments/environment';
 
+// UUID → local image path mapping (used as fallback when auth endpoint is unavailable).
+// UUIDs come from GET /api/elections/bkk-governor-2026/auto/candidates
+// Update this map whenever new candidates are added to the election.
+export const CANDIDATE_IMG_FALLBACK: Record<string, string> = {
+    'f79d5b06-d99a-4461-8dd7-020223d312c9': '/Dicus/ชัชชาติ.png',
+    '082b729e-d3e4-4cbf-a63e-22e04a8b346e': '/Dicus/ชัยวัฒน์ สถาวรวิจิตร 01.png',
+    '18854ada-4e26-41ab-b69a-87d9df9ffe92': '/Dicus/อนุชา บูรพชัยศรี 02.png',
+};
+
 export const ELECTION_CONSTANTS = {
     API: {
         SUMMARY: environment.api.summary,
