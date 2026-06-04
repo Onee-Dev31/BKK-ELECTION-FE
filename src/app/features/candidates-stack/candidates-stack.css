@@ -991,7 +991,7 @@
   display: flex;
   gap: 10px;
   justify-content: flex-end;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
   padding-right: 52px;
   flex-wrap: wrap;
 }
@@ -1138,6 +1138,12 @@
   align-items: center;
   gap: 6px;
 }
+.modal-meta-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
 .modal-number-tag {
   font-size: 1rem;
   font-weight: 900;
@@ -1224,7 +1230,7 @@
   background: rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 14px;
-  padding: 14px 12px;
+  padding: 10px 10px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -1278,5 +1284,269 @@
   }
   .modal-action-row {
     padding-right: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-page {
+    justify-content: flex-start;
+    gap: 0.6rem;
+    padding: 0.6rem 8px calc(104px + env(safe-area-inset-bottom, 0px)) !important;
+    overflow-y: auto;
+  }
+
+  .stack-logo {
+    height: 64px;
+  }
+
+  .card-stage {
+    gap: 6px;
+    align-items: flex-end;
+    margin-bottom: 12px;
+  }
+
+  .cc-r1 {
+    height: clamp(330px, 52vh, 390px);
+  }
+
+  .cc-r2,
+  .cc-r3 {
+    height: clamp(255px, 40vh, 310px);
+  }
+
+  .cc-r1-border {
+    min-width: 0;
+  }
+
+  .cc-info-panel {
+    padding: 12px 10px 14px;
+  }
+
+  .cc-info-panel-r1 {
+    padding-bottom: 18px;
+  }
+
+  .cc-rank-badge {
+    font-size: 2.1rem;
+  }
+
+  .cc-r1 .cc-rank-badge {
+    font-size: 2.85rem;
+  }
+
+  .cc-name {
+    font-size: 0.72rem;
+  }
+
+  .cc-name-r1 {
+    font-size: 0.94rem;
+  }
+
+  .cc-pct {
+    font-size: 1rem;
+  }
+
+  .cc-pct-r1 {
+    font-size: 1.45rem;
+  }
+
+  .modal-backdrop {
+    align-items: flex-start;
+    padding: 10px 8px calc(100px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .modal-panel {
+    max-height: calc(100dvh - 112px - env(safe-area-inset-bottom, 0px));
+    border-width: 4px;
+    border-radius: 18px;
+    padding: 14px 12px 36px;
+    scroll-padding-bottom: 36px;
+  }
+
+  .modal-action-row {
+    justify-content: center;
+    min-height: 36px;
+    margin-bottom: 8px;
+    padding-left: 58px;
+    padding-right: 48px;
+    gap: 6px;
+  }
+
+  .modal-btn-primary {
+    max-width: 100%;
+    min-width: 0;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .modal-btn-icon {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+
+  .modal-close {
+    top: 14px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .modal-rank-flag {
+    left: 44px;
+    width: 50px;
+    padding: 9px 4px 18px;
+  }
+
+  .modal-rank-flag-label {
+    font-size: 0.58rem;
+  }
+
+  .modal-rank-flag-num {
+    font-size: 1.55rem;
+  }
+
+  .modal-body {
+    gap: 12px;
+  }
+
+  .modal-left {
+    gap: 8px;
+  }
+
+  .modal-photo-area {
+    min-height: clamp(200px, 58vw, 230px);
+    border-radius: 18px;
+  }
+
+  .modal-photo-img {
+    width: 94%;
+    max-height: 220px;
+  }
+
+  .modal-pct {
+    font-size: 2.35rem;
+  }
+
+  .modal-total-votes {
+    font-size: 0.9rem;
+  }
+
+  .modal-meta-name {
+    max-width: 100%;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .modal-number-tag {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    padding: 3px 12px;
+  }
+
+  .modal-name {
+    min-width: 0;
+    font-size: 1.15rem;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .modal-party-tag {
+    font-size: 0.9rem;
+  }
+
+  .modal-right {
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .modal-rank-stats {
+    border-radius: 12px;
+  }
+
+  .rank-stat {
+    padding: 10px 6px;
+  }
+
+  .rank-stat-num {
+    font-size: 1.8rem;
+  }
+
+  .rank-stat-label {
+    font-size: 0.78rem;
+  }
+
+  .mini-map-wrap {
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .top-districts-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding-bottom: 12px;
+  }
+
+  .top-district-card {
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .top-district-name {
+    font-size: 0.88rem;
+  }
+
+  .top-district-votes {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .modal-backdrop {
+    padding-inline: 6px;
+    padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .modal-panel {
+    max-height: calc(100dvh - 116px - env(safe-area-inset-bottom, 0px));
+    padding: 12px 10px 40px;
+  }
+
+  .modal-action-row {
+    padding-left: 54px;
+    padding-right: 42px;
+  }
+
+  .modal-btn-primary {
+    padding-inline: 10px;
+    font-size: 0.72rem;
+  }
+
+  .modal-rank-flag {
+    left: 42px;
+    width: 46px;
+  }
+
+  .modal-photo-area {
+    min-height: 190px;
+  }
+
+  .modal-photo-img {
+    max-height: 205px;
+  }
+
+  .modal-pct {
+    font-size: 2.15rem;
+  }
+
+  .modal-name {
+    font-size: 1.05rem;
   }
 }
