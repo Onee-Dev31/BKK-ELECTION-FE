@@ -914,10 +914,11 @@
     min-height: 0;
   }
 
-  /* Shift image so face is centered in the visible area, not just hair */
-  .cc-photo {
-    object-position: center 42%;
-  }
+  /* Rank 1 card is wider so image scales differently — needs less shift */
+  .cc-r1 .cc-photo       { object-position: center 18%; }
+  /* Ranks 2, 3 are narrower — more shift needed to show face */
+  .cc-r2 .cc-photo,
+  .cc-r3 .cc-photo       { object-position: center 38%; }
 
   /* Info panel: minimal footprint so the face has room to show */
   .cc-info-panel,
