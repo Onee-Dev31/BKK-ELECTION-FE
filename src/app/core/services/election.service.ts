@@ -62,16 +62,9 @@ export class ElectionService {
   async fetchOverallSummary() {
     this.isLoading.set(true);
     this.error.set(null);
-    const hasToken = !!localStorage.getItem('token');
     try {
       const [rankingsResult, statsResult, publicCandidatesResult] = await Promise.allSettled([
-        hasToken
-          ? lastValueFrom(
-              this.http.get<PartyRankingsResponse>(
-                `${this.authApiUrl}/elections/bkk-governor-2026/party-rankings/export`,
-              ),
-            )
-          : Promise.reject('no token'),
+        Promise.reject<PartyRankingsResponse>('public page — auth endpoint not called'),
         lastValueFrom(
           this.http.get<{ success: boolean; data: GovernorStats }>(
             `${this.govApiUrl}/elections/bkk-governor-2026/auto/statistics`,
