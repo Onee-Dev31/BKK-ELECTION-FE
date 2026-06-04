@@ -1,7 +1,7 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
-import { Candidate, CandidatePolicy, DistrictResult, ElectionData, GovernorStats, PartyRankingsResponse } from '../models/election.models';
+import { Candidate, CandidatePolicy, DistrictResult, ElectionData, GovernorCandidateResult, GovernorStats, PartyRankingsResponse } from '../models/election.models';
 import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.constants';
 import { environment } from '../../../environments/environment';
 
@@ -62,7 +62,7 @@ export class ElectionService {
     this.isLoading.set(true);
     this.error.set(null);
     try {
-      const [rankingsResult, statsResult] = await Promise.allSettled([
+      const [rankingsResult, statsResult, publicCandidatesResult] = await Promise.allSettled([
         lastValueFrom(
           this.http.get<PartyRankingsResponse>(
             `${this.authApiUrl}/elections/bkk-governor-2026/party-rankings/export`,
@@ -71,6 +71,12 @@ export class ElectionService {
         lastValueFrom(
           this.http.get<{ success: boolean; data: GovernorStats }>(
             `${this.govApiUrl}/elections/bkk-governor-2026/auto/statistics`,
+          ),
+        ),
+        lastValueFrom(
+          this.http.get<{ success: boolean; data: { candidates: GovernorCandidateResult[] } }>(
+            `${this.govApiUrl}/elections/bkk-governor-2026/auto/candidates`,
+            { params: { page: '1', limit: '10' } },
           ),
         ),
       ]);
@@ -100,6 +106,25 @@ export class ElectionService {
               color: RANK_COLORS[index] ?? '#64748b',
             };
           });
+        this.preloadCandidateAssets(candidates.slice(0, 3));
+      } else if (
+        publicCandidatesResult.status === 'fulfilled' &&
+        publicCandidatesResult.value.success
+      ) {
+        // Fallback for unauthenticated visitors: use public auto/candidates
+        candidates = [...publicCandidatesResult.value.data.candidates]
+          .sort((a, b) => a.rank - b.rank)
+          .map((c, index) => ({
+            id: c.rank,
+            name: `ผู้สมัครอันดับที่ ${c.rank}`,
+            party: '',
+            number: c.rank,
+            votes: c.totalVotes,
+            percentage: c.percentage,
+            imageUrl: `/Dicus/${c.rank}.png`,
+            partyLogoUrl: '',
+            color: RANK_COLORS[index] ?? '#64748b',
+          }));
         this.preloadCandidateAssets(candidates.slice(0, 3));
       }
 
