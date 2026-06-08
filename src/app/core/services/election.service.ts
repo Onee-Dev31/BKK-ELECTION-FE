@@ -1,14 +1,30 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
-import { Candidate, CandidatePolicy, DistrictResult, ElectionData, GovernorCandidateResult, GovernorStats, PartyRankingsResponse } from '../models/election.models';
+import {
+  Candidate,
+  CandidatePolicy,
+  DistrictResult,
+  ElectionData,
+  GovernorCandidateResult,
+  GovernorStats,
+  PartyRankingsResponse,
+} from '../models/election.models';
 import { CANDIDATE_POLICIES, DEFAULT_POLICIES } from '../constants/policies.constants';
 import { CANDIDATE_IMG_FALLBACK, DEFAULT_CANDIDATE_IMAGE } from '../constants/election.constants';
 import { environment } from '../../../environments/environment';
 
 const RANK_COLORS = [
-  '#f59e0b', '#94a3b8', '#b45309', '#3b82f6', '#8b5cf6',
-  '#ec4899', '#10b981', '#f97316', '#06b6d4', '#84cc16',
+  '#f59e0b',
+  '#94a3b8',
+  '#b45309',
+  '#3b82f6',
+  '#8b5cf6',
+  '#ec4899',
+  '#10b981',
+  '#f97316',
+  '#06b6d4',
+  '#84cc16',
 ];
 
 @Injectable({ providedIn: 'root' })
@@ -20,13 +36,13 @@ export class ElectionService {
 
   candidateMap = computed(() => {
     const map = new Map<number, Candidate>();
-    this.candidates().forEach(c => map.set(c.id, c));
+    this.candidates().forEach((c) => map.set(c.id, c));
     return map;
   });
 
   private districtResultsMap = computed(() => {
     const map = new Map<number, DistrictResult>();
-    this.electionState()?.districtResults?.forEach(r => map.set(r.districtId, r));
+    this.electionState()?.districtResults?.forEach((r) => map.set(r.districtId, r));
     return map;
   });
 

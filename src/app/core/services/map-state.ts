@@ -3,7 +3,7 @@ import { ElectionService } from './election.service';
 import { District, DISTRICT_LAYOUTS } from '../constants/map-layout.constants';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MapStateService {
   private electionService = inject(ElectionService);
@@ -11,9 +11,9 @@ export class MapStateService {
   private rawDistricts = signal<District[]>(DISTRICT_LAYOUTS);
 
   districts = computed(() => {
-    return this.rawDistricts().map(d => ({
+    return this.rawDistricts().map((d) => ({
       ...d,
-      leadingCandidateId: this.electionService.getLeadingCandidateId(d.id)
+      leadingCandidateId: this.electionService.getLeadingCandidateId(d.id),
     }));
   });
 
@@ -26,9 +26,8 @@ export class MapStateService {
   selectedDistrict = computed(() => {
     const id = this.selectedDistrictId();
     if (id === null) return null;
-    return this.districts().find(d => d.id === id) || null;
+    return this.districts().find((d) => d.id === id) || null;
   });
 
-  constructor() { }
+  constructor() {}
 }
-
